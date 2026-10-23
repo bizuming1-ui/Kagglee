@@ -1,0 +1,26 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/qtts.spec.js --grep QTTS (library|training input)
+
+
+Running 16 tests using 1 worker
+
+
+  ✓   1 tests/browser/qtts.spec.js:630:1 › QTTS library named empty first, upload, select one and process without claiming training (3.2s)
+  ✓   2 tests/browser/qtts.spec.js:640:1 › QTTS library blank name is not defaulted and empty file does not submit (882ms)
+  ✓   3 tests/browser/qtts.spec.js:648:1 › QTTS library upload failure preserves selected files for retry and never advances state (1.3s)
+  ✓   4 tests/browser/qtts.spec.js:657:1 › QTTS library stale revision retains local data and refresh allows deliberate retry (1.4s)
+  ✓   5 tests/browser/qtts.spec.js:664:1 › QTTS library sample removal and confirmed whole-library deletion leave processed profiles alone (1.5s)
+  ✓   6 tests/browser/qtts.spec.js:671:1 › QTTS library failed processing retains selected raw samples and does not claim success (3.4s)
+  ✓   7 tests/browser/qtts.spec.js:678:1 › QTTS library lock clears private form, sample names and ignores late creation response (804ms)
+  ✓   8 tests/browser/qtts.spec.js:686:1 › QTTS library late sample removal cannot overwrite a reopened different selection (1.8s)
+  ✓   9 tests/browser/qtts.spec.js:694:1 › QTTS library progress polls are sequential and stop after closing even with ignored abort (8.5s)
+  ✓  10 tests/browser/qtts.spec.js:703:1 › QTTS library native recording is stopped by opening, then saved to the named library (2.9s)
+  ✓  11 tests/browser/qtts.spec.js:711:52 › QTTS library dialog bounded keyboard and XSS-safe content 1440x900 (3.3s)
+  ✓  12 tests/browser/qtts.spec.js:711:52 › QTTS library dialog bounded keyboard and XSS-safe content 375x667 (955ms)
+  ✓  13 tests/browser/qtts.spec.js:727:1 › QTTS training input explicit texts and declarations prepare, verify, delete without running training (1.8s)
+  ✓  14 tests/browser/qtts.spec.js:737:1 › QTTS training input rejects unsupported format and retains user transcripts and raw selection (2.1s)
+  ✓  15 tests/browser/qtts.spec.js:744:1 › QTTS training input lock clears private transcripts and ignores late committed snapshot response (1.8s)
+  ✓  16 tests/browser/qtts.spec.js:750:1 › QTTS training input phone controls bounded and hash failure does not display stale success (1.3s)
+
+  16 passed (38.6s)

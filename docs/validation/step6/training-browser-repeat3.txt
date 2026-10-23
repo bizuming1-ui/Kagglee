@@ -1,0 +1,27 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/qtts.spec.js --grep QTTS training --repeat-each=3
+
+
+Running 15 tests using 1 worker
+
+
+  ✓   1 tests/browser/qtts.spec.js:727:1 › QTTS training input explicit texts and declarations prepare, verify, delete without running training (2.3s)
+  ✓   2 tests/browser/qtts.spec.js:737:1 › QTTS training input rejects unsupported format and retains user transcripts and raw selection (2.2s)
+  ✓   3 tests/browser/qtts.spec.js:744:1 › QTTS training input lock clears private transcripts and ignores late committed snapshot response (2.0s)
+  ✓   4 tests/browser/qtts.spec.js:750:1 › QTTS training input phone controls bounded and hash failure does not display stale success (1.5s)
+  ✓   5 tests/browser/qtts.spec.js:756:1 › QTTS training declarations are invalidated on selection, new library and deletion transitions (2.3s)
+
+  ✓   6 tests/browser/qtts.spec.js:727:1 › QTTS training input explicit texts and declarations prepare, verify, delete without running training (2.4s)
+  ✓   7 tests/browser/qtts.spec.js:737:1 › QTTS training input rejects unsupported format and retains user transcripts and raw selection (2.2s)
+  ✓   8 tests/browser/qtts.spec.js:744:1 › QTTS training input lock clears private transcripts and ignores late committed snapshot response (2.1s)
+  ✓   9 tests/browser/qtts.spec.js:750:1 › QTTS training input phone controls bounded and hash failure does not display stale success (1.6s)
+  ✓  10 tests/browser/qtts.spec.js:756:1 › QTTS training declarations are invalidated on selection, new library and deletion transitions (2.4s)
+
+  ✓  11 tests/browser/qtts.spec.js:727:1 › QTTS training input explicit texts and declarations prepare, verify, delete without running training (2.4s)
+  ✓  12 tests/browser/qtts.spec.js:737:1 › QTTS training input rejects unsupported format and retains user transcripts and raw selection (2.2s)
+  ✓  13 tests/browser/qtts.spec.js:744:1 › QTTS training input lock clears private transcripts and ignores late committed snapshot response (2.1s)
+  ✓  14 tests/browser/qtts.spec.js:750:1 › QTTS training input phone controls bounded and hash failure does not display stale success (1.5s)
+  ✓  15 tests/browser/qtts.spec.js:756:1 › QTTS training declarations are invalidated on selection, new library and deletion transitions (2.3s)
+
+  15 passed (35.4s)

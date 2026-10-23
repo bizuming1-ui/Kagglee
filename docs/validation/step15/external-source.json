@@ -1,0 +1,9 @@
+{
+  "faster_version": "0.5.4",
+  "wheel_url": "https://files.pythonhosted.org/packages/b3/e5/074b3ca7bb05f2d3564a456bc7620c24e65edeb1288c118a4b0506d55f11/faster_qwen3_tts-0.5.4-py3-none-any.whl",
+  "member": "faster_qwen3_tts/model.py",
+  "member_sha256": "7d45740b805bb1a4798fbe20ffd580e2a35361e744c4645da106c2b6383d4de2",
+  "reviewed": ["speaker-vector-only resolver", "ICL reference-code decoder context and crop", "streaming two-phase codec context", "xvec_only documentation warns about reference phoneme bleed-through"],
+  "root_cause_of_user_audio_confirmed": false,
+  "reason": "User supplied screenshot/report, not the generated waveform."
+}

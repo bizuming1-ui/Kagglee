@@ -1,0 +1,2428 @@
+{
+  "stage": 17,
+  "total": 300,
+  "counts": {
+    "documented-boundary": 27,
+    "implemented-action": 93,
+    "preserved-with-regression": 174,
+    "hardware-listening-blocked": 6
+  },
+  "all_user_requirements_completed": false,
+  "rounds": [
+    {
+      "round": 1,
+      "items": [
+        {
+          "recommendation": "S17-R1-001",
+          "topic": "截图与根因",
+          "suggestion": "截图是15而非16不能当新包效果",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-002",
+          "topic": "截图与根因",
+          "suggestion": "录音限额与锚点限额分开",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-003",
+          "topic": "截图与根因",
+          "suggestion": "重现单个28.7秒ASR段",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-004",
+          "topic": "截图与根因",
+          "suggestion": "保留16的逐字匹配约束",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-005",
+          "topic": "截图与根因",
+          "suggestion": "不能将长音频硬截配全文",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-006",
+          "topic": "截图与根因",
+          "suggestion": "保留ASR词级时间戳",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-007",
+          "topic": "截图与根因",
+          "suggestion": "按完整词组而非字符比例切分",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-008",
+          "topic": "截图与根因",
+          "suggestion": "词与原段文本必须核对",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-009",
+          "topic": "截图与根因",
+          "suggestion": "缺词时间走音频窗口重新ASR",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-010",
+          "topic": "截图与根因",
+          "suggestion": "不能凭低RMS断定无人声",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-011",
+          "topic": "词级对齐",
+          "suggestion": "验证时间戳有限",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-012",
+          "topic": "词级对齐",
+          "suggestion": "验证起止单调",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-013",
+          "topic": "词级对齐",
+          "suggestion": "验证不越源音频",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-014",
+          "topic": "词级对齐",
+          "suggestion": "拒绝重叠倒序词",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-015",
+          "topic": "词级对齐",
+          "suggestion": "Unicode字母数字核对转写",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-016",
+          "topic": "词级对齐",
+          "suggestion": "不要丢标点后汉字",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-017",
+          "topic": "词级对齐",
+          "suggestion": "长单词超窗口重新ASR",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-018",
+          "topic": "词级对齐",
+          "suggestion": "短尾保留在分析收据",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-019",
+          "topic": "词级对齐",
+          "suggestion": "跨文件绝不合并文字",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-020",
+          "topic": "词级对齐",
+          "suggestion": "对齐失败有明确中文建议",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-021",
+          "topic": "长音频重识别",
+          "suggestion": "仅问题长段需要窗口ASR",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-022",
+          "topic": "长音频重识别",
+          "suggestion": "每窗口音频和转写独立匹配",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-023",
+          "topic": "长音频重识别",
+          "suggestion": "使用原音频实际切片",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-024",
+          "topic": "长音频重识别",
+          "suggestion": "偏移恢复绝对时间",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-025",
+          "topic": "长音频重识别",
+          "suggestion": "边界优先静音",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-026",
+          "topic": "长音频重识别",
+          "suggestion": "窗口必须前进不死循环",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-027",
+          "topic": "长音频重识别",
+          "suggestion": "最末窗口不丢",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-028",
+          "topic": "长音频重识别",
+          "suggestion": "无语音窗口不伪造文字",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-029",
+          "topic": "长音频重识别",
+          "suggestion": "沿用ASR锁及CPU复用",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-030",
+          "topic": "长音频重识别",
+          "suggestion": "进度显示窗口计数",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-031",
+          "topic": "长参考语义",
+          "suggestion": "长录音可以超过15秒",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-032",
+          "topic": "长参考语义",
+          "suggestion": "不能无限把20分钟塞进ICL",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-033",
+          "topic": "长参考语义",
+          "suggestion": "提供16与24秒参考窗口",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-034",
+          "topic": "长参考语义",
+          "suggestion": "默认16保护旧短样本",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-035",
+          "topic": "长参考语义",
+          "suggestion": "24明确标为实验与较慢",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-036",
+          "topic": "长参考语义",
+          "suggestion": "手工转写仅单短文件直接采用",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-037",
+          "topic": "长参考语义",
+          "suggestion": "长手工全文不能按时长分配",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-038",
+          "topic": "长参考语义",
+          "suggestion": "记录源总时长与选中锚点",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-039",
+          "topic": "长参考语义",
+          "suggestion": "记录重切分和重识别数量",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-040",
+          "topic": "长参考语义",
+          "suggestion": "明确建档不是全数据训练",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-041",
+          "topic": "输入与安全",
+          "suggestion": "窗口值只允许16或24",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-042",
+          "topic": "输入与安全",
+          "suggestion": "表单和库入口都独立校验",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-043",
+          "topic": "输入与安全",
+          "suggestion": "失败保留本地录音",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-044",
+          "topic": "输入与安全",
+          "suggestion": "取消不得删除源音频",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-045",
+          "topic": "输入与安全",
+          "suggestion": "不自动云传原音",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-046",
+          "topic": "输入与安全",
+          "suggestion": "拒绝非有限PCM",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-047",
+          "topic": "输入与安全",
+          "suggestion": "保留20分钟录音预算",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-048",
+          "topic": "输入与安全",
+          "suggestion": "低电平提示调整设备",
+          "disposition": "implemented-action",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-049",
+          "topic": "输入与安全",
+          "suggestion": "提示麦克风距离不替人猜设备",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-050",
+          "topic": "输入与安全",
+          "suggestion": "保留原始至16冻结",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-051",
+          "topic": "档案变更",
+          "suggestion": "修正候选更换原路径复用",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-052",
+          "topic": "档案变更",
+          "suggestion": "文本更改触发提示失效",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-053",
+          "topic": "档案变更",
+          "suggestion": "手动校准选择不能覆盖回旧",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-054",
+          "topic": "档案变更",
+          "suggestion": "完成后保存阶段收据",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-055",
+          "topic": "档案变更",
+          "suggestion": "删除档案不能被旧请求静默复活",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-056",
+          "topic": "档案变更",
+          "suggestion": "不删除冻结15",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-057",
+          "topic": "档案变更",
+          "suggestion": "旧档案可重新加载",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-058",
+          "topic": "档案变更",
+          "suggestion": "参考需审核逐字转写",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-059",
+          "topic": "档案变更",
+          "suggestion": "ASR提案不是人工真值",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-060",
+          "topic": "档案变更",
+          "suggestion": "不从短片猜长文",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-061",
+          "topic": "安全读取",
+          "suggestion": "锚点仅单一安全文件名",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-062",
+          "topic": "安全读取",
+          "suggestion": "拒绝符号链接",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-063",
+          "topic": "安全读取",
+          "suggestion": "拒绝目录冒音频",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-064",
+          "topic": "安全读取",
+          "suggestion": "限制参考读取字节",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-065",
+          "topic": "安全读取",
+          "suggestion": "路径始终在档案目录",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-066",
+          "topic": "安全读取",
+          "suggestion": "哈希不输出原音频",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-067",
+          "topic": "安全读取",
+          "suggestion": "指纹不是授权证明",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-068",
+          "topic": "安全读取",
+          "suggestion": "不泄漏访问口令",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-069",
+          "topic": "安全读取",
+          "suggestion": "不自动云传录音",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-070",
+          "topic": "安全读取",
+          "suggestion": "保持私有备份边界",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-071",
+          "topic": "原生adapter",
+          "suggestion": "保留训练候选固定binding",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-072",
+          "topic": "原生adapter",
+          "suggestion": "不向faster注入adapter",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-073",
+          "topic": "原生adapter",
+          "suggestion": "不修改训练权重",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-074",
+          "topic": "原生adapter",
+          "suggestion": "缺adapter不回退Base",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-075",
+          "topic": "原生adapter",
+          "suggestion": "保留句级缓冲标记",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-076",
+          "topic": "原生adapter",
+          "suggestion": "继续核对Base哈希",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-077",
+          "topic": "原生adapter",
+          "suggestion": "旧训练功能做回归",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-078",
+          "topic": "原生adapter",
+          "suggestion": "不要把参考处理叫训练",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-079",
+          "topic": "原生adapter",
+          "suggestion": "网页真实训练缺口保留",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-080",
+          "topic": "原生adapter",
+          "suggestion": "真实训练质量仍待验收",
+          "disposition": "hardware-listening-blocked",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-081",
+          "topic": "相似度验收",
+          "suggestion": "相似度用真实说话人模型",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-082",
+          "topic": "相似度验收",
+          "suggestion": "不能伪造99.5百分比",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-083",
+          "topic": "相似度验收",
+          "suggestion": "文字一致不代表音色一致",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-084",
+          "topic": "相似度验收",
+          "suggestion": "多段输出分别试听",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-085",
+          "topic": "相似度验收",
+          "suggestion": "比较两卡相邻段",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-086",
+          "topic": "相似度验收",
+          "suggestion": "使用与参考不同的目标文字",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-087",
+          "topic": "相似度验收",
+          "suggestion": "同参考同文同seed对照",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-088",
+          "topic": "相似度验收",
+          "suggestion": "保留参考与输出独立文件",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-089",
+          "topic": "相似度验收",
+          "suggestion": "无用户音频不猜根因",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-090",
+          "topic": "相似度验收",
+          "suggestion": "不承诺100无错",
+          "disposition": "documented-boundary",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-091",
+          "topic": "保护已有功能",
+          "suggestion": "保留原文分段",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-092",
+          "topic": "保护已有功能",
+          "suggestion": "保留首句及时调度",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-093",
+          "topic": "保护已有功能",
+          "suggestion": "保留两主视图",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-094",
+          "topic": "保护已有功能",
+          "suggestion": "保留长录音预算",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-095",
+          "topic": "保护已有功能",
+          "suggestion": "保留命名空库",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-096",
+          "topic": "保护已有功能",
+          "suggestion": "保留失败本地片段",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-097",
+          "topic": "保护已有功能",
+          "suggestion": "保留手动候选校准",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-098",
+          "topic": "保护已有功能",
+          "suggestion": "保留DeepSeek取消",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-099",
+          "topic": "保护已有功能",
+          "suggestion": "保留3000正式工作台",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R1-100",
+          "topic": "保护已有功能",
+          "suggestion": "保留原始至15整包",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/reference_segments.py;py/analyst.py;py/library_api.py;web/index.html;tests/test_step17.py;tests/long_reference_check.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "items": [
+        {
+          "recommendation": "S17-R2-001",
+          "topic": "短参考与音色",
+          "suggestion": "继续使用ICL匹配文本",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-002",
+          "topic": "短参考与音色",
+          "suggestion": "不退回15纯向量默认",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-003",
+          "topic": "短参考与音色",
+          "suggestion": "新旧GPU不能混版本",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-004",
+          "topic": "短参考与音色",
+          "suggestion": "相同参考绑定采样参数",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-005",
+          "topic": "短参考与音色",
+          "suggestion": "Go和Python浮点编码一致",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-006",
+          "topic": "短参考与音色",
+          "suggestion": "缺省参数也计入指纹",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-007",
+          "topic": "短参考与音色",
+          "suggestion": "不接受NaN温度",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-008",
+          "topic": "短参考与音色",
+          "suggestion": "改温度使旧会话失效",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-009",
+          "topic": "短参考与音色",
+          "suggestion": "参数相同不是音色绝对相同",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-010",
+          "topic": "短参考与音色",
+          "suggestion": "真人试听仍是独立门禁",
+          "disposition": "hardware-listening-blocked",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-011",
+          "topic": "多卡参数",
+          "suggestion": "绑定temperature",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-012",
+          "topic": "多卡参数",
+          "suggestion": "绑定top_k",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-013",
+          "topic": "多卡参数",
+          "suggestion": "绑定top_p",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-014",
+          "topic": "多卡参数",
+          "suggestion": "绑定repetition_penalty",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-015",
+          "topic": "多卡参数",
+          "suggestion": "top_k必须整数",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-016",
+          "topic": "多卡参数",
+          "suggestion": "统一默认参数数值",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-017",
+          "topic": "多卡参数",
+          "suggestion": "每次合成锁内复核",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-018",
+          "topic": "多卡参数",
+          "suggestion": "预计算提示快照保留",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-019",
+          "topic": "多卡参数",
+          "suggestion": "不混用不同条件模式",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-020",
+          "topic": "多卡参数",
+          "suggestion": "不声称两卡波形逐位相同",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-021",
+          "topic": "参考质量",
+          "suggestion": "记录原始RMS",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-022",
+          "topic": "参考质量",
+          "suggestion": "记录原始峰值",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-023",
+          "topic": "参考质量",
+          "suggestion": "记录SNR估计而非真值",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-024",
+          "topic": "参考质量",
+          "suggestion": "低电平给风险提示不直接拒绝",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-025",
+          "topic": "参考质量",
+          "suggestion": "响度归一化不是降噪",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-026",
+          "topic": "参考质量",
+          "suggestion": "MFCC相似不是可靠声纹真值",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-027",
+          "topic": "参考质量",
+          "suggestion": "避免强降噪损伤辅音",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-028",
+          "topic": "参考质量",
+          "suggestion": "参考多人必须审核",
+          "disposition": "hardware-listening-blocked",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-029",
+          "topic": "参考质量",
+          "suggestion": "24秒未必比10秒好",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-030",
+          "topic": "参考质量",
+          "suggestion": "不播放原录音补相似度",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-031",
+          "topic": "连续朗读",
+          "suggestion": "只调整朗读聚合不延后聊天首句",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-032",
+          "topic": "连续朗读",
+          "suggestion": "减少过多独立合成语段",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-033",
+          "topic": "连续朗读",
+          "suggestion": "优先完整句子标点",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-034",
+          "topic": "连续朗读",
+          "suggestion": "保留原始全文字符",
+          "disposition": "implemented-action",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-035",
+          "topic": "连续朗读",
+          "suggestion": "不合并不同用户任务",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-036",
+          "topic": "连续朗读",
+          "suggestion": "保留取消和背压",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-037",
+          "topic": "连续朗读",
+          "suggestion": "不跨词叠加PCM",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-038",
+          "topic": "连续朗读",
+          "suggestion": "不删除语音以隐藏接缝",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-039",
+          "topic": "连续朗读",
+          "suggestion": "保留已有codec有界上下文",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-040",
+          "topic": "连续朗读",
+          "suggestion": "自然韵律不能仅靠交叉淡化保证",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-041",
+          "topic": "噪声边界",
+          "suggestion": "继续禁参考呼吸拼接",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-042",
+          "topic": "噪声边界",
+          "suggestion": "不生成白噪声补停顿",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-043",
+          "topic": "噪声边界",
+          "suggestion": "保留软限幅",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-044",
+          "topic": "噪声边界",
+          "suggestion": "保留可控增益",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-045",
+          "topic": "噪声边界",
+          "suggestion": "不把静音当去噪成功",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-046",
+          "topic": "噪声边界",
+          "suggestion": "不默认低通抹齿音",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-047",
+          "topic": "噪声边界",
+          "suggestion": "新统计不得泄漏原文本",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-048",
+          "topic": "噪声边界",
+          "suggestion": "生成WAV可供独立试听",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-049",
+          "topic": "噪声边界",
+          "suggestion": "缺真实音频不宣布零噪声",
+          "disposition": "hardware-listening-blocked",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-050",
+          "topic": "噪声边界",
+          "suggestion": "不得缩短输出冒RTF达标",
+          "disposition": "documented-boundary",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-051",
+          "topic": "RTF定义",
+          "suggestion": "标准RTF等于生成墙钟除语音秒数",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-052",
+          "topic": "RTF定义",
+          "suggestion": "rtf_x是其倒数不是RTF",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-053",
+          "topic": "RTF定义",
+          "suggestion": "不把双卡速度相加冒单卡RTF",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-054",
+          "topic": "RTF定义",
+          "suggestion": "排除零停顿分母",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-055",
+          "topic": "RTF定义",
+          "suggestion": "失败取消样本不能算通过",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-056",
+          "topic": "RTF定义",
+          "suggestion": "冷预热与热态分开",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-057",
+          "topic": "RTF定义",
+          "suggestion": "首播与吞吐分开",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-058",
+          "topic": "RTF定义",
+          "suggestion": "记录每GPU结果",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-059",
+          "topic": "RTF定义",
+          "suggestion": "目标0.3需每条和汇总检查",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-060",
+          "topic": "RTF定义",
+          "suggestion": "无T4输出blocked",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-061",
+          "topic": "计时拆分",
+          "suggestion": "模型prepare单独计时",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-062",
+          "topic": "计时拆分",
+          "suggestion": "token生成单独计时",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-063",
+          "topic": "计时拆分",
+          "suggestion": "codec解码单独计时",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-064",
+          "topic": "计时拆分",
+          "suggestion": "DSP耗时单列",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-065",
+          "topic": "计时拆分",
+          "suggestion": "总墙钟包括必要同步",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-066",
+          "topic": "计时拆分",
+          "suggestion": "不拿CPU异步发射当CUDA完成",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-067",
+          "topic": "计时拆分",
+          "suggestion": "预热不计入热态却单独报告",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-068",
+          "topic": "计时拆分",
+          "suggestion": "报告first_played与欠载",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-069",
+          "topic": "计时拆分",
+          "suggestion": "保存原始测量行",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-070",
+          "topic": "计时拆分",
+          "suggestion": "不删慢样本",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-071",
+          "topic": "性能选择",
+          "suggestion": "仍用CUDA graph后端",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-072",
+          "topic": "性能选择",
+          "suggestion": "不盲开torch.compile",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-073",
+          "topic": "性能选择",
+          "suggestion": "T4继续FP16",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-074",
+          "topic": "性能选择",
+          "suggestion": "不假称T4原生BF16",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-075",
+          "topic": "性能选择",
+          "suggestion": "不为语言数量加网络跳转",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-076",
+          "topic": "性能选择",
+          "suggestion": "不每卡塞两副本",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-077",
+          "topic": "性能选择",
+          "suggestion": "上下文有界减少复制",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-078",
+          "topic": "性能选择",
+          "suggestion": "参考prompt按版本复用",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-079",
+          "topic": "性能选择",
+          "suggestion": "较大后段chunk做可选实测",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-080",
+          "topic": "性能选择",
+          "suggestion": "质量不降需要真实对照",
+          "disposition": "hardware-listening-blocked",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-081",
+          "topic": "实验设计",
+          "suggestion": "同一参考与目标文",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-082",
+          "topic": "实验设计",
+          "suggestion": "至少三轮独立进程接口实验",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-083",
+          "topic": "实验设计",
+          "suggestion": "每个chunk2/4/8/12检查",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-084",
+          "topic": "实验设计",
+          "suggestion": "检查短尾与取消",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-085",
+          "topic": "实验设计",
+          "suggestion": "参考码标记不能入decoder",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-086",
+          "topic": "实验设计",
+          "suggestion": "生成总帧对应总样本",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-087",
+          "topic": "实验设计",
+          "suggestion": "检查窗口峰值上限",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-088",
+          "topic": "实验设计",
+          "suggestion": "性能fixture不算Qwen性能",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-089",
+          "topic": "实验设计",
+          "suggestion": "CPU tinyMimi不算完整TTS",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-090",
+          "topic": "实验设计",
+          "suggestion": "硬件结果不能编造",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-091",
+          "topic": "降级与边界",
+          "suggestion": "新解码模式不自动回旧混参考路径",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-092",
+          "topic": "降级与边界",
+          "suggestion": "ICL缺文本给明确提示",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-093",
+          "topic": "降级与边界",
+          "suggestion": "不要静默改为别的声音",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-094",
+          "topic": "降级与边界",
+          "suggestion": "不要自动降模型大小",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-095",
+          "topic": "降级与边界",
+          "suggestion": "不改语速充RTF",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-096",
+          "topic": "降级与边界",
+          "suggestion": "不删用户正文充速度",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-097",
+          "topic": "降级与边界",
+          "suggestion": "不缩减训练数据",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-098",
+          "topic": "降级与边界",
+          "suggestion": "保留故障监督",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-099",
+          "topic": "降级与边界",
+          "suggestion": "记下每次初始失败",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R2-100",
+          "topic": "降级与边界",
+          "suggestion": "整体仍按证据判定",
+          "disposition": "preserved-with-regression",
+          "anchors": "py/voice_binding.py;go/gateway/session.go;go/gateway/segmenter.go;go/gateway/main.go;tests/test_step17.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "items": [
+        {
+          "recommendation": "S17-R3-001",
+          "topic": "重现门禁",
+          "suggestion": "单个28.7秒词级段建档成功",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-002",
+          "topic": "重现门禁",
+          "suggestion": "单个60秒段词级切分",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-003",
+          "topic": "重现门禁",
+          "suggestion": "20分钟时间戳规划有界",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-004",
+          "topic": "重现门禁",
+          "suggestion": "缺词时间戳实际窗口重识别",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-005",
+          "topic": "重现门禁",
+          "suggestion": "文本不匹配必须回识别",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-006",
+          "topic": "重现门禁",
+          "suggestion": "长manual全文不错误拼接",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-007",
+          "topic": "重现门禁",
+          "suggestion": "短manual16秒保持兼容",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-008",
+          "topic": "重现门禁",
+          "suggestion": "24秒锚点不越界",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-009",
+          "topic": "重现门禁",
+          "suggestion": "无声和非法时间戳不造成功",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-010",
+          "topic": "重现门禁",
+          "suggestion": "每项做三轮回归",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-011",
+          "topic": "接口门禁",
+          "suggestion": "浏览器发送参考窗口字段",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-012",
+          "topic": "接口门禁",
+          "suggestion": "默认值16可见",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-013",
+          "topic": "接口门禁",
+          "suggestion": "24选项真实进入后端",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-014",
+          "topic": "接口门禁",
+          "suggestion": "锁定清除私有转写",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-015",
+          "topic": "接口门禁",
+          "suggestion": "表单非法值拒绝",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-016",
+          "topic": "接口门禁",
+          "suggestion": "库处理同样校验",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-017",
+          "topic": "接口门禁",
+          "suggestion": "服务重启新包版本可识别",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-018",
+          "topic": "接口门禁",
+          "suggestion": "新包逐字节复制",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-019",
+          "topic": "接口门禁",
+          "suggestion": "16包哈希冻结",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-020",
+          "topic": "接口门禁",
+          "suggestion": "正式工作台保持不变",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-021",
+          "topic": "参数指纹测试",
+          "suggestion": "中英转写跨语言一致",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-022",
+          "topic": "参数指纹测试",
+          "suggestion": "默认值与显式默认相同",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-023",
+          "topic": "参数指纹测试",
+          "suggestion": "四参数分别变更使pin变化",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-024",
+          "topic": "参数指纹测试",
+          "suggestion": "NaN和无穷拒绝",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-025",
+          "topic": "参数指纹测试",
+          "suggestion": "非整数top_k拒绝",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-026",
+          "topic": "参数指纹测试",
+          "suggestion": "Worker不输出不符pin的PCM",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-027",
+          "topic": "参数指纹测试",
+          "suggestion": "Go协议携带固定pin",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-028",
+          "topic": "参数指纹测试",
+          "suggestion": "不改adapter来源绑定",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-029",
+          "topic": "参数指纹测试",
+          "suggestion": "新旧包混跑明确重启",
+          "disposition": "documented-boundary",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-030",
+          "topic": "参数指纹测试",
+          "suggestion": "不把指纹当身份认证",
+          "disposition": "documented-boundary",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-031",
+          "topic": "验证与实验",
+          "suggestion": "Python完整三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-032",
+          "topic": "验证与实验",
+          "suggestion": "Node完整三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-033",
+          "topic": "验证与实验",
+          "suggestion": "Go race三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-034",
+          "topic": "验证与实验",
+          "suggestion": "Chromium完整三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-035",
+          "topic": "验证与实验",
+          "suggestion": "六服务协议各三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-036",
+          "topic": "验证与实验",
+          "suggestion": "实际Faster控制接口三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-037",
+          "topic": "验证与实验",
+          "suggestion": "真实tiny codec三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-038",
+          "topic": "验证与实验",
+          "suggestion": "Mimi导入重载三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-039",
+          "topic": "验证与实验",
+          "suggestion": "CPU训练等价三轮",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-040",
+          "topic": "验证与实验",
+          "suggestion": "所有CPU模型明确不是Qwen音质证据",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-041",
+          "topic": "记录与交付",
+          "suggestion": "问题22回答后给50建议",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-042",
+          "topic": "记录与交付",
+          "suggestion": "问题23回答后给50建议",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-043",
+          "topic": "记录与交付",
+          "suggestion": "问题24回答后给50建议",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-044",
+          "topic": "记录与交付",
+          "suggestion": "方案先于产品修改",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-045",
+          "topic": "记录与交付",
+          "suggestion": "每次失败日志保留",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-046",
+          "topic": "记录与交付",
+          "suggestion": "逐条300建议分类",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-047",
+          "topic": "记录与交付",
+          "suggestion": "无硬件保留BLOCKED",
+          "disposition": "documented-boundary",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-048",
+          "topic": "记录与交付",
+          "suggestion": "真实RTF0.3仍需测量",
+          "disposition": "documented-boundary",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-049",
+          "topic": "记录与交付",
+          "suggestion": "完整57份备忘录内嵌",
+          "disposition": "implemented-action",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-050",
+          "topic": "记录与交付",
+          "suggestion": "不承诺100相似零噪声",
+          "disposition": "documented-boundary",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-051",
+          "topic": "浏览器文案",
+          "suggestion": "显示ICL条件不等于回放参考",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-052",
+          "topic": "浏览器文案",
+          "suggestion": "显示音色尚需试听",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-053",
+          "topic": "浏览器文案",
+          "suggestion": "显示RTF目标未达证据",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-054",
+          "topic": "浏览器文案",
+          "suggestion": "保留参考文本编辑",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-055",
+          "topic": "浏览器文案",
+          "suggestion": "提示转写必须匹配",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-056",
+          "topic": "浏览器文案",
+          "suggestion": "不新增假训练按钮",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-057",
+          "topic": "浏览器文案",
+          "suggestion": "不显示100相似度",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-058",
+          "topic": "浏览器文案",
+          "suggestion": "性能诊断不藏慢行",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-059",
+          "topic": "浏览器文案",
+          "suggestion": "手机无横向溢出",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-060",
+          "topic": "浏览器文案",
+          "suggestion": "锁定清空私有文本",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-061",
+          "topic": "包与版本",
+          "suggestion": "新step16独立文件",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-062",
+          "topic": "包与版本",
+          "suggestion": "原始至15冻结",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-063",
+          "topic": "包与版本",
+          "suggestion": "repack逐资产哈希",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-064",
+          "topic": "包与版本",
+          "suggestion": "内嵌新解码模块",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-065",
+          "topic": "包与版本",
+          "suggestion": "内嵌新RTF实验入口",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-066",
+          "topic": "包与版本",
+          "suggestion": "剪贴板全量读回",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-067",
+          "topic": "包与版本",
+          "suggestion": "下载逐字节核对",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-068",
+          "topic": "包与版本",
+          "suggestion": "权限拒绝可全选",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-069",
+          "topic": "包与版本",
+          "suggestion": "复制页固定新hash",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-070",
+          "topic": "包与版本",
+          "suggestion": "正式工作台不覆盖",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-071",
+          "topic": "备忘录",
+          "suggestion": "先计划后改产品",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-072",
+          "topic": "备忘录",
+          "suggestion": "问题19后给50建议",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-073",
+          "topic": "备忘录",
+          "suggestion": "问题20后给50建议",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-074",
+          "topic": "备忘录",
+          "suggestion": "问题21后给50建议",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-075",
+          "topic": "备忘录",
+          "suggestion": "累计问题建议保留",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-076",
+          "topic": "备忘录",
+          "suggestion": "最终交接完整内嵌",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-077",
+          "topic": "备忘录",
+          "suggestion": "原失败日志不覆盖",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-078",
+          "topic": "备忘录",
+          "suggestion": "状态用PARTIAL与BLOCKED",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-079",
+          "topic": "备忘录",
+          "suggestion": "缺硬件不得改成已达标",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-080",
+          "topic": "备忘录",
+          "suggestion": "不要求用户提供密钥",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-081",
+          "topic": "真实声学",
+          "suggestion": "多人参考不是调参可解决",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-082",
+          "topic": "真实声学",
+          "suggestion": "ICL能改善但非保证",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-083",
+          "topic": "真实声学",
+          "suggestion": "声纹分数不是听感真值",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-084",
+          "topic": "真实声学",
+          "suggestion": "模型仍可幻觉添字",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-085",
+          "topic": "真实声学",
+          "suggestion": "跨语言可能改变口音",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-086",
+          "topic": "真实声学",
+          "suggestion": "沙沙声需实际音频定位",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-087",
+          "topic": "真实声学",
+          "suggestion": "不从一张截图断定频谱",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-088",
+          "topic": "真实声学",
+          "suggestion": "静音延迟不算首声",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-089",
+          "topic": "真实声学",
+          "suggestion": "质量与速度一起验收",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-090",
+          "topic": "真实声学",
+          "suggestion": "人声自然度需独立试听",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-091",
+          "topic": "后续门禁",
+          "suggestion": "优先真实T4不同文本试听",
+          "disposition": "hardware-listening-blocked",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-092",
+          "topic": "后续门禁",
+          "suggestion": "逐GPU比较同参考",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-093",
+          "topic": "后续门禁",
+          "suggestion": "测试候选切换中取消",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-094",
+          "topic": "后续门禁",
+          "suggestion": "测RTF中位和最慢",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-095",
+          "topic": "后续门禁",
+          "suggestion": "参考泄漏单独核查",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-096",
+          "topic": "后续门禁",
+          "suggestion": "新进程重载检查",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-097",
+          "topic": "后续门禁",
+          "suggestion": "私有音频自行备份",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-098",
+          "topic": "后续门禁",
+          "suggestion": "历史网页训练闭环未完成",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-099",
+          "topic": "后续门禁",
+          "suggestion": "长样本全覆盖未完成",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        },
+        {
+          "recommendation": "S17-R3-100",
+          "topic": "后续门禁",
+          "suggestion": "不把工程通过称全部目标完成",
+          "disposition": "preserved-with-regression",
+          "anchors": "tests/test_step17.py;tests/browser/qtts.spec.js;tests/browser/studio.spec.js;validation/step17/verify_delivery.py",
+          "note": "工程修复/测试或保留边界按收据核查；并不证明真实ASR转写正确、克隆相似、无噪声、双卡声学相同或RTF达标。"
+        }
+      ]
+    }
+  ]
+}

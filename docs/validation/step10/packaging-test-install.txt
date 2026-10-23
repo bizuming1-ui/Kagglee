@@ -1,0 +1,5 @@
+Collecting packaging==25.0
+  Downloading packaging-25.0-py3-none-any.whl (66 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.5/66.5 kB 6.4 MB/s eta 0:00:00
+Installing collected packages: packaging
+Successfully installed packaging-25.0

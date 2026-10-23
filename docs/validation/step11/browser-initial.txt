@@ -1,0 +1,45 @@
+
+Running 2 tests using 1 worker
+
+
+  ✘  1 tests/browser/qtts.spec.js:766:1 › QTTS trained voice is explicitly labeled buffered unverified and immutable without a third view (5.9s)
+
+  ✓  2 tests/browser/studio.spec.js:563:1 › 第十一阶段adapter聊天完整Python包可逐字节复制并保留第十阶段包 (3.5s)
+
+
+  1) tests/browser/qtts.spec.js:766:1 › QTTS trained voice is explicitly labeled buffered unverified and immutable without a third view 
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator: locator('#profiles .card').first().getByRole('button', { name: '保存文本并重载', exact: true })
+    Expected: disabled
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeDisabled" locator('#profiles .card').first().getByRole('button', { name: '保存文本并重载', exact: true }) with timeout 5000ms
+      - waiting for locator('#profiles .card').first().getByRole('button', { name: '保存文本并重载', exact: true })
+
+
+      769 |   const card=page.locator('#profiles .card').first();await expect(card).toContainText('非声学流式');
+      770 |   await expect(card.locator('textarea')).toHaveAttribute('readonly','');
+    > 771 |   await expect(card.getByRole('button',{name:'保存文本并重载',exact:true})).toBeDisabled();
+          |                                                                      ^
+      772 |   await expect(card.getByRole('button',{name:/候选校准/})).toBeDisabled();
+      773 |   await expect(card.getByRole('button',{name:/选择此训练版本/})).toBeEnabled();
+      774 |   await expect(page.locator('nav[aria-label="主要视图"] button')).toHaveCount(2);
+        at /home/user/Kagglee/tests/browser/qtts.spec.js:771:70
+
+    Error Context: test-results/qtts-QTTS-trained-voice-is-2651e-utable-without-a-third-view/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/qtts-QTTS-trained-voice-is-2651e-utable-without-a-third-view/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/qtts-QTTS-trained-voice-is-2651e-utable-without-a-third-view/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    tests/browser/qtts.spec.js:766:1 › QTTS trained voice is explicitly labeled buffered unverified and immutable without a third view 
+  1 passed (12.3s)

@@ -1,0 +1,1 @@
+{"baseline_step12": true, "full_qwen_model_loaded": false, "gpu_executed": false, "network_forbidden": true, "actual_faster_import_leaves_qwen_unloaded": true, "install_status": "not_applicable", "passed": true, "original_error_reproduced": "'MimiConfig' object has no attribute 'rope_theta'", "real_mimi_initialization_failed": true}

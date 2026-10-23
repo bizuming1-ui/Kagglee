@@ -1,0 +1,8 @@
+{"round": 1, "training_input_http_passed": true, "synthetic_pcm16_wav_only": true, "transcripts_per_sample": 2, "fixed_hash_tamper_rejected": true, "source_deletion_does_not_remove_copy": true, "no_new_model_job": true, "training_verified": false}
+{"round": 1, "passed": true, "real_go_analyst_http": true, "upload_above_json_budget": 1049088, "process_restart_restored": true, "corrupt_audio_processing": "expected_error", "raw_hashes_unchanged": true, "training_verified": false}
+{"round": 2, "training_input_http_passed": true, "synthetic_pcm16_wav_only": true, "transcripts_per_sample": 2, "fixed_hash_tamper_rejected": true, "source_deletion_does_not_remove_copy": true, "no_new_model_job": true, "training_verified": false}
+{"round": 2, "passed": true, "real_go_analyst_http": true, "upload_above_json_budget": 1049088, "process_restart_restored": true, "corrupt_audio_processing": "expected_error", "raw_hashes_unchanged": true, "training_verified": false}
+{"round": 3, "training_input_http_passed": true, "synthetic_pcm16_wav_only": true, "transcripts_per_sample": 2, "fixed_hash_tamper_rejected": true, "source_deletion_does_not_remove_copy": true, "no_new_model_job": true, "training_verified": false}
+{"round": 3, "passed": true, "real_go_analyst_http": true, "upload_above_json_budget": 1049088, "process_restart_restored": true, "corrupt_audio_processing": "expected_error", "raw_hashes_unchanged": true, "training_verified": false}
+LIBRARY HTTP: 3/3 passed; corrupt processing correctly failed, NOT model/decoder success or training.
+TRAINING INPUT HTTP: 3/3 passed. No tokenizer, model, optimizer or actual rank execution.

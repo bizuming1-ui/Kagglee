@@ -1,0 +1,14 @@
+
+Running 6 tests using 1 worker
+
+
+  ✓  1 tests/browser/qtts.spec.js:819:1 › QTTS step15 creation defers optional GPU calibration by default without removing manual controls (1.2s)
+  ✓  2 tests/browser/qtts.spec.js:844:1 › QTTS step17 long-reference context is explicit, submitted and reset on lock (1.7s)
+
+  ✓  3 tests/browser/qtts.spec.js:819:1 › QTTS step15 creation defers optional GPU calibration by default without removing manual controls (2.4s)
+  ✓  4 tests/browser/qtts.spec.js:844:1 › QTTS step17 long-reference context is explicit, submitted and reset on lock (1.2s)
+
+  ✓  5 tests/browser/qtts.spec.js:819:1 › QTTS step15 creation defers optional GPU calibration by default without removing manual controls (1.2s)
+  ✓  6 tests/browser/qtts.spec.js:844:1 › QTTS step17 long-reference context is explicit, submitted and reset on lock (1.8s)
+
+  6 passed (15.7s)

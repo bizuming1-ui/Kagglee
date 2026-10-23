@@ -1,0 +1,49 @@
+..............12:38:50 [worker0] WARNING resident model: high allocated VRAM 14000MB; inspect actual headroom
+12:38:50 [worker0] WARNING requesting graceful restart (alloc=14000MB served=700)
+.12:38:50 [supervisor] ERROR worker0 fatal configuration error; stopping retries: MimiConfig rope_theta
+...✗ fatal worker configuration error; stopping startup (see worker logs)
+✗ supervisor recorded fatal worker configuration error; stopping startup
+.12:38:50 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+AttributeError: 'MimiConfig' object has no attribute 'rope_theta'
+12:38:50 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+qwen_compat.BackendCompatibilityError: bad config
+12:38:50 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: temporary IO
+.
+----------------------------------------------------------------------
+Ran 20 tests in 0.034s
+
+OK

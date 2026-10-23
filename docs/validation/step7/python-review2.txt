@@ -1,0 +1,37 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_bad_codes_never_publish (test_training_codes.CodeTests.test_bad_codes_never_publish) ... ok
+test_bad_pin_does_not_load_model_or_leave_lease (test_training_codes.CodeTests.test_bad_pin_does_not_load_model_or_leave_lease) ... ok
+test_cancel_after_encode_rolls_back_and_releases (test_training_codes.CodeTests.test_cancel_after_encode_rolls_back_and_releases) ... ok
+test_cancellation_before_model (test_training_codes.CodeTests.test_cancellation_before_model) ... ok
+test_cli_list_verify_and_delete_fixture_only (test_training_codes.CodeTests.test_cli_list_verify_and_delete_fixture_only) ... ok
+test_encoder_failure_and_write_failure_rollback (test_training_codes.CodeTests.test_encoder_failure_and_write_failure_rollback) ... ok
+test_factory_is_under_verified_lease (test_training_codes.CodeTests.test_factory_is_under_verified_lease) ... ok
+test_permissions_and_backup_exclusion (test_training_codes.CodeTests.test_permissions_and_backup_exclusion) ... ok
+test_pinned_output_verify_list_and_delete (test_training_codes.CodeTests.test_pinned_output_verify_list_and_delete) ... ok
+test_process_death_releases_input_lease (test_training_codes.CodeTests.test_process_death_releases_input_lease) ... ok
+test_quotas_and_orphan_cleanup (test_training_codes.CodeTests.test_quotas_and_orphan_cleanup) ... ok
+test_real_cli_deadline_kills_worker_and_releases_lease (test_training_codes.CodeTests.test_real_cli_deadline_kills_worker_and_releases_lease) ... ok
+test_real_cli_missing_dependencies_blocked_without_output (test_training_codes.CodeTests.test_real_cli_missing_dependencies_blocked_without_output) ... ok
+test_real_cli_sigterm_cancel_releases_lease (test_training_codes.CodeTests.test_real_cli_sigterm_cancel_releases_lease) ... ok
+test_rename_failure_preserves_input (test_training_codes.CodeTests.test_rename_failure_preserves_input) ... ok
+test_source_change_during_encoding_prevents_publication (test_training_codes.CodeTests.test_source_change_during_encoding_prevents_publication) ... ok
+test_source_lease_blocks_delete_but_not_other_dataset_list (test_training_codes.CodeTests.test_source_lease_blocks_delete_but_not_other_dataset_list) ... ok
+test_symlink_and_hardlink_codes_rejected (test_training_codes.CodeTests.test_symlink_and_hardlink_codes_rejected) ... ok
+test_tamper_audio_index_and_membership (test_training_codes.CodeTests.test_tamper_audio_index_and_membership) ... ok
+test_transaction_full_coverage_and_independent_copies (test_training_codes.CodeTests.test_transaction_full_coverage_and_independent_copies) ... ok
+test_adapter_refuses_missing_or_multiple_sample_results (test_training_codes.ModelTests.test_adapter_refuses_missing_or_multiple_sample_results) ... ok
+test_cli_fingerprint_no_model_load (test_training_codes.ModelTests.test_cli_fingerprint_no_model_load) ... ok
+test_cli_rejects_missing_directory_without_path_leak (test_training_codes.ModelTests.test_cli_rejects_missing_directory_without_path_leak) ... ok
+test_fingerprint_deterministic_and_changes (test_training_codes.ModelTests.test_fingerprint_deterministic_and_changes) ... ok
+test_missing_model_and_bad_pin_no_dependency_load (test_training_codes.ModelTests.test_missing_model_and_bad_pin_no_dependency_load) ... ok
+test_pickle_links_and_index_escape_rejected (test_training_codes.ModelTests.test_pickle_links_and_index_escape_rejected) ... ok
+test_wrong_model_shapes_and_remote_code_rejected (test_training_codes.ModelTests.test_wrong_model_shapes_and_remote_code_rejected) ... ok
+test_real_group_termination_kills_descendant_after_leader_exits (test_training_codes.ProcessTests.test_real_group_termination_kills_descendant_after_leader_exits) ... ok
+test_scrubbed_cpu_offline_environment (test_training_codes.ProcessTests.test_scrubbed_cpu_offline_environment) ... ok
+test_timeout_and_cancel_stop_worker_group (test_training_codes.ProcessTests.test_timeout_and_cancel_stop_worker_group) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 5.170s
+
+OK

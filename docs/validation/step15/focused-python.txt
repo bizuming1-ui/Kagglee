@@ -1,0 +1,43 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_cpu_asr_reuse_does_not_keep_cuda_model (test_step15.BuildCostTests.test_cpu_asr_reuse_does_not_keep_cuda_model) ... ok
+test_direct_api_default_does_not_request_gpu_calibration (test_step15.BuildCostTests.test_direct_api_default_does_not_request_gpu_calibration) ... ok
+test_embeddings_cached_by_samples_not_name_and_private_per_build (test_step15.BuildCostTests.test_embeddings_cached_by_samples_not_name_and_private_per_build) ... ok
+test_embeddings_entry_budget_is_bounded (test_step15.BuildCostTests.test_embeddings_entry_budget_is_bounded) ... ok
+test_final_build_receipt_is_persisted_not_lost_after_calibration (test_step15.BuildCostTests.test_final_build_receipt_is_persisted_not_lost_after_calibration) ... 14:49:51 [analyst] INFO job test   3.0% decode + denoise a.wav
+14:49:51 [analyst] INFO job test  28.0% ASR a.wav
+14:49:51 [analyst] INFO job test  55.0% scoring candidate anchors
+14:49:51 [analyst] INFO job test  70.0% extracting real breaths + prosody statistics
+14:49:51 [analyst] INFO job test  82.0% loading profile on both GPU workers (voice-clone prompt cache)
+14:49:51 [analyst] INFO job test 100.0% done in 0.0 s
+ok
+test_full_aligned_sixteen_second_manual_clip_is_not_truncated_to_fourteen (test_step15.BuildCostTests.test_full_aligned_sixteen_second_manual_clip_is_not_truncated_to_fourteen) ... 14:49:51 [analyst] INFO job test   3.0% decode + denoise a.wav
+14:49:51 [analyst] INFO job test  28.0% ASR a.wav
+14:49:51 [analyst] INFO job test  55.0% scoring candidate anchors
+14:49:51 [analyst] INFO job test  70.0% extracting real breaths + prosody statistics
+14:49:51 [analyst] INFO job test  82.0% loading profile on both GPU workers (voice-clone prompt cache)
+14:49:51 [analyst] INFO job test 100.0% done in 0.0 s
+ok
+test_long_segment_is_rejected_instead_of_truncating_audio_with_full_text (test_step15.BuildCostTests.test_long_segment_is_rejected_instead_of_truncating_audio_with_full_text) ... 14:49:51 [analyst] INFO job test   3.0% decode + denoise a.wav
+14:49:51 [analyst] INFO job test  28.0% ASR a.wav
+14:49:51 [analyst] INFO job test  55.0% scoring candidate anchors
+14:49:51 [analyst] ERROR profile build failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/analyst.py", line 699, in build_profile
+    raise ValueError("no aligned 2.5-16 s speech segment; supply a short clip with matching text or review timestamped segments; refusing to truncate audio with its full transcript")
+ValueError: no aligned 2.5-16 s speech segment; supply a short clip with matching text or review timestamped segments; refusing to truncate audio with its full transcript
+14:49:51 [analyst] INFO job test  55.0% FAILED: no aligned 2.5-16 s speech segment; supply a short clip with matching text or review timestamped segments; refusing to truncate audio with its full transcript
+ok
+test_hot_input_is_limited_not_wrapped (test_step15.LoudnessTests.test_hot_input_is_limited_not_wrapped) ... ok
+test_new_target_is_louder_on_low_level_signal_without_overflow (test_step15.LoudnessTests.test_new_target_is_louder_on_low_level_signal_without_overflow) ... ok
+test_output_target_has_safe_finite_bounds_and_fallback (test_step15.LoudnessTests.test_output_target_has_safe_finite_bounds_and_fallback) ... ok
+test_complete_worker_stream_only_has_silent_lead_and_generated_signal (test_step15.ReferenceIsolationTests.test_complete_worker_stream_only_has_silent_lead_and_generated_signal) ... ok
+test_generation_never_conditions_on_reference_text_or_codes (test_step15.ReferenceIsolationTests.test_generation_never_conditions_on_reference_text_or_codes) ... ok
+test_loading_old_profile_never_opens_breath_wav (test_step15.ReferenceIsolationTests.test_loading_old_profile_never_opens_breath_wav) ... ok
+test_old_reference_environment_cannot_splice_nonzero_pcm (test_step15.ReferenceIsolationTests.test_old_reference_environment_cannot_splice_nonzero_pcm) ... ok
+test_profile_warmup_uses_same_isolated_prompt (test_step15.ReferenceIsolationTests.test_profile_warmup_uses_same_isolated_prompt) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.152s
+
+OK

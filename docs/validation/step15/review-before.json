@@ -1,0 +1,2246 @@
+[
+  {
+    "round": 1,
+    "files": [
+      {
+        "path": "LICENSE-QWEN-DERIVED.txt",
+        "sha256": "a44a6081c73ad75f0255bb2bb5cab74ef1829565a895a24e53a4f11290ab7655",
+        "bytes": 11343
+      },
+      {
+        "path": "MEMO.md",
+        "sha256": "031e1d4caac6400df3e6e6f007b9df3e32e8576e72324ff0dc5eac2b489695c3",
+        "bytes": 27148
+      },
+      {
+        "path": "go/gateway/fidelity_test.go",
+        "sha256": "a74c4ec1246d8246124cb88ce03c8932be7413e876fbf454e12495bdc33fd966",
+        "bytes": 1326
+      },
+      {
+        "path": "go/gateway/go.mod",
+        "sha256": "00f1a160ee5ea066ed545d93f8c6920689ddbea2bb10006107eec99804871a41",
+        "bytes": 29
+      },
+      {
+        "path": "go/gateway/llm.go",
+        "sha256": "23809b1c724bad01588a827f06bcdf05d1b4d23da5eb6372d0fc40b6d9ddfdda",
+        "bytes": 4182
+      },
+      {
+        "path": "go/gateway/main.go",
+        "sha256": "9fdf8f817903d4beba23c44891d999cbecd75d0104f87dbeacd9eaca77ca675f",
+        "bytes": 13594
+      },
+      {
+        "path": "go/gateway/preflight_test.go",
+        "sha256": "21d832143de74eb68e6758b2bc6d741b16132c820d225ffa7b150ca3e266d657",
+        "bytes": 2248
+      },
+      {
+        "path": "go/gateway/reliability_test.go",
+        "sha256": "3e039fa7ccaddfcfd813b0c06e657d49e1a076fe19844f097c263eef08a04d20",
+        "bytes": 5492
+      },
+      {
+        "path": "go/gateway/scheduler.go",
+        "sha256": "18992a7a212e3b967bea6183003952af775ca4db2cefd2270c48e664c4965323",
+        "bytes": 10388
+      },
+      {
+        "path": "go/gateway/security.go",
+        "sha256": "bae7f55fd5f1c92c9f96f31ad8b8c8653926f21180abd0f0f12a54bb983004aa",
+        "bytes": 7340
+      },
+      {
+        "path": "go/gateway/security_test.go",
+        "sha256": "a6b3a2126469b9e4c21f3336961c44ae84adf282f2db0812276edae3ab1c3484",
+        "bytes": 11391
+      },
+      {
+        "path": "go/gateway/segmenter.go",
+        "sha256": "fb2b6ac8e3f56290d8717c0c6f9b0715b839b330dd75a98c8d6e1854c99962e2",
+        "bytes": 9394
+      },
+      {
+        "path": "go/gateway/segmenter_test.go",
+        "sha256": "0d8171656e80e8423755d82f6d59797e8739bfb4ccfcd25f9a639ff1ac8bdd8d",
+        "bytes": 3506
+      },
+      {
+        "path": "go/gateway/session.go",
+        "sha256": "222d67be0b16914c84f816ff79a25cd3b564b83e682ed91e9a1b990cc3763ee0",
+        "bytes": 14667
+      },
+      {
+        "path": "py/access_control.py",
+        "sha256": "8e90f2b9fe6cf98ca0192bcf1684158cc84f1609ec3ec1d76e2968455d1193d3",
+        "bytes": 2810
+      },
+      {
+        "path": "py/adapter_engine.py",
+        "sha256": "01ae6434d71db5a04ccfa1e73f36495ba6e67deee7ae4477133297272cb37478",
+        "bytes": 6571
+      },
+      {
+        "path": "py/analyst.py",
+        "sha256": "e53349e72906b145ddc17ab134e63e0acba883c533927f65757d4c1d0cffee21",
+        "bytes": 49698
+      },
+      {
+        "path": "py/audio_rt.py",
+        "sha256": "be55abe211192144b96c5e89ad24b233f2e56cba193d9577b0e00e46b10b95d7",
+        "bytes": 8694
+      },
+      {
+        "path": "py/bootstrap.py",
+        "sha256": "f71a27356180291de1f15b87661110dbb39bf7a46e85e40875b00c3383d5f9dd",
+        "bytes": 20752
+      },
+      {
+        "path": "py/gpu_ownership.py",
+        "sha256": "2561308fdc916e8fbe3afad009fbfeb5b1f0d4c19a98e3bcb9d6828694b22f7d",
+        "bytes": 7098
+      },
+      {
+        "path": "py/library_api.py",
+        "sha256": "8222c036f032735aa015c2db3c2dac9314154097e7f9ae63835137f46ebe7998",
+        "bytes": 9270
+      },
+      {
+        "path": "py/lora_adapter.py",
+        "sha256": "93ead0856e2289dc8d6f90b650435b6a50170a2941dc1f3f4ea02615fd60e718",
+        "bytes": 4473
+      },
+      {
+        "path": "py/persist.py",
+        "sha256": "edc7e0147e9dc69fa8ef8eba65f875179b2720f94d5e2416de098cf81e69b0e1",
+        "bytes": 4269
+      },
+      {
+        "path": "py/qtts_common.py",
+        "sha256": "eb7bcf92c7cd73431ac70ff6281dca443a20b7ba6ca80575ef007043c52fe210",
+        "bytes": 6250
+      },
+      {
+        "path": "py/qwen_compat.py",
+        "sha256": "1ed62dfd25edb86eda695bf767bfa0ca0cb10b6da916f4b164500e8e52a4afb8",
+        "bytes": 5165
+      },
+      {
+        "path": "py/resource_limits.py",
+        "sha256": "831c3b839566ba012d2788394f8d62927e29a4d49e02dd2fdc82a5ddb92740e1",
+        "bytes": 7017
+      },
+      {
+        "path": "py/supervisor.py",
+        "sha256": "77493d2401bf316abea318b9a4929dca2cbf2df841eb6e2c7f5a8208cc5e2fec",
+        "bytes": 9861
+      },
+      {
+        "path": "py/trained_profiles.py",
+        "sha256": "58760a3255cb8399271fb3bd0099a11704d9f603a3cc0d57ff6a0296ed26b8e7",
+        "bytes": 10740
+      },
+      {
+        "path": "py/training_codes.py",
+        "sha256": "78ac55d6172d392c02d5b1a775e8ed82a404efbbdef98273d8887e7d4db0e384",
+        "bytes": 23767
+      },
+      {
+        "path": "py/training_data.py",
+        "sha256": "0b9203428dfdfeacec4c82f601414bb50b4a499d6cf7aad214efe7d6c8ccf5e0",
+        "bytes": 19221
+      },
+      {
+        "path": "py/training_job.py",
+        "sha256": "51a7566fa636559372b2780d7044cc29dbe2c5767214948f25629572daff5242",
+        "bytes": 14079
+      },
+      {
+        "path": "py/tts_dataset.py",
+        "sha256": "74392d601c2bef75a223c58d869af9b6175affc7306d88502ba37492acd298db",
+        "bytes": 6551
+      },
+      {
+        "path": "py/tts_training.py",
+        "sha256": "4403860dcc2a2aad78cc163bd0d6384a64032aef1d44fb7c70c1daa99f9f83cb",
+        "bytes": 12460
+      },
+      {
+        "path": "py/voice_library.py",
+        "sha256": "c86f833eaf0b5e286e12b50744a42b5bafa15fefe54996c3e33790729ad05fea",
+        "bytes": 18183
+      },
+      {
+        "path": "py/worker.py",
+        "sha256": "59f785badd4513744d5dfc4f45812e7601a87b8300f62fc7ab302c8a77bf4fb4",
+        "bytes": 27913
+      },
+      {
+        "path": "rust/audio_rt/Cargo.toml",
+        "sha256": "e032c80857b9e45bfc7bcf4d56c5827fcd9a5ceeac839f0ed9716aea2ebefd2b",
+        "bytes": 326
+      },
+      {
+        "path": "rust/audio_rt/src/lib.rs",
+        "sha256": "97cb3db3561866ad9cc8f48b9f89003bbeae45fe3207a6082c3c7dd264a8ed45",
+        "bytes": 12887
+      },
+      {
+        "path": "tools/backend_probe.py",
+        "sha256": "c22f220e7a68d2f47cbe71571673a00334334a7741949df83ab430f36f97b234",
+        "bytes": 11606
+      },
+      {
+        "path": "tools/e2e_check.py",
+        "sha256": "188e1e22948d20b72ee41e062cd7c8e36bd482901664f923aa23c9ead5a12dae",
+        "bytes": 7427
+      },
+      {
+        "path": "tools/encode_training.py",
+        "sha256": "324a88f9fdba7ad2fb713e79aad52cae099fd57f38c588732b25040da43022ef",
+        "bytes": 6922
+      },
+      {
+        "path": "tools/resource_control.py",
+        "sha256": "237d1abee6d7470ac7136973334c7cf065a5ad0727977c04fea024a493777437",
+        "bytes": 1930
+      },
+      {
+        "path": "tools/selftest.py",
+        "sha256": "b12f9e0af45d18e7c85b6a00e1d2c0e05b1cffc18a998f1d6cd90c8f57f27124",
+        "bytes": 7022
+      },
+      {
+        "path": "tools/train_tts.py",
+        "sha256": "3fa354d0d352fea8de4b6d650fdceae6f206cfae352861dd163e3871dfb197eb",
+        "bytes": 2662
+      },
+      {
+        "path": "tools/trained_voice.py",
+        "sha256": "bca66c9e187414de35bcb1d29451a2dd1e476cb491fc8e641d5007c723047dc1",
+        "bytes": 1756
+      },
+      {
+        "path": "tools/watermark_check.py",
+        "sha256": "43de4bea8040ee09e88961d7f9997ea3274b39cc82c09421b291b731a22f9f3f",
+        "bytes": 6273
+      },
+      {
+        "path": "web/app.js",
+        "sha256": "644c31e7cc40b1426e7f54e8ea9a76c94bf2fcdfb2e0d2adb31b60a3d964d53a",
+        "bytes": 67108
+      },
+      {
+        "path": "web/index.html",
+        "sha256": "c05b923968e1a74d3d04bd7f8a814eff65b8aa23d0ef431ac6c9deafc5f3a57d",
+        "bytes": 23303
+      },
+      {
+        "path": "web/recorder.js",
+        "sha256": "01b6602be2f9c0b650e4435f193079bf82f7ba614dd89d04b43034a6c93b47c5",
+        "bytes": 12054
+      }
+    ],
+    "recommendations": 100,
+    "entries": [
+      [
+        "S15-R1-001",
+        "worker.RealEngine",
+        "禁止参考码进入解码器"
+      ],
+      [
+        "S15-R1-002",
+        "worker.RealEngine",
+        "仅以说话人向量条件生成"
+      ],
+      [
+        "S15-R1-003",
+        "worker.RealEngine",
+        "生成调用不传参考正文"
+      ],
+      [
+        "S15-R1-004",
+        "worker.RealEngine",
+        "预热采用相同向量模式"
+      ],
+      [
+        "S15-R1-005",
+        "worker.RealEngine",
+        "dtype回退后仍用向量模式"
+      ],
+      [
+        "S15-R1-006",
+        "worker.RealEngine",
+        "不开放环境变量回退ICL"
+      ],
+      [
+        "S15-R1-007",
+        "worker.RealEngine",
+        "明确韵律相似度可能变化"
+      ],
+      [
+        "S15-R1-008",
+        "worker.RealEngine",
+        "核对Faster0.5.4实际源码"
+      ],
+      [
+        "S15-R1-009",
+        "worker.RealEngine",
+        "生成采样率仍严格24k"
+      ],
+      [
+        "S15-R1-010",
+        "worker.RealEngine",
+        "生成器取消时仍close"
+      ],
+      [
+        "S15-R1-011",
+        "worker.lead_audio",
+        "废止reference呼吸拼接开关"
+      ],
+      [
+        "S15-R1-012",
+        "worker.lead_audio",
+        "前置停顿仅零样本"
+      ],
+      [
+        "S15-R1-013",
+        "worker.lead_audio",
+        "旧breath_files不能被读取"
+      ],
+      [
+        "S15-R1-014",
+        "worker.lead_audio",
+        "无参考片段也不造噪声"
+      ],
+      [
+        "S15-R1-015",
+        "worker.lead_audio",
+        "保留模型自身呼吸"
+      ],
+      [
+        "S15-R1-016",
+        "worker.lead_audio",
+        "不把去呼吸等同自然音色"
+      ],
+      [
+        "S15-R1-017",
+        "worker.lead_audio",
+        "暂停最长仍1500ms"
+      ],
+      [
+        "S15-R1-018",
+        "worker.lead_audio",
+        "负暂停仍归零"
+      ],
+      [
+        "S15-R1-019",
+        "worker.lead_audio",
+        "随机种子不能改变静音"
+      ],
+      [
+        "S15-R1-020",
+        "worker.lead_audio",
+        "人工试听仍是门禁"
+      ],
+      [
+        "S15-R1-021",
+        "worker.run_job",
+        "PCM来源只接受模型和零停顿"
+      ],
+      [
+        "S15-R1-022",
+        "worker.run_job",
+        "不因模型失败回放anchor"
+      ],
+      [
+        "S15-R1-023",
+        "worker.run_job",
+        "不因空结果播放参考"
+      ],
+      [
+        "S15-R1-024",
+        "worker.run_job",
+        "保留nonfinite拒绝"
+      ],
+      [
+        "S15-R1-025",
+        "worker.run_job",
+        "保留异常统计"
+      ],
+      [
+        "S15-R1-026",
+        "worker.run_job",
+        "保留裁边"
+      ],
+      [
+        "S15-R1-027",
+        "worker.run_job",
+        "保留尾部淡出"
+      ],
+      [
+        "S15-R1-028",
+        "worker.run_job",
+        "保留取消检查"
+      ],
+      [
+        "S15-R1-029",
+        "worker.run_job",
+        "保留每GPU互斥"
+      ],
+      [
+        "S15-R1-030",
+        "worker.run_job",
+        "日志报告生成隔离模式"
+      ],
+      [
+        "S15-R1-031",
+        "adapter_engine",
+        "核对原生向量模式"
+      ],
+      [
+        "S15-R1-032",
+        "adapter_engine",
+        "不能把训练参考当输出"
+      ],
+      [
+        "S15-R1-033",
+        "adapter_engine",
+        "固定adapter哈希"
+      ],
+      [
+        "S15-R1-034",
+        "adapter_engine",
+        "损坏adapter不能回退Base"
+      ],
+      [
+        "S15-R1-035",
+        "adapter_engine",
+        "不改变句级缓冲标记"
+      ],
+      [
+        "S15-R1-036",
+        "adapter_engine",
+        "不混驻两种引擎"
+      ],
+      [
+        "S15-R1-037",
+        "adapter_engine",
+        "保持取消丢弃迟到wave"
+      ],
+      [
+        "S15-R1-038",
+        "adapter_engine",
+        "训练候选不自动激活"
+      ],
+      [
+        "S15-R1-039",
+        "adapter_engine",
+        "新进程重载仍需实机"
+      ],
+      [
+        "S15-R1-040",
+        "adapter_engine",
+        "无训练证据不称已训练"
+      ],
+      [
+        "S15-R1-041",
+        "朗读内容",
+        "不拼接参考文本"
+      ],
+      [
+        "S15-R1-042",
+        "朗读内容",
+        "不修改目标文本"
+      ],
+      [
+        "S15-R1-043",
+        "朗读内容",
+        "不补额外说明"
+      ],
+      [
+        "S15-R1-044",
+        "朗读内容",
+        "不以字符串一致冒充声学一致"
+      ],
+      [
+        "S15-R1-045",
+        "朗读内容",
+        "不自动删数字"
+      ],
+      [
+        "S15-R1-046",
+        "朗读内容",
+        "不自动删专名"
+      ],
+      [
+        "S15-R1-047",
+        "朗读内容",
+        "不裁词谋求首声"
+      ],
+      [
+        "S15-R1-048",
+        "朗读内容",
+        "短句仍需语言条件"
+      ],
+      [
+        "S15-R1-049",
+        "朗读内容",
+        "模型幻觉单独披露"
+      ],
+      [
+        "S15-R1-050",
+        "朗读内容",
+        "严格ASR拒播仍未实现"
+      ],
+      [
+        "S15-R1-051",
+        "PCM隔离回归",
+        "以非零参考bank诱捕混入"
+      ],
+      [
+        "S15-R1-052",
+        "PCM隔离回归",
+        "旧环境reference模式也应静音"
+      ],
+      [
+        "S15-R1-053",
+        "PCM隔离回归",
+        "断言生成xvec_only为真"
+      ],
+      [
+        "S15-R1-054",
+        "PCM隔离回归",
+        "断言参考正文为空"
+      ],
+      [
+        "S15-R1-055",
+        "PCM隔离回归",
+        "预热断言与生成相同"
+      ],
+      [
+        "S15-R1-056",
+        "PCM隔离回归",
+        "加载不得读取呼吸文件"
+      ],
+      [
+        "S15-R1-057",
+        "PCM隔离回归",
+        "输出频率标记与参考分离"
+      ],
+      [
+        "S15-R1-058",
+        "PCM隔离回归",
+        "完整协议中仅模型PCM"
+      ],
+      [
+        "S15-R1-059",
+        "PCM隔离回归",
+        "失败流不得补参考"
+      ],
+      [
+        "S15-R1-060",
+        "PCM隔离回归",
+        "重复三轮隔离验证"
+      ],
+      [
+        "S15-R1-061",
+        "音量",
+        "新旧档案统一输出目标"
+      ],
+      [
+        "S15-R1-062",
+        "音量",
+        "默认目标从负21到负18dBFS"
+      ],
+      [
+        "S15-R1-063",
+        "音量",
+        "保留可调输出目标"
+      ],
+      [
+        "S15-R1-064",
+        "音量",
+        "合法范围负24到负14"
+      ],
+      [
+        "S15-R1-065",
+        "音量",
+        "非数字回退默认"
+      ],
+      [
+        "S15-R1-066",
+        "音量",
+        "NaN回退默认"
+      ],
+      [
+        "S15-R1-067",
+        "音量",
+        "正无穷回退默认"
+      ],
+      [
+        "S15-R1-068",
+        "音量",
+        "不修改原始录音"
+      ],
+      [
+        "S15-R1-069",
+        "音量",
+        "保持软限幅"
+      ],
+      [
+        "S15-R1-070",
+        "音量",
+        "不承诺所有音量都增加3dB"
+      ],
+      [
+        "S15-R1-071",
+        "DSP质量",
+        "验证低电平正弦增益"
+      ],
+      [
+        "S15-R1-072",
+        "DSP质量",
+        "验证满幅输入不溢出"
+      ],
+      [
+        "S15-R1-073",
+        "DSP质量",
+        "保留DC blocker"
+      ],
+      [
+        "S15-R1-074",
+        "DSP质量",
+        "保留段间淡入"
+      ],
+      [
+        "S15-R1-075",
+        "DSP质量",
+        "保留尾部淡出"
+      ],
+      [
+        "S15-R1-076",
+        "DSP质量",
+        "Rust与NumPy参数相同"
+      ],
+      [
+        "S15-R1-077",
+        "DSP质量",
+        "不新增C++重复实现"
+      ],
+      [
+        "S15-R1-078",
+        "DSP质量",
+        "采样率不降"
+      ],
+      [
+        "S15-R1-079",
+        "DSP质量",
+        "不硬裁削峰"
+      ],
+      [
+        "S15-R1-080",
+        "DSP质量",
+        "测量使用非语音时标明合成"
+      ],
+      [
+        "S15-R1-081",
+        "GPU显存",
+        "1.7B FP16权重估算约3.4GB"
+      ],
+      [
+        "S15-R1-082",
+        "GPU显存",
+        "两模型权重不是全部显存"
+      ],
+      [
+        "S15-R1-083",
+        "GPU显存",
+        "计入codec和speaker"
+      ],
+      [
+        "S15-R1-084",
+        "GPU显存",
+        "计入KV cache"
+      ],
+      [
+        "S15-R1-085",
+        "GPU显存",
+        "计入CUDA graph"
+      ],
+      [
+        "S15-R1-086",
+        "GPU显存",
+        "计入分配器碎片"
+      ],
+      [
+        "S15-R1-087",
+        "GPU显存",
+        "同卡并发争计算带宽"
+      ],
+      [
+        "S15-R1-088",
+        "GPU显存",
+        "不默认每卡两模型"
+      ],
+      [
+        "S15-R1-089",
+        "GPU显存",
+        "以两卡各一模型为基线"
+      ],
+      [
+        "S15-R1-090",
+        "GPU显存",
+        "真双副本收益必须实测"
+      ],
+      [
+        "S15-R1-091",
+        "所有权与安全",
+        "保留单可见GPU契约"
+      ],
+      [
+        "S15-R1-092",
+        "所有权与安全",
+        "不绕过fleet租约"
+      ],
+      [
+        "S15-R1-093",
+        "所有权与安全",
+        "不删除锁"
+      ],
+      [
+        "S15-R1-094",
+        "所有权与安全",
+        "不按旧PID杀"
+      ],
+      [
+        "S15-R1-095",
+        "所有权与安全",
+        "不安装未知CUDA补丁"
+      ],
+      [
+        "S15-R1-096",
+        "所有权与安全",
+        "不输出口令"
+      ],
+      [
+        "S15-R1-097",
+        "所有权与安全",
+        "不保存用户参考到报告"
+      ],
+      [
+        "S15-R1-098",
+        "所有权与安全",
+        "不自动上传录音"
+      ],
+      [
+        "S15-R1-099",
+        "所有权与安全",
+        "不更改已冻结14"
+      ],
+      [
+        "S15-R1-100",
+        "所有权与安全",
+        "保持3000正式工作台"
+      ]
+    ]
+  },
+  {
+    "round": 2,
+    "files": [
+      {
+        "path": "LICENSE-QWEN-DERIVED.txt",
+        "sha256": "a44a6081c73ad75f0255bb2bb5cab74ef1829565a895a24e53a4f11290ab7655",
+        "bytes": 11343
+      },
+      {
+        "path": "MEMO.md",
+        "sha256": "031e1d4caac6400df3e6e6f007b9df3e32e8576e72324ff0dc5eac2b489695c3",
+        "bytes": 27148
+      },
+      {
+        "path": "go/gateway/fidelity_test.go",
+        "sha256": "a74c4ec1246d8246124cb88ce03c8932be7413e876fbf454e12495bdc33fd966",
+        "bytes": 1326
+      },
+      {
+        "path": "go/gateway/go.mod",
+        "sha256": "00f1a160ee5ea066ed545d93f8c6920689ddbea2bb10006107eec99804871a41",
+        "bytes": 29
+      },
+      {
+        "path": "go/gateway/llm.go",
+        "sha256": "23809b1c724bad01588a827f06bcdf05d1b4d23da5eb6372d0fc40b6d9ddfdda",
+        "bytes": 4182
+      },
+      {
+        "path": "go/gateway/main.go",
+        "sha256": "9fdf8f817903d4beba23c44891d999cbecd75d0104f87dbeacd9eaca77ca675f",
+        "bytes": 13594
+      },
+      {
+        "path": "go/gateway/preflight_test.go",
+        "sha256": "21d832143de74eb68e6758b2bc6d741b16132c820d225ffa7b150ca3e266d657",
+        "bytes": 2248
+      },
+      {
+        "path": "go/gateway/reliability_test.go",
+        "sha256": "3e039fa7ccaddfcfd813b0c06e657d49e1a076fe19844f097c263eef08a04d20",
+        "bytes": 5492
+      },
+      {
+        "path": "go/gateway/scheduler.go",
+        "sha256": "18992a7a212e3b967bea6183003952af775ca4db2cefd2270c48e664c4965323",
+        "bytes": 10388
+      },
+      {
+        "path": "go/gateway/security.go",
+        "sha256": "bae7f55fd5f1c92c9f96f31ad8b8c8653926f21180abd0f0f12a54bb983004aa",
+        "bytes": 7340
+      },
+      {
+        "path": "go/gateway/security_test.go",
+        "sha256": "a6b3a2126469b9e4c21f3336961c44ae84adf282f2db0812276edae3ab1c3484",
+        "bytes": 11391
+      },
+      {
+        "path": "go/gateway/segmenter.go",
+        "sha256": "fb2b6ac8e3f56290d8717c0c6f9b0715b839b330dd75a98c8d6e1854c99962e2",
+        "bytes": 9394
+      },
+      {
+        "path": "go/gateway/segmenter_test.go",
+        "sha256": "0d8171656e80e8423755d82f6d59797e8739bfb4ccfcd25f9a639ff1ac8bdd8d",
+        "bytes": 3506
+      },
+      {
+        "path": "go/gateway/session.go",
+        "sha256": "222d67be0b16914c84f816ff79a25cd3b564b83e682ed91e9a1b990cc3763ee0",
+        "bytes": 14667
+      },
+      {
+        "path": "py/access_control.py",
+        "sha256": "8e90f2b9fe6cf98ca0192bcf1684158cc84f1609ec3ec1d76e2968455d1193d3",
+        "bytes": 2810
+      },
+      {
+        "path": "py/adapter_engine.py",
+        "sha256": "01ae6434d71db5a04ccfa1e73f36495ba6e67deee7ae4477133297272cb37478",
+        "bytes": 6571
+      },
+      {
+        "path": "py/analyst.py",
+        "sha256": "e53349e72906b145ddc17ab134e63e0acba883c533927f65757d4c1d0cffee21",
+        "bytes": 49698
+      },
+      {
+        "path": "py/audio_rt.py",
+        "sha256": "be55abe211192144b96c5e89ad24b233f2e56cba193d9577b0e00e46b10b95d7",
+        "bytes": 8694
+      },
+      {
+        "path": "py/bootstrap.py",
+        "sha256": "f71a27356180291de1f15b87661110dbb39bf7a46e85e40875b00c3383d5f9dd",
+        "bytes": 20752
+      },
+      {
+        "path": "py/gpu_ownership.py",
+        "sha256": "2561308fdc916e8fbe3afad009fbfeb5b1f0d4c19a98e3bcb9d6828694b22f7d",
+        "bytes": 7098
+      },
+      {
+        "path": "py/library_api.py",
+        "sha256": "8222c036f032735aa015c2db3c2dac9314154097e7f9ae63835137f46ebe7998",
+        "bytes": 9270
+      },
+      {
+        "path": "py/lora_adapter.py",
+        "sha256": "93ead0856e2289dc8d6f90b650435b6a50170a2941dc1f3f4ea02615fd60e718",
+        "bytes": 4473
+      },
+      {
+        "path": "py/persist.py",
+        "sha256": "edc7e0147e9dc69fa8ef8eba65f875179b2720f94d5e2416de098cf81e69b0e1",
+        "bytes": 4269
+      },
+      {
+        "path": "py/qtts_common.py",
+        "sha256": "eb7bcf92c7cd73431ac70ff6281dca443a20b7ba6ca80575ef007043c52fe210",
+        "bytes": 6250
+      },
+      {
+        "path": "py/qwen_compat.py",
+        "sha256": "1ed62dfd25edb86eda695bf767bfa0ca0cb10b6da916f4b164500e8e52a4afb8",
+        "bytes": 5165
+      },
+      {
+        "path": "py/resource_limits.py",
+        "sha256": "831c3b839566ba012d2788394f8d62927e29a4d49e02dd2fdc82a5ddb92740e1",
+        "bytes": 7017
+      },
+      {
+        "path": "py/supervisor.py",
+        "sha256": "77493d2401bf316abea318b9a4929dca2cbf2df841eb6e2c7f5a8208cc5e2fec",
+        "bytes": 9861
+      },
+      {
+        "path": "py/trained_profiles.py",
+        "sha256": "58760a3255cb8399271fb3bd0099a11704d9f603a3cc0d57ff6a0296ed26b8e7",
+        "bytes": 10740
+      },
+      {
+        "path": "py/training_codes.py",
+        "sha256": "78ac55d6172d392c02d5b1a775e8ed82a404efbbdef98273d8887e7d4db0e384",
+        "bytes": 23767
+      },
+      {
+        "path": "py/training_data.py",
+        "sha256": "0b9203428dfdfeacec4c82f601414bb50b4a499d6cf7aad214efe7d6c8ccf5e0",
+        "bytes": 19221
+      },
+      {
+        "path": "py/training_job.py",
+        "sha256": "51a7566fa636559372b2780d7044cc29dbe2c5767214948f25629572daff5242",
+        "bytes": 14079
+      },
+      {
+        "path": "py/tts_dataset.py",
+        "sha256": "74392d601c2bef75a223c58d869af9b6175affc7306d88502ba37492acd298db",
+        "bytes": 6551
+      },
+      {
+        "path": "py/tts_training.py",
+        "sha256": "4403860dcc2a2aad78cc163bd0d6384a64032aef1d44fb7c70c1daa99f9f83cb",
+        "bytes": 12460
+      },
+      {
+        "path": "py/voice_library.py",
+        "sha256": "c86f833eaf0b5e286e12b50744a42b5bafa15fefe54996c3e33790729ad05fea",
+        "bytes": 18183
+      },
+      {
+        "path": "py/worker.py",
+        "sha256": "59f785badd4513744d5dfc4f45812e7601a87b8300f62fc7ab302c8a77bf4fb4",
+        "bytes": 27913
+      },
+      {
+        "path": "rust/audio_rt/Cargo.toml",
+        "sha256": "e032c80857b9e45bfc7bcf4d56c5827fcd9a5ceeac839f0ed9716aea2ebefd2b",
+        "bytes": 326
+      },
+      {
+        "path": "rust/audio_rt/src/lib.rs",
+        "sha256": "97cb3db3561866ad9cc8f48b9f89003bbeae45fe3207a6082c3c7dd264a8ed45",
+        "bytes": 12887
+      },
+      {
+        "path": "tools/backend_probe.py",
+        "sha256": "c22f220e7a68d2f47cbe71571673a00334334a7741949df83ab430f36f97b234",
+        "bytes": 11606
+      },
+      {
+        "path": "tools/e2e_check.py",
+        "sha256": "188e1e22948d20b72ee41e062cd7c8e36bd482901664f923aa23c9ead5a12dae",
+        "bytes": 7427
+      },
+      {
+        "path": "tools/encode_training.py",
+        "sha256": "324a88f9fdba7ad2fb713e79aad52cae099fd57f38c588732b25040da43022ef",
+        "bytes": 6922
+      },
+      {
+        "path": "tools/resource_control.py",
+        "sha256": "237d1abee6d7470ac7136973334c7cf065a5ad0727977c04fea024a493777437",
+        "bytes": 1930
+      },
+      {
+        "path": "tools/selftest.py",
+        "sha256": "b12f9e0af45d18e7c85b6a00e1d2c0e05b1cffc18a998f1d6cd90c8f57f27124",
+        "bytes": 7022
+      },
+      {
+        "path": "tools/train_tts.py",
+        "sha256": "3fa354d0d352fea8de4b6d650fdceae6f206cfae352861dd163e3871dfb197eb",
+        "bytes": 2662
+      },
+      {
+        "path": "tools/trained_voice.py",
+        "sha256": "bca66c9e187414de35bcb1d29451a2dd1e476cb491fc8e641d5007c723047dc1",
+        "bytes": 1756
+      },
+      {
+        "path": "tools/watermark_check.py",
+        "sha256": "43de4bea8040ee09e88961d7f9997ea3274b39cc82c09421b291b731a22f9f3f",
+        "bytes": 6273
+      },
+      {
+        "path": "web/app.js",
+        "sha256": "644c31e7cc40b1426e7f54e8ea9a76c94bf2fcdfb2e0d2adb31b60a3d964d53a",
+        "bytes": 67108
+      },
+      {
+        "path": "web/index.html",
+        "sha256": "c05b923968e1a74d3d04bd7f8a814eff65b8aa23d0ef431ac6c9deafc5f3a57d",
+        "bytes": 23303
+      },
+      {
+        "path": "web/recorder.js",
+        "sha256": "01b6602be2f9c0b650e4435f193079bf82f7ba614dd89d04b43034a6c93b47c5",
+        "bytes": 12054
+      }
+    ],
+    "recommendations": 100,
+    "entries": [
+      [
+        "S15-R2-001",
+        "首段分段",
+        "识别当前末尾标点等待lookahead"
+      ],
+      [
+        "S15-R2-002",
+        "首段分段",
+        "只为首段新增即时确定边界"
+      ],
+      [
+        "S15-R2-003",
+        "首段分段",
+        "句末中文标点可立即提交"
+      ],
+      [
+        "S15-R2-004",
+        "首段分段",
+        "逗号达到首段预算可提交"
+      ],
+      [
+        "S15-R2-005",
+        "首段分段",
+        "ASCII点仍等lookahead避小数"
+      ],
+      [
+        "S15-R2-006",
+        "首段分段",
+        "保留后续正常分段"
+      ],
+      [
+        "S15-R2-007",
+        "首段分段",
+        "新段保留原文"
+      ],
+      [
+        "S15-R2-008",
+        "首段分段",
+        "不等待LLM全篇完成"
+      ],
+      [
+        "S15-R2-009",
+        "首段分段",
+        "不为每token发TTS"
+      ],
+      [
+        "S15-R2-010",
+        "首段分段",
+        "短于常规阈值完整句可首发"
+      ],
+      [
+        "S15-R2-011",
+        "单位边界",
+        "英文单词不从中间拆开"
+      ],
+      [
+        "S15-R2-012",
+        "单位边界",
+        "小数12.50不拆错"
+      ],
+      [
+        "S15-R2-013",
+        "单位边界",
+        "英文缩写保留"
+      ],
+      [
+        "S15-R2-014",
+        "单位边界",
+        "标点后引号不能丢"
+      ],
+      [
+        "S15-R2-015",
+        "单位边界",
+        "跨delta空格仍保存"
+      ],
+      [
+        "S15-R2-016",
+        "单位边界",
+        "纯标点不能伪成语音"
+      ],
+      [
+        "S15-R2-017",
+        "单位边界",
+        "Unicode原样"
+      ],
+      [
+        "S15-R2-018",
+        "单位边界",
+        "组合emoji不作为词"
+      ],
+      [
+        "S15-R2-019",
+        "单位边界",
+        "无标点长句保持上限"
+      ],
+      [
+        "S15-R2-020",
+        "单位边界",
+        "最后残留仍Flush"
+      ],
+      [
+        "S15-R2-021",
+        "顺序保护",
+        "首段任务优先"
+      ],
+      [
+        "S15-R2-022",
+        "顺序保护",
+        "第二段可用另一GPU"
+      ],
+      [
+        "S15-R2-023",
+        "顺序保护",
+        "已输出失败不重放"
+      ],
+      [
+        "S15-R2-024",
+        "顺序保护",
+        "未输出失败才允许重试"
+      ],
+      [
+        "S15-R2-025",
+        "顺序保护",
+        "保留段索引"
+      ],
+      [
+        "S15-R2-026",
+        "顺序保护",
+        "保留背压高低水位"
+      ],
+      [
+        "S15-R2-027",
+        "顺序保护",
+        "保留迟滞"
+      ],
+      [
+        "S15-R2-028",
+        "顺序保护",
+        "不无限预生成"
+      ],
+      [
+        "S15-R2-029",
+        "顺序保护",
+        "取消移除排队任务"
+      ],
+      [
+        "S15-R2-030",
+        "顺序保护",
+        "健康检查不回放参考"
+      ],
+      [
+        "S15-R2-031",
+        "LLM流",
+        "保留每delta向前端推送"
+      ],
+      [
+        "S15-R2-032",
+        "LLM流",
+        "首句完成即submit"
+      ],
+      [
+        "S15-R2-033",
+        "LLM流",
+        "首token计时保留"
+      ],
+      [
+        "S15-R2-034",
+        "LLM流",
+        "首段提交计时保留"
+      ],
+      [
+        "S15-R2-035",
+        "LLM流",
+        "LLM完成计时保留"
+      ],
+      [
+        "S15-R2-036",
+        "LLM流",
+        "非法JSON报错"
+      ],
+      [
+        "S15-R2-037",
+        "LLM流",
+        "截断finish_reason报错"
+      ],
+      [
+        "S15-R2-038",
+        "LLM流",
+        "取消终止HTTP"
+      ],
+      [
+        "S15-R2-039",
+        "LLM流",
+        "不记录API密钥"
+      ],
+      [
+        "S15-R2-040",
+        "LLM流",
+        "用本地SSE延迟尾巴测试"
+      ],
+      [
+        "S15-R2-041",
+        "首声指标",
+        "区分首token和首段"
+      ],
+      [
+        "S15-R2-042",
+        "首声指标",
+        "区分模型首块和PCM"
+      ],
+      [
+        "S15-R2-043",
+        "首声指标",
+        "区分首PCM和首播"
+      ],
+      [
+        "S15-R2-044",
+        "首声指标",
+        "静音不当作人声"
+      ],
+      [
+        "S15-R2-045",
+        "首声指标",
+        "保留欠载次数"
+      ],
+      [
+        "S15-R2-046",
+        "首声指标",
+        "不以网络替身称DeepSeek实测"
+      ],
+      [
+        "S15-R2-047",
+        "首声指标",
+        "不以MockRTF称QwenRTF"
+      ],
+      [
+        "S15-R2-048",
+        "首声指标",
+        "记录首段早于LLM结束"
+      ],
+      [
+        "S15-R2-049",
+        "首声指标",
+        "没有CUDA不填GPU延迟"
+      ],
+      [
+        "S15-R2-050",
+        "首声指标",
+        "不承诺三秒内"
+      ],
+      [
+        "S15-R2-051",
+        "播放器",
+        "先不盲降全局缓冲"
+      ],
+      [
+        "S15-R2-052",
+        "播放器",
+        "保持starved恢复阈值"
+      ],
+      [
+        "S15-R2-053",
+        "播放器",
+        "保留短尾完成后启动"
+      ],
+      [
+        "S15-R2-054",
+        "播放器",
+        "停止重置ring"
+      ],
+      [
+        "S15-R2-055",
+        "播放器",
+        "迟到PCM不继续播放"
+      ],
+      [
+        "S15-R2-056",
+        "播放器",
+        "初始化失败可重试"
+      ],
+      [
+        "S15-R2-057",
+        "播放器",
+        "保留浏览器重采样"
+      ],
+      [
+        "S15-R2-058",
+        "播放器",
+        "不将gain无限放大"
+      ],
+      [
+        "S15-R2-059",
+        "播放器",
+        "不新增播放参考audio标签"
+      ],
+      [
+        "S15-R2-060",
+        "播放器",
+        "保持手机布局"
+      ],
+      [
+        "S15-R2-061",
+        "首块预算",
+        "保留默认chunk4稳定策略"
+      ],
+      [
+        "S15-R2-062",
+        "首块预算",
+        "允许显式2到8试验"
+      ],
+      [
+        "S15-R2-063",
+        "首块预算",
+        "无效环境回退4"
+      ],
+      [
+        "S15-R2-064",
+        "首块预算",
+        "后段按背压选择"
+      ],
+      [
+        "S15-R2-065",
+        "首块预算",
+        "不把chunk2必然称更快"
+      ],
+      [
+        "S15-R2-066",
+        "首块预算",
+        "重测小chunk欠载"
+      ],
+      [
+        "S15-R2-067",
+        "首块预算",
+        "记录同文同参考条件"
+      ],
+      [
+        "S15-R2-068",
+        "首块预算",
+        "预热成本单列"
+      ],
+      [
+        "S15-R2-069",
+        "首块预算",
+        "不改变max_new_tokens掩盖"
+      ],
+      [
+        "S15-R2-070",
+        "首块预算",
+        "单句质量需真人听"
+      ],
+      [
+        "S15-R2-071",
+        "线程与语言",
+        "Go保留调度路径"
+      ],
+      [
+        "S15-R2-072",
+        "线程与语言",
+        "Python保留模型接口"
+      ],
+      [
+        "S15-R2-073",
+        "线程与语言",
+        "Rust保留DSP"
+      ],
+      [
+        "S15-R2-074",
+        "线程与语言",
+        "JS保留播放"
+      ],
+      [
+        "S15-R2-075",
+        "线程与语言",
+        "不新加Java网络服务"
+      ],
+      [
+        "S15-R2-076",
+        "线程与语言",
+        "不为多语言复制采样器"
+      ],
+      [
+        "S15-R2-077",
+        "线程与语言",
+        "不盲开每卡双进程"
+      ],
+      [
+        "S15-R2-078",
+        "线程与语言",
+        "不启用不支持的BF16"
+      ],
+      [
+        "S15-R2-079",
+        "线程与语言",
+        "不将TF32称T4加速"
+      ],
+      [
+        "S15-R2-080",
+        "线程与语言",
+        "量化质量另实验"
+      ],
+      [
+        "S15-R2-081",
+        "流式测试",
+        "首句单delta即可产生任务"
+      ],
+      [
+        "S15-R2-082",
+        "流式测试",
+        "短中文完整句可首发"
+      ],
+      [
+        "S15-R2-083",
+        "流式测试",
+        "ASCII数字点仍保留"
+      ],
+      [
+        "S15-R2-084",
+        "流式测试",
+        "逗号完整前缀可首发"
+      ],
+      [
+        "S15-R2-085",
+        "流式测试",
+        "相同文本各切片重组"
+      ],
+      [
+        "S15-R2-086",
+        "流式测试",
+        "新特性用应用配置而非旧配置"
+      ],
+      [
+        "S15-R2-087",
+        "流式测试",
+        "晚引号仍完整保留"
+      ],
+      [
+        "S15-R2-088",
+        "流式测试",
+        "SSE未结束worker已收到首段"
+      ],
+      [
+        "S15-R2-089",
+        "流式测试",
+        "最终按索引输出"
+      ],
+      [
+        "S15-R2-090",
+        "流式测试",
+        "Go race三轮"
+      ],
+      [
+        "S15-R2-091",
+        "退化防护",
+        "非首段旧策略不变"
+      ],
+      [
+        "S15-R2-092",
+        "退化防护",
+        "朗读长文不丢段"
+      ],
+      [
+        "S15-R2-093",
+        "退化防护",
+        "URL不清洗"
+      ],
+      [
+        "S15-R2-094",
+        "退化防护",
+        "DeepSeek错误前缀可见"
+      ],
+      [
+        "S15-R2-095",
+        "退化防护",
+        "超时不冒成功"
+      ],
+      [
+        "S15-R2-096",
+        "退化防护",
+        "取消不重复提交"
+      ],
+      [
+        "S15-R2-097",
+        "退化防护",
+        "独立记录早期失败"
+      ],
+      [
+        "S15-R2-098",
+        "退化防护",
+        "浏览器全量回归"
+      ],
+      [
+        "S15-R2-099",
+        "退化防护",
+        "Python全量回归"
+      ],
+      [
+        "S15-R2-100",
+        "退化防护",
+        "无硬件保持部分验收"
+      ]
+    ]
+  },
+  {
+    "round": 3,
+    "files": [
+      {
+        "path": "LICENSE-QWEN-DERIVED.txt",
+        "sha256": "a44a6081c73ad75f0255bb2bb5cab74ef1829565a895a24e53a4f11290ab7655",
+        "bytes": 11343
+      },
+      {
+        "path": "MEMO.md",
+        "sha256": "031e1d4caac6400df3e6e6f007b9df3e32e8576e72324ff0dc5eac2b489695c3",
+        "bytes": 27148
+      },
+      {
+        "path": "go/gateway/fidelity_test.go",
+        "sha256": "a74c4ec1246d8246124cb88ce03c8932be7413e876fbf454e12495bdc33fd966",
+        "bytes": 1326
+      },
+      {
+        "path": "go/gateway/go.mod",
+        "sha256": "00f1a160ee5ea066ed545d93f8c6920689ddbea2bb10006107eec99804871a41",
+        "bytes": 29
+      },
+      {
+        "path": "go/gateway/llm.go",
+        "sha256": "23809b1c724bad01588a827f06bcdf05d1b4d23da5eb6372d0fc40b6d9ddfdda",
+        "bytes": 4182
+      },
+      {
+        "path": "go/gateway/main.go",
+        "sha256": "9fdf8f817903d4beba23c44891d999cbecd75d0104f87dbeacd9eaca77ca675f",
+        "bytes": 13594
+      },
+      {
+        "path": "go/gateway/preflight_test.go",
+        "sha256": "21d832143de74eb68e6758b2bc6d741b16132c820d225ffa7b150ca3e266d657",
+        "bytes": 2248
+      },
+      {
+        "path": "go/gateway/reliability_test.go",
+        "sha256": "3e039fa7ccaddfcfd813b0c06e657d49e1a076fe19844f097c263eef08a04d20",
+        "bytes": 5492
+      },
+      {
+        "path": "go/gateway/scheduler.go",
+        "sha256": "18992a7a212e3b967bea6183003952af775ca4db2cefd2270c48e664c4965323",
+        "bytes": 10388
+      },
+      {
+        "path": "go/gateway/security.go",
+        "sha256": "bae7f55fd5f1c92c9f96f31ad8b8c8653926f21180abd0f0f12a54bb983004aa",
+        "bytes": 7340
+      },
+      {
+        "path": "go/gateway/security_test.go",
+        "sha256": "a6b3a2126469b9e4c21f3336961c44ae84adf282f2db0812276edae3ab1c3484",
+        "bytes": 11391
+      },
+      {
+        "path": "go/gateway/segmenter.go",
+        "sha256": "fb2b6ac8e3f56290d8717c0c6f9b0715b839b330dd75a98c8d6e1854c99962e2",
+        "bytes": 9394
+      },
+      {
+        "path": "go/gateway/segmenter_test.go",
+        "sha256": "0d8171656e80e8423755d82f6d59797e8739bfb4ccfcd25f9a639ff1ac8bdd8d",
+        "bytes": 3506
+      },
+      {
+        "path": "go/gateway/session.go",
+        "sha256": "222d67be0b16914c84f816ff79a25cd3b564b83e682ed91e9a1b990cc3763ee0",
+        "bytes": 14667
+      },
+      {
+        "path": "py/access_control.py",
+        "sha256": "8e90f2b9fe6cf98ca0192bcf1684158cc84f1609ec3ec1d76e2968455d1193d3",
+        "bytes": 2810
+      },
+      {
+        "path": "py/adapter_engine.py",
+        "sha256": "01ae6434d71db5a04ccfa1e73f36495ba6e67deee7ae4477133297272cb37478",
+        "bytes": 6571
+      },
+      {
+        "path": "py/analyst.py",
+        "sha256": "e53349e72906b145ddc17ab134e63e0acba883c533927f65757d4c1d0cffee21",
+        "bytes": 49698
+      },
+      {
+        "path": "py/audio_rt.py",
+        "sha256": "be55abe211192144b96c5e89ad24b233f2e56cba193d9577b0e00e46b10b95d7",
+        "bytes": 8694
+      },
+      {
+        "path": "py/bootstrap.py",
+        "sha256": "f71a27356180291de1f15b87661110dbb39bf7a46e85e40875b00c3383d5f9dd",
+        "bytes": 20752
+      },
+      {
+        "path": "py/gpu_ownership.py",
+        "sha256": "2561308fdc916e8fbe3afad009fbfeb5b1f0d4c19a98e3bcb9d6828694b22f7d",
+        "bytes": 7098
+      },
+      {
+        "path": "py/library_api.py",
+        "sha256": "8222c036f032735aa015c2db3c2dac9314154097e7f9ae63835137f46ebe7998",
+        "bytes": 9270
+      },
+      {
+        "path": "py/lora_adapter.py",
+        "sha256": "93ead0856e2289dc8d6f90b650435b6a50170a2941dc1f3f4ea02615fd60e718",
+        "bytes": 4473
+      },
+      {
+        "path": "py/persist.py",
+        "sha256": "edc7e0147e9dc69fa8ef8eba65f875179b2720f94d5e2416de098cf81e69b0e1",
+        "bytes": 4269
+      },
+      {
+        "path": "py/qtts_common.py",
+        "sha256": "eb7bcf92c7cd73431ac70ff6281dca443a20b7ba6ca80575ef007043c52fe210",
+        "bytes": 6250
+      },
+      {
+        "path": "py/qwen_compat.py",
+        "sha256": "1ed62dfd25edb86eda695bf767bfa0ca0cb10b6da916f4b164500e8e52a4afb8",
+        "bytes": 5165
+      },
+      {
+        "path": "py/resource_limits.py",
+        "sha256": "831c3b839566ba012d2788394f8d62927e29a4d49e02dd2fdc82a5ddb92740e1",
+        "bytes": 7017
+      },
+      {
+        "path": "py/supervisor.py",
+        "sha256": "77493d2401bf316abea318b9a4929dca2cbf2df841eb6e2c7f5a8208cc5e2fec",
+        "bytes": 9861
+      },
+      {
+        "path": "py/trained_profiles.py",
+        "sha256": "58760a3255cb8399271fb3bd0099a11704d9f603a3cc0d57ff6a0296ed26b8e7",
+        "bytes": 10740
+      },
+      {
+        "path": "py/training_codes.py",
+        "sha256": "78ac55d6172d392c02d5b1a775e8ed82a404efbbdef98273d8887e7d4db0e384",
+        "bytes": 23767
+      },
+      {
+        "path": "py/training_data.py",
+        "sha256": "0b9203428dfdfeacec4c82f601414bb50b4a499d6cf7aad214efe7d6c8ccf5e0",
+        "bytes": 19221
+      },
+      {
+        "path": "py/training_job.py",
+        "sha256": "51a7566fa636559372b2780d7044cc29dbe2c5767214948f25629572daff5242",
+        "bytes": 14079
+      },
+      {
+        "path": "py/tts_dataset.py",
+        "sha256": "74392d601c2bef75a223c58d869af9b6175affc7306d88502ba37492acd298db",
+        "bytes": 6551
+      },
+      {
+        "path": "py/tts_training.py",
+        "sha256": "4403860dcc2a2aad78cc163bd0d6384a64032aef1d44fb7c70c1daa99f9f83cb",
+        "bytes": 12460
+      },
+      {
+        "path": "py/voice_library.py",
+        "sha256": "c86f833eaf0b5e286e12b50744a42b5bafa15fefe54996c3e33790729ad05fea",
+        "bytes": 18183
+      },
+      {
+        "path": "py/worker.py",
+        "sha256": "59f785badd4513744d5dfc4f45812e7601a87b8300f62fc7ab302c8a77bf4fb4",
+        "bytes": 27913
+      },
+      {
+        "path": "rust/audio_rt/Cargo.toml",
+        "sha256": "e032c80857b9e45bfc7bcf4d56c5827fcd9a5ceeac839f0ed9716aea2ebefd2b",
+        "bytes": 326
+      },
+      {
+        "path": "rust/audio_rt/src/lib.rs",
+        "sha256": "97cb3db3561866ad9cc8f48b9f89003bbeae45fe3207a6082c3c7dd264a8ed45",
+        "bytes": 12887
+      },
+      {
+        "path": "tools/backend_probe.py",
+        "sha256": "c22f220e7a68d2f47cbe71571673a00334334a7741949df83ab430f36f97b234",
+        "bytes": 11606
+      },
+      {
+        "path": "tools/e2e_check.py",
+        "sha256": "188e1e22948d20b72ee41e062cd7c8e36bd482901664f923aa23c9ead5a12dae",
+        "bytes": 7427
+      },
+      {
+        "path": "tools/encode_training.py",
+        "sha256": "324a88f9fdba7ad2fb713e79aad52cae099fd57f38c588732b25040da43022ef",
+        "bytes": 6922
+      },
+      {
+        "path": "tools/resource_control.py",
+        "sha256": "237d1abee6d7470ac7136973334c7cf065a5ad0727977c04fea024a493777437",
+        "bytes": 1930
+      },
+      {
+        "path": "tools/selftest.py",
+        "sha256": "b12f9e0af45d18e7c85b6a00e1d2c0e05b1cffc18a998f1d6cd90c8f57f27124",
+        "bytes": 7022
+      },
+      {
+        "path": "tools/train_tts.py",
+        "sha256": "3fa354d0d352fea8de4b6d650fdceae6f206cfae352861dd163e3871dfb197eb",
+        "bytes": 2662
+      },
+      {
+        "path": "tools/trained_voice.py",
+        "sha256": "bca66c9e187414de35bcb1d29451a2dd1e476cb491fc8e641d5007c723047dc1",
+        "bytes": 1756
+      },
+      {
+        "path": "tools/watermark_check.py",
+        "sha256": "43de4bea8040ee09e88961d7f9997ea3274b39cc82c09421b291b731a22f9f3f",
+        "bytes": 6273
+      },
+      {
+        "path": "web/app.js",
+        "sha256": "644c31e7cc40b1426e7f54e8ea9a76c94bf2fcdfb2e0d2adb31b60a3d964d53a",
+        "bytes": 67108
+      },
+      {
+        "path": "web/index.html",
+        "sha256": "c05b923968e1a74d3d04bd7f8a814eff65b8aa23d0ef431ac6c9deafc5f3a57d",
+        "bytes": 23303
+      },
+      {
+        "path": "web/recorder.js",
+        "sha256": "01b6602be2f9c0b650e4435f193079bf82f7ba614dd89d04b43034a6c93b47c5",
+        "bytes": 12054
+      }
+    ],
+    "recommendations": 100,
+    "entries": [
+      [
+        "S15-R3-001",
+        "创建默认",
+        "默认关闭可选GPU候选校准"
+      ],
+      [
+        "S15-R3-002",
+        "创建默认",
+        "保留手动校准按钮"
+      ],
+      [
+        "S15-R3-003",
+        "创建默认",
+        "直接创建与库处理默认一致"
+      ],
+      [
+        "S15-R3-004",
+        "创建默认",
+        "后端缺省也关闭校准"
+      ],
+      [
+        "S15-R3-005",
+        "创建默认",
+        "锁定重置默认关闭"
+      ],
+      [
+        "S15-R3-006",
+        "创建默认",
+        "明确不是训练"
+      ],
+      [
+        "S15-R3-007",
+        "创建默认",
+        "不隐藏校准质量代价"
+      ],
+      [
+        "S15-R3-008",
+        "创建默认",
+        "保留两卡预热"
+      ],
+      [
+        "S15-R3-009",
+        "创建默认",
+        "失败不改active"
+      ],
+      [
+        "S15-R3-010",
+        "创建默认",
+        "完成收据不虚报"
+      ],
+      [
+        "S15-R3-011",
+        "ASR成本",
+        "已知单段短文本直接使用"
+      ],
+      [
+        "S15-R3-012",
+        "ASR成本",
+        "不能把长文本套短片"
+      ],
+      [
+        "S15-R3-013",
+        "ASR成本",
+        "保持全量长音频ASR"
+      ],
+      [
+        "S15-R3-014",
+        "ASR成本",
+        "不取前十秒冒充完整"
+      ],
+      [
+        "S15-R3-015",
+        "ASR成本",
+        "CPU Whisper可驻留复用"
+      ],
+      [
+        "S15-R3-016",
+        "ASR成本",
+        "不在GPU常驻ASR"
+      ],
+      [
+        "S15-R3-017",
+        "ASR成本",
+        "保留CPU回退"
+      ],
+      [
+        "S15-R3-018",
+        "ASR成本",
+        "保留识别beam5"
+      ],
+      [
+        "S15-R3-019",
+        "ASR成本",
+        "保留词时间戳"
+      ],
+      [
+        "S15-R3-020",
+        "ASR成本",
+        "记录手动转写绕过ASR"
+      ],
+      [
+        "S15-R3-021",
+        "ASR内存",
+        "仅CPU默认驻留"
+      ],
+      [
+        "S15-R3-022",
+        "ASR内存",
+        "CUDA ASR仍卸载"
+      ],
+      [
+        "S15-R3-023",
+        "ASR内存",
+        "显式开关可禁用驻留"
+      ],
+      [
+        "S15-R3-024",
+        "ASR内存",
+        "同一重模型入口串行"
+      ],
+      [
+        "S15-R3-025",
+        "ASR内存",
+        "不无限缓存音频"
+      ],
+      [
+        "S15-R3-026",
+        "ASR内存",
+        "不缓存每个用户转写"
+      ],
+      [
+        "S15-R3-027",
+        "ASR内存",
+        "不让驻留伪造模型已加载"
+      ],
+      [
+        "S15-R3-028",
+        "ASR内存",
+        "首次下载成本单列"
+      ],
+      [
+        "S15-R3-029",
+        "ASR内存",
+        "CPU内存风险披露"
+      ],
+      [
+        "S15-R3-030",
+        "ASR内存",
+        "不以第二次速度代表冷启动"
+      ],
+      [
+        "S15-R3-031",
+        "重复计算",
+        "档案内部嵌入按内容哈希复用"
+      ],
+      [
+        "S15-R3-032",
+        "重复计算",
+        "嵌入缓存仅本次任务"
+      ],
+      [
+        "S15-R3-033",
+        "重复计算",
+        "返回向量保持只读语义"
+      ],
+      [
+        "S15-R3-034",
+        "重复计算",
+        "不跨档案泄漏用户数据"
+      ],
+      [
+        "S15-R3-035",
+        "重复计算",
+        "记录embed实际调用数"
+      ],
+      [
+        "S15-R3-036",
+        "重复计算",
+        "记录embed命中数"
+      ],
+      [
+        "S15-R3-037",
+        "重复计算",
+        "候选相同波形可复用"
+      ],
+      [
+        "S15-R3-038",
+        "重复计算",
+        "不按文件名猜相同"
+      ],
+      [
+        "S15-R3-039",
+        "重复计算",
+        "不改变候选排序公式"
+      ],
+      [
+        "S15-R3-040",
+        "重复计算",
+        "缓存失败不写半成品"
+      ],
+      [
+        "S15-R3-041",
+        "CPU候选",
+        "保留24候选上限"
+      ],
+      [
+        "S15-R3-042",
+        "CPU候选",
+        "保留前三非重叠"
+      ],
+      [
+        "S15-R3-043",
+        "CPU候选",
+        "保留SNR打分"
+      ],
+      [
+        "S15-R3-044",
+        "CPU候选",
+        "保留典型性中心"
+      ],
+      [
+        "S15-R3-045",
+        "CPU候选",
+        "保留F0打分"
+      ],
+      [
+        "S15-R3-046",
+        "CPU候选",
+        "准确F0仍用于最佳锚点"
+      ],
+      [
+        "S15-R3-047",
+        "CPU候选",
+        "不偷偷换MFCC冒充ECAPA"
+      ],
+      [
+        "S15-R3-048",
+        "CPU候选",
+        "不降采样输入标准"
+      ],
+      [
+        "S15-R3-049",
+        "CPU候选",
+        "不减少可用文件"
+      ],
+      [
+        "S15-R3-050",
+        "CPU候选",
+        "不承诺质量无损提速倍数"
+      ],
+      [
+        "S15-R3-051",
+        "分析阶段计时",
+        "记录speaker加载"
+      ],
+      [
+        "S15-R3-052",
+        "分析阶段计时",
+        "记录解码降噪"
+      ],
+      [
+        "S15-R3-053",
+        "分析阶段计时",
+        "记录ASR"
+      ],
+      [
+        "S15-R3-054",
+        "分析阶段计时",
+        "记录候选评分"
+      ],
+      [
+        "S15-R3-055",
+        "分析阶段计时",
+        "记录呼吸韵律"
+      ],
+      [
+        "S15-R3-056",
+        "分析阶段计时",
+        "记录worker加载"
+      ],
+      [
+        "S15-R3-057",
+        "分析阶段计时",
+        "记录可选校准"
+      ],
+      [
+        "S15-R3-058",
+        "分析阶段计时",
+        "记录总构建时间"
+      ],
+      [
+        "S15-R3-059",
+        "分析阶段计时",
+        "成功后最终写回profile"
+      ],
+      [
+        "S15-R3-060",
+        "分析阶段计时",
+        "旧calibration写回不能覆盖"
+      ],
+      [
+        "S15-R3-061",
+        "候选转写",
+        "长单个ASR段不能截音频保留全文"
+      ],
+      [
+        "S15-R3-062",
+        "候选转写",
+        "长度超界无可信字时间拒绝"
+      ],
+      [
+        "S15-R3-063",
+        "候选转写",
+        "不猜均匀对齐"
+      ],
+      [
+        "S15-R3-064",
+        "候选转写",
+        "提示重录短段或审核切分"
+      ],
+      [
+        "S15-R3-065",
+        "候选转写",
+        "手动16秒整段可不裁"
+      ],
+      [
+        "S15-R3-066",
+        "候选转写",
+        "候选start/end匹配实际波形"
+      ],
+      [
+        "S15-R3-067",
+        "候选转写",
+        "保留多文件来源"
+      ],
+      [
+        "S15-R3-068",
+        "候选转写",
+        "检查负时间"
+      ],
+      [
+        "S15-R3-069",
+        "候选转写",
+        "检查超音频边界"
+      ],
+      [
+        "S15-R3-070",
+        "候选转写",
+        "不静默截断转写"
+      ],
+      [
+        "S15-R3-071",
+        "持久化",
+        "完成前写回quality.build_s"
+      ],
+      [
+        "S15-R3-072",
+        "持久化",
+        "持久化stage_ms"
+      ],
+      [
+        "S15-R3-073",
+        "持久化",
+        "持久化嵌入缓存统计"
+      ],
+      [
+        "S15-R3-074",
+        "持久化",
+        "失败不删除已有档案"
+      ],
+      [
+        "S15-R3-075",
+        "持久化",
+        "新任务失败清理新目录"
+      ],
+      [
+        "S15-R3-076",
+        "持久化",
+        "保持原子JSON"
+      ],
+      [
+        "S15-R3-077",
+        "持久化",
+        "保留worker_load状态"
+      ],
+      [
+        "S15-R3-078",
+        "持久化",
+        "保留校准选择"
+      ],
+      [
+        "S15-R3-079",
+        "持久化",
+        "不把done当两卡加载成功"
+      ],
+      [
+        "S15-R3-080",
+        "持久化",
+        "文件备份范围清楚"
+      ],
+      [
+        "S15-R3-081",
+        "发布交付",
+        "生成新step15不覆盖14"
+      ],
+      [
+        "S15-R3-082",
+        "发布交付",
+        "新增manifest逐文件校验"
+      ],
+      [
+        "S15-R3-083",
+        "发布交付",
+        "复制页固定15哈希"
+      ],
+      [
+        "S15-R3-084",
+        "发布交付",
+        "下载与剪贴板完整一致"
+      ],
+      [
+        "S15-R3-085",
+        "发布交付",
+        "拒绝剪贴板时可全选"
+      ],
+      [
+        "S15-R3-086",
+        "发布交付",
+        "375px无横向溢出"
+      ],
+      [
+        "S15-R3-087",
+        "发布交付",
+        "冻结正式15文件"
+      ],
+      [
+        "S15-R3-088",
+        "发布交付",
+        "交接完整嵌入新增备忘录"
+      ],
+      [
+        "S15-R3-089",
+        "发布交付",
+        "三轮结果分别记录"
+      ],
+      [
+        "S15-R3-090",
+        "发布交付",
+        "未通过项目不得打勾"
+      ],
+      [
+        "S15-R3-091",
+        "现场门禁",
+        "用户截图256.4秒仅作问题证据"
+      ],
+      [
+        "S15-R3-092",
+        "现场门禁",
+        "无原音频不能确定泄漏根因"
+      ],
+      [
+        "S15-R3-093",
+        "现场门禁",
+        "真实Qwen生成必须试听"
+      ],
+      [
+        "S15-R3-094",
+        "现场门禁",
+        "真实T4显存峰值必测"
+      ],
+      [
+        "S15-R3-095",
+        "现场门禁",
+        "同卡双模型不默认试"
+      ],
+      [
+        "S15-R3-096",
+        "现场门禁",
+        "首次和热创建分别测"
+      ],
+      [
+        "S15-R3-097",
+        "现场门禁",
+        "同参考同目标文本比较"
+      ],
+      [
+        "S15-R3-098",
+        "现场门禁",
+        "无额外参考重播需独立检查"
+      ],
+      [
+        "S15-R3-099",
+        "现场门禁",
+        "历史网页训练缺口仍保留"
+      ],
+      [
+        "S15-R3-100",
+        "现场门禁",
+        "不写100%无错误"
+      ]
+    ]
+  }
+]

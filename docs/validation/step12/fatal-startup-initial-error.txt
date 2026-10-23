@@ -1,0 +1,15 @@
+   [     0s] waiting for gateway…
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/tests/fatal_startup_check.py", line 52, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/Kagglee/kaggle/tests/fatal_startup_check.py", line 40, in main
+    receipt=json.loads((state/'startup-failure.json').read_text());assert receipt['startup_id']==bootstrap.STARTUP_ID and receipt['kind']=='fatal_configuration'
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 1059, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/pathlib.py", line 1045, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/qtts-fatal-start-wx7h8c88/1/startup-failure.json'

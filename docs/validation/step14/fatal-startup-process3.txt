@@ -1,0 +1,9 @@
+   [     0s] waiting for gateway…
+✗ supervisor recorded fatal worker configuration error; stopping startup
+{"round": 1, "passed": true, "real_supervisor_fatal_receipt": true, "current_nonce_checked": true, "owned_supervisor_shutdown": true, "worker_exited": true, "gpu_executed": false, "model_loaded": false}
+   [     3s] waiting for gateway…
+✗ supervisor recorded fatal worker configuration error; stopping startup
+{"round": 2, "passed": true, "real_supervisor_fatal_receipt": true, "current_nonce_checked": true, "owned_supervisor_shutdown": true, "worker_exited": true, "gpu_executed": false, "model_loaded": false}
+   [     6s] waiting for gateway…
+✗ supervisor recorded fatal worker configuration error; stopping startup
+{"round": 3, "passed": true, "real_supervisor_fatal_receipt": true, "current_nonce_checked": true, "owned_supervisor_shutdown": true, "worker_exited": true, "gpu_executed": false, "model_loaded": false}

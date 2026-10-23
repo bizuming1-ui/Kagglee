@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "rounds": [
+    {
+      "round": 1,
+      "bytes": 306580,
+      "sha256": "c6ed6c89e6356fc6c7ab554f96a2c3201a8e4690c007ea66626445cc658b4429",
+      "clipboard_exact": true,
+      "download_exact": true,
+      "denied_clipboard_selects_all": true,
+      "mobile": false
+    },
+    {
+      "round": 2,
+      "bytes": 306580,
+      "sha256": "c6ed6c89e6356fc6c7ab554f96a2c3201a8e4690c007ea66626445cc658b4429",
+      "clipboard_exact": true,
+      "download_exact": true,
+      "denied_clipboard_selects_all": true,
+      "mobile": false
+    },
+    {
+      "round": 3,
+      "bytes": 306580,
+      "sha256": "c6ed6c89e6356fc6c7ab554f96a2c3201a8e4690c007ea66626445cc658b4429",
+      "clipboard_exact": true,
+      "download_exact": true,
+      "denied_clipboard_selects_all": true,
+      "mobile": true
+    }
+  ],
+  "formal_project_unchanged": true,
+  "formal_files": 15
+}

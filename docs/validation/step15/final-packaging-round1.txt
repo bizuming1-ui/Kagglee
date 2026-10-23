@@ -1,0 +1,20 @@
+test_launcher_roundtrip_extract_only_without_bootstrap (test_packaging.PackagingTests.test_launcher_roundtrip_extract_only_without_bootstrap) ... ok
+test_original_saved_source_still_matches_evidence (test_packaging.PackagingTests.test_original_saved_source_still_matches_evidence) ... ok
+test_repack_is_deterministic_and_current (test_packaging.PackagingTests.test_repack_is_deterministic_and_current) ... REPACK CHECK OK: original 22 hashes + current 48 assets; deterministic outputs match
+ok
+test_step10_launcher_is_frozen (test_packaging.PackagingTests.test_step10_launcher_is_frozen) ... ok
+test_step11_launcher_is_frozen (test_packaging.PackagingTests.test_step11_launcher_is_frozen) ... ok
+test_step1_launcher_is_frozen (test_packaging.PackagingTests.test_step1_launcher_is_frozen) ... ok
+test_step2_launcher_is_frozen (test_packaging.PackagingTests.test_step2_launcher_is_frozen) ... ok
+test_step3_launcher_is_frozen (test_packaging.PackagingTests.test_step3_launcher_is_frozen) ... ok
+test_step4_launcher_is_frozen (test_packaging.PackagingTests.test_step4_launcher_is_frozen) ... ok
+test_step5_launcher_is_frozen (test_packaging.PackagingTests.test_step5_launcher_is_frozen) ... ok
+test_step6_launcher_is_frozen (test_packaging.PackagingTests.test_step6_launcher_is_frozen) ... ok
+test_step7_launcher_is_frozen (test_packaging.PackagingTests.test_step7_launcher_is_frozen) ... ok
+test_step8_launcher_is_frozen (test_packaging.PackagingTests.test_step8_launcher_is_frozen) ... ok
+test_step9_launcher_is_frozen (test_packaging.PackagingTests.test_step9_launcher_is_frozen) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.433s
+
+OK

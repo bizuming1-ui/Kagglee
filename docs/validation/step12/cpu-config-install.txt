@@ -1,0 +1,32 @@
+Processing /home/user/transformers-5.20.2-py3-none-any.whl
+Collecting huggingface-hub==1.5.0
+  Downloading huggingface_hub-1.5.0-py3-none-any.whl (596 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 596.3/596.3 kB 15.4 MB/s eta 0:00:00
+Collecting tokenizers==0.22.2
+  Downloading tokenizers-0.22.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 79.2 MB/s eta 0:00:00
+Collecting regex
+  Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 109.9 MB/s eta 0:00:00
+Collecting pyyaml
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 155.0 MB/s eta 0:00:00
+Collecting filelock
+  Using cached filelock-4.2.4-py3-none-any.whl (162 kB)
+Collecting tqdm
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 kB 38.9 MB/s eta 0:00:00
+Collecting httpx
+  Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Collecting packaging
+  Downloading packaging-26.3-py3-none-any.whl (129 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 130.0/130.0 kB 55.8 MB/s eta 0:00:00
+Collecting typer-slim
+  Downloading typer_slim-0.24.0-py3-none-any.whl (3.4 kB)
+Collecting hf-xet
+  Downloading hf_xet-1.7.0-cp38-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 148.2 MB/s eta 0:00:00
+Collecting fsspec
+  Using cached fsspec-2026.9.0-py3-none-any.whl (221 kB)
+Installing collected packages: typer-slim, transformers, tqdm, tokenizers, regex, pyyaml, packaging, huggingface-hub, httpx, hf-xet, fsspec, filelock
+Successfully installed filelock-4.2.4 fsspec-2026.9.0 hf-xet-1.7.0 httpx-0.28.1 huggingface-hub-1.5.0 packaging-26.3 pyyaml-6.0.3 regex-2026.9.29 tokenizers-0.22.2 tqdm-4.70.1 transformers-5.20.2 typer-slim-0.24.0

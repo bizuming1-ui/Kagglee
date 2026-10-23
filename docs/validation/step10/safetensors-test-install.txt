@@ -1,0 +1,5 @@
+Collecting safetensors==0.6.2
+  Downloading safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (485 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 485.8/485.8 kB 13.4 MB/s eta 0:00:00
+Installing collected packages: safetensors
+Successfully installed safetensors-0.6.2

@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/qtts.spec.js:809:1 › QTTS long capture is honestly separate from actual training and acoustic verification (881ms)
+
+  ✓  2 tests/browser/qtts.spec.js:809:1 › QTTS long capture is honestly separate from actual training and acoustic verification (884ms)
+
+  ✓  3 tests/browser/qtts.spec.js:809:1 › QTTS long capture is honestly separate from actual training and acoustic verification (896ms)
+
+  3 passed (6.3s)

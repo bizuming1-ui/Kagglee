@@ -1,0 +1,27 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/qtts.spec.js --grep silent input|minimum duration|device-ended|native auto-stop --repeat-each=3
+
+
+Running 15 tests using 1 worker
+
+
+  ✓   1 tests/browser/qtts.spec.js:259:1 › QTTS native silent input reports zero peak instead of a simulated waveform (857ms)
+  ✓   2 tests/browser/qtts.spec.js:300:1 › QTTS device-ended lifecycle stops native capture and releases the context (3.3s)
+  ✓   3 tests/browser/qtts.spec.js:492:3 › QTTS native auto-stop preserves a valid clip with ended handler=true (2.7s)
+  ✓   4 tests/browser/qtts.spec.js:492:3 › QTTS native auto-stop preserves a valid clip with ended handler=false (2.7s)
+  ✓   5 tests/browser/qtts.spec.js:508:1 › QTTS minimum duration gate rejects a clock-injected 100ms clip without wall-clock timing assumptions (884ms)
+
+  ✓   6 tests/browser/qtts.spec.js:259:1 › QTTS native silent input reports zero peak instead of a simulated waveform (778ms)
+  ✓   7 tests/browser/qtts.spec.js:300:1 › QTTS device-ended lifecycle stops native capture and releases the context (3.3s)
+  ✓   8 tests/browser/qtts.spec.js:492:3 › QTTS native auto-stop preserves a valid clip with ended handler=true (2.6s)
+  ✓   9 tests/browser/qtts.spec.js:492:3 › QTTS native auto-stop preserves a valid clip with ended handler=false (2.7s)
+  ✓  10 tests/browser/qtts.spec.js:508:1 › QTTS minimum duration gate rejects a clock-injected 100ms clip without wall-clock timing assumptions (877ms)
+
+  ✓  11 tests/browser/qtts.spec.js:259:1 › QTTS native silent input reports zero peak instead of a simulated waveform (800ms)
+  ✓  12 tests/browser/qtts.spec.js:300:1 › QTTS device-ended lifecycle stops native capture and releases the context (3.2s)
+  ✓  13 tests/browser/qtts.spec.js:492:3 › QTTS native auto-stop preserves a valid clip with ended handler=true (2.6s)
+  ✓  14 tests/browser/qtts.spec.js:492:3 › QTTS native auto-stop preserves a valid clip with ended handler=false (2.6s)
+  ✓  15 tests/browser/qtts.spec.js:508:1 › QTTS minimum duration gate rejects a clock-injected 100ms clip without wall-clock timing assumptions (840ms)
+
+  15 passed (33.3s)

@@ -1,0 +1,15 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/studio.spec.js --grep 第八阶段完整Python包 --repeat-each=3
+
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/studio.spec.js:540:1 › 第八阶段完整Python包可逐字节复制并保留第七阶段包 (1.1s)
+
+  ✓  2 tests/browser/studio.spec.js:540:1 › 第八阶段完整Python包可逐字节复制并保留第七阶段包 (1.1s)
+
+  ✓  3 tests/browser/studio.spec.js:540:1 › 第八阶段完整Python包可逐字节复制并保留第七阶段包 (2.6s)
+
+  3 passed (10.1s)

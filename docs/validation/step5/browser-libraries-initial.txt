@@ -1,0 +1,22 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/qtts.spec.js --grep QTTS library
+
+
+Running 12 tests using 1 worker
+
+
+  ✓   1 tests/browser/qtts.spec.js:606:1 › QTTS library named empty first, upload, select one and process without claiming training (4.4s)
+  ✓   2 tests/browser/qtts.spec.js:616:1 › QTTS library blank name is not defaulted and empty file does not submit (1.1s)
+  ✓   3 tests/browser/qtts.spec.js:624:1 › QTTS library upload failure preserves selected files for retry and never advances state (1.4s)
+  ✓   4 tests/browser/qtts.spec.js:633:1 › QTTS library stale revision retains local data and refresh allows deliberate retry (2.2s)
+  ✓   5 tests/browser/qtts.spec.js:640:1 › QTTS library sample removal and confirmed whole-library deletion leave processed profiles alone (1.2s)
+  ✓   6 tests/browser/qtts.spec.js:647:1 › QTTS library failed processing retains selected raw samples and does not claim success (3.8s)
+  ✓   7 tests/browser/qtts.spec.js:654:1 › QTTS library lock clears private form, sample names and ignores late creation response (895ms)
+  ✓   8 tests/browser/qtts.spec.js:662:1 › QTTS library late sample removal cannot overwrite a reopened different selection (1.9s)
+  ✓   9 tests/browser/qtts.spec.js:670:1 › QTTS library progress polls are sequential and stop after closing even with ignored abort (7.7s)
+  ✓  10 tests/browser/qtts.spec.js:679:1 › QTTS library native recording is stopped by opening, then saved to the named library (2.8s)
+  ✓  11 tests/browser/qtts.spec.js:687:52 › QTTS library dialog bounded keyboard and XSS-safe content 1440x900 (3.9s)
+  ✓  12 tests/browser/qtts.spec.js:687:52 › QTTS library dialog bounded keyboard and XSS-safe content 375x667 (994ms)
+
+  12 passed (33.8s)

@@ -1,0 +1,23 @@
+Collecting huggingface-hub==1.31.0
+  Downloading huggingface_hub-1.31.0-py3-none-any.whl (798 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 798.3/798.3 kB 18.7 MB/s eta 0:00:00
+Collecting tokenizers==0.23.1
+  Downloading tokenizers-0.23.1-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 79.4 MB/s eta 0:00:00
+Collecting safetensors==0.8.0
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 kB 121.6 MB/s eta 0:00:00
+Collecting typer
+  Downloading typer-0.27.3-py3-none-any.whl (123 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 123.3/123.3 kB 58.2 MB/s eta 0:00:00
+Collecting shellingham
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Collecting rich
+  Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 310.7/310.7 kB 113.9 MB/s eta 0:00:00
+Collecting click
+  Using cached click-8.5.0-py3-none-any.whl (125 kB)
+Collecting annotated-doc
+  Using cached annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+Installing collected packages: typer, tokenizers, shellingham, safetensors, rich, huggingface-hub, click, annotated-doc
+Successfully installed annotated-doc-0.0.5 click-8.5.0 huggingface-hub-1.31.0 rich-15.0.0 safetensors-0.8.0 shellingham-1.5.4 tokenizers-0.23.1 typer-0.27.3

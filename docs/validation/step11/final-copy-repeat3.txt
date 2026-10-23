@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/studio.spec.js:563:1 › 第十一阶段adapter聊天完整Python包可逐字节复制并保留第十阶段包 (2.6s)
+
+  ✓  2 tests/browser/studio.spec.js:563:1 › 第十一阶段adapter聊天完整Python包可逐字节复制并保留第十阶段包 (2.4s)
+
+  ✓  3 tests/browser/studio.spec.js:563:1 › 第十一阶段adapter聊天完整Python包可逐字节复制并保留第十阶段包 (1.2s)
+
+  3 passed (10.0s)

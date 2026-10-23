@@ -1,0 +1,17 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+05:23:51 [analyst] INFO job test   3.0% decode + denoise a.wav
+05:23:52 [analyst] INFO job test  28.0% ASR a.wav
+05:23:52 [analyst] INFO job test  55.0% scoring candidate anchors
+05:23:52 [analyst] ERROR profile build failed
+Traceback (most recent call last):
+  File "frozen16-build", line 723, in _step16_baseline_build
+    j += 1
+ValueError: no aligned 2.5-16 s speech segment; supply a short clip with matching text or review timestamped segments; refusing to truncate audio with its full transcript
+05:23:52 [analyst] INFO job test  55.0% FAILED: no aligned 2.5-16 s speech segment; supply a short clip with matching text or review timestamped segments; refusing to truncate audio with its full transcript
+05:23:52 [analyst] INFO job test   3.0% decode + denoise a.wav
+05:23:52 [analyst] INFO job test  28.0% ASR a.wav
+05:23:52 [analyst] INFO job test  55.0% scoring candidate anchors
+05:23:52 [analyst] INFO job test  70.0% extracting real breaths + prosody statistics
+05:23:52 [analyst] INFO job test  82.0% loading profile on both GPU workers (voice-clone prompt cache)
+05:23:52 [analyst] INFO job test 100.0% done in 0.1 s

@@ -1,0 +1,23 @@
+{
+  "frozen_1_through_7_hashes_match": true,
+  "artifact_sha256": "3fe57769560c076d6d288a87cae6150b0a9404597eb0ea3997ab26de596f4cd0",
+  "artifact_bytes": 222808,
+  "embedded_memos_complete": 17,
+  "professional_questions": 6,
+  "suggestions": 300,
+  "checklist_checked": 21,
+  "checklist_total": 300,
+  "python": {
+    "unique": 146,
+    "rounds": 3,
+    "passed": 438
+  },
+  "browser": {
+    "unique": 107,
+    "rounds": 3,
+    "passed": 321
+  },
+  "copy_special_passed": 3,
+  "real_model_encoding_verified": false,
+  "training_verified": false
+}

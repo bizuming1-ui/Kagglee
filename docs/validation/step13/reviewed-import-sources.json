@@ -1,0 +1,42 @@
+[
+  {
+    "wheel": "faster_qwen3_tts-0.5.4-py3-none-any.whl",
+    "sha256": "714bfb6d0a70fac177eac48b0a750e04bd597ab9aa86d35c4271aa15d0d1b716",
+    "members": [
+      {
+        "path": "faster_qwen3_tts/__init__.py",
+        "sha256": "75858dd174e2ddec9cb715f54059e6c67efc1ec6fe3fc43832f8a45a0bcb968f",
+        "import_related_lines": []
+      },
+      {
+        "path": "faster_qwen3_tts/model.py",
+        "sha256": "7d45740b805bb1a4798fbe20ffd580e2a35361e744c4645da106c2b6383d4de2",
+        "import_related_lines": [
+          "194:             from qwen_tts import Qwen3TTSModel"
+        ]
+      }
+    ]
+  },
+  {
+    "wheel": "qwen_tts_hf-0.1.1.post1-py3-none-any.whl",
+    "sha256": "ed5b7aae64cf795243369fb5226173f459a45689ea86db1c6d3eb14fc0c2c01d",
+    "members": [
+      {
+        "path": "qwen_tts/__init__.py",
+        "sha256": "c3b6adbdbd430fdadd7f0d2cd29b598ebb1bdb168a758ad516ced1e177f4730a",
+        "import_related_lines": [
+          "18: qwen_tts: Qwen-TTS package.",
+          "21: from ._transformers_compat import patch_transformers_rope_registry",
+          "23: patch_transformers_rope_registry()"
+        ]
+      },
+      {
+        "path": "qwen_tts/_transformers_compat.py",
+        "sha256": "033673335ed7bcb19054cdabc6c8400e443493f4b54340f8f449577d122bf982",
+        "import_related_lines": [
+          "32: def patch_transformers_rope_registry() -> None:"
+        ]
+      }
+    ]
+  }
+]

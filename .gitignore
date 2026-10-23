@@ -1,0 +1,24 @@
+node_modules/
+playwright-report/
+test-results/
+.env
+*.log
+.venv/
+__pycache__/
+*.pyc
+kaggle/source/state/
+kaggle/source/tools_bin/
+kaggle/source/go/gateway/gateway
+kaggle/source/rust/audio_rt/target/
+
+**/.access-token
+**/.access-token.lock
+# Private immutable training inputs/codes also when --state is relocated.
+**/training_data/
+**/training_codes/
+
+# Private experimental adapters/run requests, including relocated STATE.
+**/training_runs/
+
+# Ephemeral CPU evidence dependencies and downloaded review wheels.
+.cache/

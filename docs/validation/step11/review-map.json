@@ -1,0 +1,2422 @@
+{
+  "scope": "三轮各100项范围与建议逐项复审；不是300个已实现新修复，也不是GPU验收",
+  "checked": 22,
+  "total": 300,
+  "rounds": [
+    {
+      "round": 1,
+      "items": [
+        {
+          "id": "R1-001",
+          "recommendation": "定位用户实际上传的kaggle源文件，缺失时停止逐行修复结论。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-002",
+          "recommendation": "记录源文件SHA256与文件大小，避免审查错误版本。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-003",
+          "recommendation": "识别Python脚本和Notebook格式，不把Notebook JSON直接当Python。",
+          "checked_preserved": true,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-004",
+          "recommendation": "保留用户原文件备份，不用默认示例覆盖。",
+          "checked_preserved": true,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-005",
+          "recommendation": "列出全部本地模块、动态生成文件与启动单元。",
+          "checked_preserved": true,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-006",
+          "recommendation": "标记原有可用功能并建立回归基线。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-007",
+          "recommendation": "梳理安装、下载、预处理、训练、推理、前端六个入口。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-008",
+          "recommendation": "检查Notebook重复执行是否创建重复服务。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-009",
+          "recommendation": "排查硬编码密码与API密钥，仅记录发现位置不输出秘密。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-010",
+          "recommendation": "为每个真实缺陷记录复现步骤、行号和影响范围。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-011",
+          "recommendation": "检查GPU数量是否实际为2，不能只根据平台选项判断。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-012",
+          "recommendation": "记录每块GPU名称、compute capability与可用显存。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-013",
+          "recommendation": "记录驱动、CUDA、PyTorch与Python版本。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-014",
+          "recommendation": "验证两个worker分别绑定不同物理GPU。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-015",
+          "recommendation": "禁止device_map=auto意外将同一模型切分到双卡。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-016",
+          "recommendation": "避免训练主进程初始化CUDA后再不安全地fork。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-017",
+          "recommendation": "使用spawn进程启动方式并防止Notebook递归启动。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-018",
+          "recommendation": "对每个GPU分别执行独立最小推理。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-019",
+          "recommendation": "区分双GPU吞吐与单段音频延迟，不能直接等同。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-020",
+          "recommendation": "在GPU不可用时返回失败状态而不是模拟模型成功。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-021",
+          "recommendation": "确认克隆模型是Qwen3-TTS-12Hz-1.7B-Base。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-022",
+          "recommendation": "确认Tokenizer版本与模型相匹配。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-023",
+          "recommendation": "固定模型权重revision并记录哈希。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-024",
+          "recommendation": "核对官方Python接口签名，不猜测流式参数。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-025",
+          "recommendation": "确认generate_voice_clone返回形式是否为整段波形。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-026",
+          "recommendation": "确认所选后端确实支持增量声学输出。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-027",
+          "recommendation": "区分Base、CustomVoice与VoiceDesign用途。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-028",
+          "recommendation": "不假定Base支持任意自然语言情感指令。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-029",
+          "recommendation": "核实clone prompt能否跨进程直接复用。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-030",
+          "recommendation": "每块GPU独立构建并校验参考特征缓存。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-031",
+          "recommendation": "T4默认研究FP16而不是直接复制BF16示例。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-032",
+          "recommendation": "对SDPA可用内核做真实设备探测。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-033",
+          "recommendation": "保留eager注意力可诊断回退而非静默换模型。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-034",
+          "recommendation": "不默认安装面向Ampere的标准FlashAttention 2。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-035",
+          "recommendation": "不把第三方Turing内核直接视作官方兼容。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-036",
+          "recommendation": "检查推理算子是否出现CPU回退。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-037",
+          "recommendation": "记录FP16非有限输出与溢出。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-038",
+          "recommendation": "检查采样率、声道与波形类型的返回契约。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-039",
+          "recommendation": "用torch.inference_mode限定推理路径。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-040",
+          "recommendation": "为模型预热单独计时，不计入热启动首声成绩。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-041",
+          "recommendation": "核实全部Python依赖的版本约束。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-042",
+          "recommendation": "新建隔离环境，避免破坏Kaggle内置CUDA依赖。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-043",
+          "recommendation": "不无条件升级torch或卸载平台GPU运行库。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-044",
+          "recommendation": "安装前检查磁盘容量与网络权限。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-045",
+          "recommendation": "下载失败保留可诊断错误并支持续传。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-046",
+          "recommendation": "验证下载文件完整性，不能只检查目录存在。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-047",
+          "recommendation": "对冷启动依赖下载显示阶段进度。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-048",
+          "recommendation": "移除每次聊天重复pip安装与模型加载。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-049",
+          "recommendation": "安装日志不包含密钥或私人音频内容。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-050",
+          "recommendation": "生成可重复执行的依赖锁定清单。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-051",
+          "recommendation": "把会话内驻留与跨会话持久化分开描述。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-052",
+          "recommendation": "不承诺Kaggle会话永久运行。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-053",
+          "recommendation": "记录当前平台配额与会话条件，不能写死永久时长。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-054",
+          "recommendation": "为结束会话前导出语音库设计操作入口。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-055",
+          "recommendation": "明确/kaggle/working不是无条件永久存储。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-056",
+          "recommendation": "对恢复的模型与数据执行校验。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-057",
+          "recommendation": "保存模型版本、适配器版本和语音库清单。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-058",
+          "recommendation": "重启后自动发现有效资产但不自动开始收费请求。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-059",
+          "recommendation": "缺少持久化资产时提示重新挂载而非假恢复。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-060",
+          "recommendation": "不使用规避平台会话限制的保活方案。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-061",
+          "recommendation": "核实官方训练脚本实际优化哪些参数。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-062",
+          "recommendation": "估算全参数AdamW权重、梯度、主副本与状态开销。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-063",
+          "recommendation": "不将两块16GB显存简单相加给DDP每卡使用。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-064",
+          "recommendation": "训练前用最小样本测量峰值显存。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-065",
+          "recommendation": "验证LoRA是否兼容目标层与语音架构。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-066",
+          "recommendation": "通过named_modules确定适配层而不是随意猜名字。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-067",
+          "recommendation": "冻结不训练的参数并统计可训练参数数量。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-068",
+          "recommendation": "检查梯度checkpoint与缓存设置是否冲突。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-069",
+          "recommendation": "检查模型训练包装后的属性访问是否支持DDP。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-070",
+          "recommendation": "对分布式保存与恢复做独立可复现实验。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-071",
+          "recommendation": "建立参考音频上传与实际训练的独立状态机。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-072",
+          "recommendation": "不把create_voice_clone_prompt标注成微调训练。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-073",
+          "recommendation": "音频库名称使用内部ID，显示名称与磁盘路径分离。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-074",
+          "recommendation": "上传前必须选定或创建语音库。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-075",
+          "recommendation": "音频条目包含来源、时长、采样率和转写。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-076",
+          "recommendation": "检查所有音频解码工具是否存在。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-077",
+          "recommendation": "按实际格式解码，不能只相信文件后缀。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-078",
+          "recommendation": "拒绝空音频、损坏数据与明显静音。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-079",
+          "recommendation": "记录训练授权和声音使用同意。",
+          "checked_preserved": true,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-080",
+          "recommendation": "不得从多个不同说话人混合出单说话人训练集。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-081",
+          "recommendation": "训练数据每条必须有匹配转写。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-082",
+          "recommendation": "自动转写结果允许人工修正。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-083",
+          "recommendation": "检查语言标签和文本正规化规则。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-084",
+          "recommendation": "保留原始音频，预处理输出单独存储。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-085",
+          "recommendation": "对削波、噪声和过短语音提示质量问题。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-086",
+          "recommendation": "限制单次上传大小与总存储额度。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-087",
+          "recommendation": "明确任意数量输入采用分批任务，不承诺无限资源。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-088",
+          "recommendation": "为重复音频提供哈希去重。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-089",
+          "recommendation": "训练和验证按音频来源拆分，避免片段泄漏。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-090",
+          "recommendation": "记录被过滤音频及原因而不是静默跳过。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-091",
+          "recommendation": "扫描HTTP接口的任意路径读写风险。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-092",
+          "recommendation": "检查暴露网站的认证与访问令牌。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-093",
+          "recommendation": "DeepSeek密钥仅放服务端配置与安全环境变量。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-094",
+          "recommendation": "不把密钥写入前端localStorage或下载包。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-095",
+          "recommendation": "限制出站API地址，防止任意URL导致SSRF。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-096",
+          "recommendation": "检查异常日志是否泄漏请求头。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-097",
+          "recommendation": "为上传、训练和聊天设置请求容量限制。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-098",
+          "recommendation": "核实浏览器录音需要HTTPS和用户权限。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-099",
+          "recommendation": "对跨站写入与WebSocket Origin进行验证。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R1-100",
+          "recommendation": "完成首轮后输出证据、待办和阻塞，不编造100个已修缺陷。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "items": [
+        {
+          "id": "R2-001",
+          "recommendation": "把推理与训练定义为互斥的GPU资源模式。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-002",
+          "recommendation": "训练前停止接收新推理任务并提示服务状态。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-003",
+          "recommendation": "显式取消或排空旧任务后再释放推理显存。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-004",
+          "recommendation": "训练结束后仅在检查点验证通过时恢复推理。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-005",
+          "recommendation": "恢复时将选定模型分别加载到两块GPU。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-006",
+          "recommendation": "防止同时常驻推理副本和全参数训练造成OOM。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-007",
+          "recommendation": "训练失败保留上一可用模型和语音库。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-008",
+          "recommendation": "资源不足时报告原因，不静默降成0.6B。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-009",
+          "recommendation": "检查模型卸载后实际可回收显存。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-010",
+          "recommendation": "设计GPU资源所有权锁与超时恢复。",
+          "checked_preserved": true,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-011",
+          "recommendation": "使用两个真实rank参与同一个训练作业。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-012",
+          "recommendation": "确认每个rank的设备映射和分布式world_size。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-013",
+          "recommendation": "用分布式采样器划分数据而非重复整套样本。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-014",
+          "recommendation": "每轮调用set_epoch更新采样顺序。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-015",
+          "recommendation": "统计原始样本ID的跨rank覆盖情况。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-016",
+          "recommendation": "不因drop_last让选定样本长期不参与训练。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-017",
+          "recommendation": "不能整除world_size时标明填充或重复样本策略。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-018",
+          "recommendation": "记录每rank步数与梯度同步次数。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-019",
+          "recommendation": "显式同步训练异常，避免另一rank永久挂起。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-020",
+          "recommendation": "验证两卡训练不是并行执行两个独立微调。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-021",
+          "recommendation": "FP16训练启用相应GradScaler与溢出检查。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-022",
+          "recommendation": "只对可训练参数创建优化器状态。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-023",
+          "recommendation": "使用梯度累积降低单卡微批显存。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-024",
+          "recommendation": "记录有效全局batch的实际计算方式。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-025",
+          "recommendation": "验证loss有限并实际发生参数更新。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-026",
+          "recommendation": "记录每轮耗时、已见样本数和学习率。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-027",
+          "recommendation": "避免将loss降低等同音色相似度提升。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-028",
+          "recommendation": "支持用户取消后保存可恢复状态。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-029",
+          "recommendation": "验证取消操作对两个rank同时生效。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-030",
+          "recommendation": "防止训练进程结束后留下占显存子进程。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-031",
+          "recommendation": "训练清单固定所选音频ID和内容哈希。",
+          "checked_preserved": true,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-032",
+          "recommendation": "任务启动后音频编辑不改变运行中的数据集。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-033",
+          "recommendation": "音频编码准备阶段显示真实进度。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-034",
+          "recommendation": "保留原始JSONL、分词版本与声学码版本。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-035",
+          "recommendation": "明确保存优化器、调度器和随机数状态需求。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-036",
+          "recommendation": "所有rank按后端要求参与检查点状态收集。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-037",
+          "recommendation": "只有指定写入进程发布最终清单。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-038",
+          "recommendation": "检查点临时目录校验后再原子切换。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-039",
+          "recommendation": "按训练后端正确处理分片或完整state_dict。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-040",
+          "recommendation": "使用新进程加载检查点完成独立试听。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-041",
+          "recommendation": "为单说话人微调保存说话人ID映射。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-042",
+          "recommendation": "保存适配器与基础权重revision的绑定关系。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-043",
+          "recommendation": "不混淆Base克隆接口与训练后CustomVoice接口。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-044",
+          "recommendation": "对多个语音库采用各自版本，不覆盖全局共享状态。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-045",
+          "recommendation": "推理任务携带不可变的voice_revision。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-046",
+          "recommendation": "检查切换语音时缓存键包含模型版本。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-047",
+          "recommendation": "为旧模型引用计数，避免在途推理使用已卸载权重。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-048",
+          "recommendation": "保留模型切换失败回滚路径。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-049",
+          "recommendation": "对同一语音两块GPU生成的音频做一致性抽样。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-050",
+          "recommendation": "训练完整性报告列出选中、有效、已见和排除样本数量。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-051",
+          "recommendation": "DeepSeek以流式模式读取增量文本。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-052",
+          "recommendation": "API模型名称按供应商实际能力配置。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-053",
+          "recommendation": "分别配置输出预算与上下文预算。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-054",
+          "recommendation": "处理finish_reason=length与长文截断。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-055",
+          "recommendation": "避免在第一句之前等待完整长回答。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-056",
+          "recommendation": "为中文句号、问号、感叹号定义切句规则。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-057",
+          "recommendation": "为无标点长文本提供最大等待时间与长度边界。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-058",
+          "recommendation": "保护代码块、小数、URL和缩写不被错误切断。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-059",
+          "recommendation": "记录切句器尚未消费的尾部文本。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-060",
+          "recommendation": "结束流时刷新最后一个不完整句子。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-061",
+          "recommendation": "为每轮聊天生成turn_id。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-062",
+          "recommendation": "为每段文本生成递增segment_id。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-063",
+          "recommendation": "两个GPU按任务队列工作而不是前端并发无序播放。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-064",
+          "recommendation": "首个短段优先调度至空闲且已预热的worker。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-065",
+          "recommendation": "后续段适度增大，以减少句间重启成本。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-066",
+          "recommendation": "限制预合成队列长度，防止长输出撑爆内存。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-067",
+          "recommendation": "对慢段实施顺序等待，不能跳过内容。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-068",
+          "recommendation": "记录各段音频采样率与长度。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-069",
+          "recommendation": "重采样至统一播放格式后再进入浏览器队列。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-070",
+          "recommendation": "不对尚未实现的token级流式接口作虚假声明。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-071",
+          "recommendation": "用WebSocket或流式HTTP传送明确的音频元数据。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-072",
+          "recommendation": "为每个音频包携带turn、segment、chunk和版本信息。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-073",
+          "recommendation": "音频数据采用确定字节序和波形编码。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-074",
+          "recommendation": "处理传输分片、半包和重复包。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-075",
+          "recommendation": "浏览器按样本时钟而不是收到即play调度。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-076",
+          "recommendation": "使用同一AudioContext播放时钟。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-077",
+          "recommendation": "首次用户操作中显式解锁音频上下文。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-078",
+          "recommendation": "为自动播放被拒提供可见的开始播放入口。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-079",
+          "recommendation": "设计有界预缓冲与可观测欠载计数。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-080",
+          "recommendation": "不靠无限预缓冲掩盖首声延迟不达标。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-081",
+          "recommendation": "使用连续PCM调度或AudioWorklet环形队列。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-082",
+          "recommendation": "每块音频采用相同声道与采样率。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-083",
+          "recommendation": "必要时用短交叉淡化消除拼接爆音。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-084",
+          "recommendation": "不得用交叉淡化掩盖句子丢失或重复。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-085",
+          "recommendation": "保存浏览器已排程的所有音频节点。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-086",
+          "recommendation": "打断时停止节点并清空尚未播放队列。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-087",
+          "recommendation": "发送取消信号至DeepSeek读取任务。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-088",
+          "recommendation": "通过生成停止条件取消GPU任务，而不仅关闭界面。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-089",
+          "recommendation": "旧turn迟到音频一律丢弃。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-090",
+          "recommendation": "新输入不等待旧整段合成完成才进入调度。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-091",
+          "recommendation": "麦克风输入与播放回声处理分开设计。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-092",
+          "recommendation": "用户按住或点击语音输入时明确定义打断时点。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-093",
+          "recommendation": "为语音识别提供可选本地后端和文本输入兜底。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-094",
+          "recommendation": "不能将浏览器Web Speech API视为所有浏览器通用。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-095",
+          "recommendation": "录音权限失败时保留上传功能。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-096",
+          "recommendation": "录音状态以真实MediaRecorder或采样状态驱动。",
+          "checked_preserved": true,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-097",
+          "recommendation": "波形来自AnalyserNode实际信号，而不是假动画。",
+          "checked_preserved": true,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-098",
+          "recommendation": "停止录音后关闭所有麦克风track。",
+          "checked_preserved": true,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-099",
+          "recommendation": "参考录音不能误发送为聊天输入。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R2-100",
+          "recommendation": "第二轮输出瓶颈数据和未达标项，不承诺理论性能就是实测结果。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "items": [
+        {
+          "id": "R3-001",
+          "recommendation": "启动时检查两块GPU的模型加载状态。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-002",
+          "recommendation": "只有两块GPU独立推理成功才显示双卡就绪。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-003",
+          "recommendation": "分别记录冷启动和热启动时间。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-004",
+          "recommendation": "固定性能样本的语言、长度与语音版本。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-005",
+          "recommendation": "对同一请求记录统一时间线和关联ID。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-006",
+          "recommendation": "记录用户提交至DeepSeek首token的延迟。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-007",
+          "recommendation": "记录首个文本段形成的延迟。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-008",
+          "recommendation": "记录GPU排队与模型首声学输出的延迟。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-009",
+          "recommendation": "记录编码、传输和浏览器预缓冲的延迟。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-010",
+          "recommendation": "以实际可听首样本而不是接口返回计算首声。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-011",
+          "recommendation": "首声目标3秒必须注明硬件、网络和预热条件。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-012",
+          "recommendation": "同时报告P50与P95而不是挑选最快一次。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-013",
+          "recommendation": "公布超时比例与最慢样本。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-014",
+          "recommendation": "统计取消请求时不要混入成功首声分位数。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-015",
+          "recommendation": "对未开始播放的失败请求单独报告。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-016",
+          "recommendation": "说明浏览器时间与服务端时间如何关联。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-017",
+          "recommendation": "分别报告端到端RTF和纯TTS RTF。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-018",
+          "recommendation": "用生成耗时除以音频时长计算RTF。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-019",
+          "recommendation": "双卡聚合吞吐与单流RTF分开报告。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-020",
+          "recommendation": "RTF不达0.5时不得自动写成通过。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-021",
+          "recommendation": "测量连续播放中的队列欠载次数。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-022",
+          "recommendation": "区分自然语言停顿与系统缓冲断音。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-023",
+          "recommendation": "记录丢包、重传和乱序恢复计数。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-024",
+          "recommendation": "使用长回答验证后半段不会耗尽缓冲。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-025",
+          "recommendation": "使用无标点回答验证切句器上限。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-026",
+          "recommendation": "使用中英混合文本验证正规化。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-027",
+          "recommendation": "使用多轮上下文验证供应商上下文边界。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-028",
+          "recommendation": "模拟供应商限流并验证有界重试。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-029",
+          "recommendation": "模拟DeepSeek中途断流且不重复播已说文本。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-030",
+          "recommendation": "不在同一turn中无提示地重试产生另一份回答。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-031",
+          "recommendation": "按不同输入长度重复首声测量。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-032",
+          "recommendation": "按两张卡分别测量相同文本RTF。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-033",
+          "recommendation": "记录峰值显存、CPU、内存和网络流量。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-034",
+          "recommendation": "用两卡负载不均场景验证调度。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-035",
+          "recommendation": "用worker崩溃验证队列清理和恢复。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-036",
+          "recommendation": "用GPU OOM验证服务退回可诊断状态。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-037",
+          "recommendation": "用上传大文件验证资源限制。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-038",
+          "recommendation": "用异常音频验证解码失败不影响其他库。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-039",
+          "recommendation": "用零条有效样本验证训练按钮不会假成功。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-040",
+          "recommendation": "用训练取消验证没有残留GPU任务。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-041",
+          "recommendation": "定义训练完成必须包含已见样本和检查点记录。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-042",
+          "recommendation": "验证全部选中有效样本跨rank至少被读取。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-043",
+          "recommendation": "记录不能接受样本的排除清单。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-044",
+          "recommendation": "训练轮次与数据完整性分开验收。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-045",
+          "recommendation": "用恢复训练验证步数与模型版本正确。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-046",
+          "recommendation": "用停止Notebook后重启流程验证资产恢复。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-047",
+          "recommendation": "从干净环境执行安装与启动单元。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-048",
+          "recommendation": "清理仅缓存数据后重新运行可用性测试。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-049",
+          "recommendation": "验证已有资产不会被初始化示例覆盖。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-050",
+          "recommendation": "验证失败的训练检查点不替代最后可用版本。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-051",
+          "recommendation": "定义音色相似度的模型、维度和计算方式。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-052",
+          "recommendation": "不把cosine=0.995直接解释为99.5%人声一致。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-053",
+          "recommendation": "使用未参与训练的参考与文本评估。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-054",
+          "recommendation": "对内容正确性统计CER或WER。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-055",
+          "recommendation": "对情感、节奏、音质分别设置主观评价项。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-056",
+          "recommendation": "进行盲听而不是只由开发者选最好样本。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-057",
+          "recommendation": "记录参考音频环境差异对结果的影响。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-058",
+          "recommendation": "不强制降噪或音高处理导致身份特征丢失。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-059",
+          "recommendation": "记录随机种子与生成采样参数。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-060",
+          "recommendation": "相似度目标未达到时展示实际值与评估限制。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-061",
+          "recommendation": "参考语音界面与对话界面保持两个明显入口。",
+          "checked_preserved": true,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-062",
+          "recommendation": "页面适配常见桌面和手机视口。",
+          "checked_preserved": true,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-063",
+          "recommendation": "主要操作无需页面纵向滚动。",
+          "checked_preserved": true,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-064",
+          "recommendation": "音频列表超量时分页而非无限增长撑开页面。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-065",
+          "recommendation": "训练日志使用分页或切换详情面板。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-066",
+          "recommendation": "窄屏不强行隐藏重要错误或控制按钮。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-067",
+          "recommendation": "录音按钮显示开始、停止、时长和权限状态。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-068",
+          "recommendation": "波形在静音时仍保持录音状态标签可见。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-069",
+          "recommendation": "录音、上传、转写和训练采用独立状态。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-070",
+          "recommendation": "对话页面可随时选声音但切换策略明确。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-071",
+          "recommendation": "切换声音时在途段使用旧版本或统一取消，不能混音色。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-072",
+          "recommendation": "语音库删除必须确认并处理正在使用的版本。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-073",
+          "recommendation": "语音库重命名不改变内部ID。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-074",
+          "recommendation": "删除音频不破坏已发布检查点的可追溯清单。",
+          "checked_preserved": false,
+          "stage11_review_action": "输入与质量：统一参考WAV/对应文本及保存speaker绑定，训练profile固定参考；真实相似/音质/权利确认仍不能从CPU检查得出。",
+          "review_reference": "KAGGLE_ADAPTER_QUICKSTART.md / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-075",
+          "recommendation": "API密钥输入框不回显已保存密钥。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-076",
+          "recommendation": "后端只返回是否已配置及验证结果。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-077",
+          "recommendation": "配置测试不发起意外长文本收费请求。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-078",
+          "recommendation": "会话令牌与DeepSeek密钥分离。",
+          "checked_preserved": true,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-079",
+          "recommendation": "公开访问入口默认要求认证。",
+          "checked_preserved": true,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-080",
+          "recommendation": "导出的代码和日志不得含实际秘密。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-081",
+          "recommendation": "为Kaggle复制按钮明确所复制文件与版本。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-082",
+          "recommendation": "复制完整Python源码而不是网页HTML。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-083",
+          "recommendation": "Notebook需要明确导出为代码单元，不盲拼魔法命令。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-084",
+          "recommendation": "提供复制失败后的手动选择兜底。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-085",
+          "recommendation": "复制成功不宣称运行验证成功。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-086",
+          "recommendation": "提供依赖单元和启动单元的执行顺序。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-087",
+          "recommendation": "验证复制代码的哈希与原交付文件一致。",
+          "checked_preserved": false,
+          "stage11_review_action": "安全与发布：受限文件/pin/成员/tensor finite检查，错误拒绝且不静默回退；旧认证/上传/容量门禁随三轮回归。",
+          "review_reference": "trained_profiles.py / test_security.py / test_packaging.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-088",
+          "recommendation": "下载包包含README、依赖锁定和许可证。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-089",
+          "recommendation": "模型、音频和训练权重不提交到Git。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-090",
+          "recommendation": "保留现有编辑、保存、命名和预览回归测试。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-091",
+          "recommendation": "第一遍端到端覆盖正常录音、训练与聊天。",
+          "checked_preserved": false,
+          "stage11_review_action": "训练及重载：保留stage10门禁；step11校验完成记录/pin与保存speaker。CPU代码证据不替代NCCL/Qwen现场结果。",
+          "review_reference": "trained_profiles.py / adapter_engine.py / test_adapter_inference.py",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-092",
+          "recommendation": "第二遍端到端覆盖异常、取消与打断。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-093",
+          "recommendation": "第三遍端到端覆盖重启、长回答和持续播放。",
+          "checked_preserved": false,
+          "stage11_review_action": "推理与协议：显式原生句级缓冲，合作取消并丢迟到PCM；Go/SSE/双worker三轮为CPU替身，保留原faster时序/真实模型另验。",
+          "review_reference": "adapter_gateway_check.py / worker.py / scheduler.go / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-094",
+          "recommendation": "每遍记录硬件环境、用例数与失败截图。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-095",
+          "recommendation": "单元模拟通过不得代替真实GPU测试。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-096",
+          "recommendation": "公开未实现功能列表，不用占位按钮表示完成。",
+          "checked_preserved": false,
+          "stage11_review_action": "界面保留：两主视图与原录音/命名库/复制，训练候选标注缓冲/未验收、参考只读；隔离浏览器测试不改正式HEAD。",
+          "review_reference": "qtts.spec.js / studio.spec.js / browser-repeat3.txt",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-097",
+          "recommendation": "所有修复都关联真实源码位置和对应测试。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-098",
+          "recommendation": "为版本发布保留可回滚方案。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-099",
+          "recommendation": "将决策、清单、命令和阻塞汇总到单一提示词。",
+          "checked_preserved": false,
+          "stage11_review_action": "源码/交接：原始至step10冻结，保持正式HEAD与15文件；当前完整交接保留历史并以step11为准，不把建议数当修复数。",
+          "review_reference": "verify_delivery.py / KAGGLE_HANDOFF_PROMPT.md",
+          "full_target_newly_accepted": false
+        },
+        {
+          "id": "R3-100",
+          "recommendation": "缺少源文件、GPU、模型或API时暂停相应验收结论。",
+          "checked_preserved": false,
+          "stage11_review_action": "目标设备：原生FP16/eager，每worker一GPU；固定本地Base而非盲目升级库；runtime probe blocked，保留真实硬件未验收。",
+          "review_reference": "native-runtime-probe.json / KAGGLE_TARGET_ACCEPTANCE.md",
+          "full_target_newly_accepted": false
+        }
+      ]
+    }
+  ]
+}

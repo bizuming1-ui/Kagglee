@@ -1,0 +1,62 @@
+test_legacy_official_namespace_does_not_import_or_patch_hf5 (kaggle.tests.test_qwen_compat.CompatibilityTests.test_legacy_official_namespace_does_not_import_or_patch_hf5) ... ok
+test_legacy_schema_and_device_are_unchanged (kaggle.tests.test_qwen_compat.CompatibilityTests.test_legacy_schema_and_device_are_unchanged) ... ok
+test_modern_schema_uses_actual_theta_not_a_hardcoded_default (kaggle.tests.test_qwen_compat.CompatibilityTests.test_modern_schema_uses_actual_theta_not_a_hardcoded_default) ... ok
+test_owned_supervisor_cleanup_uses_only_supplied_popen (kaggle.tests.test_qwen_compat.CompatibilityTests.test_owned_supervisor_cleanup_uses_only_supplied_popen) ... ok
+test_partial_factor_propagates_without_mutating_modern_dict (kaggle.tests.test_qwen_compat.CompatibilityTests.test_partial_factor_propagates_without_mutating_modern_dict) ... ok
+test_registry_install_idempotent_and_unknown_override_refused (kaggle.tests.test_qwen_compat.CompatibilityTests.test_registry_install_idempotent_and_unknown_override_refused) ... ok
+test_scaled_missing_nested_invalid_modern_schema_refused (kaggle.tests.test_qwen_compat.CompatibilityTests.test_scaled_missing_nested_invalid_modern_schema_refused) ... ok
+test_session_resident_does_not_restart_at_600_or_old_memory_limit (kaggle.tests.test_qwen_compat.CompatibilityTests.test_session_resident_does_not_restart_at_600_or_old_memory_limit) ... 12:16:12 [worker0] WARNING resident model: high allocated VRAM 14000MB; inspect actual headroom
+12:16:12 [worker0] WARNING requesting graceful restart (alloc=14000MB served=700)
+ok
+test_supervisor_stops_fatal_worker_without_retry (kaggle.tests.test_qwen_compat.CompatibilityTests.test_supervisor_stops_fatal_worker_without_retry) ... 12:16:12 [supervisor] ERROR worker0 fatal configuration error; stopping retries: MimiConfig rope_theta
+ok
+test_two_worker_gpu_mapping_is_distinct (kaggle.tests.test_qwen_compat.CompatibilityTests.test_two_worker_gpu_mapping_is_distinct) ... ok
+test_unreviewed_or_colliding_hf_distribution_rejected (kaggle.tests.test_qwen_compat.CompatibilityTests.test_unreviewed_or_colliding_hf_distribution_rejected) ... ok
+test_wait_ready_exits_on_fatal_health_and_on_current_nonce_receipt (kaggle.tests.test_qwen_compat.CompatibilityTests.test_wait_ready_exits_on_fatal_health_and_on_current_nonce_receipt) ... ✗ fatal worker configuration error; stopping startup (see worker logs)
+✗ supervisor recorded fatal worker configuration error; stopping startup
+ok
+test_worker_fatal_boot_is_distinguished_from_transient_failure (kaggle.tests.test_qwen_compat.CompatibilityTests.test_worker_fatal_boot_is_distinguished_from_transient_failure) ... 12:16:12 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+AttributeError: 'MimiConfig' object has no attribute 'rope_theta'
+12:16:12 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+qwen_compat.BackendCompatibilityError: bad config
+12:16:12 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: temporary IO
+ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.029s
+
+OK

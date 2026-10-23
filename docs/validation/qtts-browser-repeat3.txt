@@ -1,0 +1,30 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/qtts.spec.js --repeat-each=3
+
+
+Running 18 tests using 1 worker
+
+
+  ✓   1 tests/browser/qtts.spec.js:57:1 › QTTS key migration clears persisted secrets and new keys stay in memory (333ms)
+  ✓   2 tests/browser/qtts.spec.js:68:1 › QTTS late old response cannot end, overwrite or report the current stream (523ms)
+  ✓   3 tests/browser/qtts.spec.js:88:1 › QTTS overlapping clicks share audio initialization and only latest starts (337ms)
+  ✓   4 tests/browser/qtts.spec.js:100:1 › QTTS audio initialization error stays actionable instead of unhandled rejection (295ms)
+  ✓   5 tests/browser/qtts.spec.js:110:1 › QTTS late old body frame cannot finalize a newer active stream (373ms)
+  ✓   6 tests/browser/qtts.spec.js:130:1 › QTTS stop during pending audio initialization prevents a late HTTP request (325ms)
+
+  ✓   7 tests/browser/qtts.spec.js:57:1 › QTTS key migration clears persisted secrets and new keys stay in memory (324ms)
+  ✓   8 tests/browser/qtts.spec.js:68:1 › QTTS late old response cannot end, overwrite or report the current stream (578ms)
+  ✓   9 tests/browser/qtts.spec.js:88:1 › QTTS overlapping clicks share audio initialization and only latest starts (381ms)
+  ✓  10 tests/browser/qtts.spec.js:100:1 › QTTS audio initialization error stays actionable instead of unhandled rejection (316ms)
+  ✓  11 tests/browser/qtts.spec.js:110:1 › QTTS late old body frame cannot finalize a newer active stream (341ms)
+  ✓  12 tests/browser/qtts.spec.js:130:1 › QTTS stop during pending audio initialization prevents a late HTTP request (324ms)
+
+  ✓  13 tests/browser/qtts.spec.js:57:1 › QTTS key migration clears persisted secrets and new keys stay in memory (346ms)
+  ✓  14 tests/browser/qtts.spec.js:68:1 › QTTS late old response cannot end, overwrite or report the current stream (581ms)
+  ✓  15 tests/browser/qtts.spec.js:88:1 › QTTS overlapping clicks share audio initialization and only latest starts (374ms)
+  ✓  16 tests/browser/qtts.spec.js:100:1 › QTTS audio initialization error stays actionable instead of unhandled rejection (315ms)
+  ✓  17 tests/browser/qtts.spec.js:110:1 › QTTS late old body frame cannot finalize a newer active stream (442ms)
+  ✓  18 tests/browser/qtts.spec.js:130:1 › QTTS stop during pending audio initialization prevents a late HTTP request (334ms)
+
+  18 passed (8.7s)

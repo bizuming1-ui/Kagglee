@@ -1,0 +1,195 @@
+
+> kagglee-browser-studio@1.0.0 test
+> node --test tests/server.test.js
+
+TAP version 13
+# Subtest: initial project contains all three real files
+ok 1 - initial project contains all three real files
+  ---
+  duration_ms: 48.41532
+  type: 'test'
+  ...
+# Subtest: save persists exact unicode and closing-tag contents
+ok 2 - save persists exact unicode and closing-tag contents
+  ---
+  duration_ms: 62.310574
+  type: 'test'
+  ...
+# Subtest: new store instance restores persisted version
+ok 3 - new store instance restores persisted version
+  ---
+  duration_ms: 13.734806
+  type: 'test'
+  ...
+# Subtest: historical revision is not overwritten
+ok 4 - historical revision is not overwritten
+  ---
+  duration_ms: 18.220706
+  type: 'test'
+  ...
+# Subtest: stale revisions return 409 and preserve disk
+ok 5 - stale revisions return 409 and preserve disk
+  ---
+  duration_ms: 32.834705
+  type: 'test'
+  ...
+# Subtest: concurrent saves admit exactly one winner
+ok 6 - concurrent saves admit exactly one winner
+  ---
+  duration_ms: 24.689578
+  type: 'test'
+  ...
+# Subtest: empty source files are valid
+ok 7 - empty source files are valid
+  ---
+  duration_ms: 23.571148
+  type: 'test'
+  ...
+# Subtest: rejects missing, extra, traversal and non-string files
+ok 8 - rejects missing, extra, traversal and non-string files
+  ---
+  duration_ms: 17.256085
+  type: 'test'
+  ...
+# Subtest: requires baseRevision string
+ok 9 - requires baseRevision string
+  ---
+  duration_ms: 3.733636
+  type: 'test'
+  ...
+# Subtest: rejects malformed JSON and unsupported content type
+ok 10 - rejects malformed JSON and unsupported content type
+  ---
+  duration_ms: 3.581579
+  type: 'test'
+  ...
+# Subtest: rejects extra request fields and array bodies
+ok 11 - rejects extra request fields and array bodies
+  ---
+  duration_ms: 4.455348
+  type: 'test'
+  ...
+# Subtest: 1 MiB limit counts UTF-8 bytes, not characters
+ok 12 - 1 MiB limit counts UTF-8 bytes, not characters
+  ---
+  duration_ms: 18.700337
+  type: 'test'
+  ...
+# Subtest: accepts exactly 1 MiB and JSON-escaped control characters
+ok 13 - accepts exactly 1 MiB and JSON-escaped control characters
+  ---
+  duration_ms: 230.696042
+  type: 'test'
+  ...
+# Subtest: rejects oversized raw request
+ok 14 - rejects oversized raw request
+  ---
+  duration_ms: 49.239987
+  type: 'test'
+  ...
+# Subtest: rejects cross-origin, opaque-origin and cross-site writes
+ok 15 - rejects cross-origin, opaque-origin and cross-site writes
+  ---
+  duration_ms: 93.894405
+  type: 'test'
+  ...
+# Subtest: allows same-origin write and does not enable CORS
+ok 16 - allows same-origin write and does not enable CORS
+  ---
+  duration_ms: 119.457969
+  type: 'test'
+  ...
+# Subtest: static asset whitelist does not expose storage or source
+ok 17 - static asset whitelist does not expose storage or source
+  ---
+  duration_ms: 5.48631
+  type: 'test'
+  ...
+# Subtest: assets support HEAD and security headers
+ok 18 - assets support HEAD and security headers
+  ---
+  duration_ms: 4.986289
+  type: 'test'
+  ...
+# Subtest: API is uncached and methods are restricted
+ok 19 - API is uncached and methods are restricted
+  ---
+  duration_ms: 2.835964
+  type: 'test'
+  ...
+# Subtest: example endpoint does not mutate saved project
+ok 20 - example endpoint does not mutate saved project
+  ---
+  duration_ms: 4.446237
+  type: 'test'
+  ...
+# Request failed: simulated disk failure
+# Subtest: write failure does not change HEAD; subsequent saves recover
+ok 21 - write failure does not change HEAD; subsequent saves recover
+  ---
+  duration_ms: 8.400244
+  type: 'test'
+  ...
+# Subtest: failed real atomic rename cleans up incomplete revision
+ok 22 - failed real atomic rename cleans up incomplete revision
+  ---
+  duration_ms: 3.975308
+  type: 'test'
+  ...
+# Subtest: corrupt HEAD is not silently replaced
+ok 23 - corrupt HEAD is not silently replaced
+  ---
+  duration_ms: 2.000208
+  type: 'test'
+  ...
+# Subtest: missing revision file and invalid HEAD path do not reset project
+ok 24 - missing revision file and invalid HEAD path do not reset project
+  ---
+  duration_ms: 4.236384
+  type: 'test'
+  ...
+# Subtest: full HTTP server restart restores latest saved source from disk
+ok 25 - full HTTP server restart restores latest saved source from disk
+  ---
+  duration_ms: 13.793778
+  type: 'test'
+  ...
+# Subtest: custom named blank and unicode files are written exactly and restored
+ok 26 - custom named blank and unicode files are written exactly and restored
+  ---
+  duration_ms: 20.381161
+  type: 'test'
+  ...
+# Subtest: rename preserves content and leaves historical names untouched
+ok 27 - rename preserves content and leaves historical names untouched
+  ---
+  duration_ms: 23.141267
+  type: 'test'
+  ...
+# Subtest: rejects unsafe, reserved, excessively long and case-colliding custom names
+ok 28 - rejects unsafe, reserved, excessively long and case-colliding custom names
+  ---
+  duration_ms: 34.071239
+  type: 'test'
+  ...
+# Subtest: permits 32 files and rejects 33 without changing disk
+ok 29 - permits 32 files and rejects 33 without changing disk
+  ---
+  duration_ms: 28.823329
+  type: 'test'
+  ...
+# Subtest: size limit includes all custom file contents
+ok 30 - size limit includes all custom file contents
+  ---
+  duration_ms: 30.256166
+  type: 'test'
+  ...
+1..30
+# tests 30
+# suites 0
+# pass 30
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1229.744826

@@ -1,0 +1,20 @@
+{
+  "name": "kagglee-browser-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test tests/server.test.js",
+    "test:e2e": "playwright test",
+    "check": "node --check src/server.js && node --check src/store.js && node --check public/app.js && node --check public/file-rules.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@sparticuz/chromium": "^153.0.0"
+  }
+}
