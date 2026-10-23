@@ -1,0 +1,53 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_buffered_single_yield_saved_prompt_and_cooperative_cancel (kaggle.tests.test_adapter_inference.AdapterTests.test_buffered_single_yield_saved_prompt_and_cooperative_cancel) ... ok
+test_cli_errors_redact_private_paths_and_are_not_success (kaggle.tests.test_adapter_inference.AdapterTests.test_cli_errors_redact_private_paths_and_are_not_success) ... ok
+test_corrupt_second_tensor_does_not_partially_replace_modules (kaggle.tests.test_adapter_inference.AdapterTests.test_corrupt_second_tensor_does_not_partially_replace_modules) ... ok
+test_deleted_or_rebound_cached_profile_never_used (kaggle.tests.test_adapter_inference.AdapterTests.test_deleted_or_rebound_cached_profile_never_used) ... ok
+test_engine_selection_unknown_and_mock_native_cannot_start (kaggle.tests.test_adapter_inference.AdapterTests.test_engine_selection_unknown_and_mock_native_cannot_start) ... /home/user/Kagglee/kaggle/source/py/worker.py:548: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/applications.py:4723: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  return self.router.on_event(event_type)  # ty: ignore[deprecated]
+ok
+test_existing_worker_wire_has_pcm_then_buffered_stats_and_mock_rejects (kaggle.tests.test_adapter_inference.AdapterTests.test_existing_worker_wire_has_pcm_then_buffered_stats_and_mock_rejects) ... 11:43:25 [worker0] ERROR job failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 425, in run_job
+    self.load_profile(pid)
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 360, in load_profile
+    guard_profile(prof,getattr(self.engine,"supports_trained",False))
+  File "/home/user/Kagglee/kaggle/source/py/trained_profiles.py", line 155, in guard_profile
+    reject('trained voice requires explicit qwen-adapter-buffered backend; no Base/Mock fallback')
+  File "/home/user/Kagglee/kaggle/source/py/trained_profiles.py", line 18, in reject
+    def reject(message):raise UploadRejected(message,409)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+resource_limits.UploadRejected: trained voice requires explicit qwen-adapter-buffered backend; no Base/Mock fallback
+ok
+test_fixed_profile_http_edits_rejected_and_consistency_failure_not_pass (kaggle.tests.test_adapter_inference.AdapterTests.test_fixed_profile_http_edits_rejected_and_consistency_failure_not_pass) ... ok
+test_fixture_codes_still_cannot_publish (kaggle.tests.test_adapter_inference.AdapterTests.test_fixture_codes_still_cannot_publish) ... ok
+test_hash_damage_after_cached_load_rejected_previous_adapter_unchanged (kaggle.tests.test_adapter_inference.AdapterTests.test_hash_damage_after_cached_load_rejected_previous_adapter_unchanged) ... ok
+test_invalid_native_pcm_contract_never_yields (kaggle.tests.test_adapter_inference.AdapterTests.test_invalid_native_pcm_contract_never_yields) ... ok
+test_mid_generation_cancel_discards_late_pcm (kaggle.tests.test_adapter_inference.AdapterTests.test_mid_generation_cancel_discards_late_pcm) ... ok
+test_mock_and_faster_both_reject_trained_presence_even_empty (kaggle.tests.test_adapter_inference.AdapterTests.test_mock_and_faster_both_reject_trained_presence_even_empty) ... ok
+test_native_probe_checks_official_api_not_faster_and_stays_surface_only (kaggle.tests.test_adapter_inference.AdapterTests.test_native_probe_checks_official_api_not_faster_and_stays_surface_only) ... ok
+test_pinned_manifest_and_rank_weight_digest (kaggle.tests.test_adapter_inference.AdapterTests.test_pinned_manifest_and_rank_weight_digest) ... ok
+test_publishing_requires_ack_no_activation_and_uniform_transcript (kaggle.tests.test_adapter_inference.AdapterTests.test_publishing_requires_ack_no_activation_and_uniform_transcript) ... ok
+test_real_tensor_switch_two_ranks_and_restore_prior_version (kaggle.tests.test_adapter_inference.AdapterTests.test_real_tensor_switch_two_ranks_and_restore_prior_version) ... ok
+test_target_mismatch_rejected_without_base_fallback (kaggle.tests.test_adapter_inference.AdapterTests.test_target_mismatch_rejected_without_base_fallback) ... ok
+test_uncompleted_or_missing_rank_updates_refused (kaggle.tests.test_adapter_inference.AdapterTests.test_uncompleted_or_missing_rank_updates_refused) ... ok
+test_unsafe_links_and_extra_members_rejected (kaggle.tests.test_adapter_inference.AdapterTests.test_unsafe_links_and_extra_members_rejected) ... ok
+test_wrong_base_and_speaker_dimension_rejected_before_switch (kaggle.tests.test_adapter_inference.AdapterTests.test_wrong_base_and_speaker_dimension_rejected_before_switch) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.416s
+
+OK

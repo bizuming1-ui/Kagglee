@@ -1,0 +1,20 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 386.68it/s]
+Loading weights:   0%|          | 0/68 [00:00<?, ?it/s]Loading weights: 100%|██████████| 68/68 [00:00<00:00, 13136.18it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 427.12it/s]
+Loading weights:   0%|          | 0/68 [00:00<?, ?it/s]Loading weights: 100%|██████████| 68/68 [00:00<00:00, 10357.06it/s]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:00<00:00, 164.47it/s]
+Loading weights:   0%|          | 0/68 [00:00<?, ?it/s]Loading weights: 100%|██████████| 68/68 [00:00<00:00, 7988.93it/s]

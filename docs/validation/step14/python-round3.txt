@@ -1,0 +1,255 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+......12:14:01 [worker0] ERROR job failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 429, in run_job
+    self.load_profile(pid)
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 365, in load_profile
+    guard_profile(prof,getattr(self.engine,"supports_trained",False))
+  File "/home/user/Kagglee/kaggle/source/py/trained_profiles.py", line 155, in guard_profile
+    reject('trained voice requires explicit qwen-adapter-buffered backend; no Base/Mock fallback')
+  File "/home/user/Kagglee/kaggle/source/py/trained_profiles.py", line 18, in reject
+    def reject(message):raise UploadRejected(message,409)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+resource_limits.UploadRejected: trained voice requires explicit qwen-adapter-buffered backend; no Base/Mock fallback
+.....................................................12:14:10 [supervisor] ERROR GPU ownership admission rejected: busy
+12:14:10 [supervisor] INFO supervisor stopped
+.12:14:10 [supervisor] INFO supervisor stopped
+...12:14:10 [supervisor] INFO supervisor stopped
+..12:14:10 [supervisor] INFO started worker0 pid=123
+12:14:10 [supervisor] INFO started analyst pid=123
+12:14:10 [supervisor] INFO started gateway pid=123
+...12:14:11 [supervisor] WARNING restarting worker0 (test-stop) [1 in last 10 min]
+...........12:14:13 [analyst] ERROR library reference processing failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 137, in run
+    owner.build_profile(working,lease.metadata["name"],lease.files,lease.metadata["language"],ref_text,calibrate)
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: /private/secret-path
+.........12:14:15 [analyst] ERROR raw library storage operation failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 18, in execute
+    try:return await owner.HEAVY.run(function,*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 172, in run
+    return await asyncio.shield(future)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 161, in work
+    try:return function(*args)
+               ^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 68, in create
+    def create():return {"library":owner.LIBRARIES.create(data["name"],data.get("language","auto"))}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+OSError: /secret/raw-library
+..12:14:15 [analyst] ERROR library processing thread could not be started
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 157, in process_library
+    try:return await execute(launch)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 18, in execute
+    try:return await owner.HEAVY.run(function,*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 172, in run
+    return await asyncio.shield(future)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 161, in work
+    try:return function(*args)
+               ^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 149, in launch
+    admission.start(owner.JOBS,job,owner.LIMITS.jobs,run)
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 137, in start
+    thread.start()
+  File "/home/user/Kagglee/kaggle/tests/test_libraries.py", line 283, in start
+    if thread.name.startswith('build-'):raise RuntimeError('injected build thread start failure')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: injected build thread start failure
+.......................REPACK CHECK OK: original 22 hashes + current 48 assets; deterministic outputs match
+.......................................12:14:16 [worker0] WARNING resident model: high allocated VRAM 14000MB; inspect actual headroom
+12:14:16 [worker0] WARNING requesting graceful restart (alloc=14000MB served=700)
+.12:14:16 [supervisor] ERROR worker0 fatal configuration error; stopping retries: MimiConfig rope_theta
+...✗ fatal worker configuration error; stopping startup (see worker logs)
+✗ supervisor recorded fatal worker configuration error; stopping startup
+.12:14:16 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+AttributeError: 'MimiConfig' object has no attribute 'rope_theta'
+12:14:16 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+qwen_compat.BackendCompatibilityError: bad config
+12:14:16 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: temporary IO
+.......[SKIP] per-GPU streaming + RTF               0.0s  skipped (no active profile yet: create one in Voice Lab)
+.........
+QTTS bootstrap  root=/home/user/Kagglee/kaggle/source
+   ## 当前版本修复
+   
+   用户step13已在实际双T4通过模型加载/预热与ready门禁；该证据不等于真实合成试听或训练。原始至13冻结，当前14。
+   
+   本版将浏览器连续采集提升到约20分钟，单文件64MiB、请求128MiB、分块8192均独立受限，服务端完整复核，不截断原件。长录音不能直接当单条训练序列：仍需可信时间戳短段和逐条审核转写。网页训练控制面尚未闭环，不把输入快照/参考缓存冒充训练。
+   
+   训练保留原样本/顺序/联合loss/优化器/累积步数，有界64MiB输入张量缓存消除重复tokenize，聚合grad finite检查减少逐参数host读取；记录缓存/调用指标。CPU等价不等于T4最快或训练质量更好。HF发行版本查询兼容已成功的qwen-tts-hf。
+   
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 1. 已确认事实及修复边界
+   
+   - 原始22项压缩资产的内嵌校验全部通过；原文件不存在已确认的粘贴截断。
+   - 现有系统使用 Python 模型进程、Go 网关、Rust 可选音频库和已编译的浏览器 JavaScript。
+   - 实际包内没有 `web-src/*.ts`，不能声称修改了不存在的 TypeScript 源码。
+   - T4/Turing 不具备原生 BF16。默认 FP16；BF16 回退同时检查计算能力和 torch 支持，FP32 须显式 `QTTS_ALLOW_FP32=1`。
+   - BF16/FP32、模型接口、CUDA Graph、SDPA 的实际可运行性仍须在真实设备上验证。
+   - 标准 RTF = 生成耗时/音频时长，越小越快。旧字段 `rtf_x` = 音频时长/生成耗时，是速度倍率，不能混称。
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 7. 尚未验证与未完成
+   
+   - 真实双T4、Qwen权重和第三方流式后端的兼容性、显存、输出质量及热/冷启动性能。
+   - 真正world_size=2训练、所有选定样本覆盖、保存后重载试听。
+   - DeepSeek真实长流及服务端token上限，依赖固定与下载完整性。
+   - 第四阶段已改为录制参考语音/语音对话两个主要视图，诊断为辅助窗口；训练任务UI仍未实现。实测波形与本地片段只有Chromium软件输入验证，未做物理麦克风验收。
+   - 已加入单用户Bearer访问控制、频率/并发/上传预算；仍缺账号体系、持久审计、IP/连接级防护与OS级资源隔离。仅通过可信HTTPS代理访问。
+   - supervisor的重启竞态、队列上限、持续故障和断网恢复尚需后续专项验证。
+
+━━ [  16.0s] 1/9 detect GPUs
+✗ No GPU visible. Notebook → Settings → Accelerator → GPU T4 x2, then restart the session.
+   ↳ 1/9 detect GPUs: 0.0s
+QTTS bootstrap  root=/home/user/Kagglee/kaggle/source
+   ## 当前版本修复
+   
+   用户step13已在实际双T4通过模型加载/预热与ready门禁；该证据不等于真实合成试听或训练。原始至13冻结，当前14。
+   
+   本版将浏览器连续采集提升到约20分钟，单文件64MiB、请求128MiB、分块8192均独立受限，服务端完整复核，不截断原件。长录音不能直接当单条训练序列：仍需可信时间戳短段和逐条审核转写。网页训练控制面尚未闭环，不把输入快照/参考缓存冒充训练。
+   
+   训练保留原样本/顺序/联合loss/优化器/累积步数，有界64MiB输入张量缓存消除重复tokenize，聚合grad finite检查减少逐参数host读取；记录缓存/调用指标。CPU等价不等于T4最快或训练质量更好。HF发行版本查询兼容已成功的qwen-tts-hf。
+   
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 1. 已确认事实及修复边界
+   
+   - 原始22项压缩资产的内嵌校验全部通过；原文件不存在已确认的粘贴截断。
+   - 现有系统使用 Python 模型进程、Go 网关、Rust 可选音频库和已编译的浏览器 JavaScript。
+   - 实际包内没有 `web-src/*.ts`，不能声称修改了不存在的 TypeScript 源码。
+   - T4/Turing 不具备原生 BF16。默认 FP16；BF16 回退同时检查计算能力和 torch 支持，FP32 须显式 `QTTS_ALLOW_FP32=1`。
+   - BF16/FP32、模型接口、CUDA Graph、SDPA 的实际可运行性仍须在真实设备上验证。
+   - 标准 RTF = 生成耗时/音频时长，越小越快。旧字段 `rtf_x` = 音频时长/生成耗时，是速度倍率，不能混称。
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 7. 尚未验证与未完成
+   
+   - 真实双T4、Qwen权重和第三方流式后端的兼容性、显存、输出质量及热/冷启动性能。
+   - 真正world_size=2训练、所有选定样本覆盖、保存后重载试听。
+   - DeepSeek真实长流及服务端token上限，依赖固定与下载完整性。
+   - 第四阶段已改为录制参考语音/语音对话两个主要视图，诊断为辅助窗口；训练任务UI仍未实现。实测波形与本地片段只有Chromium软件输入验证，未做物理麦克风验收。
+   - 已加入单用户Bearer访问控制、频率/并发/上传预算；仍缺账号体系、持久审计、IP/连接级防护与OS级资源隔离。仅通过可信HTTPS代理访问。
+   - supervisor的重启竞态、队列上限、持续故障和断网恢复尚需后续专项验证。
+
+━━ [  16.0s] 1/9 detect GPUs
+✗ Two GPUs required. Select T4 x2; QTTS_ALLOW_SINGLE_GPU=1 is only for explicit limited tests.
+   ↳ 1/9 detect GPUs: 0.0s
+.............12:14:17 [analyst] ERROR voice job could not be started
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/analyst.py", line 922, in create_profile
+    ADMISSION.start(JOBS,job,LIMITS.jobs,run_build)
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: simulated failure
+..12:14:17 [analyst] INFO job duration   3.0% decode + denoise a.wav
+12:14:17 [analyst] INFO job duration  14.0% decode + denoise b.wav
+12:14:17 [analyst] ERROR profile build failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/analyst.py", line 562, in build_profile
+    raise UploadRejected("total decoded audio duration limit exceeded")
+resource_limits.UploadRejected: total decoded audio duration limit exceeded
+12:14:17 [analyst] INFO job duration  14.0% FAILED: total decoded audio duration limit exceeded
+.....................................................12:14:31 [analyst] ERROR raw library storage operation failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 18, in execute
+    try:return await owner.HEAVY.run(function,*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 172, in run
+    return await asyncio.shield(future)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 161, in work
+    try:return function(*args)
+               ^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 46, in prepare
+    def prepare():return {"dataset":owner.TRAINING_DATA.prepare(owner.LIBRARIES,data),"operation":"input_preparation_not_training"}
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+OSError: /private/source/transcript
+................................./home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[rank0]:[W1022 12:14:49.358248748 reducer.cpp:1457] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank1]:[W1022 12:14:49.360460525 reducer.cpp:1457] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+...........
+----------------------------------------------------------------------
+Ran 285 tests in 49.178s
+
+OK

@@ -1,0 +1,22 @@
+{
+  "name": "qwen-tts-hf",
+  "version": "0.1.1.post1",
+  "source": "https://pypi.org/pypi/qwen-tts-hf/0.1.1.post1/json",
+  "requires_dist": [
+    "transformers<6,>=5.15.1",
+    "accelerate==1.12.0",
+    "gradio",
+    "librosa",
+    "torchaudio",
+    "soundfile",
+    "sox",
+    "onnxruntime",
+    "einops"
+  ],
+  "wheel_files": [
+    {
+      "filename": "qwen_tts_hf-0.1.1.post1-py3-none-any.whl",
+      "sha256": "ed5b7aae64cf795243369fb5226173f459a45689ea86db1c6d3eb14fc0c2c01d"
+    }
+  ]
+}

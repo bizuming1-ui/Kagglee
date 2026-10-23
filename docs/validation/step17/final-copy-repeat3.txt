@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/studio.spec.js:605:1 › 第十七阶段长参考对齐参数绑定完整Python包可逐字节复制并保留第十六阶段包 (2.5s)
+
+  ✓  2 tests/browser/studio.spec.js:605:1 › 第十七阶段长参考对齐参数绑定完整Python包可逐字节复制并保留第十六阶段包 (2.6s)
+
+  ✓  3 tests/browser/studio.spec.js:605:1 › 第十七阶段长参考对齐参数绑定完整Python包可逐字节复制并保留第十六阶段包 (2.6s)
+
+  3 passed (10.4s)

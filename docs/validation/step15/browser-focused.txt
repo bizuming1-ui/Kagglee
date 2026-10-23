@@ -1,0 +1,8 @@
+
+Running 2 tests using 1 worker
+
+
+  ✓  1 tests/browser/qtts.spec.js:819:1 › QTTS step15 creation defers optional GPU calibration by default without removing manual controls (860ms)
+  ✓  2 tests/browser/qtts.spec.js:830:1 › QTTS step15 library calibration default and lock reset stay off (1.1s)
+
+  2 passed (3.6s)

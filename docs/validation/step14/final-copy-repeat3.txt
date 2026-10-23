@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/studio.spec.js:584:1 › 第十四阶段长录音原文修复完整Python包可逐字节复制并保留第十三阶段包 (1.1s)
+
+  ✓  2 tests/browser/studio.spec.js:584:1 › 第十四阶段长录音原文修复完整Python包可逐字节复制并保留第十三阶段包 (1.0s)
+
+  ✓  3 tests/browser/studio.spec.js:584:1 › 第十四阶段长录音原文修复完整Python包可逐字节复制并保留第十三阶段包 (1.0s)
+
+  3 passed (8.5s)

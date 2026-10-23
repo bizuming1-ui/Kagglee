@@ -1,0 +1,6 @@
+# Optional CPU tensor/Gloo tests only. NOT a Kaggle/CUDA production lock.
+# Do not replace Kaggle's preinstalled torch/driver with this sandbox test wheel.
+-r requirements-test.txt
+torch==2.8.0
+safetensors==0.6.2
+packaging==25.0

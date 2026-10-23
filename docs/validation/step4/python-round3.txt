@@ -1,0 +1,134 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_only_two_primary_buttons_with_separate_native_diagnostics (test_layout.LayoutTests.test_only_two_primary_buttons_with_separate_native_diagnostics) ... ok
+test_step3_dom_ids_and_script_order_are_preserved_without_duplicates (test_layout.LayoutTests.test_step3_dom_ids_and_script_order_are_preserved_without_duplicates) ... ok
+test_launcher_roundtrip_extract_only_without_bootstrap (test_packaging.PackagingTests.test_launcher_roundtrip_extract_only_without_bootstrap) ... ok
+test_original_saved_source_still_matches_evidence (test_packaging.PackagingTests.test_original_saved_source_still_matches_evidence) ... ok
+test_repack_is_deterministic_and_current (test_packaging.PackagingTests.test_repack_is_deterministic_and_current) ... REPACK CHECK OK: original 22 hashes + current 30 assets; deterministic outputs match
+ok
+test_step1_launcher_is_frozen (test_packaging.PackagingTests.test_step1_launcher_is_frozen) ... ok
+test_step2_launcher_is_frozen (test_packaging.PackagingTests.test_step2_launcher_is_frozen) ... ok
+test_step3_launcher_is_frozen (test_packaging.PackagingTests.test_step3_launcher_is_frozen) ... ok
+test_atomic_report_permissions_and_cli_static_exit_are_honest (test_probe.ProbeTests.test_atomic_report_permissions_and_cli_static_exit_are_honest) ... ok
+test_bootstrap_probes_before_starting_downloads (test_probe.ProbeTests.test_bootstrap_probes_before_starting_downloads) ... ok
+test_child_exit_without_report_is_a_structured_failure (test_probe.ProbeTests.test_child_exit_without_report_is_a_structured_failure) ... ok
+test_import_error_message_cannot_leak_secrets_into_report (test_probe.ProbeTests.test_import_error_message_cannot_leak_secrets_into_report) ... ok
+test_incompatible_keyword_signature_is_blocked (test_probe.ProbeTests.test_incompatible_keyword_signature_is_blocked) ... ok
+test_missing_cuda_or_gpu_count_blocks_instead_of_using_mock_success (test_probe.ProbeTests.test_missing_cuda_or_gpu_count_blocks_instead_of_using_mock_success) ... ok
+test_new_required_parameter_and_keyword_only_model_id_are_blocked (test_probe.ProbeTests.test_new_required_parameter_and_keyword_only_model_id_are_blocked) ... ok
+test_positional_only_required_keyword_is_blocked (test_probe.ProbeTests.test_positional_only_required_keyword_is_blocked) ... ok
+test_probed_keywords_match_actual_worker_calls (test_probe.ProbeTests.test_probed_keywords_match_actual_worker_calls) ... ok
+test_runtime_surface_pass_is_not_model_training_or_performance_success (test_probe.ProbeTests.test_runtime_surface_pass_is_not_model_training_or_performance_success) ... ok
+test_runtime_timeout_kills_group_and_does_not_claim_ready (test_probe.ProbeTests.test_runtime_timeout_kills_group_and_does_not_claim_ready) ... ok
+test_static_inspection_never_imports_cuda_backend_or_loads_a_model (test_probe.ProbeTests.test_static_inspection_never_imports_cuda_backend_or_loads_a_model) ... ok
+test_t4_bf16_and_unapproved_fp32_are_blocked (test_probe.ProbeTests.test_t4_bf16_and_unapproved_fp32_are_blocked) ... ok
+test_bootstrap_dependency_import_has_timeout_and_discards_library_logs (test_reliability.ReliabilityTests.test_bootstrap_dependency_import_has_timeout_and_discards_library_logs) ... ok
+test_cancel_arriving_at_lock_acquisition_never_starts_synthesis (test_reliability.ReliabilityTests.test_cancel_arriving_at_lock_acquisition_never_starts_synthesis) ... ok
+test_concurrent_atomic_json_writes (test_reliability.ReliabilityTests.test_concurrent_atomic_json_writes) ... ok
+test_empty_e2e_run_is_a_clean_failure_not_a_pass_or_format_crash (test_reliability.ReliabilityTests.test_empty_e2e_run_is_a_clean_failure_not_a_pass_or_format_crash) ... ok
+test_emulated_bf16_does_not_count_as_native_t4_support (test_reliability.ReliabilityTests.test_emulated_bf16_does_not_count_as_native_t4_support) ... ok
+test_numpy_audio_fallback_accepts_all_short_chunks (test_reliability.ReliabilityTests.test_numpy_audio_fallback_accepts_all_short_chunks) ... ok
+test_selftest_missing_profile_is_not_a_pass (test_reliability.ReliabilityTests.test_selftest_missing_profile_is_not_a_pass) ... [SKIP] per-GPU streaming + RTF               0.0s  skipped (no active profile yet: create one in Voice Lab)
+ok
+test_short_recorded_breath_does_not_broadcast_fail (test_reliability.ReliabilityTests.test_short_recorded_breath_does_not_broadcast_fail) ... ok
+test_silent_subprocess_timeout_is_enforced (test_reliability.ReliabilityTests.test_silent_subprocess_timeout_is_enforced) ... ok
+test_stream_rejects_wrong_sample_rate (test_reliability.ReliabilityTests.test_stream_rejects_wrong_sample_rate) ... ok
+test_subprocess_exit_status_is_not_hidden (test_reliability.ReliabilityTests.test_subprocess_exit_status_is_not_hidden) ... ok
+test_t4_never_automatically_falls_back_to_bf16 (test_reliability.ReliabilityTests.test_t4_never_automatically_falls_back_to_bf16) ... ok
+test_tar_does_not_follow_existing_destination_escape_link (test_reliability.ReliabilityTests.test_tar_does_not_follow_existing_destination_escape_link) ... ok
+test_tar_rejects_traversal_symlinks_and_unexpected_files (test_reliability.ReliabilityTests.test_tar_rejects_traversal_symlinks_and_unexpected_files) ... ok
+test_tar_restores_valid_voice_assets (test_reliability.ReliabilityTests.test_tar_restores_valid_voice_assets) ... ok
+test_two_gpus_are_required_by_default (test_reliability.ReliabilityTests.test_two_gpus_are_required_by_default) ... 
+QTTS bootstrap  root=/home/user/Kagglee/kaggle/source
+   ## 1. 已确认事实及修复边界
+   
+   - 原始22项压缩资产的内嵌校验全部通过；原文件不存在已确认的粘贴截断。
+   - 现有系统使用 Python 模型进程、Go 网关、Rust 可选音频库和已编译的浏览器 JavaScript。
+   - 实际包内没有 `web-src/*.ts`，不能声称修改了不存在的 TypeScript 源码。
+   - T4/Turing 不具备原生 BF16。默认 FP16；BF16 回退同时检查计算能力和 torch 支持，FP32 须显式 `QTTS_ALLOW_FP32=1`。
+   - BF16/FP32、模型接口、CUDA Graph、SDPA 的实际可运行性仍须在真实设备上验证。
+   - 标准 RTF = 生成耗时/音频时长，越小越快。旧字段 `rtf_x` = 音频时长/生成耗时，是速度倍率，不能混称。
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 7. 尚未验证与未完成
+   
+   - 真实双T4、Qwen权重和第三方流式后端的兼容性、显存、输出质量及热/冷启动性能。
+   - 真正world_size=2训练、所有选定样本覆盖、保存后重载试听。
+   - DeepSeek真实长流及服务端token上限，依赖固定与下载完整性。
+   - 第四阶段已改为录制参考语音/语音对话两个主要视图，诊断为辅助窗口；训练任务UI仍未实现。实测波形与本地片段只有Chromium软件输入验证，未做物理麦克风验收。
+   - 已加入单用户Bearer访问控制、频率/并发/上传预算；仍缺账号体系、持久审计、IP/连接级防护与OS级资源隔离。仅通过可信HTTPS代理访问。
+   - supervisor的重启竞态、队列上限、持续故障和断网恢复尚需后续专项验证。
+
+━━ [   0.7s] 1/9 detect GPUs
+✗ No GPU visible. Notebook → Settings → Accelerator → GPU T4 x2, then restart the session.
+   ↳ 1/9 detect GPUs: 0.0s
+QTTS bootstrap  root=/home/user/Kagglee/kaggle/source
+   ## 1. 已确认事实及修复边界
+   
+   - 原始22项压缩资产的内嵌校验全部通过；原文件不存在已确认的粘贴截断。
+   - 现有系统使用 Python 模型进程、Go 网关、Rust 可选音频库和已编译的浏览器 JavaScript。
+   - 实际包内没有 `web-src/*.ts`，不能声称修改了不存在的 TypeScript 源码。
+   - T4/Turing 不具备原生 BF16。默认 FP16；BF16 回退同时检查计算能力和 torch 支持，FP32 须显式 `QTTS_ALLOW_FP32=1`。
+   - BF16/FP32、模型接口、CUDA Graph、SDPA 的实际可运行性仍须在真实设备上验证。
+   - 标准 RTF = 生成耗时/音频时长，越小越快。旧字段 `rtf_x` = 音频时长/生成耗时，是速度倍率，不能混称。
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 7. 尚未验证与未完成
+   
+   - 真实双T4、Qwen权重和第三方流式后端的兼容性、显存、输出质量及热/冷启动性能。
+   - 真正world_size=2训练、所有选定样本覆盖、保存后重载试听。
+   - DeepSeek真实长流及服务端token上限，依赖固定与下载完整性。
+   - 第四阶段已改为录制参考语音/语音对话两个主要视图，诊断为辅助窗口；训练任务UI仍未实现。实测波形与本地片段只有Chromium软件输入验证，未做物理麦克风验收。
+   - 已加入单用户Bearer访问控制、频率/并发/上传预算；仍缺账号体系、持久审计、IP/连接级防护与OS级资源隔离。仅通过可信HTTPS代理访问。
+   - supervisor的重启竞态、队列上限、持续故障和断网恢复尚需后续专项验证。
+
+━━ [   0.8s] 1/9 detect GPUs
+✗ Two GPUs required. Select T4 x2; QTTS_ALLOW_SINGLE_GPU=1 is only for explicit limited tests.
+   ↳ 1/9 detect GPUs: 0.0s
+ok
+test_bootstrap_has_the_safe_archive_extractor_import (test_security.AccessTests.test_bootstrap_has_the_safe_archive_extractor_import) ... ok
+test_child_processes_only_receive_required_credentials (test_security.AccessTests.test_child_processes_only_receive_required_credentials) ... ok
+test_default_auth_directory_is_outside_exported_voice_state (test_security.AccessTests.test_default_auth_directory_is_outside_exported_voice_state) ... ok
+test_generated_token_permissions_reuse_and_concurrent_provisioning (test_security.AccessTests.test_generated_token_permissions_reuse_and_concurrent_provisioning) ... ok
+test_invalid_explicit_token_and_symlink_fail_closed (test_security.AccessTests.test_invalid_explicit_token_and_symlink_fail_closed) ... ok
+test_local_probe_headers_never_go_to_workers_or_remote_hosts (test_security.AccessTests.test_local_probe_headers_never_go_to_workers_or_remote_hosts) ... ok
+test_busy_build_rejected_without_waiting_and_failure_releases (test_security.AnalystUploadTests.test_busy_build_rejected_without_waiting_and_failure_releases) ... ok
+test_consistency_text_count_is_bounded_before_expensive_work (test_security.AnalystUploadTests.test_consistency_text_count_is_bounded_before_expensive_work) ... ok
+test_decode_oversize_is_rejected_not_silently_truncated_or_fallback (test_security.AnalystUploadTests.test_decode_oversize_is_rejected_not_silently_truncated_or_fallback) ... ok
+test_profile_count_and_disk_budget_reject_before_job (test_security.AnalystUploadTests.test_profile_count_and_disk_budget_reject_before_job) ... ok
+test_soundfile_fallback_checks_duration_before_allocating (test_security.AnalystUploadTests.test_soundfile_fallback_checks_duration_before_allocating) ... ok
+test_soundfile_fallback_still_decodes_valid_short_audio (test_security.AnalystUploadTests.test_soundfile_fallback_still_decodes_valid_short_audio) ... ok
+test_thread_start_failure_releases_endpoint_admission (test_security.AnalystUploadTests.test_thread_start_failure_releases_endpoint_admission) ... 07:01:12 [analyst] ERROR voice job could not be started
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/analyst.py", line 914, in create_profile
+    ADMISSION.start(JOBS,job,LIMITS.jobs,run_build)
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: simulated failure
+ok
+test_too_many_files_empty_oversized_and_empty_name_rejected (test_security.AnalystUploadTests.test_too_many_files_empty_oversized_and_empty_name_rejected) ... ok
+test_total_decoded_duration_is_not_silently_truncated (test_security.AnalystUploadTests.test_total_decoded_duration_is_not_silently_truncated) ... 07:01:12 [analyst] INFO job duration   3.0% decode + denoise a.wav
+07:01:12 [analyst] INFO job duration  14.0% decode + denoise b.wav
+07:01:12 [analyst] ERROR profile build failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/analyst.py", line 554, in build_profile
+    raise UploadRejected("total decoded audio duration limit exceeded")
+resource_limits.UploadRejected: total decoded audio duration limit exceeded
+07:01:12 [analyst] INFO job duration  14.0% FAILED: total decoded audio duration limit exceeded
+ok
+test_build_start_failure_does_not_leave_a_record (test_security.ResourceTests.test_build_start_failure_does_not_leave_a_record) ... ok
+test_heavy_slot_remains_reserved_after_http_waiter_cancels (test_security.ResourceTests.test_heavy_slot_remains_reserved_after_http_waiter_cancels) ... ok
+test_known_body_limits_and_malformed_length (test_security.ResourceTests.test_known_body_limits_and_malformed_length) ... ok
+test_read_upload_empty_per_file_and_aggregate_limits (test_security.ResourceTests.test_read_upload_empty_per_file_and_aggregate_limits) ... ok
+test_resource_environment_validation (test_security.ResourceTests.test_resource_environment_validation) ... ok
+test_retained_build_records_are_bounded_and_terminal_jobs_pruned (test_security.ResourceTests.test_retained_build_records_are_bounded_and_terminal_jobs_pruned) ... ok
+test_unknown_length_body_is_rejected_before_application_or_parser (test_security.ResourceTests.test_unknown_length_body_is_rejected_before_application_or_parser) ... ok
+
+----------------------------------------------------------------------
+Ran 59 tests in 0.620s
+
+OK

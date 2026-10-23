@@ -1,0 +1,331 @@
+{
+  "stage": "step11-explicit-adapter-buffered-chat-not-qwen-accepted",
+  "original_sha256": "26c31621d6265bc25370bc284f2afdcf52f5edaf97e64056c2d8d5eda4a6c461",
+  "original_assets_verified": 22,
+  "asset_count": 46,
+  "launcher_sha256": "cd5346e8ae34f1e2db327a076a7411996982848f9d4e14236f05d94c626d496e",
+  "assets": [
+    {
+      "path": "LICENSE-QWEN-DERIVED.txt",
+      "bytes": 11343,
+      "sha256": "a44a6081c73ad75f0255bb2bb5cab74ef1829565a895a24e53a4f11290ab7655",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "MEMO.md",
+      "bytes": 25823,
+      "sha256": "82ecbd4b3b9d10abbbf6da509780d768fc95198860e0ad5d3db2dee64597c88f",
+      "original_sha256": "5c3b2b948554d235fce442d2f9df110d8b24be2399f15013a964cd3bf3fd1f85",
+      "changed": true
+    },
+    {
+      "path": "go/gateway/go.mod",
+      "bytes": 29,
+      "sha256": "00f1a160ee5ea066ed545d93f8c6920689ddbea2bb10006107eec99804871a41",
+      "original_sha256": "00f1a160ee5ea066ed545d93f8c6920689ddbea2bb10006107eec99804871a41",
+      "changed": false
+    },
+    {
+      "path": "go/gateway/llm.go",
+      "bytes": 4182,
+      "sha256": "23809b1c724bad01588a827f06bcdf05d1b4d23da5eb6372d0fc40b6d9ddfdda",
+      "original_sha256": "72ab3c6b9cf4990a6aac71f8d80310cd92d86c57723beee8cf5c24ac783c9cbd",
+      "changed": true
+    },
+    {
+      "path": "go/gateway/main.go",
+      "bytes": 13596,
+      "sha256": "44777acc0293b0b6cdbdc64546b571d03294f8aa88b5122b97bfd59105e1aa2e",
+      "original_sha256": "e8dd1006e27bd15538a831437a08396ca6b85ccbc04ea4cb2f0c332c69036104",
+      "changed": true
+    },
+    {
+      "path": "go/gateway/preflight_test.go",
+      "bytes": 2248,
+      "sha256": "21d832143de74eb68e6758b2bc6d741b16132c820d225ffa7b150ca3e266d657",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "go/gateway/reliability_test.go",
+      "bytes": 5492,
+      "sha256": "3e039fa7ccaddfcfd813b0c06e657d49e1a076fe19844f097c263eef08a04d20",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "go/gateway/scheduler.go",
+      "bytes": 10388,
+      "sha256": "18992a7a212e3b967bea6183003952af775ca4db2cefd2270c48e664c4965323",
+      "original_sha256": "2fddf49abaf5a066103baf8a62af6847d5b2f0788fe1df9ef3dec97d56c32bfa",
+      "changed": true
+    },
+    {
+      "path": "go/gateway/security.go",
+      "bytes": 7338,
+      "sha256": "ccd25db71939c75026e51e6f394ea963d6867715bc1ee85ff054dce18e0254d5",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "go/gateway/security_test.go",
+      "bytes": 11391,
+      "sha256": "a6b3a2126469b9e4c21f3336961c44ae84adf282f2db0812276edae3ab1c3484",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "go/gateway/segmenter.go",
+      "bytes": 9002,
+      "sha256": "802a8eac96975227d3dba7e76671acd88b358198b11120ca58b88a1552226945",
+      "original_sha256": "802a8eac96975227d3dba7e76671acd88b358198b11120ca58b88a1552226945",
+      "changed": false
+    },
+    {
+      "path": "go/gateway/segmenter_test.go",
+      "bytes": 3506,
+      "sha256": "0d8171656e80e8423755d82f6d59797e8739bfb4ccfcd25f9a639ff1ac8bdd8d",
+      "original_sha256": "0d8171656e80e8423755d82f6d59797e8739bfb4ccfcd25f9a639ff1ac8bdd8d",
+      "changed": false
+    },
+    {
+      "path": "go/gateway/session.go",
+      "bytes": 14464,
+      "sha256": "1f10214340cd22c4792db74153a068042ac284a944e401660d23249bd8b6f27e",
+      "original_sha256": "f06f6b693148a41503b0eff56a01b38f8404dd1f64841f53994d39fc7015ffa8",
+      "changed": true
+    },
+    {
+      "path": "py/access_control.py",
+      "bytes": 2810,
+      "sha256": "8e90f2b9fe6cf98ca0192bcf1684158cc84f1609ec3ec1d76e2968455d1193d3",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/adapter_engine.py",
+      "bytes": 6479,
+      "sha256": "b16a6a0b5ee6a23359746794670d04427c71d07159626ca1ec2546ae8f50c72c",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/analyst.py",
+      "bytes": 49698,
+      "sha256": "e53349e72906b145ddc17ab134e63e0acba883c533927f65757d4c1d0cffee21",
+      "original_sha256": "91196dd2735d3b1e92b2bd56d016f62c51fe9109d16a7ad5c04e5faa01b8ba3c",
+      "changed": true
+    },
+    {
+      "path": "py/audio_rt.py",
+      "bytes": 8694,
+      "sha256": "be55abe211192144b96c5e89ad24b233f2e56cba193d9577b0e00e46b10b95d7",
+      "original_sha256": "3b123c5c74c36c5a19a5867b5fef1f11d647dae6b1d3b290cd74b94544de1ff0",
+      "changed": true
+    },
+    {
+      "path": "py/bootstrap.py",
+      "bytes": 18161,
+      "sha256": "e6885e7ba91008d4fcdabd5383608498bd60b28423c0335bceda44d8b958af6d",
+      "original_sha256": "b5f1bf462baa0c117e3c276e8467a16cbd8721c814fd037b16f4306e8d1233c1",
+      "changed": true
+    },
+    {
+      "path": "py/gpu_ownership.py",
+      "bytes": 7098,
+      "sha256": "2561308fdc916e8fbe3afad009fbfeb5b1f0d4c19a98e3bcb9d6828694b22f7d",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/library_api.py",
+      "bytes": 9270,
+      "sha256": "8222c036f032735aa015c2db3c2dac9314154097e7f9ae63835137f46ebe7998",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/lora_adapter.py",
+      "bytes": 4473,
+      "sha256": "93ead0856e2289dc8d6f90b650435b6a50170a2941dc1f3f4ea02615fd60e718",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/persist.py",
+      "bytes": 4269,
+      "sha256": "edc7e0147e9dc69fa8ef8eba65f875179b2720f94d5e2416de098cf81e69b0e1",
+      "original_sha256": "8b3d87e8cdd18d8ca204681f1b4fac2e5213a7f6700ac860d18ec889dc61ffa7",
+      "changed": true
+    },
+    {
+      "path": "py/qtts_common.py",
+      "bytes": 6250,
+      "sha256": "eb7bcf92c7cd73431ac70ff6281dca443a20b7ba6ca80575ef007043c52fe210",
+      "original_sha256": "d9dc2e9d22b4832e16cd0bd069b62dcee83af5167e15bee600733416b85014a6",
+      "changed": true
+    },
+    {
+      "path": "py/resource_limits.py",
+      "bytes": 7011,
+      "sha256": "7476b91a301795c4b6de3fe611eae3cfa960942dcd1f1e2e1243d6d8545a2866",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/supervisor.py",
+      "bytes": 9455,
+      "sha256": "d96c36cc252d27b535590eaadeac3abbce21cf7c04e451231fbef9b912e673e1",
+      "original_sha256": "160227c7976eab704ab696e2732294836aaeeed9213572461e2ad87ff1fb887c",
+      "changed": true
+    },
+    {
+      "path": "py/trained_profiles.py",
+      "bytes": 10740,
+      "sha256": "58760a3255cb8399271fb3bd0099a11704d9f603a3cc0d57ff6a0296ed26b8e7",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/training_codes.py",
+      "bytes": 23667,
+      "sha256": "f055963e66e7778c3c227d55e5d0522a6d10856172f14202f826f3134c9ba7ee",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/training_data.py",
+      "bytes": 19221,
+      "sha256": "0b9203428dfdfeacec4c82f601414bb50b4a499d6cf7aad214efe7d6c8ccf5e0",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/training_job.py",
+      "bytes": 14079,
+      "sha256": "51a7566fa636559372b2780d7044cc29dbe2c5767214948f25629572daff5242",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/tts_dataset.py",
+      "bytes": 5808,
+      "sha256": "52b500ae142a3efa13f9bd1a9fa0f61e5ea8cc86a2fc22380f5f9a082dc468e6",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/tts_training.py",
+      "bytes": 11887,
+      "sha256": "0a3b806beb847325ca9f7be4923156bc4f2480b462c584d7d474193ad3e33088",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/voice_library.py",
+      "bytes": 18183,
+      "sha256": "c86f833eaf0b5e286e12b50744a42b5bafa15fefe54996c3e33790729ad05fea",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "py/worker.py",
+      "bytes": 26623,
+      "sha256": "18399d2ba5bb59778138ff476073c55d548f1e18e02c930f994154acb77b183a",
+      "original_sha256": "d7d03ce6ca9bdce8ddd3f2026f7adb24372d9656a3daab0f17f718c3342b578c",
+      "changed": true
+    },
+    {
+      "path": "rust/audio_rt/Cargo.toml",
+      "bytes": 326,
+      "sha256": "e032c80857b9e45bfc7bcf4d56c5827fcd9a5ceeac839f0ed9716aea2ebefd2b",
+      "original_sha256": "e032c80857b9e45bfc7bcf4d56c5827fcd9a5ceeac839f0ed9716aea2ebefd2b",
+      "changed": false
+    },
+    {
+      "path": "rust/audio_rt/src/lib.rs",
+      "bytes": 12887,
+      "sha256": "97cb3db3561866ad9cc8f48b9f89003bbeae45fe3207a6082c3c7dd264a8ed45",
+      "original_sha256": "97cb3db3561866ad9cc8f48b9f89003bbeae45fe3207a6082c3c7dd264a8ed45",
+      "changed": false
+    },
+    {
+      "path": "tools/backend_probe.py",
+      "bytes": 10218,
+      "sha256": "877629b177a636864b5133c2e7ccf9ffa0c0a17f115e961b7dce374a3ae1acd1",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "tools/e2e_check.py",
+      "bytes": 7427,
+      "sha256": "188e1e22948d20b72ee41e062cd7c8e36bd482901664f923aa23c9ead5a12dae",
+      "original_sha256": "7075bccc7b201484ccc2f34b2c9fd18d26d22751332ecfa8839a10a8617435a8",
+      "changed": true
+    },
+    {
+      "path": "tools/encode_training.py",
+      "bytes": 6922,
+      "sha256": "324a88f9fdba7ad2fb713e79aad52cae099fd57f38c588732b25040da43022ef",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "tools/resource_control.py",
+      "bytes": 1930,
+      "sha256": "237d1abee6d7470ac7136973334c7cf065a5ad0727977c04fea024a493777437",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "tools/selftest.py",
+      "bytes": 7022,
+      "sha256": "b12f9e0af45d18e7c85b6a00e1d2c0e05b1cffc18a998f1d6cd90c8f57f27124",
+      "original_sha256": "74c37f280728f7b2245520c3bb62688ba90c36eb4461ed71a93e49dad7117dd8",
+      "changed": true
+    },
+    {
+      "path": "tools/train_tts.py",
+      "bytes": 2662,
+      "sha256": "3fa354d0d352fea8de4b6d650fdceae6f206cfae352861dd163e3871dfb197eb",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "tools/trained_voice.py",
+      "bytes": 1756,
+      "sha256": "bca66c9e187414de35bcb1d29451a2dd1e476cb491fc8e641d5007c723047dc1",
+      "original_sha256": null,
+      "changed": true
+    },
+    {
+      "path": "tools/watermark_check.py",
+      "bytes": 6273,
+      "sha256": "43de4bea8040ee09e88961d7f9997ea3274b39cc82c09421b291b731a22f9f3f",
+      "original_sha256": "c3f2fbc1c2d6a72edebef1bf5ba70a5449634d2015ca401a80dfb9a2f06d2a85",
+      "changed": true
+    },
+    {
+      "path": "web/app.js",
+      "bytes": 67106,
+      "sha256": "3b6c244139198a4b18c243a5366be0713c2bddc691ae224e806c8db1e6a38c32",
+      "original_sha256": "4503a0938342a1629ef51436cd946a93207fd4f55e4a5af8f66d50a303c75a53",
+      "changed": true
+    },
+    {
+      "path": "web/index.html",
+      "bytes": 23033,
+      "sha256": "81daf1b5a4243523b606df7152160334ecc1dcaca9bcb303f6d8e892fe5624d4",
+      "original_sha256": "34533fd233cfe29c7679253b0c5dc9a461553e527cd714eebc58664ddb85662f",
+      "changed": true
+    },
+    {
+      "path": "web/recorder.js",
+      "bytes": 12052,
+      "sha256": "6381c85aa9eddbac91fd55fcbcd48dd5dc33c0d0b89500031ee3564e54ed298d",
+      "original_sha256": null,
+      "changed": true
+    }
+  ]
+}

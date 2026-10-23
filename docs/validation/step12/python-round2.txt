@@ -1,0 +1,522 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_bounded_manifest_and_nonfinite_saved_speaker_rejected (test_adapter_inference.AdapterTests.test_bounded_manifest_and_nonfinite_saved_speaker_rejected) ... ok
+test_buffered_single_yield_saved_prompt_and_cooperative_cancel (test_adapter_inference.AdapterTests.test_buffered_single_yield_saved_prompt_and_cooperative_cancel) ... ok
+test_cli_errors_redact_private_paths_and_are_not_success (test_adapter_inference.AdapterTests.test_cli_errors_redact_private_paths_and_are_not_success) ... ok
+test_corrupt_second_tensor_does_not_partially_replace_modules (test_adapter_inference.AdapterTests.test_corrupt_second_tensor_does_not_partially_replace_modules) ... ok
+test_deleted_or_rebound_cached_profile_never_used (test_adapter_inference.AdapterTests.test_deleted_or_rebound_cached_profile_never_used) ... ok
+test_engine_selection_unknown_and_mock_native_cannot_start (test_adapter_inference.AdapterTests.test_engine_selection_unknown_and_mock_native_cannot_start) ... ok
+test_existing_worker_wire_has_pcm_then_buffered_stats_and_mock_rejects (test_adapter_inference.AdapterTests.test_existing_worker_wire_has_pcm_then_buffered_stats_and_mock_rejects) ... 12:18:48 [worker0] ERROR job failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 430, in run_job
+    self.load_profile(pid)
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 365, in load_profile
+    guard_profile(prof,getattr(self.engine,"supports_trained",False))
+  File "/home/user/Kagglee/kaggle/source/py/trained_profiles.py", line 155, in guard_profile
+    reject('trained voice requires explicit qwen-adapter-buffered backend; no Base/Mock fallback')
+  File "/home/user/Kagglee/kaggle/source/py/trained_profiles.py", line 18, in reject
+    def reject(message):raise UploadRejected(message,409)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+resource_limits.UploadRejected: trained voice requires explicit qwen-adapter-buffered backend; no Base/Mock fallback
+ok
+test_fixed_profile_http_edits_rejected_and_consistency_failure_not_pass (test_adapter_inference.AdapterTests.test_fixed_profile_http_edits_rejected_and_consistency_failure_not_pass) ... ok
+test_fixture_codes_still_cannot_publish (test_adapter_inference.AdapterTests.test_fixture_codes_still_cannot_publish) ... ok
+test_hash_damage_after_cached_load_rejected_previous_adapter_unchanged (test_adapter_inference.AdapterTests.test_hash_damage_after_cached_load_rejected_previous_adapter_unchanged) ... ok
+test_invalid_native_pcm_contract_never_yields (test_adapter_inference.AdapterTests.test_invalid_native_pcm_contract_never_yields) ... ok
+test_mid_generation_cancel_discards_late_pcm (test_adapter_inference.AdapterTests.test_mid_generation_cancel_discards_late_pcm) ... ok
+test_mock_and_faster_both_reject_trained_presence_even_empty (test_adapter_inference.AdapterTests.test_mock_and_faster_both_reject_trained_presence_even_empty) ... ok
+test_native_http_pcm_frames_and_health_without_real_qwen (test_adapter_inference.AdapterTests.test_native_http_pcm_frames_and_health_without_real_qwen) ... ok
+test_native_probe_checks_official_api_not_faster_and_stays_surface_only (test_adapter_inference.AdapterTests.test_native_probe_checks_official_api_not_faster_and_stays_surface_only) ... ok
+test_pinned_manifest_and_rank_weight_digest (test_adapter_inference.AdapterTests.test_pinned_manifest_and_rank_weight_digest) ... ok
+test_production_load_never_accepts_unpinned_or_wrong_local_base (test_adapter_inference.AdapterTests.test_production_load_never_accepts_unpinned_or_wrong_local_base) ... ok
+test_publishing_requires_ack_no_activation_and_uniform_transcript (test_adapter_inference.AdapterTests.test_publishing_requires_ack_no_activation_and_uniform_transcript) ... ok
+test_real_tensor_switch_two_ranks_and_restore_prior_version (test_adapter_inference.AdapterTests.test_real_tensor_switch_two_ranks_and_restore_prior_version) ... ok
+test_target_mismatch_rejected_without_base_fallback (test_adapter_inference.AdapterTests.test_target_mismatch_rejected_without_base_fallback) ... ok
+test_two_worker_models_are_isolated_not_shared_adapter_state (test_adapter_inference.AdapterTests.test_two_worker_models_are_isolated_not_shared_adapter_state) ... ok
+test_uncompleted_or_missing_rank_updates_refused (test_adapter_inference.AdapterTests.test_uncompleted_or_missing_rank_updates_refused) ... ok
+test_unsafe_links_and_extra_members_rejected (test_adapter_inference.AdapterTests.test_unsafe_links_and_extra_members_rejected) ... ok
+test_wrong_base_and_speaker_dimension_rejected_before_switch (test_adapter_inference.AdapterTests.test_wrong_base_and_speaker_dimension_rejected_before_switch) ... ok
+test_bad_pin_or_bad_files_cannot_leave_a_stuck_lease (test_code_provenance.ProvenanceTests.test_bad_pin_or_bad_files_cannot_leave_a_stuck_lease) ... ok
+test_cancel_after_sealing_never_publishes (test_code_provenance.ProvenanceTests.test_cancel_after_sealing_never_publishes) ... ok
+test_cli_cancel_and_timeout_release_real_reader (test_code_provenance.ProvenanceTests.test_cli_cancel_and_timeout_release_real_reader) ... ok
+test_cli_hold_read_only_receipt_preserves_fixture_state (test_code_provenance.ProvenanceTests.test_cli_hold_read_only_receipt_preserves_fixture_state) ... ok
+test_cli_rejects_unbounded_hold_or_arbitrary_commands (test_code_provenance.ProvenanceTests.test_cli_rejects_unbounded_hold_or_arbitrary_commands) ... ok
+test_exact_source_seal_survives_library_and_input_deletion (test_code_provenance.ProvenanceTests.test_exact_source_seal_survives_library_and_input_deletion) ... ok
+test_exception_inside_reader_releases_lease (test_code_provenance.ProvenanceTests.test_exception_inside_reader_releases_lease) ... ok
+test_fork_inherited_reader_keeps_lock_after_parent_context_exit (test_code_provenance.ProvenanceTests.test_fork_inherited_reader_keeps_lock_after_parent_context_exit) ... ok
+test_frozen_step8_schema1_remains_unchanged_and_unsealed (test_code_provenance.ProvenanceTests.test_frozen_step8_schema1_remains_unchanged_and_unsealed) ... ok
+test_list_does_not_claim_fresh_provenance_or_disclose_text (test_code_provenance.ProvenanceTests.test_list_does_not_claim_fresh_provenance_or_disclose_text) ... ok
+test_missing_or_extra_seal_members_fail_closed (test_code_provenance.ProvenanceTests.test_missing_or_extra_seal_members_fail_closed) ... ok
+test_read_lease_protects_only_selected_version_and_not_global_list (test_code_provenance.ProvenanceTests.test_read_lease_protects_only_selected_version_and_not_global_list) ... ok
+test_real_process_death_releases_code_read_lease (test_code_provenance.ProvenanceTests.test_real_process_death_releases_code_read_lease) ... ok
+test_rehashed_code_text_cannot_disagree_with_sealed_input (test_code_provenance.ProvenanceTests.test_rehashed_code_text_cannot_disagree_with_sealed_input) ... ok
+test_rehashed_reference_cannot_disagree_with_source (test_code_provenance.ProvenanceTests.test_rehashed_reference_cannot_disagree_with_source) ... ok
+test_schema2_cannot_silently_fall_back_when_seal_missing (test_code_provenance.ProvenanceTests.test_schema2_cannot_silently_fall_back_when_seal_missing) ... ok
+test_seal_links_and_nested_directories_rejected (test_code_provenance.ProvenanceTests.test_seal_links_and_nested_directories_rejected) ... ok
+test_seal_size_permissions_and_budget (test_code_provenance.ProvenanceTests.test_seal_size_permissions_and_budget) ... ok
+test_source_write_failure_rolls_back_and_keeps_input (test_code_provenance.ProvenanceTests.test_source_write_failure_rolls_back_and_keeps_input) ... ok
+test_tampered_source_hashes_declarations_and_revision_rejected (test_code_provenance.ProvenanceTests.test_tampered_source_hashes_declarations_and_revision_rejected) ... ok
+test_valid_but_unrelated_source_rebinding_rejected (test_code_provenance.ProvenanceTests.test_valid_but_unrelated_source_rebinding_rejected) ... ok
+test_adopt_shared_description_parent_close_not_unlock (test_gpu_ownership.OwnershipTests.test_adopt_shared_description_parent_close_not_unlock) ... ok
+test_bad_kind_and_descriptor_fields (test_gpu_ownership.OwnershipTests.test_bad_kind_and_descriptor_fields) ... ok
+test_bad_nonce_or_inode_does_not_release_parent (test_gpu_ownership.OwnershipTests.test_bad_nonce_or_inode_does_not_release_parent) ... ok
+test_bootstrap_busy_stops_before_install_or_gpu_probe (test_gpu_ownership.OwnershipTests.test_bootstrap_busy_stops_before_install_or_gpu_probe) ... ok
+test_bootstrap_old_health_cannot_mask_new_supervisor_exit (test_gpu_ownership.OwnershipTests.test_bootstrap_old_health_cannot_mask_new_supervisor_exit) ... ok
+test_bootstrap_precheck_never_kills_by_stale_pid_or_name (test_gpu_ownership.OwnershipTests.test_bootstrap_precheck_never_kills_by_stale_pid_or_name) ... ok
+test_broken_diagnostic_does_not_unlock_owner (test_gpu_ownership.OwnershipTests.test_broken_diagnostic_does_not_unlock_owner) ... ok
+test_child_env_scrubs_stale_inherited_capabilities (test_gpu_ownership.OwnershipTests.test_child_env_scrubs_stale_inherited_capabilities) ... ok
+test_dead_pid_expired_record_never_overrides_lock (test_gpu_ownership.OwnershipTests.test_dead_pid_expired_record_never_overrides_lock) ... ok
+test_default_namespace_ignores_state_and_cuda_aliases (test_gpu_ownership.OwnershipTests.test_default_namespace_ignores_state_and_cuda_aliases) ... ok
+test_exclusive_modes_permissions_and_idempotent_close (test_gpu_ownership.OwnershipTests.test_exclusive_modes_permissions_and_idempotent_close) ... ok
+test_exec_child_holds_after_parent_closes (test_gpu_ownership.OwnershipTests.test_exec_child_holds_after_parent_closes) ... ok
+test_fresh_status_does_not_create_files (test_gpu_ownership.OwnershipTests.test_fresh_status_does_not_create_files) ... ok
+test_invalid_environment_does_not_fallback_to_acquire (test_gpu_ownership.OwnershipTests.test_invalid_environment_does_not_fallback_to_acquire) ... ok
+test_main_busy_does_not_overwrite_pid_or_start_children (test_gpu_ownership.OwnershipTests.test_main_busy_does_not_overwrite_pid_or_start_children) ... 12:18:55 [supervisor] ERROR GPU ownership admission rejected: busy
+12:18:55 [supervisor] INFO supervisor stopped
+ok
+test_main_installs_handlers_before_start_and_releases_on_stop (test_gpu_ownership.OwnershipTests.test_main_installs_handlers_before_start_and_releases_on_stop) ... 12:18:55 [supervisor] INFO supervisor stopped
+ok
+test_mock_guard_skips_without_gpu_claim (test_gpu_ownership.OwnershipTests.test_mock_guard_skips_without_gpu_claim) ... ok
+test_offline_lease_cannot_be_adopted_for_inference (test_gpu_ownership.OwnershipTests.test_offline_lease_cannot_be_adopted_for_inference) ... ok
+test_partial_start_failure_releases_parent_lease (test_gpu_ownership.OwnershipTests.test_partial_start_failure_releases_parent_lease) ... 12:18:55 [supervisor] INFO supervisor stopped
+ok
+test_proc_kill_reaps_leader_and_kills_surviving_descendant (test_gpu_ownership.OwnershipTests.test_proc_kill_reaps_leader_and_kills_surviving_descendant) ... ok
+test_proc_passes_fd_only_to_model_roles_and_closes_log (test_gpu_ownership.OwnershipTests.test_proc_passes_fd_only_to_model_roles_and_closes_log) ... 12:18:55 [supervisor] INFO started worker0 pid=123
+12:18:55 [supervisor] INFO started analyst pid=123
+12:18:55 [supervisor] INFO started gateway pid=123
+ok
+test_sigkill_parent_does_not_unlock_live_exec_child (test_gpu_ownership.OwnershipTests.test_sigkill_parent_does_not_unlock_live_exec_child) ... ok
+test_status_rejects_changed_permissions (test_gpu_ownership.OwnershipTests.test_status_rejects_changed_permissions) ... ok
+test_stop_prevents_new_start_and_restart (test_gpu_ownership.OwnershipTests.test_stop_prevents_new_start_and_restart) ... 12:18:56 [supervisor] WARNING restarting worker0 (test-stop) [1 in last 10 min]
+ok
+test_symlink_root_file_hardlink_and_fifo_rejected (test_gpu_ownership.OwnershipTests.test_symlink_root_file_hardlink_and_fifo_rejected) ... ok
+test_unlocked_fresh_descriptor_cannot_adopt_stale_record (test_gpu_ownership.OwnershipTests.test_unlocked_fresh_descriptor_cannot_adopt_stale_record) ... ok
+test_real_second_supervisor_preserves_existing_pid (test_gpu_ownership.ProductionEntryTests.test_real_second_supervisor_preserves_existing_pid) ... ok
+test_real_worker_and_analyst_refuse_offline_holder_before_torch (test_gpu_ownership.ProductionEntryTests.test_real_worker_and_analyst_refuse_offline_holder_before_torch) ... ok
+test_resource_cli_busy_and_observation (test_gpu_ownership.ProductionEntryTests.test_resource_cli_busy_and_observation) ... ok
+test_resource_cli_rejects_invalid_deadlines_and_arbitrary_commands (test_gpu_ownership.ProductionEntryTests.test_resource_cli_rejects_invalid_deadlines_and_arbitrary_commands) ... ok
+test_resource_cli_sigterm_and_sigkill_release (test_gpu_ownership.ProductionEntryTests.test_resource_cli_sigterm_and_sigkill_release) ... ok
+test_resource_cli_timed_reservation_releases (test_gpu_ownership.ProductionEntryTests.test_resource_cli_timed_reservation_releases) ... ok
+test_only_two_primary_buttons_with_separate_native_diagnostics (test_layout.LayoutTests.test_only_two_primary_buttons_with_separate_native_diagnostics) ... ok
+test_step3_dom_ids_and_script_order_are_preserved_without_duplicates (test_layout.LayoutTests.test_step3_dom_ids_and_script_order_are_preserved_without_duplicates) ... ok
+test_build_failure_sanitizes_error_preserves_raw_and_releases (test_libraries.LibraryAPITests.test_build_failure_sanitizes_error_preserves_raw_and_releases) ... 12:18:58 [analyst] ERROR library reference processing failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 137, in run
+    owner.build_profile(working,lease.metadata["name"],lease.files,lease.metadata["language"],ref_text,calibrate)
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: /private/secret-path
+ok
+test_cancelled_http_wait_does_not_strand_reservation_handoff (test_libraries.LibraryAPITests.test_cancelled_http_wait_does_not_strand_reservation_handoff) ... ok
+test_cas_delete_and_get_and_no_audio_download (test_libraries.LibraryAPITests.test_cas_delete_and_get_and_no_audio_download) ... ok
+test_empty_or_foreign_selection_and_bad_calibrate_never_start_job (test_libraries.LibraryAPITests.test_empty_or_foreign_selection_and_bad_calibrate_never_start_job) ... ok
+test_failed_executor_submit_cannot_execute_its_queued_mutation_later (test_libraries.LibraryAPITests.test_failed_executor_submit_cannot_execute_its_queued_mutation_later) ... ok
+test_library_and_legacy_share_busy_admission_and_mutations_are_blocked (test_libraries.LibraryAPITests.test_library_and_legacy_share_busy_admission_and_mutations_are_blocked) ... ok
+test_no_final_success_before_metadata_commit (test_libraries.LibraryAPITests.test_no_final_success_before_metadata_commit) ... ok
+test_profile_count_and_free_disk_admission_preserve_raw (test_libraries.LibraryAPITests.test_profile_count_and_free_disk_admission_preserve_raw) ... ok
+test_real_http_create_empty_then_upload_select_and_process (test_libraries.LibraryAPITests.test_real_http_create_empty_then_upload_select_and_process) ... ok
+test_store_io_error_does_not_expose_private_path (test_libraries.LibraryAPITests.test_store_io_error_does_not_expose_private_path) ... 12:18:58 [analyst] ERROR raw library storage operation failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 18, in execute
+    try:return await owner.HEAVY.run(function,*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 172, in run
+    return await asyncio.shield(future)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 161, in work
+    try:return function(*args)
+               ^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 68, in create
+    def create():return {"library":owner.LIBRARIES.create(data["name"],data.get("language","auto"))}
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+OSError: /secret/raw-library
+ok
+test_strict_json_duplicate_unknown_fields_nonfinite_and_types (test_libraries.LibraryAPITests.test_strict_json_duplicate_unknown_fields_nonfinite_and_types) ... ok
+test_thread_start_failure_rolls_back_lease_and_admission (test_libraries.LibraryAPITests.test_thread_start_failure_rolls_back_lease_and_admission) ... 12:18:58 [analyst] ERROR library processing thread could not be started
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 157, in process_library
+    try:return await execute(launch)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 18, in execute
+    try:return await owner.HEAVY.run(function,*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 172, in run
+    return await asyncio.shield(future)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 161, in work
+    try:return function(*args)
+               ^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 149, in launch
+    admission.start(owner.JOBS,job,owner.LIMITS.jobs,run)
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 137, in start
+    thread.start()
+  File "/home/user/Kagglee/kaggle/tests/test_libraries.py", line 283, in start
+    if thread.name.startswith('build-'):raise RuntimeError('injected build thread start failure')
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: injected build thread start failure
+ok
+test_upload_empty_oversize_count_fields_and_stale_revision (test_libraries.LibraryAPITests.test_upload_empty_oversize_count_fields_and_stale_revision) ... ok
+test_build_lease_blocks_mutation_and_second_store_until_released (test_libraries.LibraryStorageTests.test_build_lease_blocks_mutation_and_second_store_until_released) ... ok
+test_count_and_disk_budgets (test_libraries.LibraryStorageTests.test_count_and_disk_budgets) ... ok
+test_count_file_library_and_global_byte_budgets_are_transactional (test_libraries.LibraryStorageTests.test_count_file_library_and_global_byte_budgets_are_transactional) ... ok
+test_crashed_process_releases_advisory_lease_without_fake_completion (test_libraries.LibraryStorageTests.test_crashed_process_releases_advisory_lease_without_fake_completion) ... ok
+test_dataset_pack_does_not_silently_include_raw_library (test_libraries.LibraryStorageTests.test_dataset_pack_does_not_silently_include_raw_library) ... ok
+test_dedup_filename_sanitization_and_hash (test_libraries.LibraryStorageTests.test_dedup_filename_sanitization_and_hash) ... ok
+test_empty_named_library_survives_new_process_without_profile (test_libraries.LibraryStorageTests.test_empty_named_library_survives_new_process_without_profile) ... ok
+test_finish_commit_failure_releases_lease_and_reports_interruption (test_libraries.LibraryStorageTests.test_finish_commit_failure_releases_lease_and_reports_interruption) ... ok
+test_hardlink_and_modified_sample_integrity_fail_closed (test_libraries.LibraryStorageTests.test_hardlink_and_modified_sample_integrity_fail_closed) ... ok
+test_invalid_empty_duplicate_and_foreign_selections (test_libraries.LibraryStorageTests.test_invalid_empty_duplicate_and_foreign_selections) ... ok
+test_metadata_failure_rolls_back_all_new_files (test_libraries.LibraryStorageTests.test_metadata_failure_rolls_back_all_new_files) ... ok
+test_name_validation_normalization_and_unique_casefold (test_libraries.LibraryStorageTests.test_name_validation_normalization_and_unique_casefold) ... ok
+test_orphan_recovery_and_metadata_corruption_fail_closed (test_libraries.LibraryStorageTests.test_orphan_recovery_and_metadata_corruption_fail_closed) ... ok
+test_removing_samples_and_library_never_removes_independent_profiles (test_libraries.LibraryStorageTests.test_removing_samples_and_library_never_removes_independent_profiles) ... ok
+test_same_revision_concurrent_mutations_do_not_lose_updates (test_libraries.LibraryStorageTests.test_same_revision_concurrent_mutations_do_not_lose_updates) ... ok
+test_sample_write_failure_rolls_back_partial_file (test_libraries.LibraryStorageTests.test_sample_write_failure_rolls_back_partial_file) ... ok
+test_stale_revision_and_bool_rejected_without_changes (test_libraries.LibraryStorageTests.test_stale_revision_and_bool_rejected_without_changes) ... ok
+test_success_then_failed_reprocessing_retains_previous_profile (test_libraries.LibraryStorageTests.test_success_then_failed_reprocessing_retains_previous_profile) ... ok
+test_uuid_validation_and_symlink_library_metadata_and_sample (test_libraries.LibraryStorageTests.test_uuid_validation_and_symlink_library_metadata_and_sample) ... ok
+test_launcher_roundtrip_extract_only_without_bootstrap (test_packaging.PackagingTests.test_launcher_roundtrip_extract_only_without_bootstrap) ... ok
+test_original_saved_source_still_matches_evidence (test_packaging.PackagingTests.test_original_saved_source_still_matches_evidence) ... ok
+test_repack_is_deterministic_and_current (test_packaging.PackagingTests.test_repack_is_deterministic_and_current) ... REPACK CHECK OK: original 22 hashes + current 47 assets; deterministic outputs match
+ok
+test_step10_launcher_is_frozen (test_packaging.PackagingTests.test_step10_launcher_is_frozen) ... ok
+test_step11_launcher_is_frozen (test_packaging.PackagingTests.test_step11_launcher_is_frozen) ... ok
+test_step1_launcher_is_frozen (test_packaging.PackagingTests.test_step1_launcher_is_frozen) ... ok
+test_step2_launcher_is_frozen (test_packaging.PackagingTests.test_step2_launcher_is_frozen) ... ok
+test_step3_launcher_is_frozen (test_packaging.PackagingTests.test_step3_launcher_is_frozen) ... ok
+test_step4_launcher_is_frozen (test_packaging.PackagingTests.test_step4_launcher_is_frozen) ... ok
+test_step5_launcher_is_frozen (test_packaging.PackagingTests.test_step5_launcher_is_frozen) ... ok
+test_step6_launcher_is_frozen (test_packaging.PackagingTests.test_step6_launcher_is_frozen) ... ok
+test_step7_launcher_is_frozen (test_packaging.PackagingTests.test_step7_launcher_is_frozen) ... ok
+test_step8_launcher_is_frozen (test_packaging.PackagingTests.test_step8_launcher_is_frozen) ... ok
+test_step9_launcher_is_frozen (test_packaging.PackagingTests.test_step9_launcher_is_frozen) ... ok
+test_atomic_report_permissions_and_cli_static_exit_are_honest (test_probe.ProbeTests.test_atomic_report_permissions_and_cli_static_exit_are_honest) ... ok
+test_bootstrap_probes_before_starting_downloads (test_probe.ProbeTests.test_bootstrap_probes_before_starting_downloads) ... ok
+test_child_exit_without_report_is_a_structured_failure (test_probe.ProbeTests.test_child_exit_without_report_is_a_structured_failure) ... ok
+test_import_error_message_cannot_leak_secrets_into_report (test_probe.ProbeTests.test_import_error_message_cannot_leak_secrets_into_report) ... ok
+test_incompatible_keyword_signature_is_blocked (test_probe.ProbeTests.test_incompatible_keyword_signature_is_blocked) ... ok
+test_missing_cuda_or_gpu_count_blocks_instead_of_using_mock_success (test_probe.ProbeTests.test_missing_cuda_or_gpu_count_blocks_instead_of_using_mock_success) ... ok
+test_new_required_parameter_and_keyword_only_model_id_are_blocked (test_probe.ProbeTests.test_new_required_parameter_and_keyword_only_model_id_are_blocked) ... ok
+test_positional_only_required_keyword_is_blocked (test_probe.ProbeTests.test_positional_only_required_keyword_is_blocked) ... ok
+test_probed_keywords_match_actual_worker_calls (test_probe.ProbeTests.test_probed_keywords_match_actual_worker_calls) ... ok
+test_runtime_surface_pass_is_not_model_training_or_performance_success (test_probe.ProbeTests.test_runtime_surface_pass_is_not_model_training_or_performance_success) ... ok
+test_runtime_timeout_kills_group_and_does_not_claim_ready (test_probe.ProbeTests.test_runtime_timeout_kills_group_and_does_not_claim_ready) ... ok
+test_static_inspection_never_imports_cuda_backend_or_loads_a_model (test_probe.ProbeTests.test_static_inspection_never_imports_cuda_backend_or_loads_a_model) ... ok
+test_t4_bf16_and_unapproved_fp32_are_blocked (test_probe.ProbeTests.test_t4_bf16_and_unapproved_fp32_are_blocked) ... ok
+test_install_constraints_preserve_platform_torch_cuda_and_audio (test_qwen_compat.CompatibilityTests.test_install_constraints_preserve_platform_torch_cuda_and_audio) ... ok
+test_legacy_official_namespace_does_not_import_or_patch_hf5 (test_qwen_compat.CompatibilityTests.test_legacy_official_namespace_does_not_import_or_patch_hf5) ... ok
+test_legacy_schema_and_device_are_unchanged (test_qwen_compat.CompatibilityTests.test_legacy_schema_and_device_are_unchanged) ... ok
+test_modern_schema_uses_actual_theta_not_a_hardcoded_default (test_qwen_compat.CompatibilityTests.test_modern_schema_uses_actual_theta_not_a_hardcoded_default) ... ok
+test_owned_supervisor_cleanup_uses_only_supplied_popen (test_qwen_compat.CompatibilityTests.test_owned_supervisor_cleanup_uses_only_supplied_popen) ... ok
+test_partial_factor_propagates_without_mutating_modern_dict (test_qwen_compat.CompatibilityTests.test_partial_factor_propagates_without_mutating_modern_dict) ... ok
+test_registry_install_idempotent_and_unknown_override_refused (test_qwen_compat.CompatibilityTests.test_registry_install_idempotent_and_unknown_override_refused) ... ok
+test_scaled_missing_nested_invalid_modern_schema_refused (test_qwen_compat.CompatibilityTests.test_scaled_missing_nested_invalid_modern_schema_refused) ... ok
+test_session_resident_does_not_restart_at_600_or_old_memory_limit (test_qwen_compat.CompatibilityTests.test_session_resident_does_not_restart_at_600_or_old_memory_limit) ... 12:18:59 [worker0] WARNING resident model: high allocated VRAM 14000MB; inspect actual headroom
+12:18:59 [worker0] WARNING requesting graceful restart (alloc=14000MB served=700)
+ok
+test_supervisor_stops_fatal_worker_without_retry (test_qwen_compat.CompatibilityTests.test_supervisor_stops_fatal_worker_without_retry) ... 12:18:59 [supervisor] ERROR worker0 fatal configuration error; stopping retries: MimiConfig rope_theta
+ok
+test_two_worker_gpu_mapping_is_distinct (test_qwen_compat.CompatibilityTests.test_two_worker_gpu_mapping_is_distinct) ... ok
+test_unreviewed_or_colliding_hf_distribution_rejected (test_qwen_compat.CompatibilityTests.test_unreviewed_or_colliding_hf_distribution_rejected) ... ok
+test_wait_ready_exits_on_fatal_health_and_on_current_nonce_receipt (test_qwen_compat.CompatibilityTests.test_wait_ready_exits_on_fatal_health_and_on_current_nonce_receipt) ... ✗ fatal worker configuration error; stopping startup (see worker logs)
+✗ supervisor recorded fatal worker configuration error; stopping startup
+ok
+test_worker_fatal_boot_is_distinguished_from_transient_failure (test_qwen_compat.CompatibilityTests.test_worker_fatal_boot_is_distinguished_from_transient_failure) ... 12:18:59 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+AttributeError: 'MimiConfig' object has no attribute 'rope_theta'
+12:18:59 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+qwen_compat.BackendCompatibilityError: bad config
+12:18:59 [worker0] ERROR engine load failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/worker.py", line 353, in boot
+    self.engine.load()
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: temporary IO
+ok
+test_bootstrap_dependency_import_has_timeout_and_discards_library_logs (test_reliability.ReliabilityTests.test_bootstrap_dependency_import_has_timeout_and_discards_library_logs) ... ok
+test_cancel_arriving_at_lock_acquisition_never_starts_synthesis (test_reliability.ReliabilityTests.test_cancel_arriving_at_lock_acquisition_never_starts_synthesis) ... ok
+test_concurrent_atomic_json_writes (test_reliability.ReliabilityTests.test_concurrent_atomic_json_writes) ... ok
+test_empty_e2e_run_is_a_clean_failure_not_a_pass_or_format_crash (test_reliability.ReliabilityTests.test_empty_e2e_run_is_a_clean_failure_not_a_pass_or_format_crash) ... ok
+test_emulated_bf16_does_not_count_as_native_t4_support (test_reliability.ReliabilityTests.test_emulated_bf16_does_not_count_as_native_t4_support) ... ok
+test_numpy_audio_fallback_accepts_all_short_chunks (test_reliability.ReliabilityTests.test_numpy_audio_fallback_accepts_all_short_chunks) ... ok
+test_selftest_missing_profile_is_not_a_pass (test_reliability.ReliabilityTests.test_selftest_missing_profile_is_not_a_pass) ... [SKIP] per-GPU streaming + RTF               0.0s  skipped (no active profile yet: create one in Voice Lab)
+ok
+test_short_recorded_breath_does_not_broadcast_fail (test_reliability.ReliabilityTests.test_short_recorded_breath_does_not_broadcast_fail) ... ok
+test_silent_subprocess_timeout_is_enforced (test_reliability.ReliabilityTests.test_silent_subprocess_timeout_is_enforced) ... ok
+test_stream_rejects_wrong_sample_rate (test_reliability.ReliabilityTests.test_stream_rejects_wrong_sample_rate) ... ok
+test_subprocess_exit_status_is_not_hidden (test_reliability.ReliabilityTests.test_subprocess_exit_status_is_not_hidden) ... ok
+test_t4_never_automatically_falls_back_to_bf16 (test_reliability.ReliabilityTests.test_t4_never_automatically_falls_back_to_bf16) ... ok
+test_tar_does_not_follow_existing_destination_escape_link (test_reliability.ReliabilityTests.test_tar_does_not_follow_existing_destination_escape_link) ... ok
+test_tar_rejects_traversal_symlinks_and_unexpected_files (test_reliability.ReliabilityTests.test_tar_rejects_traversal_symlinks_and_unexpected_files) ... ok
+test_tar_restores_valid_voice_assets (test_reliability.ReliabilityTests.test_tar_restores_valid_voice_assets) ... ok
+test_two_gpus_are_required_by_default (test_reliability.ReliabilityTests.test_two_gpus_are_required_by_default) ... 
+QTTS bootstrap  root=/home/user/Kagglee/kaggle/source
+   ## 当前版本修复
+   
+   现场日志：两张Tesla T4已识别；faster0.5.4/TF5.20.2加载Mimi失败，不能说完整模型已加载。原始至step11冻结，当前step12。
+   
+   qwen-tts-hf0.1.1.post1默认RoPE函数读取旧rope_theta，现代Mimi使用rope_parameters。新增qwen_compat.py，仅包装已识别Qwen默认函数，从实际现代配置取theta提供临时副本，不猜10000、不修改权重/config、不盲降4.x。固定faster0.5.4/hf0.1.1.
+   
+   健康模型默认QTTS_RESIDENT=1，不因600次请求或旧13.5GB门槛周期重载；显存高时告警，CUDA空闲缓存清理不释放活模型权重。异常/显存不足仍可能导致恢复，不保证永久可用。每worker仍只看自己一张GPU，健康报告requested_model/model_loaded/visible_devices/residency
+   
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 1. 已确认事实及修复边界
+   
+   - 原始22项压缩资产的内嵌校验全部通过；原文件不存在已确认的粘贴截断。
+   - 现有系统使用 Python 模型进程、Go 网关、Rust 可选音频库和已编译的浏览器 JavaScript。
+   - 实际包内没有 `web-src/*.ts`，不能声称修改了不存在的 TypeScript 源码。
+   - T4/Turing 不具备原生 BF16。默认 FP16；BF16 回退同时检查计算能力和 torch 支持，FP32 须显式 `QTTS_ALLOW_FP32=1`。
+   - BF16/FP32、模型接口、CUDA Graph、SDPA 的实际可运行性仍须在真实设备上验证。
+   - 标准 RTF = 生成耗时/音频时长，越小越快。旧字段 `rtf_x` = 音频时长/生成耗时，是速度倍率，不能混称。
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 7. 尚未验证与未完成
+   
+   - 真实双T4、Qwen权重和第三方流式后端的兼容性、显存、输出质量及热/冷启动性能。
+   - 真正world_size=2训练、所有选定样本覆盖、保存后重载试听。
+   - DeepSeek真实长流及服务端token上限，依赖固定与下载完整性。
+   - 第四阶段已改为录制参考语音/语音对话两个主要视图，诊断为辅助窗口；训练任务UI仍未实现。实测波形与本地片段只有Chromium软件输入验证，未做物理麦克风验收。
+   - 已加入单用户Bearer访问控制、频率/并发/上传预算；仍缺账号体系、持久审计、IP/连接级防护与OS级资源隔离。仅通过可信HTTPS代理访问。
+   - supervisor的重启竞态、队列上限、持续故障和断网恢复尚需后续专项验证。
+
+━━ [  12.6s] 1/9 detect GPUs
+✗ No GPU visible. Notebook → Settings → Accelerator → GPU T4 x2, then restart the session.
+   ↳ 1/9 detect GPUs: 0.0s
+QTTS bootstrap  root=/home/user/Kagglee/kaggle/source
+   ## 当前版本修复
+   
+   现场日志：两张Tesla T4已识别；faster0.5.4/TF5.20.2加载Mimi失败，不能说完整模型已加载。原始至step11冻结，当前step12。
+   
+   qwen-tts-hf0.1.1.post1默认RoPE函数读取旧rope_theta，现代Mimi使用rope_parameters。新增qwen_compat.py，仅包装已识别Qwen默认函数，从实际现代配置取theta提供临时副本，不猜10000、不修改权重/config、不盲降4.x。固定faster0.5.4/hf0.1.1.
+   
+   健康模型默认QTTS_RESIDENT=1，不因600次请求或旧13.5GB门槛周期重载；显存高时告警，CUDA空闲缓存清理不释放活模型权重。异常/显存不足仍可能导致恢复，不保证永久可用。每worker仍只看自己一张GPU，健康报告requested_model/model_loaded/visible_devices/residency
+   
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 1. 已确认事实及修复边界
+   
+   - 原始22项压缩资产的内嵌校验全部通过；原文件不存在已确认的粘贴截断。
+   - 现有系统使用 Python 模型进程、Go 网关、Rust 可选音频库和已编译的浏览器 JavaScript。
+   - 实际包内没有 `web-src/*.ts`，不能声称修改了不存在的 TypeScript 源码。
+   - T4/Turing 不具备原生 BF16。默认 FP16；BF16 回退同时检查计算能力和 torch 支持，FP32 须显式 `QTTS_ALLOW_FP32=1`。
+   - BF16/FP32、模型接口、CUDA Graph、SDPA 的实际可运行性仍须在真实设备上验证。
+   - 标准 RTF = 生成耗时/音频时长，越小越快。旧字段 `rtf_x` = 音频时长/生成耗时，是速度倍率，不能混称。
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 7. 尚未验证与未完成
+   
+   - 真实双T4、Qwen权重和第三方流式后端的兼容性、显存、输出质量及热/冷启动性能。
+   - 真正world_size=2训练、所有选定样本覆盖、保存后重载试听。
+   - DeepSeek真实长流及服务端token上限，依赖固定与下载完整性。
+   - 第四阶段已改为录制参考语音/语音对话两个主要视图，诊断为辅助窗口；训练任务UI仍未实现。实测波形与本地片段只有Chromium软件输入验证，未做物理麦克风验收。
+   - 已加入单用户Bearer访问控制、频率/并发/上传预算；仍缺账号体系、持久审计、IP/连接级防护与OS级资源隔离。仅通过可信HTTPS代理访问。
+   - supervisor的重启竞态、队列上限、持续故障和断网恢复尚需后续专项验证。
+
+━━ [  12.6s] 1/9 detect GPUs
+✗ Two GPUs required. Select T4 x2; QTTS_ALLOW_SINGLE_GPU=1 is only for explicit limited tests.
+   ↳ 1/9 detect GPUs: 0.0s
+ok
+test_bootstrap_has_the_safe_archive_extractor_import (test_security.AccessTests.test_bootstrap_has_the_safe_archive_extractor_import) ... ok
+test_child_processes_only_receive_required_credentials (test_security.AccessTests.test_child_processes_only_receive_required_credentials) ... ok
+test_default_auth_directory_is_outside_exported_voice_state (test_security.AccessTests.test_default_auth_directory_is_outside_exported_voice_state) ... ok
+test_generated_token_permissions_reuse_and_concurrent_provisioning (test_security.AccessTests.test_generated_token_permissions_reuse_and_concurrent_provisioning) ... ok
+test_invalid_explicit_token_and_symlink_fail_closed (test_security.AccessTests.test_invalid_explicit_token_and_symlink_fail_closed) ... ok
+test_local_probe_headers_never_go_to_workers_or_remote_hosts (test_security.AccessTests.test_local_probe_headers_never_go_to_workers_or_remote_hosts) ... ok
+test_busy_build_rejected_without_waiting_and_failure_releases (test_security.AnalystUploadTests.test_busy_build_rejected_without_waiting_and_failure_releases) ... ok
+test_consistency_text_count_is_bounded_before_expensive_work (test_security.AnalystUploadTests.test_consistency_text_count_is_bounded_before_expensive_work) ... ok
+test_decode_oversize_is_rejected_not_silently_truncated_or_fallback (test_security.AnalystUploadTests.test_decode_oversize_is_rejected_not_silently_truncated_or_fallback) ... ok
+test_profile_count_and_disk_budget_reject_before_job (test_security.AnalystUploadTests.test_profile_count_and_disk_budget_reject_before_job) ... ok
+test_soundfile_fallback_checks_duration_before_allocating (test_security.AnalystUploadTests.test_soundfile_fallback_checks_duration_before_allocating) ... ok
+test_soundfile_fallback_still_decodes_valid_short_audio (test_security.AnalystUploadTests.test_soundfile_fallback_still_decodes_valid_short_audio) ... ok
+test_thread_start_failure_releases_endpoint_admission (test_security.AnalystUploadTests.test_thread_start_failure_releases_endpoint_admission) ... 12:19:00 [analyst] ERROR voice job could not be started
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/analyst.py", line 922, in create_profile
+    ADMISSION.start(JOBS,job,LIMITS.jobs,run_build)
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+RuntimeError: simulated failure
+ok
+test_too_many_files_empty_oversized_and_empty_name_rejected (test_security.AnalystUploadTests.test_too_many_files_empty_oversized_and_empty_name_rejected) ... ok
+test_total_decoded_duration_is_not_silently_truncated (test_security.AnalystUploadTests.test_total_decoded_duration_is_not_silently_truncated) ... 12:19:00 [analyst] INFO job duration   3.0% decode + denoise a.wav
+12:19:00 [analyst] INFO job duration  14.0% decode + denoise b.wav
+12:19:00 [analyst] ERROR profile build failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/analyst.py", line 562, in build_profile
+    raise UploadRejected("total decoded audio duration limit exceeded")
+resource_limits.UploadRejected: total decoded audio duration limit exceeded
+12:19:00 [analyst] INFO job duration  14.0% FAILED: total decoded audio duration limit exceeded
+ok
+test_build_start_failure_does_not_leave_a_record (test_security.ResourceTests.test_build_start_failure_does_not_leave_a_record) ... ok
+test_heavy_slot_remains_reserved_after_http_waiter_cancels (test_security.ResourceTests.test_heavy_slot_remains_reserved_after_http_waiter_cancels) ... ok
+test_known_body_limits_and_malformed_length (test_security.ResourceTests.test_known_body_limits_and_malformed_length) ... ok
+test_read_upload_empty_per_file_and_aggregate_limits (test_security.ResourceTests.test_read_upload_empty_per_file_and_aggregate_limits) ... ok
+test_resource_environment_validation (test_security.ResourceTests.test_resource_environment_validation) ... ok
+test_retained_build_records_are_bounded_and_terminal_jobs_pruned (test_security.ResourceTests.test_retained_build_records_are_bounded_and_terminal_jobs_pruned) ... ok
+test_unknown_length_body_is_rejected_before_application_or_parser (test_security.ResourceTests.test_unknown_length_body_is_rejected_before_application_or_parser) ... ok
+test_bad_codes_never_publish (test_training_codes.CodeTests.test_bad_codes_never_publish) ... ok
+test_bad_pin_does_not_load_model_or_leave_lease (test_training_codes.CodeTests.test_bad_pin_does_not_load_model_or_leave_lease) ... ok
+test_cancel_after_encode_rolls_back_and_releases (test_training_codes.CodeTests.test_cancel_after_encode_rolls_back_and_releases) ... ok
+test_cancellation_before_model (test_training_codes.CodeTests.test_cancellation_before_model) ... ok
+test_cli_list_verify_and_delete_fixture_only (test_training_codes.CodeTests.test_cli_list_verify_and_delete_fixture_only) ... ok
+test_encoder_failure_and_write_failure_rollback (test_training_codes.CodeTests.test_encoder_failure_and_write_failure_rollback) ... ok
+test_factory_is_under_verified_lease (test_training_codes.CodeTests.test_factory_is_under_verified_lease) ... ok
+test_permissions_and_backup_exclusion (test_training_codes.CodeTests.test_permissions_and_backup_exclusion) ... ok
+test_pinned_output_verify_list_and_delete (test_training_codes.CodeTests.test_pinned_output_verify_list_and_delete) ... ok
+test_process_death_releases_input_lease (test_training_codes.CodeTests.test_process_death_releases_input_lease) ... ok
+test_quotas_and_orphan_cleanup (test_training_codes.CodeTests.test_quotas_and_orphan_cleanup) ... ok
+test_real_cli_deadline_kills_worker_and_releases_lease (test_training_codes.CodeTests.test_real_cli_deadline_kills_worker_and_releases_lease) ... ok
+test_real_cli_missing_dependencies_blocked_without_output (test_training_codes.CodeTests.test_real_cli_missing_dependencies_blocked_without_output) ... ok
+test_real_cli_sigterm_cancel_releases_lease (test_training_codes.CodeTests.test_real_cli_sigterm_cancel_releases_lease) ... ok
+test_rename_failure_preserves_input (test_training_codes.CodeTests.test_rename_failure_preserves_input) ... ok
+test_sigkill_controller_kills_encoder_and_releases_input (test_training_codes.CodeTests.test_sigkill_controller_kills_encoder_and_releases_input) ... ok
+test_source_change_during_encoding_prevents_publication (test_training_codes.CodeTests.test_source_change_during_encoding_prevents_publication) ... ok
+test_source_lease_blocks_delete_but_not_other_dataset_list (test_training_codes.CodeTests.test_source_lease_blocks_delete_but_not_other_dataset_list) ... ok
+test_symlink_and_hardlink_codes_rejected (test_training_codes.CodeTests.test_symlink_and_hardlink_codes_rejected) ... ok
+test_tamper_audio_index_and_membership (test_training_codes.CodeTests.test_tamper_audio_index_and_membership) ... ok
+test_transaction_full_coverage_and_independent_copies (test_training_codes.CodeTests.test_transaction_full_coverage_and_independent_copies) ... ok
+test_adapter_loader_contract_with_stub_imports_no_real_model (test_training_codes.ModelTests.test_adapter_loader_contract_with_stub_imports_no_real_model) ... ok
+test_adapter_refuses_missing_or_multiple_sample_results (test_training_codes.ModelTests.test_adapter_refuses_missing_or_multiple_sample_results) ... ok
+test_cli_fingerprint_no_model_load (test_training_codes.ModelTests.test_cli_fingerprint_no_model_load) ... ok
+test_cli_rejects_missing_directory_without_path_leak (test_training_codes.ModelTests.test_cli_rejects_missing_directory_without_path_leak) ... ok
+test_fingerprint_deterministic_and_changes (test_training_codes.ModelTests.test_fingerprint_deterministic_and_changes) ... ok
+test_missing_model_and_bad_pin_no_dependency_load (test_training_codes.ModelTests.test_missing_model_and_bad_pin_no_dependency_load) ... ok
+test_pickle_links_and_index_escape_rejected (test_training_codes.ModelTests.test_pickle_links_and_index_escape_rejected) ... ok
+test_sharded_index_only_references_fingerprinted_files (test_training_codes.ModelTests.test_sharded_index_only_references_fingerprinted_files) ... ok
+test_wrong_model_shapes_and_remote_code_rejected (test_training_codes.ModelTests.test_wrong_model_shapes_and_remote_code_rejected) ... ok
+test_real_group_termination_kills_descendant_after_leader_exits (test_training_codes.ProcessTests.test_real_group_termination_kills_descendant_after_leader_exits) ... ok
+test_scrubbed_cpu_offline_environment (test_training_codes.ProcessTests.test_scrubbed_cpu_offline_environment) ... ok
+test_timeout_and_cancel_stop_worker_group (test_training_codes.ProcessTests.test_timeout_and_cancel_stop_worker_group) ... ok
+test_failed_storage_response_sanitized_and_no_raw_download_routes (test_training_data.TrainingAPITests.test_failed_storage_response_sanitized_and_no_raw_download_routes) ... 12:19:09 [analyst] ERROR raw library storage operation failed
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 18, in execute
+    try:return await owner.HEAVY.run(function,*args)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 172, in run
+    return await asyncio.shield(future)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/resource_limits.py", line 161, in work
+    try:return function(*args)
+               ^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/library_api.py", line 46, in prepare
+    def prepare():return {"dataset":owner.TRAINING_DATA.prepare(owner.LIBRARIES,data),"operation":"input_preparation_not_training"}
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1118, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1122, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/unittest/mock.py", line 1177, in _execute_mock_call
+    raise effect
+OSError: /private/source/transcript
+ok
+test_real_prepare_verify_delete_without_model_or_job_creation (test_training_data.TrainingAPITests.test_real_prepare_verify_delete_without_model_or_job_creation) ... ok
+test_unknown_duplicate_fields_wrong_booleans_and_missing_transcript_rejected (test_training_data.TrainingAPITests.test_unknown_duplicate_fields_wrong_booleans_and_missing_transcript_rejected) ... ok
+test_audio_index_and_plan_tampering_fail_fixed_hash_verification (test_training_data.TrainingStorageTests.test_audio_index_and_plan_tampering_fail_fixed_hash_verification) ... ok
+test_authorization_and_single_speaker_are_explicit_booleans (test_training_data.TrainingStorageTests.test_authorization_and_single_speaker_are_explicit_booleans) ... ok
+test_container_gate_rejects_corrupt_wrong_rate_stereo_constant_and_truncation (test_training_data.TrainingStorageTests.test_container_gate_rejects_corrupt_wrong_rate_stereo_constant_and_truncation) ... ok
+test_count_per_snapshot_global_byte_and_disk_budgets (test_training_data.TrainingStorageTests.test_count_per_snapshot_global_byte_and_disk_budgets) ... ok
+test_dataset_backup_does_not_include_training_input_copies (test_training_data.TrainingStorageTests.test_dataset_backup_does_not_include_training_input_copies) ... ok
+test_extra_metadata_is_removed_but_all_pcm_frames_preserved (test_training_data.TrainingStorageTests.test_extra_metadata_is_removed_but_all_pcm_frames_preserved) ... ok
+test_failed_hash_delete_retains_snapshot_and_deletion_does_not_touch_library (test_training_data.TrainingStorageTests.test_failed_hash_delete_retains_snapshot_and_deletion_does_not_touch_library) ... ok
+test_interrupted_staging_is_reaped_without_removing_published_snapshot (test_training_data.TrainingStorageTests.test_interrupted_staging_is_reaped_without_removing_published_snapshot) ... ok
+test_per_sample_text_duplicate_foreign_reference_and_stale_revision (test_training_data.TrainingStorageTests.test_per_sample_text_duplicate_foreign_reference_and_stale_revision) ... ok
+test_rank_plan_covers_all_has_equal_steps_and_explicit_odd_padding (test_training_data.TrainingStorageTests.test_rank_plan_covers_all_has_equal_steps_and_explicit_odd_padding) ... ok
+test_real_wav_export_jsonl_provenance_and_pinned_verification (test_training_data.TrainingStorageTests.test_real_wav_export_jsonl_provenance_and_pinned_verification) ... ok
+test_short_long_reference_and_total_duration_never_truncated (test_training_data.TrainingStorageTests.test_short_long_reference_and_total_duration_never_truncated) ... ok
+test_snapshot_does_not_change_profile_job_and_survives_source_deletion (test_training_data.TrainingStorageTests.test_snapshot_does_not_change_profile_job_and_survives_source_deletion) ... ok
+test_snapshot_lease_and_global_preparation_are_nonblocking (test_training_data.TrainingStorageTests.test_snapshot_lease_and_global_preparation_are_nonblocking) ... ok
+test_symlink_hardlink_and_path_traversal_fail_closed (test_training_data.TrainingStorageTests.test_symlink_hardlink_and_path_traversal_fail_closed) ... ok
+test_write_and_publish_failures_roll_back_without_altering_raw (test_training_data.TrainingStorageTests.test_write_and_publish_failures_roll_back_without_altering_raw) ... ok
+test_base_fingerprint_and_weight_mutation (test_tts_training.AdmissionTests.test_base_fingerprint_and_weight_mutation) ... ok
+test_child_environment_scrubs_keys_not_gpu_visibility (test_tts_training.AdmissionTests.test_child_environment_scrubs_keys_not_gpu_visibility) ... ok
+test_code_lease_fd_adoption_checks_owner_and_last_reference (test_tts_training.AdmissionTests.test_code_lease_fd_adoption_checks_owner_and_last_reference) ... ok
+test_controller_has_no_fake_training_cli_switch (test_tts_training.AdmissionTests.test_controller_has_no_fake_training_cli_switch) ... ok
+test_explicit_review_and_legacy_gate (test_tts_training.AdmissionTests.test_explicit_review_and_legacy_gate) ... ok
+test_fixture_training_rejected_before_import_or_gpu (test_tts_training.AdmissionTests.test_fixture_training_rejected_before_import_or_gpu) ... ok
+test_model_links_pickle_remote_code_and_missing_assets (test_tts_training.AdmissionTests.test_model_links_pickle_remote_code_and_missing_assets) ... ok
+test_option_budgets_and_no_nan (test_tts_training.AdmissionTests.test_option_budgets_and_no_nan) ... ok
+test_controller_sigterm_and_sigkill_real_children_release (test_tts_training.ControllerLifetimeTests.test_controller_sigterm_and_sigkill_real_children_release) ... ok
+test_offline_gpu_adoption_is_explicit_not_worker_default (test_tts_training.ControllerLifetimeTests.test_offline_gpu_adoption_is_explicit_not_worker_default) ... ok
+test_one_failed_rank_terminates_other_and_never_publishes (test_tts_training.ControllerLifetimeTests.test_one_failed_rank_terminates_other_and_never_publishes) ... ok
+test_second_spawn_failure_stops_first_and_releases_locks (test_tts_training.ControllerLifetimeTests.test_second_spawn_failure_stops_first_and_releases_locks) ... ok
+test_timeout_stops_both_fd_holders_before_release (test_tts_training.ControllerLifetimeTests.test_timeout_stops_both_fd_holders_before_release) ... ok
+test_zero_exit_without_checkpoint_cannot_claim_optimizer_success (test_tts_training.ControllerLifetimeTests.test_zero_exit_without_checkpoint_cannot_claim_optimizer_success) ... ok
+test_actual_two_process_gloo_optimizer_sync (test_tts_training.TensorTests.test_actual_two_process_gloo_optimizer_sync) ... /home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[rank0]:[W1021 12:19:26.326601655 reducer.cpp:1457] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank1]:[W1021 12:19:26.329284481 reducer.cpp:1457] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+ok
+test_atomic_adapter_checkpoint_and_reload_not_full_model (test_tts_training.TensorTests.test_atomic_adapter_checkpoint_and_reload_not_full_model) ... ok
+test_dataset_masks_and_no_truncation (test_tts_training.TensorTests.test_dataset_masks_and_no_truncation) ... ok
+test_fp16_frozen_base_keeps_float32_trainable_gradients (test_tts_training.TensorTests.test_fp16_frozen_base_keeps_float32_trainable_gradients) ... ok
+test_lora_zero_init_freeze_fp32_and_backward (test_tts_training.TensorTests.test_lora_zero_init_freeze_fp32_and_backward) ... ok
+test_nonfinite_gradient_skips_update_not_fake_success (test_tts_training.TensorTests.test_nonfinite_gradient_skips_update_not_fake_success) ... ok
+test_nonfinite_loss_rejected_without_update (test_tts_training.TensorTests.test_nonfinite_loss_rejected_without_update) ... ok
+test_real_joint_loss_projection_and_optimizer_updates (test_tts_training.TensorTests.test_real_joint_loss_projection_and_optimizer_updates) ... ok
+test_restore_adapter_strict_members_shapes_and_finite (test_tts_training.TensorTests.test_restore_adapter_strict_members_shapes_and_finite) ... ok
+test_sampler_full_coverage_padding_epoch_and_tail (test_tts_training.TensorTests.test_sampler_full_coverage_padding_epoch_and_tail) ... ok
+test_targets_include_subtalker_not_speaker_and_no_guess (test_tts_training.TensorTests.test_targets_include_subtalker_not_speaker_and_no_guess) ... ok
+
+----------------------------------------------------------------------
+Ran 267 tests in 41.015s
+
+OK

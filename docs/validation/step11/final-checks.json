@@ -1,0 +1,36 @@
+{
+  "artifact_bytes": 276043,
+  "artifact_sha256": "cd5346e8ae34f1e2db327a076a7411996982848f9d4e14236f05d94c626d496e",
+  "assets": 46,
+  "original_through_step10_frozen": true,
+  "complete_embedded_memos": 27,
+  "questions": 10,
+  "suggestions": 500,
+  "checklist_checked": 22,
+  "checklist_total": 300,
+  "python": {
+    "unique": 252,
+    "rounds": 3,
+    "passed": 756
+  },
+  "browser": {
+    "unique": 112,
+    "rounds": 3,
+    "passed": 336
+  },
+  "final_copy_passed": 3,
+  "go_race_count": 3,
+  "node_passed": 90,
+  "protocol_scripts_each_rounds": 9,
+  "adapter_real_local_go_http_sse_rounds": 3,
+  "adapter_model": "real CPU tiny LoRA + injected native API; local SSE fixture",
+  "no_pcm_fallback_on_corrupt_adapter": true,
+  "formal_head_and_all15_hashes_unchanged": true,
+  "explicit_adapter_chat_code_implemented": true,
+  "native_model_output_mode": "sentence-buffered",
+  "qwen_training_executed": false,
+  "qwen_inference_executed": false,
+  "gpu_verified": false,
+  "quality_verified": false,
+  "lock_observational_busy": false
+}

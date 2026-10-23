@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "mode": "runtime_surface",
+  "status": "blocked",
+  "created_at": "2026-10-21T12:49:16Z",
+  "python": "3.11.2",
+  "checks": [
+    {
+      "name": "python",
+      "status": "pass",
+      "detail": "Python >=3.10 required",
+      "required": true
+    },
+    {
+      "name": "package.torch",
+      "status": "pass",
+      "detail": "2.8.0",
+      "required": true
+    },
+    {
+      "name": "package.faster-qwen3-tts",
+      "status": "pass",
+      "detail": "0.5.4",
+      "required": true
+    },
+    {
+      "name": "package.transformers",
+      "status": "pass",
+      "detail": "5.20.2",
+      "required": false
+    },
+    {
+      "name": "package.qwen-tts",
+      "status": "warning",
+      "detail": "not installed",
+      "required": false
+    },
+    {
+      "name": "package.qwen-tts-hf",
+      "status": "pass",
+      "detail": "0.1.1.post1",
+      "required": false
+    },
+    {
+      "name": "package.fastapi",
+      "status": "pass",
+      "detail": "0.156.4",
+      "required": true
+    },
+    {
+      "name": "package.uvicorn",
+      "status": "pass",
+      "detail": "0.54.0",
+      "required": true
+    },
+    {
+      "name": "package.soundfile",
+      "status": "pass",
+      "detail": "0.14.0",
+      "required": true
+    },
+    {
+      "name": "package.faster-whisper",
+      "status": "warning",
+      "detail": "not installed",
+      "required": false
+    },
+    {
+      "name": "tool.ffmpeg",
+      "status": "warning",
+      "detail": "missing; only soundfile-supported formats can be attempted",
+      "required": false
+    },
+    {
+      "name": "cuda",
+      "status": "blocked",
+      "detail": "CUDA unavailable",
+      "required": true
+    },
+    {
+      "name": "qwen_mimi_rope_cpu",
+      "status": "pass",
+      "detail": "actual MimiConfig/default RoPE CPU smoke passed; NO model/GPU generation",
+      "required": true
+    },
+    {
+      "name": "api.from_pretrained",
+      "status": "pass",
+      "detail": "worker call shape accepted; behavior untested",
+      "required": true
+    },
+    {
+      "name": "api.warmup",
+      "status": "pass",
+      "detail": "worker call shape accepted; behavior untested",
+      "required": true
+    },
+    {
+      "name": "api.generate_voice_clone_streaming",
+      "status": "pass",
+      "detail": "worker call shape accepted; behavior untested",
+      "required": true
+    },
+    {
+      "name": "private_prompt_cache",
+      "status": "pass",
+      "detail": "private interface is version-sensitive; real prompt preparation still required",
+      "required": false
+    }
+  ],
+  "devices": [],
+  "model_loaded": false,
+  "inference_verified": false,
+  "training_verified": false,
+  "performance_verified": false,
+  "requested_engine": "faster"
+}

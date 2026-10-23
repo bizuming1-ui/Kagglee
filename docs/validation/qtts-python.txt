@@ -1,0 +1,48 @@
+test_launcher_roundtrip_extract_only_without_bootstrap (test_packaging.PackagingTests.test_launcher_roundtrip_extract_only_without_bootstrap) ... ok
+test_original_saved_source_still_matches_evidence (test_packaging.PackagingTests.test_original_saved_source_still_matches_evidence) ... ok
+test_repack_is_deterministic_and_current (test_packaging.PackagingTests.test_repack_is_deterministic_and_current) ... REPACK CHECK OK: original 22 hashes + current 23 assets; deterministic outputs match
+ok
+test_cancel_arriving_at_lock_acquisition_never_starts_synthesis (test_reliability.ReliabilityTests.test_cancel_arriving_at_lock_acquisition_never_starts_synthesis) ... ok
+test_concurrent_atomic_json_writes (test_reliability.ReliabilityTests.test_concurrent_atomic_json_writes) ... ok
+test_empty_e2e_run_is_a_clean_failure_not_a_pass_or_format_crash (test_reliability.ReliabilityTests.test_empty_e2e_run_is_a_clean_failure_not_a_pass_or_format_crash) ... ok
+test_emulated_bf16_does_not_count_as_native_t4_support (test_reliability.ReliabilityTests.test_emulated_bf16_does_not_count_as_native_t4_support) ... ok
+test_numpy_audio_fallback_accepts_all_short_chunks (test_reliability.ReliabilityTests.test_numpy_audio_fallback_accepts_all_short_chunks) ... ok
+test_selftest_missing_profile_is_not_a_pass (test_reliability.ReliabilityTests.test_selftest_missing_profile_is_not_a_pass) ... [SKIP] per-GPU streaming + RTF               0.0s  skipped (no active profile yet: create one in Voice Lab)
+ok
+test_short_recorded_breath_does_not_broadcast_fail (test_reliability.ReliabilityTests.test_short_recorded_breath_does_not_broadcast_fail) ... ok
+test_silent_subprocess_timeout_is_enforced (test_reliability.ReliabilityTests.test_silent_subprocess_timeout_is_enforced) ... ok
+test_stream_rejects_wrong_sample_rate (test_reliability.ReliabilityTests.test_stream_rejects_wrong_sample_rate) ... ok
+test_subprocess_exit_status_is_not_hidden (test_reliability.ReliabilityTests.test_subprocess_exit_status_is_not_hidden) ... ok
+test_t4_never_automatically_falls_back_to_bf16 (test_reliability.ReliabilityTests.test_t4_never_automatically_falls_back_to_bf16) ... ok
+test_tar_does_not_follow_existing_destination_escape_link (test_reliability.ReliabilityTests.test_tar_does_not_follow_existing_destination_escape_link) ... ok
+test_tar_rejects_traversal_symlinks_and_unexpected_files (test_reliability.ReliabilityTests.test_tar_rejects_traversal_symlinks_and_unexpected_files) ... ok
+test_tar_restores_valid_voice_assets (test_reliability.ReliabilityTests.test_tar_restores_valid_voice_assets) ... ok
+test_two_gpus_are_required_by_default (test_reliability.ReliabilityTests.test_two_gpus_are_required_by_default) ... 
+QTTS bootstrap  root=/home/user/Kagglee/kaggle/source
+   ## 1. 已确认事实及修复边界
+   
+   - 原始22项压缩资产的内嵌校验全部通过；原文件不存在已确认的粘贴截断。
+   - 现有系统使用 Python 模型进程、Go 网关、Rust 可选音频库和已编译的浏览器 JavaScript。
+   - 实际包内没有 `web-src/*.ts`，不能声称修改了不存在的 TypeScript 源码。
+   - T4/Turing 不具备原生 BF16。默认 FP16；BF16 回退同时检查计算能力和 torch 支持，FP32 须显式 `QTTS_ALLOW_FP32=1`。
+   - BF16/FP32、模型接口、CUDA Graph、SDPA 的实际可运行性仍须在真实设备上验证。
+   - 标准 RTF = 生成耗时/音频时长，越小越快。旧字段 `rtf_x` = 音频时长/生成耗时，是速度倍率，不能混称。
+   … (full text: /home/user/Kagglee/kaggle/source/MEMO.md)
+   ## 7. 尚未验证与未完成
+   
+   - 真实双T4、Qwen权重和第三方流式后端的兼容性、显存、输出质量及热/冷启动性能。
+   - 真正world_size=2训练、所有选定样本覆盖、保存后重载试听。
+   - DeepSeek真实长流及服务端token上限，依赖固定与下载完整性。
+   - 两个主要视图、实时录音波形、训练任务UI，当前仍保留原三标签页。
+   - 公网身份认证、限流、上传配额。Origin检查不是认证；不要将本版无访问控制地公开。
+   - supervisor的重启竞态、队列上限、持续故障和断网恢复尚需后续专项验证。
+
+━━ [   0.5s] 1/9 detect GPUs
+✗ Two GPUs required. Select T4 x2; QTTS_ALLOW_SINGLE_GPU=1 is only for explicit limited tests.
+   ↳ 1/9 detect GPUs: 0.0s
+ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.377s
+
+OK

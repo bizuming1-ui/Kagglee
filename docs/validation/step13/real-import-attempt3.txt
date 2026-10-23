@@ -1,0 +1,17 @@
+after actual Faster import: False
+/bin/sh: 1: sox: not found
+SoX could not be found!
+
+    If you do not have SoX, proceed here:
+     - - - http://sox.sourceforge.net/ - - -
+
+    If you do (or think that you should) have SoX, double-check your
+    path variables.
+    
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+{'status': 'installed', 'versions': {'faster-qwen3-tts': '0.5.4', 'qwen-tts-hf': '0.1.1.post1', 'transformers': '5.20.2'}, 'weights_modified': False, 'configuration_smoke_passed': True, 'model_loaded': False, 'gpu_executed': False}
+actual MimiModel parameters 2651

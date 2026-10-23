@@ -1,0 +1,61 @@
+Processing /home/user/.cache/qtts-wheelhouse/faster_qwen3_tts-0.5.4-py3-none-any.whl
+Processing /home/user/.cache/qtts-wheelhouse/qwen_tts_hf-0.1.1.post1-py3-none-any.whl
+Collecting torchaudio==2.8.0
+  Downloading torchaudio-2.8.0-cp311-cp311-manylinux_2_28_x86_64.whl (4.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 37.5 MB/s eta 0:00:00
+Collecting librosa
+  Downloading librosa-0.11.0-py3-none-any.whl (260 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 260.7/260.7 kB 25.1 MB/s eta 0:00:00
+Collecting einops
+  Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.6/65.6 kB 30.7 MB/s eta 0:00:00
+Collecting sox
+  Downloading sox-1.5.0.tar.gz (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.9/63.9 kB 30.5 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting onnxruntime
+  Downloading onnxruntime-1.31.0-cp311-cp311-manylinux_2_28_x86_64.whl (23.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 3.9 MB/s eta 0:00:00
+Collecting accelerate==1.12.0
+  Downloading accelerate-1.12.0-py3-none-any.whl (380 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 380.9/380.9 kB 97.5 MB/s eta 0:00:00
+Collecting soxr
+  Downloading soxr-1.1.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (245 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 245.3/245.3 kB 81.8 MB/s eta 0:00:00
+Collecting lazy_loader
+  Downloading lazy_loader-0.6-py3-none-any.whl (8.8 kB)
+Collecting pooch
+  Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.2/67.2 kB 32.8 MB/s eta 0:00:00
+Collecting numba
+  Downloading numba-0.68.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (3.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 172.0 MB/s eta 0:00:00
+Collecting llvmlite
+  Downloading llvmlite-0.50.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (59.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.7/59.7 MB 30.7 MB/s eta 0:00:00
+Collecting audioread
+  Downloading audioread-3.1.0-py3-none-any.whl (23 kB)
+Collecting joblib
+  Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 97.1 MB/s eta 0:00:00
+Collecting decorator
+  Downloading decorator-5.3.1-py3-none-any.whl (10 kB)
+Collecting scikit-learn
+  Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 69.7 MB/s eta 0:00:00
+Collecting msgpack
+  Downloading msgpack-1.2.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (477 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 477.8/477.8 kB 70.5 MB/s eta 0:00:00
+Collecting threadpoolctl
+  Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Collecting flatbuffers
+  Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Collecting protobuf
+  Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 72.6 MB/s eta 0:00:00
+Installing collected packages: torchaudio, sox, flatbuffers, threadpoolctl, soxr, scikit-learn, qwen-tts-hf, protobuf, pooch, onnxruntime, numba, msgpack, llvmlite, librosa, lazy_loader, joblib, faster-qwen3-tts, einops, decorator, audioread, accelerate
+  DEPRECATION: sox is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  Running setup.py install for sox: started
+  Running setup.py install for sox: finished with status 'done'
+Successfully installed accelerate-1.12.0 audioread-3.1.0 decorator-5.3.1 einops-0.8.2 faster-qwen3-tts-0.5.4 flatbuffers-25.12.19 joblib-1.6.0 lazy_loader-0.6 librosa-0.11.0 llvmlite-0.50.0 msgpack-1.2.3 numba-0.68.0 onnxruntime-1.31.0 pooch-1.9.0 protobuf-7.36.2 qwen-tts-hf-0.1.1.post1 scikit-learn-1.9.1 sox-1.5.0 soxr-1.1.0 threadpoolctl-3.7.0 torchaudio-2.8.0

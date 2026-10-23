@@ -1,0 +1,48 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_base_fingerprint_and_weight_mutation (test_tts_training.AdmissionTests.test_base_fingerprint_and_weight_mutation) ... ok
+test_child_environment_scrubs_keys_not_gpu_visibility (test_tts_training.AdmissionTests.test_child_environment_scrubs_keys_not_gpu_visibility) ... ok
+test_code_lease_fd_adoption_checks_owner_and_last_reference (test_tts_training.AdmissionTests.test_code_lease_fd_adoption_checks_owner_and_last_reference) ... ok
+test_controller_has_no_fake_training_cli_switch (test_tts_training.AdmissionTests.test_controller_has_no_fake_training_cli_switch) ... ok
+test_explicit_review_and_legacy_gate (test_tts_training.AdmissionTests.test_explicit_review_and_legacy_gate) ... ok
+test_fixture_training_rejected_before_import_or_gpu (test_tts_training.AdmissionTests.test_fixture_training_rejected_before_import_or_gpu) ... ok
+test_model_links_pickle_remote_code_and_missing_assets (test_tts_training.AdmissionTests.test_model_links_pickle_remote_code_and_missing_assets) ... ok
+test_option_budgets_and_no_nan (test_tts_training.AdmissionTests.test_option_budgets_and_no_nan) ... ok
+test_controller_sigterm_and_sigkill_real_children_release (test_tts_training.ControllerLifetimeTests.test_controller_sigterm_and_sigkill_real_children_release) ... ok
+test_offline_gpu_adoption_is_explicit_not_worker_default (test_tts_training.ControllerLifetimeTests.test_offline_gpu_adoption_is_explicit_not_worker_default) ... ERROR
+test_one_failed_rank_terminates_other_and_never_publishes (test_tts_training.ControllerLifetimeTests.test_one_failed_rank_terminates_other_and_never_publishes) ... ok
+test_second_spawn_failure_stops_first_and_releases_locks (test_tts_training.ControllerLifetimeTests.test_second_spawn_failure_stops_first_and_releases_locks) ... ok
+test_timeout_stops_both_fd_holders_before_release (test_tts_training.ControllerLifetimeTests.test_timeout_stops_both_fd_holders_before_release) ... ok
+test_zero_exit_without_checkpoint_cannot_claim_optimizer_success (test_tts_training.ControllerLifetimeTests.test_zero_exit_without_checkpoint_cannot_claim_optimizer_success) ... ok
+test_actual_two_process_gloo_optimizer_sync (test_tts_training.TensorTests.test_actual_two_process_gloo_optimizer_sync) ... /home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+[Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[rank0]:[W1021 11:14:30.396691783 reducer.cpp:1457] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[rank1]:[W1021 11:14:30.396875584 reducer.cpp:1457] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+ok
+test_atomic_adapter_checkpoint_and_reload_not_full_model (test_tts_training.TensorTests.test_atomic_adapter_checkpoint_and_reload_not_full_model) ... ok
+test_dataset_masks_and_no_truncation (test_tts_training.TensorTests.test_dataset_masks_and_no_truncation) ... ok
+test_fp16_frozen_base_keeps_float32_trainable_gradients (test_tts_training.TensorTests.test_fp16_frozen_base_keeps_float32_trainable_gradients) ... ok
+test_lora_zero_init_freeze_fp32_and_backward (test_tts_training.TensorTests.test_lora_zero_init_freeze_fp32_and_backward) ... ok
+test_nonfinite_gradient_skips_update_not_fake_success (test_tts_training.TensorTests.test_nonfinite_gradient_skips_update_not_fake_success) ... ok
+test_nonfinite_loss_rejected_without_update (test_tts_training.TensorTests.test_nonfinite_loss_rejected_without_update) ... ok
+test_real_joint_loss_projection_and_optimizer_updates (test_tts_training.TensorTests.test_real_joint_loss_projection_and_optimizer_updates) ... ok
+test_restore_adapter_strict_members_shapes_and_finite (test_tts_training.TensorTests.test_restore_adapter_strict_members_shapes_and_finite) ... ok
+test_sampler_full_coverage_padding_epoch_and_tail (test_tts_training.TensorTests.test_sampler_full_coverage_padding_epoch_and_tail) ... ok
+test_targets_include_subtalker_not_speaker_and_no_guess (test_tts_training.TensorTests.test_targets_include_subtalker_not_speaker_and_no_guess) ... ok
+
+======================================================================
+ERROR: test_offline_gpu_adoption_is_explicit_not_worker_default (test_tts_training.ControllerLifetimeTests.test_offline_gpu_adoption_is_explicit_not_worker_default)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/tests/test_tts_training.py", line 230, in test_offline_gpu_adoption_is_explicit_not_worker_default
+    self.reject(409,job.GpuLease.adopt,owned.fd,owned.record['nonce'],root=root)
+TypeError: Fixture.reject() got an unexpected keyword argument 'root'
+
+----------------------------------------------------------------------
+Ran 25 tests in 10.367s
+
+FAILED (errors=1)

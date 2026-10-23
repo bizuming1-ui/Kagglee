@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "mode": "runtime_surface",
+  "status": "blocked",
+  "created_at": "2026-10-21T08:27:03Z",
+  "python": "3.11.2",
+  "checks": [
+    {
+      "name": "python",
+      "status": "pass",
+      "detail": "Python >=3.10 required",
+      "required": true
+    },
+    {
+      "name": "package.torch",
+      "status": "blocked",
+      "detail": "not installed",
+      "required": true
+    },
+    {
+      "name": "package.faster-qwen3-tts",
+      "status": "blocked",
+      "detail": "not installed",
+      "required": true
+    },
+    {
+      "name": "package.transformers",
+      "status": "warning",
+      "detail": "not installed",
+      "required": false
+    },
+    {
+      "name": "package.qwen-tts",
+      "status": "warning",
+      "detail": "not installed",
+      "required": false
+    },
+    {
+      "name": "package.fastapi",
+      "status": "pass",
+      "detail": "0.156.4",
+      "required": true
+    },
+    {
+      "name": "package.uvicorn",
+      "status": "pass",
+      "detail": "0.54.0",
+      "required": true
+    },
+    {
+      "name": "package.soundfile",
+      "status": "pass",
+      "detail": "0.14.0",
+      "required": true
+    },
+    {
+      "name": "package.faster-whisper",
+      "status": "warning",
+      "detail": "not installed",
+      "required": false
+    },
+    {
+      "name": "tool.ffmpeg",
+      "status": "warning",
+      "detail": "missing; only soundfile-supported formats can be attempted",
+      "required": false
+    },
+    {
+      "name": "cuda_import",
+      "status": "blocked",
+      "detail": "ModuleNotFoundError (message redacted)",
+      "required": true
+    },
+    {
+      "name": "backend_import",
+      "status": "blocked",
+      "detail": "ModuleNotFoundError (message redacted)",
+      "required": true
+    }
+  ],
+  "devices": [],
+  "model_loaded": false,
+  "inference_verified": false,
+  "training_verified": false,
+  "performance_verified": false
+}

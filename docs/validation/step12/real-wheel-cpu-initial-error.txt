@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/tests/rope_wheel_check.py", line 11, in <module>
+    from transformers import MimiConfig
+  File "/home/user/.cache/qtts-step12-site/transformers/__init__.py", line 30, in <module>
+    from . import dependency_versions_check
+  File "/home/user/.cache/qtts-step12-site/transformers/dependency_versions_check.py", line 56, in <module>
+    require_version_core(deps[pkg])
+  File "/home/user/.cache/qtts-step12-site/transformers/utils/versions.py", line 116, in require_version_core
+    return require_version(requirement, hint)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/.cache/qtts-step12-site/transformers/utils/versions.py", line 110, in require_version
+    _compare_versions(op, got_ver, want_ver, requirement, pkg, hint)
+  File "/home/user/.cache/qtts-step12-site/transformers/utils/versions.py", line 43, in _compare_versions
+    raise ImportError(
+ImportError: tokenizers>=0.23.1,<0.24.0 is required for a normal functioning of this module, but found tokenizers==0.22.2.
+Try: `pip install transformers -U` or `pip install -e '.[dev]'` if you're working with git main

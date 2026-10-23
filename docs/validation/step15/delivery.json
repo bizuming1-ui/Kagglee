@@ -1,0 +1,34 @@
+{
+  "stage": 15,
+  "status": "PARTIAL/BLOCKED",
+  "implemented_scope_regressions_passed": true,
+  "all_user_requirements_completed": false,
+  "artifacts": {
+    "kaggle/kaggle-fixed-step15.py": {
+      "bytes": 291325,
+      "sha256": "61c063f0b2053321bfeafc8509bbbc1c91be183da72739186f7e5c4bf1899d43"
+    },
+    "kaggle/source_manifest_step15.json": {
+      "bytes": 11750,
+      "sha256": "d54669cdd2198056d602b2ee16b85f04c7b3c21611fefd182af85712f46d2203"
+    },
+    "docs/KAGGLE_HANDOFF_PROMPT.md": {
+      "bytes": 436805,
+      "sha256": "4da3dd4711ea2cbd61943319b9d0318ec8bef04fa6ed83af194ac9b0ecc3c5f1"
+    },
+    "docs/KAGGLE_STEP15_PLAN.md": {
+      "bytes": 2841,
+      "sha256": "660d5466b31d549dc86163a46e2123c7d52b03f9f9332328f526aaafa1ac8811"
+    },
+    "docs/KAGGLE_STEP15_AUDIT.md": {
+      "bytes": 9096,
+      "sha256": "1b1cf330b4cd2a8d12b8a62a34f4a1d94bea7a79d717a01b240b3784828ff0a8"
+    },
+    "docs/KAGGLE_STEP15_QUICKSTART.md": {
+      "bytes": 4479,
+      "sha256": "a849261e7fcd3f3e6ec27e5526438af4aac7fe110f189843c8b3cc7ef8df2845"
+    }
+  },
+  "evidence": "final-checks.json",
+  "note": "No real Qwen/T4 voice/listening, latency or profile-build benchmark. CPU/model-library fixtures are explicitly distinguished. Frozen original–14/formal workbench unchanged."
+}

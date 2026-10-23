@@ -1,0 +1,33 @@
+{
+  "artifact_bytes": 261429,
+  "artifact_sha256": "2bddd6ebad371268f9b3b02315fc29cae588da6c46c7d134476945b50b8a5ac4",
+  "assets": 43,
+  "frozen_1_through_9_hashes_match": true,
+  "original_hash_matches": true,
+  "complete_embedded_memos": 24,
+  "professional_questions": 9,
+  "suggestions": 450,
+  "checklist_checked": 22,
+  "checklist_total": 300,
+  "python": {
+    "unique": 227,
+    "rounds": 3,
+    "passed": 681
+  },
+  "browser": {
+    "unique": 110,
+    "rounds": 3,
+    "passed": 330
+  },
+  "copy_special_passed": 3,
+  "ownership_process_rounds": 3,
+  "ownership_process_models": "CPU stand-ins, not real GPU models",
+  "formal_all15_hashes_and_head_unchanged": true,
+  "protocol_lock_busy_at_finish": false,
+  "cpu_tiny_ddp_optimizer_rounds": 3,
+  "cpu_tiny_parameters_updated": true,
+  "experimental_training_code_implemented": true,
+  "qwen_training_executed": false,
+  "gpu_verified": false,
+  "training_verified": false
+}

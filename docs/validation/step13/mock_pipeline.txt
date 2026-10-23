@@ -1,0 +1,12 @@
+{"round": 1, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+{"round": 2, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+{"round": 3, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+MOCK PIPELINE: 3/3 passed. This is not GPU/voice-quality evidence.
+{"round": 1, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+{"round": 2, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+{"round": 3, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+MOCK PIPELINE: 3/3 passed. This is not GPU/voice-quality evidence.
+{"round": 1, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+{"round": 2, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+{"round": 3, "passed": true, "mode": "CPU mock, not real T4", "segments": 3, "worker_ids": [0, 1], "simulated_underruns": 0, "cancel_then_resume": true}
+MOCK PIPELINE: 3/3 passed. This is not GPU/voice-quality evidence.

@@ -1,0 +1,99 @@
+Collecting transformers==5.20.2
+  Downloading transformers-5.20.2-py3-none-any.whl (12.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.8/12.8 MB 74.0 MB/s eta 0:00:00
+Collecting huggingface-hub==1.31.0
+  Downloading huggingface_hub-1.31.0-py3-none-any.whl (798 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 798.3/798.3 kB 53.2 MB/s eta 0:00:00
+Collecting tokenizers==0.23.1
+  Downloading tokenizers-0.23.1-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 73.5 MB/s eta 0:00:00
+Collecting safetensors==0.8.0
+  Downloading safetensors-0.8.0-cp310-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (516 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 516.0/516.0 kB 87.0 MB/s eta 0:00:00
+Collecting faster-qwen3-tts==0.5.4
+  Downloading faster_qwen3_tts-0.5.4-py3-none-any.whl (43 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 43.9/43.9 kB 6.2 MB/s eta 0:00:00
+Collecting qwen-tts-hf==0.1.1.post1
+  Downloading qwen_tts_hf-0.1.1.post1-py3-none-any.whl (115 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 115.2/115.2 kB 65.4 MB/s eta 0:00:00
+Collecting accelerate==1.12.0
+  Downloading accelerate-1.12.0-py3-none-any.whl (380 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 380.9/380.9 kB 110.6 MB/s eta 0:00:00
+Collecting torchaudio==2.8.0
+  Downloading torchaudio-2.8.0-cp311-cp311-manylinux_2_28_x86_64.whl (4.0 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 51.4 MB/s eta 0:00:00
+Collecting librosa
+  Downloading librosa-0.11.0-py3-none-any.whl (260 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 260.7/260.7 kB 14.0 MB/s eta 0:00:00
+Collecting einops
+  Downloading einops-0.8.2-py3-none-any.whl (65 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.6/65.6 kB 34.2 MB/s eta 0:00:00
+Collecting sox
+  Downloading sox-1.5.0.tar.gz (63 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 63.9/63.9 kB 35.7 MB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting onnxruntime
+  Downloading onnxruntime-1.31.0-cp311-cp311-manylinux_2_28_x86_64.whl (23.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 23.8/23.8 MB 67.5 MB/s eta 0:00:00
+Collecting soxr
+  Downloading soxr-1.1.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (245 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 245.3/245.3 kB 94.4 MB/s eta 0:00:00
+Collecting lazy_loader
+  Downloading lazy_loader-0.6-py3-none-any.whl (8.8 kB)
+Collecting pooch
+  Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 67.2/67.2 kB 18.2 MB/s eta 0:00:00
+Collecting numba
+  Downloading numba-0.68.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (3.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 46.0 MB/s eta 0:00:00
+Collecting llvmlite
+  Downloading llvmlite-0.50.0-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (59.7 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.7/59.7 MB 23.6 MB/s eta 0:00:00
+Collecting audioread
+  Downloading audioread-3.1.0-py3-none-any.whl (23 kB)
+Collecting joblib
+  Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 306.1/306.1 kB 94.2 MB/s eta 0:00:00
+Collecting decorator
+  Downloading decorator-5.3.1-py3-none-any.whl (10 kB)
+Collecting scikit-learn
+  Downloading scikit_learn-1.9.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.3/9.3 MB 71.9 MB/s eta 0:00:00
+Collecting scipy
+  Downloading scipy-1.17.1-cp311-cp311-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 38.6 MB/s eta 0:00:00
+Collecting msgpack
+  Downloading msgpack-1.2.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (477 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 477.8/477.8 kB 132.9 MB/s eta 0:00:00
+Collecting threadpoolctl
+  Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Collecting flatbuffers
+  Downloading flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+Collecting protobuf
+  Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 343.2/343.2 kB 92.5 MB/s eta 0:00:00
+Collecting cloudpickle
+  Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Collecting narwhals
+  Downloading narwhals-2.27.1-py3-none-any.whl (483 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 483.2/483.2 kB 106.5 MB/s eta 0:00:00
+Collecting psutil
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 155.6/155.6 kB 78.8 MB/s eta 0:00:00
+Collecting platformdirs
+  Downloading platformdirs-4.13.5-py3-none-any.whl (32 kB)
+Collecting tqdm
+  Downloading tqdm-4.70.1-py3-none-any.whl (80 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 80.2/80.2 kB 34.6 MB/s eta 0:00:00
+Collecting regex
+  Downloading regex-2026.9.29-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (804 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 805.0/805.0 kB 120.5 MB/s eta 0:00:00
+Collecting pyyaml
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 114.7 MB/s eta 0:00:00
+Installing collected packages: torchaudio, sox, flatbuffers, transformers, tqdm, tokenizers, threadpoolctl, soxr, scipy, scikit-learn, safetensors, regex, qwen-tts-hf, pyyaml, psutil, protobuf, pooch, platformdirs, onnxruntime, numba, narwhals, msgpack, llvmlite, librosa, lazy_loader, joblib, huggingface-hub, faster-qwen3-tts, einops, decorator, cloudpickle, audioread, accelerate
+  DEPRECATION: sox is being installed using the legacy 'setup.py install' method, because it does not have a 'pyproject.toml' and the 'wheel' package is not installed. pip 23.1 will enforce this behaviour change. A possible replacement is to enable the '--use-pep517' option. Discussion can be found at https://github.com/pypa/pip/issues/8559
+  Running setup.py install for sox: started
+  Running setup.py install for sox: finished with status 'done'
+Successfully installed accelerate-1.12.0 audioread-3.1.0 cloudpickle-3.1.2 decorator-5.3.1 einops-0.8.2 faster-qwen3-tts-0.5.4 flatbuffers-25.12.19 huggingface-hub-1.31.0 joblib-1.6.0 lazy_loader-0.6 librosa-0.11.0 llvmlite-0.50.0 msgpack-1.2.3 narwhals-2.27.1 numba-0.68.0 onnxruntime-1.31.0 platformdirs-4.13.5 pooch-1.9.0 protobuf-7.36.2 psutil-7.2.2 pyyaml-6.0.3 qwen-tts-hf-0.1.1.post1 regex-2026.9.29 safetensors-0.8.0 scikit-learn-1.9.1 scipy-1.17.1 sox-1.5.0 soxr-1.1.0 threadpoolctl-3.7.0 tokenizers-0.23.1 torchaudio-2.8.0 tqdm-4.70.1 transformers-5.20.2

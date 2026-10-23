@@ -1,0 +1,29 @@
+{
+  "source": "user supplied Kaggle log; not sandbox GPU experiment",
+  "python": "3.12.13",
+  "torch": "2.10.0+cu128",
+  "transformers": "5.20.2",
+  "faster-qwen3-tts": "0.5.4",
+  "gpus": [
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 15636037632
+    },
+    {
+      "name": "Tesla T4",
+      "capability": [
+        7,
+        5
+      ],
+      "total_memory_bytes": 15636037632
+    }
+  ],
+  "surface_preflight": "passed",
+  "model_load_error": "AttributeError: 'MimiConfig' object has no attribute 'rope_theta'",
+  "model_load_success_observed": false,
+  "voice_inference_observed": false
+}

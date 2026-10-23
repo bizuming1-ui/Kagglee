@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "status": "blocked",
+  "speed_target": 0.3,
+  "real_gpu_verified": false,
+  "voice_quality_verified": false,
+  "all_user_requirements_completed": false,
+  "measurements": [],
+  "note": "RTF = unpadded generation/wall seconds divided by generated speech seconds. Listening still required.",
+  "reason": "Use --run explicitly on the real dual-GPU host; no CPU/Mock substitution."
+}

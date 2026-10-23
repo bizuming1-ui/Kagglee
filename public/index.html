@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#15151d">
+  <title>Kagglee · 浏览器工作台</title>
+  <link rel="stylesheet" href="/styles.css?v=4">
+  <script type="module" src="/app.js?v=4"></script>
+</head>
+<body>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H3V3zM7 3v6h10V3M7 21v-8h10v8"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7v5h-5M4 17v-5h5M5.6 7a8 8 0 0 1 13-1L20 9M4 15l1.4 3a8 8 0 0 0 13-1"/></symbol>
+    <symbol id="i-desktop" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+    <symbol id="i-tablet" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-14-2 18"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V4h7l2 3h9v13H3z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7m4-7v7"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+    <symbol id="i-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+  </defs></svg>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Kagglee 工作台"><span class="brand-mark">k<span>·</span></span>Kagglee<span class="brand-tag">STUDIO</span></a>
+    <span class="header-divider"></span>
+    <div class="project-heading"><span class="project-name">我的第一个项目</span><span class="project-kind">浏览器工作台 <span class="tiny-dot"></span> HTML / CSS / JS</span></div>
+    <div class="top-actions">
+      <button class="icon-button" id="help" aria-label="使用帮助" title="使用帮助"><svg><use href="#i-info"/></svg></button>
+      <span id="save-status" class="save-status" role="status" aria-live="polite">正在连接项目…</span>
+      <button class="button create-file-button" id="new-file" title="创建自己命名的空白文件，再粘贴自己的内容" disabled>＋ 新建文件</button>
+      <button class="button secondary copy-file-button" id="copy-code" title="原样复制当前文件的内容；不会运行或保存代码" disabled>复制当前代码</button>
+      <button class="button secondary" id="run" disabled><svg><use href="#i-play"/></svg>运行<span class="key-hint">⌘ ↵</span></button>
+      <button class="button primary" id="save" disabled><svg><use href="#i-save"/></svg><span id="save-label">保存到项目</span></button>
+    </div>
+  </header>
+  <main class="studio">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-heading">资源管理器 <span>WORKSPACE</span></div>
+      <div class="folder-heading"><svg><use href="#i-chevron"/></svg><svg><use href="#i-folder"/></svg>我的项目 <span class="file-count">3</span></div>
+      <nav class="file-list" aria-label="项目文件">
+        <button class="file-item active" data-file="index.html" aria-label="index.html" aria-current="true"><span class="file-icon html" aria-hidden="true">◇</span>index.html<span class="file-modified" data-dot="index.html"></span></button>
+        <button class="file-item" data-file="style.css" aria-label="style.css"><span class="file-icon css" aria-hidden="true">#</span>style.css<span class="file-modified" data-dot="style.css"></span></button>
+        <button class="file-item" data-file="script.js" aria-label="script.js"><span class="file-icon js" aria-hidden="true">JS</span>script.js<span class="file-modified" data-dot="script.js"></span></button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="tip-card"><span class="tip-label">从一个想法开始 <span>✦</span></span><p>先点击顶部「＋ 新建文件」。<br>自己命名，再粘贴你的内容。</p><div class="tip-shortcut"><kbd>Ctrl / ⌘</kbd> + <kbd>S</kbd><span>保存项目</span></div></div>
+      <div class="workspace-footer"><span class="live-dot"></span>项目文件真实落盘<button class="icon-button" id="storage-info" aria-label="查看保存位置"><svg><use href="#i-info"/></svg></button></div>
+    </aside>
+    <section class="editor-panel" aria-label="代码编辑器">
+      <div class="editor-tabs" role="tablist" aria-label="代码文件">
+        <button class="editor-tab active" data-tab="index.html" aria-label="index.html" role="tab" aria-selected="true" aria-controls="code-panel" id="tab-html"><span class="file-icon html" aria-hidden="true">◇</span>index.html<span class="tab-dot" data-tab-dot="index.html"></span></button>
+        <button class="editor-tab" data-tab="style.css" aria-label="style.css" role="tab" aria-selected="false" aria-controls="code-panel" id="tab-css"><span class="file-icon css" aria-hidden="true">#</span>style.css<span class="tab-dot" data-tab-dot="style.css"></span></button>
+        <button class="editor-tab" data-tab="script.js" aria-label="script.js" role="tab" aria-selected="false" aria-controls="code-panel" id="tab-js"><span class="file-icon js" aria-hidden="true">JS</span>script.js<span class="tab-dot" data-tab-dot="script.js"></span></button>
+        <button class="icon-button sidebar-toggle" id="toggle-sidebar" aria-label="切换文件侧栏" aria-expanded="true"><svg><use href="#i-panel"/></svg></button>
+      </div>
+      <div class="editor-breadcrumb"><svg><use href="#i-folder"/></svg>我的项目<svg><use href="#i-chevron"/></svg><span id="breadcrumb-file">index.html</span><div class="file-actions"><button id="rename-file" disabled>重命名</button></div><span class="editor-mode">UTF-8</span></div>
+      <div class="code-area" id="code-panel" role="tabpanel" aria-labelledby="tab-html">
+        <div class="line-numbers" id="line-numbers" aria-hidden="true">1</div>
+        <textarea id="code" aria-label="index.html 代码" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off" disabled></textarea>
+        <div class="loading-overlay" id="loading">正在读取项目文件…</div>
+      </div>
+      <div class="editor-footer"><span><span class="purple-dot"></span><span id="language-name">HTML</span></span><span id="cursor-position">行 1, 列 1</span><span id="code-size">0 B</span><span>空格: 2</span></div>
+    </section>
+    <section class="preview-panel" aria-label="浏览器预览">
+      <div class="preview-toolbar"><span class="section-title"><span class="live-dot"></span>实时预览<span class="beta-tag">SANDBOX</span></span><div class="device-buttons" role="group" aria-label="预览尺寸"><button class="icon-button selected" data-device="desktop" aria-label="桌面预览" aria-pressed="true" title="桌面"><svg><use href="#i-desktop"/></svg></button><button class="icon-button" data-device="tablet" aria-label="平板预览" aria-pressed="false" title="平板 768px"><svg><use href="#i-tablet"/></svg></button><button class="icon-button" data-device="mobile" aria-label="手机预览" aria-pressed="false" title="手机 375px"><svg><use href="#i-phone"/></svg></button></div><button class="icon-button" id="refresh-preview" aria-label="重新运行预览" title="重新运行"><svg><use href="#i-refresh"/></svg></button></div>
+      <div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="address"><svg><use href="#i-code"/></svg>preview / <span id="preview-file">index.html</span><span class="address-lock">隔离预览</span></span><span class="viewport-label" id="viewport-label">自适应</span></div>
+      <div class="preview-stage" id="preview-stage"><iframe id="preview" title="代码运行结果" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe><div class="preview-empty" id="preview-empty">预览将在项目加载后显示</div></div>
+      <section class="console-panel" aria-label="运行控制台"><div class="console-toolbar"><button class="console-heading" id="toggle-console" aria-expanded="true"><span class="terminal-sign">›_</span>控制台<span class="console-count" id="console-count">0</span></button><span class="console-spacer"></span><select id="log-filter" aria-label="筛选控制台日志"><option value="all">全部日志</option><option value="error">仅错误</option><option value="warn">仅警告</option><option value="log">普通输出</option></select><button class="icon-button" id="clear-console" aria-label="清空控制台" title="清空"><svg><use href="#i-trash"/></svg></button></div><div class="console-output" id="console-output" role="log" aria-label="控制台输出"><div class="console-placeholder">运行输出会显示在这里</div></div></section>
+      <div class="preview-footer"><span><span class="live-dot"></span><span id="preview-status">等待运行</span></span><span>脚本在沙箱内运行</span></div>
+    </section>
+  </main>
+  <footer class="statusbar"><span class="connection"><span class="live-dot"></span><span id="connection-status">正在连接</span></span><span class="status-divider">/</span><button id="disk-path" title="查看真实文件位置">workspace/</button><span class="bottom-spacer"></span><button id="reload-project"><svg><use href="#i-refresh"/></svg>从磁盘重载</button><button id="download"><svg><use href="#i-download"/></svg>备份代码</button><button id="reset-example">恢复示例</button><span class="status-divider">|</span><span class="footer-note">为你的下一个想法而造 <span>✦</span></span></footer>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="file-dialog" aria-labelledby="file-dialog-title">
+    <form id="file-form">
+      <div class="dialog-heading"><h2 id="file-dialog-title">新建空白文件</h2><button type="button" class="icon-button" id="cancel-file-x" aria-label="关闭文件对话框">✕</button></div>
+      <label for="file-name">文件名（可自行命名）</label>
+      <input id="file-name" name="filename" placeholder="例如：我的页面.html 或 笔记.txt" autocomplete="off" maxlength="100" required aria-describedby="file-name-hint file-name-error">
+      <p id="file-name-hint">文件创建后内容为空，由你自行粘贴。点击“保存到项目”才会写入磁盘。</p>
+      <p id="file-name-error" role="alert"></p>
+      <div class="file-dialog-actions"><button type="button" class="button secondary" id="cancel-file">取消</button><button type="submit" class="button primary" id="confirm-file">创建空白文件</button></div>
+    </form>
+  </dialog>
+  <dialog id="info-dialog"><div class="dialog-heading"><h2 id="dialog-title">使用帮助</h2><button class="icon-button" id="close-dialog" aria-label="关闭对话框">✕</button></div><div id="dialog-content"></div><button class="button primary" id="dialog-done">知道了</button></dialog>
+</body>
+</html>

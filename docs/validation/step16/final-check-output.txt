@@ -1,0 +1,54 @@
+REPACK CHECK OK: original 22 hashes + current 52 assets; deterministic outputs match
+{
+  "passed": true,
+  "stage": 16,
+  "artifact_bytes": 306580,
+  "artifact_sha256": "c6ed6c89e6356fc6c7ab554f96a2c3201a8e4690c007ea66626445cc658b4429",
+  "assets": 52,
+  "implemented_scope_regressions_passed": true,
+  "all_user_requirements_completed": false,
+  "requirement_status": "PARTIAL/BLOCKED",
+  "python": {
+    "per_round": 322,
+    "rounds": 3,
+    "total": 966
+  },
+  "node": {
+    "per_round": 30,
+    "rounds": 3,
+    "total": 90
+  },
+  "browser": {
+    "per_round": 121,
+    "rounds": 3,
+    "total": 363,
+    "final_exact_copy_extra": 3
+  },
+  "go_race_count": 3,
+  "protocol_scripts_each_rounds": 3,
+  "protocol_script_count": 6,
+  "actual_faster_cpu_control_rounds": 3,
+  "actual_random_tiny_qwen_codec_rounds": 3,
+  "actual_complete_import_tiny_mimi_rounds": 3,
+  "cpu_training_bitwise_ab_rounds": 3,
+  "full_qwen_model_executed": false,
+  "gpu_executed": false,
+  "speaker_similarity_verified": false,
+  "single_speaker_listening_verified": false,
+  "no_hiss_listening_verified": false,
+  "genuine_t4_rtf_0_3_verified": false,
+  "rtf_benchmark_measurements_in_this_sandbox": 0,
+  "formal_workbench_unchanged": true,
+  "handoff_complete_memos": 51,
+  "question_count": 21,
+  "question_suggestions": 1050,
+  "target_checklist_completed": 22,
+  "target_checklist_total": 300,
+  "review_dispositions": {
+    "documented-boundary": 49,
+    "implemented-action": 161,
+    "hardware-listening-blocked": 32,
+    "preserved-with-regression": 53,
+    "not-implemented-or-rejected": 5
+  }
+}

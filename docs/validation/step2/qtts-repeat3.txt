@@ -1,0 +1,39 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/qtts.spec.js --repeat-each=3
+
+
+Running 27 tests using 1 worker
+
+
+  ✓   1 tests/browser/qtts.spec.js:62:1 › QTTS key migration clears persisted secrets and new keys stay in memory (410ms)
+  ✓   2 tests/browser/qtts.spec.js:73:1 › QTTS late old response cannot end, overwrite or report the current stream (643ms)
+  ✓   3 tests/browser/qtts.spec.js:93:1 › QTTS overlapping clicks share audio initialization and only latest starts (435ms)
+  ✓   4 tests/browser/qtts.spec.js:105:1 › QTTS audio initialization error stays actionable instead of unhandled rejection (356ms)
+  ✓   5 tests/browser/qtts.spec.js:115:1 › QTTS late old body frame cannot finalize a newer active stream (439ms)
+  ✓   6 tests/browser/qtts.spec.js:135:1 › QTTS stop during pending audio initialization prevents a late HTTP request (441ms)
+  ✓   7 tests/browser/qtts.spec.js:146:1 › QTTS starts locked without API calls and rejects incorrect access tokens (234ms)
+  ✓   8 tests/browser/qtts.spec.js:158:1 › QTTS access token is attached only to same-origin headers and never stored (372ms)
+  ✓   9 tests/browser/qtts.spec.js:171:1 › QTTS locking aborts the request, hides private data and rejects late frames (612ms)
+
+  ✓  10 tests/browser/qtts.spec.js:62:1 › QTTS key migration clears persisted secrets and new keys stay in memory (436ms)
+  ✓  11 tests/browser/qtts.spec.js:73:1 › QTTS late old response cannot end, overwrite or report the current stream (632ms)
+  ✓  12 tests/browser/qtts.spec.js:93:1 › QTTS overlapping clicks share audio initialization and only latest starts (425ms)
+  ✓  13 tests/browser/qtts.spec.js:105:1 › QTTS audio initialization error stays actionable instead of unhandled rejection (427ms)
+  ✓  14 tests/browser/qtts.spec.js:115:1 › QTTS late old body frame cannot finalize a newer active stream (499ms)
+  ✓  15 tests/browser/qtts.spec.js:135:1 › QTTS stop during pending audio initialization prevents a late HTTP request (433ms)
+  ✓  16 tests/browser/qtts.spec.js:146:1 › QTTS starts locked without API calls and rejects incorrect access tokens (251ms)
+  ✓  17 tests/browser/qtts.spec.js:158:1 › QTTS access token is attached only to same-origin headers and never stored (428ms)
+  ✓  18 tests/browser/qtts.spec.js:171:1 › QTTS locking aborts the request, hides private data and rejects late frames (592ms)
+
+  ✓  19 tests/browser/qtts.spec.js:62:1 › QTTS key migration clears persisted secrets and new keys stay in memory (449ms)
+  ✓  20 tests/browser/qtts.spec.js:73:1 › QTTS late old response cannot end, overwrite or report the current stream (622ms)
+  ✓  21 tests/browser/qtts.spec.js:93:1 › QTTS overlapping clicks share audio initialization and only latest starts (373ms)
+  ✓  22 tests/browser/qtts.spec.js:105:1 › QTTS audio initialization error stays actionable instead of unhandled rejection (319ms)
+  ✓  23 tests/browser/qtts.spec.js:115:1 › QTTS late old body frame cannot finalize a newer active stream (434ms)
+  ✓  24 tests/browser/qtts.spec.js:135:1 › QTTS stop during pending audio initialization prevents a late HTTP request (424ms)
+  ✓  25 tests/browser/qtts.spec.js:146:1 › QTTS starts locked without API calls and rejects incorrect access tokens (240ms)
+  ✓  26 tests/browser/qtts.spec.js:158:1 › QTTS access token is attached only to same-origin headers and never stored (367ms)
+  ✓  27 tests/browser/qtts.spec.js:171:1 › QTTS locking aborts the request, hides private data and rejects late frames (515ms)
+
+  27 passed (13.8s)

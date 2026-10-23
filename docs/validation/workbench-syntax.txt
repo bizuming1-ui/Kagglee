@@ -1,0 +1,4 @@
+
+> kagglee-browser-studio@1.0.0 check
+> node --check src/server.js && node --check src/store.js && node --check public/app.js && node --check public/file-rules.js
+

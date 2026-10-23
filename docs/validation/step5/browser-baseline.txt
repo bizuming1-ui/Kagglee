@@ -1,0 +1,12 @@
+
+> kagglee-browser-studio@1.0.0 test:e2e
+> playwright test tests/browser/qtts.spec.js --grep viewport|视口|two main|only two|library
+
+
+Running 2 tests using 1 worker
+
+
+  ✓  1 tests/browser/qtts.spec.js:412:1 › QTTS short CSS viewport degrades to scrollable content without losing primary actions (949ms)
+  ✓  2 tests/browser/qtts.spec.js:470:1 › QTTS voice library needs a custom name and never uploads unnamed references (1.0s)
+
+  2 passed (3.4s)

@@ -1,0 +1,55 @@
+==================
+WARNING: DATA RACE
+Read at 0x00c0000ac580 by goroutine 14:
+  qtts/gateway.(*Scheduler).run()
+      /home/user/Kagglee/kaggle/source/go/gateway/scheduler.go:426 +0x1a44
+  qtts/gateway.TestFirstTTSRequestBeforeLLMTailArrives()
+      /home/user/Kagglee/kaggle/source/go/gateway/fidelity_test.go:158 +0xa89
+  testing.tRunner()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:1690 +0x226
+  testing.(*T).Run.gowrap1()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:1743 +0x44
+
+Previous write at 0x00c0000ac580 by goroutine 17:
+  qtts/gateway.(*Scheduler).Submit()
+      /home/user/Kagglee/kaggle/source/go/gateway/scheduler.go:173 +0x10c
+  qtts/gateway.(*Session).submit()
+      /home/user/Kagglee/kaggle/source/go/gateway/session.go:253 +0x4a7
+  qtts/gateway.(*Session).produce.func1()
+      /home/user/Kagglee/kaggle/source/go/gateway/session.go:296 +0x18e
+  qtts/gateway.(*Session).produce.func2()
+      /home/user/Kagglee/kaggle/source/go/gateway/session.go:320 +0xa3
+  qtts/gateway.StreamLLM()
+      /home/user/Kagglee/kaggle/source/go/gateway/llm.go:117 +0x107b
+  qtts/gateway.(*Session).produce()
+      /home/user/Kagglee/kaggle/source/go/gateway/session.go:314 +0x4d0
+  qtts/gateway.TestFirstTTSRequestBeforeLLMTailArrives.func4()
+      /home/user/Kagglee/kaggle/source/go/gateway/fidelity_test.go:137 +0x1e4
+
+Goroutine 14 (running) created at:
+  testing.(*T).Run()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:1743 +0x825
+  testing.runTests.func1()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:2168 +0x85
+  testing.tRunner()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:1690 +0x226
+  testing.runTests()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:2166 +0x8be
+  testing.(*M).Run()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:2034 +0xf17
+  main.main()
+      _testmain.go:113 +0x164
+
+Goroutine 17 (running) created at:
+  qtts/gateway.TestFirstTTSRequestBeforeLLMTailArrives()
+      /home/user/Kagglee/kaggle/source/go/gateway/fidelity_test.go:136 +0x72a
+  testing.tRunner()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:1690 +0x226
+  testing.(*T).Run.gowrap1()
+      /home/user/Kagglee/.venv/lib/python3.11/site-packages/go/src/testing/testing.go:1743 +0x44
+==================
+--- FAIL: TestFirstTTSRequestBeforeLLMTailArrives (0.01s)
+    testing.go:1399: race detected during execution of test
+FAIL
+FAIL	qtts/gateway	4.691s
+FAIL

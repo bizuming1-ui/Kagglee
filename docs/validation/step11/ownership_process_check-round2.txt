@@ -1,0 +1,4 @@
+{"round": 1, "real_supervisor_fd_lifecycle_passed": true, "model_roles": "CPU stand-ins only", "workers": 2, "analyst_inherited": true, "gateway_unleased": true, "offline_busy_409": true, "stop_then_reserve_passed": true, "gpu_verified": false, "training_verified": false}
+{"round": 2, "real_supervisor_fd_lifecycle_passed": true, "model_roles": "CPU stand-ins only", "workers": 2, "analyst_inherited": true, "gateway_unleased": true, "offline_busy_409": true, "stop_then_reserve_passed": true, "gpu_verified": false, "training_verified": false}
+{"round": 3, "real_supervisor_fd_lifecycle_passed": true, "model_roles": "CPU stand-ins only", "workers": 2, "analyst_inherited": true, "gateway_unleased": true, "offline_busy_409": true, "stop_then_reserve_passed": true, "gpu_verified": false, "training_verified": false}
+OWNERSHIP PROCESS: 3/3 protocol rounds. NO real GPU/model/VRAM/training evidence.

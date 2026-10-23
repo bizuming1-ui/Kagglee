@@ -1,0 +1,11 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f7f8fc; font-family: system-ui, sans-serif; color: #202334; padding: 24px; }
+.card { width: 100%; max-width: 580px; text-align: center; padding: 48px 24px; }
+.badge { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: #7e79a4; }
+.orb { margin: 32px auto; width: 92px; height: 92px; display: grid; place-items: center; border-radius: 28px; font-size: 54px; color: white; background: linear-gradient(135deg, #b9a4ff, #7862e8); box-shadow: 0 16px 40px #8b75e83a; transform: rotate(-8deg); }
+h1 { font-size: clamp(27px, 4vw, 40px); letter-spacing: -1.7px; margin: 0 0 16px; }
+p { font-size: 14px; line-height: 1.9; color: #8b8d9e; }
+button { margin: 20px 0 24px; border: none; border-radius: 9px; padding: 14px 22px; background: #7760df; color: white; font: 600 13px system-ui; cursor: pointer; box-shadow: 0 5px 12px #7760df25; }
+button:hover { background: #644bce; }
+button span { margin-left: 16px; }
+#message { color: #9697a7; font-size: 11px; }

@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/studio.spec.js:598:1 › 第十六阶段ICL绑定有界解码完整Python包可逐字节复制并保留第十五阶段包 (2.5s)
+
+  ✓  2 tests/browser/studio.spec.js:598:1 › 第十六阶段ICL绑定有界解码完整Python包可逐字节复制并保留第十五阶段包 (1.2s)
+
+  ✓  3 tests/browser/studio.spec.js:598:1 › 第十六阶段ICL绑定有界解码完整Python包可逐字节复制并保留第十五阶段包 (2.6s)
+
+  3 passed (10.6s)

@@ -1,0 +1,2429 @@
+{
+  "recommendations": 300,
+  "all_recommendations_implemented": false,
+  "implemented_means": "code/test action, not a distinct bug fix or GPU acceptance",
+  "counts": {
+    "implemented": 113,
+    "documented-boundary": 31,
+    "preserved": 146,
+    "requires-hardware": 8,
+    "not-implemented": 2
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "items": [
+        {
+          "recommendation": "S15-R1-001",
+          "anchor": "worker.RealEngine",
+          "text": "禁止参考码进入解码器",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-002",
+          "anchor": "worker.RealEngine",
+          "text": "仅以说话人向量条件生成",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-003",
+          "anchor": "worker.RealEngine",
+          "text": "生成调用不传参考正文",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-004",
+          "anchor": "worker.RealEngine",
+          "text": "预热采用相同向量模式",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-005",
+          "anchor": "worker.RealEngine",
+          "text": "dtype回退后仍用向量模式",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-006",
+          "anchor": "worker.RealEngine",
+          "text": "不开放环境变量回退ICL",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-007",
+          "anchor": "worker.RealEngine",
+          "text": "明确韵律相似度可能变化",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-008",
+          "anchor": "worker.RealEngine",
+          "text": "核对Faster0.5.4实际源码",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-009",
+          "anchor": "worker.RealEngine",
+          "text": "生成采样率仍严格24k",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-010",
+          "anchor": "worker.RealEngine",
+          "text": "生成器取消时仍close",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-011",
+          "anchor": "worker.lead_audio",
+          "text": "废止reference呼吸拼接开关",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-012",
+          "anchor": "worker.lead_audio",
+          "text": "前置停顿仅零样本",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-013",
+          "anchor": "worker.lead_audio",
+          "text": "旧breath_files不能被读取",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-014",
+          "anchor": "worker.lead_audio",
+          "text": "无参考片段也不造噪声",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-015",
+          "anchor": "worker.lead_audio",
+          "text": "保留模型自身呼吸",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-016",
+          "anchor": "worker.lead_audio",
+          "text": "不把去呼吸等同自然音色",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-017",
+          "anchor": "worker.lead_audio",
+          "text": "暂停最长仍1500ms",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-018",
+          "anchor": "worker.lead_audio",
+          "text": "负暂停仍归零",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-019",
+          "anchor": "worker.lead_audio",
+          "text": "随机种子不能改变静音",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-020",
+          "anchor": "worker.lead_audio",
+          "text": "人工试听仍是门禁",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-021",
+          "anchor": "worker.run_job",
+          "text": "PCM来源只接受模型和零停顿",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-022",
+          "anchor": "worker.run_job",
+          "text": "不因模型失败回放anchor",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-023",
+          "anchor": "worker.run_job",
+          "text": "不因空结果播放参考",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-024",
+          "anchor": "worker.run_job",
+          "text": "保留nonfinite拒绝",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-025",
+          "anchor": "worker.run_job",
+          "text": "保留异常统计",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-026",
+          "anchor": "worker.run_job",
+          "text": "保留裁边",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-027",
+          "anchor": "worker.run_job",
+          "text": "保留尾部淡出",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-028",
+          "anchor": "worker.run_job",
+          "text": "保留取消检查",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-029",
+          "anchor": "worker.run_job",
+          "text": "保留每GPU互斥",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-030",
+          "anchor": "worker.run_job",
+          "text": "日志报告生成隔离模式",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-031",
+          "anchor": "adapter_engine",
+          "text": "核对原生向量模式",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-032",
+          "anchor": "adapter_engine",
+          "text": "不能把训练参考当输出",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-033",
+          "anchor": "adapter_engine",
+          "text": "固定adapter哈希",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-034",
+          "anchor": "adapter_engine",
+          "text": "损坏adapter不能回退Base",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-035",
+          "anchor": "adapter_engine",
+          "text": "不改变句级缓冲标记",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-036",
+          "anchor": "adapter_engine",
+          "text": "不混驻两种引擎",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-037",
+          "anchor": "adapter_engine",
+          "text": "保持取消丢弃迟到wave",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-038",
+          "anchor": "adapter_engine",
+          "text": "训练候选不自动激活",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-039",
+          "anchor": "adapter_engine",
+          "text": "新进程重载仍需实机",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-040",
+          "anchor": "adapter_engine",
+          "text": "无训练证据不称已训练",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-041",
+          "anchor": "朗读内容",
+          "text": "不拼接参考文本",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-042",
+          "anchor": "朗读内容",
+          "text": "不修改目标文本",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-043",
+          "anchor": "朗读内容",
+          "text": "不补额外说明",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-044",
+          "anchor": "朗读内容",
+          "text": "不以字符串一致冒充声学一致",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-045",
+          "anchor": "朗读内容",
+          "text": "不自动删数字",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-046",
+          "anchor": "朗读内容",
+          "text": "不自动删专名",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-047",
+          "anchor": "朗读内容",
+          "text": "不裁词谋求首声",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-048",
+          "anchor": "朗读内容",
+          "text": "短句仍需语言条件",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-049",
+          "anchor": "朗读内容",
+          "text": "模型幻觉单独披露",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-050",
+          "anchor": "朗读内容",
+          "text": "严格ASR拒播仍未实现",
+          "status": "not-implemented",
+          "reason": "严格声学拒播/历史网页训练闭环仍缺；不是本轮已验收功能。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-051",
+          "anchor": "PCM隔离回归",
+          "text": "以非零参考bank诱捕混入",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-052",
+          "anchor": "PCM隔离回归",
+          "text": "旧环境reference模式也应静音",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-053",
+          "anchor": "PCM隔离回归",
+          "text": "断言生成xvec_only为真",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-054",
+          "anchor": "PCM隔离回归",
+          "text": "断言参考正文为空",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-055",
+          "anchor": "PCM隔离回归",
+          "text": "预热断言与生成相同",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-056",
+          "anchor": "PCM隔离回归",
+          "text": "加载不得读取呼吸文件",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-057",
+          "anchor": "PCM隔离回归",
+          "text": "输出频率标记与参考分离",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-058",
+          "anchor": "PCM隔离回归",
+          "text": "完整协议中仅模型PCM",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-059",
+          "anchor": "PCM隔离回归",
+          "text": "失败流不得补参考",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-060",
+          "anchor": "PCM隔离回归",
+          "text": "重复三轮隔离验证",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-061",
+          "anchor": "音量",
+          "text": "新旧档案统一输出目标",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-062",
+          "anchor": "音量",
+          "text": "默认目标从负21到负18dBFS",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-063",
+          "anchor": "音量",
+          "text": "保留可调输出目标",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-064",
+          "anchor": "音量",
+          "text": "合法范围负24到负14",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-065",
+          "anchor": "音量",
+          "text": "非数字回退默认",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-066",
+          "anchor": "音量",
+          "text": "NaN回退默认",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-067",
+          "anchor": "音量",
+          "text": "正无穷回退默认",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-068",
+          "anchor": "音量",
+          "text": "不修改原始录音",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-069",
+          "anchor": "音量",
+          "text": "保持软限幅",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-070",
+          "anchor": "音量",
+          "text": "不承诺所有音量都增加3dB",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-071",
+          "anchor": "DSP质量",
+          "text": "验证低电平正弦增益",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-072",
+          "anchor": "DSP质量",
+          "text": "验证满幅输入不溢出",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-073",
+          "anchor": "DSP质量",
+          "text": "保留DC blocker",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-074",
+          "anchor": "DSP质量",
+          "text": "保留段间淡入",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-075",
+          "anchor": "DSP质量",
+          "text": "保留尾部淡出",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-076",
+          "anchor": "DSP质量",
+          "text": "Rust与NumPy参数相同",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-077",
+          "anchor": "DSP质量",
+          "text": "不新增C++重复实现",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-078",
+          "anchor": "DSP质量",
+          "text": "采样率不降",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-079",
+          "anchor": "DSP质量",
+          "text": "不硬裁削峰",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-080",
+          "anchor": "DSP质量",
+          "text": "测量使用非语音时标明合成",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-081",
+          "anchor": "GPU显存",
+          "text": "1.7B FP16权重估算约3.4GB",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-082",
+          "anchor": "GPU显存",
+          "text": "两模型权重不是全部显存",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-083",
+          "anchor": "GPU显存",
+          "text": "计入codec和speaker",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-084",
+          "anchor": "GPU显存",
+          "text": "计入KV cache",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-085",
+          "anchor": "GPU显存",
+          "text": "计入CUDA graph",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-086",
+          "anchor": "GPU显存",
+          "text": "计入分配器碎片",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-087",
+          "anchor": "GPU显存",
+          "text": "同卡并发争计算带宽",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-088",
+          "anchor": "GPU显存",
+          "text": "不默认每卡两模型",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-089",
+          "anchor": "GPU显存",
+          "text": "以两卡各一模型为基线",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-090",
+          "anchor": "GPU显存",
+          "text": "真双副本收益必须实测",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-091",
+          "anchor": "所有权与安全",
+          "text": "保留单可见GPU契约",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-092",
+          "anchor": "所有权与安全",
+          "text": "不绕过fleet租约",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-093",
+          "anchor": "所有权与安全",
+          "text": "不删除锁",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-094",
+          "anchor": "所有权与安全",
+          "text": "不按旧PID杀",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-095",
+          "anchor": "所有权与安全",
+          "text": "不安装未知CUDA补丁",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-096",
+          "anchor": "所有权与安全",
+          "text": "不输出口令",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-097",
+          "anchor": "所有权与安全",
+          "text": "不保存用户参考到报告",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-098",
+          "anchor": "所有权与安全",
+          "text": "不自动上传录音",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-099",
+          "anchor": "所有权与安全",
+          "text": "不更改已冻结14",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        },
+        {
+          "recommendation": "S15-R1-100",
+          "anchor": "所有权与安全",
+          "text": "保持3000正式工作台",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/worker.py; py/qtts_common.py; tests/test_step15.py; reference-isolation-round{1,2,3}.json"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "items": [
+        {
+          "recommendation": "S15-R2-001",
+          "anchor": "首段分段",
+          "text": "识别当前末尾标点等待lookahead",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-002",
+          "anchor": "首段分段",
+          "text": "只为首段新增即时确定边界",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-003",
+          "anchor": "首段分段",
+          "text": "句末中文标点可立即提交",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-004",
+          "anchor": "首段分段",
+          "text": "逗号达到首段预算可提交",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-005",
+          "anchor": "首段分段",
+          "text": "ASCII点仍等lookahead避小数",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-006",
+          "anchor": "首段分段",
+          "text": "保留后续正常分段",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-007",
+          "anchor": "首段分段",
+          "text": "新段保留原文",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-008",
+          "anchor": "首段分段",
+          "text": "不等待LLM全篇完成",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-009",
+          "anchor": "首段分段",
+          "text": "不为每token发TTS",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-010",
+          "anchor": "首段分段",
+          "text": "短于常规阈值完整句可首发",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-011",
+          "anchor": "单位边界",
+          "text": "英文单词不从中间拆开",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-012",
+          "anchor": "单位边界",
+          "text": "小数12.50不拆错",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-013",
+          "anchor": "单位边界",
+          "text": "英文缩写保留",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-014",
+          "anchor": "单位边界",
+          "text": "标点后引号不能丢",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-015",
+          "anchor": "单位边界",
+          "text": "跨delta空格仍保存",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-016",
+          "anchor": "单位边界",
+          "text": "纯标点不能伪成语音",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-017",
+          "anchor": "单位边界",
+          "text": "Unicode原样",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-018",
+          "anchor": "单位边界",
+          "text": "组合emoji不作为词",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-019",
+          "anchor": "单位边界",
+          "text": "无标点长句保持上限",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-020",
+          "anchor": "单位边界",
+          "text": "最后残留仍Flush",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-021",
+          "anchor": "顺序保护",
+          "text": "首段任务优先",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-022",
+          "anchor": "顺序保护",
+          "text": "第二段可用另一GPU",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-023",
+          "anchor": "顺序保护",
+          "text": "已输出失败不重放",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-024",
+          "anchor": "顺序保护",
+          "text": "未输出失败才允许重试",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-025",
+          "anchor": "顺序保护",
+          "text": "保留段索引",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-026",
+          "anchor": "顺序保护",
+          "text": "保留背压高低水位",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-027",
+          "anchor": "顺序保护",
+          "text": "保留迟滞",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-028",
+          "anchor": "顺序保护",
+          "text": "不无限预生成",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-029",
+          "anchor": "顺序保护",
+          "text": "取消移除排队任务",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-030",
+          "anchor": "顺序保护",
+          "text": "健康检查不回放参考",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-031",
+          "anchor": "LLM流",
+          "text": "保留每delta向前端推送",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-032",
+          "anchor": "LLM流",
+          "text": "首句完成即submit",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-033",
+          "anchor": "LLM流",
+          "text": "首token计时保留",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-034",
+          "anchor": "LLM流",
+          "text": "首段提交计时保留",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-035",
+          "anchor": "LLM流",
+          "text": "LLM完成计时保留",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-036",
+          "anchor": "LLM流",
+          "text": "非法JSON报错",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-037",
+          "anchor": "LLM流",
+          "text": "截断finish_reason报错",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-038",
+          "anchor": "LLM流",
+          "text": "取消终止HTTP",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-039",
+          "anchor": "LLM流",
+          "text": "不记录API密钥",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-040",
+          "anchor": "LLM流",
+          "text": "用本地SSE延迟尾巴测试",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-041",
+          "anchor": "首声指标",
+          "text": "区分首token和首段",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-042",
+          "anchor": "首声指标",
+          "text": "区分模型首块和PCM",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-043",
+          "anchor": "首声指标",
+          "text": "区分首PCM和首播",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-044",
+          "anchor": "首声指标",
+          "text": "静音不当作人声",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-045",
+          "anchor": "首声指标",
+          "text": "保留欠载次数",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-046",
+          "anchor": "首声指标",
+          "text": "不以网络替身称DeepSeek实测",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-047",
+          "anchor": "首声指标",
+          "text": "不以MockRTF称QwenRTF",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-048",
+          "anchor": "首声指标",
+          "text": "记录首段早于LLM结束",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-049",
+          "anchor": "首声指标",
+          "text": "没有CUDA不填GPU延迟",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-050",
+          "anchor": "首声指标",
+          "text": "不承诺三秒内",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-051",
+          "anchor": "播放器",
+          "text": "先不盲降全局缓冲",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-052",
+          "anchor": "播放器",
+          "text": "保持starved恢复阈值",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-053",
+          "anchor": "播放器",
+          "text": "保留短尾完成后启动",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-054",
+          "anchor": "播放器",
+          "text": "停止重置ring",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-055",
+          "anchor": "播放器",
+          "text": "迟到PCM不继续播放",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-056",
+          "anchor": "播放器",
+          "text": "初始化失败可重试",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-057",
+          "anchor": "播放器",
+          "text": "保留浏览器重采样",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-058",
+          "anchor": "播放器",
+          "text": "不将gain无限放大",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-059",
+          "anchor": "播放器",
+          "text": "不新增播放参考audio标签",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-060",
+          "anchor": "播放器",
+          "text": "保持手机布局",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-061",
+          "anchor": "首块预算",
+          "text": "保留默认chunk4稳定策略",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-062",
+          "anchor": "首块预算",
+          "text": "允许显式2到8试验",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-063",
+          "anchor": "首块预算",
+          "text": "无效环境回退4",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-064",
+          "anchor": "首块预算",
+          "text": "后段按背压选择",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-065",
+          "anchor": "首块预算",
+          "text": "不把chunk2必然称更快",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-066",
+          "anchor": "首块预算",
+          "text": "重测小chunk欠载",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-067",
+          "anchor": "首块预算",
+          "text": "记录同文同参考条件",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-068",
+          "anchor": "首块预算",
+          "text": "预热成本单列",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-069",
+          "anchor": "首块预算",
+          "text": "不改变max_new_tokens掩盖",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-070",
+          "anchor": "首块预算",
+          "text": "单句质量需真人听",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-071",
+          "anchor": "线程与语言",
+          "text": "Go保留调度路径",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-072",
+          "anchor": "线程与语言",
+          "text": "Python保留模型接口",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-073",
+          "anchor": "线程与语言",
+          "text": "Rust保留DSP",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-074",
+          "anchor": "线程与语言",
+          "text": "JS保留播放",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-075",
+          "anchor": "线程与语言",
+          "text": "不新加Java网络服务",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-076",
+          "anchor": "线程与语言",
+          "text": "不为多语言复制采样器",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-077",
+          "anchor": "线程与语言",
+          "text": "不盲开每卡双进程",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-078",
+          "anchor": "线程与语言",
+          "text": "不启用不支持的BF16",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-079",
+          "anchor": "线程与语言",
+          "text": "不将TF32称T4加速",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-080",
+          "anchor": "线程与语言",
+          "text": "量化质量另实验",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-081",
+          "anchor": "流式测试",
+          "text": "首句单delta即可产生任务",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-082",
+          "anchor": "流式测试",
+          "text": "短中文完整句可首发",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-083",
+          "anchor": "流式测试",
+          "text": "ASCII数字点仍保留",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-084",
+          "anchor": "流式测试",
+          "text": "逗号完整前缀可首发",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-085",
+          "anchor": "流式测试",
+          "text": "相同文本各切片重组",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-086",
+          "anchor": "流式测试",
+          "text": "新特性用应用配置而非旧配置",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-087",
+          "anchor": "流式测试",
+          "text": "晚引号仍完整保留",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-088",
+          "anchor": "流式测试",
+          "text": "SSE未结束worker已收到首段",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-089",
+          "anchor": "流式测试",
+          "text": "最终按索引输出",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-090",
+          "anchor": "流式测试",
+          "text": "Go race三轮",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-091",
+          "anchor": "退化防护",
+          "text": "非首段旧策略不变",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-092",
+          "anchor": "退化防护",
+          "text": "朗读长文不丢段",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-093",
+          "anchor": "退化防护",
+          "text": "URL不清洗",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-094",
+          "anchor": "退化防护",
+          "text": "DeepSeek错误前缀可见",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-095",
+          "anchor": "退化防护",
+          "text": "超时不冒成功",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-096",
+          "anchor": "退化防护",
+          "text": "取消不重复提交",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-097",
+          "anchor": "退化防护",
+          "text": "独立记录早期失败",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-098",
+          "anchor": "退化防护",
+          "text": "浏览器全量回归",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-099",
+          "anchor": "退化防护",
+          "text": "Python全量回归",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        },
+        {
+          "recommendation": "S15-R2-100",
+          "anchor": "退化防护",
+          "text": "无硬件保持部分验收",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/go/gateway/{segmenter,main,session,scheduler}.go; fidelity_test.go; go-final-race3.txt; tests/browser/qtts.spec.js"
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "items": [
+        {
+          "recommendation": "S15-R3-001",
+          "anchor": "创建默认",
+          "text": "默认关闭可选GPU候选校准",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-002",
+          "anchor": "创建默认",
+          "text": "保留手动校准按钮",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-003",
+          "anchor": "创建默认",
+          "text": "直接创建与库处理默认一致",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-004",
+          "anchor": "创建默认",
+          "text": "后端缺省也关闭校准",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-005",
+          "anchor": "创建默认",
+          "text": "锁定重置默认关闭",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-006",
+          "anchor": "创建默认",
+          "text": "明确不是训练",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-007",
+          "anchor": "创建默认",
+          "text": "不隐藏校准质量代价",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-008",
+          "anchor": "创建默认",
+          "text": "保留两卡预热",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-009",
+          "anchor": "创建默认",
+          "text": "失败不改active",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-010",
+          "anchor": "创建默认",
+          "text": "完成收据不虚报",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-011",
+          "anchor": "ASR成本",
+          "text": "已知单段短文本直接使用",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-012",
+          "anchor": "ASR成本",
+          "text": "不能把长文本套短片",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-013",
+          "anchor": "ASR成本",
+          "text": "保持全量长音频ASR",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-014",
+          "anchor": "ASR成本",
+          "text": "不取前十秒冒充完整",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-015",
+          "anchor": "ASR成本",
+          "text": "CPU Whisper可驻留复用",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-016",
+          "anchor": "ASR成本",
+          "text": "不在GPU常驻ASR",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-017",
+          "anchor": "ASR成本",
+          "text": "保留CPU回退",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-018",
+          "anchor": "ASR成本",
+          "text": "保留识别beam5",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-019",
+          "anchor": "ASR成本",
+          "text": "保留词时间戳",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-020",
+          "anchor": "ASR成本",
+          "text": "记录手动转写绕过ASR",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-021",
+          "anchor": "ASR内存",
+          "text": "仅CPU默认驻留",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-022",
+          "anchor": "ASR内存",
+          "text": "CUDA ASR仍卸载",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-023",
+          "anchor": "ASR内存",
+          "text": "显式开关可禁用驻留",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-024",
+          "anchor": "ASR内存",
+          "text": "同一重模型入口串行",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-025",
+          "anchor": "ASR内存",
+          "text": "不无限缓存音频",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-026",
+          "anchor": "ASR内存",
+          "text": "不缓存每个用户转写",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-027",
+          "anchor": "ASR内存",
+          "text": "不让驻留伪造模型已加载",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-028",
+          "anchor": "ASR内存",
+          "text": "首次下载成本单列",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-029",
+          "anchor": "ASR内存",
+          "text": "CPU内存风险披露",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-030",
+          "anchor": "ASR内存",
+          "text": "不以第二次速度代表冷启动",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-031",
+          "anchor": "重复计算",
+          "text": "档案内部嵌入按内容哈希复用",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-032",
+          "anchor": "重复计算",
+          "text": "嵌入缓存仅本次任务",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-033",
+          "anchor": "重复计算",
+          "text": "返回向量保持只读语义",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-034",
+          "anchor": "重复计算",
+          "text": "不跨档案泄漏用户数据",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-035",
+          "anchor": "重复计算",
+          "text": "记录embed实际调用数",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-036",
+          "anchor": "重复计算",
+          "text": "记录embed命中数",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-037",
+          "anchor": "重复计算",
+          "text": "候选相同波形可复用",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-038",
+          "anchor": "重复计算",
+          "text": "不按文件名猜相同",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-039",
+          "anchor": "重复计算",
+          "text": "不改变候选排序公式",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-040",
+          "anchor": "重复计算",
+          "text": "缓存失败不写半成品",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-041",
+          "anchor": "CPU候选",
+          "text": "保留24候选上限",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-042",
+          "anchor": "CPU候选",
+          "text": "保留前三非重叠",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-043",
+          "anchor": "CPU候选",
+          "text": "保留SNR打分",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-044",
+          "anchor": "CPU候选",
+          "text": "保留典型性中心",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-045",
+          "anchor": "CPU候选",
+          "text": "保留F0打分",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-046",
+          "anchor": "CPU候选",
+          "text": "准确F0仍用于最佳锚点",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-047",
+          "anchor": "CPU候选",
+          "text": "不偷偷换MFCC冒充ECAPA",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-048",
+          "anchor": "CPU候选",
+          "text": "不降采样输入标准",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-049",
+          "anchor": "CPU候选",
+          "text": "不减少可用文件",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-050",
+          "anchor": "CPU候选",
+          "text": "不承诺质量无损提速倍数",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-051",
+          "anchor": "分析阶段计时",
+          "text": "记录speaker加载",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-052",
+          "anchor": "分析阶段计时",
+          "text": "记录解码降噪",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-053",
+          "anchor": "分析阶段计时",
+          "text": "记录ASR",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-054",
+          "anchor": "分析阶段计时",
+          "text": "记录候选评分",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-055",
+          "anchor": "分析阶段计时",
+          "text": "记录呼吸韵律",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-056",
+          "anchor": "分析阶段计时",
+          "text": "记录worker加载",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-057",
+          "anchor": "分析阶段计时",
+          "text": "记录可选校准",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-058",
+          "anchor": "分析阶段计时",
+          "text": "记录总构建时间",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-059",
+          "anchor": "分析阶段计时",
+          "text": "成功后最终写回profile",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-060",
+          "anchor": "分析阶段计时",
+          "text": "旧calibration写回不能覆盖",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-061",
+          "anchor": "候选转写",
+          "text": "长单个ASR段不能截音频保留全文",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-062",
+          "anchor": "候选转写",
+          "text": "长度超界无可信字时间拒绝",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-063",
+          "anchor": "候选转写",
+          "text": "不猜均匀对齐",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-064",
+          "anchor": "候选转写",
+          "text": "提示重录短段或审核切分",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-065",
+          "anchor": "候选转写",
+          "text": "手动16秒整段可不裁",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-066",
+          "anchor": "候选转写",
+          "text": "候选start/end匹配实际波形",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-067",
+          "anchor": "候选转写",
+          "text": "保留多文件来源",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-068",
+          "anchor": "候选转写",
+          "text": "检查负时间",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-069",
+          "anchor": "候选转写",
+          "text": "检查超音频边界",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-070",
+          "anchor": "候选转写",
+          "text": "不静默截断转写",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-071",
+          "anchor": "持久化",
+          "text": "完成前写回quality.build_s",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-072",
+          "anchor": "持久化",
+          "text": "持久化stage_ms",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-073",
+          "anchor": "持久化",
+          "text": "持久化嵌入缓存统计",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-074",
+          "anchor": "持久化",
+          "text": "失败不删除已有档案",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-075",
+          "anchor": "持久化",
+          "text": "新任务失败清理新目录",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-076",
+          "anchor": "持久化",
+          "text": "保持原子JSON",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-077",
+          "anchor": "持久化",
+          "text": "保留worker_load状态",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-078",
+          "anchor": "持久化",
+          "text": "保留校准选择",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-079",
+          "anchor": "持久化",
+          "text": "不把done当两卡加载成功",
+          "status": "preserved",
+          "reason": "保留现有约束/算法/入口，未为凑修改量重写；完整回归只证明已测范围。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-080",
+          "anchor": "持久化",
+          "text": "文件备份范围清楚",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-081",
+          "anchor": "发布交付",
+          "text": "生成新step15不覆盖14",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-082",
+          "anchor": "发布交付",
+          "text": "新增manifest逐文件校验",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-083",
+          "anchor": "发布交付",
+          "text": "复制页固定15哈希",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-084",
+          "anchor": "发布交付",
+          "text": "下载与剪贴板完整一致",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-085",
+          "anchor": "发布交付",
+          "text": "拒绝剪贴板时可全选",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-086",
+          "anchor": "发布交付",
+          "text": "375px无横向溢出",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-087",
+          "anchor": "发布交付",
+          "text": "冻结正式15文件",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-088",
+          "anchor": "发布交付",
+          "text": "交接完整嵌入新增备忘录",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-089",
+          "anchor": "发布交付",
+          "text": "三轮结果分别记录",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-090",
+          "anchor": "发布交付",
+          "text": "未通过项目不得打勾",
+          "status": "implemented",
+          "reason": "本轮相关路径修改或新增回归，详见锚点与AUDIT；CPU测试不等于该条全部声学目标达标。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-091",
+          "anchor": "现场门禁",
+          "text": "用户截图256.4秒仅作问题证据",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-092",
+          "anchor": "现场门禁",
+          "text": "无原音频不能确定泄漏根因",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-093",
+          "anchor": "现场门禁",
+          "text": "真实Qwen生成必须试听",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-094",
+          "anchor": "现场门禁",
+          "text": "真实T4显存峰值必测",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-095",
+          "anchor": "现场门禁",
+          "text": "同卡双模型不默认试",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-096",
+          "anchor": "现场门禁",
+          "text": "首次和热创建分别测",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-097",
+          "anchor": "现场门禁",
+          "text": "同参考同目标文本比较",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-098",
+          "anchor": "现场门禁",
+          "text": "无额外参考重播需独立检查",
+          "status": "requires-hardware",
+          "reason": "代码或风险文档已处理其工程部分，真实Qwen/T4、原音频、听感或峰值/吞吐仍未执行，不能打完成。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-099",
+          "anchor": "现场门禁",
+          "text": "历史网页训练缺口仍保留",
+          "status": "not-implemented",
+          "reason": "严格声学拒播/历史网页训练闭环仍缺；不是本轮已验收功能。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        },
+        {
+          "recommendation": "S15-R3-100",
+          "anchor": "现场门禁",
+          "text": "不写100%无错误",
+          "status": "documented-boundary",
+          "reason": "对应取舍/风险已在PLAN、AUDIT或QUICKSTART明确；说明边界不是运行实测或修复性能的证据。",
+          "evidence": "kaggle/source/py/{analyst,library_api}.py; web/{index.html,app.js}; tests/test_step15.py; python-round{1,2,3}.txt; browser-repeat3.txt"
+        }
+      ]
+    }
+  ]
+}

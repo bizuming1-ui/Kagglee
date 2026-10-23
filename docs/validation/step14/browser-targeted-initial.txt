@@ -1,0 +1,9 @@
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/qtts.spec.js:785:1 › QTTS twenty-minute recorder keeps 11-minute virtual session and more than 2048 bounded chunks (598ms)
+  ✓  2 tests/browser/qtts.spec.js:809:1 › QTTS long capture is honestly separate from actual training and acoustic verification (794ms)
+  ✓  3 tests/browser/studio.spec.js:584:1 › 第十四阶段长录音原文修复完整Python包可逐字节复制并保留第十三阶段包 (2.4s)
+
+  3 passed (5.2s)

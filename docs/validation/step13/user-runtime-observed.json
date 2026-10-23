@@ -1,0 +1,23 @@
+{
+  "source": "user pasted step12 Kaggle run 2026-10-21T12:33Z",
+  "launcher_assets": 47,
+  "gpu_count": 2,
+  "gpu_name": "Tesla T4",
+  "capability": [
+    7,
+    5
+  ],
+  "total_bytes_each": 15636037632,
+  "python": "3.12.13",
+  "torch": "2.10.0+cu128",
+  "faster": "0.5.4",
+  "qwen_hf": "0.1.1.post1",
+  "transformers": "5.20.2",
+  "rope_preflight": "warning: HF5 compatibility module not loaded; not the reviewed HF5 runtime",
+  "surface_preflight": "passed despite skipped RoPE smoke",
+  "model_load": "FAILED both workers MimiConfig.rope_theta AttributeError",
+  "fatal_early_abort": true,
+  "created_supervisor_shutdown_requested": true,
+  "download_and_build_completed": true,
+  "step13_real_gpu_run_verified": false
+}

@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "stage": 17,
+  "artifact_bytes": 313504,
+  "artifact_sha256": "6eacaede14f9b5f42ac5c334df5c3f9d1a1c6858fb69b7d3a8ff241ec60427ea",
+  "assets": 53,
+  "implemented_scope_regressions_passed": true,
+  "all_user_requirements_completed": false,
+  "requirement_status": "PARTIAL/BLOCKED",
+  "python": {
+    "per_round": 334,
+    "rounds": 3,
+    "total": 1002
+  },
+  "node": {
+    "per_round": 30,
+    "rounds": 3,
+    "total": 90
+  },
+  "browser": {
+    "per_round": 123,
+    "rounds": 3,
+    "total": 369,
+    "final_exact_copy_extra": 3
+  },
+  "go_race_count": 3,
+  "protocol_scripts_each_rounds": 3,
+  "protocol_script_count": 6,
+  "actual_faster_cpu_control_rounds": 3,
+  "frozen16_vs17_long_reference_fixture_rounds": 3,
+  "actual_random_tiny_qwen_codec_rounds": 3,
+  "actual_complete_import_tiny_mimi_rounds": 3,
+  "cpu_training_bitwise_ab_rounds": 3,
+  "full_qwen_model_executed": false,
+  "gpu_executed": false,
+  "speaker_similarity_verified": false,
+  "single_speaker_listening_verified": false,
+  "no_hiss_listening_verified": false,
+  "genuine_t4_rtf_0_3_verified": false,
+  "seamless_reading_listening_verified": false,
+  "dual_gpu_timbre_equivalence_verified": false,
+  "real_whisper_reference_test_executed": false,
+  "rtf_benchmark_measurements_in_this_sandbox": 0,
+  "formal_workbench_unchanged": true,
+  "handoff_complete_memos": 57,
+  "handoff_bytes": 568758,
+  "handoff_sha256": "05d7393efa2f0474f822672f480e92702ecaa7decc1d3ef485aa41b5a47ec54c",
+  "frozen_file_hashes_verified": 76,
+  "question_count": 24,
+  "question_suggestions": 1200,
+  "target_checklist_completed": 22,
+  "target_checklist_total": 300,
+  "review_dispositions": {
+    "documented-boundary": 27,
+    "implemented-action": 93,
+    "preserved-with-regression": 174,
+    "hardware-listening-blocked": 6
+  }
+}

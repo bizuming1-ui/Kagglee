@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/user/Kagglee/docs/validation/step9/verify_delivery.py", line 97, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/user/Kagglee/docs/validation/step9/verify_delivery.py", line 70, in main
+    assert len(records)==3 and all(row[key] for row in records),name
+           ^^^^^^^^^^^^^^^
+AssertionError: training-http3.txt

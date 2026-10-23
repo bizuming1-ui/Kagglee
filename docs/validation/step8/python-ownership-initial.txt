@@ -1,0 +1,42 @@
+test_adopt_shared_description_parent_close_not_unlock (test_gpu_ownership.OwnershipTests.test_adopt_shared_description_parent_close_not_unlock) ... ok
+test_bad_kind_and_descriptor_fields (test_gpu_ownership.OwnershipTests.test_bad_kind_and_descriptor_fields) ... ok
+test_bad_nonce_or_inode_does_not_release_parent (test_gpu_ownership.OwnershipTests.test_bad_nonce_or_inode_does_not_release_parent) ... ok
+test_broken_diagnostic_does_not_unlock_owner (test_gpu_ownership.OwnershipTests.test_broken_diagnostic_does_not_unlock_owner) ... ok
+test_child_env_scrubs_stale_inherited_capabilities (test_gpu_ownership.OwnershipTests.test_child_env_scrubs_stale_inherited_capabilities) ... ok
+test_dead_pid_expired_record_never_overrides_lock (test_gpu_ownership.OwnershipTests.test_dead_pid_expired_record_never_overrides_lock) ... ok
+test_default_namespace_ignores_state_and_cuda_aliases (test_gpu_ownership.OwnershipTests.test_default_namespace_ignores_state_and_cuda_aliases) ... ok
+test_exclusive_modes_permissions_and_idempotent_close (test_gpu_ownership.OwnershipTests.test_exclusive_modes_permissions_and_idempotent_close) ... ok
+test_exec_child_holds_after_parent_closes (test_gpu_ownership.OwnershipTests.test_exec_child_holds_after_parent_closes) ... ok
+test_fresh_status_does_not_create_files (test_gpu_ownership.OwnershipTests.test_fresh_status_does_not_create_files) ... ok
+test_invalid_environment_does_not_fallback_to_acquire (test_gpu_ownership.OwnershipTests.test_invalid_environment_does_not_fallback_to_acquire) ... ok
+test_main_busy_does_not_overwrite_pid_or_start_children (test_gpu_ownership.OwnershipTests.test_main_busy_does_not_overwrite_pid_or_start_children) ... 10:24:41 [supervisor] ERROR GPU ownership admission rejected: busy
+10:24:41 [supervisor] INFO supervisor stopped
+ok
+test_main_installs_handlers_before_start_and_releases_on_stop (test_gpu_ownership.OwnershipTests.test_main_installs_handlers_before_start_and_releases_on_stop) ... 10:24:41 [supervisor] INFO supervisor stopped
+ok
+test_mock_guard_skips_without_gpu_claim (test_gpu_ownership.OwnershipTests.test_mock_guard_skips_without_gpu_claim) ... ok
+test_offline_lease_cannot_be_adopted_for_inference (test_gpu_ownership.OwnershipTests.test_offline_lease_cannot_be_adopted_for_inference) ... ok
+test_partial_start_failure_releases_parent_lease (test_gpu_ownership.OwnershipTests.test_partial_start_failure_releases_parent_lease) ... 10:24:41 [supervisor] INFO supervisor stopped
+ok
+test_proc_kill_reaps_leader_and_kills_surviving_descendant (test_gpu_ownership.OwnershipTests.test_proc_kill_reaps_leader_and_kills_surviving_descendant) ... ok
+test_proc_passes_fd_only_to_model_roles_and_closes_log (test_gpu_ownership.OwnershipTests.test_proc_passes_fd_only_to_model_roles_and_closes_log) ... 10:24:41 [supervisor] INFO started worker0 pid=123
+10:24:41 [supervisor] INFO started analyst pid=123
+10:24:41 [supervisor] INFO started gateway pid=123
+ok
+test_sigkill_parent_does_not_unlock_live_exec_child (test_gpu_ownership.OwnershipTests.test_sigkill_parent_does_not_unlock_live_exec_child) ... ok
+test_status_rejects_changed_permissions (test_gpu_ownership.OwnershipTests.test_status_rejects_changed_permissions) ... ok
+test_stop_prevents_new_start_and_restart (test_gpu_ownership.OwnershipTests.test_stop_prevents_new_start_and_restart) ... 10:24:41 [supervisor] WARNING restarting worker0 (test-stop) [1 in last 10 min]
+ok
+test_symlink_root_file_hardlink_and_fifo_rejected (test_gpu_ownership.OwnershipTests.test_symlink_root_file_hardlink_and_fifo_rejected) ... ok
+test_unlocked_fresh_descriptor_cannot_adopt_stale_record (test_gpu_ownership.OwnershipTests.test_unlocked_fresh_descriptor_cannot_adopt_stale_record) ... ok
+test_real_second_supervisor_preserves_existing_pid (test_gpu_ownership.ProductionEntryTests.test_real_second_supervisor_preserves_existing_pid) ... ok
+test_real_worker_and_analyst_refuse_offline_holder_before_torch (test_gpu_ownership.ProductionEntryTests.test_real_worker_and_analyst_refuse_offline_holder_before_torch) ... ok
+test_resource_cli_busy_and_observation (test_gpu_ownership.ProductionEntryTests.test_resource_cli_busy_and_observation) ... ok
+test_resource_cli_rejects_invalid_deadlines_and_arbitrary_commands (test_gpu_ownership.ProductionEntryTests.test_resource_cli_rejects_invalid_deadlines_and_arbitrary_commands) ... ok
+test_resource_cli_sigterm_and_sigkill_release (test_gpu_ownership.ProductionEntryTests.test_resource_cli_sigterm_and_sigkill_release) ... ok
+test_resource_cli_timed_reservation_releases (test_gpu_ownership.ProductionEntryTests.test_resource_cli_timed_reservation_releases) ... ok
+
+----------------------------------------------------------------------
+Ran 29 tests in 1.948s
+
+OK

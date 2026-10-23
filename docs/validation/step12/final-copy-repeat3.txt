@@ -1,0 +1,11 @@
+
+Running 3 tests using 1 worker
+
+
+  ✓  1 tests/browser/studio.spec.js:570:1 › 第十二阶段Mimi修复完整Python包可逐字节复制并保留第十一阶段包 (2.4s)
+
+  ✓  2 tests/browser/studio.spec.js:570:1 › 第十二阶段Mimi修复完整Python包可逐字节复制并保留第十一阶段包 (1.2s)
+
+  ✓  3 tests/browser/studio.spec.js:570:1 › 第十二阶段Mimi修复完整Python包可逐字节复制并保留第十一阶段包 (2.6s)
+
+  3 passed (9.6s)

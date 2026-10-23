@@ -1,0 +1,41 @@
+/home/user/Kagglee/.venv/lib/python3.11/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+test_bad_pin_or_bad_files_cannot_leave_a_stuck_lease (test_code_provenance.ProvenanceTests.test_bad_pin_or_bad_files_cannot_leave_a_stuck_lease) ... ok
+test_cancel_after_sealing_never_publishes (test_code_provenance.ProvenanceTests.test_cancel_after_sealing_never_publishes) ... ok
+test_cli_cancel_and_timeout_release_real_reader (test_code_provenance.ProvenanceTests.test_cli_cancel_and_timeout_release_real_reader) ... ok
+test_cli_hold_read_only_receipt_preserves_fixture_state (test_code_provenance.ProvenanceTests.test_cli_hold_read_only_receipt_preserves_fixture_state) ... ok
+test_cli_rejects_unbounded_hold_or_arbitrary_commands (test_code_provenance.ProvenanceTests.test_cli_rejects_unbounded_hold_or_arbitrary_commands) ... ok
+test_exact_source_seal_survives_library_and_input_deletion (test_code_provenance.ProvenanceTests.test_exact_source_seal_survives_library_and_input_deletion) ... ok
+test_exception_inside_reader_releases_lease (test_code_provenance.ProvenanceTests.test_exception_inside_reader_releases_lease) ... ok
+test_frozen_step8_schema1_remains_unchanged_and_unsealed (test_code_provenance.ProvenanceTests.test_frozen_step8_schema1_remains_unchanged_and_unsealed) ... ok
+test_list_does_not_claim_fresh_provenance_or_disclose_text (test_code_provenance.ProvenanceTests.test_list_does_not_claim_fresh_provenance_or_disclose_text) ... ok
+test_missing_or_extra_seal_members_fail_closed (test_code_provenance.ProvenanceTests.test_missing_or_extra_seal_members_fail_closed) ... ok
+test_read_lease_protects_only_selected_version_and_not_global_list (test_code_provenance.ProvenanceTests.test_read_lease_protects_only_selected_version_and_not_global_list) ... ok
+test_real_process_death_releases_code_read_lease (test_code_provenance.ProvenanceTests.test_real_process_death_releases_code_read_lease) ... ok
+test_rehashed_code_text_cannot_disagree_with_sealed_input (test_code_provenance.ProvenanceTests.test_rehashed_code_text_cannot_disagree_with_sealed_input) ... ok
+test_rehashed_reference_cannot_disagree_with_source (test_code_provenance.ProvenanceTests.test_rehashed_reference_cannot_disagree_with_source) ... ok
+test_schema2_cannot_silently_fall_back_when_seal_missing (test_code_provenance.ProvenanceTests.test_schema2_cannot_silently_fall_back_when_seal_missing) ... ok
+test_seal_links_and_nested_directories_rejected (test_code_provenance.ProvenanceTests.test_seal_links_and_nested_directories_rejected) ... ok
+test_seal_size_permissions_and_budget (test_code_provenance.ProvenanceTests.test_seal_size_permissions_and_budget) ... ok
+test_source_write_failure_rolls_back_and_keeps_input (test_code_provenance.ProvenanceTests.test_source_write_failure_rolls_back_and_keeps_input) ... ok
+test_tampered_source_hashes_declarations_and_revision_rejected (test_code_provenance.ProvenanceTests.test_tampered_source_hashes_declarations_and_revision_rejected) ... ok
+test_valid_but_unrelated_source_rebinding_rejected (test_code_provenance.ProvenanceTests.test_valid_but_unrelated_source_rebinding_rejected) ... ERROR
+
+======================================================================
+ERROR: test_valid_but_unrelated_source_rebinding_rejected (test_code_provenance.ProvenanceTests.test_valid_but_unrelated_source_rebinding_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/user/Kagglee/kaggle/tests/test_code_provenance.py", line 118, in test_valid_but_unrelated_source_rebinding_rejected
+    result,directory=self.prepared();library,body=self.source();other=self.data.prepare(self.lib,body)
+                                                  ^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/tests/test_training_data.py", line 47, in source
+    row=self.lib.create('自己的训练素材')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Kagglee/kaggle/source/py/voice_library.py", line 219, in create
+    raise UploadRejected("a library with this name already exists",409)
+resource_limits.UploadRejected: a library with this name already exists
+
+----------------------------------------------------------------------
+Ran 20 tests in 4.770s
+
+FAILED (errors=1)

@@ -1,0 +1,32 @@
+{
+  "faster_version": "0.5.4",
+  "qwen_hf_version": "0.1.1.post1",
+  "transformers_version": "5.20.2",
+  "wheel_url": "https://files.pythonhosted.org/packages/b3/e5/074b3ca7bb05f2d3564a456bc7620c24e65edeb1288c118a4b0506d55f11/faster_qwen3_tts-0.5.4-py3-none-any.whl",
+  "reviewed_members": [
+    {
+      "member": "faster_qwen3_tts/model.py",
+      "sha256": "7d45740b805bb1a4798fbe20ffd580e2a35361e744c4645da106c2b6383d4de2",
+      "bytes": 60877
+    },
+    {
+      "member": "faster_qwen3_tts/streaming.py",
+      "sha256": "39a1420626c49b87f3cda486f5a3f0fb8a82238f9a052114970ada40d1959010",
+      "bytes": 12102
+    },
+    {
+      "member": "site/qwen_tts/core/tokenizer_12hz/modeling_qwen3_tts_tokenizer_v2.py",
+      "sha256": "55a7e3428a7ca3cbc9a1a8f2275d47dd765e5ffb0258724d471c6d6586c4f573",
+      "bytes": 40366
+    }
+  ],
+  "qwen12hz_codec_causal_source_lines": [
+    292,
+    532,
+    542,
+    547
+  ],
+  "generated_only_decoder_not_upstream_streaming_reference_crop": true,
+  "full_trained_weights_loaded": false,
+  "gpu_executed": false
+}
