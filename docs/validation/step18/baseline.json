@@ -1,0 +1,379 @@
+{
+  "branch": "arena/03d65d8e-kagglee",
+  "base_commit": "f445ec18544ab636d374a7e2fd99e84ff24e9b6f",
+  "stage17_bytes": 313504,
+  "stage17_sha256": "6eacaede14f9b5f42ac5c334df5c3f9d1a1c6858fb69b7d3a8ff241ec60427ea",
+  "assets_verified": 53,
+  "source_inventory": [
+    {
+      "path": "kaggle/source/LICENSE-QWEN-DERIVED.txt",
+      "bytes": 11343,
+      "sha256": "a44a6081c73ad75f0255bb2bb5cab74ef1829565a895a24e53a4f11290ab7655"
+    },
+    {
+      "path": "kaggle/source/MEMO.md",
+      "bytes": 29389,
+      "sha256": "cf874caa17aec25c5daa21565c23a50198b0a9cb2527641c0e0084f3eb140a46"
+    },
+    {
+      "path": "kaggle/source/go/gateway/fidelity_test.go",
+      "bytes": 5798,
+      "sha256": "f0127c65aec6b13dc996fcb22ccac3dff794155f7770faae23bdb474b280528b"
+    },
+    {
+      "path": "kaggle/source/go/gateway/go.mod",
+      "bytes": 29,
+      "sha256": "00f1a160ee5ea066ed545d93f8c6920689ddbea2bb10006107eec99804871a41"
+    },
+    {
+      "path": "kaggle/source/go/gateway/llm.go",
+      "bytes": 4182,
+      "sha256": "23809b1c724bad01588a827f06bcdf05d1b4d23da5eb6372d0fc40b6d9ddfdda"
+    },
+    {
+      "path": "kaggle/source/go/gateway/main.go",
+      "bytes": 14089,
+      "sha256": "089fe407efc0056525bc365195be8f7122c9787c0d2069d7a297430f1dc19cc8"
+    },
+    {
+      "path": "kaggle/source/go/gateway/preflight_test.go",
+      "bytes": 2248,
+      "sha256": "21d832143de74eb68e6758b2bc6d741b16132c820d225ffa7b150ca3e266d657"
+    },
+    {
+      "path": "kaggle/source/go/gateway/reliability_test.go",
+      "bytes": 5492,
+      "sha256": "3e039fa7ccaddfcfd813b0c06e657d49e1a076fe19844f097c263eef08a04d20"
+    },
+    {
+      "path": "kaggle/source/go/gateway/scheduler.go",
+      "bytes": 10619,
+      "sha256": "25702b42be7a7fa623ee54d1a202fa4332a503bfd4690b7553c53751c3c0bfa7"
+    },
+    {
+      "path": "kaggle/source/go/gateway/security.go",
+      "bytes": 7340,
+      "sha256": "bae7f55fd5f1c92c9f96f31ad8b8c8653926f21180abd0f0f12a54bb983004aa"
+    },
+    {
+      "path": "kaggle/source/go/gateway/security_test.go",
+      "bytes": 11391,
+      "sha256": "a6b3a2126469b9e4c21f3336961c44ae84adf282f2db0812276edae3ab1c3484"
+    },
+    {
+      "path": "kaggle/source/go/gateway/segmenter.go",
+      "bytes": 11393,
+      "sha256": "d3eea754ad00fe79fd2380284d438c07b8786583af7a9e334e2940fdd3362910"
+    },
+    {
+      "path": "kaggle/source/go/gateway/segmenter_test.go",
+      "bytes": 3506,
+      "sha256": "0d8171656e80e8423755d82f6d59797e8739bfb4ccfcd25f9a639ff1ac8bdd8d"
+    },
+    {
+      "path": "kaggle/source/go/gateway/session.go",
+      "bytes": 17876,
+      "sha256": "bc677bc3e16fecd2885f4b52c0a2087dfe04def7b1524994c457e1b5fa2218e0"
+    },
+    {
+      "path": "kaggle/source/go/gateway/voice_binding_test.go",
+      "bytes": 3995,
+      "sha256": "025a8117093d50606ec087c6559b76c770a069c058e94f0af2eff59c43932f3e"
+    },
+    {
+      "path": "kaggle/source/py/access_control.py",
+      "bytes": 2810,
+      "sha256": "8e90f2b9fe6cf98ca0192bcf1684158cc84f1609ec3ec1d76e2968455d1193d3"
+    },
+    {
+      "path": "kaggle/source/py/adapter_engine.py",
+      "bytes": 6571,
+      "sha256": "01ae6434d71db5a04ccfa1e73f36495ba6e67deee7ae4477133297272cb37478"
+    },
+    {
+      "path": "kaggle/source/py/analyst.py",
+      "bytes": 55770,
+      "sha256": "cbbf318903b40a0846be8a39789fa122cdbb09cdec19d52730fb7508bab2f015"
+    },
+    {
+      "path": "kaggle/source/py/audio_rt.py",
+      "bytes": 8694,
+      "sha256": "be55abe211192144b96c5e89ad24b233f2e56cba193d9577b0e00e46b10b95d7"
+    },
+    {
+      "path": "kaggle/source/py/bootstrap.py",
+      "bytes": 20752,
+      "sha256": "f71a27356180291de1f15b87661110dbb39bf7a46e85e40875b00c3383d5f9dd"
+    },
+    {
+      "path": "kaggle/source/py/clone_stream.py",
+      "bytes": 6157,
+      "sha256": "19a5ba3c8944724e4437db4b2443678228e3a4504461bb386e3f64414ab57979"
+    },
+    {
+      "path": "kaggle/source/py/gpu_ownership.py",
+      "bytes": 7098,
+      "sha256": "2561308fdc916e8fbe3afad009fbfeb5b1f0d4c19a98e3bcb9d6828694b22f7d"
+    },
+    {
+      "path": "kaggle/source/py/library_api.py",
+      "bytes": 9573,
+      "sha256": "33fd6d39e3335467dcb73584579d0230f5bc8d4e1e2bd5dc4552c418404b8d43"
+    },
+    {
+      "path": "kaggle/source/py/lora_adapter.py",
+      "bytes": 4473,
+      "sha256": "93ead0856e2289dc8d6f90b650435b6a50170a2941dc1f3f4ea02615fd60e718"
+    },
+    {
+      "path": "kaggle/source/py/persist.py",
+      "bytes": 4269,
+      "sha256": "edc7e0147e9dc69fa8ef8eba65f875179b2720f94d5e2416de098cf81e69b0e1"
+    },
+    {
+      "path": "kaggle/source/py/qtts_common.py",
+      "bytes": 6616,
+      "sha256": "c4ceea954c69a2b02f3d3f2afeaf7a3708e444910dec8b64268ebe1b04bc1b01"
+    },
+    {
+      "path": "kaggle/source/py/qwen_compat.py",
+      "bytes": 5165,
+      "sha256": "1ed62dfd25edb86eda695bf767bfa0ca0cb10b6da916f4b164500e8e52a4afb8"
+    },
+    {
+      "path": "kaggle/source/py/reference_segments.py",
+      "bytes": 4844,
+      "sha256": "f07e9956b266bdcbd3ccab5716cc9f614da13e28a64f3797a978d10bc4600625"
+    },
+    {
+      "path": "kaggle/source/py/resource_limits.py",
+      "bytes": 7017,
+      "sha256": "831c3b839566ba012d2788394f8d62927e29a4d49e02dd2fdc82a5ddb92740e1"
+    },
+    {
+      "path": "kaggle/source/py/supervisor.py",
+      "bytes": 9861,
+      "sha256": "77493d2401bf316abea318b9a4929dca2cbf2df841eb6e2c7f5a8208cc5e2fec"
+    },
+    {
+      "path": "kaggle/source/py/trained_profiles.py",
+      "bytes": 10740,
+      "sha256": "58760a3255cb8399271fb3bd0099a11704d9f603a3cc0d57ff6a0296ed26b8e7"
+    },
+    {
+      "path": "kaggle/source/py/training_codes.py",
+      "bytes": 23767,
+      "sha256": "78ac55d6172d392c02d5b1a775e8ed82a404efbbdef98273d8887e7d4db0e384"
+    },
+    {
+      "path": "kaggle/source/py/training_data.py",
+      "bytes": 19221,
+      "sha256": "0b9203428dfdfeacec4c82f601414bb50b4a499d6cf7aad214efe7d6c8ccf5e0"
+    },
+    {
+      "path": "kaggle/source/py/training_job.py",
+      "bytes": 14079,
+      "sha256": "51a7566fa636559372b2780d7044cc29dbe2c5767214948f25629572daff5242"
+    },
+    {
+      "path": "kaggle/source/py/tts_dataset.py",
+      "bytes": 6551,
+      "sha256": "74392d601c2bef75a223c58d869af9b6175affc7306d88502ba37492acd298db"
+    },
+    {
+      "path": "kaggle/source/py/tts_training.py",
+      "bytes": 12460,
+      "sha256": "4403860dcc2a2aad78cc163bd0d6384a64032aef1d44fb7c70c1daa99f9f83cb"
+    },
+    {
+      "path": "kaggle/source/py/voice_binding.py",
+      "bytes": 2737,
+      "sha256": "f013fb84abbeca6477aba88fd3c5c43ef1a1c05d7cad8442aca4b236ebb63fb6"
+    },
+    {
+      "path": "kaggle/source/py/voice_library.py",
+      "bytes": 18183,
+      "sha256": "c86f833eaf0b5e286e12b50744a42b5bafa15fefe54996c3e33790729ad05fea"
+    },
+    {
+      "path": "kaggle/source/py/worker.py",
+      "bytes": 30992,
+      "sha256": "e6caa9433849b3c94001bc5b7b37a224bedbb0a567a4a6fee0fd66363d734379"
+    },
+    {
+      "path": "kaggle/source/rust/audio_rt/Cargo.toml",
+      "bytes": 326,
+      "sha256": "e032c80857b9e45bfc7bcf4d56c5827fcd9a5ceeac839f0ed9716aea2ebefd2b"
+    },
+    {
+      "path": "kaggle/source/rust/audio_rt/src/lib.rs",
+      "bytes": 12887,
+      "sha256": "97cb3db3561866ad9cc8f48b9f89003bbeae45fe3207a6082c3c7dd264a8ed45"
+    },
+    {
+      "path": "kaggle/source/tools/backend_probe.py",
+      "bytes": 12090,
+      "sha256": "5e9d6d2ddb00555b4bf6d17b685250550fa1c1c98f57514a17544417efc06351"
+    },
+    {
+      "path": "kaggle/source/tools/e2e_check.py",
+      "bytes": 7427,
+      "sha256": "188e1e22948d20b72ee41e062cd7c8e36bd482901664f923aa23c9ead5a12dae"
+    },
+    {
+      "path": "kaggle/source/tools/encode_training.py",
+      "bytes": 6922,
+      "sha256": "324a88f9fdba7ad2fb713e79aad52cae099fd57f38c588732b25040da43022ef"
+    },
+    {
+      "path": "kaggle/source/tools/resource_control.py",
+      "bytes": 1930,
+      "sha256": "237d1abee6d7470ac7136973334c7cf065a5ad0727977c04fea024a493777437"
+    },
+    {
+      "path": "kaggle/source/tools/selftest.py",
+      "bytes": 7022,
+      "sha256": "b12f9e0af45d18e7c85b6a00e1d2c0e05b1cffc18a998f1d6cd90c8f57f27124"
+    },
+    {
+      "path": "kaggle/source/tools/train_tts.py",
+      "bytes": 2662,
+      "sha256": "3fa354d0d352fea8de4b6d650fdceae6f206cfae352861dd163e3871dfb197eb"
+    },
+    {
+      "path": "kaggle/source/tools/trained_voice.py",
+      "bytes": 1756,
+      "sha256": "bca66c9e187414de35bcb1d29451a2dd1e476cb491fc8e641d5007c723047dc1"
+    },
+    {
+      "path": "kaggle/source/tools/voice_benchmark.py",
+      "bytes": 9705,
+      "sha256": "e27217da7c86fbd3a9a4fb3ad792cddd4b86ae9fb8a1f49eb6c4cb6ee3755619"
+    },
+    {
+      "path": "kaggle/source/tools/watermark_check.py",
+      "bytes": 6273,
+      "sha256": "43de4bea8040ee09e88961d7f9997ea3274b39cc82c09421b291b731a22f9f3f"
+    },
+    {
+      "path": "kaggle/source/web/app.js",
+      "bytes": 67567,
+      "sha256": "0ea5f42dc39b403927155d950c1e8cc1d5303ca61f79f888578dddc9d9fd97b4"
+    },
+    {
+      "path": "kaggle/source/web/index.html",
+      "bytes": 24057,
+      "sha256": "defea51ef65aed01b8404305fd8d61dd2a4d60f49d336d40e7c4334b5bff8b30"
+    },
+    {
+      "path": "kaggle/source/web/recorder.js",
+      "bytes": 12054,
+      "sha256": "01b6602be2f9c0b650e4435f193079bf82f7ba614dd89d04b43034a6c93b47c5"
+    }
+  ],
+  "frozen_hashes": {
+    "kaggle/kaggle-fixed-step1.py": "02e9bb45a14f1e168badc8f897cead0ddd7e70c884d7fd26382c9a5b49778007",
+    "kaggle/kaggle-fixed-step10.py": "2bddd6ebad371268f9b3b02315fc29cae588da6c46c7d134476945b50b8a5ac4",
+    "kaggle/kaggle-fixed-step11.py": "cd5346e8ae34f1e2db327a076a7411996982848f9d4e14236f05d94c626d496e",
+    "kaggle/kaggle-fixed-step12.py": "2be33a3a6735639ce32ec8750e9a489abd96e4daa780d068557f2b0156f2de08",
+    "kaggle/kaggle-fixed-step13.py": "dad142d75be94d8efb6567fc1f8755d3f37341a65d5c7fe9454fd36c87770e60",
+    "kaggle/kaggle-fixed-step14.py": "73a02a95919406c4570ea563f0c0475fdde17535e6ccd16764c32514fce2c369",
+    "kaggle/kaggle-fixed-step15.py": "61c063f0b2053321bfeafc8509bbbc1c91be183da72739186f7e5c4bf1899d43",
+    "kaggle/kaggle-fixed-step16.py": "c6ed6c89e6356fc6c7ab554f96a2c3201a8e4690c007ea66626445cc658b4429",
+    "kaggle/kaggle-fixed-step17.py": "6eacaede14f9b5f42ac5c334df5c3f9d1a1c6858fb69b7d3a8ff241ec60427ea",
+    "kaggle/kaggle-fixed-step2.py": "a628d1bf3f320a330d9206b5f1864e4b38a04f0bc04b26028af2e94368f111d0",
+    "kaggle/kaggle-fixed-step3.py": "4b69f9adec43487c731c53e7ae65f91534626e71660f1b50b109bfe0c8cb973b",
+    "kaggle/kaggle-fixed-step4.py": "069421e5f0d4112148211e1289f91ec7a1b184105e5431fde0c3d72e8c744e27",
+    "kaggle/kaggle-fixed-step5.py": "acfa5639324e16aa7dcfe314caef09bee8eb277d59bdd71a5f1f4cffa0a7aaf1",
+    "kaggle/kaggle-fixed-step6.py": "781eca6e2e34bdacbe2f5337bd6535512226c2122bbf3876d05634f2fc86d256",
+    "kaggle/kaggle-fixed-step7.py": "3fe57769560c076d6d288a87cae6150b0a9404597eb0ea3997ab26de596f4cd0",
+    "kaggle/kaggle-fixed-step8.py": "777c1d523559c9c734cd5e99841810524284e91269ced23963e8e5ab3f3cc1e1",
+    "kaggle/kaggle-fixed-step9.py": "8ec892dcc5ca10daf20c8de84dd2be08d9a3de8807872c2051ddf52bd5882a9b",
+    "kaggle/source_manifest.json": "4140ee1781f0d721fddf95921e0041c8296ca225c8c893180d805a7d559960a5",
+    "kaggle/source_manifest_step10.json": "ab4edd1d51f752edcf64ad45459dd23b5502172f7747b8952b8a4d4345ba1614",
+    "kaggle/source_manifest_step11.json": "dc99766f081059c959729540f9c79b98d02ada2e60e54c062df447b18af6be59",
+    "kaggle/source_manifest_step12.json": "00bad225431d9f6611cd03b7b9c81050aa9d248dbf403b1a8aa277e26146fa2b",
+    "kaggle/source_manifest_step13.json": "334e5e9885516275304e43616730e8d017128d44cdbca53221928d5ca8a8d155",
+    "kaggle/source_manifest_step14.json": "8bca5535d1efa4ed0e96e9c2068b67841eba9273d88d48863452cf0e8671abcd",
+    "kaggle/source_manifest_step15.json": "d54669cdd2198056d602b2ee16b85f04c7b3c21611fefd182af85712f46d2203",
+    "kaggle/source_manifest_step16.json": "9d62e655d73e46a39d8eb2556429f54c3e0ad6f3696bf07196b391be72c9e9a7",
+    "kaggle/source_manifest_step17.json": "9b6bf35a77ee51dbae84df73e5c8877b1f99f289c46dd7b6beeff4b952317e37",
+    "kaggle/source_manifest_step2.json": "e7c3f6d5c572e46d82a4a4065bb04880b664e69d4d80c52ffb6a12a5b5b059af",
+    "kaggle/source_manifest_step3.json": "debc6b9c1575342b2c52183ecdbe8645d4a6414db685488457954d80598fb74b",
+    "kaggle/source_manifest_step4.json": "44d4e5e6cf06c44a3160fdb3aafc8bb8f586a1f6f22270d1eef1c42febf6f828",
+    "kaggle/source_manifest_step5.json": "4e0247e826560f0cc4211f1482905b1761ab3012bcad1b866dbdf2934c9ad641",
+    "kaggle/source_manifest_step6.json": "409d8ac606d2f32dffe7784a237f2118c46793a8bffada86755326fdd07c881a",
+    "kaggle/source_manifest_step7.json": "daf3b296bb6d7abc32a4e6720c350f1f6a59a11c3f61e1401f6b8e0b1ecaed1d",
+    "kaggle/source_manifest_step8.json": "a1a4b4c7921349d9f917cf82d390ac8f481a31c21ff46835e4030bab2e571e4b",
+    "kaggle/source_manifest_step9.json": "4b6ea8487a8ebf687688b50fbae1c516790ff8ec429f59429ddb2585884d59de",
+    "workspace/HEAD.json": "49d12f26c9b71a302c5a024b832c2c9e5c975dc8f061569fe1e1806f1dd238da",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle": "26c31621d6265bc25370bc284f2afdcf52f5edaf97e64056c2d8d5eda4a6c461",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-fixed-step1.py": "02e9bb45a14f1e168badc8f897cead0ddd7e70c884d7fd26382c9a5b49778007",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-fixed-step2.py": "a628d1bf3f320a330d9206b5f1864e4b38a04f0bc04b26028af2e94368f111d0",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-fixed-step3.py": "4b69f9adec43487c731c53e7ae65f91534626e71660f1b50b109bfe0c8cb973b",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-handoff-step2.md": "676e05174a1aba3c9384103c9994c021ec6eabf8cb5010eec731e6973ac228e3",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-handoff-step3.md": "1e3ee5b5de7aa5c1c9a31b6902315c0e9a01bdd500a5204839bae9b6885f05bc",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-handoff.md": "74574903070f0635dda5f45ef38f305258d9876b15f4f612f0b0dbd7748c1eb4",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-security-audit.md": "e7ecad1d1fcda24e8807dfa177dbb9f952c0dba45a7f3c49383b028ffe293311",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-source-audit.md": "635b2fffa1cf1faf4c4b3dc369a0384d0b875e3f5f319c787615af9da4cf7101",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/kaggle-step3-audit.md": "065d8838158bf993ddcc3339d1a8655f744bf36a5bacb40e9b805f35f9fcf71e",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/15e595be-03b2-4852-9ace-b85140a01c0a/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle": "26c31621d6265bc25370bc284f2afdcf52f5edaf97e64056c2d8d5eda4a6c461",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-fixed-step1.py": "02e9bb45a14f1e168badc8f897cead0ddd7e70c884d7fd26382c9a5b49778007",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-fixed-step2.py": "a628d1bf3f320a330d9206b5f1864e4b38a04f0bc04b26028af2e94368f111d0",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-fixed-step3.py": "4b69f9adec43487c731c53e7ae65f91534626e71660f1b50b109bfe0c8cb973b",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-fixed-step4.py": "069421e5f0d4112148211e1289f91ec7a1b184105e5431fde0c3d72e8c744e27",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-handoff-step2.md": "676e05174a1aba3c9384103c9994c021ec6eabf8cb5010eec731e6973ac228e3",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-handoff-step3.md": "1e3ee5b5de7aa5c1c9a31b6902315c0e9a01bdd500a5204839bae9b6885f05bc",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-handoff.md": "74574903070f0635dda5f45ef38f305258d9876b15f4f612f0b0dbd7748c1eb4",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-security-audit.md": "e7ecad1d1fcda24e8807dfa177dbb9f952c0dba45a7f3c49383b028ffe293311",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-source-audit.md": "635b2fffa1cf1faf4c4b3dc369a0384d0b875e3f5f319c787615af9da4cf7101",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-step3-audit.md": "065d8838158bf993ddcc3339d1a8655f744bf36a5bacb40e9b805f35f9fcf71e",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/kaggle-step4-audit.md": "83f267c2e1a830cd314e22b44b09e33fbe827e60ab7817fff608a60790fdf441",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/39ed7670-ec8a-4565-a1ae-fff0064d5246/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/kaggle": "26c31621d6265bc25370bc284f2afdcf52f5edaf97e64056c2d8d5eda4a6c461",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/kaggle-fixed-step1.py": "02e9bb45a14f1e168badc8f897cead0ddd7e70c884d7fd26382c9a5b49778007",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/kaggle-fixed-step2.py": "a628d1bf3f320a330d9206b5f1864e4b38a04f0bc04b26028af2e94368f111d0",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/kaggle-handoff-step2.md": "676e05174a1aba3c9384103c9994c021ec6eabf8cb5010eec731e6973ac228e3",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/kaggle-handoff.md": "74574903070f0635dda5f45ef38f305258d9876b15f4f612f0b0dbd7748c1eb4",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/kaggle-security-audit.md": "e7ecad1d1fcda24e8807dfa177dbb9f952c0dba45a7f3c49383b028ffe293311",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/kaggle-source-audit.md": "635b2fffa1cf1faf4c4b3dc369a0384d0b875e3f5f319c787615af9da4cf7101",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/42ed677d-f173-4c58-82cb-d85c38e06acc/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e",
+    "workspace/revisions/46b86403-3a3b-4d64-9b33-cdbc48de1581/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/46b86403-3a3b-4d64-9b33-cdbc48de1581/kaggle": "26c31621d6265bc25370bc284f2afdcf52f5edaf97e64056c2d8d5eda4a6c461",
+    "workspace/revisions/46b86403-3a3b-4d64-9b33-cdbc48de1581/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/46b86403-3a3b-4d64-9b33-cdbc48de1581/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e",
+    "workspace/revisions/4af286bd-76b6-4062-a810-b3435182854a/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/4af286bd-76b6-4062-a810-b3435182854a/kaggle": "26c31621d6265bc25370bc284f2afdcf52f5edaf97e64056c2d8d5eda4a6c461",
+    "workspace/revisions/4af286bd-76b6-4062-a810-b3435182854a/kaggle-fixed-step1.py": "02e9bb45a14f1e168badc8f897cead0ddd7e70c884d7fd26382c9a5b49778007",
+    "workspace/revisions/4af286bd-76b6-4062-a810-b3435182854a/kaggle-handoff.md": "74574903070f0635dda5f45ef38f305258d9876b15f4f612f0b0dbd7748c1eb4",
+    "workspace/revisions/4af286bd-76b6-4062-a810-b3435182854a/kaggle-source-audit.md": "635b2fffa1cf1faf4c4b3dc369a0384d0b875e3f5f319c787615af9da4cf7101",
+    "workspace/revisions/4af286bd-76b6-4062-a810-b3435182854a/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/4af286bd-76b6-4062-a810-b3435182854a/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e",
+    "workspace/revisions/4dabab82-bd9c-462d-975e-f3cecad00399/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/4dabab82-bd9c-462d-975e-f3cecad00399/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/4dabab82-bd9c-462d-975e-f3cecad00399/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e",
+    "workspace/revisions/dcb15076-ba7e-4990-b960-422773790fd3/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/dcb15076-ba7e-4990-b960-422773790fd3/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/dcb15076-ba7e-4990-b960-422773790fd3/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e",
+    "workspace/revisions/e16a23c1-d153-461b-9875-b1b1bd52c7f7/index.html": "506ae3a947073df093890e9dda880959bb843d24808c9a412a822e54093fc1c3",
+    "workspace/revisions/e16a23c1-d153-461b-9875-b1b1bd52c7f7/kaggle": "26c31621d6265bc25370bc284f2afdcf52f5edaf97e64056c2d8d5eda4a6c461",
+    "workspace/revisions/e16a23c1-d153-461b-9875-b1b1bd52c7f7/script.js": "6e7ceb5122a043f6b6523237c72fde41f964c1488e9d19022952b66f5488c563",
+    "workspace/revisions/e16a23c1-d153-461b-9875-b1b1bd52c7f7/style.css": "3ce1943dd62a960435e6a135f21ccfb935575676951b60466fe20449726a778e"
+  },
+  "prior_frozen_hashes_verified": 76,
+  "formal_revision": "39ed7670-ec8a-4565-a1ae-fff0064d5246",
+  "formal_files_verified": 15,
+  "historical_handoff_sha256": "05d7393efa2f0474f822672f480e92702ecaa7decc1d3ef485aa41b5a47ec54c",
+  "all_code_semantically_reviewed": false,
+  "reviews_completed": 1,
+  "product_modified": false,
+  "real_gpu_executed": false,
+  "voice_quality_verified": false
+}

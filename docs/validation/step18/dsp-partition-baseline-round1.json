@@ -1,0 +1,240 @@
+{
+  "round": 1,
+  "experiment_completed": true,
+  "backend": "numpy",
+  "source_sha256": "be55abe211192144b96c5e89ad24b233f2e56cba193d9577b0e00e46b10b95d7",
+  "source_modified": false,
+  "numpy_version": "2.2.6",
+  "signal": "synthetic half-second two-tone, 24000 Hz",
+  "cases": [
+    {
+      "experiment": "fade-and-dc-isolated",
+      "partition_samples": [
+        48
+      ],
+      "output_samples": 12000,
+      "different_samples": 48,
+      "max_abs_i16_difference": 1424,
+      "rms_i16_difference": 51.15151431450165,
+      "whole_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -6.000000000000001
+      }
+    },
+    {
+      "experiment": "fade-and-dc-isolated",
+      "partition_samples": [
+        64
+      ],
+      "output_samples": 12000,
+      "different_samples": 32,
+      "max_abs_i16_difference": 2937,
+      "rms_i16_difference": 100.38657654288247,
+      "whole_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -6.000000000000001
+      }
+    },
+    {
+      "experiment": "fade-and-dc-isolated",
+      "partition_samples": [
+        96
+      ],
+      "output_samples": 12000,
+      "different_samples": 0,
+      "max_abs_i16_difference": 0,
+      "rms_i16_difference": 0.0,
+      "whole_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -6.000000000000001
+      }
+    },
+    {
+      "experiment": "fade-and-dc-isolated",
+      "partition_samples": [
+        240
+      ],
+      "output_samples": 12000,
+      "different_samples": 0,
+      "max_abs_i16_difference": 0,
+      "rms_i16_difference": 0.0,
+      "whole_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      }
+    },
+    {
+      "experiment": "fade-and-dc-isolated",
+      "partition_samples": [
+        1920
+      ],
+      "output_samples": 12000,
+      "different_samples": 0,
+      "max_abs_i16_difference": 0,
+      "rms_i16_difference": 0.0,
+      "whole_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      }
+    },
+    {
+      "experiment": "fade-and-dc-isolated",
+      "partition_samples": [
+        31,
+        127,
+        513,
+        9,
+        2048
+      ],
+      "output_samples": 12000,
+      "different_samples": 65,
+      "max_abs_i16_difference": 620,
+      "rms_i16_difference": 29.14456352964191,
+      "whole_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.482735048022086
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -20.001153138550368
+      }
+    },
+    {
+      "experiment": "normal-agc",
+      "partition_samples": [
+        48
+      ],
+      "output_samples": 12000,
+      "different_samples": 11887,
+      "max_abs_i16_difference": 1425,
+      "rms_i16_difference": 309.16948898082853,
+      "whole_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -18.0
+      }
+    },
+    {
+      "experiment": "normal-agc",
+      "partition_samples": [
+        64
+      ],
+      "output_samples": 12000,
+      "different_samples": 11874,
+      "max_abs_i16_difference": 2939,
+      "rms_i16_difference": 321.0198370038836,
+      "whole_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -18.0
+      }
+    },
+    {
+      "experiment": "normal-agc",
+      "partition_samples": [
+        96
+      ],
+      "output_samples": 12000,
+      "different_samples": 11873,
+      "max_abs_i16_difference": 963,
+      "rms_i16_difference": 304.8981518474653,
+      "whole_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      },
+      "split_state": {
+        "gain_db": 0.0,
+        "env_dbfs": -18.0
+      }
+    },
+    {
+      "experiment": "normal-agc",
+      "partition_samples": [
+        240
+      ],
+      "output_samples": 12000,
+      "different_samples": 9421,
+      "max_abs_i16_difference": 11,
+      "rms_i16_difference": 3.3195632242811706,
+      "whole_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      },
+      "split_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      }
+    },
+    {
+      "experiment": "normal-agc",
+      "partition_samples": [
+        1920
+      ],
+      "output_samples": 12000,
+      "different_samples": 1135,
+      "max_abs_i16_difference": 8,
+      "rms_i16_difference": 1.2023241382145389,
+      "whole_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      },
+      "split_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      }
+    },
+    {
+      "experiment": "normal-agc",
+      "partition_samples": [
+        31,
+        127,
+        513,
+        9,
+        2048
+      ],
+      "output_samples": 12000,
+      "different_samples": 11726,
+      "max_abs_i16_difference": 621,
+      "rms_i16_difference": 54.34927859073507,
+      "whole_state": {
+        "gain_db": 1.5096720039931764,
+        "env_dbfs": -21.032773756509712
+      },
+      "split_state": {
+        "gain_db": 1.300263469876103,
+        "env_dbfs": -20.955627651751733
+      }
+    }
+  ],
+  "partition_dependence_reproduced": true,
+  "model_executed": false,
+  "gpu_executed": false,
+  "user_hiss_root_cause_proven": false,
+  "voice_quality_verified": false
+}

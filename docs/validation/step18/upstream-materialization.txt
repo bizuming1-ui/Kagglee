@@ -1,0 +1,2 @@
+faster-qwen3-tts 0.5.4 SHA256 verified; source extraction only
+qwen-tts-hf 0.1.1.post1 SHA256 verified; source extraction only

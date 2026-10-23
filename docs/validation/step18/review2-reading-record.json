@@ -1,0 +1,86 @@
+{
+  "scope": "targeted state/contract semantic review; not all files fully reviewed",
+  "all_source_semantically_reviewed": false,
+  "records": [
+    {
+      "path": "kaggle/source/py/library_api.py",
+      "sha256": "33fd6d39e3335467dcb73584579d0230f5bc8d4e1e2bd5dc4552c418404b8d43",
+      "actual_read_scope": "entire file"
+    },
+    {
+      "path": "kaggle/source/py/persist.py",
+      "sha256": "edc7e0147e9dc69fa8ef8eba65f875179b2720f94d5e2416de098cf81e69b0e1",
+      "actual_read_scope": "entire file"
+    },
+    {
+      "path": "kaggle/source/py/analyst.py",
+      "sha256": "cbbf318903b40a0846be8a39789fa122cdbb09cdec19d52730fb7508bab2f015",
+      "actual_read_scope": "load_on_workers, reload_response, calibrate_profile, set_text, set_candidate, delete_profile, consistency and endpoint validation"
+    },
+    {
+      "path": "kaggle/source/py/resource_limits.py",
+      "sha256": "831c3b839566ba012d2788394f8d62927e29a4d49e02dd2fdc82a5ddb92740e1",
+      "actual_read_scope": "HeavyAdmission and upload/admission limits"
+    },
+    {
+      "path": "kaggle/source/py/qtts_common.py",
+      "sha256": "c4ceea954c69a2b02f3d3f2afeaf7a3708e444910dec8b64268ebe1b04bc1b01",
+      "actual_read_scope": "read_json, write_json_atomic, profile_dir, load_profile"
+    },
+    {
+      "path": "kaggle/source/py/worker.py",
+      "sha256": "e6caa9433849b3c94001bc5b7b37a224bedbb0a567a4a6fee0fd66363d734379",
+      "actual_read_scope": "FasterEngine.load_profile / sanity / stream; Worker locked load and synthesis; health/load routes"
+    },
+    {
+      "path": "kaggle/source/py/voice_library.py",
+      "sha256": "c86f833eaf0b5e286e12b50744a42b5bafa15fefe54996c3e33790729ad05fea",
+      "actual_read_scope": "LibraryStore validation/locks/leases, lines1–180 only"
+    },
+    {
+      "path": "kaggle/source/py/trained_profiles.py",
+      "sha256": "58760a3255cb8399271fb3bd0099a11704d9f603a3cc0d57ff6a0296ed26b8e7",
+      "actual_read_scope": "artifact validation/publication beginning, partial"
+    },
+    {
+      "path": "kaggle/source/py/adapter_engine.py",
+      "sha256": "01ae6434d71db5a04ccfa1e73f36495ba6e67deee7ae4477133297272cb37478",
+      "actual_read_scope": "engine loading and fixed-reference guard beginning, partial"
+    },
+    {
+      "path": "kaggle/source/py/access_control.py",
+      "sha256": "8e90f2b9fe6cf98ca0192bcf1684158cc84f1609ec3ec1d76e2968455d1193d3",
+      "actual_read_scope": "token filesystem and gateway header validation"
+    },
+    {
+      "path": "kaggle/source/go/gateway/main.go",
+      "sha256": "089fe407efc0056525bc365195be8f7122c9787c0d2069d7a297430f1dc19cc8",
+      "actual_read_scope": "activate (parallel loading / final version confirmation)"
+    },
+    {
+      "path": "kaggle/source/go/gateway/session.go",
+      "sha256": "bc677bc3e16fecd2885f4b52c0a2087dfe04def7b1524994c457e1b5fa2218e0",
+      "actual_read_scope": "ProfileInfo / loadProfileInfo / conditioning and reference open validation beginning"
+    },
+    {
+      "path": "kaggle/source/go/gateway/scheduler.go",
+      "sha256": "25702b42be7a7fa623ee54d1a202fa4332a503bfd4690b7553c53751c3c0bfa7",
+      "actual_read_scope": "synthReq / run request seed and binding transport"
+    },
+    {
+      "path": "kaggle/source/web/app.js",
+      "sha256": "0ea5f42dc39b403927155d950c1e8cc1d5303ca61f79f888578dddc9d9fd97b4",
+      "actual_read_scope": "apiFetch / m / accessEpoch, profile controls and candidate selection"
+    },
+    {
+      "path": ".cache/step18/upstream/faster_qwen3_tts/model.py",
+      "sha256": "7d45740b805bb1a4798fbe20ffd580e2a35361e744c4645da106c2b6383d4de2",
+      "actual_read_scope": "precomputed and reference resolver bodies; preparation and batch uses located"
+    },
+    {
+      "path": ".cache/step18/upstream-hf/qwen_tts/inference/qwen3_tts_model.py",
+      "sha256": "e1da450732857c1f5fe3e36ebab85db2f6dc6a48caaff6973f463384e30275e4",
+      "actual_read_scope": "create_voice_clone_prompt / prompt converter / generate_voice_clone batch handling"
+    }
+  ]
+}

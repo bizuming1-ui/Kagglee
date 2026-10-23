@@ -1,0 +1,294 @@
+{
+  "round": 3,
+  "experiment_completed": true,
+  "prompt_contract_cases": [
+    {
+      "case": "list-three-prompts-one-target",
+      "rejected": true,
+      "error": "voice_clone_prompt must have length 1, got 3"
+    },
+    {
+      "case": "dict-three-prompts-one-target",
+      "rejected": true,
+      "error": "voice_clone_prompt['ref_spk_embedding'] must be a list with length 1"
+    },
+    {
+      "case": "three-prompts-three-targets",
+      "accepted": true,
+      "behavior": "three independent aligned batch entries, not reference fusion",
+      "ref_ids": [
+        "ref:text-0",
+        "ref:text-1",
+        "ref:text-2"
+      ]
+    },
+    {
+      "case": "single-icl-snapshot",
+      "accepted": true
+    },
+    {
+      "case": "single-dict-icl-snapshot",
+      "accepted": true
+    },
+    {
+      "case": "explicit-xvector-contract",
+      "accepted": true,
+      "not_default_recommendation": true
+    }
+  ],
+  "calibration_cases": [
+    {
+      "case": "asr-unavailable",
+      "function_returned_normally": true,
+      "calibration": {
+        "results": [
+          {
+            "candidate": 0,
+            "sim": 0.2,
+            "cer": 0.05,
+            "score": 0.125
+          },
+          {
+            "candidate": 1,
+            "sim": 0.9,
+            "cer": 0.05,
+            "score": 0.825
+          }
+        ],
+        "chosen": 1
+      },
+      "final_ref_text": "old-text-1",
+      "asr_evaluation_attempts": 2,
+      "reload_receipts": [
+        {
+          "ok": true
+        },
+        {
+          "ok": true
+        }
+      ],
+      "stale_candidate_assessment_reproduced": false,
+      "missing_asr_reported_as_cer_0_05": true,
+      "http_layer_executed": false,
+      "real_models_executed": false
+    },
+    {
+      "case": "concurrent-candidate-edit",
+      "function_returned_normally": true,
+      "calibration": {
+        "results": [
+          {
+            "candidate": 0,
+            "sim": 0.2,
+            "cer": 0.05,
+            "score": 0.125
+          },
+          {
+            "candidate": 1,
+            "sim": 0.9,
+            "cer": 0.05,
+            "score": 0.825
+          }
+        ],
+        "chosen": 1
+      },
+      "final_ref_text": "new-unassessed-text",
+      "asr_evaluation_attempts": 2,
+      "reload_receipts": [
+        {
+          "ok": true
+        },
+        {
+          "ok": true
+        }
+      ],
+      "stale_candidate_assessment_reproduced": true,
+      "missing_asr_reported_as_cer_0_05": true,
+      "http_layer_executed": false,
+      "real_models_executed": false
+    },
+    {
+      "case": "reload-failed",
+      "function_returned_normally": true,
+      "calibration": {
+        "results": [
+          {
+            "candidate": 0,
+            "sim": 0.2,
+            "cer": 0.05,
+            "score": 0.125
+          },
+          {
+            "candidate": 1,
+            "sim": 0.9,
+            "cer": 0.05,
+            "score": 0.825
+          }
+        ],
+        "chosen": 1
+      },
+      "final_ref_text": "old-text-1",
+      "asr_evaluation_attempts": 2,
+      "reload_receipts": [
+        {
+          "ok": false
+        },
+        {
+          "ok": false
+        }
+      ],
+      "stale_candidate_assessment_reproduced": false,
+      "missing_asr_reported_as_cer_0_05": true,
+      "http_layer_executed": false,
+      "real_models_executed": false
+    },
+    {
+      "case": "all-synth-failed",
+      "function_returned_normally": true,
+      "calibration": {
+        "results": [
+          {
+            "candidate": 0,
+            "error": "injected synthesis failure",
+            "score": -9
+          },
+          {
+            "candidate": 1,
+            "error": "injected synthesis failure",
+            "score": -9
+          }
+        ],
+        "chosen": 0
+      },
+      "final_ref_text": "old-text-0",
+      "asr_evaluation_attempts": 0,
+      "reload_receipts": [
+        {
+          "ok": true
+        },
+        {
+          "ok": true
+        }
+      ],
+      "stale_candidate_assessment_reproduced": false,
+      "missing_asr_reported_as_cer_0_05": false,
+      "http_layer_executed": false,
+      "real_models_executed": false
+    }
+  ],
+  "candidate_payload_cases": [
+    {
+      "input": true,
+      "missing": false,
+      "selected": 1,
+      "result": {
+        "ok": true,
+        "workers": [
+          {
+            "ok": true
+          },
+          {
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "input": false,
+      "missing": false,
+      "selected": 0,
+      "result": {
+        "ok": true,
+        "workers": [
+          {
+            "ok": true
+          },
+          {
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "input": 1.9,
+      "missing": false,
+      "selected": 1,
+      "result": {
+        "ok": true,
+        "workers": [
+          {
+            "ok": true
+          },
+          {
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "input": "1",
+      "missing": false,
+      "selected": 1,
+      "result": {
+        "ok": true,
+        "workers": [
+          {
+            "ok": true
+          },
+          {
+            "ok": true
+          }
+        ]
+      }
+    },
+    {
+      "input": null,
+      "missing": false,
+      "uncaught_exception_type": "TypeError"
+    },
+    {
+      "input": {},
+      "missing": false,
+      "uncaught_exception_type": "TypeError"
+    },
+    {
+      "input": [],
+      "missing": false,
+      "uncaught_exception_type": "TypeError"
+    },
+    {
+      "input": 9,
+      "missing": false,
+      "selected": 0,
+      "result": {
+        "error": "bad index"
+      }
+    },
+    {
+      "input": null,
+      "missing": true,
+      "selected": 0,
+      "result": {
+        "ok": true,
+        "workers": [
+          {
+            "ok": true
+          },
+          {
+            "ok": true
+          }
+        ]
+      }
+    }
+  ],
+  "source_hashes": {
+    ".cache/step18/upstream/faster_qwen3_tts/model.py": "7d45740b805bb1a4798fbe20ffd580e2a35361e744c4645da106c2b6383d4de2",
+    ".cache/step18/upstream-hf/qwen_tts/inference/qwen3_tts_model.py": "e1da450732857c1f5fe3e36ebab85db2f6dc6a48caaff6973f463384e30275e4",
+    "kaggle/source/py/analyst.py": "cbbf318903b40a0846be8a39789fa122cdbb09cdec19d52730fb7508bab2f015"
+  },
+  "method": "AST-extracted real function bodies; external model/network/tokenizer responses are fixtures; deterministic interleaving, not thread-stress or HTTP test",
+  "product_modified": false,
+  "full_model_executed": false,
+  "gpu_executed": false,
+  "acoustic_quality_verified": false
+}

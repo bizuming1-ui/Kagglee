@@ -1,0 +1,23 @@
+{
+  "step": "baseline-and-first-topical-review-only",
+  "passed": true,
+  "branch": "arena/03d65d8e-kagglee",
+  "stage17_assets_unchanged": 53,
+  "frozen_hashes_verified": 94,
+  "prior_76_frozen_hashes_verified": true,
+  "formal_15_files_unchanged": true,
+  "recommendations_round1": 100,
+  "reviews2_3_completed": false,
+  "stage18_self_qa_completed": false,
+  "node_tests_passed": 30,
+  "dsp_synthetic_cases_per_round": 12,
+  "dsp_rounds": 3,
+  "dsp_partition_defect_reproduced": true,
+  "product_source_modified": false,
+  "stage18_release_created": false,
+  "full_functional_validation_completed": false,
+  "full_model_executed": false,
+  "gpu_executed": false,
+  "user_hiss_root_cause_proven": false,
+  "all_user_requirements_completed": false
+}

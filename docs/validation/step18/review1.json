@@ -1,0 +1,708 @@
+{
+  "count": 100,
+  "full_semantic_source_review_complete": false,
+  "recommendations": [
+    {
+      "id": "S18-R1-001",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "将候选参与质心统计与实际ICL锚点分开显示，避免全部片段已融合的误解",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-002",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "在合成收据记录选中的anchor_candidate，而不是只显示profile ID",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-003",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "记录实际锚点字节指纹与对应转写指纹；日志不明文写入私有转写",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-004",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "用不同内容的三个候选验证只选中的音频进入提示提取",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-005",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "审核“候选校准”文案明确逐个试验后选一个，不称多参考融合",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-006",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "查验Faster真实接口的多参考能力，未支持时不伪造列表参数",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-007",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "禁止把三个片段PCM拼成一个提示并配不连续全文",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-008",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "跨候选声纹中心仅作评分依据，不声称它已替代模型speaker embedding",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-009",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "为单个合法候选保留最短建档链路，不强迫三候选",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-010",
+      "topic": "候选真实语义",
+      "source": "py/analyst.py:build_profile / calibrate_profile; py/worker.py:FasterEngine.stream",
+      "recommendation": "给未来多候选策略保留显式模式与回退边界，不静默改变17默认",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-011",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "非法index的布尔、小数、对象与缺省语义分别测试，避免int强转误选或500",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-012",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "核查切换候选与校准并发时磁盘写入、工作者加载是否形成一致事务",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-013",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "候选文件复制失败时保留旧profile JSON，不留下半更新锚点",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-014",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "双卡仅一张加载成功时明确部分失败，不宣称启用完成",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-015",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "旧会话遇新指纹必须继续拒播，不能热切后拼混音色",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-016",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "转写编辑与候选选择同时发生时绑定同一版本，防止音文错配",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-017",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "校准临时profile的anchor_candidate元数据应指向实际试验候选，不能误标0",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-018",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "候选变更后清理或替换提示快照时保留锁内核验",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-019",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "为重复点击候选与取消任务增加幂等与状态测试",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-020",
+      "topic": "候选切换与并发",
+      "source": "py/analyst.py:set_candidate; py/worker.py:_load_profile_locked; py/voice_binding.py",
+      "recommendation": "训练adapter的固定参考限制保持，不让候选切换绕过来源绑定",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-021",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "分别记录请求、首个可用文本、排队、预填充、首PCM、首播放命令",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-022",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "worker t_start在加载提示之后，单独计量冷提示加载而不漏记等待",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-023",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "queue_ms当前覆盖锁等待等前置耗时，拆项后保留旧字段兼容",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-024",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "浏览器firstPlayedMs当前在发play命令处赋值，标明不是硬件实际出声",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-025",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "评估AudioWorklet消费首个语音样本的确认消息，区分主线程命令延迟",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-026",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "跨Python、Go与浏览器仅使用各自单调时间差，不能直接减不同纪元",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-027",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "显式静音停顿不能计为首个可用人声，保留禁止原音占位",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-028",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "首包平均之外记录p50/p95与冷暖状态，不用一次幸运值",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-029",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "将文本长度、参考长度、chunk_size和设备条件写入性能收据",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-030",
+      "topic": "首声定义与时钟",
+      "source": "py/worker.py:Worker.synth; go/gateway/session.go; web/app.js:tick",
+      "recommendation": "首声提速必须同时检查缺字与最终音频完整性，不能裁掉开头",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-031",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "对当前0.7秒下限和初始2秒策略建立确定性到达轨迹对照",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-032",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "分别测试高速稳定、慢速持续、突发包与长网络抖动",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-033",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "初次启动与欠载恢复分别设计目标，不统一缩到最小",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-034",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "将预测器无速率样本时的保守回退纳入首次播放测试",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-035",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "测量AudioWorklet统计消息的刷新间隔对主线程启动判断的影响",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-036",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "在44.1k及48k上下文验证重采样后的fill计秒正确",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-037",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "短于启动阈值但已完成的真实语音应及时播放，不等待不可达缓冲",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-038",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "后台页、暂停恢复、锁定与取消后不得发送迟到play",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-039",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "记录ring dropped样本；任何丢样不能只显示播放成功",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-040",
+      "topic": "浏览器启动缓冲",
+      "source": "web/app.js:needToStart / onWorklet / QttsRing",
+      "recommendation": "低延迟策略只能在欠载预算内启用，不能把断续当自然阅读",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-041",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "对2/4/8/16帧首块大小做同文本同seed对照，测TTFA及总RTF",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-042",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "小首块与稳态大块若需不同大小，先确认真实生成器支持，禁止无效传参",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-043",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "检查decode迭代器首次next含有的预填充时间，不能只测创建生成器",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-044",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "单独计量token生成、codec解码及CPU拷贝，避免归因全部GPU",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-045",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "提示快照重用必须与内容指纹一致，不退回仅按路径缓存",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-046",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "不为首声把ICL换成向量默认，保留相似度条件",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-047",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "比较首段优先调度与后续并行的队头阻塞，不无证据锁死单卡",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-048",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "确认Live聊天第一可用前缀触发不被朗读聚合配置覆盖",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-049",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "保留最大生成token与取消限制，不能为速度删掉输出",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-050",
+      "topic": "模型与调度热路径",
+      "source": "py/worker.py:FasterEngine; py/clone_stream.py:generated_only_stream; go/gateway/scheduler.go",
+      "recommendation": "不默认每卡双模型增加显存；只有目标T4实测才接受吞吐结论",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-051",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "原始RMS约-47.7只作为风险，不推断具体麦克风故障",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-052",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "分别记录归一化前后语音电平与峰值，注明增益上限14dB",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-053",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "候选SNR是估计量，不能把17dB阈值当真实噪声声压",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-054",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "保留raw、strength0.85、strength0.55对照的处理收据",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-055",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "审查声纹相似0.94与SNR增益2dB门禁是否会误接收失真，不能只看单分数",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-056",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "验证全零、强直流、很轻语音及背景声输入的处理决策",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-057",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "对齿音、气声、摩擦音单独测保真，不能以削高频冒无沙沙",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-058",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "不在用户未授权时保存或上传原始私有WAV作为公共证据",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-059",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "已存在非平稳降噪不等于生成输出已降噪，明确处理发生阶段",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-060",
+      "topic": "输入噪声与参考处理",
+      "source": "py/analyst.py:build_profile / denoise / normalize_speech",
+      "recommendation": "录音时扬声器回录网页朗读的可能性仅列假设，不能由截图定论",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-061",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "建立模型PCM、后处理PCM、浏览器录回的分层局部诊断，默认关闭私有采集",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-062",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "将codec窗口起点与边界脉冲位置关联，区分底噪和接缝爆音",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-063",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "对持续人声与停顿分别计算频谱，但无清洁真值时不称绝对SNR",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-064",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "继续验证codec只收到生成码，不能回到参考码前缀解码",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-065",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "真实预训练codec与随机tiny codec的质量证据必须分列",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-066",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "非有限模型输出当前替换为零，应评估失败拒播而非掩盖异常的策略",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-067",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "增益提升可能抬噪，记录处理前后噪声地板变化而不自动强门限",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-068",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "不能用输出全静音或静音段删除作为零噪声验收",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-069",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "保留模型自然人声呼吸与禁止添加噪声的区别，不自动切除语音气息",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-070",
+      "topic": "生成输出噪声定位",
+      "source": "py/worker.py:Worker.synth; py/clone_stream.py:GeneratedCodecWindow",
+      "recommendation": "用户全程纯人声目标需真实WAV试听和添字检查，代码指标不替代",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-071",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "实测同一信号整块与任意分块处理的样本一致性",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-072",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "重点验证NumPy不足96样本首块时淡入是否在下一块重新从零开始",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-073",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "核查NumPy按输入块丢弃不足240样本RMS余数与Rust跨块累积差别",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-074",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "比较Rust逐样本增益平滑与NumPy逐块插值，不能宣称严格等价",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-075",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "保持输出样本数与输入相等，不能为降噪补偿无记录延迟",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-076",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "分别测试DC blocker状态、零输入残留与长静音后重新讲话",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-077",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "测试max_gain_db=0隔离淡入和DC滤波，再开放AGC定位差异",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-078",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "同卡每段重置与跨卡各自状态不同需测量，不能只凭相同目标响度称一致",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-079",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "flush的192样本衰减不是新生成语音，不能加入RTF语音分母",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-080",
+      "topic": "DSP状态与后端一致",
+      "source": "py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler",
+      "recommendation": "若修复NumPy算法须保留Rust接口版本兼容，并添加跨后端容差测试",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-081",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "将独立模型韵律重启、显式停顿、播放欠载三种接缝分类计数",
+      "status": "experiment-completed-partition-dependence-reproduced",
+      "evidence": "dsp-partition-baseline-round1..3.json"
+    },
+    {
+      "id": "S18-R1-082",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "保留朗读12/24首段、20/40/80稳态配置基线再比较，不盲目扩大",
+      "status": "confirmed-baseline-defect-not-fixed",
+      "evidence": "fade-and-dc-isolated / partition_samples=[48] / max_abs_i16_difference=1424, three rounds"
+    },
+    {
+      "id": "S18-R1-083",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "逐字验证分段重新连接等于原文，保护数字、缩写、引号和标点",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-084",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "审查PauseBeforeMs与tail_pause_ms是否重复加停顿，先画时序再修改",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-085",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "禁止跨词PCM重叠掩盖接缝，不牺牲清晰度冒自然度",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-086",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "段尾8ms衰减及下段淡入需以有声边界实测，不只用零边界波形",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-087",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "欠载时0.94尾衰减属于播放补偿，不能误标模型本身沙沙",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-088",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "自然度对照必须同时保存整段朗读，不能只听裁剪后小片段",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-089",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "不同GPU同文与交替长文分别试听；同seed不等于波形完全相同",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-090",
+      "topic": "连续语义与播放接缝",
+      "source": "go/gateway/segmenter.go; go/gateway/session.go; web/app.js:QttsRing",
+      "recommendation": "只有真实模型支持的连续条件才能声称跨段联合生成，不换名称包装独立合成",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-091",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "冻结原始至17包、全部manifest及正式工作台，新增18不得覆盖历史包",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-092",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "三轮100建议均标已确认问题、待证假设或保留约束，不虚报300个bug",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-093",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "完成三轮审查后再逐题决策，每题50建议后才进入下一题",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-094",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "历史334测试不能算18新增验证，依赖缺失需如实记录和重建",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-095",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "对每个修复保留修复前失败、修复后通过的同输入收据",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-096",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "三轮Python、Node、Go race、协议和浏览器必须针对最终源码再执行",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-097",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "CPU合成信号实验不代替真实T4语音实验，硬件不足保持BLOCKED",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-098",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "按实测热路径选择语言；不要新增Java/C#/SQL服务凑多语言",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-099",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "最终18复制页、下载、剪贴板拒绝回退与手机逐字节校验不可省略",
+      "status": "pending-evidence-or-preservation"
+    },
+    {
+      "id": "S18-R1-100",
+      "topic": "回归、语言和交付门禁",
+      "source": "kaggle/repack.py; tests/browser; docs/validation/step17/final-checks.json",
+      "recommendation": "将全部已完成备忘录内嵌完整提示词；未完成轮次必须明确，不编造结论",
+      "status": "pending-evidence-or-preservation"
+    }
+  ]
+}
