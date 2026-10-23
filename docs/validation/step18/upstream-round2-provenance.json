@@ -1,0 +1,74 @@
+{
+  "inspected_wheels": [
+    {
+      "project": "faster-qwen3-tts",
+      "version": "0.5.4",
+      "metadata_url": "https://pypi.org/pypi/faster-qwen3-tts/0.5.4/json",
+      "wheel_url": "https://files.pythonhosted.org/packages/b3/e5/074b3ca7bb05f2d3564a456bc7620c24e65edeb1288c118a4b0506d55f11/faster_qwen3_tts-0.5.4-py3-none-any.whl",
+      "wheel_sha256": "714bfb6d0a70fac177eac48b0a750e04bd597ab9aa86d35c4271aa15d0d1b716",
+      "requires_dist": [
+        "qwen-tts-hf<0.2,>=0.1.1.post1",
+        "transformers<6,>=5.15.1",
+        "torch>=2.5.1",
+        "numpy",
+        "soundfile",
+        "huggingface-hub<2.0,>=1.5.0",
+        "qwentts-cpp-python>=0.5.0; sys_platform == \"darwin\" and platform_machine == \"arm64\"",
+        "qwentts-cpp-python>=0.5.0; extra == \"ggml\"",
+        "fastapi>=0.100.0; extra == \"demo\"",
+        "uvicorn[standard]>=0.24.0; extra == \"demo\"",
+        "python-multipart>=0.0.7; extra == \"demo\"",
+        "huggingface-hub[oauth]<2.0,>=1.5.0; extra == \"demo\""
+      ]
+    },
+    {
+      "project": "qwen-tts",
+      "version": "0.1.1",
+      "metadata_url": "https://pypi.org/pypi/qwen-tts/0.1.1/json",
+      "wheel_url": "https://files.pythonhosted.org/packages/31/01/95f3ae26f5b7eb2105f69ad2c15af5a28b9ebdd1258a0b27541f5ebd6225/qwen_tts-0.1.1-py3-none-any.whl",
+      "wheel_sha256": "11a290d8dabc7ef91a90c54478c8ab19b3edb1d85c0882313721892bdc4af15d",
+      "requires_dist": [
+        "transformers==4.57.3",
+        "accelerate==1.12.0",
+        "gradio",
+        "librosa",
+        "torchaudio",
+        "soundfile",
+        "sox",
+        "onnxruntime",
+        "einops"
+      ]
+    },
+    {
+      "project": "qwen-tts-hf",
+      "version": "0.1.1.post1",
+      "metadata_url": "https://pypi.org/pypi/qwen-tts-hf/0.1.1.post1/json",
+      "wheel_url": "https://files.pythonhosted.org/packages/ed/14/57e0ba0b84535102e08f33f1e14a2e0975229f5b878290343705727a3a33/qwen_tts_hf-0.1.1.post1-py3-none-any.whl",
+      "wheel_sha256": "ed5b7aae64cf795243369fb5226173f459a45689ea86db1c6d3eb14fc0c2c01d",
+      "requires_dist": [
+        "transformers<6,>=5.15.1",
+        "accelerate==1.12.0",
+        "gradio",
+        "librosa",
+        "torchaudio",
+        "soundfile",
+        "sox",
+        "onnxruntime",
+        "einops"
+      ]
+    }
+  ],
+  "qwen_available_release_versions": [
+    "0.0.2",
+    "0.0.3",
+    "0.0.4",
+    "0.0.5",
+    "0.1.0",
+    "0.1.1"
+  ],
+  "full_models_executed": false,
+  "reviewed_runtime_provider": "qwen-tts-hf==0.1.1.post1",
+  "old_qwen_tts_wheel_role": "comparison only; not installed; not used as the reviewed runtime implementation",
+  "lookup_correction": "Initial pip query mistakenly requested qwen-tts==0.1.1.post1 (not found). Read project pins, corrected to qwen-tts-hf==0.1.1.post1. No product dependency change.",
+  "nonruntime_qwen_tts_requested_version_available": false
+}

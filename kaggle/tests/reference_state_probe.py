@@ -1,0 +1,135 @@
+"""Stage18 read-only AST control-flow probes. No HTTP, full model, GPU or acoustic proof.
+
+Executes named functions extracted from hash-recorded stage17/upstream files.
+Only external tokenizer/ASR/speaker/GPU/network responses are injected fixtures.
+"""
+from pathlib import Path
+from types import SimpleNamespace
+import argparse, ast, asyncio, copy, hashlib, json, shutil, tempfile
+import numpy as np
+R=Path(__file__).resolve().parents[2]
+
+def extract(path,name,ns):
+    tree=ast.parse(path.read_bytes())
+    node=copy.deepcopy(next(n for n in ast.walk(tree) if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef)) and n.name==name))
+    node.decorator_list=[]
+    module=ast.Module(body=[ast.ImportFrom(module='__future__',names=[ast.alias(name='annotations')],level=0),node],type_ignores=[])
+    exec(compile(ast.fix_missing_locations(module),str(path),'exec'),ns)
+    return ns[name]
+
+def prompt_cases():
+    faster=R/'.cache/step18/upstream/faster_qwen3_tts/model.py'
+    hf=R/'.cache/step18/upstream-hf/qwen_tts/inference/qwen3_tts_model.py'
+    converter=extract(hf,'_prompt_items_to_voice_clone_prompt',{})
+    model=SimpleNamespace(_build_ref_text=lambda x:'ref:'+x,_tokenize_texts=lambda xs:xs)
+    model._prompt_items_to_voice_clone_prompt=lambda items:converter(model,items)
+    subject=SimpleNamespace(model=model)
+    resolve=extract(faster,'_resolve_precomputed_voice_clone_prompt',{})
+    items=[SimpleNamespace(ref_code='codes-'+str(i),ref_spk_embedding='speaker-'+str(i),x_vector_only_mode=False,icl_mode=True,ref_text='text-'+str(i)) for i in range(3)]
+    cases=[]
+    for name,prompt in [('list-three-prompts-one-target',items),('dict-three-prompts-one-target',converter(model,items))]:
+        try:resolve(subject,[None],'fallback',prompt)
+        except ValueError as error:cases.append({'case':name,'rejected':True,'error':str(error)})
+        else:raise AssertionError('three prompts were unexpectedly accepted for one target')
+    vcp,ids,icl=resolve(subject,[None]*3,'fallback',items)
+    assert vcp['ref_code']==['codes-0','codes-1','codes-2'] and ids==['ref:text-0','ref:text-1','ref:text-2'] and icl
+    cases.append({'case':'three-prompts-three-targets','accepted':True,'behavior':'three independent aligned batch entries, not reference fusion','ref_ids':ids})
+    vcp,ids,icl=resolve(subject,[None],'fallback',items[:1]);assert ids==['ref:text-0'] and len(vcp['ref_spk_embedding'])==1 and icl
+    cases.append({'case':'single-icl-snapshot','accepted':True})
+    vcp,ids,icl=resolve(subject,[None],'fallback',converter(model,items[:1]));assert ids==['ref:fallback'] and icl
+    cases.append({'case':'single-dict-icl-snapshot','accepted':True})
+    vcp,ids,icl=resolve(subject,[None],'',{'ref_spk_embedding':['speaker-0'],'ref_code':[None],'x_vector_only_mode':[True]});assert not icl and ids==[None]
+    cases.append({'case':'explicit-xvector-contract','accepted':True,'not_default_recommendation':True})
+    return cases,[faster,hf]
+
+class Store:
+    def __init__(self,root):
+        self.root=root;self.pid='fixture-profile';self.d=root/self.pid;self.d.mkdir()
+        for i in range(2):(self.d/f'cand{i}.wav').write_bytes(b'fixture-candidate-'+bytes([i]))
+        (self.d/'anchor_0.wav').write_bytes((self.d/'cand0.wav').read_bytes())
+        self.profile={'id':self.pid,'anchor':'anchor_0.wav','anchor_candidate':0,'ref_text':'old-text-0','candidates':[{'file':f'cand{i}.wav','text':f'old-text-{i}'} for i in range(2)]}
+    def load(self,pid):return copy.deepcopy(self.profile)
+    def write(self,path,p):
+        if path.parent.name==self.pid:self.profile=copy.deepcopy(p)
+        path.write_text(json.dumps(p))
+    def directory(self,pid):return self.root/pid
+
+def calibration_case(mode):
+    path=R/'kaggle/source/py/analyst.py'
+    with tempfile.TemporaryDirectory() as tmp:
+        store=Store(Path(tmp));reloads=[];mutated=False;eval_calls=0;assessed=[]
+        def post(*args,**kwargs):return SimpleNamespace(json=lambda:{'ok':True})
+        def synth(worker,tid,text,seed):
+            nonlocal mutated
+            index=int(tid.rsplit('_',1)[-1])
+            if mode=='all-synth-failed':raise RuntimeError('injected synthesis failure')
+            assessed.append({'candidate':index,'ref_text':json.loads((store.directory(tid)/'profile.json').read_text())['ref_text']})
+            if mode=='concurrent-candidate-edit' and not mutated:
+                mutated=True
+                # Valid metadata state reachable by selecting/editing candidate1,
+                # then selecting/editing candidate0 while calibration is running.
+                # WAVs do not change; the new matching-text condition was NOT assessed.
+                store.profile['candidates'][1]['text']='new-unassessed-text'
+                store.profile['candidates'][0]['text']='concurrent-current-text'
+                store.profile['ref_text']='concurrent-current-text'
+            return np.asarray([.2 if index==0 else .9],np.float32),{}
+        def transcribe(*args):
+            nonlocal eval_calls
+            eval_calls+=1
+            raise RuntimeError('injected unavailable ASR evaluator')
+        def reload(pid):
+            receipts=[{'ok':mode!='reload-failed'}]*2;reloads.append(receipts);return receipts
+        ns={'load_profile':store.load,'profile_dir':store.directory,'np':np,'shutil':shutil,'write_json_atomic':store.write,'worker_post':post,
+            'synth_full':synth,'SPK':SimpleNamespace(method='ecapa',embed=lambda y:y[0],sim=lambda e,c:float(e)),
+            'to16k':lambda y:y,'ASR':SimpleNamespace(transcribe=transcribe,release_after_use=lambda:None),
+            'MOCK':False,'CAL_TEXTS':['fixture target'],'cer':lambda a,b:0.,'load_on_workers':reload,'jlog':lambda *a:None}
+        # A real centroid file selects the real centroid branch, using fixture embeddings.
+        np.save(store.d/'centroid.npy',np.asarray([1.],np.float32))
+        fn=extract(path,'calibrate_profile',ns);result=fn(store.pid)
+        if mode!='all-synth-failed':
+            assert all(row['cer']==.05 for row in result['results']) and eval_calls==2 and result['chosen']==1
+        if mode=='concurrent-candidate-edit':
+            assert store.profile['ref_text']=='new-unassessed-text' and (store.d/'anchor_1.wav').read_bytes()==(store.d/'cand1.wav').read_bytes()
+            assert assessed[1]['ref_text']=='old-text-1'
+        if mode=='reload-failed':assert all(not r['ok'] for r in reloads[-1])
+        if mode=='all-synth-failed':assert all(row['score']==-9 for row in result['results']) and result['chosen']==0
+        return {'case':mode,'function_returned_normally':True,'calibration':result,'final_ref_text':store.profile['ref_text'],
+            'asr_evaluation_attempts':eval_calls,'reload_receipts':reloads[-1],'assessed_reference_texts':assessed,
+            'stale_candidate_assessment_reproduced':mode=='concurrent-candidate-edit',
+            'missing_asr_reported_as_cer_0_05':mode!='all-synth-failed','http_layer_executed':False,'real_models_executed':False}
+
+def candidate_case(value,missing=False):
+    with tempfile.TemporaryDirectory() as tmp:
+        store=Store(Path(tmp))
+        async def run(fn,*args):return fn(*args)
+        ns={'load_profile':store.load,'profile_dir':store.directory,'shutil':shutil,'write_json_atomic':store.write,'asyncio':asyncio,
+            'HEAVY':SimpleNamespace(run=run),'load_on_workers':lambda p:[{'ok':True}]*2,'reload_response':lambda r:{'ok':True,'workers':r},'_err':lambda message,*args:{'error':message}}
+        fn=extract(R/'kaggle/source/py/analyst.py','set_candidate',ns)
+        try:result=asyncio.run(fn(store.pid,{} if missing else {'index':value}))
+        except (TypeError,ValueError) as error:return {'input':value,'missing':missing,'uncaught_exception_type':type(error).__name__}
+        return {'input':value,'missing':missing,'selected':store.profile['anchor_candidate'],'result':result}
+
+def consistency_case():
+    calls=[]
+    def synth(gpu,pid,text,seed):
+        calls.append({'gpu':gpu,'seed':seed,'text':text})
+        return np.asarray([.25,.35],np.float32),{'rtf_x':1.,'first_chunk_ms':100.,'gain_db':0.}
+    ns={'load_ref_stats':lambda pid:{'prof':{}},'WORKERS':[0,1],'np':np,'synth_full':synth,
+        'evaluate_audio':lambda *args:{'speaker_sim_centroid':.9,'energy_gen':{'speech_db':-18.}},
+        'SPK':SimpleNamespace(method='fixture',embed=lambda y:y,sim=lambda a,b:.99),'to16k':lambda y:y}
+    result=extract(R/'kaggle/source/py/analyst.py','consistency',ns)('fixture-profile',['same fixture target'])
+    assert [c['seed'] for c in calls]==[100,101]
+    return {'case':'cross-gpu-diagnostic-seed-control','calls':calls,'different_seeds_for_same_target':True,
+        'consistent_field_with_injected_equal_metrics':result['consistent'],'real_quality_inferred':False}
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--round',type=int,required=True);args=parser.parse_args()
+    prompts,paths=prompt_cases()
+    calibration=[calibration_case(mode) for mode in ['asr-unavailable','concurrent-candidate-edit','reload-failed','all-synth-failed']]
+    payloads=[candidate_case(v) for v in [True,False,1.9,'1',None,{},[],9]]+[candidate_case(None,missing=True)]
+    assert payloads[0]['selected']==1 and payloads[2]['selected']==1 and payloads[4]['uncaught_exception_type']=='TypeError'
+    paths.append(R/'kaggle/source/py/analyst.py')
+    print(json.dumps({'round':args.round,'experiment_completed':True,'prompt_contract_cases':prompts,'calibration_cases':calibration,'candidate_payload_cases':payloads,'consistency_case':consistency_case(),
+        'source_hashes':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in paths},'probe_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'method':'AST-extracted real function bodies; external model/network/tokenizer responses are fixtures; deterministic interleaving, not thread-stress or HTTP test',
+        'product_modified':False,'full_model_executed':False,'gpu_executed':False,'acoustic_quality_verified':False},ensure_ascii=False,indent=2))
+if __name__=='__main__':main()
