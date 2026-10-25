@@ -1,0 +1,54 @@
+{
+  "round": 3,
+  "passed": true,
+  "fresh_complete_source_extraction": true,
+  "actual_go_offline_build": true,
+  "gateway_binary_sha256": "4c0ea65ef2dc5924acdaccffb2ad44810a2865bbbe9bf3774172cebf870f2232",
+  "four_actual_programs": true,
+  "unauthorized_status": 401,
+  "complete_s5_app_served_byte_exact": true,
+  "initial_profiles_empty": true,
+  "mock_worker_count": 2,
+  "worker_pcm_bytes": [
+    75050,
+    75050
+  ],
+  "gateway_pcm_bytes": 181716,
+  "gateway_end_present": true,
+  "explicit_synthetic_profile_fixture": true,
+  "physical_gpu_or_model_executed": false,
+  "physical_audio_quality_or_speed_verified": false,
+  "processes": [
+    {
+      "role": "worker0",
+      "pid": 9142,
+      "waited": true,
+      "exit_code": -15,
+      "pidfd_exit_observed": true
+    },
+    {
+      "role": "worker1",
+      "pid": 9143,
+      "waited": true,
+      "exit_code": -15,
+      "pidfd_exit_observed": true
+    },
+    {
+      "role": "analyst",
+      "pid": 9144,
+      "waited": true,
+      "exit_code": -15,
+      "pidfd_exit_observed": true
+    },
+    {
+      "role": "gateway",
+      "pid": 9145,
+      "waited": true,
+      "exit_code": -15,
+      "pidfd_exit_observed": true
+    }
+  ],
+  "launcher_sha256": "f54346e232b44750f77c506bc9cefd155edd809c0f7444092621fc7b0bb4fab7",
+  "zip_sha256": "1559b70d7451736fef4d288539dadf465d15e8a266864167612e0fd628970243",
+  "all_four_waited_and_pidfd_exit_observed": true
+}

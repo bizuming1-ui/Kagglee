@@ -2,11 +2,47 @@
 
 ## 当前优先状态
 
-当前活动分支arena/03d65d8e-kagglee，基于已合并17；原始–17与正式工作台冻结。以下历史首页不是本阶段完工声明。当前累计内嵌60份完整备忘录，包括原57份及本阶段已完成文件。
+当前活动分支arena/1160bd87-kagglee，继承已合并的arena/03d65d8e-kagglee两轮审查；历史baseline保留原分支名，不改写历史。原始–17与正式工作台冻结。以下历史首页不是本阶段完工声明。当前累计内嵌111份完整备忘录，包括原57份及本阶段已完成文件。
+
+**当前优先检查点（S5完成短尾/重采样/流epoch实际修复）：** 报告KAGGLE_STEP18_S5_PLAYBACK.md。Q32按四选项选C＋50行动、三遍各100建议先归档，未开33。新增完整kaggle/step18/web/app.js，从冻结17复制只改Player P和嵌入Worklet V；网络解析器/到达预测器/整个UI后缀逐字节保持，页面实际实例化新Player。完成任何正pending可play（初始20/50ms、1样本、starved恢复），未完成缓冲阈值保留。post目标总数−played−dropped计pending，当前epoch endACK且pending0才ended，旧fill0不提前结束；溢出单列不冒无损。全局整数坐标线性插值，末样本保持到ceil(Nin*rate/24000)，取消不flush；epoch拒旧状态/PCM和stop后复活，不改网络协议。firstPlayedMs仍play命令，不冒声卡/消费时间。极短1样本可能被淡入归零，仅计数消费不等于可听人声。
+
+37VM旧红28失败/9保留，候选37、8源码和15真实Chromium预检全PASS。最终610CPU×3=1830PASS（旧602逐ID/结果保留）、37专项VM×3、173Chromium×3=519PASS（原158＋新15，0失败/flaky/skip/retry）；新15含9原生消费、3空/取消/换流、3完整UI合成HTTP到真实Worklet。真实浏览器headless/muted，不是实体扬声器/麦克风，HTTP/PCM/参考状态明确fixtures，无Go/模型/声学新执行。CPU源合同内也跑37VM，不能加总当独立功能数。最终24审计/Node30/AST58/JS/repack与两次seal见progress-s5。浏览器数分钟一轮原进程顺序等待，不因wait超时重启重复。继承237TCP/轮711，新S5无后端TCP。Python复用无安装；node_modules消失后本次确实npm ci --ignore-scripts按旧lock安装，package/lock/既有配置SHA不改。2049保护/2046匹配/3旧日志缺，完整交接111份，17/正式/S3S4不动，18未发未部署，整体PARTIAL/BLOCKED。8原建议限定链接不是原300最终签收。线性插值仅测24k/44.1k/48k，不冒任意降采样抗混叠；设备挂起/后台/队列溢出等仍有边界。下一步S6时序/诊断，保留字段含义，真实双T4/长录音训练/声学/首声/模型RTF和S3native门禁未豁免。直接继续无需Continue，不保证一定成功。
+
+**上批历史检查点（S4有界裁剪与worker结束/取消实际修复）：** 报告KAGGLE_STEP18_S4_TRIMMER.md。Q31四选项选C＋50行动、三遍各100建议先归档，未开32。新增step18_trimmer.py与实际worker_s4.py入口；S3 worker.py/DSP不改以保留39旧合同。新worker只换裁剪器导入和Worker.run_job，其余函数方法AST相同。固定120样本网格残帧（24k下不足5ms）、跨块35ms前史、有界1800ms尾队列；中段静音超限顺序输出而非删除。正常finish处理实际长度残帧、保留缓存全部非零尾、仅裁计数精确零；取消/异常清缓存、不排衰减尾。finish返回后emit前重查取消，stats.trim区分输入/返回/丢弃/缓存与守恒，另记cancelled_after_trim_samples，不冒声卡播放原子取消。领先低电平历史仍可裁（仅保留前史），不能保证全部弱语音保留；非零尾也可含噪声。
+
+候选裁剪30/worker10首次预检PASS；旧版红初41fail+1error为inf keep_ms旧OverflowError，严格ValueError合同保留但转成明确断言失败，最终42fail/0error/skip；初日志/测试/runner源码留档，不是42bug。完整602×3=1806PASS、0fail/error/skip，旧562逐ID和结果完整继承（S3 worker合同仍针对保留的S3入口）；旧237TCP/轮711，新S4无TCP，engine/pin明确替身。21矩阵×3对独立batch参考逐样本相等；601秒合成流×3各14424000样本，实达且守住43200尾上限，不保留PCM历史，不是真录音/训练。CPU约1.097–1.129秒/601秒合成音频，正确性开销比旧裁剪更高，不冒提速/模型RTF/首声改善。最终24审计/Node30/AST57/JS/repack三轮与独立两次封存以progress-s4为准。首次seal对旧S1删除/提交交错误要求与历史状态完全相同，实际原测试已允许200或503；只正规化这个精确test/path/method的既有两状态，其余严格核验，原CPU/测试不改。初verifier/日志/manifest已归档，最终附加检查另名s4-seal-final-checks。1905历史保护/1902匹配/3旧.log缺，不补造；本步复用venv无安装，freeze与S3一致；无Go/Rust/Torch/Qwen/模型/训练/声学新执行。5原建议仅限定链接、原300最终签收仍0。完整交接106份，17/正式工作台不动、18未发未部署，整体PARTIAL/BLOCKED、完整S3 native/声学仍未签。下一步S5播放器完成短尾排空，不把S4工程通过当真实自然无沙沙/同声/双T4/长录音真训练成功。直接继续无需Continue，不保证一定成功。
+
+**上批历史检查点（S3因果 NumPy DSP 与隔离worker实际接入）：** 报告KAGGLE_STEP18_S3_DSP.md。Q30按四选项选C＋50行动及三遍100建议先归档，未开31。新增step18_audio_rt.py，唯一模块名连接隔离worker.py；全部worker命名定义AST与冻结17保持。固定RMS平方和/余数、逐样本30ms/600ms因果增益、淡入绝对位置，process立即同样本数返回，不等未来RMS；定义flush/关闭/非法参数。float64状态/ties-to-even，-46dB精确门限；与旧NumPy整段输出会不同。候选仅启用numpy-causal-v1，不装载未验收Rust，冻结Rust/ABI源码不动。旧版30合同44失败记录/0error/skip，候选30PASS；新worker9合同真实run_job/trimmer/DSP/frame，engine/pin明确替身。完整562×3=1686PASS、0failure/error/skip，旧523逐ID/结果完整保留；继承237TCP/轮，新S3无TCP。14分块矩阵×3输出最大差0int16且最终gain/env相等；601秒合成流×3各14424000样本、只有固定标量状态，不是实际长录音或训练。CPU小块较快而整段/1920较慢，长合成DSP约0.00976–0.01068 CPU时间/音频时长，不能冒模型RTF/首声/听感提升。不新增强降噪/参考PCM。首次worker预检4error为fixture缺dtype_name，只补替身、首错留档；旧极值float32溢出警告由最终红日志保存。最初附加检查成功收据保留、最终另名s3-final-checks三轮24审计/Node30/AST53/JS/repack。独立两次封存以progress-s3和stdout为准。历史保护1768/1765匹配/3旧.log缺，不补造；本次venv重建且freeze与S2-B相同，当前无Go/rustc/cargo/Torch/Qwen，后面的“沿用环境/Go存在”只属历史。完整交接101份，18未发布未部署，完整S3/native/声学及整体PARTIAL/BLOCKED。8原建议限定链接不等于原300最终签收。下一步S4 EdgeTrimmer短块/预滚/held尾/finish/取消，DSP守恒不代表原trimmer已无丢样本。直接继续无需Continue，不保证一定成功。
+
+**上批历史检查点（S2-B有效指标与加载就绪实际实现）：** 报告KAGGLE_STEP18_S2_VALIDITY.md。Q29四选项选C及50行动先完成，未开30，原Q25–28／3×100保持。新增step18_calibration_metrics.py，分析服务相对S2-A仅改build_profile/calibrate_profile/calibrate，其余命名定义AST保持。逐目标缺失null／完整覆盖／有限ECAPA及ASR门禁，保留原排序公式但不再CER0.05／全失败chosen0。无完整候选422、不写盘、保旧报告；失败候选不影响其他完整者。临时HTTP／严格ok／pin核验；选择先提交再检查最终worker和保存版本，失败503/savedtrue/readyfalse，后改／删则saved_version_current=false，不虚构回滚。成功选择报告仍与磁盘一致，quality_verified=false；后台可选校准摘要源代码接入但完整创建未实测。公共错误采用固定码，不回显私有异常。短时长／声音阈值不猜测。
+
+最终23合同对归档S2-A为36失败记录/0error/skip，候选预检PASS。首红34失败+1KeyError因新字段不存在，assertIn后红35，原日志保留。初三轮523PASS后复核发现int16最小值abs溢出，保存受控fixture，改min/max并补子用例，最终另名s2b-final三轮，不覆盖或混算初轮。初源码两份按记录SHA确定性逆变换重建且明确标识，不冒事前快照；真实S2-A改前快照为s2b-before/index。最终三轮／24审计／Node30／AST47／JS／repack及独立两次核验以progress-s2b.json为准，旧450冻结、旧50当前候选、新23当前候选。1609历史保护/1606匹配/3旧.log仍缺；冻结53/94/15及正式17不动，无安装、Go／实浏览器／模型／训练／T4／声学或提速新验收。12条原建议增加当前实现限定证据，有限并集75→81（27%仅证据覆盖、非整体进度），原300最终／功能签收0。完整交接96份，18未发布未部署，G0／整体PARTIAL/BLOCKED。下一步S3分块一致性与后端对照，S2跨进程／创建并发写者／极短音／真实模型门禁仍保留。直接继续无需Continue，不承诺一定成功。
+
+
+**上批历史检查点（S2-A校准快照实际实现）：** 报告KAGGLE_STEP18_S2_SNAPSHOT.md。隔离18候选新增step18_calibration_state.py并修改calibrate_profile/commit_text/commit_candidate，S1其余命名定义AST保持；完整S1源码、README、origin及旧交接等改前已逐字节归档s2-before与index。短锁捕获完整元数据／候选／锚点／质心文件字节，试验只使用捕获内容；短锁内重核输入后提交，变化／删除／trained转变返回409且不应用旧评分。真实HTTP候选／文本ABA由修订nonce识别，相同重复选择幂等。每档案仅一校准、独立且长度安全的临时ID／700目录、仅清理自有目录、ASR释放finally。最多24候选／聚合文件64MiB，峰值副本内存另计；不声称跨进程／不合作写盘全局事务。S1同一新22合同对照21失败记录/0error/0skip，当前候选22预检首次全PASS；不是21独立bug。三轮完整回归和附加核验实际状态以progress-s2.json为准，分清旧450冻结控制、当前S2上重跑的28项S1及22项新校准合同。校准缺失CER0.05、全失败chosen0、非有限／覆盖率评分、最终worker回执仍未修，不能签完整S2、声音或真双T4。原300／三遍53源各13668行／Q25–28及50行动保留，未开29；新限定链接是已有集合加强，不用映射比例冒充整体完成率。1509保护历史路径中1506匹配、3旧.log D02仍缺，显式归档可变候选而不是伪称活源码未改；53源/94冻结/15正式及17包不动。环境无安装，freeze沿用，无Go/实浏览器/模型/训练/双T4/实体音频/声学性能新验收。完整交接94份，默认服务／复制页仍17、18未发布、G0与整体PARTIAL/BLOCKED。下一步S2-B有效评分／全失败拒选／加载回执，随后才推进DSP等；直接继续无需Continue，不保证一定成功。
+
+
+**上批历史检查点（S1隔离候选实际实现）：** 用户要求真正推进，问题28按顺序自答A/B/C/D选C并列50行动，完整文件KAGGLE_STEP18_Q28_S1_CANDIDATE.md；未开29，原25–27及各50原文SHA不变。明确流程调整：允许隔离候选修复，但G0整体、发布、默认入口和声学未放行，不伪造G0通过。新增kaggle/step18/analyst.py及step18_profile_inputs.py和来源/README，实代码不是仅测试替身；只改set_text/set_candidate/delete_profile并新增4个提交辅助函数，其余命名函数AST与冻结17一致，包括原校准和reload。严格两个入口JSON/类型/Unicode/重复未知键/128KiB预算；HEAVY准入早于磁盘写入、executor重核档案/固定训练参考；内容地址锚点避免先覆旧字节再JSON失败，候选/文本/删除有限进程内锁且网络等待不持锁。删除也经HEAVY，满额可429；不覆盖校准或跨进程事务，不自动GC旧锚点。相同最终28合同对冻结17为43失败记录/2明确skip/0error（非43独立bug；旧FIFO危险阻塞不跑，新executor删除合同不适用旧版），候选28首次最终预检全PASS/0skip。首次26对照卡在unittest巨大WAV差异格式化，faulthandler保留，仅改文件快照为SHA+长度；初始日志和后续26/28收据均不覆盖。完整CPU478=旧450冻结对照+新28候选合同，3轮全部通过/失败错误跳过0；不能称478都是新运行时全功能验收。每轮159真实TCP，三轮477，新候选74/轮共222；包含期望错误／注入500，非都满足功能的成功响应。15原建议新候选实现／保护证据加强已有75并集，不虚增建议覆盖或把25%说成整体进度，最终原300功能／最终签收仍0。一次元数据预计76实际75的断言已记录，不是测试失败。附加审计24/Node30/JS/repack/AST43和独立核验结果以本批报告及progress-s1-candidate.json为准。1402历史期待/1399匹配/3旧日志D02缺失，53源/94冻结/15正式及17包不动。无安装，freeze与前批字节相同；无Go/race/实浏览器/Torch/Qwen/训练/双T4/实体音频/声学或提速新验收。完整交接93份，默认服务/工作台/复制仍17、18未发布。校准过期评分/假CER/全失败chosen0/临时profile冲突等未修，下一步S2隔离候选快照与提交冲突，不先动DSP或启用融合；继续直接操作无需Continue，不能承诺一定成功。
+
+
+**上批历史检查点（G0第11批）：** 报告KAGGLE_STEP18_G0_VERSION_HTTP.md。原analyst.app的单Uvicorn事件循环真实HTTP＋HEAVY执行器Event屏障，原load_on_workers/calibrate_profile实际运行，worker传输/ASR/说话人/synth明确替身。不是多server或线程压力、实际模型／Go鉴权链。新增12=8限定保护/4未修观察，首次预检12PASS；CPU450（旧438逐ID/结果完整保留）×3＝1350PASS，失败/错误/跳过0。每轮旧61＋新24＝85真实TCP请求，三轮255，其中新版本组合72；状态200×32/500×17/400×16/422×6/404×1/409×6/503×5/429×2，错误码可为未修见证而不是产品功能成功。普通候选/文本两方向重叠的旧reload被pin挡503，不能将所有并发笼统判成无保护；校准评估后真实HTTP改候选和转写仍200保存旧评分，新文本保留而非被覆盖。另见满HEAVY时新text/candidate429之前已写盘、同名文件旧bytes评估而新bytes被选、真实DELETE后校准500非4xx且未复活档案。文件bytes变化仅自有文件fixture，非HTTP上传或远程利用。全合成失败的清理保护不等于chosen0有效校准。附加审计24/Node30/JS/repack/AST40及独立核验的实际结果见本批checks与progress-version-http.json，不挪用历史成绩。12原建议精确关联新测试与三轮HTTP下标/SHA，证据并集70→75；75/300=25%只是部分证据覆盖，不是整体完成率，最终/功能签收仍0。1317历史期待/1314已有SHA匹配/3旧.log缺失D02/0变更，不伪造缺失。沿用现有venv、无安装、freeze与上批逐字节相同；无Go/Rust/npm/Torch/Qwen/模型/双T4/真训练/声学/提速新验收。53源/94冻结/15正式不改，91份完整交接。后台等待流曾断开，不重启或覆盖CPU，后续原三轮收据完整通过；元数据tail通配检查误用单独留档，非测试失败。产品未改、声音优化未实施、G0与整体PARTIAL/BLOCKED、不跳S1/Q28/18发布。下一步按证据补齐剩余建议具体合同及门禁处置，不再把普通编辑pin已有保护当缺陷；校准快照／提交冲突与HEAVY先写后拒为后续修复重点，真模型与双T4验证仍必需。直接继续无需Continue，不承诺一定成功。
+
+
+**上批历史检查点（G0第10批）：** 原analyst.app经Uvicorn临时环回TCP端口＋httpx真实socket测试，不是TestClient或AST；worker ACK／profile均明确fixture、无Go鉴权链或模型。CPU438（继承426+新12，7保护/5观察组）×3＝1314 PASS、failure/error/skip0，426逐ID/结果及原16观察与前批完全一致；每轮61真实请求、合计183，状态200×19/500×16/400×16/422×6/404×1/409×3。I01 bool/float/string index强转接受；I02 null/容器/非有限index及顶层NaN/±Infinity500；I03缺省0/重复键最后生效/未知忽略；I04非字符串转写str化且surrogate500；I05损坏candidates及预装父路径/链接file行为，所有文件仅自有临时树，不能称远程任意私密文件读或模型接受。均未修，500是观察见证非功能成功。7保护含合法候选字节/pin/Unicode、越界/缺档、有限非对象422、trained三入口409、library严格JSON400和HEAVY槽恢复。另NumPy12/8＋CLI4各3轮（三项期望blocked，resource gpu_verified=false）；附加24审计/Node30/JS/repack/AST39各3轮通过。新12预检首次通过，探索JSON保存；检查脚本id→test KeyError仅元数据检查，已留档。当前.venv重建、Python固定依赖全匹配旧freeze去掉go-bin，NumPy仍2.2.6非requirements2.4.6；安装日志保存，无Go/Rust/npm/Torch/Qwen/模型安装，C ABI fixture非Rust。12原建议R1-011/020、R2-021..030新增具体test ID与三轮case下标/SHA，有限证据并集70、230未入这些集合不等于无证据，原300及3×100处置和Q25–27各50不改、最终/功能签收0。53资产三遍13668行/94冻结/15正式保持；1228历史期待中1225匹配、3旧.log缺失D02仍在，不以新安装日志冒旧内容。无浏览器/Go/race/vet/真实模型/训练/双T4/实体音频/声学性能验收、无产品改动/18包。交接90份，当前input-http-recommendation-links.json、verify_input_http.py与progress-input-http.json，报告KAGGLE_STEP18_G0_INPUT_HTTP.md。G0与整体PARTIAL/BLOCKED，不跳S1/Q28；下一步版本冲突与候选/文本/校准组合见证及剩余建议精确映射。确保的是核验/失败可见，不承诺整体验收一定成功；继续直接操作无需Continue。
+
+
+**上批历史检查点（G0第9批）：** 300/300原建议逐条处置说明已归档于g0-disposition-review.json及KAGGLE_STEP18_G0_DISPOSITION_REVIEW.md附录，3个disposition-reviewN.tsv各100条。分类23限定修复/96保留/89文档合同/55真条件阻塞/37先调查不变，review_disposition_recorded只是说明归档，原final_disposition/test/fix与新functional_acceptance全false，最终及功能签收0/300。23原限定缺陷建议手工绑定历史三轮69个JSON Pointer引用，记录源码/收据/probe SHA及完整观察片段，不是新实验、23新bug或完整合同验收。R1-016仅相关校准文本交错，NaN未在旧payload中；早期DSP缺历史probe_sha不能补为已证。旧45部分链接加23绑定交集3，合并65有至少一组限定引用、235未入这两组，不等于无其他历史证据。53资产三遍各13668行保持、94冻结/15正式不动。D02按预期SHA搜索当前仓库非.git且<=2MB文件、查3路径git log --all，无同SHA/可用提交；1183历史期待项中1180匹配、3旧.log仍缺、全历史完整性false，不补造或拿新日志当旧内容。系统Python标准库新执行24审计(继承收尾12+新增12)×3、Node30×3、JS/repack/AST39×3通过；历史失败观察仅重读未重跑，未跑CPU426/浏览器/Go/race/vet/Rust/模型/训练/双T4/物理音频/声学性能，未装依赖。独立verify_disposition.py、progress-disposition.json与89份完整交接同步。产品未改/18未发/G0与整体PARTIAL/BLOCKED，不跳S1/Q28；下一步S1合同精确测试映射及HTTP缺省/非法NaN等失败边界、D02可信恢复；保留长录音真训练/首声/无沙沙/自然朗读等未豁免要求。继续直接操作无需Continue。
+
+
+**上批历史检查点（第三遍第8批）：** LICENSE201/MEMO220重新完整复读，新增2份421行；53内嵌资产三遍各53/53、13668行，源码阅读子项完成，不是整个Git仓库或零缺陷证明。原300项逐项复核并生成g0-pass3-closure-recommendation-gaps.json，23限定缺陷建议/96保留/89文档合同/55真条件阻塞/37待证保持；三遍专用7链接文件53条记录去重45项，另255无该组专用链接（不等于无历史证据），最终签收0、未闭环300。D01仍为MEMO顶部step15/xvector/12dB与冻结17默认ICL/6dB漂移，不改历史；新增D02为审计可用性缺口：1139期待历史路径中1136可读SHA匹配、变更0，pass2-gateway-go-install.log/pass2-gateway-preflight.log/pass2-startup-preflight.log三份当前缺失且匹配*.log忽略规则，预期SHA仍保留，不补造内容、full_historical_integrity_passed=false。冻结53源/94文件/15正式及HEAD保持。本批旧.venv/node_modules/Go/Rust不存在，初始环境查询/严格历史检查错误已留档；用系统Python标准库，不安装依赖。本批12收尾审计合同（含原conditioning/gain两AST原函数）×3、Node30×3、JS/repack/AST38各三轮通过；其中缺失日志检查通过只是准确暴露缺口。旧158×3浏览器原始JSON只重读SHA/结果，不是本批运行；本批未跑CPU426/Chromium/Go/race/vet/模型/训练/双T4/物理音频或声学性能。法律/NOTICE/模型与语音授权未签收。交接88份，当前g0-pass3-closure-coverage.json、verify_pass3_closure.py、progress-pass3-closure.json与KAGGLE_STEP18_G0_PASS3_CLOSURE.md。产品未改/18未发，F01–42和先前观察未修；下一步原300逐条最终审查处置及精确测试映射、D02找回可信旧日志或另存新执行收据。G0与整体PARTIAL/BLOCKED，不跳S1/Q28，直接继续无需Continue。源码三遍完成不自动签收G0。
+
+
+**上批历史检查点（第三遍第7批）：** web完整3份2217行复读，第三遍累计51/53、13247行，剩LICENSE201/MEMO220共2份421行；前两遍各53/13668保持。浏览器158（继承146+新12，10保护/2观察）×3＝474 PASS，失败/flaky/skip/retry0；完整继承CPU426×3＝1278 PASS、failure/error/skip0、无新增Python合同；另VM22/16、NumPy分块12/trimmer8/实际CLI4各三轮，三项CLI每轮expected blocked，不是GPU成功。本批新F41：原stop后abort、hold/reset，注入迟到fixture st使原player发play/UI playing，不证明实际原生Worklet竞态/物理漏音；F42：同accessEpoch、两候选mutation0→1、合成profiles响应1→0，使高亮从1回0，不证明实际backend回滚/错声音。两项均未修，旧F01–40/D01保持，每轮另有F04/05/06/25/26浏览器观察。原生clipboard实核三份冻结web完整文本且无额外save，17包/原生振荡器录音/权限回退等旧146项全继承；临时E2E workbench不是正式HEAD，物理麦克风/扬声器/真Go链路/DeepSeek/模型/训练/双T4/声学/RTF未验证。首预检11/1为旧recorder-only壳缺charset中文乱码，仅新审计壳声明UTF-8后12通过，原断言/旧fixture/产品不动、首错留档。1051历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计45unique，原文/Q25–27各50及最终处置false不变。Node30/JS/AST38/repack新执行，freeze/lock不变、无新Python/系统依赖或npm重装；C ABI故障fixture非Rust。本批未重跑Go/race/vet/独立ASGI2.3，不挪用历史通过数。交接87份，当前g0-pass3-frontend-coverage.json、verify_pass3_frontend.py、progress-pass3-frontend.json，完整报告KAGGLE_STEP18_G0_PASS3_FRONTEND.md。产品未改/18未发，G0与整体PARTIAL/BLOCKED，不跳S1/Q28；下一步剩2份第三遍及原300最终映射，无需Continue。以下第7批及更早的“最新”仅指当时；以上第8批状态优先。
+
 
 用户新截图运行17，41.6秒录音成功建档142.3秒，输入RMS约-47.7dBFS/peak0.011，有#0/#1/#2。现在重点是更快实际首声、全部候选的校准/条件作用明确、无沙沙、自然连续朗读；不能把全部候选参与统计说成模型同时融合三参考。不能由截图定噪声根因，不能播放参考PCM增加相似。
 
-当前完成：基线53资产逐字节/76旧冻结哈希/15正式文件核对；第一/第二轮关键路径各100建议；12种case的NumPy DSP基线三轮、20种case的参考条件与状态控制流三轮；Node30与JS/repack检查。没有完成全源三轮语义审查。没有产品代码改动、没有18发布包、没有真实语音模型/GPU实验。
+当前完成：基线53资产逐字节/94冻结哈希/15正式文件核对；三轮专题各100建议，外围部分入口复核；12种case的NumPy DSP历史基线三轮、20种case的参考状态历史控制流三轮；本分支新增22种播放器/Worklet/协议案例及8种裁剪器案例各三轮，Node30及JS/repack检查。按顺序完成问题25–27及各50建议；本批三题完成。16项首声/短尾VM合同与8项噪声度量合成案例各三轮，不是真实声学或性能测量。**没有完成所有源码逐行语义审查三遍；后续深审仍可触发新的关键决策。** 没有产品代码改动、没有18发布包、没有完整语音模型/GPU实验。
 
 基线发现：NumPy短块淡入依赖分块；同半秒双音target=-6/maxgain0，48样本分块与整块最大差1424 int16；正常AGC1920样本分块差8。三轮一致，见dsp-partition-baseline-round1..3.json。它证明工程分块依赖，不证明用户沙沙根因或真实听感；Rust仅源码对照，未编译执行。
 
@@ -14,9 +50,50 @@
 
 第二轮受控复现：候选bool/小数强转、null/容器未捕获异常；ASR全失败默认CER0.05；校准期间转写更新导致旧评分提交未经该轮评估的新转写；加载失败回执被忽略；全合成失败仍chosen0；双卡诊断同文seed100/101不同（正式播放同会话seed原本相同，必须保留）。三轮每轮20项，外部模型/网络显式fixtures，确定性交错不是HTTP/线程压力测试。未修复，不推断用户噪声根因。
 
-下一步第三轮数值/时序及其余模块100建议；完成后再按问题25起逐题自问自答，每题50实施建议后才能下一题，形成最终方案后才改产品。200条专题建议不代表200个bug或全源三轮完成，不要跳过用户要求先修DSP。
+第三轮新复现：生成结束时剩20/50ms音频可永久buffering（24k/44.1k/48k）；35ms预滚跨块少840样本；不足120样本有声输入可被忽略、60样本末尾非零信号留held无finish。小块只是泛用合同测试，不证明当前Faster1920样本倍数路径发生。重采样端点不足需定义尾样本政策，不声称已有可听损伤。首播放指标在发play命令处赋值；不是Worklet/声卡实际出声。上述实验是原播放器VM和裁剪器AST，非实体浏览器/模型/声学实测。Rust仅源码，当前Worker每段重建leveler不能漏记。
 
-持续中文短进度，不向用户提问，不承诺100%信心/零错误/零噪声。整体PARTIAL/BLOCKED，历史真实RTF0.3/训练闭环/长数据覆盖/声学逐字拒播缺口保留。当前环境只重建NumPy2.2.6到忽略目录.venv，无Torch/完整权重/CUDA证据，旧17收据不是本阶段重新执行。
+第25题选C：全部合格候选用同文同seed同参数评估，明确实际ICL锚点；同句融合若研究，只能独立试验同Qwen模型嵌入，不跨空间用ECAPA、不把列表批量或单锚点回退称融合。尚未选融合公式/权重/默认开关，未验收保持BLOCKED。具体四选项及50实施建议完整内嵌。第25题主体与50条hash核对未变后才进入26。
+
+第26题也选C：先度量/回归合同→参考状态可靠性→DSP/裁剪有界状态→完成短尾排空→真实同条件首块/缓冲实验。正常未完成小缓冲仍等待；完成20/50ms尾部在初始和starved恢复均可能滞留。新增原Player VM16案例三轮，注入时钟300/750ms只说明首PCM与play命令不同，不是测得性能，更不是提速450ms。首段默认4帧保留，首块2–8实验须T4证据。Go queue_wait_ms在结束计入生成、Worker queue_ms含参考准备，后续分阶段/分尝试新指标须保留旧字段含义。Worklet消费/非静音/正确人声/声卡出声分开；未测值null，不称实体出声已验证。26题四选项及50建议完整内嵌，主体hash保留不变。
+
+第27题选C，四选项及50建议完整内嵌：分层诊断与联合门禁。原estimate_snr是20ms帧RMS分位差，不是真值SNR；合成等能量干净/噪声块都可返回0；均匀增益不改善组件SNR；理想FFT滤波反例可同时损失有用6kHz分量。8案例三轮仅合成度量/归一化，不是实际降噪、真实辅音、用户WAV或GPU实验。不默认启用强滤波，不从截图判根因。新增IMPLEMENTATION细则：先G0补全源三遍语义覆盖与300建议处置/失败测试映射，再S1–S8最小步实施。不预填问题28，不跳过门禁；当前产品未改、18未发布。
+
+G0第一批：全文第一遍6份/930行，完整第二/三遍0；53资产台账与300条逐ID初审映射完成，但未签收。23条关联限定范围缺陷建议（有重复）、96保留、89文档/测试合同、55真实条件阻塞、37待证。84项现有CPU/进程/进程内HTTP专项三轮通过；10项边界三轮，复现损坏talker_config的AttributeError与恢复第二成员I/O失败后的部分提交。捕捉缺陷退出0不等于已修复。具体完整内嵌G0_AUDIT/G0_DISPOSITION；第一批收据保留不改。第二批全文12份/1974行，第一遍累计18/53、2904行，剩35项；完整第二/三遍仍0。135项训练链/文件/租约/进程内HTTP/安全张量专项×3通过；6项provider合同×3，以真实HF wheel METADATA和重型加载fixture复现原CPU编码器查询缺失旧qwen-tts版本的异常，未运行真实编码/训练。完整内嵌G0_TRAINING_CHAIN，第二批历史覆盖为g0-training-chain-coverage.json。新增F01单列，300原建议不改写。第三批Go网关全文13份/3527行，第一遍累计31/53、6431行，剩22项，完整第二/三遍仍0；第三批历史覆盖为g0-gateway-coverage.json。原Go40主测试（含子测试56）×3和新增10探针×3通过，独立竞争见证三轮预期非零并报告DATA RACE，不混入通过套件。确认快照map竞争F02及四类帧校验不足F03，均未修复。mock播放、库HTTP、合成训练输入HTTP三类各内部3轮通过，非真实模型/训练/声学，未重跑全部历史6类。完整内嵌G0_GATEWAY。第四批前端全文3份/2217行，第一遍累计34/53、8648行，剩19项，完整第二/三遍仍0；第四批历史覆盖为g0-frontend-coverage.json。Chromium每轮134（原123+新11）三轮通过，无失败/跳过/retry/flaky；新8保护+3原行为观察。F04旧录音error误停新会话、F05协议解析失败未显式取消reader/请求、F06音频初始化失败未revoke URL，各三轮fixture复现，均未修。原Player边界22/延迟16 VM各三轮；第1–17完整包逐字节复制保护通过，原始文件为真实hash核对及浏览器sentinel保留，不冒称完整原始文件复制。原生录音测试输入为振荡器/静音，不是物理麦克风；新故障例为明确设备/HTTP fixture，非真实Go/模型/声学。完整内嵌G0_FRONTEND。第五批Python启动/监督/worker/clone_stream/voice_binding全文5份/1536行，第一遍累计39/53、10184行，剩14项，完整第二/三遍仍0；第五批历史覆盖记录为g0-runtime-coverage.json。94项CPU专项（原84+新10）×3通过，新7保护+3观察；真实supervisor/FD租约/进程组与fatal健康两类各内部3轮，模型角色为CPU替身。F07无界响应队列、F08失败重载prompt与接受pin不一致、F09规范化/报告不一致各三轮fixture复现未修；原Worker/RealEngine.load_profile和真实文件hash执行，重型resolver/生成/GPU清理为fixture，不是实际错误音色或慢客户端资源峰值实验。完整内嵌G0_RUNTIME，39/53是第五批历史检查点。第六批分析/API/参考切分/Python与Rust DSP全文6份2152行，第一遍累计45/53、12336行，剩8份；完整第二/三遍仍0，第六批历史覆盖记录为g0-analysis-dsp-coverage.json。172项专项（旧160+新12，新9保护/3观察）×3通过，各轮失败/错误/跳过0；14个分析AST与12个NumPy分块案例各三轮。F10极短NumPy breath形状、F11窗口重识别漏清洗可选words、F12分析端接受HTTP失败/残缺流各三轮确认未修；F12实际requests/本地TCP，F11显式ASR metadata fixture，无真实模型。历史6个prompt接口案例因本地upstream cache不存在未重跑，不重签旧20项收据。Rust两份只完整阅读源码，未找到rustc/cargo，未编译/运行/加载Rust，不冒用NumPy结果。旧分块差1424/8及校准候选问题仍复现；Node30/JS/Python AST/repack通过，历史295份hash保留。完整内嵌G0_ANALYSIS_DSP。第七批6工具/LICENSE/MEMO全文8份1332行，内嵌53资产第一遍累计53/53、13668行、剩0；这不是全仓库或三遍完成，完整第二/三遍仍0，G0未完成。第一遍收尾历史覆盖为g0-tools-coverage.json。197项专项（上批172+既有probe13+新12，新9保护/3观察）×3通过，各轮失败/错误/跳过0；每轮4个独立真实CLI合同，backend静态/runtime与默认benchmark均按预期exit2/BLOCKED，resource status exit0，阻塞不当模型成功。F13 E2E缺gpu/失败END/奇数PCM/残留误PASS，F14 watermark空HTTP503/ERR/残缺帧零音频误PASS，F15 selftest failed/cancelled Mock流误PASS，本地HTTPfixture三轮确认未修；F15时间明确fixture，不是测得首声或RTF。D01 MEMO旧step15/xvector/maxgain12与当前17 ICL/maxgain6漂移仅记录，不改冻结MEMO。LICENSE全文阅读不是法律/NOTICE/依赖模型授权签收。Node30/JS/全产品Python AST/repack通过；329历史文件hash保留，71份memo原文内嵌。Rust/完整模型/GPU/训练/声学/提速仍未验，无产品改动/18包。完整内嵌G0_TOOLS。全源第二遍第1批已重新全文阅读training_job/gpu_ownership/resource_limits/tts_training/tts_dataset/lora_adapter/train_tts/resource_control共8份1056行，第二遍8/53、剩45，第一遍53/53/13668保持，第三遍0；当前覆盖以g0-pass2-training-coverage.json为准。局部查看training_codes/encode_training/supervisor调用点不计全文。219项专项（旧197+既有artifact10+新12，新11保护/1观察）×3通过，各轮失败/错误/跳过0。新F16 stop_ranks在直接leader退出后漏清理忽略SIGTERM的额外后代，实际CPU进程/pidfd/OFD/flock复现未修；fixture最后定向清理、锁释放已验证。额外后代明确构造，当前run_rank无DataLoader子进程，不证明正常Qwen训练故障。AST只跑采样/赋值回滚/dataset构造，不模拟Torch算子，无tensor/optimizer/Gloo/NCCL/完整模型/GPU/声学/性能验收。Node30/JS/全产品Python AST/repack通过，382历史文件hash保留。完整内嵌G0_PASS2_TRAINING；继续剩45项第二遍、完整第三遍及300建议最终处置/失败见证映射，G0未完成、不改产品/不发18包。
+
+最新检查点为全源第二遍第2批：voice_library/training_data/training_codes/trained_profiles/persist/qtts_common/access_control重新全文7份1526行，第二遍累计15/53、2582行、剩38；第一遍53/53/13668保持，第三遍0。上文8/53及剩45为第1批历史，不是当前进度；当前覆盖以g0-pass2-state-coverage.json为准。analyst候选函数仅局部，不计全文。324项专项（旧219+另选既有93+新12，新11保护/1观察）×3通过，失败/错误/跳过0；新预检先因AST提取器保留HTTP装饰器报NameError，去装饰器保留原函数体后12通过，失败原日志保留。F17原pack目录枚举后候选切换，可归档新版profile.json而漏新锚点；实际本地原pack/extract和原候选AST函数体确定性交错复现未修，live锚点存在、解包无异常但恢复锚点缺失。worker reload/admission明确fixture，非HTTP/线程压力、远端Kaggle或模型加载。F01/F16及旧多成员恢复IO部分提交仍未修；Dataset只备份profiles/active，非训练工程全恢复，也仍含私有参考/文本，不宣称远端隐私策略验收。Node30/JS/AST38/repack通过，408历史文件hash、53源/94冻结/15正式保持。当前verify_pass2_state.py及progress-pass2-state.json、73份memo原文内嵌；完整报告G0_PASS2_STATE。无Torch/optimizer/DDP/NCCL/完整模型/GPU/实际训练/声学/提速验收，无产品修改/18包。G0仍PARTIAL/BLOCKED，继续其余38份第二遍与全53第三遍及300建议最终映射，不跳S1/Q28、不要求Continue。
+
+
+最新优先检查点为全源第二遍第3批：qwen_compat/voice_binding/worker/clone_stream/adapter_engine全文5份1071行，第二遍累计20/53、3653行、剩33；第一遍53/53/13668保持，第三遍0。上文8/53与15/53均为历史批次，当前以g0-pass2-inference-coverage.json、verify_pass2_inference.py与progress-pass2-inference.json为准。分析API全文留下一批，不计测试经过为全文。336项专项（旧324+新12，新11保护/1观察）×3通过，各轮失败/错误/跳过0；另ASGI2.3 companion各1项观察×3通过，不计入1008。F18：原synth先起生产线程，仅body iterator finally设置cancel；正文首次迭代前在ASGI2.4响应头send抛断连、ASGI2.3响应头等待中receive返回disconnect两条真实Starlette响应路径均未通知生产cancel，线程继续等待。真实原endpoint/响应/CPU线程执行，断连时序与生产工作负载明确fixtures，finally定向取消/join自有线程；未修，非TCP/浏览器/模型/GPU/线上故障证明。旧F01–F17保留。新测试还覆盖有界参考/FIFO、真实锁排队取消所有权、pin加载拒绝、重放迭代器关闭、RoPE控制流、trained磁盘绑定/删除/链接/预算；minimal torch.manual_seed为明确fixture，不是实际Torch算子/codec。环境.venv未保留已重建关键固定CPU依赖，安装日志/完整freeze保存，不声称全部传递依赖与旧环境相同；无Torch/Qwen/Rust/Go安装。Node30/JS/AST39/repack通过，435历史证据hash、53源/94冻结/15正式不变。完整报告G0_PASS2_INFERENCE新增至74份memo原文。没有产品修改/18包/真实训练/双GPU/声学/提速签收；G0仍PARTIAL/BLOCKED，继续剩33份第二遍、全53第三遍及300建议最终映射，不跳S1/Q28、不要求Continue。
+
+
+最新优先检查点为全源第二遍第4批：analyst/library_api/reference_segments全文3份1480行，第二遍累计23/53、5133行、剩30；第一遍53/53/13668保持，第三遍0。上文8/15/20份第二遍均为历史，当前以g0-pass2-analysis-coverage.json、verify_pass2_analysis.py和progress-pass2-analysis.json为准。348项专项（旧336+新12，新10保护/2原行为观察）×3通过，各轮失败/错误/跳过0。F19两个真实进程内ASGI校准请求通过原HeavyAdmission(2)，原calibrate共用_cal_pid_k目录；A清理后B原Mock Worker.load_profile找不到临时档案，B错误记录覆盖A成功记录，两个响应均200；确定性交错，合成/ASR/声纹与worker transport明确fixtures，非TCP/模型/双GPU。F20原load_on_workers重载期间实际删除档案，最终current None跳过失效检查，原reload_response仍200/ok/reference_saved；worker回执fixture，无删除后播放或激活绕过证据。两项三轮确认未修，临时资源/准入槽清理验证。真实路由严格嵌套JSON/Unicode/标记、库结果合法profile提交、低能量15.3秒PCM窗口连续覆盖、17秒长手工文本不强配短候选等保护通过；不是Whisper/真实音频/训练/质量验收。参考预排最多24、落盘最多3、实际单锚点conditioning，分析空间centroid不是Qwen融合，贡献完整追溯未签收。旧F01–F18/ASR默认CER/旧校准版本/不同GPU seed等问题保留。Node30/JS/AST38/repack通过，470历史证据hash、53源/94冻结/15正式不变。完整报告G0_PASS2_ANALYSIS，交接75份全文；venv沿用并保存freeze，与上批一致，不称全部环境二进制绝对一致。无产品改动/18包/真实模型/训练/双GPU/声学/提速签收。G0仍PARTIAL/BLOCKED，下一批启动/监督/backend preflight完整复读与provider版本/失败取消所有权，继续剩30份第二遍、全53第三遍和300最终映射，不跳S1/Q28、不要求Continue。
+
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS2_STARTUP.md`。bootstrap451/supervisor219/backend_probe200全文3份870行，第二遍累计26/53、6003行、剩27；第一遍53/53/13668保持，第三遍0。360项（旧348+新12，新10保护/2观察）×3通过，各轮失败/错误/跳过0。F21原sh在leader退出而后代持stdout时timer跳过killpg，超过请求期限并在外部清理后返回0；真实CPU/pipe/timer/pidfd、观察包装确定性交错，后代退出已验证，非完整bootstrap/性能证明。F22原watch的fatal回执写失败跳过kill/gave_up，HTTP每轮清零使8轮后fail_count仍1；health/IO/process/wait明确fixtures，非真实GPU或磁盘故障。两项未修，F01–F20保留。标准faster启动全部PINS逐项预查/精确安装/constraints0600与清理/Torch变更拒绝、probe先于下载的控制流测试通过；未执行真实pip resolver或GPU，后安装漂移/独立入口/native-adapter仍待证，surface preflight不是质量签收。Node30/JS/AST38/repack通过；497历史hash、53源/94冻结/15正式、300初审与Q25–27各50保持。当前g0-pass2-startup-coverage.json、verify_pass2_startup.py及progress-pass2-startup.json；交接76份原文。无产品修改/18包/真实训练/模型/双GPU/声学/提速验收。继续剩27份第二遍，优先网关调度/流协议/取消/超时及前端排空交叉核对，再全53第三遍/最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS2_GATEWAY.md`。main/scheduler/session/segmenter/llm全文5份2286行，第二遍累计31/53、8289行、剩22；第一遍53/53/13668保持，第三遍0。每轮Go原40主测/含子测56、旧专项10、新13（11保护/2观察）通过，合计63主测/79含子测×3；Python旧360×3通过，无新增Python测试。通过套件无失败/跳过/race warning；独立F02竞争见证每轮预期非零/DATA RACE，未混入通过数。F23原healthLoop接受HTTP503 ready=true，原网关报告两worker健康；真实本地HTTP，永久循环隔离于自有Go子进程并核对退出。F24原activate期间实际改profile.model_output_mode，最终conditioning改变而binding相同，仍200/提交active；worker回执为HTTP fixture，无真实训练产物/模型/后续合成。两项未修，F01–F22和专题问题保留。实际Go1.23.9新增于忽略venv，安装报告/wheel SHA与可执行hash保存；freeze仅多go-bin==1.23.9，其余依赖保持，不称全部freeze相同。Node30/JS/AST38/repack/原Go及新探针副本vet/gofmt通过；525历史hash、53源/94冻结/15正式、300初审及Q25–27各50不变。当前g0-pass2-gateway-coverage.json、verify_pass2_gateway.py及progress-pass2-gateway.json；交接77份原文。无产品修改/18包/真实DeepSeek/Qwen/训练/双GPU/声学/提速签收。继续剩22份第二遍，优先前端流终止/取消/遥测/完成排空，再DSP/工具/剩余Go安全和测试；全53第三遍及最终映射仍待完成。G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS2_FRONTEND.md`。app1715/recorder358/index144全文3份2217行；HTML首次合并输出截断，已补读全范围，第二遍累计34/53、10506行、剩19；第一遍53/53/13668保持，第三遍0。新增浏览器12（10保护/2观察）预检通过，既有134+新12=146×3全部通过，失败/跳过/flaky/retry0；Player VM22/延迟VM16各三轮、CPU旧360×3通过，无新增Python测试。本批未重跑Go79/独立F02竞争见证或独立ASGI2.3/旧CLI矩阵，不挪用历史数字。F25原完整前端脚本END后仍收PCM/文本且第二END替换首汇总；F26网络EOF先发report并停telemetry，随后play/欠载UI变化不更新报告；真实Chromium原生流/DOM/timer，网络/设备/Worklet状态明确fixtures，非物理播放、真实欠载或声学/提速。两项未修，F01–F24及<=50ms已完成短尾/旧DSP等保留。Node模块按冻结lockfile npm ci恢复，未改lock；venv freeze与上批相同，无新Python依赖。Node30/JS/AST38/repack/前端探针语法检查通过；575历史hash、53源/94冻结/15正式、300初审及Q25–27各50保持。完整交接78份原文；当前g0-pass2-frontend-coverage.json、verify_pass2_frontend.py与progress-pass2-frontend.json。产品未改/18未发/真实DeepSeek/Qwen/训练/双T4/声学/提速未签收。下一批Python/Rust DSP和工具自检，再余Go安全/测试与LICENSE/MEMO；继续剩19份第二遍、全53第三遍/最终映射。G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS2_DSP.md`。Python/Rust DSP及6工具全文9份1500行，第二遍累计43/53、12006行、剩10份1662行；第一遍53/53/13668保持，第三遍0。CPU372（旧360+新12，新10保护/2观察）×3全部通过，失败/错误/跳过0；NumPy分块12、原EdgeTrimmer AST8各三轮，旧问题未修；4个独立CLI合同×3，backend静态/runtime及默认benchmark按预期exit2/BLOCKED，resource status exit0，阻塞不是模型成功。F27 NumPy flush未清DC状态，常量480→flush192→零240得到240非零/峰6026，fresh为0；Rust源码清DC但未编译执行，正常worker每job重建Leveler，因此不是当前沙沙声根因证明。F28原benchmark/measure两实际HTTP端点health分别GPU0/1、18测量均GPU0，仍real_gpu_verified/speed_target_passed true；health/stats/PCM/clock明确fixtures，报告true是被反证输出，不是硬件/RTF成绩。两项未修。Node30/JS/产品Python AST/新审计语法/repack通过；625历史SHA、53源/94冻结/15正式、300初审及Q25–27各50保持。freeze与前端相同，无新依赖；Rust/Torch/Qwen/实际训练/双GPU/声学/提速未验。本批不重跑浏览器/Player VM/Go/独立F02/ASGI2.3，不挪用历史成绩。完整交接79份；当前g0-pass2-dsp-coverage.json、verify_pass2_dsp.py与progress-pass2-dsp.json。产品未改/18未发；下一批剩余Go安全/测试/go.mod和LICENSE/MEMO共10份，再全53第三遍及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS2_SECURITY.md`。剩余Go安全/测试/go.mod及LICENSE/MEMO全文10份1662行，第二遍累计53/53、13668行、剩0；第一遍53/53/13668保持，第三遍0。这是冻结包53资产，不是全Git仓库或三遍/全功能完成。每轮Go原40主测/含子测56、旧10、上批13、新12（10保护/2观察），合计75主测/91含子测×3通过；CPU旧372×3通过，无新Python测试；失败/错误/跳过0，通过集合无race warning。独立F02每轮预期非零/DATA RACE，不混入通过数，未修。三轮副本vet通过。F29原guard/decodeJSON/validateSpeak接受孤立高低代理项或非法UTF8，解码成a�b后返回200；实际本地HTTP组合校验handler，非完整合成或认证绕过。F30原授权speak/LLM错误链将HTTP401替身正文回显的配置假密钥带入ERROR/END/metrics；密钥/供应商均synthetic，非真实泄密事件或未授权读取。两项未修。LICENSE全文阅读不等于依赖/模型/数据/NOTICE法律签收；MEMO step15/xvector/maxgain12漂移仍为D01，冻结不改。Node30/JS/产品与新审计Python AST/repack/Go探针gofmt通过；686历史SHA、53源/94冻结/15正式、300初审及Q25–27各50保持。Go沿用、freeze与DSP相同，无新依赖；无Rust/Torch/Qwen/完整模型/真实GPU/训练/声学/提速签收。本批未重跑独立CLI/NumPy与trimmer探针/ASGI2.3/浏览器与Player VM，不挪用旧成绩。完整交接80份；当前g0-pass2-security-coverage.json、verify_pass2_security.py与progress-pass2-security.json。产品未改/18未发；下一步第三遍全源跨层输入/pin/错误、生命周期/取消/播放/训练绑定审查及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS3_INPUT.md`。main478/security247/session692/qtts_common211/voice_binding60/resource_limits172/access_control70重新全文7份1930行，第三遍7/53、剩46份11738行；第一、第二遍各53/53/13668保持。browser和library_api只局部调用点不计第三遍。新增Go6（5保护/1观察）及Python6（5保护/1观察），预检各6通过；每轮Go81主测/97含子测×3、CPU378（旧372+新6）×3通过，失败/错误/跳过0，通过集合无race warning；独立F02三轮预期非零/DATA RACE不计通过，三轮副本vet通过。实际Go/Python8合法pin与12非法generation向量、两worker ack期间generation变更拒绝、空/错text拒绝、内容pin非身份、上传预算+1、spool清理、原子JSON失败、参考增长拒绝、两认证进程一致性均有明确边界。F31同磁盘top_k:null被Go转0并得pin而Python拒绝；F32认证token FIFO无writer时open先于fstat阻塞，普通文件control通过，外部定向终止并reap自有子进程；两项未修，无真实凭据/模型/错误音色或远程利用证明。原8条建议仅部分证据映射，300与Q25–27各50不改/不签收。739历史SHA、53源/94冻结/15正式保持；Node30/JS/AST/repack/gofmt/vet通过，freeze与第二遍收尾相同，无新依赖。旧S2 F29/F30随套件重跑仍未修；本批未跑浏览器/VM/独立CLI/ASGI2.3/分块裁剪探针，不挪用历史成绩。完整交接81份；当前g0-pass3-input-coverage.json、verify_pass3_input.py及progress-pass3-input.json。产品未改/18未发；无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍参考分析/API/档案修改与备份事务，继续剩46份及300最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS3_REFERENCE.md`。analyst1211/library_api163/persist99/reference_segments106/voice_library351第三遍完整5份1930行，累计12/53、3860行、剩41份9808行；前两遍各53/53/13668保持。新12（10保护/2观察）预检通过，CPU390（旧378+新12）×3全部通过，失败/错误/跳过0。F33真实两CPU线程占满原HEAVY，原text/candidate ASGI先写盘改pin再429，不reload且不报reference_saved；F34原校准评估旧转写，在结束提交前实际text ASGI改pin仍200，随后calibrate保存旧评分到新档案仍200；临时目录/线程/槽清理核对。模型/ASR/speaker/worker ack为fixtures，无真实音质/错误音色证明，两项未修。复制失败旧pin保护、JSON失败仍遗留孤立anchor明确不称全回滚；trained三入口409、原库snapshot异常/顺序/只读与租约、稳定pack/extract字节pin、归档末尾非法成员先拒绝、DELETE重复revision、24秒可信词切分保护通过。原300本批10条部分链接、与前批去重16个ID，均未最终签收；原文/Q25–27各50保持。795历史SHA、53源/94冻结/15正式保持，Node30/JS/AST/repack通过，freeze与前批相同无新依赖。本批未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/CLI/分块裁剪探针，不挪用历史成绩。交接82份；当前g0-pass3-reference-coverage.json、verify_pass3_reference.py及progress-pass3-reference.json。产品未改/18未发；无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍训练输入/码/训练产物绑定与取消/提交，继续余41份及300最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS3_TRAINING.md`。training_data285/training_codes355/training_job227/tts_training200/tts_dataset125/trained_profiles155/encode_training128/trained_voice30全文8份1505行，第三遍累计20/53、5365行、剩33份8303行；前两遍各53/53/13668保持。首组源码输出截断后完整补读。首次测试43项因导入TestCase重复31项，1失败为误判正常.lock；改模块导入与断言，保留首错/说明，预检新12通过。初行数误算1605被信用断言拦住未写错误coverage，逐项纠正1505/5365/8303并留记录。CPU402（旧390+新12，新11保护/1观察）×3全部通过，失败/错误/跳过0。F35原控制器在两个真实CPU替身rank0退出且adapter仅含manifest.json={}时仍completed/optimizer_execution_observed=true，原TrainedArtifacts.inspect409拒绝，信号/租约恢复；训练准入/依赖/tokenizer门禁与rank实现明确替身，原GPU/code OFD adopt实际执行，无Torch/优化器/训练/非法声音发布或正常rank产生坏检查点证明。F35未修，F01–34/D01保留。新保护包括输入BaseException回滚、PCM极值36001帧、codes最终取消、encoder第二样本中断、finish-only pin、adopt最后OFD、cancelled产物拒绝、来源/NaN拒绝、发布末次重核/固定参考文本/active不变及新trained_voice CLI错pin脱敏拒绝；发布codes lease元数据/adapter为fixtures，不能签收真实训练。原300本批7部分链接，与前两批去重22ID，均未最终签收；Q25–27各50保持。825历史SHA、53源/94冻结/15正式保持；Node30/JS/AST38/repack通过，freeze与上批相同无新增依赖。本批未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/额外四CLI/分块裁剪矩阵，不挪用历史成绩。交接83份；当前g0-pass3-training-coverage.json、verify_pass3_training.py及progress-pass3-training.json。产品未改/18未发，无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍adapter/推理/provider兼容与缓存/失败取消，继续余33份及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+最新优先检查点：报告 `docs/KAGGLE_STEP18_G0_PASS3_INFERENCE.md`。adapter_engine108/lora_adapter91/qwen_compat97/clone_stream126/gpu_ownership151/worker680/train_tts49重新全文7份1302行，无源输出截断，worker连续四段；第三遍累计27/53、6667行、剩26份7001行；前两遍各53/53/13668保持。新增12（11保护/1观察）预检一次通过；CPU414（旧402+新12）×3全部通过，失败/错误/跳过0。F36原generated_only_stream在consumer关闭已启动生成器时，上游close替身抛异常，后续window.finish被跳过；生成器frame本身关闭，测试捕获的真实window仍closed false/pending1920/合成code标记，最后显式清理完成。准备/predictor/decoder/Torch上下文均控制替身、无tensor模拟，没有证明生产上游会抛错或正常GC后持续GPU内存泄漏/沙沙根因，F36未修。adapter来源不符先拒绝、cached仍核验实际safetensors字节、取消前不选择与取消后丢弃返回PCM、native rate/shape/NaN/长度拒绝与单句输出、回放指标合计、worker部分生成失败解锁/后续成功、同pin缺prompt重载、RoPE重试cause/注册表、真实短pwrite释放OFD均保护通过；LoRA prepare/commit和native模型未执行。F01–35/D01保留，旧ASGI/CLI/信号/CPU持有者见证随集合重跑，不代表真实模型。原300本批7部分链接，累计去重27ID，均未最终签收；Q25–27各50保持。858历史SHA、53源/94冻结/15正式保持；Node30/JS/AST38/repack通过，freeze与上批相同无新依赖。未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/额外四CLI/分块裁剪矩阵，不挪用历史成绩。完整交接84份；当前g0-pass3-inference-coverage.json、verify_pass3_inference.py及progress-pass3-inference.json。产品未改/18未发，无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍启动监督/preflight/资源测量工具与DSP接口，继续余26份及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+最新优先检查点（第三遍第5批）：`docs/KAGGLE_STEP18_G0_PASS3_STARTUP.md`。11份2253行全文复读；累计38/53、8920行，剩15份4748行。CPU426（旧414+新12，10保护/2观察）×3全部通过，失败/错误/跳过0；另NumPy分块12、trimmer8、实际CLI4各三轮，CLI中3项每轮期望blocked而非模型成功。首预检12项中1 error为测试误访问UploadRejected.status，纠正为code后12通过，首错/修正留档。F37原preflight父控制器接受真实CPU替身child exit23写出的合法形状成功回执；生产者明确替身，不证明实际GPU误通过。F38已有系统cc编译仅rt_version的C共享库，真实ctypes在ABI3缺rt_leveler_new抛AttributeError中止import，ABI2及显式NO_RUST为NumPy；不是Rust编译/运行或正式Rust库损坏证明。两项未修，产品不改。887历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计33unique，Q25–27各50不变，最终处置仍false。Node30/JS/AST38/repack新执行；无新Python/系统依赖，freeze不变。未跑Go/race/vet/浏览器VM/独立ASGI2.3，未跑Torch/Qwen/实际训练/双T4/声学或提速。交接85份；最新coverage/verifier/progress为pass3-startup。继续余Go10/web3/LICENSE/MEMO及300最终映射，G0与整体PARTIAL/BLOCKED，不跳S1/Q28/18发布，不要求Continue。
+
+最新优先检查点（第三遍第6批）：`docs/KAGGLE_STEP18_G0_PASS3_GATEWAY.md`。剩余Go10资产2110行全文复读，累计48/53、11030行，剩5份2638行（web3份2217/LICENSE201/MEMO220）；前两遍各53/13668保持。新增Go12（10保护/2观察）race预检通过，首编译错因测试误用submitted，已改为真实字段allSubmitted、首错留档；另一次审计元数据括号SyntaxError解析前阻止全部写入，拆开后纠正留档。Go原40+G0十+P2十三+security十二+input六+新十二＝93顶层/109含子测试×3正常通过，意外fail/skip/race0；独立F02 race×3预期非零、仍未修，vet×3通过。CPU完整继承426×3＝1278 PASS，failure/error/skip0，无本批新增Python合同；另NumPy分块12/trimmer8/实际CLI4各三轮，3项CLI每轮期望blocked非GPU成功。F39原Live PreserveText把你好。!?重连成你好。及丢独立空白/标点尾段，非语词漏读或沙沙根因证明；F40原run在活ctx下接受替身cancelled=true stats＋偶数PCM，served1/failed0，非真实生产取消或GPU漏音证明。两项未修；F01–38/D01保持。chat system/history/预算、SSE CRLF/末行无换行/流内错误脱敏、正常read Unicode保字/seed、retry上限、urgency/FIFO、EMA与chunk2/6/pin转发保护通过，非200正文F30仍在。953历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计38unique，Q25–27各50/最终处置不变。Node30/JS/AST38/gofmt/repack新执行，无新Python/系统依赖、freeze不变；CPU继承C ABI故障注入不冒称Rust，无Rust/Torch/Qwen/CUDA/真训练/双T4/声学/提速。本批未跑真实浏览器/VM/独立ASGI2.3，不挪用历史成绩。交接86份，最新pass3-gateway coverage/verifier/progress。产品未改/18未发，下一批web完整阅读与实浏览器、另许可/MEMO及300最终映射；G0与整体PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+300条专题建议不代表300个bug或全源三遍语义完成。剩余复杂训练/恢复等路径深审、HTTP/真实并发与真机声学仍需补齐，不得跳过门禁先修DSP，不得把任何未知签收。
+
+持续中文短进度，不向用户提问，不承诺100%信心/零错误/零噪声。整体PARTIAL/BLOCKED，历史真实RTF0.3/训练闭环/长数据覆盖/声学逐字拒播缺口保留。当前忽略.venv沿用NumPy2.2.6及固定CPU/HTTP依赖、safetensors0.6.2格式测试；网关第二遍批曾新增go-bin==1.23.9，本批沿用但未重跑Go/race/vet，最近Go成绩仅为历史第三遍第1批；freeze与前批相同。当前无rustc/cargo/Torch/Qwen/完整权重/CUDA；前述无Go仅属先前批次环境。旧17收据不是本阶段重新执行。
 
 ## 历史首页（仅历史，上述当前状态优先）
 
@@ -6094,9 +6171,21 @@ QTTS_RESIDENT=1取消旧600次周期重载和13.5GB主动回收，不自动idle�
 
 # 第十八阶段：参考条件可追溯、首声、噪声与连续朗读
 
+> 最新优先：S5完成短尾/重采样终点/epoch已实际修复，见KAGGLE_STEP18_S5_PLAYBACK.md；最终610CPU/37VM/173Chromium各三轮以progress-s5.json为准。完整候选app不切正式入口，真实声学与整体仍PARTIAL/BLOCKED。
+
+> 最新优先：S4有界裁剪/worker结束与取消已实际修复，见KAGGLE_STEP18_S4_TRIMMER.md；602×3、21分块×3通过。S3 worker保留，S4入口worker_s4.py未切换正式服务；整体PARTIAL/BLOCKED。
+
+> 最新优先：S3因果 NumPy DSP 与隔离worker实际接入，见 KAGGLE_STEP18_S3_DSP.md；562×3及14分块×3已通过，但Rust/真实声学与完整S3仍PARTIAL/BLOCKED。更早“下一步S3”等均为历史。
+
+> 最新：S2-B有效指标与加载就绪实际实现，见末尾及KAGGLE_STEP18_S2_VALIDITY.md。早期“评分未修”仅历史；完整产品／声音／双T4验收仍未通过。
+
+> 最新：S2-A校准快照实际实现，见末尾及KAGGLE_STEP18_S2_SNAPSHOT.md。S1原28合同保留，完整S2／模型／声学仍未验收；更早“未实现”仅为历史状态。
+
+> 当前优先状态：S1隔离候选实际实现，见本文件末尾和KAGGLE_STEP18_S1_CANDIDATE.md。问题28明确允许未发布候选小步修复，不改冻结17；下文早期“尚无产品修改／不实施”是当时历史，不是本次状态。G0整体与完整S1验收仍PARTIAL/BLOCKED。
+
 ## 当前状态（2026-10-23）
 
-分支`arena/03d65d8e-kagglee`，活动状态，从已合并17基线继续。已完成基线核对、第一/第二轮关键路径专题审查各100条、DSP分块基线三轮、提示合同/参考状态控制流三轮；第三轮与本阶段自问自答尚未完成。第二轮不等于全部模块的第二遍完整语义审查。**没有修改产品源码、没有生成18发布包、没有宣称声学达标。**
+当前活动分支`arena/1160bd87-kagglee`，继承已合并的`arena/03d65d8e-kagglee`前两轮记录；历史baseline保留原分支身份不改写。已完成三轮关键路径专题审查各100条、外围入口静态复核、DSP分块/参考状态/播放器边界/裁剪器边界的受控实验。已按顺序完成第25–27题及各50条建议；本批三题已完成，不预填问题28。**三轮专题与库存AST核对不等于所有模块逐行语义审查三遍；该全源覆盖门禁尚未签收。** **没有修改产品源码、没有生成18发布包、没有宣称声学达标。**
 
 截图事实：已是17；41.6秒录音建档成功，耗时142.3秒；RMS约-47.7dBFS、峰0.011；候选#0/#1/#2约9.1/10.5/11.0秒，SNR估计17.1/16.3/17.8dB。没有附件音频，不能由截图听出噪声或确定声学根因。源码说明单锚点用于ICL，候选参与评分与质心，校准逐个试验再择一，不是三参考同时融合。
 
@@ -6142,6 +6231,30 @@ QTTS_RESIDENT=1取消旧600次周期重载和13.5GB主动回收，不自动idle�
 
 复现命令：先建立含NumPy2.2.6的隔离环境，执行`.venv/bin/python docs/validation/step18/fetch_reviewed_upstream.py`（只解包经哈希核验的两份源码，不安装、无权重），再执行`.venv/bin/python kaggle/tests/reference_state_probe.py --round 1`，依次2、3。
 
+## 第三轮取证与顺序决策（未修复）
+
+- 第三轮100条见REVIEW3；53资产完整读取/hash/所有Python AST核对见review3-inventory.json。生成码窗口、DSP、裁剪、播放器、调度/转发路径作专题语义追踪；训练、资源、持久化和正式工作台仅部分边界复核。不能把库存核对称为所有代码已语义查完三遍。
+- 当前新环境只重建NumPy2.2.6；Node可运行，Rust/Go编译器、Torch和目标GPU实验未执行。前两轮收据保留历史，未冒充本分支完整模型回归。
+- Node VM执行原Player/Parser/Worklet，每轮22例、三轮一致。完成20/50ms音频在24k/44.1k/48k下滞留buffering，51/100ms可发play；该路径也影响可能的欠载末尾，但本轮未执行真实浏览器/声卡。
+- 重采样整块/47样本处分块在容差内一致；终止时缺下一插值端点，需要明确尾样本策略，未证明其有可听损伤。自然结束、欠载恢复一次计数、reset输出为零、overflow计数、逐字节协议帧和超大帧限制均被保护案例覆盖。
+- 原EdgeTrimmer每轮8例、三轮一致：64/119样本有声块可被全忽略；跨块35ms预滚比整块少840样本；60样本末尾非零信号可留在held且没有finish接口。小块合同问题不等于当前Faster1920样本倍数生产路径已发生；合成信号不能证明真实辅音被删。
+- firstPlayedMs当前在play命令处记录，不是硬件出声；Worklet固定192样本淡入在24k/48k为8/4ms。源码确认Rust flush清DC而NumPy不清，但当前Worker每段重建leveler，不能把跨段复用差异直接称生产噪声根因。Rust未编译，不能声称跨后端实测通过。
+- Node30、JS语法与repack基线再次通过，完整Python/Go/Chromium/六协议及完整模型仍未在本阶段最终源码执行；尚无18产品修改。
+- 第25题按一次一题完成，详细四选项、推荐C及50建议见KAGGLE_STEP18_DECISIONS.md：全部候选同条件评估与实际ICL/实验融合明确分层；不把列表批量或单锚点说成融合。融合仅研究同模型Qwen嵌入、未验证不启用为默认，不保证提升。问题26已在后续小步中按顺序回答，见下节；第三轮当时的收据保留原状态，不改写历史。
+
+## 问题26：修复次序与首声度量（已完成决策，未实施）
+
+- 先校验第25题选项/回答/50建议未变，再完成第26题四选项、推荐C、具体顺序及50建议；第27题只留下待追问，不批量填答。
+- 选择先建立兼容度量和回归合同，再修参考状态可靠性、DSP/裁剪有界状态、完成短尾排空，最后真实同条件测试首块/缓冲。正常流式启动不一律改为零缓冲，默认首段4帧暂不改。
+- 新增latency_contract_probe.mjs，原Player代码VM每轮16例、三轮一致：20/50ms完成短尾在buffering与starved均滞留，51ms可发play；未结束短缓冲继续等待、已播放短尾不强停、空结束可结束。显式注入时钟示例300ms首PCM与750ms命令时刻不是实测性能，消费/声学首声仍未测。
+- 源码确认Go queue_wait_ms在合成结束计算，包含生成时间，不能当纯队列；Worker queue_ms也含锁/参考准备。下一实现应新增分阶段/分尝试指标，保留旧字段语义，不直接重命名成“真实首声”。
+- firstPlayedMs为命令时刻；Worklet确认、非静音阈值、正确人声和声卡出声分别定义，未知保持null。任何实测改善还需正文完整、掉样、欠载、噪声、自然度和RTF联合门禁。
+- 以上仅决策与控制流取证；没有性能提速结论，没有产品源码改动。问题25的主体hash及50条已保留核对，当前累积25–26两题100建议；历史24题1200不动。
+
+## 下一执行门禁
+
+第25–27题已按顺序各完成50条，旧主体hash保留。实施细则见`KAGGLE_STEP18_IMPLEMENTATION.md`：先补G0全源三遍语义覆盖与300建议处置/测试映射，再按S1–S8小步修复。全源深审、真实HTTP/线程压力和声学实验不能用建议数或合成案例替代。当前不修改产品、不切复制页到不存在的18；不自动追加问题28。
+
 ## 语言与性能原则
 
 PyTorch/CUDA继续承担模型计算，Python组织提示与分析，Go承担调度/协议，Rust承担DSP，JavaScript承担采集/播放。只有实测热路径需要时才增加C/C++等实现；不新增Java/C#/VB/SQL/Fortran服务凑语言。NumPy回退一致性问题应按真实算法合同修复，不用隐藏回退失败冒极致性能。
@@ -6149,6 +6262,186 @@ PyTorch/CUDA继续承担模型计算，Python组织提示与分析，Go承担调
 ## 声学验收边界
 
 沙沙声需分别定位原始录音、参考清理、模型生成、codec、后处理及播放欠载；低输入与估计SNR不等于根因。首PCM/发送play命令/Worklet消耗首语音/硬件声学首声不是同一时间。自然度需完整朗读试听与逐字核对。历史真实训练闭环、长数据覆盖及RTF≤0.3缺口继续保留；整体PARTIAL/BLOCKED。
+
+## 问题27：噪声/自然度分层与验收（已完成决策，未实施）
+
+- 四选项、推荐C及50项建议见DECISIONS；参考→ICL→模型PCM→后处理→浏览器→设备分层定位。嘶声、点击、欠载、韵律分别记录，不从截图断定根因。
+- noise_metric_probe.py每轮8项、三轮：原estimate_snr为20ms帧RMS的92与8分位差；稳态干净音与两种真实组件SNR不同的等能量重复块均返回0，无噪动态音返回约14.64dB。因此该估计不是噪声真值，不能单独签声学验收。
+- 均匀衰减不改善组件SNR；原normalize_speech约14dB增益同时放大信号与噪声。理想FFT低通反例同时损失有用6kHz分量，误差增大；它不是项目降噪器实测，也不是真实辅音试验。
+- 合成探针未运行真实降噪/语音模型/GPU/用户WAV；不据此改变降噪阈值或默认算法。声纹、内容、噪声、完整自然朗读及时间指标联合验收，真实声学缺口仍BLOCKED。
+
+## G0补审第一批（未签收）
+
+- 本批实际全文语义读6份/930行，53资产逐项覆盖台账；第二/三遍完整签收0，其余47项及外围仓库继续补，不宣称全源完成。
+- 300条建议逐ID初审/批次/测试合同见G0_DISPOSITION；23条关联限定范围缺陷、96保留、89文档/测试合同、55真实条件阻塞、37待证。不是23个独立bug，更不是300已修。
+- 84项CPU/进程/进程内HTTP专项三轮均通过；另10项边界三轮复现损坏Base配置未受控异常与恢复中途I/O故障部分提交。没有实际训练/声学/性能验收。
+- CPU测试依赖已补入忽略.venv，NumPy仍2.2.6；Torch/完整模型/Go/Rust目标实验未执行。本批详情见KAGGLE_STEP18_G0_AUDIT.md，下一批先补数据/声码/原始库和训练发布链。
+
+## G0补审第二批：训练链（未签收）
+
+- 新读12份/1974行，当前第一遍全文累计18/53、2904行，剩35项；完整第二/三遍仍未签收。当前覆盖台账以g0-training-chain-coverage.json为准，第一批保留历史不改写。
+- 135项训练数据/声码/原始库/兼容/安全张量专项×3均通过；新增6项provider元数据合同×3复现HF提供包与旧版本查询不匹配。重型加载为fixture，未执行真实编码/训练。
+- 新发现F01单列，不覆盖300原建议；细节见KAGGLE_STEP18_G0_TRAINING_CHAIN.md。下一批优先Go安全/会话/调度及协议，之后完整前端与启动恢复。产品未改，G0仍待补齐。
+
+## G0第三批：Go网关与本地协议（未签收）
+
+新增全文第一遍13份/3527行，累计31/53、6431行，剩22项；完整第二/三遍仍0。原Go主测试40项（含子测试56）×3和新增边界10项×3完成；独立竞争见证三轮均预期非零并报告DATA RACE，不能计为无失败套件。确认快照共享map竞争F02及工作帧校验不足F03，均未修复；queue_wait_ms/健康/慢客户端/SSE问题按证据区分源码观察与待验证。
+
+实际本地Go/Python mock播放链、原始库HTTP、合成训练输入HTTP各内部3轮通过；损坏音频预期处理失败、合成WAV快照不等于真实训练。未重跑全部历史6类协议。详细边界见KAGGLE_STEP18_G0_GATEWAY.md，当前覆盖改以g0-gateway-coverage.json为准，历史台账/300建议/Q25–27均保留。下一步补剩余前端、运行分析、DSP/启动恢复等源码及全源第二/三遍，不跳过G0进入S1，不新增18包，不声称模型/双卡声学或性能验收。
+
+## G0第四批：前端录音与流式播放（未签收）
+
+新增全文第一遍3份/2217行，累计34/53、8648行，剩19项；完整第二/三遍仍0。实际Chromium完整浏览器套件134项×3通过（原123+新增11），失败/跳过/retry/flaky均0；新增8保护+3原缺陷观察，不把观察通过说成修复。第1–17阶段完整包逐字节剪贴板保护通过；真实原始文件按冻结hash核对，浏览器原始文件保留用sentinel，不冒称完整原始文件复制。
+
+F04迟到旧录音error误停新会话、F05协议解析失败未显式取消reader/请求、F06音频模块初始化失败未revoke临时Blob URL，在明确设备/网络故障fixture下各三轮复现，均未修。原Player22项/延迟16项VM各三轮，Node30/JS/repack通过；物理麦克风/声卡/真实模型/双卡声学未测。细节见G0_FRONTEND，当前覆盖以g0-frontend-coverage.json为准。继续剩19项Python运行分析/启动恢复/DSP/工具等及全源第二/三遍，不跳G0，不新增18发布包或Q28。
+
+## G0第五批：Python运行/监督/启动与绑定（未签收）
+
+新增全文第一遍5份/1536行，累计39/53、10184行，剩14项；完整第二/三遍仍0。原84项CPU/安全/租约/可靠性+新10边界=94项×3通过，无失败/错误/跳过；新7保护+3原缺陷观察。真实supervisor/FD租约/进程组与致命健康协议两类各内部3轮通过，模型角色均CPU替身，不是实际GPU/训练或完整Kaggle启动。
+
+F07异步响应队列无容量/反压、F08失败重载遗留与接受pin不匹配的prompt、F09clone模式规范化/报告不一致，均以明确CPU fixture复现，未修。真实文件hash及原Worker/RealEngine.load_profile控制流实际执行，重型提取/生成/GPU清理为fixture；不冒称真实错音色或慢客户端内存压力。Node30/JS/Python AST/repack通过，见G0_RUNTIME。当前覆盖以g0-runtime-coverage.json为准；下一步补剩14项分析/API/参考切分/DSP/工具/说明及全源第二/三遍，不跳G0，不新增18发布或Q28。
+
+
+## G0第六批：分析/API、参考切分与Python/Rust DSP（2026-10-23）
+
+完整报告见 `docs/KAGGLE_STEP18_G0_ANALYSIS_DSP.md`。全文第一遍新增6份2152行，累计45/53、12336行，剩8份；完整第二/第三遍仍0。172项专项×3轮全通过（旧160+新12，新9保护/3原行为观察），每轮失败/错误/跳过0；另14个分析AST案例与12个NumPy合成DSP案例各三轮，不等于全功能/全模型验收。新F10极短NumPy breath形状、F11窗口重转写词信息漏清洗、F12分析端失败/残缺流被接受，均未修复。F12实际requests+本地TCP；F11为显式ASR metadata fixture。旧校准/候选/诊断及分块依赖仍复现；历史上游cache缺失，本次未重跑6个prompt接口案例，不改写历史20案例收据。Rust两份只完整读源码，缺rustc/cargo，未编译/执行，不冒用NumPy代替。Node30/JS/Python AST/repack检查通过。原300建议、问题25–27各50、53源/94冻结/15正式与本批开始295历史文件hash保持；旧验证器保持历史版本，当前检查用verify_analysis.py。无产品改动、无18包、无真实训练/完整模型/GPU/用户WAV/物理声卡/提速/无沙沙或相似度验收。继续第一遍剩6工具与LICENSE/MEMO，再补全源第二/三遍和失败映射；整体PARTIAL/BLOCKED，不开问题28、不要求Continue。
+
+
+## G0第七批：工具/LICENSE/MEMO，内嵌53资产第一遍补齐（2026-10-23）
+
+完整报告 `docs/KAGGLE_STEP18_G0_TOOLS.md`。新增全文8份1332行，累计53/53、13668行，第一遍剩0；完整第二/第三遍仍0，G0不签收。197项专项×3轮通过（上批172+既有probe13+新12；新9保护/3原行为见证），每轮失败/错误/跳过0。另每轮4实际CLI合同，backend静态/runtime、默认无--run的benchmark均按预期exit2/BLOCKED；resource status exit0，不冒充模型通过。F13 E2E缺gpu/failed END/奇数PCM/残留误PASS，F14 watermark空HTTP503/ERR/残缺帧的零音频误PASS，F15 selftest failed/cancelled Mock统计流误PASS，均真实本地HTTPfixture三轮确认未修；F15时间是确定性fixture，不是性能实验。D01记录MEMO页头step15/xvector/maxgain12与当前17 ICL/maxgain6漂移，冻结MEMO不改。LICENSE全文读完不等于法律/依赖/权重/语音授权签收，NOTICE来源待证。Node30/JS/全部产品Python AST/repack通过；本批开始329历史文件hash保留，53源/94冻结/15正式不变，当前覆盖g0-tools-coverage.json，检查verify_tools.py。没有Rust/完整模型/GPU/真实训练/声学/提速验收，无产品改动或18包。下一步全源第二遍、第三遍交叉反证与300建议最终映射，不预填Q28，不要求Continue。
+
+
+## G0全源第二遍第1批：训练执行与资源所有权（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_TRAINING.md`。8份重新全文阅读1056行并交叉复核CLI/controller/rank、OFD/码租约、准入/取消/原子产物、dataset/JointLoss/LoRA；第二遍累计8/53、1056行、剩45，第一遍53/53/13668保持，第三遍0。局部查看training_codes/encode_training/supervisor不计第二遍全文。219项×3轮全通过（旧197+另选既有artifact10+新12，新11保护/1原行为见证），失败/错误/跳过0。F16原stop_ranks在leader退出后漏清理忽略SIGTERM的额外后代，实际CPU进程/pidfd/OFD/flock复现，未修；测试finally定向清理并验证锁释放。额外后代为明确fixture，生产run_rank无DataLoader子进程，不声称真实训练出现此故障。AST仅运行纯Python采样、commit赋值回滚、dataset构造/len，无Torch算子模拟，无tensor/optimizer/Gloo/NCCL/完整Qwen/GPU/声学或提速验收。Node30/JS/全产品Python AST/repack通过。382历史文件hash、53源/94冻结/15正式、300建议初审与Q25–27各50保持；当前g0-pass2-training-coverage.json与verify_pass2_training.py。无产品改动/18包，G0仍BLOCKED；继续其余45项第二遍及全源第三遍/最终处置映射，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第二遍第2批：来源/声码/产物与恢复认证（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_STATE.md`。7份重新全文阅读1526行（voice_library/training_data/training_codes/trained_profiles/persist/qtts_common/access_control），第二遍累计15/53、2582行、剩38；第一遍53/53/13668保持，第三遍0。analyst候选函数仅局部，不计全文。324项×3轮全部通过（旧219+另选既有93+新12，新11保护/1原行为观察），各轮失败/错误/跳过0。预检曾因测试提取器保留装饰器报1个NameError，已仅修测试、保留原失败日志，最终预检12通过。F17：原pack目录枚举后切换候选，可收新版profile.json却漏新锚点，本地原解包接受后引用缺失；真实tar/文件与原候选AST函数体执行，worker reload/admission明确fixture，确定性交错非HTTP/线程压力或远端Kaggle。新缺陷未修，F01/F16及旧恢复部分提交等问题仍保留。代码/来源封存、取消/IO回滚/同OFD、隐私scope/auth转发及真实safetensors合成结构专项通过，不是Torch/optimizer/DDP/NCCL/真实编码/长训练/完整模型/GPU/声学/提速验收。Node30/JS/AST38/repack通过；408历史hash、53源/94冻结/15正式、300初审及Q25–27各50不变。当前覆盖g0-pass2-state-coverage.json，当前检查verify_pass2_state.py；完整交接增至73份原文。无产品改动/18包，G0仍PARTIAL/BLOCKED；继续剩38项第二遍及全53第三遍/最终处置，优先provider/binding/worker/分析API版本与取消/失败链，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第3批：provider/绑定与推理生命周期（2026-10-23）
+
+完整报告 `docs/KAGGLE_STEP18_G0_PASS2_INFERENCE.md`。qwen_compat/voice_binding/worker/clone_stream/adapter_engine全文5份1071行，第二遍累计20/53、3653行、剩33；第一遍53/53/13668保持，第三遍0。新12（11保护/1观察）加旧324=336项×3通过，失败/错误/跳过0；ASGI2.3独立观察1×3另列。新F18原synth在正文迭代前启动生产线程，响应头阶段断连未进入generator finally，cancel未传给生产；ASGI2.4 send异常和ASGI2.3 receive disconnect两条真实Starlette响应路径三轮确认未修。断连时序/CPU工作负载明确fixture，非TCP/浏览器/模型/GPU证明，finally已定向清理join自有线程。旧F01–F17仍保留。新保护含FIFO/nonblock、绑定/预算、真实锁排队取消、重放迭代器close、RoPE异常/registry、trained磁盘重绑定/删除/链接/预算；最小manual_seed模块替身不是Torch算子或真实codec。临时venv未保留后重建固定关键CPU版本，保存安装日志/freeze，不声称全部传递依赖相同。Node30/JS/AST39/repack通过；435历史hash、53源/94冻结/15正式、300初审与Q25–27各50不变。当前覆盖g0-pass2-inference-coverage.json与verify_pass2_inference.py；交接74份全文。无产品改动/18包/真实训练/模型/双GPU/声学/提速验收，G0仍PARTIAL/BLOCKED。下一批分析/API/参考切分与版本/校准/取消失败链，继续剩33份第二遍和全53第三遍/最终映射，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第4批：分析/API、参考切分与校准所有权（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_ANALYSIS.md`。analyst/library_api/reference_segments全文3份1480行，第二遍累计23/53、5133行、剩30；第一遍53/53/13668保持，第三遍0。348项（旧336+新12，新10保护/2观察）×3全通过，各轮失败/错误/跳过0。F19两个同档案真实ASGI校准请求经原HEAVY(2)/calibrate，共用临时id；A删除后B原Mock Worker加载缺失，错误结果覆盖成功记录，均200；F20重载期间实际删除档案，原终检跳过None，原reload_response仍200/已保存。两项确认未修；worker transport/合成/ASR/声纹明确fixtures，不是TCP/真实模型/双GPU/删除后播放证明，临时资源/槽位清理通过。参考分析最多24预排/3落盘/单锚点条件区分清楚，不称Qwen融合或训练；新17秒长手工文本/20秒低能量窗口是合成控制流，不是真长数据训练。旧F01–F18及专题问题保留。Node30/JS/AST38/repack通过；470历史hash、53源/94冻结/15正式、300初审/Q25–27各50不变。当前g0-pass2-analysis-coverage.json与verify_pass2_analysis.py；交接75份原文。无产品改动/18包/真实模型/训练/GPU/声学/提速验收。下一批启动/监督/backend preflight，继续剩30份第二遍、全53第三遍及最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第5批：启动、监督与backend preflight（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_STARTUP.md`。bootstrap451/supervisor219/backend_probe200全文3份870行，第二遍累计26/53、6003行、剩27；第一遍53/53/13668保持，第三遍0。360项（旧348+新12，新10保护/2观察）×3通过，各轮失败/错误/跳过0。F21原sh在leader退出而后代持stdout时timer跳过killpg，超过请求期限并在外部清理后返回0；真实CPU/pipe/timer/pidfd、观察包装确定性交错，后代退出已验证，非完整bootstrap/性能证明。F22原watch的fatal回执写失败跳过kill/gave_up，HTTP每轮清零使8轮后fail_count仍1；health/IO/process/wait明确fixtures，非真实GPU或磁盘故障。两项未修，F01–F20保留。标准faster启动全部PINS逐项预查/精确安装/constraints0600与清理/Torch变更拒绝、probe先于下载的控制流测试通过；未执行真实pip resolver或GPU，后安装漂移/独立入口/native-adapter仍待证，surface preflight不是质量签收。Node30/JS/AST38/repack通过；497历史hash、53源/94冻结/15正式、300初审与Q25–27各50保持。当前g0-pass2-startup-coverage.json、verify_pass2_startup.py及progress-pass2-startup.json；交接76份原文。无产品修改/18包/真实训练/模型/双GPU/声学/提速验收。继续剩27份第二遍，优先网关调度/流协议/取消/超时及前端排空交叉核对，再全53第三遍/最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第6批：网关调度/流协议/取消与激活终检（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_GATEWAY.md`。main/scheduler/session/segmenter/llm全文5份2286行，第二遍累计31/53、8289行、剩22；第一遍53/53/13668保持，第三遍0。每轮Go原40主测/含子测56、旧专项10、新13（11保护/2观察）通过，合计63主测/79含子测×3；Python旧360×3通过，无新增Python测试。通过套件无失败/跳过/race warning；独立F02竞争见证每轮预期非零/DATA RACE，未混入通过数。F23原healthLoop接受HTTP503 ready=true，原网关报告两worker健康；真实本地HTTP，永久循环隔离于自有Go子进程并核对退出。F24原activate期间实际改profile.model_output_mode，最终conditioning改变而binding相同，仍200/提交active；worker回执为HTTP fixture，无真实训练产物/模型/后续合成。两项未修，F01–F22和专题问题保留。实际Go1.23.9新增于忽略venv，安装报告/wheel SHA与可执行hash保存；freeze仅多go-bin==1.23.9，其余依赖保持，不称全部freeze相同。Node30/JS/AST38/repack/原Go及新探针副本vet/gofmt通过；525历史hash、53源/94冻结/15正式、300初审及Q25–27各50不变。当前g0-pass2-gateway-coverage.json、verify_pass2_gateway.py及progress-pass2-gateway.json；交接77份原文。无产品修改/18包/真实DeepSeek/Qwen/训练/双GPU/声学/提速签收。继续剩22份第二遍，优先前端流终止/取消/遥测/完成排空，再DSP/工具/剩余Go安全和测试；全53第三遍及最终映射仍待完成。G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第二遍第7批：前端终态/取消/排空与遥测（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_FRONTEND.md`。app1715/recorder358/index144全文3份2217行；HTML首次合并输出截断，已补读全范围，第二遍累计34/53、10506行、剩19；第一遍53/53/13668保持，第三遍0。新增浏览器12（10保护/2观察）预检通过，既有134+新12=146×3全部通过，失败/跳过/flaky/retry0；Player VM22/延迟VM16各三轮、CPU旧360×3通过，无新增Python测试。本批未重跑Go79/独立F02竞争见证或独立ASGI2.3/旧CLI矩阵，不挪用历史数字。F25原完整前端脚本END后仍收PCM/文本且第二END替换首汇总；F26网络EOF先发report并停telemetry，随后play/欠载UI变化不更新报告；真实Chromium原生流/DOM/timer，网络/设备/Worklet状态明确fixtures，非物理播放、真实欠载或声学/提速。两项未修，F01–F24及<=50ms已完成短尾/旧DSP等保留。Node模块按冻结lockfile npm ci恢复，未改lock；venv freeze与上批相同，无新Python依赖。Node30/JS/AST38/repack/前端探针语法检查通过；575历史hash、53源/94冻结/15正式、300初审及Q25–27各50保持。完整交接78份原文；当前g0-pass2-frontend-coverage.json、verify_pass2_frontend.py与progress-pass2-frontend.json。产品未改/18未发/真实DeepSeek/Qwen/训练/双T4/声学/提速未签收。下一批Python/Rust DSP和工具自检，再余Go安全/测试与LICENSE/MEMO；继续剩19份第二遍、全53第三遍/最终映射。G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第8批：DSP与工具（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_DSP.md`。Python/Rust DSP及6工具全文9份1500行，第二遍累计43/53、12006行、剩10份1662行；第一遍53/53/13668保持，第三遍0。CPU372（旧360+新12，新10保护/2观察）×3全部通过，失败/错误/跳过0；NumPy分块12、原EdgeTrimmer AST8各三轮，旧问题未修；4个独立CLI合同×3，backend静态/runtime及默认benchmark按预期exit2/BLOCKED，resource status exit0，阻塞不是模型成功。F27 NumPy flush未清DC状态，常量480→flush192→零240得到240非零/峰6026，fresh为0；Rust源码清DC但未编译执行，正常worker每job重建Leveler，因此不是当前沙沙声根因证明。F28原benchmark/measure两实际HTTP端点health分别GPU0/1、18测量均GPU0，仍real_gpu_verified/speed_target_passed true；health/stats/PCM/clock明确fixtures，报告true是被反证输出，不是硬件/RTF成绩。两项未修。Node30/JS/产品Python AST/新审计语法/repack通过；625历史SHA、53源/94冻结/15正式、300初审及Q25–27各50保持。freeze与前端相同，无新依赖；Rust/Torch/Qwen/实际训练/双GPU/声学/提速未验。本批不重跑浏览器/Player VM/Go/独立F02/ASGI2.3，不挪用历史成绩。完整交接79份；当前g0-pass2-dsp-coverage.json、verify_pass2_dsp.py与progress-pass2-dsp.json。产品未改/18未发；下一批剩余Go安全/测试/go.mod和LICENSE/MEMO共10份，再全53第三遍及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第二遍第9批：安全与全文收尾（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_SECURITY.md`。剩余Go安全/测试/go.mod及LICENSE/MEMO全文10份1662行，第二遍累计53/53、13668行、剩0；第一遍53/53/13668保持，第三遍0。这是冻结包53资产，不是全Git仓库或三遍/全功能完成。每轮Go原40主测/含子测56、旧10、上批13、新12（10保护/2观察），合计75主测/91含子测×3通过；CPU旧372×3通过，无新Python测试；失败/错误/跳过0，通过集合无race warning。独立F02每轮预期非零/DATA RACE，不混入通过数，未修。三轮副本vet通过。F29原guard/decodeJSON/validateSpeak接受孤立高低代理项或非法UTF8，解码成a�b后返回200；实际本地HTTP组合校验handler，非完整合成或认证绕过。F30原授权speak/LLM错误链将HTTP401替身正文回显的配置假密钥带入ERROR/END/metrics；密钥/供应商均synthetic，非真实泄密事件或未授权读取。两项未修。LICENSE全文阅读不等于依赖/模型/数据/NOTICE法律签收；MEMO step15/xvector/maxgain12漂移仍为D01，冻结不改。Node30/JS/产品与新审计Python AST/repack/Go探针gofmt通过；686历史SHA、53源/94冻结/15正式、300初审及Q25–27各50保持。Go沿用、freeze与DSP相同，无新依赖；无Rust/Torch/Qwen/完整模型/真实GPU/训练/声学/提速签收。本批未重跑独立CLI/NumPy与trimmer探针/ASGI2.3/浏览器与Player VM，不挪用旧成绩。完整交接80份；当前g0-pass2-security-coverage.json、verify_pass2_security.py与progress-pass2-security.json。产品未改/18未发；下一步第三遍全源跨层输入/pin/错误、生命周期/取消/播放/训练绑定审查及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第三遍第1批：输入与内容绑定（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_INPUT.md`。main478/security247/session692/qtts_common211/voice_binding60/resource_limits172/access_control70重新全文7份1930行，第三遍7/53、剩46份11738行；第一、第二遍各53/53/13668保持。browser和library_api只局部调用点不计第三遍。新增Go6（5保护/1观察）及Python6（5保护/1观察），预检各6通过；每轮Go81主测/97含子测×3、CPU378（旧372+新6）×3通过，失败/错误/跳过0，通过集合无race warning；独立F02三轮预期非零/DATA RACE不计通过，三轮副本vet通过。实际Go/Python8合法pin与12非法generation向量、两worker ack期间generation变更拒绝、空/错text拒绝、内容pin非身份、上传预算+1、spool清理、原子JSON失败、参考增长拒绝、两认证进程一致性均有明确边界。F31同磁盘top_k:null被Go转0并得pin而Python拒绝；F32认证token FIFO无writer时open先于fstat阻塞，普通文件control通过，外部定向终止并reap自有子进程；两项未修，无真实凭据/模型/错误音色或远程利用证明。原8条建议仅部分证据映射，300与Q25–27各50不改/不签收。739历史SHA、53源/94冻结/15正式保持；Node30/JS/AST/repack/gofmt/vet通过，freeze与第二遍收尾相同，无新依赖。旧S2 F29/F30随套件重跑仍未修；本批未跑浏览器/VM/独立CLI/ASGI2.3/分块裁剪探针，不挪用历史成绩。完整交接81份；当前g0-pass3-input-coverage.json、verify_pass3_input.py及progress-pass3-input.json。产品未改/18未发；无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍参考分析/API/档案修改与备份事务，继续剩46份及300最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第三遍第2批：参考与档案事务（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_REFERENCE.md`。analyst1211/library_api163/persist99/reference_segments106/voice_library351第三遍完整5份1930行，累计12/53、3860行、剩41份9808行；前两遍各53/53/13668保持。新12（10保护/2观察）预检通过，CPU390（旧378+新12）×3全部通过，失败/错误/跳过0。F33真实两CPU线程占满原HEAVY，原text/candidate ASGI先写盘改pin再429，不reload且不报reference_saved；F34原校准评估旧转写，在结束提交前实际text ASGI改pin仍200，随后calibrate保存旧评分到新档案仍200；临时目录/线程/槽清理核对。模型/ASR/speaker/worker ack为fixtures，无真实音质/错误音色证明，两项未修。复制失败旧pin保护、JSON失败仍遗留孤立anchor明确不称全回滚；trained三入口409、原库snapshot异常/顺序/只读与租约、稳定pack/extract字节pin、归档末尾非法成员先拒绝、DELETE重复revision、24秒可信词切分保护通过。原300本批10条部分链接、与前批去重16个ID，均未最终签收；原文/Q25–27各50保持。795历史SHA、53源/94冻结/15正式保持，Node30/JS/AST/repack通过，freeze与前批相同无新依赖。本批未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/CLI/分块裁剪探针，不挪用历史成绩。交接82份；当前g0-pass3-reference-coverage.json、verify_pass3_reference.py及progress-pass3-reference.json。产品未改/18未发；无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍训练输入/码/训练产物绑定与取消/提交，继续余41份及300最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第三遍第3批：训练来源与产物提交（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_TRAINING.md`。training_data285/training_codes355/training_job227/tts_training200/tts_dataset125/trained_profiles155/encode_training128/trained_voice30全文8份1505行，第三遍累计20/53、5365行、剩33份8303行；前两遍各53/53/13668保持。首组源码输出截断后完整补读。首次测试43项因导入TestCase重复31项，1失败为误判正常.lock；改模块导入与断言，保留首错/说明，预检新12通过。初行数误算1605被信用断言拦住未写错误coverage，逐项纠正1505/5365/8303并留记录。CPU402（旧390+新12，新11保护/1观察）×3全部通过，失败/错误/跳过0。F35原控制器在两个真实CPU替身rank0退出且adapter仅含manifest.json={}时仍completed/optimizer_execution_observed=true，原TrainedArtifacts.inspect409拒绝，信号/租约恢复；训练准入/依赖/tokenizer门禁与rank实现明确替身，原GPU/code OFD adopt实际执行，无Torch/优化器/训练/非法声音发布或正常rank产生坏检查点证明。F35未修，F01–34/D01保留。新保护包括输入BaseException回滚、PCM极值36001帧、codes最终取消、encoder第二样本中断、finish-only pin、adopt最后OFD、cancelled产物拒绝、来源/NaN拒绝、发布末次重核/固定参考文本/active不变及新trained_voice CLI错pin脱敏拒绝；发布codes lease元数据/adapter为fixtures，不能签收真实训练。原300本批7部分链接，与前两批去重22ID，均未最终签收；Q25–27各50保持。825历史SHA、53源/94冻结/15正式保持；Node30/JS/AST38/repack通过，freeze与上批相同无新增依赖。本批未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/额外四CLI/分块裁剪矩阵，不挪用历史成绩。交接83份；当前g0-pass3-training-coverage.json、verify_pass3_training.py及progress-pass3-training.json。产品未改/18未发，无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍adapter/推理/provider兼容与缓存/失败取消，继续余33份及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第三遍第4批：推理与生成资源清理（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_INFERENCE.md`。adapter_engine108/lora_adapter91/qwen_compat97/clone_stream126/gpu_ownership151/worker680/train_tts49重新全文7份1302行，无源输出截断，worker连续四段；第三遍累计27/53、6667行、剩26份7001行；前两遍各53/53/13668保持。新增12（11保护/1观察）预检一次通过；CPU414（旧402+新12）×3全部通过，失败/错误/跳过0。F36原generated_only_stream在consumer关闭已启动生成器时，上游close替身抛异常，后续window.finish被跳过；生成器frame本身关闭，测试捕获的真实window仍closed false/pending1920/合成code标记，最后显式清理完成。准备/predictor/decoder/Torch上下文均控制替身、无tensor模拟，没有证明生产上游会抛错或正常GC后持续GPU内存泄漏/沙沙根因，F36未修。adapter来源不符先拒绝、cached仍核验实际safetensors字节、取消前不选择与取消后丢弃返回PCM、native rate/shape/NaN/长度拒绝与单句输出、回放指标合计、worker部分生成失败解锁/后续成功、同pin缺prompt重载、RoPE重试cause/注册表、真实短pwrite释放OFD均保护通过；LoRA prepare/commit和native模型未执行。F01–35/D01保留，旧ASGI/CLI/信号/CPU持有者见证随集合重跑，不代表真实模型。原300本批7部分链接，累计去重27ID，均未最终签收；Q25–27各50保持。858历史SHA、53源/94冻结/15正式保持；Node30/JS/AST38/repack通过，freeze与上批相同无新依赖。未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/额外四CLI/分块裁剪矩阵，不挪用历史成绩。完整交接84份；当前g0-pass3-inference-coverage.json、verify_pass3_inference.py及progress-pass3-inference.json。产品未改/18未发，无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍启动监督/preflight/资源测量工具与DSP接口，继续余26份及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+## 第三遍第5批：启动监督、工具与DSP接口
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_STARTUP.md`。11份2253行全文复读；累计38/53、8920行，剩15份4748行。CPU426（旧414+新12，10保护/2观察）×3全部通过，失败/错误/跳过0；另NumPy分块12、trimmer8、实际CLI4各三轮，CLI中3项每轮期望blocked而非模型成功。首预检12项中1 error为测试误访问UploadRejected.status，纠正为code后12通过，首错/修正留档。F37原preflight父控制器接受真实CPU替身child exit23写出的合法形状成功回执；生产者明确替身，不证明实际GPU误通过。F38已有系统cc编译仅rt_version的C共享库，真实ctypes在ABI3缺rt_leveler_new抛AttributeError中止import，ABI2及显式NO_RUST为NumPy；不是Rust编译/运行或正式Rust库损坏证明。两项未修，产品不改。887历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计33unique，Q25–27各50不变，最终处置仍false。Node30/JS/AST38/repack新执行；无新Python/系统依赖，freeze不变。未跑Go/race/vet/浏览器VM/独立ASGI2.3，未跑Torch/Qwen/实际训练/双T4/声学或提速。交接85份；最新coverage/verifier/progress为pass3-startup。继续余Go10/web3/LICENSE/MEMO及300最终映射，G0与整体PARTIAL/BLOCKED，不跳S1/Q28/18发布，不要求Continue。
+
+## 第三遍第6批：网关调度、LLM流与文本保留
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_GATEWAY.md`。剩余Go10资产2110行全文复读，累计48/53、11030行，剩5份2638行（web3份2217/LICENSE201/MEMO220）；前两遍各53/13668保持。新增Go12（10保护/2观察）race预检通过，首编译错因测试误用submitted，已改为真实字段allSubmitted、首错留档；另一次审计元数据括号SyntaxError解析前阻止全部写入，拆开后纠正留档。Go原40+G0十+P2十三+security十二+input六+新十二＝93顶层/109含子测试×3正常通过，意外fail/skip/race0；独立F02 race×3预期非零、仍未修，vet×3通过。CPU完整继承426×3＝1278 PASS，failure/error/skip0，无本批新增Python合同；另NumPy分块12/trimmer8/实际CLI4各三轮，3项CLI每轮期望blocked非GPU成功。F39原Live PreserveText把你好。!?重连成你好。及丢独立空白/标点尾段，非语词漏读或沙沙根因证明；F40原run在活ctx下接受替身cancelled=true stats＋偶数PCM，served1/failed0，非真实生产取消或GPU漏音证明。两项未修；F01–38/D01保持。chat system/history/预算、SSE CRLF/末行无换行/流内错误脱敏、正常read Unicode保字/seed、retry上限、urgency/FIFO、EMA与chunk2/6/pin转发保护通过，非200正文F30仍在。953历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计38unique，Q25–27各50/最终处置不变。Node30/JS/AST38/gofmt/repack新执行，无新Python/系统依赖、freeze不变；CPU继承C ABI故障注入不冒称Rust，无Rust/Torch/Qwen/CUDA/真训练/双T4/声学/提速。本批未跑真实浏览器/VM/独立ASGI2.3，不挪用历史成绩。交接86份，最新pass3-gateway coverage/verifier/progress。产品未改/18未发，下一批web完整阅读与实浏览器、另许可/MEMO及300最终映射；G0与整体PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+## 第三遍第7批：web、录音与播放／界面状态
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_FRONTEND.md`。app1715/index144/recorder358完整复读3份2217行，第三遍累计51/53、13247行，剩LICENSE201/MEMO220共2份421行；前两遍各53/13668保持。浏览器158（原146+新12，10保护/2观察）×3＝474 PASS，失败/flaky/skip/retry0；CPU完整继承426×3＝1278 PASS、failure/error/skip0，无新Python合同；另VM22/16、NumPy分块12/trimmer8/实际CLI4各三轮，三CLI每轮期望blocked不是模型成功。F41停止已abort且hold/reset，注入迟到fixture Worklet st使原player发play/UI playing，不证明真实原生Worklet竞态/物理漏音；F42同accessEpoch、候选mutation0→1、合成profiles响应1→0，使原UI高亮从1回0，不证明实际backend回滚或错声音。两项均未修，旧F01–40/D01保持，每轮保留F04/05/06/25/26观察。新保护含resume中取消、精确File字节/边界、start抛错/权限迟拒绝、policy帧、401锁定、超长帧头、正常完成排空、三份冻结web完整文本原生clipboard且不额外save、最近六完整chat回合；继承真实振荡器/静音录音与完整17包复制/权限回退。浏览器API为fixture，临时E2E workbench不是正式HEAD。首预检11/1为旧recorder-only壳缺charset导致中文乱码，仅新审计壳UTF-8重载后12通过，原断言/旧fixture/产品不改，首错留档。1051历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计45unique，Q25–27各50/最终处置false不变。Node30/JS/AST38/repack新执行，freeze/lock不变，无新Python/系统依赖或npm重装；C ABI故障fixture非Rust。本批未跑Go/race/vet/独立ASGI2.3，不挪用历史结果。交接87份，当前pass3-frontend coverage/verifier/progress。产品未改/18未发，物理麦克风/扬声器/真DeepSeek/模型/实际训练/双T4/声学/提速未验。下一步剩2份第三遍及原300最终映射；G0与整体PARTIAL/BLOCKED，不跳S1/Q28，无需Continue。
+
+## 第三遍第8批：许可／MEMO收尾与原300缺口矩阵
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_CLOSURE.md`。LICENSE201/MEMO220全文复读2份421行，三遍各53/53、13668行，剩0；只关闭53内嵌资产源码阅读子项，不是整个Git仓库或零缺陷验收。原300逐项复核并生成完整gap矩阵，原分类23限定缺陷建议/96保留/89文档合同/55真实条件阻塞/37待证保持；三遍7个链接文件53条记录去重45项，255无该组专用链接不等于无历史证据，最终签收0/300，逐条下一动作／来源／计划合同与边界保存。D01历史MEMO step15/xvector/12dB与冻结17默认ICL/6dB漂移不改；本批AST实际调用原conditioning和output_max_gain_db默认／显式／拒绝路径，不是模型或音量测量。D02新增证据可用性缺口：1139期待历史文件中1136可读SHA匹配、变更0，3份旧.log缺失且匹配*.log忽略规则，预期SHA保留、内容不补造、full_historical_integrity_passed=false。冻结53源/94文件/15正式与HEAD仍保持。旧.venv/node_modules/Go/Rust当前不存在，先期环境／严格历史检查错误留档，改用系统Python标准库、无依赖安装。新12收尾审计合同×3＝36 PASS、Node30×3＝90 PASS，无失败/错误/跳过；JS/repack/AST38各三轮通过。旧158×3浏览器原始JSON只重新解析／核SHA，不是本批重跑；未跑CPU426/Chromium/Go/race/vet/模型/训练/双T4/物理音频／声学／性能，无功能修复、无18包；LICENSE/NOTICE/依赖模型及声音授权未签收。交接88份，当前pass3-closure coverage/verifier/progress。下一步原300逐条最终审查处置及精确测试映射、D02从可信来源找回或有环境后另存新执行收据。G0与整体仍PARTIAL/BLOCKED，不跳S1/Q28，直接继续无需Continue。
+
+## G0第9批：300处置说明与限定失败观察绑定
+
+报告 `docs/KAGGLE_STEP18_G0_DISPOSITION_REVIEW.md`（附录完整300条原建议及逐条说明）。原3轮100项分别补写行动／边界，review_disposition_recorded300/300；原分类23限定修复/96保留/89文档合同/55真条件阻塞/37先调查不变，原final_disposition/test/fix与新functional_acceptance全false，功能及最终签收仍0/300，说明归档不等于G0完成。23原限定缺陷建议手工绑定历史3轮69个JSON Pointer观察（有重复、不算新实验或23新bug），收据／源码／当前相关probe SHA及历史身份是否有记录分别保存；R1-016只相关校准文本交错，NaN未在旧payload，DSP早期未记probe_sha不补造。原45部分链接与23绑定交集3、并集65，235未进入这两组不等于无其他证据。53内嵌资产三遍各13668行保持。D02按3预期SHA搜索当前仓库非.git且<=2MB文件并查git log --all，无同SHA或当前可用提交，未查远端／仓库外；1183历史期待项中1180可读SHA匹配、变更0、3旧.log仍缺，全历史完整性false，不拿新日志充旧字节。新24审计（继承收尾12+新增12）×3＝72 PASS、Node30×3＝90 PASS，JS/repack/AST39各3轮通过，新预检12首次通过，无失败/错误/跳过。系统Python标准库，未装依赖／未重建环境；历史失败仅重读，未跑CPU426/Chromium/Go race/vet/Rust/模型/训练/双T4/物理音频／声学／性能。产品未改，94冻结/15正式及HEAD保持；交接89份，当前g0-disposition-review.json、disposition-failure-bindings.json、verify_disposition.py与progress-disposition.json。下一步按S1非法/缺省/NaN真实HTTP等合同精确映射，补相关而不完整的并发见证，D02从可信源恢复或另存新执行收据。G0与整体PARTIAL/BLOCKED，不跳S1/Q28或18发布，保留全部用户未豁免要求，直接继续无需Continue。
+
+## G0第10批：真实TCP的S1输入边界与CPU继承
+
+报告 `docs/KAGGLE_STEP18_G0_INPUT_HTTP.md`。新Uvicorn原analyst.app+httpx走真实127.0.0.1临时TCP，不是TestClient/AST；生命周期off、worker ACK及合成profile明确fixture，不是Go鉴权或模型。CPU438（原426+新12，7保护/5未修观察组）×3＝1314 PASS，failure/error/skip0；原426逐ID/结果及16旧观察完全继承，新5组后观察21。每轮61请求、合计183；各轮200×19/500×16/400×16/422×6/404×1/409×3，500为未修见证非功能成功。I01 bool/float/string强转；I02容器/非法串/NaN/±Infinity/1e309及顶层非有限500；I03缺省0/重复键最后/未知忽略；I04非字符串转写str化、surrogate500但原文件保留；I05损坏candidates与预装父路径/符号链接file接受，所有字节在自有临时树，不证明公开远程任意文件读取／模型接受。合法候选字节/转写/pin、合法Unicode、越界/缺档、有限非对象422、trained三入口409、library严格JSON400、HEAVY槽恢复保护。新12预检首次通过，探索原JSON保存；检查脚本误用id字段（实际test）的KeyError留档，测试/产品未改、三轮非失败。另NumPy12/trimmer8/实际CLI4各三轮，三CLI期望blocked/resource gpu_verified=false；24审计/Node30/JS/repack/AST39各三轮通过。重建忽略venv并装历史固定Python依赖，freeze精确旧记录去掉故意未装go-bin；NumPy2.2.6非requirements2.4.6，无Go/Rust/npm/Torch/Qwen/模型安装；C ABI fixture非Rust。本批新12建议精确testID/三轮case下标+SHA部分链接，有限证据并集70、230未入这些集合不等于无其他证据，原300/3×100处置/Q25–27各50保持，最终/功能签收0。53资产三遍13668行/94冻结/15正式不动；历史1228期待1225匹配/变更0/3旧.log D02仍缺，不以新日志冒旧内容。无浏览器/Go race/vet/真实模型/训练/双T4/实体音频/声学性能验证，产品未改/18未发。完整交接90份，当前input-http links/verify_input_http.py/progress-input-http.json。G0与整体PARTIAL/BLOCKED，不跳S1/Q28；后续版本冲突与候选/文本/校准组合及剩余逐条映射，不承诺一定成功，直接继续无需Continue。
+
+
+## G0第11批：版本／校准真实TCP组合（未实施产品优化）
+
+新增12项=8保护/4未修观察，单Uvicorn事件循环真实HTTP、HEAVY线程Event控制交错，原reload/calibrate实际执行，worker/ASR/speaker/synth为替身。首次预检12PASS；CPU450×3PASS、failure/error/skip0，旧438逐ID/结果继承；每轮85TCP、三轮255，其中新增24/轮共72。普通候选/文本重叠旧reload有pin503保护；校准旧评分仍可在真实HTTP编辑之后200保存（新转写未被覆盖）。另满额429前写盘、同名候选bytes变更后未重评、自有profile真实DELETE后校准500而未复活。文件变更非HTTP上传，非声学/实际错声音证明。新12原建议部分链接令并集75/300=25%，仅限定证据覆盖，最终/功能签收0/300。1317历史期待/1314匹配/3旧.log缺失；产品53源/94冻结/15正式保持。复用venv无安装，完整交接91份。附加审计与独立核验以version-http-checks-roundN.json和progress-version-http.json为准；报告KAGGLE_STEP18_G0_VERSION_HTTP.md。G0/整体PARTIAL/BLOCKED，不跳S1/Q28/发布；声音优化未实施，真实模型/双T4/训练/声学/提速未验收。
+
+
+## S1隔离候选实际实现（问题28流程调整）
+
+不再只增加观察。问题28已独立按四选项、选C及50行动完成，见KAGGLE_STEP18_Q28_S1_CANDIDATE.md；原25–27文件不改、29未开。前置门禁调整为：允许隔离候选修复，不允许未验收候选进入冻结包、默认正式服务／工作台或发布。G0整体仍PARTIAL/BLOCKED，真实模型／硬件门禁未豁免。
+
+新增kaggle/step18的实际候选分析源码，依赖冻结17其余模块；只改候选／文本／删除入口及提交辅助代码，其余命名定义AST相同。实现严格JSON/类型/Unicode、HEAVY先准入后写盘、内容地址锚点和提交失败保旧、短提交锁与删除协调；校准仍原实现不算修复。默认17包与正式HEAD、53源/94冻结/15正式保持。
+
+最终相同28合同，旧版43失败记录/2明确skip/0error，候选28预检全PASS。完整478（旧450冻结对照+新28候选合同）×3PASS，失败／错误／跳过0；每轮159 TCP、三轮477，新候选74/轮共222。15条原建议新限定实现证据加强原75并集，未虚增覆盖，原300最终／功能签收仍0。三轮附加检查与独立封存以s1-candidate-checks-roundN.json及progress-s1-candidate.json为准，完整交接93份。无真实模型／训练／双T4／声音质量／提速验收，18未发布；下一步仅S2校准快照与冲突修复，不能把当前成果称已消沙沙或首声更快。
+
+
+## S2-A校准快照实际实现
+
+在隔离18候选中实现完整输入捕获、仅用捕获字节评估、提交前同短锁核验；真实HTTP编辑／ABA、候选同名bytes／质心／参数变化、删除／trained变化后409且不应用旧评分。S1变更写修订nonce，相同选择幂等；同档案第二次校准409，临时ID独立且长度安全，自有临时目录与ASR释放finally。最多24候选、64MiB聚合文件，非总内存预算／跨进程事务。改前S1及活跃交接已归档s2-before/index；冻结17不动。新增22合同对改前S1为21失败记录/0error/0skip，候选预检22全PASS。三轮500（450冻结控制+当前候选上S1旧28+新22）及附加检查以progress-s2.json为准，完整交接94份。原300建议最终／功能未全签，证据比例非整体进度。缺失CER默认值、全失败chosen0、非有限／覆盖率评分、最终worker回执等留待S2-B，不提前签完整S2，不跳真实模型／双T4／声学或发布门禁。问题29未开，原三轮100及问题25–28记录保留。
+
+
+## S2-B有效指标与加载就绪实际实现
+
+Q29选C及50行动先完成，未开30。逐目标缺失null、覆盖率／有限可靠指标门禁，不再默认CER0.05或全失败chosen0。无候选422不写盘保旧，其他完整候选可选；临时worker核验状态和pin，选择保存后最终加载失败503/savedtrue/readyfalse，后改／删版本明确标不当前，不虚构回滚。成功保留磁盘选择报告一致及quality_verified=false；后台可选校准摘要已接入但未完整运行真实创建。S1/S2-A旧方法断言不改。
+
+最终23合同对S2-A为36失败记录（含子用例、非36bug），候选预检PASS。初三轮523通过后复核修正整数PCM abs最小值溢出并补子用例，最终另命名三轮以s2b-final和progress-s2b.json为准，不混算初轮；初源码逆变换重建明确按记录SHA核验、非事前快照，原错日志均保留。旧500加新23，旧450冻结控制／旧50当前候选／新23当前候选，附加检查和封存以实际收据为准。完整交接96份，17／53源／94冻结／15正式不变，18未发布。真实短音、质量、双T4／训练／性能及全局事务仍未签；下一步隔离候选S3分块一致性，不跳声学门禁。
+
+本批12条当前实现限定链接令证据并集81/300（27%仅证据覆盖），不是整体完成率；最终／功能签收仍0。
+
+
+## S3因果 NumPy DSP 与隔离worker实际接入
+
+Q30四选项选C、50行动和三遍各100专题建议已先归档。新增 step18_audio_rt.py 与隔离 worker.py，唯一模块名接入真实 run_job；所有 worker 命名定义AST保留。固定 RMS 余数、逐样本因果平滑、绝对位置淡入、明确flush/关闭/配置合同；没有PCM整窗缓冲，没有参考PCM拼接。候选只启用 numpy-causal-v1，不装载未测Rust；冻结17/正式工作台不动。旧版30合同44失败记录、候选30 PASS；完整562×3全部PASS，含旧523逐ID/结果保留；14分块矩阵×3差0，601秒合成流×3状态有界和计数通过，CPU实测有短块加速也有大块开销，不是模型RTF或声学提速证明。附加24审计/Node30/AST53等最终结果与两次封存以 progress-s3.json 为准。新venv确实重建、freeze与旧版相同；1768保护/1765匹配/3旧日志缺失仍保留；完整交接101份、18未发布。完整S3含Rust/模型/声学仍未签收。下一步S4裁剪有界状态，不能把DSP样本数守恒当整个原trimmer链已无丢样本；不需要Continue。
+
+
+## S4有界裁剪与worker结束实际修复
+
+Q31选C及50行动、三遍100建议先写。新增step18_trimmer.py固定120网格残帧/跨块35ms前史/有界尾队列/finish；正常finish保留缓存非零尾，精确零裁掉计数；取消/异常清缓存不排尾；中段静音超限输出不删。新增worker_s4.py实际接入，只更换裁剪器和Worker.run_job，原S3 worker/DSP及旧合同完整保留。30旧版红42失败记录/0error/skip，初41失败+1OverflowError已保留并转明确合同失败；候选30/worker10预检通过。完整602×3全部PASS，旧562逐ID/结果保留；21分块矩阵×3对独立参考逐样本相等，601秒合成流×3达到并守住43200样本尾预算。裁剪CPU约1.10秒/601秒合成音频，正确性有开销不声称提速/模型RTF/首声改善。最终审计24/Node30/AST57及两次封存见progress-s4.json。无新依赖，1905保护/1902匹配/3旧日志仍缺，完整交接106份，17/正式工作台不改、18未发。领先低电平仍可裁，非零尾不是无噪声证明；真实用户音频/双T4/训练/声学及完整S3 native仍未签。下一步S5完成短尾排空，直接继续无需Continue。
+
+
+## S5完成短尾／重采样／epoch实际修复
+
+Q32选C＋50行动、三遍100建议先归档。新增完整web/app.js，仅改Player及嵌入Worklet，网络解析/预测器/UI后缀逐字节保持；真实完整页面使用新Player。完成任何正pending可play，未完成风险阈值保留；按post−played−dropped计账并等当前epoch endACK，不以旧fill0假装结束。全局整数坐标重采样，正常末样本保持到ceil预算、取消不flush；epoch拒绝旧状态与stop后复活。37VM红28失败/9保留，候选预检37和8源码及15原生浏览器通过。最终610CPU（旧602保留）/37VM/173Chromium（旧158＋新15，含3完整UI原生链）三轮及24审计/Node30/AST58与两次封存见progress-s5.json；不混算重叠VM。实体扬声器与模型声音未验收，firstPlayedMs仍play命令时间。Python沿用无安装，npm ci确实按旧lock安装浏览器依赖，lock/config不改；2049保护/2046匹配/3旧日志缺，完整交接111份，17/正式工作台/S3S4不改、18未发布。下一步S6时序与诊断，真实T4/训练/声学/RTF和完整S3 native仍未签，不要求Continue。
 
 ---
 
@@ -6464,3 +6757,5977 @@ S18-R1-081已完成分块对照；S18-R1-082短块淡入问题在三轮冻结17 
 每轮6项上游提示合同、4项校准场景、9项候选输入、1项双卡seed诊断，共20项；三轮结果一致。三提示单目标list/dict均拒绝，三提示三目标是独立批量。ASR全失败产生默认CER0.05、旧评分提交新候选、加载失败未检查、全合成失败仍chosen0、bool/float强转、非法类型异常以及诊断不同seed均复现。它们是控制流/状态问题，不是用户沙沙根因。
 
 保留：Go激活并行加载、指纹/模式确认、最终重读及旧active保留；Python文本/候选reload_response已有503与reference_saved语义；Worker锁内前后核验；前端认证epoch。不能只列缺陷却重写破坏这些成功保护。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_REVIEW3.md
+
+# 第十八阶段第三轮：数值、时序与播放边界100条建议
+
+第三轮专题审查完成，外围模块仅作静态入口/边界复核；不声明所有源码已逐行语义审查三遍。产品未修改，18未发布，自问自答尚未开始。建议不是100个已证实缺陷。
+
+## 实验范围
+
+`playback_boundary_probe.mjs`执行原播放器/协议解析器前缀和Worklet源码，每轮22案例，时钟/端口/AudioWorklet基类受控。没有实体浏览器AudioContext或硬件播放。`trimmer_boundary_probe.py`执行原EdgeTrimmer AST，每轮8案例，输入为显式合成信号。两探针各三轮一致；不是完整语音模型实验。
+
+新复现：生成结束20/50ms剩余音频会滞留buffering；首播放指标在发送命令时已赋值；35ms预滚跨块丢失840样本；小于120样本的语音块可被全丢；不足一帧的非零尾段可留held无finish。小块测试并非当前Faster1920帧倍数路径已发生的证据。
+
+保留成功保护：重采样分块连续性、自然结束不报欠载、欠载只计一次、reset后零输出、ring溢出计数、协议逐字节分包及32MiB限制。末端重采样端点不足只是合同需定义，不宣称已证明有可听损伤。
+
+## 生成码与codec窗口
+源码位置：`py/clone_stream.py:GeneratedCodecWindow / generated_only_stream`。
+
+1. [S18-R3-001] 保留16码本、24kHz及1920样本每帧合同，不用未知解码器静默替代。
+2. [S18-R3-002] 左上下文25帧只保留有界生成码，参考码继续禁止进入输出解码。
+3. [S18-R3-003] 默认右前瞻0与实验1/2帧分别记录延迟与真实质量，不用随机codec推断最优。
+4. [S18-R3-004] 为每次提交记录全局帧偏移与已提交区间，定位接缝是否重复或漏帧。
+5. [S18-R3-005] 区分有效生成帧、保留上下文和待提交PCM，不能把重复解码时间当新语音。
+6. [S18-R3-006] 取消和异常均close生成迭代器并清理pending，禁止取消后尾包泄漏。
+7. [S18-R3-007] 实际tokenizer返回错误采样率、非有限值或长度不符继续拒绝。
+8. [S18-R3-008] 按首2/4/8帧对照时固定后续策略与文本，不能混入候选或seed变化。
+9. [S18-R3-009] 真实codec有限上下文与整段解码差值须用预训练权重另测，不凭因果结构宣布无接缝。
+10. [S18-R3-010] prepare_ms不含生成器首次next里的全部预填充，拆分前先验证时钟范围。
+
+## 后处理状态与ABI
+源码位置：`py/audio_rt.py:Leveler; rust/audio_rt/src/lib.rs:Leveler`。
+
+11. [S18-R3-011] 将整块与不规则分块输出一致性列为DSP算法合同而非只检查有限和长度。
+12. [S18-R3-012] NumPy淡入使用固定总长度及已处理位置，不让每次短块重新从零起算。
+13. [S18-R3-013] NumPy RMS统计保留不足10ms余数，避免按来包边界重新分组。
+14. [S18-R3-014] Rust逐样本平滑与NumPy插值应先定义相同算法再设合理量化容差。
+15. [S18-R3-015] flush后Rust清DC状态而NumPy不清的差别须明确，不能称API语义完全一致。
+16. [S18-R3-016] 当前Worker每段重建leveler，不能将跨段复用API问题直接认定为生产根因。
+17. [S18-R3-017] 固定目标电平与最大增益仍不保证两段动态响度相同，保留完整语音测量。
+18. [S18-R3-018] 纯静音、阶跃和有声转静音须同时检查滤波残留、削波和增益泵动。
+19. [S18-R3-019] Rust ABI加载需区分不兼容符号和库缺失，不能失败后不告知回退路径。
+20. [S18-R3-020] 缺Rust编译器时记录未执行，不用C++重写参考实现冒Rust实测。
+
+## 首尾裁剪与语音完整性
+源码位置：`py/worker.py:EdgeTrimmer / Worker.run_job`。
+
+21. [S18-R3-021] 120样本以下语音块不能因无完整RMS帧就直接丢弃，设计跨块累积。
+22. [S18-R3-022] 跨输入块保留35ms有界预滚，而非只在检测到声音的当前块向前取。
+23. [S18-R3-023] 候选静音与未发声辅音不能仅凭能量绝对区分，试听门禁保留。
+24. [S18-R3-024] 短末块含有非零语音时须有明确finish策略，不能永久留held后销毁。
+25. [S18-R3-025] 尾静音裁剪应记录实际删掉时长和阈值，不把删音频冒首声或RTF提速。
+26. [S18-R3-026] 900ms超长首静音放行应保留异常说明，不能把放行静音算实际人声。
+27. [S18-R3-027] 1800ms held上限必须在长无声生成时仍有界，不引入全句缓冲。
+28. [S18-R3-028] 输入codec固定1920样本倍数与泛用小块测试分开，标注生产可达性。
+29. [S18-R3-029] 裁剪器发出的样本索引需可追溯至模型原始PCM，便于核对漏音。
+30. [S18-R3-030] 输入很轻时不要单纯升高裁剪阈值，应比较失真与背景噪声的权衡。
+
+## 重采样与终止语义
+源码位置：`web/app.js:Player.resample / markGenerationDone / beginStream`。
+
+31. [S18-R3-031] 保持流式相位和上一个输入样本跨PCM帧连续，不能每帧独立插值。
+32. [S18-R3-032] 24k直通与44.1k/48k转换各自验证输入时长和输出样本预算。
+33. [S18-R3-033] 终止时缺下一个插值端点应定义末样本延拓或明确短尾策略并测试。
+34. [S18-R3-034] 重采样收尾不能以补充可计入speech的静音改变RTF分母。
+35. [S18-R3-035] 每段协议标记不应重置同一朗读流的重采样相位，会制造边界跳变。
+36. [S18-R3-036] 锁定、取消和新流begin应清掉上一任务的相位及延迟端点。
+37. [S18-R3-037] 分块与整块重采样在数值容差内一致的现有行为应保留。
+38. [S18-R3-038] 一输入样本、空块及极短末块需测试，不只测长整秒波形。
+39. [S18-R3-039] 扩展至降采样时需考虑抗混叠，不能将线性插值叫任意采样率高保真。
+40. [S18-R3-040] 实体浏览器实际采样率与请求24k可能不同，诊断记录两者。
+
+## 短尾启动与播放状态
+源码位置：`web/app.js:Player.tick / needToStart / onWorklet`。
+
+41. [S18-R3-041] 生成结束且剩余20ms音频应有播放或明确失败结果，不能永久buffering。
+42. [S18-R3-042] 精确50ms边界的严格大于判断需单独测试，不能只测51ms。
+43. [S18-R3-043] 欠载恢复时最后短尾同样应可排空，避免截掉最后一个音节。
+44. [S18-R3-044] 已结束数据的排空政策与持续生成时风险缓冲分开，不盲降正常启动阈值。
+45. [S18-R3-045] 有剩余样本但低于阈值时ended判定须有终止路径，不假装已播完。
+46. [S18-R3-046] 一任务只能产生一次最终结束，迟到统计消息不能把ended改回playing。
+47. [S18-R3-047] 长网络抖动和低产出速率下测试启动等待与欠载率成对取舍。
+48. [S18-R3-048] 暂停恢复必须在用户授权AudioContext状态下执行，不自动规避浏览器策略。
+49. [S18-R3-049] 单调时钟中的0值不宜兼任未记录标记，检查极早首包的时间哨兵。
+50. [S18-R3-050] 运行原播放器VM只能证明逻辑，不可声称浏览器硬件首声变快。
+
+## Worklet与首声指标
+源码位置：`web/app.js:QttsRing / Player.firstPlayedMs; go/gateway/session.go:telemetry`。
+
+51. [S18-R3-051] firstPlayedMs目前是主线程play命令时刻，名称与报表需区分实际消费。
+52. [S18-R3-052] 增加首样本消费确认前先定义是否跳过显式停顿和极小淡入样本。
+53. [S18-R3-053] Worklet currentFrame与主线程performance属于不同时间轴，使用可解释映射。
+54. [S18-R3-054] 保留ring样本计数与自然结束不额外记欠载的已通过行为。
+55. [S18-R3-055] 欠载只计一次直至恢复，避免每个渲染量子重复放大统计。
+56. [S18-R3-056] 容量溢出dropped必须进入上层状态和失败提示，不能只在底层计数。
+57. [S18-R3-057] 固定192样本淡入在24k/48k分别8/4ms，若要求同毫秒则按实际率配置。
+58. [S18-R3-058] hold与reset后无旧PCM回放，保留现有重置后精确零输出测试。
+59. [S18-R3-059] 环形缓冲溢出属于丢样，不得被统计成已自然连续读完。
+60. [S18-R3-060] 声卡/系统输出延迟仍需实体设备测量，Worklet消费也不是声学听到时间。
+
+## 停顿、顺序与重试
+源码位置：`go/gateway/segmenter.go:finish; scheduler.go:run; session.go:serve`。
+
+61. [S18-R3-061] 规划器PauseBeforeMs由上一边界生成，逐段记录而不是把所有停顿归模型。
+62. [S18-R3-062] Worker默认只加显式lead pause，核实tail默认0后再判断重复停顿。
+63. [S18-R3-063] 保留首段零规划停顿，不以参考呼吸或原音占位提前出包。
+64. [S18-R3-064] 模型内部停顿与规划停顿叠加需实际WAV分层对照，不能只删规划停顿。
+65. [S18-R3-065] 有序转发必须保留，不能为了最快包先播后一GPU导致错序。
+66. [S18-R3-066] 已消费部分PCM后禁止跨卡整段重试，保护不重复词句的现有门禁。
+67. [S18-R3-067] 未消费重试时正确扣除旧produced样本，维持背压与统计一致。
+68. [S18-R3-068] first_worker_audio可能是显式静音包，报表不可直接称人声首包。
+69. [S18-R3-069] 第一段4帧与后段6/8/12帧策略保留可追溯，提速不得改变音色条件。
+70. [S18-R3-070] 正文保留、引号配对、小数和缩写拆分须有实际Go回归，不靠源码注释。
+
+## 训练、资源与私有边界
+源码位置：`py/training_job.py; gpu_ownership.py; supervisor.py; tools/resource_control.py`。
+
+71. [S18-R3-071] 在线推理与离线训练GPU租约保持互斥，不为测试盲停驻留模型。
+72. [S18-R3-072] 真实双卡训练、引用缓存与profile建档继续分开报告，避免功能混淆。
+73. [S18-R3-073] 子进程继续清除API与认证秘密环境变量，不因性能诊断泄漏。
+74. [S18-R3-074] 模型与adapter来源hash及安全权重格式不能为快速加载而跳过。
+75. [S18-R3-075] 训练数据审阅/完整覆盖与声学验收是独立缺口，18音频修复不自动解决。
+76. [S18-R3-076] 取消训练只终止本次进程组，不根据旧PID文件杀其他进程。
+77. [S18-R3-077] 保留离线代码与模型指纹核验，不自动开启远程代码或下载权重。
+78. [S18-R3-078] 新增诊断原始WAV默认私有且关闭，不能进入公开Git和自动备份。
+79. [S18-R3-079] 资源状态的CPU成功不标CUDA或GPU优化成功，尤其是当前无Torch环境。
+80. [S18-R3-080] 剩余复杂训练/恢复路径只有入口边界复核，明确语义深审仍需补齐。
+
+## 交付、前端与安全回归
+源码位置：`src/server.js; src/store.js; public/file-rules.js; tools/kaggle-copy-server.mjs`。
+
+81. [S18-R3-081] 正式工作台继续只读核对，不因音频审查改写15文件或HEAD。
+82. [S18-R3-082] 自命名空白文件、用户粘贴、并发版本冲突和磁盘持久化需保留。
+83. [S18-R3-083] 复制预览与正式工作台分别核对，不能用旧17复制成功冒18完整包成功。
+84. [S18-R3-084] 新发布前固定launcher字节数/hash，并校验53以上实际资产完整性。
+85. [S18-R3-085] 剪贴板失败回退应选中完整源代码，不能只复制可见窗口。
+86. [S18-R3-086] 文件名、路径穿越、脚本/style闭合注入等既有浏览器测试继续执行。
+87. [S18-R3-087] 锁定清理、同源token和迟到响应隔离不能被新指标消息绕过。
+88. [S18-R3-088] 旧验证脚本固定历史分支属于历史证据，新分支另建验证器而非改旧收据。
+89. [S18-R3-089] 新工具依赖留忽略目录，下载源码也不与模型权重混入发布资产。
+90. [S18-R3-090] 所有未执行的Go/Rust/真实浏览器/完整模型实验明确标未执行。
+
+## 证据覆盖与最终决策
+源码位置：`docs/validation/step18; KAGGLE_STEP18_PLAN.md`。
+
+91. [S18-R3-091] 完整manifest读取/hash/AST只证明库存与语法，不声明全源逐行语义无错。
+92. [S18-R3-092] 三轮专题各100完成也不等于所有代码已语义审查三遍，覆盖缺口单列。
+93. [S18-R3-093] 每个实验写方法、注入边界、实际源hash及探针hash，避免不同版本混算。
+94. [S18-R3-094] 将已复现缺陷、待验证假设与保留保护分别分类，不将300建议全标已修。
+95. [S18-R3-095] 重建环境仅NumPy和Node时旧模型实验收据保留历史，不算新执行。
+96. [S18-R3-096] 第25题起一次一题，具体选项/推荐/理由/50建议全部记录后再下一题。
+97. [S18-R3-097] 实施方案要将首声、条件来源、状态一致、DSP、裁剪、播放排空分成可回滚小步。
+98. [S18-R3-098] 产品最终源码冻结后完整三轮回归，当前边界探针不能代替全功能通过。
+99. [S18-R3-099] 零噪声/单一音色/自然朗读及RTF0.3仍需真实WAV和双T4，不用绝对承诺替代。
+100. [S18-R3-100] 第三轮备忘录和缺口完整内嵌提示词，发布18之前仍使用17并保持PARTIAL。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_DECISIONS.md
+
+# 第十八阶段逐题决策（进行中）
+
+历史问题1–24及1200条建议保留在KAGGLE_DECISIONS.md；这里从25开始，不覆盖历史记录。三轮专题各100建议已记录，不等于所有文件逐行语义审查三遍；覆盖缺口仍保留。当前按顺序完成问题25、26、27及各50项实施建议，不宣称整体需求/声学根因已100%确定。
+
+## 问题25：怎样让全部候选真正参与条件决策，而不把批量提示或单锚点冒充多参考融合？
+
+### 具体选项
+
+- **A：维持选#0/#1/#2其中一个，仅改界面名称为“多参考”。** 不接受：没有新增全部候选证据，也会误导。
+- **B：直接将三个prompt传给一个目标文本。** 不接受：真实Faster0.5.4 resolver要求prompt数量与目标批次一致；三提示三目标是三个独立输入，不是同一句参考融合。
+- **C：分成明确可核验的两层。** 全部合格候选用相同目标文、seed、生成参数做逐候选评估，记录有效/无效与缺失指标；单锚点ICL保留音频和转写对应，来源/模式/参数一致绑定到两卡。若要同一句同时利用多参考，另开“同模型Qwen说话人嵌入融合”实验，核查真实形状/归一化/内容绑定，并以真实WAV门禁决定是否可用；未运行或未通过时明确未实现融合，不退回单锚点后宣称成功。
+- **D：把候选PCM混入播放或把不连续音频配全文。** 禁止：违反原音隔离和音文一致性要求。
+
+### 推荐与理由
+
+选择 **C**。它把“全部候选参与分析/校准”与“同一句实际多参考条件”分开，能够保存17已成功的ICL/生成码隔离路径，同时不给未验证的融合效果背书。真实接口允许预计算prompt字典，但这只证明可注入条件，**不证明融合向量质量一定更好**。ECAPA用于评分，不是Qwen模型的speaker embedding，不能跨空间直接替换。
+
+当前不能确定用户“参数要结果”的文字是否等于要求所有参考码一起参与同一句ICL；不向用户提问，采用保守操作合同：**每个候选的作用必须可追溯；不能把未进入生成的音频说成已融合；任何实际融合未验收就明确BLOCKED。** 最终目标仍是更像、少噪、自然与更快首声，而不是仅完成一个数组接口。
+
+生产默认和融合实验的最终开关、算法、权重、阈值都尚未决定；不能从本题直接跳到默认启用均值嵌入。先修校准的假CER、过期结果、加载确认和种子混杂，才能获得可比较的融合基线。
+
+### 进入下一题前的50项实施建议
+
+1. 建立候选源清单，保留每段源文件身份、实际WAV字节hash与时间范围。
+2. 将候选展示下标与内容身份分开，避免排序变化错配旧证据。
+3. 对全部候选记录匹配转写身份，不在公共日志明文输出私有转写。
+4. 对全部候选记录分析有效性及被排除原因，不能静默丢失败候选。
+5. 严格区分原录音、候选分析音频、ICL锚点与生成输出，禁止跨层混放。
+6. 保留16/24秒参考窗口合同，不把全部候选时长之和称已用模型上下文。
+7. 基线模式明确只用一个锚点ICL，其余候选的评分作用必须写清。
+8. 逐候选对照采用相同目标文本，避免文本差异掩盖参考差异。
+9. 逐候选对照采用相同seed，不能按候选编号偏移种子。
+10. 逐候选对照固定四项有效生成参数，保留实际参数收据。
+11. 记录引擎、模型版本、dtype、codec政策与DSP后端，排除环境混杂。
+12. 拒绝bool和小数候选索引，不允许强制转换选错参考。
+13. 明确缺少index的API语义；推荐受控4xx，不默认误选0。
+14. 为null、对象、数组与非有限索引增加受控错误返回。
+15. 候选文件验证单文件名、普通文件和字节预算，防路径与损坏状态。
+16. 校准开始捕获候选集合与音文版本，不能仅记profile ID。
+17. 结束时核对全部候选身份未变，变更则返回冲突且不应用旧评分。
+18. 把文本编辑、候选切换、校准提交与删除协调到同一档案状态合同。
+19. 阻止校准以旧候选评分覆盖用户新编辑转写。
+20. 原子JSON写入不能代替多文件事务，失败时保留一致旧状态。
+21. ASR评估缺失时记录null与失败阶段，禁止默认CER0.05冒实测。
+22. 部分目标文评估失败时记录覆盖率，不能只平均成功样本。
+23. 全部合成失败时不得设置看似成功的chosen候选。
+24. 空音频、全静音、过短及非有限输出应独立计失败。
+25. speaker相似度无效或非有限时不得参与max排序。
+26. 保存每候选全部试验条目与聚合规则，不只保留最高分。
+27. 校准结束检查每卡加载回执，失败显示已保存但未全卡就绪。
+28. 保留Go激活的指纹/模式核验及失败保留旧active保护。
+29. 双卡诊断用同文同seed，正式播放同会话seed行为继续保留。
+30. 旧会话遇参考变更继续拒播，不静默切换成另一个候选。
+31. 校准临时profile的来源元数据应准确标记被测候选。
+32. 临时目录、提示缓存与leveler要有受锁保护的生命周期回收。
+33. 将全部候选评估结果与实际ICL来源分开显示，不用“多参考”笼统覆盖。
+34. 不将三个prompt列表当融合接口，保留实际resolver拒绝案例。
+35. 若研究融合，只使用同一Qwen speaker encoder生成的兼容嵌入。
+36. ECAPA质心仅用于评分，禁止不经模型合同替代Qwen嵌入。
+37. 先核查真实嵌入维度、dtype、设备和归一化方式，再提出融合公式。
+38. 不默认任意加权或归一化策略，公式及权重需进入可复现试验条件。
+39. 融合实验仍保留一个匹配音文ICL锚点，不拼接不连续转写。
+40. 将融合模式、候选内容身份与有效权重纳入跨卡条件版本核验设计。
+41. 若融合条件读取失败必须显式失败，不静默单锚点回退冒融合成功。
+42. 融合的提示提取与缓存开销计入冷启动，不漏记到队列时间之外。
+43. 分别比较短参考、各候选、单锚点最佳及融合实验，不只挑幸运输出。
+44. 真机对照保存同文两卡WAV和完整长文，不以单个声纹数字替代试听。
+45. 检查漏字添字、相似度、齿音/沙沙和自然衔接，不能只优化综合分。
+46. 相似度改善必须与首声、RTF、欠载及显存代价同时报告。
+47. 私有诊断WAV默认本地关闭/按明确权限保存，禁止自动公开。
+48. 未有真实权重与双T4证据时融合质量保持BLOCKED，不发布保证。
+49. 为单候选与已训练固定参考保留兼容路径，不能强迫至少三个候选。
+50. 本题代码实施仍待后续问题和最终方案完成，不将50建议自动标为已实现。
+
+### 顺序追问（历史衔接记录）
+
+第25题50条已在上一步完整列出；下方才继续第26题。原“未开始问题26”状态已结束，不修改上题选项、推荐与50条建议。
+
+## 问题26：如何修复状态和音频边界，同时可靠衡量首声，而不是以丢音或错误指标冒充提速？
+
+### 具体选项
+
+- **A：立即把所有启动缓冲设为零，第一段固定两帧。** 不选：会把生产速率和网络抖动转成欠载；没有实际T4同条件对照，无法证明可用首声变快。末尾排空与正常流式启动不是同一个问题。
+- **B：先强滤波、裁去更多静音、交叉叠加各段。** 不选：未定位噪声来源，可能抹辅音、重复/丢字，并掩盖真实模型/播放问题。
+- **C：先固定度量与回归合同，再按“参考状态可靠性→DSP/裁剪有界状态→结束后短尾排空→受控缓冲与首块实验”分批修复。** 正常生成阶段保留风险缓冲；生成确实结束后，任何正长度合法PCM应能排空或得到明确错误，不滞留。冷暖、聊天/朗读、命令/消费/声学三类条件分别测。
+- **D：先重写为更多语言或再驻留一个模型。** 不选：没有热路径数据支撑，会新增版本、显存和进程风险。
+
+### 推荐与详细回答
+
+选择 **C**。先确保参考校准没有假指标、过期结果和未就绪状态，否则速度对照可能比较不同声音或不完整任务。随后修复有直接复现的数值/边界状态问题；最后才用相同条件决定首块、缓冲或文本聚合调整。**这是一套待实施顺序，不是已修复声明。**
+
+度量首先建立命名合同：
+
+| 事件 | 可证明的含义 | 不能声称的含义 |
+|---|---|---|
+| Worker收到请求、取得锁、参考准备完成 | 同一进程单调时钟上的等待/准备区间 | 跨进程直接相减或把加载计为纯队列 |
+| 首个模型PCM、首个处理后的生成PCM | 模型/后处理阶段产出样本 | 已识别为正确人声、已听到 |
+| 浏览器首PCM | 收到可解析PCM，可能含规划静音 | 实际首声 |
+| 主线程play命令 | 已要求播放；当前firstPlayedMs属于这里 | Worklet已经消费、扬声器已经发声 |
+| Worklet首消费确认 | 渲染线程已读取样本；需明确是否包含规划静音 | 自动证明语音正确或硬件出声 |
+| 声学首声 | 实际设备回录/有依据的同步测量与试听 | Node VM或CPU夹具可以替代 |
+
+保留现有`first_played_ms`等兼容字段的旧语义，并另增明确字段/版本说明，不直接改含义让旧报表误读。没有观测到的事件为null/未测，不能填0冒瞬时完成。以幅度阈值判断“非静音”也不是声学人声识别，不能给首噪声抢先记首声。
+
+源代码还确认：Worker的`queue_ms`在锁和参考准备后才结算，涵盖前置工作；Go的`queue_wait_ms`在完整流处理结束时用`time.Since(j.enq)`计算，含合成时间，并且每次Submit重设enq。需要新增每次尝试的入队/派发/结束区间及总任务耗时，而不是直接把这个旧字段当纯排队。
+
+新增`latency_contract_probe.mjs`每轮16项，三轮一致：
+
+- 初始buffering和starved两状态下，完成的20/50ms尾部均可滞留；51ms可发play，空结束可转ended。
+- 未结束的20/50ms缓冲继续等待；已在播放的短尾不会被本次tick强行中断，这些应保留。
+- 注入时钟/status的轨迹中，首PCM字段为300ms、play命令字段为750ms，而消费样本仍为0。**300/750是设定的实验时间，不是测得的真实性能，也不能据此说优化450ms。**
+- 注入稳定快产出估计时，0.69/0.70秒跨越当前启动下限；该夹具只隔离阈值，不证明网络或GPU行为。
+
+正常流式启动阈值暂不全局降低；现有首段4帧与实验2–8帧开关保留，真正的更快首声必须在目标机同参考、同文、同seed、同参数下至少三轮，且字词完整、噪声、自然度、欠载和RTF都不被牺牲。当前没有该声学证据。
+
+### 进入下一题前的50项实施建议
+
+1. 给每个小修复建立独立变更单，写明基线、预期不变量与回滚路径。
+2. 先冻结17的缺陷样例与源hash，修复后的回归测试另建，不改写旧失败证据。
+3. 对照测试固定参考内容、转写、模式、四生成参数及seed。
+4. 把冷模型启动、冷档案提示、暖档案三种准备条件分开测量。
+5. 聊天首个可用前缀与朗读首段采用各自配置，不混成一个平均首声。
+6. 建立Worker请求接收、锁获得、参考准备结束的本地单调时间点。
+7. 保留旧queue_ms字段兼容，同时明确它含参考准备，不只锁等待。
+8. 在Go派发开始处记录入队至派发时间，不在合成结束处冒纯等待。
+9. 重试时保留每次尝试的enqueue/dispatch/end，另存任务全程耗时。
+10. 不对浏览器、Go和Python不同纪元时间戳直接相减。
+11. 给首模型PCM与首后处理生成PCM分别打点，区分裁剪/DSP等待。
+12. 规划lead pause必须独立标注，不能给静音包记人声首包。
+13. 浏览器首次收到PCM与发送play命令分别记录，保留旧字段语义。
+14. 新增Worklet消费确认前定义session身份，拒绝上一流的迟到确认。
+15. 消费事件明确是否包含规划静音，不能把消费任意样本当可用人声。
+16. 硬件声学首声没有真实测量时保持null，不填估计值冒实测。
+17. 以非零幅度检测得到的只能叫非静音起点，不叫正确人声起点。
+18. 首声分位统计至少附文本长度、参考长度、设备、模型与冷暖标签。
+19. 首先修复非法候选参数和过期提交，避免性能对照条件偷偷变化。
+20. CER缺失、全部合成失败及双卡未就绪必须有明确状态，不能仍报成功。
+21. 将同文两卡诊断seed统一，保留正式播放的会话seed规则。
+22. 对NumPy淡入使用连续累计位置，避免短块在第二包重新从零淡入。
+23. NumPy RMS块累积保留余数，再与Rust逐样本平滑合同核对。
+24. 不为通过分块测试只放宽数值容差；首先确定算法和量化约定。
+25. 对低于120样本裁剪块采用有界累积，测试有限样本守恒。
+26. 用有界预滚保留跨块35ms上下文，不引入整句缓存延迟。
+27. 为裁剪器终止定义带非零末帧的finish行为，不能默认销毁held。
+28. 仍允许有依据地去尾静音，但记录删掉区间，不删真实语音来提速。
+29. 对泛用短块和Faster1920样本倍数路径分列测试，标明生产可达性。
+30. Worker每段重建leveler的现状先保留，不无证据引入跨段共享可变状态。
+31. 对生成完成后的任何正长度剩余PCM设计可排空路径。
+32. 分别测试20/50/51ms、一个样本、空结束及恰好阈值。
+33. 初始buffering与starved恢复都覆盖短尾终止，不只修其中之一。
+34. 未生成完成时仍保留风险缓冲，不能把末尾例外推广到所有小包。
+35. 已在playing时不得因剩余不足阈值强行暂停或丢尾。
+36. 重采样最后缺插值端点时定义可追溯收尾，不偷偷补时长冒语音。
+37. 锁定、取消和新流开始后不能排出旧任务尾巴。
+38. 对Worklet自然结束、一次欠载计数和reset零输出保留保护测试。
+39. 把dropped样本向上层明确报告，不允许丢样后称完整朗读成功。
+40. 任何新增时序控制消息需要兼容/版本说明，不改PCM字节布局冒兼容。
+41. 保留Live首句早提交、Read正文与标点保留、Go有序转发。
+42. 保留已消费PCM不整段重试的保护，避免提速时重复词句。
+43. 改动后基线探针应从冻结17取原控制流，修复回归指向新源码，避免混算。
+44. 对2/4/8帧首块做真实同条件A/B，未有T4证据前不改默认4帧。
+45. 启动缓冲调整需同时报告首声、欠载次数/间隙、掉样与全文完整性。
+46. 朗读聚合变化须完整长文试听，不能只看首段变快或单句声纹分数。
+47. 不默认强滤波、合成呼吸或跨词PCM叠加，噪声根因另题分层定位。
+48. 新增诊断默认不保存私有原音或口令到公开日志，权限边界保持。
+49. 最终源码冻结后再做完整三轮Python/Node/Go/协议/浏览器回归，本题VM不替代。
+50. 真机声学、全源深审覆盖和问题27仍未完成时，不签收18发布或全部需求。
+
+### 顺序追问（历史衔接记录）
+
+第26题50条在上一步完整列出；下方才进入第27题。原未开始问题27为历史状态，上题主体与50条保持不变。
+
+## 问题27：沙沙声和自然度如何分层取证，哪些改动可以尝试，什么证据才允许验收？
+
+### 具体选项
+
+- **A：提高去噪强度、降低高频，观察SNR变大就验收。** 不接受：现有SNR字段是帧能量分位差，不能当真实噪声SNR；齿音和气声可能一起被抹掉。
+- **B：删除低能片段、加长静音或叠加各段来掩盖接缝。** 不接受：可能丢字、延迟、重复或抹平人声；静音输出也能“无噪”，但不满足要求。
+- **C：分层留证，先修可复现工程缺陷；降噪/韵律改动仅做明确对照，用语音完整、音色、噪声、整段自然度及真实时序联合门禁验收。** 未取得真实WAV/目标模型/T4证据时，声学与性能项保持BLOCKED，不伪造通过。
+- **D：只有相似度综合分高、双卡参数相同就宣布零噪声和自然。** 不接受：评分和参数只证明各自有限合同，不证明听感或完全身份一致。
+
+### 推荐与详细回答
+
+选择 **C**。把四种现象先分开：持续底噪/模型沙沙、codec或DSP边界点击、播放欠载断续、独立语段韵律重启。它们可以同时存在，不能由截图或一个指标选定唯一根因。
+
+诊断链按“原始参考→参考处理后/实际ICL锚点→模型生成PCM→codec/后处理PCM→浏览器队列与消费→实体播放”组织，接口和文件记录每层的来源、样本范围、采样率、条件指纹及操作。私有WAV默认不采集/公开；需要实际诊断时在授权本地范围保存。首声、声学质量、训练结果分别签收。
+
+`noise_metric_probe.py`执行原stage17的frame_rms_db、estimate_snr、speech_rms_dbfs、normalize_speech函数；其余仅为已知干净/噪声分量的合成反例，每轮8项三轮一致：
+
+- 相同能量的重复帧中，真实组成SNR约26.53与0.51dB，现有estimate_snr均为0；无噪声但有强弱变化的样本反而返回约14.64dB。该字段是能量对比代理，非真实SNR真值。
+- 同时衰减信号和噪声20dB，真实SNR不变；原normalize_speech对该很轻样本增益约14dB，真实SNR也不变。归一化不是去噪。
+- 全部抹为零不能验收。理想低通反例虽消除高频噪声，却删除有用6kHz合成分量，使相对已知干净目标的误差从约-56.05dBFS增至-43.01dBFS。该理想FFT掩码不是项目实际去噪器，也不是真实齿音实验。
+
+因此先纠正指标说明并修已复现的状态、分块、短尾问题；不立即改当前参考清理阈值，不给生成输出默认加新强降噪器。现有参考降噪的声纹/SNR代理门禁不能证明绝对保真或“噪声确实降低”，需原音/处理后真实对照。任何实验失败要保留原因，不静默切算法后称同等质量。
+
+自然度需保留完整长文、每段文本和边界时序：分清模型自然停顿、规划停顿、衰减补偿和欠载；检查漏字/添字/重复、单一声音、齿音/气声、句间韵律。不得将参考PCM/呼吸拼进输出、跨词叠音或删音充当解决办法。固定参数同seed只是控制变量，不保证两卡声学相同。
+
+### 验收与发布门槛
+
+1. 工程修复可独立验证，但不能称用户所有声学目标完成。
+2. 最终源码冻结后，完整Python、Node、Go race、协议和浏览器三轮；修复前后同输入、失败日志及保护案例保留。
+3. 真实同人参考、完整模型、双T4至少三轮，包含各候选、推荐策略、同文两卡及交替长文；记录原始结果、先后顺序与实测条件，不挑最好一次。
+4. 听感验收结合转写/人工逐字审核及盲听：不设未校准的相似度阈值冒100%身份；无清洁真值不报告“真实SNR”；不能证明绝对零噪声。
+5. 真实首声及RTF≤0.3分别测，排除静音填充/参考片段，同时检查欠载和掉样。未执行或不达标必须明确。
+6. 18工程包可在范围内交付时仍须显著标PARTIAL/BLOCKED；不称完整需求通过。当前全源三遍语义复核也未签收，尚不进入产品实施。
+
+### 进入后续步骤前的50项实施建议
+
+1. 将持续沙沙、点击、断续与韵律重启建立独立问题分类，允许多因共存。
+2. 原参考、处理参考、ICL锚点和生成音频使用不同来源标记，防止错比。
+3. 每层保存样本数、率与内容hash，时间偏移来自可追溯范围。
+4. 未授权的原始WAV默认不落公开日志、Git、诊断链接或备份。
+5. 实际采集诊断保持本地私有，原始基线只读保留。
+6. 记录录音原始电平，不根据-47.7dBFS猜设备或直接判无声。
+7. 将legacy snr_db标明能量分位对比估计，不能直接当真实噪声SNR。
+8. 保留旧字段兼容，新增语义说明/版本，不无证据强改排序阈值。
+9. 有已知干净分量时才计算真值SNR，并说明合成来源。
+10. 无干净参考时把噪声估计与置信/假设分列，不编真实SNR。
+11. 将幅度归一化和降噪分成两个处理步骤及收据。
+12. 同时衰减信号/噪声不能算降噪改善，保留反例测试。
+13. 全静音、极低音量或删完语音必须判无有效语音，不计零噪成功。
+14. 不把齿音和气声自动归噪；先以真实样本核对语音成分。
+15. 对噪声降低与音色、清晰度、添漏字设联合评价，不只最小化噪声功率。
+16. 不默认启用新的输出低通或谱门，先隔离噪声产生层。
+17. 当前参考降噪算法的参数、决策与处理时长完整保留。
+18. 对不降噪、现有各强度及拟议方案用同源音频做可逆对照。
+19. 处理失败或质量未提升时明确原因，不静默假装已经干净。
+20. 声纹模型与Qwen条件空间分开，不能以ECAPA高分证明声音无失真。
+21. 模型原始输出与后处理输出分别比，识别新增伪影来自哪里。
+22. codec边界定位使用全局帧/样本偏移，不仅按网络包边界猜。
+23. 继续禁止参考码进入输出解码，保留generated-only合同。
+24. 淡入/AGC分块状态先按确定性回归修，不称它必是用户沙沙原因。
+25. 裁剪预滚和末尾处理必须有样本范围收据，避免丢辅音或尾音。
+26. 低能段如果无法区分停顿与人声，应保守保留并给诊断，不强删冒去噪。
+27. 原音和合成呼吸均不得拼入生成播放增加“真人感”。
+28. 自然模型人声呼吸不自动删除，区分人声气息与外加噪声。
+29. 每段文本、模型内部停顿及规划停顿分别记录以定位不自然。
+30. 跨词交叉淡化不作为默认补救，不牺牲字词完整度。
+31. 保存完整朗读而非只挑局部片段试听，保留段间上下文。
+32. 双卡同文固定相同seed/有效参数，设备差异单独记录。
+33. 交替长文另测连续性，不能用同文双卡相似分替代。
+34. 欠载事件、间隙、dropped和播放消费计数进诊断，不能只报生成成功。
+35. 生成已完成的短尾排空不与正常生成小缓冲政策混同。
+36. 锁定和取消后不得回填迟到音频、原文或诊断私有数据。
+37. 更大朗读聚合需测首声与韵律取舍，不预先称必然更自然。
+38. 每个新处理方案至少三轮同条件对照，记录全部结果与失败。
+39. 盲听时随机化展示顺序并保留映射，不给评审暗示推荐版本。
+40. 转写检查除CER还列具体漏字/添字/重复，避免平均数掩盖错词。
+41. 人工审阅记录范围和人员/方法，不能把ASR当人工真值。
+42. 严格100%音色或零噪声不可由有限实验证明，报告可验证范围。
+43. 真机首声测量排除命令时间冒出声，保持第26题度量合同。
+44. RTF分母仅用定义明确的生成语音，静音、参考拼入和删音不能投机。
+45. 每个工程修复冻结前保留修复前失败样例及修复后保护测试。
+46. 最终版本完整三轮回归后才生成固定hash的18复制/下载资产。
+47. 复制包逐字节、手机和剪贴板失败回退不因音质实验省略。
+48. 原始–17、正式工作台、私有边界、训练来源和取消功能继续保护。
+49. 未测完整模型/双T4/声学条件必须BLOCKED，不能用本反例实验代替。
+50. 汇总25–27题各50建议与300专题建议的处置，不把规划标成已实现。
+
+### 当前决策阶段结论
+
+本批问题25–27已按顺序完成，各50建议；暂不新增问题28凑数量。若后续深审/实验出现新关键选择再逐题记录。下一步是补齐全源语义覆盖、把已知问题映射为可执行小修复及其失败测试；门禁未满足不改产品、不生成18，不虚报所有目标完成。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_IMPLEMENTATION.md
+
+# 第十八阶段本批工程实施细则（前置门禁未签收）
+
+> 最新优先：S5完成短尾/重采样终点/epoch已实际修复，见KAGGLE_STEP18_S5_PLAYBACK.md；最终610CPU/37VM/173Chromium各三轮以progress-s5.json为准。完整候选app不切正式入口，真实声学与整体仍PARTIAL/BLOCKED。
+
+> 最新优先：S4有界裁剪/worker结束与取消已实际修复，见KAGGLE_STEP18_S4_TRIMMER.md；602×3、21分块×3通过。S3 worker保留，S4入口worker_s4.py未切换正式服务；整体PARTIAL/BLOCKED。
+
+> 最新优先：S3因果 NumPy DSP 与隔离worker实际接入，见 KAGGLE_STEP18_S3_DSP.md；562×3及14分块×3已通过，但Rust/真实声学与完整S3仍PARTIAL/BLOCKED。更早“下一步S3”等均为历史。
+
+> 最新：S2-B有效指标与加载就绪实际实现，见末尾及KAGGLE_STEP18_S2_VALIDITY.md。早期“评分未修”仅历史；完整产品／声音／双T4验收仍未通过。
+
+> 最新：S2-A校准快照实际实现，见末尾及KAGGLE_STEP18_S2_SNAPSHOT.md。S1原28合同保留，完整S2／模型／声学仍未验收；更早“未实现”仅为历史状态。
+
+> 当前优先状态：S1隔离候选实际实现，见本文件末尾和KAGGLE_STEP18_S1_CANDIDATE.md。问题28明确允许未发布候选小步修复，不改冻结17；下文早期“尚无产品修改／不实施”是当时历史，不是本次状态。G0整体与完整S1验收仍PARTIAL/BLOCKED。
+
+## 状态与范围
+
+25–27题按顺序完成，各50项建议，专题建议300条。以下是可执行批次，不是已完成修复清单。全源三遍语义覆盖仍有缺口，最终全功能三轮、真实浏览器/HTTP并发、完整模型和双T4声学验收尚未执行。**当前不修改产品源码、不发布18；17复制包继续冻结。**
+
+已知工程复现不等于用户沙沙声全部根因。默认不新增输出强降噪、不混参考PCM、不将实验融合启用为默认。工程交付与整体声学签收分开；后者仍BLOCKED。
+
+## G0：实施前必须补齐
+
+- 以53资产库存为起点逐模块补充三轮语义深审的实际范围、风险、结论及测试映射；不能只读hash/AST或专题热点就标全源三遍完成。
+- 固定17源码供缺陷对照，保留现有探针/收据。修复后新增回归指向新源码；旧探针若期望缺陷，不能悄悄改成成功后仍称旧基线。
+- 建立300建议处置：确认缺陷、保留保护、待证实验、硬件阻塞、文档边界；每条关联证据，不把300条当300个已修bug。
+- 记录完整模型/用户WAV/T4不可用条件。缺依赖时不能用旧17收据或NumPy实验冒本批全功能验证。
+
+## 小步变更单（G0通过后依次执行）
+
+| 批次 | 拟修改位置 | 修复前证据/必备测试 | 实施合同与保留项 |
+|---|---|---|---|
+| S1 严格候选/文本入口 | analyst profile routes | reference_state_probe bool、float、null等基线；补真实HTTP4xx | 严格类型/范围；受控错误；固定训练参考限制不变；不得先写状态后才发现非法请求 |
+| S2 校准状态可靠性 | analyst calibration、档案提交与reload | ASR不可用默认CER、全合成失败chosen0、旧转写评分、新转写提交、丢失败回执；补真实并发 | 缺失指标null/错误及覆盖率；无有效试验不选；快照与提交版本核验；提交短锁不跨GPU长等待；加载失败显式部分状态；保留Go激活旧active/同pin保护 |
+| S3 DSP数值状态 | NumPy Leveler及必要ABI测试 | dsp_partition_probe整块/48/1920/不规则分块；补Rust实测 | 固定淡入总长/累计位置、跨块RMS余数、算法合同与舍入容差；输出样本数守恒；保留软限幅/增益预算；不无证据换默认DSP |
+| S4 裁剪有界状态 | EdgeTrimmer和Worker终止路径 | 840样本预滚差、短块被丢、held非零尾；另测实际1920倍数 | 有界残帧与预滚、明确finish/取消；真实非零尾不能无声销毁；尾静音处理可追溯；不删语音冒RTF，不引入整句缓冲 |
+| S5 播放排空 | Player.tick/结束与重采样收尾 | playback/latency probe完成20/50ms、starved、51ms、空流；补1样本/取消/真浏览器 | 已结束正长度队列可排空或明确错误；未结束风险缓冲保留；已经播放不强停；自然结束/一次欠载/reset零输出保护；取消不排旧尾 |
+| S6 度量与诊断 | Go队列、Worker时序、Player/Worklet与诊断 | 源码queue_wait_ms范围、命令前消费0、不同seed诊断；补协议/旧客户端 | 新字段解释本地时间区间与每次重试；旧字段含义兼容；首PCM/命令/消费/声学分列；缺失null；同文两卡同seed；dropped显式报告 |
+| S7 条件透明与真实实验入口 | profile/UI/条件收据 | 单ICL与多prompt批次合同、全部候选评估条目 | 显示各候选角色和实际ICL来源；融合单列实验/未验证，不把单锚点回退称融合；语音模式与pin不静默变化 |
+| S8 工程候选包与验收 | repack/copy/checks/docs | 最终源码完整三轮及逐资产对比 | 新建18不覆盖原始–17；固定hash/字节数复制下载；手机/剪贴板拒绝回退；完整备忘录；只可签收有证据的工程范围，所有声学缺口继续显著标明 |
+
+## 单步执行规则
+
+1. 每批先保留同输入失败样例，写预期不变量，再做最小改动。
+2. 局部回归、保护案例、差异检查通过才进入下一批；失败日志不得删。
+3. 撤销失败方案时仅回滚本批，不能覆盖用户改动、冻结包或前批已通过功能。
+4. 性能变化需记录测试条件与全部结果，不能通过静音、删音或重播参考投机。
+5. 新库/语言仅按实测热路径引入；现有PyTorch/CUDA、Python、Go、Rust、JS分工保留。
+
+## 不能由本批工程测试替代的声学门禁
+
+- 用户实际录音与实际ICL锚点的正确转写、单一说话人及隐私授权。
+- 完整权重、实际同文双卡、每候选/策略、交替长文各至少三轮，保留真实生成WAV。
+- 逐字审核和完整朗读盲听：音色、沙沙/点击、齿音/气声、漏添重复及跨段韵律。
+- 输入/参考处理/模型PCM/后处理/播放分层对照；能量分位差不是噪声真值SNR。
+- 冷/暖、聊天/朗读分列，实际首声/欠载/掉样及worker与wall RTF各自测；RTF>0.3仍失败。
+- 无法用有限实验证明绝对零噪声、100%身份或所有代码零错误；未测或失败均不得签通过。
+
+## 下一步
+
+不再为凑数量预填问题28；先完成G0的可审计覆盖与测试映射，然后按S1开始小步修复。若深审引出新的关键设计选择，再按一次一题、先50建议规则追加。本文件是明确待执行合同，不宣称G0或S1已经完成。
+
+## G0第一批进度（非门禁通过）
+
+已建立53资产覆盖与300建议初审映射，全文第一遍6份，完整第二/三遍均未签收。84项专项回归×3和10项原缺陷/保护边界×3完成；细节见G0_AUDIT与G0_DISPOSITION。损坏talker_config及恢复部分提交新增为待处置项，当前未修。下一步继续数据/声码/原始库与发布链深审，S1仍待G0通过后执行。
+
+## G0第二批进度（非门禁通过）
+
+第一遍全文累计18/53、2904行；135项专项×3和6项provider合同×3完成，未测真实Torch/Qwen/GPU。F01：CPU声码编码器在HF-only元数据下查询旧qwen-tts版本，前置重型加载成功后会抛PackageNotFoundError；真实元数据+显式重型fixture已复现。后续最小修复必须使用正确提供包身份，不得并装冲突的旧发行版；当前未修。来源、边界和下一批见G0_TRAINING_CHAIN，S1仍不得绕过G0。
+
+## G0第三批：Go网关与本地协议（未签收）
+
+新增全文第一遍13份/3527行，累计31/53、6431行，剩22项；完整第二/三遍仍0。原Go主测试40项（含子测试56）×3和新增边界10项×3完成；独立竞争见证三轮均预期非零并报告DATA RACE，不能计为无失败套件。确认快照共享map竞争F02及工作帧校验不足F03，均未修复；queue_wait_ms/健康/慢客户端/SSE问题按证据区分源码观察与待验证。
+
+实际本地Go/Python mock播放链、原始库HTTP、合成训练输入HTTP各内部3轮通过；损坏音频预期处理失败、合成WAV快照不等于真实训练。未重跑全部历史6类协议。详细边界见KAGGLE_STEP18_G0_GATEWAY.md，当前覆盖改以g0-gateway-coverage.json为准，历史台账/300建议/Q25–27均保留。下一步补剩余前端、运行分析、DSP/启动恢复等源码及全源第二/三遍，不跳过G0进入S1，不新增18包，不声称模型/双卡声学或性能验收。
+
+## G0第四批：前端录音与流式播放（未签收）
+
+新增全文第一遍3份/2217行，累计34/53、8648行，剩19项；完整第二/三遍仍0。实际Chromium完整浏览器套件134项×3通过（原123+新增11），失败/跳过/retry/flaky均0；新增8保护+3原缺陷观察，不把观察通过说成修复。第1–17阶段完整包逐字节剪贴板保护通过；真实原始文件按冻结hash核对，浏览器原始文件保留用sentinel，不冒称完整原始文件复制。
+
+F04迟到旧录音error误停新会话、F05协议解析失败未显式取消reader/请求、F06音频模块初始化失败未revoke临时Blob URL，在明确设备/网络故障fixture下各三轮复现，均未修。原Player22项/延迟16项VM各三轮，Node30/JS/repack通过；物理麦克风/声卡/真实模型/双卡声学未测。细节见G0_FRONTEND，当前覆盖以g0-frontend-coverage.json为准。继续剩19项Python运行分析/启动恢复/DSP/工具等及全源第二/三遍，不跳G0，不新增18发布包或Q28。
+
+## G0第五批：Python运行/监督/启动与绑定（未签收）
+
+新增全文第一遍5份/1536行，累计39/53、10184行，剩14项；完整第二/三遍仍0。原84项CPU/安全/租约/可靠性+新10边界=94项×3通过，无失败/错误/跳过；新7保护+3原缺陷观察。真实supervisor/FD租约/进程组与致命健康协议两类各内部3轮通过，模型角色均CPU替身，不是实际GPU/训练或完整Kaggle启动。
+
+F07异步响应队列无容量/反压、F08失败重载遗留与接受pin不匹配的prompt、F09clone模式规范化/报告不一致，均以明确CPU fixture复现，未修。真实文件hash及原Worker/RealEngine.load_profile控制流实际执行，重型提取/生成/GPU清理为fixture；不冒称真实错音色或慢客户端内存压力。Node30/JS/Python AST/repack通过，见G0_RUNTIME。当前覆盖以g0-runtime-coverage.json为准；下一步补剩14项分析/API/参考切分/DSP/工具/说明及全源第二/三遍，不跳G0，不新增18发布或Q28。
+
+
+## G0第六批：分析/API、参考切分与Python/Rust DSP（2026-10-23）
+
+完整报告见 `docs/KAGGLE_STEP18_G0_ANALYSIS_DSP.md`。全文第一遍新增6份2152行，累计45/53、12336行，剩8份；完整第二/第三遍仍0。172项专项×3轮全通过（旧160+新12，新9保护/3原行为观察），每轮失败/错误/跳过0；另14个分析AST案例与12个NumPy合成DSP案例各三轮，不等于全功能/全模型验收。新F10极短NumPy breath形状、F11窗口重转写词信息漏清洗、F12分析端失败/残缺流被接受，均未修复。F12实际requests+本地TCP；F11为显式ASR metadata fixture。旧校准/候选/诊断及分块依赖仍复现；历史上游cache缺失，本次未重跑6个prompt接口案例，不改写历史20案例收据。Rust两份只完整读源码，缺rustc/cargo，未编译/执行，不冒用NumPy代替。Node30/JS/Python AST/repack检查通过。原300建议、问题25–27各50、53源/94冻结/15正式与本批开始295历史文件hash保持；旧验证器保持历史版本，当前检查用verify_analysis.py。无产品改动、无18包、无真实训练/完整模型/GPU/用户WAV/物理声卡/提速/无沙沙或相似度验收。继续第一遍剩6工具与LICENSE/MEMO，再补全源第二/三遍和失败映射；整体PARTIAL/BLOCKED，不开问题28、不要求Continue。
+
+
+## G0第七批：工具/LICENSE/MEMO，内嵌53资产第一遍补齐（2026-10-23）
+
+完整报告 `docs/KAGGLE_STEP18_G0_TOOLS.md`。新增全文8份1332行，累计53/53、13668行，第一遍剩0；完整第二/第三遍仍0，G0不签收。197项专项×3轮通过（上批172+既有probe13+新12；新9保护/3原行为见证），每轮失败/错误/跳过0。另每轮4实际CLI合同，backend静态/runtime、默认无--run的benchmark均按预期exit2/BLOCKED；resource status exit0，不冒充模型通过。F13 E2E缺gpu/failed END/奇数PCM/残留误PASS，F14 watermark空HTTP503/ERR/残缺帧的零音频误PASS，F15 selftest failed/cancelled Mock统计流误PASS，均真实本地HTTPfixture三轮确认未修；F15时间是确定性fixture，不是性能实验。D01记录MEMO页头step15/xvector/maxgain12与当前17 ICL/maxgain6漂移，冻结MEMO不改。LICENSE全文读完不等于法律/依赖/权重/语音授权签收，NOTICE来源待证。Node30/JS/全部产品Python AST/repack通过；本批开始329历史文件hash保留，53源/94冻结/15正式不变，当前覆盖g0-tools-coverage.json，检查verify_tools.py。没有Rust/完整模型/GPU/真实训练/声学/提速验收，无产品改动或18包。下一步全源第二遍、第三遍交叉反证与300建议最终映射，不预填Q28，不要求Continue。
+
+
+## G0全源第二遍第1批：训练执行与资源所有权（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_TRAINING.md`。8份重新全文阅读1056行并交叉复核CLI/controller/rank、OFD/码租约、准入/取消/原子产物、dataset/JointLoss/LoRA；第二遍累计8/53、1056行、剩45，第一遍53/53/13668保持，第三遍0。局部查看training_codes/encode_training/supervisor不计第二遍全文。219项×3轮全通过（旧197+另选既有artifact10+新12，新11保护/1原行为见证），失败/错误/跳过0。F16原stop_ranks在leader退出后漏清理忽略SIGTERM的额外后代，实际CPU进程/pidfd/OFD/flock复现，未修；测试finally定向清理并验证锁释放。额外后代为明确fixture，生产run_rank无DataLoader子进程，不声称真实训练出现此故障。AST仅运行纯Python采样、commit赋值回滚、dataset构造/len，无Torch算子模拟，无tensor/optimizer/Gloo/NCCL/完整Qwen/GPU/声学或提速验收。Node30/JS/全产品Python AST/repack通过。382历史文件hash、53源/94冻结/15正式、300建议初审与Q25–27各50保持；当前g0-pass2-training-coverage.json与verify_pass2_training.py。无产品改动/18包，G0仍BLOCKED；继续其余45项第二遍及全源第三遍/最终处置映射，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第二遍第2批：来源/声码/产物与恢复认证（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_STATE.md`。7份重新全文阅读1526行（voice_library/training_data/training_codes/trained_profiles/persist/qtts_common/access_control），第二遍累计15/53、2582行、剩38；第一遍53/53/13668保持，第三遍0。analyst候选函数仅局部，不计全文。324项×3轮全部通过（旧219+另选既有93+新12，新11保护/1原行为观察），各轮失败/错误/跳过0。预检曾因测试提取器保留装饰器报1个NameError，已仅修测试、保留原失败日志，最终预检12通过。F17：原pack目录枚举后切换候选，可收新版profile.json却漏新锚点，本地原解包接受后引用缺失；真实tar/文件与原候选AST函数体执行，worker reload/admission明确fixture，确定性交错非HTTP/线程压力或远端Kaggle。新缺陷未修，F01/F16及旧恢复部分提交等问题仍保留。代码/来源封存、取消/IO回滚/同OFD、隐私scope/auth转发及真实safetensors合成结构专项通过，不是Torch/optimizer/DDP/NCCL/真实编码/长训练/完整模型/GPU/声学/提速验收。Node30/JS/AST38/repack通过；408历史hash、53源/94冻结/15正式、300初审及Q25–27各50不变。当前覆盖g0-pass2-state-coverage.json，当前检查verify_pass2_state.py；完整交接增至73份原文。无产品改动/18包，G0仍PARTIAL/BLOCKED；继续剩38项第二遍及全53第三遍/最终处置，优先provider/binding/worker/分析API版本与取消/失败链，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第3批：provider/绑定与推理生命周期（2026-10-23）
+
+完整报告 `docs/KAGGLE_STEP18_G0_PASS2_INFERENCE.md`。qwen_compat/voice_binding/worker/clone_stream/adapter_engine全文5份1071行，第二遍累计20/53、3653行、剩33；第一遍53/53/13668保持，第三遍0。新12（11保护/1观察）加旧324=336项×3通过，失败/错误/跳过0；ASGI2.3独立观察1×3另列。新F18原synth在正文迭代前启动生产线程，响应头阶段断连未进入generator finally，cancel未传给生产；ASGI2.4 send异常和ASGI2.3 receive disconnect两条真实Starlette响应路径三轮确认未修。断连时序/CPU工作负载明确fixture，非TCP/浏览器/模型/GPU证明，finally已定向清理join自有线程。旧F01–F17仍保留。新保护含FIFO/nonblock、绑定/预算、真实锁排队取消、重放迭代器close、RoPE异常/registry、trained磁盘重绑定/删除/链接/预算；最小manual_seed模块替身不是Torch算子或真实codec。临时venv未保留后重建固定关键CPU版本，保存安装日志/freeze，不声称全部传递依赖相同。Node30/JS/AST39/repack通过；435历史hash、53源/94冻结/15正式、300初审与Q25–27各50不变。当前覆盖g0-pass2-inference-coverage.json与verify_pass2_inference.py；交接74份全文。无产品改动/18包/真实训练/模型/双GPU/声学/提速验收，G0仍PARTIAL/BLOCKED。下一批分析/API/参考切分与版本/校准/取消失败链，继续剩33份第二遍和全53第三遍/最终映射，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第4批：分析/API、参考切分与校准所有权（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_ANALYSIS.md`。analyst/library_api/reference_segments全文3份1480行，第二遍累计23/53、5133行、剩30；第一遍53/53/13668保持，第三遍0。348项（旧336+新12，新10保护/2观察）×3全通过，各轮失败/错误/跳过0。F19两个同档案真实ASGI校准请求经原HEAVY(2)/calibrate，共用临时id；A删除后B原Mock Worker加载缺失，错误结果覆盖成功记录，均200；F20重载期间实际删除档案，原终检跳过None，原reload_response仍200/已保存。两项确认未修；worker transport/合成/ASR/声纹明确fixtures，不是TCP/真实模型/双GPU/删除后播放证明，临时资源/槽位清理通过。参考分析最多24预排/3落盘/单锚点条件区分清楚，不称Qwen融合或训练；新17秒长手工文本/20秒低能量窗口是合成控制流，不是真长数据训练。旧F01–F18及专题问题保留。Node30/JS/AST38/repack通过；470历史hash、53源/94冻结/15正式、300初审/Q25–27各50不变。当前g0-pass2-analysis-coverage.json与verify_pass2_analysis.py；交接75份原文。无产品改动/18包/真实模型/训练/GPU/声学/提速验收。下一批启动/监督/backend preflight，继续剩30份第二遍、全53第三遍及最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第5批：启动、监督与backend preflight（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_STARTUP.md`。bootstrap451/supervisor219/backend_probe200全文3份870行，第二遍累计26/53、6003行、剩27；第一遍53/53/13668保持，第三遍0。360项（旧348+新12，新10保护/2观察）×3通过，各轮失败/错误/跳过0。F21原sh在leader退出而后代持stdout时timer跳过killpg，超过请求期限并在外部清理后返回0；真实CPU/pipe/timer/pidfd、观察包装确定性交错，后代退出已验证，非完整bootstrap/性能证明。F22原watch的fatal回执写失败跳过kill/gave_up，HTTP每轮清零使8轮后fail_count仍1；health/IO/process/wait明确fixtures，非真实GPU或磁盘故障。两项未修，F01–F20保留。标准faster启动全部PINS逐项预查/精确安装/constraints0600与清理/Torch变更拒绝、probe先于下载的控制流测试通过；未执行真实pip resolver或GPU，后安装漂移/独立入口/native-adapter仍待证，surface preflight不是质量签收。Node30/JS/AST38/repack通过；497历史hash、53源/94冻结/15正式、300初审与Q25–27各50保持。当前g0-pass2-startup-coverage.json、verify_pass2_startup.py及progress-pass2-startup.json；交接76份原文。无产品修改/18包/真实训练/模型/双GPU/声学/提速验收。继续剩27份第二遍，优先网关调度/流协议/取消/超时及前端排空交叉核对，再全53第三遍/最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第6批：网关调度/流协议/取消与激活终检（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_GATEWAY.md`。main/scheduler/session/segmenter/llm全文5份2286行，第二遍累计31/53、8289行、剩22；第一遍53/53/13668保持，第三遍0。每轮Go原40主测/含子测56、旧专项10、新13（11保护/2观察）通过，合计63主测/79含子测×3；Python旧360×3通过，无新增Python测试。通过套件无失败/跳过/race warning；独立F02竞争见证每轮预期非零/DATA RACE，未混入通过数。F23原healthLoop接受HTTP503 ready=true，原网关报告两worker健康；真实本地HTTP，永久循环隔离于自有Go子进程并核对退出。F24原activate期间实际改profile.model_output_mode，最终conditioning改变而binding相同，仍200/提交active；worker回执为HTTP fixture，无真实训练产物/模型/后续合成。两项未修，F01–F22和专题问题保留。实际Go1.23.9新增于忽略venv，安装报告/wheel SHA与可执行hash保存；freeze仅多go-bin==1.23.9，其余依赖保持，不称全部freeze相同。Node30/JS/AST38/repack/原Go及新探针副本vet/gofmt通过；525历史hash、53源/94冻结/15正式、300初审及Q25–27各50不变。当前g0-pass2-gateway-coverage.json、verify_pass2_gateway.py及progress-pass2-gateway.json；交接77份原文。无产品修改/18包/真实DeepSeek/Qwen/训练/双GPU/声学/提速签收。继续剩22份第二遍，优先前端流终止/取消/遥测/完成排空，再DSP/工具/剩余Go安全和测试；全53第三遍及最终映射仍待完成。G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第二遍第7批：前端终态/取消/排空与遥测（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_FRONTEND.md`。app1715/recorder358/index144全文3份2217行；HTML首次合并输出截断，已补读全范围，第二遍累计34/53、10506行、剩19；第一遍53/53/13668保持，第三遍0。新增浏览器12（10保护/2观察）预检通过，既有134+新12=146×3全部通过，失败/跳过/flaky/retry0；Player VM22/延迟VM16各三轮、CPU旧360×3通过，无新增Python测试。本批未重跑Go79/独立F02竞争见证或独立ASGI2.3/旧CLI矩阵，不挪用历史数字。F25原完整前端脚本END后仍收PCM/文本且第二END替换首汇总；F26网络EOF先发report并停telemetry，随后play/欠载UI变化不更新报告；真实Chromium原生流/DOM/timer，网络/设备/Worklet状态明确fixtures，非物理播放、真实欠载或声学/提速。两项未修，F01–F24及<=50ms已完成短尾/旧DSP等保留。Node模块按冻结lockfile npm ci恢复，未改lock；venv freeze与上批相同，无新Python依赖。Node30/JS/AST38/repack/前端探针语法检查通过；575历史hash、53源/94冻结/15正式、300初审及Q25–27各50保持。完整交接78份原文；当前g0-pass2-frontend-coverage.json、verify_pass2_frontend.py与progress-pass2-frontend.json。产品未改/18未发/真实DeepSeek/Qwen/训练/双T4/声学/提速未签收。下一批Python/Rust DSP和工具自检，再余Go安全/测试与LICENSE/MEMO；继续剩19份第二遍、全53第三遍/最终映射。G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第二遍第8批：DSP与工具（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_DSP.md`。Python/Rust DSP及6工具全文9份1500行，第二遍累计43/53、12006行、剩10份1662行；第一遍53/53/13668保持，第三遍0。CPU372（旧360+新12，新10保护/2观察）×3全部通过，失败/错误/跳过0；NumPy分块12、原EdgeTrimmer AST8各三轮，旧问题未修；4个独立CLI合同×3，backend静态/runtime及默认benchmark按预期exit2/BLOCKED，resource status exit0，阻塞不是模型成功。F27 NumPy flush未清DC状态，常量480→flush192→零240得到240非零/峰6026，fresh为0；Rust源码清DC但未编译执行，正常worker每job重建Leveler，因此不是当前沙沙声根因证明。F28原benchmark/measure两实际HTTP端点health分别GPU0/1、18测量均GPU0，仍real_gpu_verified/speed_target_passed true；health/stats/PCM/clock明确fixtures，报告true是被反证输出，不是硬件/RTF成绩。两项未修。Node30/JS/产品Python AST/新审计语法/repack通过；625历史SHA、53源/94冻结/15正式、300初审及Q25–27各50保持。freeze与前端相同，无新依赖；Rust/Torch/Qwen/实际训练/双GPU/声学/提速未验。本批不重跑浏览器/Player VM/Go/独立F02/ASGI2.3，不挪用历史成绩。完整交接79份；当前g0-pass2-dsp-coverage.json、verify_pass2_dsp.py与progress-pass2-dsp.json。产品未改/18未发；下一批剩余Go安全/测试/go.mod和LICENSE/MEMO共10份，再全53第三遍及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第二遍第9批：安全与全文收尾（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS2_SECURITY.md`。剩余Go安全/测试/go.mod及LICENSE/MEMO全文10份1662行，第二遍累计53/53、13668行、剩0；第一遍53/53/13668保持，第三遍0。这是冻结包53资产，不是全Git仓库或三遍/全功能完成。每轮Go原40主测/含子测56、旧10、上批13、新12（10保护/2观察），合计75主测/91含子测×3通过；CPU旧372×3通过，无新Python测试；失败/错误/跳过0，通过集合无race warning。独立F02每轮预期非零/DATA RACE，不混入通过数，未修。三轮副本vet通过。F29原guard/decodeJSON/validateSpeak接受孤立高低代理项或非法UTF8，解码成a�b后返回200；实际本地HTTP组合校验handler，非完整合成或认证绕过。F30原授权speak/LLM错误链将HTTP401替身正文回显的配置假密钥带入ERROR/END/metrics；密钥/供应商均synthetic，非真实泄密事件或未授权读取。两项未修。LICENSE全文阅读不等于依赖/模型/数据/NOTICE法律签收；MEMO step15/xvector/maxgain12漂移仍为D01，冻结不改。Node30/JS/产品与新审计Python AST/repack/Go探针gofmt通过；686历史SHA、53源/94冻结/15正式、300初审及Q25–27各50保持。Go沿用、freeze与DSP相同，无新依赖；无Rust/Torch/Qwen/完整模型/真实GPU/训练/声学/提速签收。本批未重跑独立CLI/NumPy与trimmer探针/ASGI2.3/浏览器与Player VM，不挪用旧成绩。完整交接80份；当前g0-pass2-security-coverage.json、verify_pass2_security.py与progress-pass2-security.json。产品未改/18未发；下一步第三遍全源跨层输入/pin/错误、生命周期/取消/播放/训练绑定审查及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第三遍第1批：输入与内容绑定（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_INPUT.md`。main478/security247/session692/qtts_common211/voice_binding60/resource_limits172/access_control70重新全文7份1930行，第三遍7/53、剩46份11738行；第一、第二遍各53/53/13668保持。browser和library_api只局部调用点不计第三遍。新增Go6（5保护/1观察）及Python6（5保护/1观察），预检各6通过；每轮Go81主测/97含子测×3、CPU378（旧372+新6）×3通过，失败/错误/跳过0，通过集合无race warning；独立F02三轮预期非零/DATA RACE不计通过，三轮副本vet通过。实际Go/Python8合法pin与12非法generation向量、两worker ack期间generation变更拒绝、空/错text拒绝、内容pin非身份、上传预算+1、spool清理、原子JSON失败、参考增长拒绝、两认证进程一致性均有明确边界。F31同磁盘top_k:null被Go转0并得pin而Python拒绝；F32认证token FIFO无writer时open先于fstat阻塞，普通文件control通过，外部定向终止并reap自有子进程；两项未修，无真实凭据/模型/错误音色或远程利用证明。原8条建议仅部分证据映射，300与Q25–27各50不改/不签收。739历史SHA、53源/94冻结/15正式保持；Node30/JS/AST/repack/gofmt/vet通过，freeze与第二遍收尾相同，无新依赖。旧S2 F29/F30随套件重跑仍未修；本批未跑浏览器/VM/独立CLI/ASGI2.3/分块裁剪探针，不挪用历史成绩。完整交接81份；当前g0-pass3-input-coverage.json、verify_pass3_input.py及progress-pass3-input.json。产品未改/18未发；无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍参考分析/API/档案修改与备份事务，继续剩46份及300最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第三遍第2批：参考与档案事务（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_REFERENCE.md`。analyst1211/library_api163/persist99/reference_segments106/voice_library351第三遍完整5份1930行，累计12/53、3860行、剩41份9808行；前两遍各53/53/13668保持。新12（10保护/2观察）预检通过，CPU390（旧378+新12）×3全部通过，失败/错误/跳过0。F33真实两CPU线程占满原HEAVY，原text/candidate ASGI先写盘改pin再429，不reload且不报reference_saved；F34原校准评估旧转写，在结束提交前实际text ASGI改pin仍200，随后calibrate保存旧评分到新档案仍200；临时目录/线程/槽清理核对。模型/ASR/speaker/worker ack为fixtures，无真实音质/错误音色证明，两项未修。复制失败旧pin保护、JSON失败仍遗留孤立anchor明确不称全回滚；trained三入口409、原库snapshot异常/顺序/只读与租约、稳定pack/extract字节pin、归档末尾非法成员先拒绝、DELETE重复revision、24秒可信词切分保护通过。原300本批10条部分链接、与前批去重16个ID，均未最终签收；原文/Q25–27各50保持。795历史SHA、53源/94冻结/15正式保持，Node30/JS/AST/repack通过，freeze与前批相同无新依赖。本批未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/CLI/分块裁剪探针，不挪用历史成绩。交接82份；当前g0-pass3-reference-coverage.json、verify_pass3_reference.py及progress-pass3-reference.json。产品未改/18未发；无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍训练输入/码/训练产物绑定与取消/提交，继续余41份及300最终映射；G0仍PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+
+## G0全源第三遍第3批：训练来源与产物提交（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_TRAINING.md`。training_data285/training_codes355/training_job227/tts_training200/tts_dataset125/trained_profiles155/encode_training128/trained_voice30全文8份1505行，第三遍累计20/53、5365行、剩33份8303行；前两遍各53/53/13668保持。首组源码输出截断后完整补读。首次测试43项因导入TestCase重复31项，1失败为误判正常.lock；改模块导入与断言，保留首错/说明，预检新12通过。初行数误算1605被信用断言拦住未写错误coverage，逐项纠正1505/5365/8303并留记录。CPU402（旧390+新12，新11保护/1观察）×3全部通过，失败/错误/跳过0。F35原控制器在两个真实CPU替身rank0退出且adapter仅含manifest.json={}时仍completed/optimizer_execution_observed=true，原TrainedArtifacts.inspect409拒绝，信号/租约恢复；训练准入/依赖/tokenizer门禁与rank实现明确替身，原GPU/code OFD adopt实际执行，无Torch/优化器/训练/非法声音发布或正常rank产生坏检查点证明。F35未修，F01–34/D01保留。新保护包括输入BaseException回滚、PCM极值36001帧、codes最终取消、encoder第二样本中断、finish-only pin、adopt最后OFD、cancelled产物拒绝、来源/NaN拒绝、发布末次重核/固定参考文本/active不变及新trained_voice CLI错pin脱敏拒绝；发布codes lease元数据/adapter为fixtures，不能签收真实训练。原300本批7部分链接，与前两批去重22ID，均未最终签收；Q25–27各50保持。825历史SHA、53源/94冻结/15正式保持；Node30/JS/AST38/repack通过，freeze与上批相同无新增依赖。本批未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/额外四CLI/分块裁剪矩阵，不挪用历史成绩。交接83份；当前g0-pass3-training-coverage.json、verify_pass3_training.py及progress-pass3-training.json。产品未改/18未发，无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍adapter/推理/provider兼容与缓存/失败取消，继续余33份及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+
+## G0全源第三遍第4批：推理与生成资源清理（2026-10-23）
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_INFERENCE.md`。adapter_engine108/lora_adapter91/qwen_compat97/clone_stream126/gpu_ownership151/worker680/train_tts49重新全文7份1302行，无源输出截断，worker连续四段；第三遍累计27/53、6667行、剩26份7001行；前两遍各53/53/13668保持。新增12（11保护/1观察）预检一次通过；CPU414（旧402+新12）×3全部通过，失败/错误/跳过0。F36原generated_only_stream在consumer关闭已启动生成器时，上游close替身抛异常，后续window.finish被跳过；生成器frame本身关闭，测试捕获的真实window仍closed false/pending1920/合成code标记，最后显式清理完成。准备/predictor/decoder/Torch上下文均控制替身、无tensor模拟，没有证明生产上游会抛错或正常GC后持续GPU内存泄漏/沙沙根因，F36未修。adapter来源不符先拒绝、cached仍核验实际safetensors字节、取消前不选择与取消后丢弃返回PCM、native rate/shape/NaN/长度拒绝与单句输出、回放指标合计、worker部分生成失败解锁/后续成功、同pin缺prompt重载、RoPE重试cause/注册表、真实短pwrite释放OFD均保护通过；LoRA prepare/commit和native模型未执行。F01–35/D01保留，旧ASGI/CLI/信号/CPU持有者见证随集合重跑，不代表真实模型。原300本批7部分链接，累计去重27ID，均未最终签收；Q25–27各50保持。858历史SHA、53源/94冻结/15正式保持；Node30/JS/AST38/repack通过，freeze与上批相同无新依赖。未跑Go/F31/独立F02/浏览器VM/独立ASGI2.3/额外四CLI/分块裁剪矩阵，不挪用历史成绩。完整交接84份；当前g0-pass3-inference-coverage.json、verify_pass3_inference.py及progress-pass3-inference.json。产品未改/18未发，无Rust/Torch/Qwen/实际训练/双T4/声学/提速签收。下一批第三遍启动监督/preflight/资源测量工具与DSP接口，继续余26份及300最终映射，G0仍PARTIAL/BLOCKED，不跳S1/Q28、不要求Continue。
+
+## 第三遍第5批：启动监督、工具与DSP接口
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_STARTUP.md`。11份2253行全文复读；累计38/53、8920行，剩15份4748行。CPU426（旧414+新12，10保护/2观察）×3全部通过，失败/错误/跳过0；另NumPy分块12、trimmer8、实际CLI4各三轮，CLI中3项每轮期望blocked而非模型成功。首预检12项中1 error为测试误访问UploadRejected.status，纠正为code后12通过，首错/修正留档。F37原preflight父控制器接受真实CPU替身child exit23写出的合法形状成功回执；生产者明确替身，不证明实际GPU误通过。F38已有系统cc编译仅rt_version的C共享库，真实ctypes在ABI3缺rt_leveler_new抛AttributeError中止import，ABI2及显式NO_RUST为NumPy；不是Rust编译/运行或正式Rust库损坏证明。两项未修，产品不改。887历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计33unique，Q25–27各50不变，最终处置仍false。Node30/JS/AST38/repack新执行；无新Python/系统依赖，freeze不变。未跑Go/race/vet/浏览器VM/独立ASGI2.3，未跑Torch/Qwen/实际训练/双T4/声学或提速。交接85份；最新coverage/verifier/progress为pass3-startup。继续余Go10/web3/LICENSE/MEMO及300最终映射，G0与整体PARTIAL/BLOCKED，不跳S1/Q28/18发布，不要求Continue。
+
+## 第三遍第6批：网关调度、LLM流与文本保留
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_GATEWAY.md`。剩余Go10资产2110行全文复读，累计48/53、11030行，剩5份2638行（web3份2217/LICENSE201/MEMO220）；前两遍各53/13668保持。新增Go12（10保护/2观察）race预检通过，首编译错因测试误用submitted，已改为真实字段allSubmitted、首错留档；另一次审计元数据括号SyntaxError解析前阻止全部写入，拆开后纠正留档。Go原40+G0十+P2十三+security十二+input六+新十二＝93顶层/109含子测试×3正常通过，意外fail/skip/race0；独立F02 race×3预期非零、仍未修，vet×3通过。CPU完整继承426×3＝1278 PASS，failure/error/skip0，无本批新增Python合同；另NumPy分块12/trimmer8/实际CLI4各三轮，3项CLI每轮期望blocked非GPU成功。F39原Live PreserveText把你好。!?重连成你好。及丢独立空白/标点尾段，非语词漏读或沙沙根因证明；F40原run在活ctx下接受替身cancelled=true stats＋偶数PCM，served1/failed0，非真实生产取消或GPU漏音证明。两项未修；F01–38/D01保持。chat system/history/预算、SSE CRLF/末行无换行/流内错误脱敏、正常read Unicode保字/seed、retry上限、urgency/FIFO、EMA与chunk2/6/pin转发保护通过，非200正文F30仍在。953历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计38unique，Q25–27各50/最终处置不变。Node30/JS/AST38/gofmt/repack新执行，无新Python/系统依赖、freeze不变；CPU继承C ABI故障注入不冒称Rust，无Rust/Torch/Qwen/CUDA/真训练/双T4/声学/提速。本批未跑真实浏览器/VM/独立ASGI2.3，不挪用历史成绩。交接86份，最新pass3-gateway coverage/verifier/progress。产品未改/18未发，下一批web完整阅读与实浏览器、另许可/MEMO及300最终映射；G0与整体PARTIAL/BLOCKED，不跳S1/Q28，不要求Continue。
+
+## 第三遍第7批：web、录音与播放／界面状态
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_FRONTEND.md`。app1715/index144/recorder358完整复读3份2217行，第三遍累计51/53、13247行，剩LICENSE201/MEMO220共2份421行；前两遍各53/13668保持。浏览器158（原146+新12，10保护/2观察）×3＝474 PASS，失败/flaky/skip/retry0；CPU完整继承426×3＝1278 PASS、failure/error/skip0，无新Python合同；另VM22/16、NumPy分块12/trimmer8/实际CLI4各三轮，三CLI每轮期望blocked不是模型成功。F41停止已abort且hold/reset，注入迟到fixture Worklet st使原player发play/UI playing，不证明真实原生Worklet竞态/物理漏音；F42同accessEpoch、候选mutation0→1、合成profiles响应1→0，使原UI高亮从1回0，不证明实际backend回滚或错声音。两项均未修，旧F01–40/D01保持，每轮保留F04/05/06/25/26观察。新保护含resume中取消、精确File字节/边界、start抛错/权限迟拒绝、policy帧、401锁定、超长帧头、正常完成排空、三份冻结web完整文本原生clipboard且不额外save、最近六完整chat回合；继承真实振荡器/静音录音与完整17包复制/权限回退。浏览器API为fixture，临时E2E workbench不是正式HEAD。首预检11/1为旧recorder-only壳缺charset导致中文乱码，仅新审计壳UTF-8重载后12通过，原断言/旧fixture/产品不改，首错留档。1051历史SHA、53源/94冻结/15正式保持；原300本批7部分链接、累计45unique，Q25–27各50/最终处置false不变。Node30/JS/AST38/repack新执行，freeze/lock不变，无新Python/系统依赖或npm重装；C ABI故障fixture非Rust。本批未跑Go/race/vet/独立ASGI2.3，不挪用历史结果。交接87份，当前pass3-frontend coverage/verifier/progress。产品未改/18未发，物理麦克风/扬声器/真DeepSeek/模型/实际训练/双T4/声学/提速未验。下一步剩2份第三遍及原300最终映射；G0与整体PARTIAL/BLOCKED，不跳S1/Q28，无需Continue。
+
+## 第三遍第8批：许可／MEMO收尾与原300缺口矩阵
+
+报告 `docs/KAGGLE_STEP18_G0_PASS3_CLOSURE.md`。LICENSE201/MEMO220全文复读2份421行，三遍各53/53、13668行，剩0；只关闭53内嵌资产源码阅读子项，不是整个Git仓库或零缺陷验收。原300逐项复核并生成完整gap矩阵，原分类23限定缺陷建议/96保留/89文档合同/55真实条件阻塞/37待证保持；三遍7个链接文件53条记录去重45项，255无该组专用链接不等于无历史证据，最终签收0/300，逐条下一动作／来源／计划合同与边界保存。D01历史MEMO step15/xvector/12dB与冻结17默认ICL/6dB漂移不改；本批AST实际调用原conditioning和output_max_gain_db默认／显式／拒绝路径，不是模型或音量测量。D02新增证据可用性缺口：1139期待历史文件中1136可读SHA匹配、变更0，3份旧.log缺失且匹配*.log忽略规则，预期SHA保留、内容不补造、full_historical_integrity_passed=false。冻结53源/94文件/15正式与HEAD仍保持。旧.venv/node_modules/Go/Rust当前不存在，先期环境／严格历史检查错误留档，改用系统Python标准库、无依赖安装。新12收尾审计合同×3＝36 PASS、Node30×3＝90 PASS，无失败/错误/跳过；JS/repack/AST38各三轮通过。旧158×3浏览器原始JSON只重新解析／核SHA，不是本批重跑；未跑CPU426/Chromium/Go/race/vet/模型/训练/双T4/物理音频／声学／性能，无功能修复、无18包；LICENSE/NOTICE/依赖模型及声音授权未签收。交接88份，当前pass3-closure coverage/verifier/progress。下一步原300逐条最终审查处置及精确测试映射、D02从可信来源找回或有环境后另存新执行收据。G0与整体仍PARTIAL/BLOCKED，不跳S1/Q28，直接继续无需Continue。
+
+## G0第9批：300处置说明与限定失败观察绑定
+
+报告 `docs/KAGGLE_STEP18_G0_DISPOSITION_REVIEW.md`（附录完整300条原建议及逐条说明）。原3轮100项分别补写行动／边界，review_disposition_recorded300/300；原分类23限定修复/96保留/89文档合同/55真条件阻塞/37先调查不变，原final_disposition/test/fix与新functional_acceptance全false，功能及最终签收仍0/300，说明归档不等于G0完成。23原限定缺陷建议手工绑定历史3轮69个JSON Pointer观察（有重复、不算新实验或23新bug），收据／源码／当前相关probe SHA及历史身份是否有记录分别保存；R1-016只相关校准文本交错，NaN未在旧payload，DSP早期未记probe_sha不补造。原45部分链接与23绑定交集3、并集65，235未进入这两组不等于无其他证据。53内嵌资产三遍各13668行保持。D02按3预期SHA搜索当前仓库非.git且<=2MB文件并查git log --all，无同SHA或当前可用提交，未查远端／仓库外；1183历史期待项中1180可读SHA匹配、变更0、3旧.log仍缺，全历史完整性false，不拿新日志充旧字节。新24审计（继承收尾12+新增12）×3＝72 PASS、Node30×3＝90 PASS，JS/repack/AST39各3轮通过，新预检12首次通过，无失败/错误/跳过。系统Python标准库，未装依赖／未重建环境；历史失败仅重读，未跑CPU426/Chromium/Go race/vet/Rust/模型/训练/双T4/物理音频／声学／性能。产品未改，94冻结/15正式及HEAD保持；交接89份，当前g0-disposition-review.json、disposition-failure-bindings.json、verify_disposition.py与progress-disposition.json。下一步按S1非法/缺省/NaN真实HTTP等合同精确映射，补相关而不完整的并发见证，D02从可信源恢复或另存新执行收据。G0与整体PARTIAL/BLOCKED，不跳S1/Q28或18发布，保留全部用户未豁免要求，直接继续无需Continue。
+
+## G0第10批：真实TCP的S1输入边界与CPU继承
+
+报告 `docs/KAGGLE_STEP18_G0_INPUT_HTTP.md`。新Uvicorn原analyst.app+httpx走真实127.0.0.1临时TCP，不是TestClient/AST；生命周期off、worker ACK及合成profile明确fixture，不是Go鉴权或模型。CPU438（原426+新12，7保护/5未修观察组）×3＝1314 PASS，failure/error/skip0；原426逐ID/结果及16旧观察完全继承，新5组后观察21。每轮61请求、合计183；各轮200×19/500×16/400×16/422×6/404×1/409×3，500为未修见证非功能成功。I01 bool/float/string强转；I02容器/非法串/NaN/±Infinity/1e309及顶层非有限500；I03缺省0/重复键最后/未知忽略；I04非字符串转写str化、surrogate500但原文件保留；I05损坏candidates与预装父路径/符号链接file接受，所有字节在自有临时树，不证明公开远程任意文件读取／模型接受。合法候选字节/转写/pin、合法Unicode、越界/缺档、有限非对象422、trained三入口409、library严格JSON400、HEAVY槽恢复保护。新12预检首次通过，探索原JSON保存；检查脚本误用id字段（实际test）的KeyError留档，测试/产品未改、三轮非失败。另NumPy12/trimmer8/实际CLI4各三轮，三CLI期望blocked/resource gpu_verified=false；24审计/Node30/JS/repack/AST39各三轮通过。重建忽略venv并装历史固定Python依赖，freeze精确旧记录去掉故意未装go-bin；NumPy2.2.6非requirements2.4.6，无Go/Rust/npm/Torch/Qwen/模型安装；C ABI fixture非Rust。本批新12建议精确testID/三轮case下标+SHA部分链接，有限证据并集70、230未入这些集合不等于无其他证据，原300/3×100处置/Q25–27各50保持，最终/功能签收0。53资产三遍13668行/94冻结/15正式不动；历史1228期待1225匹配/变更0/3旧.log D02仍缺，不以新日志冒旧内容。无浏览器/Go race/vet/真实模型/训练/双T4/实体音频/声学性能验证，产品未改/18未发。完整交接90份，当前input-http links/verify_input_http.py/progress-input-http.json。G0与整体PARTIAL/BLOCKED，不跳S1/Q28；后续版本冲突与候选/文本/校准组合及剩余逐条映射，不承诺一定成功，直接继续无需Continue。
+
+
+## G0第11批：版本／校准真实TCP组合（未实施产品优化）
+
+新增12项=8保护/4未修观察，单Uvicorn事件循环真实HTTP、HEAVY线程Event控制交错，原reload/calibrate实际执行，worker/ASR/speaker/synth为替身。首次预检12PASS；CPU450×3PASS、failure/error/skip0，旧438逐ID/结果继承；每轮85TCP、三轮255，其中新增24/轮共72。普通候选/文本重叠旧reload有pin503保护；校准旧评分仍可在真实HTTP编辑之后200保存（新转写未被覆盖）。另满额429前写盘、同名候选bytes变更后未重评、自有profile真实DELETE后校准500而未复活。文件变更非HTTP上传，非声学/实际错声音证明。新12原建议部分链接令并集75/300=25%，仅限定证据覆盖，最终/功能签收0/300。1317历史期待/1314匹配/3旧.log缺失；产品53源/94冻结/15正式保持。复用venv无安装，完整交接91份。附加审计与独立核验以version-http-checks-roundN.json和progress-version-http.json为准；报告KAGGLE_STEP18_G0_VERSION_HTTP.md。G0/整体PARTIAL/BLOCKED，不跳S1/Q28/发布；声音优化未实施，真实模型/双T4/训练/声学/提速未验收。
+
+
+## S1隔离候选实际实现（问题28流程调整）
+
+不再只增加观察。问题28已独立按四选项、选C及50行动完成，见KAGGLE_STEP18_Q28_S1_CANDIDATE.md；原25–27文件不改、29未开。前置门禁调整为：允许隔离候选修复，不允许未验收候选进入冻结包、默认正式服务／工作台或发布。G0整体仍PARTIAL/BLOCKED，真实模型／硬件门禁未豁免。
+
+新增kaggle/step18的实际候选分析源码，依赖冻结17其余模块；只改候选／文本／删除入口及提交辅助代码，其余命名定义AST相同。实现严格JSON/类型/Unicode、HEAVY先准入后写盘、内容地址锚点和提交失败保旧、短提交锁与删除协调；校准仍原实现不算修复。默认17包与正式HEAD、53源/94冻结/15正式保持。
+
+最终相同28合同，旧版43失败记录/2明确skip/0error，候选28预检全PASS。完整478（旧450冻结对照+新28候选合同）×3PASS，失败／错误／跳过0；每轮159 TCP、三轮477，新候选74/轮共222。15条原建议新限定实现证据加强原75并集，未虚增覆盖，原300最终／功能签收仍0。三轮附加检查与独立封存以s1-candidate-checks-roundN.json及progress-s1-candidate.json为准，完整交接93份。无真实模型／训练／双T4／声音质量／提速验收，18未发布；下一步仅S2校准快照与冲突修复，不能把当前成果称已消沙沙或首声更快。
+
+
+## S2-A校准快照实际实现
+
+在隔离18候选中实现完整输入捕获、仅用捕获字节评估、提交前同短锁核验；真实HTTP编辑／ABA、候选同名bytes／质心／参数变化、删除／trained变化后409且不应用旧评分。S1变更写修订nonce，相同选择幂等；同档案第二次校准409，临时ID独立且长度安全，自有临时目录与ASR释放finally。最多24候选、64MiB聚合文件，非总内存预算／跨进程事务。改前S1及活跃交接已归档s2-before/index；冻结17不动。新增22合同对改前S1为21失败记录/0error/0skip，候选预检22全PASS。三轮500（450冻结控制+当前候选上S1旧28+新22）及附加检查以progress-s2.json为准，完整交接94份。原300建议最终／功能未全签，证据比例非整体进度。缺失CER默认值、全失败chosen0、非有限／覆盖率评分、最终worker回执等留待S2-B，不提前签完整S2，不跳真实模型／双T4／声学或发布门禁。问题29未开，原三轮100及问题25–28记录保留。
+
+
+## S2-B有效指标与加载就绪实际实现
+
+Q29选C及50行动先完成，未开30。逐目标缺失null、覆盖率／有限可靠指标门禁，不再默认CER0.05或全失败chosen0。无候选422不写盘保旧，其他完整候选可选；临时worker核验状态和pin，选择保存后最终加载失败503/savedtrue/readyfalse，后改／删版本明确标不当前，不虚构回滚。成功保留磁盘选择报告一致及quality_verified=false；后台可选校准摘要已接入但未完整运行真实创建。S1/S2-A旧方法断言不改。
+
+最终23合同对S2-A为36失败记录（含子用例、非36bug），候选预检PASS。初三轮523通过后复核修正整数PCM abs最小值溢出并补子用例，最终另命名三轮以s2b-final和progress-s2b.json为准，不混算初轮；初源码逆变换重建明确按记录SHA核验、非事前快照，原错日志均保留。旧500加新23，旧450冻结控制／旧50当前候选／新23当前候选，附加检查和封存以实际收据为准。完整交接96份，17／53源／94冻结／15正式不变，18未发布。真实短音、质量、双T4／训练／性能及全局事务仍未签；下一步隔离候选S3分块一致性，不跳声学门禁。
+
+本批12条当前实现限定链接令证据并集81/300（27%仅证据覆盖），不是整体完成率；最终／功能签收仍0。
+
+
+## S3因果 NumPy DSP 与隔离worker实际接入
+
+Q30四选项选C、50行动和三遍各100专题建议已先归档。新增 step18_audio_rt.py 与隔离 worker.py，唯一模块名接入真实 run_job；所有 worker 命名定义AST保留。固定 RMS 余数、逐样本因果平滑、绝对位置淡入、明确flush/关闭/配置合同；没有PCM整窗缓冲，没有参考PCM拼接。候选只启用 numpy-causal-v1，不装载未测Rust；冻结17/正式工作台不动。旧版30合同44失败记录、候选30 PASS；完整562×3全部PASS，含旧523逐ID/结果保留；14分块矩阵×3差0，601秒合成流×3状态有界和计数通过，CPU实测有短块加速也有大块开销，不是模型RTF或声学提速证明。附加24审计/Node30/AST53等最终结果与两次封存以 progress-s3.json 为准。新venv确实重建、freeze与旧版相同；1768保护/1765匹配/3旧日志缺失仍保留；完整交接101份、18未发布。完整S3含Rust/模型/声学仍未签收。下一步S4裁剪有界状态，不能把DSP样本数守恒当整个原trimmer链已无丢样本；不需要Continue。
+
+
+## S4有界裁剪与worker结束实际修复
+
+Q31选C及50行动、三遍100建议先写。新增step18_trimmer.py固定120网格残帧/跨块35ms前史/有界尾队列/finish；正常finish保留缓存非零尾，精确零裁掉计数；取消/异常清缓存不排尾；中段静音超限输出不删。新增worker_s4.py实际接入，只更换裁剪器和Worker.run_job，原S3 worker/DSP及旧合同完整保留。30旧版红42失败记录/0error/skip，初41失败+1OverflowError已保留并转明确合同失败；候选30/worker10预检通过。完整602×3全部PASS，旧562逐ID/结果保留；21分块矩阵×3对独立参考逐样本相等，601秒合成流×3达到并守住43200样本尾预算。裁剪CPU约1.10秒/601秒合成音频，正确性有开销不声称提速/模型RTF/首声改善。最终审计24/Node30/AST57及两次封存见progress-s4.json。无新依赖，1905保护/1902匹配/3旧日志仍缺，完整交接106份，17/正式工作台不改、18未发。领先低电平仍可裁，非零尾不是无噪声证明；真实用户音频/双T4/训练/声学及完整S3 native仍未签。下一步S5完成短尾排空，直接继续无需Continue。
+
+
+## S5完成短尾／重采样／epoch实际修复
+
+Q32选C＋50行动、三遍100建议先归档。新增完整web/app.js，仅改Player及嵌入Worklet，网络解析/预测器/UI后缀逐字节保持；真实完整页面使用新Player。完成任何正pending可play，未完成风险阈值保留；按post−played−dropped计账并等当前epoch endACK，不以旧fill0假装结束。全局整数坐标重采样，正常末样本保持到ceil预算、取消不flush；epoch拒绝旧状态与stop后复活。37VM红28失败/9保留，候选预检37和8源码及15原生浏览器通过。最终610CPU（旧602保留）/37VM/173Chromium（旧158＋新15，含3完整UI原生链）三轮及24审计/Node30/AST58与两次封存见progress-s5.json；不混算重叠VM。实体扬声器与模型声音未验收，firstPlayedMs仍play命令时间。Python沿用无安装，npm ci确实按旧lock安装浏览器依赖，lock/config不改；2049保护/2046匹配/3旧日志缺，完整交接111份，17/正式工作台/S3S4不改、18未发布。下一步S6时序与诊断，真实T4/训练/声学/RTF和完整S3 native仍未签，不要求Continue。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_AUDIT.md
+
+# 第十八阶段G0补审与建议处置（第一批，未签收）
+
+## 本批实际完成
+
+- 活动分支`arena/1160bd87-kagglee`。产品源码、原始–17发布资产与正式工作台不改。
+- 读取300条原建议，逐ID初审分类、关联批次和待执行测试合同。完整表见`KAGGLE_STEP18_G0_DISPOSITION.md`，机器记录见`validation/step18/g0-recommendation-disposition.json`。**分类不代表全部建议已实现、逐项已测或最终签收。**
+- 对此前较浅的六份源码完成本批第一遍完整文件语义阅读，共930行：training_job.py、gpu_ownership.py、persist.py、access_control.py、resource_limits.py、qtts_common.py。第二遍仅做部分调用方/边界交叉核对，第三遍未完成，不把三种观察角度伪称全源三遍。
+- `g0-source-coverage.json`逐资产记录53项的hash、行数、三遍状态与历史范围。本批第一遍完整阅读6项，其余47项不新增完整覆盖信用；第二/三遍完整签收均0。53资产之外的仓库服务、生成器、测试、复制页和正式工作台仍需单独覆盖，不能从这张表推导全仓已审完。
+
+## 300条初审结果
+
+| 分类 | 条数 | 解释 |
+|---|---:|---|
+| 限定范围内已复现缺陷建议 | 23 | 与历史受控收据关联；多条可指向同一缺陷，不是23个独立bug |
+| 保留约束/保护 | 96 | 不应被音频优化破坏；并不表示96条本批逐项测试通过 |
+| 文档/度量/测试合同 | 89 | 语义说明、计划或证据边界，不能冒充产品修复 |
+| 真实模型/设备等阻塞 | 55 | 含真实WAV、浏览器/设备、目标后端及双T4；仍未执行 |
+| 待进一步证据 | 37 | 保留未知，不猜成bug或直接删除需求 |
+| 合计 | 300 | 全部有初审映射，全部最终处置签收仍为false |
+
+每行保留原ID、原建议/来源和原review引用；测试家族是拟执行的不变量，不把共享测试家族等同每行都有独立覆盖。已复现类只称各收据所述范围，例如AST交错不代表真实线程并发、小块泛用合同不代表生产1920倍数必达。
+
+## 六模块第一遍语义结论
+
+### training_job.py（1–227）
+
+- 28–70检查本地文件树、硬链接/软链接、预算、远程代码元数据、必备文件和Base1.7B/16码本，使用内容hash；这不是加载或验证真实权重质量。
+- 73–86拒绝fixture/legacy训练来源，要求审阅及实验确认；整数预算拒bool。80–86浮点选项/内部调用类型边界还需后续深审，不能认为当前所有类型已严密覆盖。
+- 99–105训练子进程清除列举的认证/API变量及PYTHONPATH，开启离线；仅证明列举键，不证明所有可能的凭证别名已清除。
+- 153–210持代码租约与离线GPU租约；创建子进程前屏蔽取消信号，登记PID后恢复；停止实际创建的独立进程组，不读旧PID杀进程；结束后复核输入与模型。退出0但没有checkpoint不算优化器成功。
+- 125–150检查rank集合、样本集合及参数变化，保存安全格式checkpoint但明确质量/推理未验证。其报告可信性、逐epoch完整覆盖、训练恢复等仍需tts_training/数据链完整深审和真实执行。
+- **新复现G0-B02–04**：config.json合法对象但talker_config为null/列表/字符串时，68行链式.get产生AttributeError；不是受控UploadRejected。仅本地材料化配置错误合同，未证明远程利用、GPU训练发生或声学损害。后续先修错误分类，再补CLI回执；当前未修改。
+
+### gpu_ownership.py（1–151）
+
+- 固定同主机同UID命名空间不随STATE/设备别名变化。文件类型/owner/nlink/权限及nonce检查阻止误采纳；adopt核对inode、活锁和共享描述符。
+- close只关FD不LOCK_UN，保证父子共享的最后描述符关闭前租约仍有效；不unlink锁文件。状态记录PID/时间只诊断，不据“过期PID”抢锁。
+- 这是合作式CPU flock协议，外部UID/容器/非参与进程不在合同内，`gpu_verified=false`保留。不能称测到实际CUDA占用。
+
+### persist.py（1–99）与qtts_common.py（1–211）
+
+- _pack仅打包profiles与active，跳过_cal；原始libraries/training_data/training_codes/training_runs不被该遍历纳入。profile的参考锚点和转写本来就属于显式配置快照，不能误称“备份不含任何私有音频”。未调用Kaggle网络服务验证私有可见性。
+- 恢复先检查整个归档成员范围，再由通用extract_tar_safely拒绝绝对路径、..、特殊成员和现存逃逸链接；逐文件临时写再replace。合法路径与不安全成员预检查已有保护继续通过。
+- **新边界G0-B08**：在合法归档第二成员replace处注入OSError，第一成员已提交，第二仍旧；临时文件清理成功，但没有包级回滚。是本地故障注入下的恢复一致性缺口，不是已发生的数据损坏或声音串档；后续设计需考虑暂存、提交、启动顺序和指纹保护，不能直接把所有文件一次replace称全事务。
+- common的JSON写入是单文件原子替换；默认json.dump接受非有限数，不能借training_job.write_json的allow_nan=False推断所有写入相同。来源、预算、日志与恢复原子性都需第二/三遍复核。
+
+### access_control.py（1–70）
+
+- 默认认证目录在临时目录，状态路径hash隔离；环境值与生成token长度/ASCII检查，文件采用NOFOLLOW、owner/类型/长度核验，落盘fsync和600权限；并发生成有flock。
+- gateway_headers仅对指定本地HTTP网关附token，不向worker或远端发送；这是内部探针行为，不让浏览器向localhost取服务。
+- 对目录祖先/本地同UID篡改、锁文件和文件打开时序的完整威胁覆盖未签收；不把现有测试通过称认证无漏洞。未显示或持久化实际凭证。
+
+### resource_limits.py（1–172）
+
+- BodyBudgetMiddleware先有界spool再交multipart解析；未知Content-Length也逐块计量，断开不继续调用应用；JSON与multipart预算分开。
+- BuildAdmission.start本身不获取slot；核对analyst.py 987–1033的调用方先非阻塞获取，未成功start时finally释放；线程内finally释放。不能只看片段就误报“未获取却释放”。
+- HeavyAdmission用shield使HTTP取消不释放实际仍运行任务的槽；提交失败通过事件门阻止队列残留重复执行/重复释放。它不是按profile串行事务，不能替代S2版本/锁。
+- 实际限流、ASGI/HTTP错误、启动失败及取消保护在本批84项子集中验证；真实高并发长稳压测尚未执行。
+
+## 实际执行与收据
+
+### 现有专项回归：84项×3轮
+
+`run_g0_regressions.py`明确选择test_gpu_ownership、test_security、test_reliability及test_tts_training中的AdmissionTests/ControllerLifetimeTests。每轮84项、失败0、错误0、跳过0。包含真实CPU子进程、FD/flock、SIGTERM/SIGKILL生命周期；HTTP部分是FastAPI TestClient进程内请求，不是网络服务压力或用户浏览器。
+
+训练控制器部分明确注入fixture代码、模拟模型/子进程；绝不是完整Qwen训练。未纳入Torch TensorTests，因此0跳过也不能说已跑张量/Gloo实验。未执行Go/Rust/完整浏览器/六协议最终三轮。
+
+收据：`g0-regression-round1..3.json/.txt`，每项测试ID及状态、53源资产/测试/runner hash和主要依赖版本均记录。第一次执行84×3也通过，但源清单rglob误纳入24个__pycache__文件；保留为`*-initial`，修正为baseline的53资产后重新执行84×3，以无initial后缀为当前收据。这是收据库存错误，不是产品回归失败。
+
+### 新边界实验：10项×3轮
+
+`g0_boundary_probe.py`直接导入原函数，使用临时本地合成文件，无权重、无外网、无用户WAV。G0-B01..10涵盖假文件树指纹、三种损坏talker_config、auto_map拒绝、NaN单文件写保护、坏归档预检、恢复中途I/O失败、备份范围、列举秘密清除/离线策略。三轮结果一致。**捕捉到原有缺陷的案例退出0表示成功复现，不是修复后通过。**
+
+收据：`g0-boundary-round1..3.json`。NumPy保持2.2.6；为实际CPU/HTTP测试在忽略.venv补安装requirements-test中FastAPI/Uvicorn/multipart/httpx/soundfile/requests固定版本，未安装Torch/Go，未修改生产依赖。首次安装命令因.cache目录不存在在重定向前失败，创建忽略目录后成功。
+
+## 覆盖和下一步门禁
+
+- **G0仍未完成**：6份第一遍全文不能代替全部53资产，更不能代替全仓三遍。300映射初审不能代替逐条最终签收。
+- 下一批先读training_data/training_codes/voice_library的完整事务、租约及训练采样/发布链，再覆盖Go会话、安全、全前端和外围服务；逐遍记录实际范围，不自动补成完成。
+- 新恢复一致性问题暂留设计待证，不在本步默认决定重写恢复。若后续需要新的关键设计选择，再按一题/50建议追加；不机械填问题28。
+- 完成覆盖/映射后才按实施细则S1起小步修改。最终完整回归与真实模型三轮仍分别必需；首声、无沙沙、同声自然朗读、RTF≤0.3、真实长数据训练全部未由本批证明。
+- 整体PARTIAL/BLOCKED，产品未改、18未生成，原始–17及正式工作台继续冻结。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_DISPOSITION.md
+
+# 第十八阶段300条建议处置映射（初审，未签收）
+
+每条保留原ID/建议；测试家族是待执行合同，不等于每条已有独立测试。确证缺陷仅限收据所述范围。三遍全源未完成，G0未通过。
+
+| ID | 初审分类 | 批次 | 建议 | 测试家族 |
+|---|---|---|---|---|
+| S18-R1-001 | documentation-or-test-contract | S7 | 将候选参与质心统计与实际ICL锚点分开显示，避免全部片段已融合的误解 | 候选条件来源 |
+| S18-R1-002 | pending-evidence | S7 | 在合成收据记录选中的anchor_candidate，而不是只显示profile ID | 候选条件来源 |
+| S18-R1-003 | pending-evidence | S7 | 记录实际锚点字节指纹与对应转写指纹；日志不明文写入私有转写 | 候选条件来源 |
+| S18-R1-004 | pending-evidence | S7 | 用不同内容的三个候选验证只选中的音频进入提示提取 | 候选条件来源 |
+| S18-R1-005 | documentation-or-test-contract | S7 | 审核“候选校准”文案明确逐个试验后选一个，不称多参考融合 | 候选条件来源 |
+| S18-R1-006 | pending-evidence | S7 | 查验Faster真实接口的多参考能力，未支持时不伪造列表参数 | 候选条件来源 |
+| S18-R1-007 | preservation | S7 | 禁止把三个片段PCM拼成一个提示并配不连续全文 | 候选条件来源 |
+| S18-R1-008 | preservation | S7 | 跨候选声纹中心仅作评分依据，不声称它已替代模型speaker embedding | 候选条件来源 |
+| S18-R1-009 | preservation | S7 | 为单个合法候选保留最短建档链路，不强迫三候选 | 候选条件来源 |
+| S18-R1-010 | documentation-or-test-contract | S7 | 给未来多候选策略保留显式模式与回退边界，不静默改变17默认 | 候选条件来源 |
+| S18-R1-011 | confirmed-defect-in-stated-scope | S1/S2 | 非法index的布尔、小数、对象与缺省语义分别测试，避免int强转误选或500 | 候选状态事务 |
+| S18-R1-012 | pending-evidence | S1/S2 | 核查切换候选与校准并发时磁盘写入、工作者加载是否形成一致事务 | 候选状态事务 |
+| S18-R1-013 | pending-evidence | S1/S2 | 候选文件复制失败时保留旧profile JSON，不留下半更新锚点 | 候选状态事务 |
+| S18-R1-014 | pending-evidence | S1/S2 | 双卡仅一张加载成功时明确部分失败，不宣称启用完成 | 候选状态事务 |
+| S18-R1-015 | preservation | S1/S2 | 旧会话遇新指纹必须继续拒播，不能热切后拼混音色 | 候选状态事务 |
+| S18-R1-016 | confirmed-defect-in-stated-scope | S1/S2 | 转写编辑与候选选择同时发生时绑定同一版本，防止音文错配 | 候选状态事务 |
+| S18-R1-017 | pending-evidence | S1/S2 | 校准临时profile的anchor_candidate元数据应指向实际试验候选，不能误标0 | 候选状态事务 |
+| S18-R1-018 | preservation | S1/S2 | 候选变更后清理或替换提示快照时保留锁内核验 | 候选状态事务 |
+| S18-R1-019 | pending-evidence | S1/S2 | 为重复点击候选与取消任务增加幂等与状态测试 | 候选状态事务 |
+| S18-R1-020 | preservation | S1/S2 | 训练adapter的固定参考限制保持，不让候选切换绕过来源绑定 | 候选状态事务 |
+| S18-R1-021 | documentation-or-test-contract | S6 | 分别记录请求、首个可用文本、排队、预填充、首PCM、首播放命令 | 分阶段首声度量 |
+| S18-R1-022 | documentation-or-test-contract | S6 | worker t_start在加载提示之后，单独计量冷提示加载而不漏记等待 | 分阶段首声度量 |
+| S18-R1-023 | documentation-or-test-contract | S6 | queue_ms当前覆盖锁等待等前置耗时，拆项后保留旧字段兼容 | 分阶段首声度量 |
+| S18-R1-024 | documentation-or-test-contract | S6 | 浏览器firstPlayedMs当前在发play命令处赋值，标明不是硬件实际出声 | 分阶段首声度量 |
+| S18-R1-025 | pending-evidence | S6 | 评估AudioWorklet消费首个语音样本的确认消息，区分主线程命令延迟 | 分阶段首声度量 |
+| S18-R1-026 | preservation | S6 | 跨Python、Go与浏览器仅使用各自单调时间差，不能直接减不同纪元 | 分阶段首声度量 |
+| S18-R1-027 | preservation | S6 | 显式静音停顿不能计为首个可用人声，保留禁止原音占位 | 分阶段首声度量 |
+| S18-R1-028 | hardware-or-real-model-blocked | S6 | 首包平均之外记录p50/p95与冷暖状态，不用一次幸运值 | 分阶段首声度量 |
+| S18-R1-029 | hardware-or-real-model-blocked | S6 | 将文本长度、参考长度、chunk_size和设备条件写入性能收据 | 分阶段首声度量 |
+| S18-R1-030 | documentation-or-test-contract | S6 | 首声提速必须同时检查缺字与最终音频完整性，不能裁掉开头 | 分阶段首声度量 |
+| S18-R1-031 | pending-evidence | S5/S6 | 对当前0.7秒下限和初始2秒策略建立确定性到达轨迹对照 | 播放启动 |
+| S18-R1-032 | pending-evidence | S5/S6 | 分别测试高速稳定、慢速持续、突发包与长网络抖动 | 播放启动 |
+| S18-R1-033 | pending-evidence | S5/S6 | 初次启动与欠载恢复分别设计目标，不统一缩到最小 | 播放启动 |
+| S18-R1-034 | pending-evidence | S5/S6 | 将预测器无速率样本时的保守回退纳入首次播放测试 | 播放启动 |
+| S18-R1-035 | pending-evidence | S5/S6 | 测量AudioWorklet统计消息的刷新间隔对主线程启动判断的影响 | 播放启动 |
+| S18-R1-036 | pending-evidence | S5/S6 | 在44.1k及48k上下文验证重采样后的fill计秒正确 | 播放启动 |
+| S18-R1-037 | confirmed-defect-in-stated-scope | S5/S6 | 短于启动阈值但已完成的真实语音应及时播放，不等待不可达缓冲 | 播放启动 |
+| S18-R1-038 | pending-evidence | S5/S6 | 后台页、暂停恢复、锁定与取消后不得发送迟到play | 播放启动 |
+| S18-R1-039 | pending-evidence | S5/S6 | 记录ring dropped样本；任何丢样不能只显示播放成功 | 播放启动 |
+| S18-R1-040 | hardware-or-real-model-blocked | S5/S6 | 低延迟策略只能在欠载预算内启用，不能把断续当自然阅读 | 播放启动 |
+| S18-R1-041 | hardware-or-real-model-blocked | S6/S7 | 对2/4/8/16帧首块大小做同文本同seed对照，测TTFA及总RTF | 模型与调度热路径 |
+| S18-R1-042 | hardware-or-real-model-blocked | S6/S7 | 小首块与稳态大块若需不同大小，先确认真实生成器支持，禁止无效传参 | 模型与调度热路径 |
+| S18-R1-043 | hardware-or-real-model-blocked | S6/S7 | 检查decode迭代器首次next含有的预填充时间，不能只测创建生成器 | 模型与调度热路径 |
+| S18-R1-044 | hardware-or-real-model-blocked | S6/S7 | 单独计量token生成、codec解码及CPU拷贝，避免归因全部GPU | 模型与调度热路径 |
+| S18-R1-045 | preservation | S6/S7 | 提示快照重用必须与内容指纹一致，不退回仅按路径缓存 | 模型与调度热路径 |
+| S18-R1-046 | preservation | S6/S7 | 不为首声把ICL换成向量默认，保留相似度条件 | 模型与调度热路径 |
+| S18-R1-047 | hardware-or-real-model-blocked | S6/S7 | 比较首段优先调度与后续并行的队头阻塞，不无证据锁死单卡 | 模型与调度热路径 |
+| S18-R1-048 | preservation | S6/S7 | 确认Live聊天第一可用前缀触发不被朗读聚合配置覆盖 | 模型与调度热路径 |
+| S18-R1-049 | preservation | S6/S7 | 保留最大生成token与取消限制，不能为速度删掉输出 | 模型与调度热路径 |
+| S18-R1-050 | hardware-or-real-model-blocked | S6/S7 | 不默认每卡双模型增加显存；只有目标T4实测才接受吞吐结论 | 模型与调度热路径 |
+| S18-R1-051 | documentation-or-test-contract | S7/acoustic | 原始RMS约-47.7只作为风险，不推断具体麦克风故障 | 参考清理 |
+| S18-R1-052 | documentation-or-test-contract | S7/acoustic | 分别记录归一化前后语音电平与峰值，注明增益上限14dB | 参考清理 |
+| S18-R1-053 | documentation-or-test-contract | S7/acoustic | 候选SNR是估计量，不能把17dB阈值当真实噪声声压 | 参考清理 |
+| S18-R1-054 | hardware-or-real-model-blocked | S7/acoustic | 保留raw、strength0.85、strength0.55对照的处理收据 | 参考清理 |
+| S18-R1-055 | hardware-or-real-model-blocked | S7/acoustic | 审查声纹相似0.94与SNR增益2dB门禁是否会误接收失真，不能只看单分数 | 参考清理 |
+| S18-R1-056 | pending-evidence | S7/acoustic | 验证全零、强直流、很轻语音及背景声输入的处理决策 | 参考清理 |
+| S18-R1-057 | hardware-or-real-model-blocked | S7/acoustic | 对齿音、气声、摩擦音单独测保真，不能以削高频冒无沙沙 | 参考清理 |
+| S18-R1-058 | preservation | S7/acoustic | 不在用户未授权时保存或上传原始私有WAV作为公共证据 | 参考清理 |
+| S18-R1-059 | documentation-or-test-contract | S7/acoustic | 已存在非平稳降噪不等于生成输出已降噪，明确处理发生阶段 | 参考清理 |
+| S18-R1-060 | hardware-or-real-model-blocked | S7/acoustic | 录音时扬声器回录网页朗读的可能性仅列假设，不能由截图定论 | 参考清理 |
+| S18-R1-061 | hardware-or-real-model-blocked | S3/S7/acoustic | 建立模型PCM、后处理PCM、浏览器录回的分层局部诊断，默认关闭私有采集 | 输出噪声定位 |
+| S18-R1-062 | hardware-or-real-model-blocked | S3/S7/acoustic | 将codec窗口起点与边界脉冲位置关联，区分底噪和接缝爆音 | 输出噪声定位 |
+| S18-R1-063 | hardware-or-real-model-blocked | S3/S7/acoustic | 对持续人声与停顿分别计算频谱，但无清洁真值时不称绝对SNR | 输出噪声定位 |
+| S18-R1-064 | preservation | S3/S7/acoustic | 继续验证codec只收到生成码，不能回到参考码前缀解码 | 输出噪声定位 |
+| S18-R1-065 | hardware-or-real-model-blocked | S3/S7/acoustic | 真实预训练codec与随机tiny codec的质量证据必须分列 | 输出噪声定位 |
+| S18-R1-066 | pending-evidence | S3/S7/acoustic | 非有限模型输出当前替换为零，应评估失败拒播而非掩盖异常的策略 | 输出噪声定位 |
+| S18-R1-067 | hardware-or-real-model-blocked | S3/S7/acoustic | 增益提升可能抬噪，记录处理前后噪声地板变化而不自动强门限 | 输出噪声定位 |
+| S18-R1-068 | preservation | S3/S7/acoustic | 不能用输出全静音或静音段删除作为零噪声验收 | 输出噪声定位 |
+| S18-R1-069 | preservation | S3/S7/acoustic | 保留模型自然人声呼吸与禁止添加噪声的区别，不自动切除语音气息 | 输出噪声定位 |
+| S18-R1-070 | hardware-or-real-model-blocked | S3/S7/acoustic | 用户全程纯人声目标需真实WAV试听和添字检查，代码指标不替代 | 输出噪声定位 |
+| S18-R1-071 | confirmed-defect-in-stated-scope | S3 | 实测同一信号整块与任意分块处理的样本一致性 | DSP状态 |
+| S18-R1-072 | confirmed-defect-in-stated-scope | S3 | 重点验证NumPy不足96样本首块时淡入是否在下一块重新从零开始 | DSP状态 |
+| S18-R1-073 | pending-evidence | S3 | 核查NumPy按输入块丢弃不足240样本RMS余数与Rust跨块累积差别 | DSP状态 |
+| S18-R1-074 | pending-evidence | S3 | 比较Rust逐样本增益平滑与NumPy逐块插值，不能宣称严格等价 | DSP状态 |
+| S18-R1-075 | preservation | S3 | 保持输出样本数与输入相等，不能为降噪补偿无记录延迟 | DSP状态 |
+| S18-R1-076 | pending-evidence | S3 | 分别测试DC blocker状态、零输入残留与长静音后重新讲话 | DSP状态 |
+| S18-R1-077 | pending-evidence | S3 | 测试max_gain_db=0隔离淡入和DC滤波，再开放AGC定位差异 | DSP状态 |
+| S18-R1-078 | hardware-or-real-model-blocked | S3 | 同卡每段重置与跨卡各自状态不同需测量，不能只凭相同目标响度称一致 | DSP状态 |
+| S18-R1-079 | preservation | S3 | flush的192样本衰减不是新生成语音，不能加入RTF语音分母 | DSP状态 |
+| S18-R1-080 | documentation-or-test-contract | S3 | 若修复NumPy算法须保留Rust接口版本兼容，并添加跨后端容差测试 | DSP状态 |
+| S18-R1-081 | hardware-or-real-model-blocked | S4/S5/acoustic | 将独立模型韵律重启、显式停顿、播放欠载三种接缝分类计数 | 连续朗读 |
+| S18-R1-082 | hardware-or-real-model-blocked | S4/S5/acoustic | 保留朗读12/24首段、20/40/80稳态配置基线再比较，不盲目扩大 | 连续朗读 |
+| S18-R1-083 | preservation | S4/S5/acoustic | 逐字验证分段重新连接等于原文，保护数字、缩写、引号和标点 | 连续朗读 |
+| S18-R1-084 | documentation-or-test-contract | S4/S5/acoustic | 审查PauseBeforeMs与tail_pause_ms是否重复加停顿，先画时序再修改 | 连续朗读 |
+| S18-R1-085 | preservation | S4/S5/acoustic | 禁止跨词PCM重叠掩盖接缝，不牺牲清晰度冒自然度 | 连续朗读 |
+| S18-R1-086 | hardware-or-real-model-blocked | S4/S5/acoustic | 段尾8ms衰减及下段淡入需以有声边界实测，不只用零边界波形 | 连续朗读 |
+| S18-R1-087 | hardware-or-real-model-blocked | S4/S5/acoustic | 欠载时0.94尾衰减属于播放补偿，不能误标模型本身沙沙 | 连续朗读 |
+| S18-R1-088 | hardware-or-real-model-blocked | S4/S5/acoustic | 自然度对照必须同时保存整段朗读，不能只听裁剪后小片段 | 连续朗读 |
+| S18-R1-089 | hardware-or-real-model-blocked | S4/S5/acoustic | 不同GPU同文与交替长文分别试听；同seed不等于波形完全相同 | 连续朗读 |
+| S18-R1-090 | hardware-or-real-model-blocked | S4/S5/acoustic | 只有真实模型支持的连续条件才能声称跨段联合生成，不换名称包装独立合成 | 连续朗读 |
+| S18-R1-091 | preservation | G0/S8 | 冻结原始至17包、全部manifest及正式工作台，新增18不得覆盖历史包 | 回归交付 |
+| S18-R1-092 | documentation-or-test-contract | G0/S8 | 三轮100建议均标已确认问题、待证假设或保留约束，不虚报300个bug | 回归交付 |
+| S18-R1-093 | documentation-or-test-contract | G0/S8 | 完成三轮审查后再逐题决策，每题50建议后才进入下一题 | 回归交付 |
+| S18-R1-094 | documentation-or-test-contract | G0/S8 | 历史334测试不能算18新增验证，依赖缺失需如实记录和重建 | 回归交付 |
+| S18-R1-095 | documentation-or-test-contract | G0/S8 | 对每个修复保留修复前失败、修复后通过的同输入收据 | 回归交付 |
+| S18-R1-096 | documentation-or-test-contract | G0/S8 | 三轮Python、Node、Go race、协议和浏览器必须针对最终源码再执行 | 回归交付 |
+| S18-R1-097 | hardware-or-real-model-blocked | G0/S8 | CPU合成信号实验不代替真实T4语音实验，硬件不足保持BLOCKED | 回归交付 |
+| S18-R1-098 | preservation | G0/S8 | 按实测热路径选择语言；不要新增Java/C#/SQL服务凑多语言 | 回归交付 |
+| S18-R1-099 | documentation-or-test-contract | G0/S8 | 最终18复制页、下载、剪贴板拒绝回退与手机逐字节校验不可省略 | 回归交付 |
+| S18-R1-100 | documentation-or-test-contract | G0/S8 | 将全部已完成备忘录内嵌完整提示词；未完成轮次必须明确，不编造结论 | 回归交付 |
+| S18-R2-001 | preservation | S7 | 保持qwen-tts-hf与旧qwen-tts发行版严格分离，源码同命名空间不等于同版本 | 实际模型接口 |
+| S18-R2-002 | preservation | S7 | 下载源码必须核对PyPI wheel SHA256，收据注明实际提供模型类的发行版 | 实际模型接口 |
+| S18-R2-003 | pending-evidence | S7 | 将三提示单目标被拒绝的实际接口行为加入未来多参考功能合同 | 实际模型接口 |
+| S18-R2-004 | documentation-or-test-contract | S7 | 将三提示三目标定义为独立批量任务，界面不能称参考融合 | 实际模型接口 |
+| S18-R2-005 | preservation | S7 | 保留列表prompt每项独立ref_text，不用共享一条文字冒三候选匹配 | 实际模型接口 |
+| S18-R2-006 | documentation-or-test-contract | S7 | 字典prompt的批量ref_text共享行为应明确，不直接用于三段不同转写 | 实际模型接口 |
+| S18-R2-007 | preservation | S7 | 引用prompt item中ref_code与speaker embedding的区别，不能用声纹平均替代ICL | 实际模型接口 |
+| S18-R2-008 | preservation | S7 | 保持单ICL预计算提示的真实接口回归，不能为新模式破坏现有快照 | 实际模型接口 |
+| S18-R2-009 | preservation | S7 | 向量模式继续要求显式选择，不把它作为未实现融合的静默替代 | 实际模型接口 |
+| S18-R2-010 | hardware-or-real-model-blocked | S7 | 实际生成器、权重和声学结果未执行时，接口控制流通过不标模型实验通过 | 实际模型接口 |
+| S18-R2-011 | documentation-or-test-contract | S7 | 建立全部候选分析清单，逐项列源文件、时间、匹配转写、指纹和有效性 | 候选条件合同 |
+| S18-R2-012 | documentation-or-test-contract | S7 | 单锚点模式明确显示被用作ICL的候选及未用作ICL的其他候选 | 候选条件合同 |
+| S18-R2-013 | documentation-or-test-contract | S7 | 若后续共享参数来自全部候选评分，记录算法与评分证据而非暗示音频融合 | 候选条件合同 |
+| S18-R2-014 | hardware-or-real-model-blocked | S7 | 比较每候选合成时固定同文同seed同采样参数，确保差异确由候选造成 | 候选条件合同 |
+| S18-R2-015 | preservation | S7 | 候选中心与实际Qwen说话人嵌入不同空间时不得直接替换 | 候选条件合同 |
+| S18-R2-016 | hardware-or-real-model-blocked | S7 | 实验性的融合嵌入若提出，必须独立模式且真实盲听，不自动作为最佳方案 | 候选条件合同 |
+| S18-R2-017 | preservation | S7 | 不跨候选拼转写或参考码以绕过模型批量长度校验 | 候选条件合同 |
+| S18-R2-018 | documentation-or-test-contract | S7 | 候选顺序变化时用内容身份而不只用数组下标定位证据 | 候选条件合同 |
+| S18-R2-019 | documentation-or-test-contract | S7 | 候选有效时长按实际WAV而非仅展示start/end计算，避免舍入差 | 候选条件合同 |
+| S18-R2-020 | preservation | S7 | 候选策略、模型模式及参数调整必须使旧会话明确失效 | 候选条件合同 |
+| S18-R2-021 | confirmed-defect-in-stated-scope | S1 | index必须严格整数且非bool，拒绝true变1与false变0 | 入口验证 |
+| S18-R2-022 | confirmed-defect-in-stated-scope | S1 | 拒绝1.9截断成1，避免非整数JSON静默切换其他参考 | 入口验证 |
+| S18-R2-023 | documentation-or-test-contract | S1 | 缺失index应明确拒绝还是显式兼容默认0，不让文档与行为矛盾 | 入口验证 |
+| S18-R2-024 | confirmed-defect-in-stated-scope | S1 | null、数组、对象及NaN输入转换失败应返回受控4xx而非未捕获异常 | 入口验证 |
+| S18-R2-025 | documentation-or-test-contract | S1 | 候选入口未知字段与重复字段的策略需与严格library接口一致 | 入口验证 |
+| S18-R2-026 | pending-evidence | S1 | 验证candidates为非空合法列表，不能只依赖len和下标访问 | 入口验证 |
+| S18-R2-027 | pending-evidence | S1 | 验证候选file为安全单文件名且普通文件，避免损坏profile路径越界 | 入口验证 |
+| S18-R2-028 | pending-evidence | S1 | 手工ref_text不接受dict/list被str化，保留严格字符串与Unicode校验 | 入口验证 |
+| S18-R2-029 | preservation | S1 | 保留训练档案禁止改候选和转写的409边界，不绕过版本固定 | 入口验证 |
+| S18-R2-030 | documentation-or-test-contract | S1 | 增加真正HTTP参数与错误码测试；当前AST调用不冒充FastAPI测试 | 入口验证 |
+| S18-R2-031 | confirmed-defect-in-stated-scope | S2 | 校准开始捕获完整候选集合版本，提交时核对未变再采用评分 | 校准版本提交 |
+| S18-R2-032 | confirmed-defect-in-stated-scope | S2 | 禁止用旧候选评分选择重新读取后已更改的同下标候选 | 校准版本提交 |
+| S18-R2-033 | confirmed-defect-in-stated-scope | S2 | 校准期间并发编辑转写不能被结束时静默覆盖，需冲突响应 | 校准版本提交 |
+| S18-R2-034 | pending-evidence | S2 | 候选文件内容更改但文件名不变也要改变校准输入版本 | 校准版本提交 |
+| S18-R2-035 | pending-evidence | S2 | 候选变更、文本变更、校准、删除应协调同一档案锁或乐观版本合同 | 校准版本提交 |
+| S18-R2-036 | documentation-or-test-contract | S2 | 进程内线程锁与跨进程文件锁分别评估，不能把一个称全局事务 | 校准版本提交 |
+| S18-R2-037 | documentation-or-test-contract | S2 | HEAVY最大2只限制并发数量，不等于每profile串行，不能替代状态锁 | 校准版本提交 |
+| S18-R2-038 | documentation-or-test-contract | S2 | 对先写磁盘再等HEAVY被429拒绝的路径核对reference_saved状态 | 校准版本提交 |
+| S18-R2-039 | documentation-or-test-contract | S2 | 原子JSON替换只保护单文件，候选复制与JSON提交之间仍需一致性设计 | 校准版本提交 |
+| S18-R2-040 | pending-evidence | S2 | 校准提交前档案已删除或adapter状态已变化时必须停止，不能恢复旧状态 | 校准版本提交 |
+| S18-R2-041 | confirmed-defect-in-stated-scope | S2 | ASR评估全部失败不再用CER0.05冒充实测值，应记录null与失败原因 | 校准缺失与失败 |
+| S18-R2-042 | documentation-or-test-contract | S2 | 部分文本ASR失败时记录覆盖率，不能只对成功样本平均后隐藏缺失 | 校准缺失与失败 |
+| S18-R2-043 | confirmed-defect-in-stated-scope | S2 | 全部候选合成失败时返回明确未选出有效结果，不能chosen0看似成功 | 校准缺失与失败 |
+| S18-R2-044 | documentation-or-test-contract | S2 | 每候选的有效生成条数和预期条数同时保存，评分先验证完整性 | 校准缺失与失败 |
+| S18-R2-045 | documentation-or-test-contract | S2 | 未测或低可信声纹指标不填高分默认值，应明确阻塞/降级语义 | 校准缺失与失败 |
+| S18-R2-046 | pending-evidence | S2 | 候选排序排除非有限得分，NaN/Inf不进入max选择 | 校准缺失与失败 |
+| S18-R2-047 | documentation-or-test-contract | S2 | 模型输出空音频、太短、全静音和缺字分别记失败而不只比声纹 | 校准缺失与失败 |
+| S18-R2-048 | pending-evidence | S2 | 校准报告应保留先前有效结果，失败新校准不覆盖为貌似新最佳 | 校准缺失与失败 |
+| S18-R2-049 | documentation-or-test-contract | S2 | ASR释放与临时目录清理放入覆盖所有异常的finally路径 | 校准缺失与失败 |
+| S18-R2-050 | documentation-or-test-contract | S2 | 错误信息需脱敏且保留阶段，不能把原文和本机私有路径暴露给日志 | 校准缺失与失败 |
+| S18-R2-051 | confirmed-defect-in-stated-scope | S6/acoustic | 同目标文本跨GPU诊断使用相同seed，修复100+17*ti+gi的设备偏移混杂 | 双卡诊断 |
+| S18-R2-052 | documentation-or-test-contract | S6/acoustic | 将实际seed写入每张卡诊断条目，使测试条件可核验 | 双卡诊断 |
+| S18-R2-053 | preservation | S6/acoustic | 会话调度当前各卡同seed的行为应保留，不把诊断偏移引入播放 | 双卡诊断 |
+| S18-R2-054 | documentation-or-test-contract | S6/acoustic | 两卡同一voice_binding和voice_conditioning都要进诊断收据 | 双卡诊断 |
+| S18-R2-055 | hardware-or-real-model-blocked | S6/acoustic | 记录实际dtype、模型版本、codec政策与DSP后端，不能仅比profile ID | 双卡诊断 |
+| S18-R2-056 | hardware-or-real-model-blocked | S6/acoustic | 相同参数不意味着位级相同；阈值评分和人工听感结论分开 | 双卡诊断 |
+| S18-R2-057 | hardware-or-real-model-blocked | S6/acoustic | 同文对照与不同文本交替朗读各自设计，不能用同文替代自然衔接 | 双卡诊断 |
+| S18-R2-058 | documentation-or-test-contract | S6/acoustic | 所有条目失败时speech_db默认0不应参与一致性，明确缺失项 | 双卡诊断 |
+| S18-R2-059 | documentation-or-test-contract | S6/acoustic | consistent布尔值应附完整性及阈值说明，不能称零噪声或100%同声 | 双卡诊断 |
+| S18-R2-060 | documentation-or-test-contract | S6/acoustic | 诊断生成在锁定或请求取消后仍进行时保留资源状态，不误报即时停止 | 双卡诊断 |
+| S18-R2-061 | confirmed-defect-in-stated-scope | S2/S6 | 校准结束必须检查load_on_workers回执，不能丢弃失败后正常返回 | 加载确认 |
+| S18-R2-062 | preservation | S2/S6 | 保留文本/候选接口已有reference_saved与503部分失败语义 | 加载确认 |
+| S18-R2-063 | preservation | S2/S6 | Go激活两卡并行、同绑定同模式核验及旧active保留不得回归 | 加载确认 |
+| S18-R2-064 | preservation | S2/S6 | 激活最终再次读磁盘核对指纹的检查必须保留 | 加载确认 |
+| S18-R2-065 | pending-evidence | S2/S6 | Python reload最终current为None时应视失败，而不是跳过版本核验 | 加载确认 |
+| S18-R2-066 | hardware-or-real-model-blocked | S2/S6 | 候选校准只用GPU0的现状须说明；多卡校准需独立计划，不虚报双卡评估 | 加载确认 |
+| S18-R2-067 | documentation-or-test-contract | S2/S6 | 加载某卡成功某卡失败后，不允许新会话静默只用成功卡冒双卡一致 | 加载确认 |
+| S18-R2-068 | hardware-or-real-model-blocked | S2/S6 | 冷首次sanity合成耗时应与提示提取耗时分开记录，避免首声归因错误 | 加载确认 |
+| S18-R2-069 | documentation-or-test-contract | S2/S6 | HTTP断开不等于后台模型加载已停止，未来重试需幂等/状态查询 | 加载确认 |
+| S18-R2-070 | preservation | S2/S6 | 不得为降低激活耗时跳过Worker锁内参考前后两次指纹校验 | 加载确认 |
+| S18-R2-071 | documentation-or-test-contract | S2/resource | 审查_cal临时profile移除后Worker提示缓存仍驻留的资源生命周期 | 缓存生命周期 |
+| S18-R2-072 | documentation-or-test-contract | S2/resource | 重复校准相同临时ID时确保旧提示被替换，不能复用先前参考 | 缓存生命周期 |
+| S18-R2-073 | documentation-or-test-contract | S2/resource | 删除档案后清理与它关联的profiles、voice_bindings、levelers和提示快照 | 缓存生命周期 |
+| S18-R2-074 | preservation | S2/resource | 缓存释放必须获取合成同一把锁，不释放正在使用的GPU张量 | 缓存生命周期 |
+| S18-R2-075 | hardware-or-real-model-blocked | S2/resource | 缓存容量按可测内存预算管理，而不是只看磁盘profile数量 | 缓存生命周期 |
+| S18-R2-076 | documentation-or-test-contract | S2/resource | 临时校准ID与用户可启用ID区分，不能由列表选中临时声音 | 缓存生命周期 |
+| S18-R2-077 | preservation | S2/resource | 备份继续排除_cal档案，不把测试用临时状态持久化为模型 | 缓存生命周期 |
+| S18-R2-078 | documentation-or-test-contract | S2/resource | 临时目录清理失败记录状态并可回收，不无声积累数据 | 缓存生命周期 |
+| S18-R2-079 | preservation | S2/resource | 生成器取消仍要close并释放有界codec窗口，不能因缓存修改遗漏 | 缓存生命周期 |
+| S18-R2-080 | preservation | S2/resource | 不要盲目清空CUDA所有缓存导致每段冷启动，资源回收须按作用域 | 缓存生命周期 |
+| S18-R2-081 | documentation-or-test-contract | S1/S2/UI | 候选点击期间禁用或序列化同档案变更按钮，避免重复并发写 | 前端迟到状态 |
+| S18-R2-082 | documentation-or-test-contract | S1/S2/UI | 响应乱序时按操作版本更新高亮，不让旧响应覆盖新选择 | 前端迟到状态 |
+| S18-R2-083 | preservation | S1/S2/UI | 继续保留accessEpoch和AbortController防锁定后迟到数据回填 | 前端迟到状态 |
+| S18-R2-084 | documentation-or-test-contract | S1/S2/UI | 客户端取消只能停止等待时明确提示后台任务可能继续，不伪报服务器取消 | 前端迟到状态 |
+| S18-R2-085 | documentation-or-test-contract | S1/S2/UI | 503且reference_saved时显示已保存未全卡就绪，不能笼统当未保存 | 前端迟到状态 |
+| S18-R2-086 | documentation-or-test-contract | S1/S2/UI | 校准报告区分逐候选评分、最终提交、双卡加载三个状态 | 前端迟到状态 |
+| S18-R2-087 | documentation-or-test-contract | S1/S2/UI | 没有有效候选或指标不全时不显示成功绿标 | 前端迟到状态 |
+| S18-R2-088 | preservation | S1/S2/UI | 参考转写可审阅但日志默认脱敏，token不进URL/localStorage | 前端迟到状态 |
+| S18-R2-089 | preservation | S1/S2/UI | 新增条件证明信息只放同源授权接口，不能自动上传外部诊断服务 | 前端迟到状态 |
+| S18-R2-090 | preservation | S1/S2/UI | 新增交互保持移动端可操作、录音失败队列保留与锁定清空 | 前端迟到状态 |
+| S18-R2-091 | preservation | G0/S8 | 原始库已有revision与lease设计可借鉴，但不直接修改其已成功数据格式 | 来源与保留 |
+| S18-R2-092 | preservation | G0/S8 | 候选处理与真实训练继续分开命名，不把评分或缓存称训练提升 | 来源与保留 |
+| S18-R2-093 | preservation | G0/S8 | 训练adapter来源hash与固定参考在新条件策略下仍必须核验 | 来源与保留 |
+| S18-R2-094 | preservation | G0/S8 | 私有原始样本仍排除Dataset自动备份，新增诊断WAV默认不进入归档 | 来源与保留 |
+| S18-R2-095 | hardware-or-real-model-blocked | G0/S8 | 代码、参数和参考版本相同的测试与实际用户WAV声学验收分开报告 | 来源与保留 |
+| S18-R2-096 | documentation-or-test-contract | G0/S8 | 为每个确认缺陷建立独立失败样例，后续修复应让同案例先失败再通过 | 来源与保留 |
+| S18-R2-097 | documentation-or-test-contract | G0/S8 | 受控AST交错不是线程压力测试；实现后补真实并发和HTTP回归 | 来源与保留 |
+| S18-R2-098 | preservation | G0/S8 | 下载wheel仅源码检查不安装旧qwen-tts，避免命名空间冲突 | 来源与保留 |
+| S18-R2-099 | documentation-or-test-contract | G0/S8 | 本轮100建议与实际实验范围完整入备忘录，不宣称全源三轮完成 | 来源与保留 |
+| S18-R2-100 | preservation | G0/S8 | 第三轮结束及逐题50建议决策完成后才改产品，继续冻结17包与工作台 | 来源与保留 |
+| S18-R3-001 | preservation | S6/S7 | 保留16码本、24kHz及1920样本每帧合同，不用未知解码器静默替代 | 生成码窗口 |
+| S18-R3-002 | preservation | S6/S7 | 左上下文25帧只保留有界生成码，参考码继续禁止进入输出解码 | 生成码窗口 |
+| S18-R3-003 | hardware-or-real-model-blocked | S6/S7 | 默认右前瞻0与实验1/2帧分别记录延迟与真实质量，不用随机codec推断最优 | 生成码窗口 |
+| S18-R3-004 | documentation-or-test-contract | S6/S7 | 为每次提交记录全局帧偏移与已提交区间，定位接缝是否重复或漏帧 | 生成码窗口 |
+| S18-R3-005 | documentation-or-test-contract | S6/S7 | 区分有效生成帧、保留上下文和待提交PCM，不能把重复解码时间当新语音 | 生成码窗口 |
+| S18-R3-006 | preservation | S6/S7 | 取消和异常均close生成迭代器并清理pending，禁止取消后尾包泄漏 | 生成码窗口 |
+| S18-R3-007 | preservation | S6/S7 | 实际tokenizer返回错误采样率、非有限值或长度不符继续拒绝 | 生成码窗口 |
+| S18-R3-008 | hardware-or-real-model-blocked | S6/S7 | 按首2/4/8帧对照时固定后续策略与文本，不能混入候选或seed变化 | 生成码窗口 |
+| S18-R3-009 | hardware-or-real-model-blocked | S6/S7 | 真实codec有限上下文与整段解码差值须用预训练权重另测，不凭因果结构宣布无接缝 | 生成码窗口 |
+| S18-R3-010 | documentation-or-test-contract | S6/S7 | prepare_ms不含生成器首次next里的全部预填充，拆分前先验证时钟范围 | 生成码窗口 |
+| S18-R3-011 | confirmed-defect-in-stated-scope | S3 | 将整块与不规则分块输出一致性列为DSP算法合同而非只检查有限和长度 | DSP ABI |
+| S18-R3-012 | confirmed-defect-in-stated-scope | S3 | NumPy淡入使用固定总长度及已处理位置，不让每次短块重新从零起算 | DSP ABI |
+| S18-R3-013 | pending-evidence | S3 | NumPy RMS统计保留不足10ms余数，避免按来包边界重新分组 | DSP ABI |
+| S18-R3-014 | pending-evidence | S3 | Rust逐样本平滑与NumPy插值应先定义相同算法再设合理量化容差 | DSP ABI |
+| S18-R3-015 | documentation-or-test-contract | S3 | flush后Rust清DC状态而NumPy不清的差别须明确，不能称API语义完全一致 | DSP ABI |
+| S18-R3-016 | preservation | S3 | 当前Worker每段重建leveler，不能将跨段复用API问题直接认定为生产根因 | DSP ABI |
+| S18-R3-017 | hardware-or-real-model-blocked | S3 | 固定目标电平与最大增益仍不保证两段动态响度相同，保留完整语音测量 | DSP ABI |
+| S18-R3-018 | pending-evidence | S3 | 纯静音、阶跃和有声转静音须同时检查滤波残留、削波和增益泵动 | DSP ABI |
+| S18-R3-019 | documentation-or-test-contract | S3 | Rust ABI加载需区分不兼容符号和库缺失，不能失败后不告知回退路径 | DSP ABI |
+| S18-R3-020 | preservation | S3 | 缺Rust编译器时记录未执行，不用C++重写参考实现冒Rust实测 | DSP ABI |
+| S18-R3-021 | confirmed-defect-in-stated-scope | S4 | 120样本以下语音块不能因无完整RMS帧就直接丢弃，设计跨块累积 | 裁剪终止 |
+| S18-R3-022 | confirmed-defect-in-stated-scope | S4 | 跨输入块保留35ms有界预滚，而非只在检测到声音的当前块向前取 | 裁剪终止 |
+| S18-R3-023 | preservation | S4 | 候选静音与未发声辅音不能仅凭能量绝对区分，试听门禁保留 | 裁剪终止 |
+| S18-R3-024 | confirmed-defect-in-stated-scope | S4 | 短末块含有非零语音时须有明确finish策略，不能永久留held后销毁 | 裁剪终止 |
+| S18-R3-025 | documentation-or-test-contract | S4 | 尾静音裁剪应记录实际删掉时长和阈值，不把删音频冒首声或RTF提速 | 裁剪终止 |
+| S18-R3-026 | documentation-or-test-contract | S4 | 900ms超长首静音放行应保留异常说明，不能把放行静音算实际人声 | 裁剪终止 |
+| S18-R3-027 | preservation | S4 | 1800ms held上限必须在长无声生成时仍有界，不引入全句缓冲 | 裁剪终止 |
+| S18-R3-028 | preservation | S4 | 输入codec固定1920样本倍数与泛用小块测试分开，标注生产可达性 | 裁剪终止 |
+| S18-R3-029 | documentation-or-test-contract | S4 | 裁剪器发出的样本索引需可追溯至模型原始PCM，便于核对漏音 | 裁剪终止 |
+| S18-R3-030 | hardware-or-real-model-blocked | S4 | 输入很轻时不要单纯升高裁剪阈值，应比较失真与背景噪声的权衡 | 裁剪终止 |
+| S18-R3-031 | preservation | S5 | 保持流式相位和上一个输入样本跨PCM帧连续，不能每帧独立插值 | 重采样收尾 |
+| S18-R3-032 | documentation-or-test-contract | S5 | 24k直通与44.1k/48k转换各自验证输入时长和输出样本预算 | 重采样收尾 |
+| S18-R3-033 | documentation-or-test-contract | S5 | 终止时缺下一个插值端点应定义末样本延拓或明确短尾策略并测试 | 重采样收尾 |
+| S18-R3-034 | preservation | S5 | 重采样收尾不能以补充可计入speech的静音改变RTF分母 | 重采样收尾 |
+| S18-R3-035 | preservation | S5 | 每段协议标记不应重置同一朗读流的重采样相位，会制造边界跳变 | 重采样收尾 |
+| S18-R3-036 | preservation | S5 | 锁定、取消和新流begin应清掉上一任务的相位及延迟端点 | 重采样收尾 |
+| S18-R3-037 | preservation | S5 | 分块与整块重采样在数值容差内一致的现有行为应保留 | 重采样收尾 |
+| S18-R3-038 | documentation-or-test-contract | S5 | 一输入样本、空块及极短末块需测试，不只测长整秒波形 | 重采样收尾 |
+| S18-R3-039 | hardware-or-real-model-blocked | S5 | 扩展至降采样时需考虑抗混叠，不能将线性插值叫任意采样率高保真 | 重采样收尾 |
+| S18-R3-040 | hardware-or-real-model-blocked | S5 | 实体浏览器实际采样率与请求24k可能不同，诊断记录两者 | 重采样收尾 |
+| S18-R3-041 | confirmed-defect-in-stated-scope | S5 | 生成结束且剩余20ms音频应有播放或明确失败结果，不能永久buffering | 完成短尾状态 |
+| S18-R3-042 | confirmed-defect-in-stated-scope | S5 | 精确50ms边界的严格大于判断需单独测试，不能只测51ms | 完成短尾状态 |
+| S18-R3-043 | confirmed-defect-in-stated-scope | S5 | 欠载恢复时最后短尾同样应可排空，避免截掉最后一个音节 | 完成短尾状态 |
+| S18-R3-044 | preservation | S5 | 已结束数据的排空政策与持续生成时风险缓冲分开，不盲降正常启动阈值 | 完成短尾状态 |
+| S18-R3-045 | documentation-or-test-contract | S5 | 有剩余样本但低于阈值时ended判定须有终止路径，不假装已播完 | 完成短尾状态 |
+| S18-R3-046 | documentation-or-test-contract | S5 | 一任务只能产生一次最终结束，迟到统计消息不能把ended改回playing | 完成短尾状态 |
+| S18-R3-047 | hardware-or-real-model-blocked | S5 | 长网络抖动和低产出速率下测试启动等待与欠载率成对取舍 | 完成短尾状态 |
+| S18-R3-048 | hardware-or-real-model-blocked | S5 | 暂停恢复必须在用户授权AudioContext状态下执行，不自动规避浏览器策略 | 完成短尾状态 |
+| S18-R3-049 | documentation-or-test-contract | S5 | 单调时钟中的0值不宜兼任未记录标记，检查极早首包的时间哨兵 | 完成短尾状态 |
+| S18-R3-050 | preservation | S5 | 运行原播放器VM只能证明逻辑，不可声称浏览器硬件首声变快 | 完成短尾状态 |
+| S18-R3-051 | documentation-or-test-contract | S5/S6 | firstPlayedMs目前是主线程play命令时刻，名称与报表需区分实际消费 | Worklet时钟 |
+| S18-R3-052 | hardware-or-real-model-blocked | S5/S6 | 增加首样本消费确认前先定义是否跳过显式停顿和极小淡入样本 | Worklet时钟 |
+| S18-R3-053 | hardware-or-real-model-blocked | S5/S6 | Worklet currentFrame与主线程performance属于不同时间轴，使用可解释映射 | Worklet时钟 |
+| S18-R3-054 | preservation | S5/S6 | 保留ring样本计数与自然结束不额外记欠载的已通过行为 | Worklet时钟 |
+| S18-R3-055 | preservation | S5/S6 | 欠载只计一次直至恢复，避免每个渲染量子重复放大统计 | Worklet时钟 |
+| S18-R3-056 | documentation-or-test-contract | S5/S6 | 容量溢出dropped必须进入上层状态和失败提示，不能只在底层计数 | Worklet时钟 |
+| S18-R3-057 | hardware-or-real-model-blocked | S5/S6 | 固定192样本淡入在24k/48k分别8/4ms，若要求同毫秒则按实际率配置 | Worklet时钟 |
+| S18-R3-058 | preservation | S5/S6 | hold与reset后无旧PCM回放，保留现有重置后精确零输出测试 | Worklet时钟 |
+| S18-R3-059 | documentation-or-test-contract | S5/S6 | 环形缓冲溢出属于丢样，不得被统计成已自然连续读完 | Worklet时钟 |
+| S18-R3-060 | preservation | S5/S6 | 声卡/系统输出延迟仍需实体设备测量，Worklet消费也不是声学听到时间 | Worklet时钟 |
+| S18-R3-061 | documentation-or-test-contract | S6 | 规划器PauseBeforeMs由上一边界生成，逐段记录而不是把所有停顿归模型 | 停顿顺序重试 |
+| S18-R3-062 | documentation-or-test-contract | S6 | Worker默认只加显式lead pause，核实tail默认0后再判断重复停顿 | 停顿顺序重试 |
+| S18-R3-063 | preservation | S6 | 保留首段零规划停顿，不以参考呼吸或原音占位提前出包 | 停顿顺序重试 |
+| S18-R3-064 | hardware-or-real-model-blocked | S6 | 模型内部停顿与规划停顿叠加需实际WAV分层对照，不能只删规划停顿 | 停顿顺序重试 |
+| S18-R3-065 | preservation | S6 | 有序转发必须保留，不能为了最快包先播后一GPU导致错序 | 停顿顺序重试 |
+| S18-R3-066 | preservation | S6 | 已消费部分PCM后禁止跨卡整段重试，保护不重复词句的现有门禁 | 停顿顺序重试 |
+| S18-R3-067 | documentation-or-test-contract | S6 | 未消费重试时正确扣除旧produced样本，维持背压与统计一致 | 停顿顺序重试 |
+| S18-R3-068 | hardware-or-real-model-blocked | S6 | first_worker_audio可能是显式静音包，报表不可直接称人声首包 | 停顿顺序重试 |
+| S18-R3-069 | hardware-or-real-model-blocked | S6 | 第一段4帧与后段6/8/12帧策略保留可追溯，提速不得改变音色条件 | 停顿顺序重试 |
+| S18-R3-070 | documentation-or-test-contract | S6 | 正文保留、引号配对、小数和缩写拆分须有实际Go回归，不靠源码注释 | 停顿顺序重试 |
+| S18-R3-071 | preservation | G0/resource/acoustic | 在线推理与离线训练GPU租约保持互斥，不为测试盲停驻留模型 | 训练资源安全 |
+| S18-R3-072 | hardware-or-real-model-blocked | G0/resource/acoustic | 真实双卡训练、引用缓存与profile建档继续分开报告，避免功能混淆 | 训练资源安全 |
+| S18-R3-073 | preservation | G0/resource/acoustic | 子进程继续清除API与认证秘密环境变量，不因性能诊断泄漏 | 训练资源安全 |
+| S18-R3-074 | preservation | G0/resource/acoustic | 模型与adapter来源hash及安全权重格式不能为快速加载而跳过 | 训练资源安全 |
+| S18-R3-075 | hardware-or-real-model-blocked | G0/resource/acoustic | 训练数据审阅/完整覆盖与声学验收是独立缺口，18音频修复不自动解决 | 训练资源安全 |
+| S18-R3-076 | preservation | G0/resource/acoustic | 取消训练只终止本次进程组，不根据旧PID文件杀其他进程 | 训练资源安全 |
+| S18-R3-077 | preservation | G0/resource/acoustic | 保留离线代码与模型指纹核验，不自动开启远程代码或下载权重 | 训练资源安全 |
+| S18-R3-078 | preservation | G0/resource/acoustic | 新增诊断原始WAV默认私有且关闭，不能进入公开Git和自动备份 | 训练资源安全 |
+| S18-R3-079 | preservation | G0/resource/acoustic | 资源状态的CPU成功不标CUDA或GPU优化成功，尤其是当前无Torch环境 | 训练资源安全 |
+| S18-R3-080 | documentation-or-test-contract | G0/resource/acoustic | 剩余复杂训练/恢复路径只有入口边界复核，明确语义深审仍需补齐 | 训练资源安全 |
+| S18-R3-081 | preservation | G0/S8 | 正式工作台继续只读核对，不因音频审查改写15文件或HEAD | 交付安全 |
+| S18-R3-082 | preservation | G0/S8 | 自命名空白文件、用户粘贴、并发版本冲突和磁盘持久化需保留 | 交付安全 |
+| S18-R3-083 | documentation-or-test-contract | G0/S8 | 复制预览与正式工作台分别核对，不能用旧17复制成功冒18完整包成功 | 交付安全 |
+| S18-R3-084 | documentation-or-test-contract | G0/S8 | 新发布前固定launcher字节数/hash，并校验53以上实际资产完整性 | 交付安全 |
+| S18-R3-085 | preservation | G0/S8 | 剪贴板失败回退应选中完整源代码，不能只复制可见窗口 | 交付安全 |
+| S18-R3-086 | preservation | G0/S8 | 文件名、路径穿越、脚本/style闭合注入等既有浏览器测试继续执行 | 交付安全 |
+| S18-R3-087 | preservation | G0/S8 | 锁定清理、同源token和迟到响应隔离不能被新指标消息绕过 | 交付安全 |
+| S18-R3-088 | preservation | G0/S8 | 旧验证脚本固定历史分支属于历史证据，新分支另建验证器而非改旧收据 | 交付安全 |
+| S18-R3-089 | preservation | G0/S8 | 新工具依赖留忽略目录，下载源码也不与模型权重混入发布资产 | 交付安全 |
+| S18-R3-090 | preservation | G0/S8 | 所有未执行的Go/Rust/真实浏览器/完整模型实验明确标未执行 | 交付安全 |
+| S18-R3-091 | preservation | G0/S8 | 完整manifest读取/hash/AST只证明库存与语法，不声明全源逐行语义无错 | 证据与决策 |
+| S18-R3-092 | preservation | G0/S8 | 三轮专题各100完成也不等于所有代码已语义审查三遍，覆盖缺口单列 | 证据与决策 |
+| S18-R3-093 | documentation-or-test-contract | G0/S8 | 每个实验写方法、注入边界、实际源hash及探针hash，避免不同版本混算 | 证据与决策 |
+| S18-R3-094 | documentation-or-test-contract | G0/S8 | 将已复现缺陷、待验证假设与保留保护分别分类，不将300建议全标已修 | 证据与决策 |
+| S18-R3-095 | preservation | G0/S8 | 重建环境仅NumPy和Node时旧模型实验收据保留历史，不算新执行 | 证据与决策 |
+| S18-R3-096 | preservation | G0/S8 | 第25题起一次一题，具体选项/推荐/理由/50建议全部记录后再下一题 | 证据与决策 |
+| S18-R3-097 | documentation-or-test-contract | G0/S8 | 实施方案要将首声、条件来源、状态一致、DSP、裁剪、播放排空分成可回滚小步 | 证据与决策 |
+| S18-R3-098 | preservation | G0/S8 | 产品最终源码冻结后完整三轮回归，当前边界探针不能代替全功能通过 | 证据与决策 |
+| S18-R3-099 | preservation | G0/S8 | 零噪声/单一音色/自然朗读及RTF0.3仍需真实WAV和双T4，不用绝对承诺替代 | 证据与决策 |
+| S18-R3-100 | preservation | G0/S8 | 第三轮备忘录和缺口完整内嵌提示词，发布18之前仍使用17并保持PARTIAL | 证据与决策 |
+
+详见`validation/step18/g0-recommendation-disposition.json`中的原来源、处置理由、已有关联证据和待执行测试合同。无条目标记修复完成或最终签收。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_TRAINING_CHAIN.md
+
+# 第十八阶段G0第二批：训练数据、声码、原始库与发布链
+
+## 当前结论
+
+本批对12份、1974行源码完成第一遍全文语义阅读。加上第一批6份/930行，当前53资产中第一遍完整覆盖18份/2904行，剩35份尚未获得第一遍全文信用；完整第二/三遍签收仍为0。**这不是全源三遍完成，G0仍未通过。** 53资产外的仓库服务、生成器、测试与工作台也不能遗漏。
+
+实际新增执行：135项CPU/文件/租约/进程内HTTP/安全张量格式专项，每轮失败0、错误0、跳过0，三轮一致；其中125项现有测试、10项新增artifact边界测试。另6项提供包元数据/构造器合同案例，各三轮。未执行完整Torch训练、完整Qwen、GPU、真实用户WAV、实际双T4、浏览器声卡或性能比较。
+
+**新确证项：CPU声码编码器查询了不匹配的发行版名。** `training_codes.py:99`查询`qwen-tts`；项目固定运行栈则为`qwen-tts-hf==0.1.1.post1`，两者共享模块名但不是同一发行版。在HF元数据存在、旧发行版不存在且前置加载步骤成功的条件下，会抛PackageNotFoundError。重型加载步骤由显式fixture代替，版本查询来自真实wheel元数据；因此这是受控的提供包收据合同复现，不宣称完整编码器已经在目标环境运行。
+
+产品源码/冻结包/正式工作台未改，未创建18。25–27题、300条原建议与第一批收据保留。此次新增发现另存`g0-training-chain-findings.json`，只关联原建议，不把300条历史建议重写成已修。
+
+## 第一遍全文范围及语义结果
+
+### 1. training_data.py：1–285
+
+- canonical_wav先审RIFF总长、fmt/data唯一性、完整chunk和PCM16单声道24k，再作预算及常量拒绝；只规范容器，不自动重采样、截断或把强弱变化识别为语音。
+- prepare要求权益/单人声明严格为true、逐样本转写、唯一ID和选中的参考；全局存储锁内获取原始库revision/lease，临时目录完整写入/verify后rename；异常BaseException清理。
+- 单样本上限min(240秒,配置)，总输入min(900秒,配置)，参考≤16秒。长录音上传能力不等于可直接把一条20分钟音频训练；长数据拆分仍需正确逐段音文与用户数据审阅，不能按比例编造转写。
+- manifest/jsonl/音频/分配计划独立hash，确切成员及租约保护；lease不长持全局锁，但阻止合作式删除。它证明内容/结构和来源声明，**不证明转写、权益、身份或训练质量**。
+- rank_plan是数学分配说明；tts_training.epoch_indices才是运行时采样。两种算法不同不自动是错，但报告不能把前者当后者的执行轨迹。
+
+### 2. training_codes.py：1–355
+
+- 材料化本地tokenizer目录拒symlink/hardlink/pickle/auto_map和不安全shard映射；CPU/FP32/eager/offline加载，加载后检查24k、1920、16码本及2048词表。hash与结构不是权重质量证明。
+- 每条声码帧数ceil(frames/1920)、16个严格整数、0..2047；处理每样本前后查取消，来源租约和全局代码锁内准备，临时目录异常清理，发布前复核输入/hash和取消。
+- schema2封存原始manifest/jsonl，核对去掉audio_codes后的行、参考、逐样本hash；不是只有一个外部source_id。fixture始终test_only_codes，不能以“结构正确”升级为真实tokenization。
+- lease/adopt用同inode/实际flock/共享描述符保护跨进程读；与训练admit及真实语义审核分开，不能把拿到FD当训练授权。
+- **F01**：99行旧发行版版本查询不匹配HF栈；原测试`test_adapter_loader_contract_with_stub_imports_no_real_model`把所有metadata.version替换为stub-only，因此测试通过不能反驳此缺陷。`tts_training.provider_version`已有HF优先的轻量函数体可用于对照，但本步不修改或跨模块导入Torch来“快速修”。
+
+### 3. voice_library.py：1–351
+
+- 原始库与建档/训练分开；私有目录、普通文件/owner/nlink/NOFOLLOW/NONBLOCK、revision、字节预算、独立构建lease保留。重复字节内容去重不等于单说话人或音频语义去重。
+- add先写独立样本，再原子JSON提交，失败移除新增文件；remove_sample先更新索引再清孤儿。_sweep只清允许的孤儿/临时文件，不递归删除独立profile。
+- snapshot检查选中集合、revision、文件大小/hash，持续持有库lease；begin/finish另外维护reference_prepared/processing_failed；不能把这个状态称训练完成。
+- list/get的busy只是合作锁观察，不是GPU占用。目录祖先/恶意同UID改动、跨进程崩溃一致性仍需后续第二/三遍与威胁边界复核，不能称文件系统绝对安全。
+
+### 4. trained_profiles.py：1–155
+
+- inspect核对完成记录、Base/codes/sample/LoRA绑定、两rank每epoch集合与更新记录；再校验真实safetensors字节hash、键/shape/float32/有限值及adapter摘要。
+- 这些是**可信本地文件中的记录一致性**，没有硬件签名/执行证明。本批手写rank报告只用于验证拒绝/解析路径；即使describe返回training_execution_recorded，也不能拿它证明本批真的执行NCCL或优化器。
+- publish需显式ack、来源代码租约、schema2真实编码状态、样本集合及唯一对应参考转写；临时目录完整写入并再次inspect后rename。它不会自动改变active，质量/推理重载继续false。
+- 输出profile包含一份参考锚点和转写，属于现有profile备份范围；CLI确认说明此点。原始库、完整训练数据和adapter不因此进入自动Dataset备份。
+- trained binding只允许显式trained后端，禁止Base/Mock静默回退；artifact pin是内容一致性，不是用户认证或声学评分。
+
+### 5. tts_dataset.py：1–125；tts_training.py：1–200
+
+- dataset深拷贝行、严格声码布局/范围、text token布局及max_sequence预算；超长样本报错而非截断。有界cache返回token/code克隆，参考mel共享；完整真实tokenizer与长数据适配仍需模型实验。
+- collate保持独立text/codec mask、16码本与EOS标签；JointLoss在DDP.forward内部执行文本投影及talker/subtalker损失，不绕过DDP对参数的追踪。
+- epoch_indices使两rank步数一致，奇数数量显式重复前缀而不drop_last；它不意味着绝不重复样本。梯度累积最后不足一组按实际group_size归一；跨rank有限值共识、溢出跳更新及摘要一致性检查。
+- run_rank要求恰好两CUDA设备/NCCL，加载本地安全格式模型与固定speaker，所有样本长度先查后更新；训练结束核验参数变化/两rank摘要与模型来源。优化器/权重更新/保存的真实执行本批均未测。
+- load_adapter不等于部署；不保存optimizer恢复状态，不能叫可精确断点续训。FP32 LoRA、FP16基础模型、真实吞吐/显存/质量权衡都不能由源码或CPU格式测试签收。
+
+### 6. lora_adapter.py：1–91；adapter_engine.py：1–108
+
+- 只选择talker及其code_predictor attention的q/v线性层，基础参数冻结，FP32 A/B；restore先全量校验再copy。prepare先构造全部替换，commit异常回滚，切换和生成必须由Worker同锁串行。
+- trained引擎显式sentence-buffered；它传入保存speaker向量而不是ICL参考码，不能把它称Faster流式或默认单锚点ICL，也不能承诺改善首声。
+- 每次_select重新读档案与固定artifact/来源；正确构建prompt后再提交adapter；输出检查24k/一条完整一维有限非零音频，取消会丢弃整句结果但不能抢占正在执行的CUDA kernel。
+- Worker调用锁、两卡有效条件和真实输出仍须后续跨模块完整复核。源码相同/seed相同不证明两GPU声学同声。
+
+### 7. qwen_compat.py：1–97；CLI三文件共207行
+
+- 固定Faster0.5.4/HF0.1.1.post1/Transformers5.20.2；共享模块命名空间不能据此允许旧发行版并装。RoPE桥只认具体registry与default schema，不猜theta；配置smoke不是完整模型实验。
+- encode_training.py 1–128：子进程离线CPU/清列举秘密；Linux父死SIGKILL及arming后ppid复查，bounded private报告，超时/取消只停本次进程组。SIGTERM/创建子进程竞态等完整生命周期还需后续第二/三遍覆盖，不能只凭注释签收。
+- train_tts.py 1–49：参数预算与内部rank入口分离，公开错误脱敏；fingerprint不加载模型，未完成返回非成功。
+- trained_voice.py 1–30：显式发布未验证候选，ack含参考锚点进入profile备份的说明；错误pin/来源不得静默替换。脚本可达不等于已经有UI真实训练按钮或实际训练数据。
+
+## 本批执行方法与边界
+
+### 135项专项×3轮
+
+`run_training_chain_regressions.py`选择test_training_data、test_training_codes、test_code_provenance、test_libraries、test_qwen_compat与新增test_training_artifact_boundaries。每轮135通过、失败0/错误0/跳过0；这是子集，不是本阶段最终全功能三轮。
+
+新增10项使用真实NumPy/safetensors序列化/解析：合成artifact合法解析、错误manifest pin、张量篡改、更新hash后仍拒非有限值、拒float64、每epoch覆盖缺失、无ack不inspect、fixture代码不能发布、禁止未训练后端回退、错误绑定ID/hash。rank报告明确手写fixture；未运行torch/LoRA计算/Gloo/NCCL/声学生成。
+
+### 6项provider合同×3轮
+
+`fetch_chain_metadata.py`从PyPI下载HF0.1.1.post1 wheel，SHA256固定`ed5b7aae64cf795243369fb5226173f459a45689ea86db1c6d3eb14fc0c2c01d`；仅提取METADATA至忽略.cache，不安装HF/旧Qwen，不导入其代码、不取权重。来源URL与METADATA hash见chain-provider-provenance.json。
+
+`training_provider_probe.py`在独立进程限定sys.path，使metadata读取真实HF METADATA，确认旧发行版不存在；原编码器仅重型加载/桥接用fixture，随后真实版本查询按原码抛错。另证明宽泛版本stub会隐藏问题、错误模型pin在loader前拒绝、原训练provider_version函数体能识别HF，以及仅有元数据不满足运行栈门禁。**退出0表示复现到预期旧行为，不是编码器已修复。**
+
+新增依赖只有忽略.venv中的safetensors0.6.2，用于真实NumPy格式测试；NumPy保持2.2.6。未安装Torch、Qwen发行版、模型权重或替换生产依赖。缺失.cache时按fetch工具重新获取经固定hash核验的元数据，不改历史round2收据。
+
+## 后续门禁
+
+1. 当前18/53仅是第一遍全文，另35资产及外围仓库、完整第二/三遍继续推进；不因本批测试数较多就通过G0。
+2. 下一批优先Go安全/会话/调度及对应协议链，随后覆盖完整前端与启动恢复；跨链的Worker锁、训练CLI进程竞态也需复查。
+3. F01加入后续最小修复/失败测试清单；不能安装旧qwen-tts来消除异常，不能使同模块命名空间冲突，不借修收据启用新模型或更改默认声音模式。
+4. 300建议仍是初审映射、未逐条最终签收。全功能三轮、真实长数据训练、同文双卡及自然长文/无沙沙/首声/RTF≤0.3仍独立BLOCKED。
+5. 25–27题不变，不机械追加问题28；若后续发现必须选择的新方案，再按一次一题、50建议规则记录。当前产品未改、18未生成，整体PARTIAL/BLOCKED。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_GATEWAY.md
+
+# G0第三批：Go安全、会话、调度及协议链补审（未签收）
+
+## 结论与范围
+
+本批全文语义第一遍新增13份、3527行；累计31/53资产、6431行，尚有22项未完成第一遍。完整第二、第三遍仍为0。三轮测试不是三遍全文语义审查，更不是完整产品功能/声学验收。G0仍未通过，S1未开始，产品与原始–17冻结包、正式15文件工作台均不修改。
+
+实际执行Go 1.23.9，启用CGO与race detector，不下载Go模块。测试副本逐文件核验与53资产基线一致；新增探针放在kaggle/tests，仅临时复制到忽略目录与原包一同编译，不把审计代码写入冻结网关。
+
+## 全文阅读覆盖及语义记录
+
+下表范围均为1至所列末行，含实现、注释和测试。精确源哈希与逐文件状态见g0-gateway-coverage.json；不把目录清单、测试执行或局部交叉查阅计为第二/三遍完成。
+
+| 文件（kaggle/source/go/gateway/） | 末行 | 全文语义核对重点 |
+|---|---:|---|
+| security.go | 247 | Bearer鉴权、访问令牌、浏览器origin、JSON与上传预算、安全代理和出错路径；既有鉴权功能保留 |
+| llm.go | 137 | DeepSeek流式HTTP、SSE增量、前缀文本、取消传播；未连接真实上游 |
+| main.go | 478 | 路由与代理、profile激活、预检、私有字段与状态、请求上下文及流式响应；不将HTTP测试称浏览器验证 |
+| scheduler.go | 490 | 健康与负载分配、任务租约、最大三次尝试、PCM消费后禁止重试、相同会话seed/绑定、帧校验与完成统计 |
+| session.go | 692 | 分段按序转发、背压、取消/生产量、会话指标与快照；已复现快照别名竞争 |
+| segmenter.go | 489 | UTF-8与标点边界、单位/时长估计、首段与尾段、原文拼接、聊天增量与朗读；测试不证明自然韵律 |
+| fidelity_test.go | 187 | 文本保真、UTF-8与原文拼接既有断言的覆盖边界 |
+| preflight_test.go | 67 | 已有预检与profile合同，失败不静默绕过 |
+| reliability_test.go | 159 | 截断、有限重试、取消与顺序既有断言；缺失异常帧组合另增探针 |
+| security_test.go | 342 | 认证、origin、预算、代理与私密状态既有保护案例 |
+| segmenter_test.go | 123 | 中英文、尾段与不同切分策略；不是模型内容质量测试 |
+| voice_binding_test.go | 113 | profile/绑定/conditioning固定、训练模式拒绝边界；相同参数不等于双GPU音色相同 |
+| go.mod | 3 | module qtts/gateway；Go 1.21声明；本环境执行1.23.9，非目标Kaggle工具链实测 |
+
+## 三轮独立执行与失败分流
+
+每轮分别调用原包与哈希匹配副本，均使用`go test -race -json -count=1`，未依赖缓存测试结果。编译缓存只缓存编译产物。
+
+| 类别 | 第1轮 | 第2轮 | 第3轮 | 能说明什么 |
+|---|---:|---:|---:|---|
+| 原网关主测试 | 40通过 | 40通过 | 40通过 | 含子测试各56通过、0失败/跳过 |
+| 新增边界探针 | 10通过 | 10通过 | 10通过 | 5个保护合同+5个原缺陷观察；观察通过≠修复 |
+| 独立竞争见证 | 非零退出且DATA RACE | 同左 | 同左 | **预期失败**，不得并入无失败的回归统计 |
+
+`go vet ./...`退出0。原始、合同和竞争日志分别保存在gateway-{original,contract,race-witness}-round1..3.jsonl，机器收据为gateway-audit-round1..3.json。不是全仓三轮完整功能验收。
+
+新增5个保护合同：已消费PCM禁止重试；未消费重试清空与样本计数一致；取消使实际本地HTTP工作请求停止且busy释放；两个本地worker请求保持同seed/voice_binding/conditioning；大于32MiB帧在分配前拒绝。它们不执行模型，也不证明两个真实GPU输出相同。
+
+## 新增确认问题（均未修复）
+
+### S18-G0-GO-F02：指标快照共享run map产生编码竞争
+
+session.go:659–689：snapshot只复制slice，未复制每个run map；mergeClient稍后在锁内写同一map，快照的JSON编码在锁外。顺序探针先取snapshot再merge，证实先前快照内容改变；独立并发见证对原Metrics同时mergeClient与json.Marshal(snapshot)，三轮race detector均报告encoding/json/reflect读取与session.go:664写入竞争。
+
+这是实际执行原方法的合成并发，不是线上压测/外网利用证明。潜在后果包括不一致与map并发读写故障，不能把本见证称线上崩溃复现。未来修复要明确快照所有权、嵌套对象不可变/深拷贝合同与锁范围，再保留无竞争验证；当前不改产品。
+
+### S18-G0-GO-F03：工作进程帧合同校验不足
+
+scheduler.go:351–407，真实本地HTTP fixture每轮复现四项：
+
+1. 3字节PCM16负载被转发，样本计数以n/2取整为1。
+2. 没有PCM、仅声明audio_s=0.01的stats仍被标记served。
+3. 非法JSON错误帧`{`被忽略，后接合法stats仍成功。
+4. 合法stats后仅2字节的下一帧头被忽略，仍成功。
+
+本地工作进程是受信任边界；这不等于外部攻击入口。探针没有修复这些问题，也没有证明当前模型正常输出会触发它们。未来应规定PCM16对齐、统计与实收PCM一致、错误JSON与截断流失败策略，且不能让已消费PCM重试产生重复语音。
+
+## 仅源码观察/待验证，不升级为已确认运行缺陷
+
+- W01：scheduler.go:428的queue_wait_ms在完成时赋值，含生成耗时；Q26已记录该含义。没有用延迟fixture测出真实排队时间，不宣称性能改善。
+- W02：healthLoop忽略HTTP状态及JSON解码错误；本批未增加有界健康循环故障fixture，仍待验证，不能宣称已复现错误健康判定。
+- 上游SSE行预算、慢客户端写阻塞/超时为后续评估问题，未运行针对性压力实验。
+
+## 真实本地协议链：仅选择3类，各内部3轮
+
+1. mock_pipeline.py：实际Go→两个Python mock worker，鉴权、按序原文拼接、生成fixture帧、两worker被使用、关闭流后恢复；播放欠载为事件模拟，非声卡试听。
+2. library_gateway_check.py：实际Go→analyst→文件系统，空库、超JSON预算上传、重启恢复、CAS/删除、原始hash；损坏音频处理**预期失败**，不称解码成功。
+3. training_gateway_check.py：同链及合成PCM16训练输入快照、样本转写、hash篡改拒绝、租约禁止删除、源删除后副本仍在；未执行tokenizer/优化器/训练rank。
+
+gateway-protocol-receipt.json记录脚本/hash/日志与每轮实际输出。没有重跑全部历史6类：adapter_gateway_check需要当前缺失Torch；codes_cli_check与ownership_process_check本批未选，不借历史通过冒充重新执行。
+
+## 保持与下一步
+
+新F02/F03另列g0-gateway-findings.json，不改原300条处置映射和训练链F01。Q25–27及各50建议文件保持hash不变，不为此自动新增Q28。历史各批覆盖、收据与验证器保留；新验证器只验证本批证据边界，不把旧验证器硬编码数量改成当前数。
+
+继续G0剩余22项的前端、Python运行/分析、DSP/启动与恢复源码第一遍及外围脚本；之后完成全源第二、第三遍和建议映射更新，才可通过G0并进入S1。真实用户WAV、完整模型、实际训练、双T4同条件声学、物理首声/RTF≤0.3、无沙沙和自然完整朗读仍未验收，整体PARTIAL/BLOCKED。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_FRONTEND.md
+
+# G0第四批：前端录音、流式播放与隐私生命周期补审（未签收）
+
+## 当前结论
+
+本批新增完整语义第一遍3份、2217行；累计34/53资产、8648行，剩19项未完成第一遍。完整第二、第三遍仍为0。三轮浏览器运行不是三遍源码语义审查，也不是全功能/完整模型验收。G0未通过，S1未开始，产品与原始–17包、正式工作台均未修改。
+
+实际Chromium执行三轮，每轮134项（原123项+新11项）通过，失败/跳过/重试/波动均0。新增11项中8项为保护合同、3项为原缺陷观察；后者通过表示旧行为复现，**不表示修复**。另对原Player/Parser/Worklet运行22项边界及16项延迟合同VM探针，各三轮；Node30、JS语法与只读repack一致性检查通过。
+
+## 全文语义覆盖
+
+所有行均按编号全文读取，精确hash与覆盖见g0-frontend-coverage.json。历史台账保留，不将此前局部VM抽取或本次执行次数补记为完整第二/三遍。
+
+| 文件 | 范围 | 本批全文核对 |
+|---|---|---|
+| kaggle/source/web/app.js | 1–1715 | 1–35帧拼接/大小限制与JSON；36–92 Worklet环形队列；93–381速率预测/音频初始化/有界启动/重采样/尾部/指标；382–584同源鉴权/epoch/解锁/诊断/视图；585–860流式turn/取消/错误/报告；861–1069档案/转写/候选/校准/一致性展示；1070–1208录音列表与创建任务；1209–1316诊断轮询；1317–1535库管理/修订/取消；1537–1630训练输入文本、声明、固定hash验证/删除；1632–1715初始化/键盘/pagehide |
+| kaggle/source/web/recorder.js | 1–358 | 会话epoch与权限等待、输入约束、原生录音与分析器连接、字节/块数/时长预算、真实输入波形读数、停止与封装超时、最终文件/取消清理；发现error回调遗漏会话所有权核对 |
+| kaggle/source/web/index.html | 1–144 | DOM ID/脚本顺序、默认锁定与密码字段、两主视图/对话框/焦点/响应式与短屏降级、16/24秒参考选择、训练输入而非训练按钮、未验收说明；静态措辞不证明真实声学 |
+
+剩19项包括analyst/worker/bootstrap/supervisor、音频DSP与Rust、参考/库API/绑定、工具及LICENSE/MEMO；外围仓库也不能由53资产清单替代完整审查。
+
+## 三轮执行和原功能保护
+
+运行器：docs/validation/step18/run_frontend_audit.py。每轮独立启动测试服务器/Chromium测试进程，retries=0；临时工作区由原tests/e2e-server.js创建和清理，不操作正式workspace。原qtts.spec.js、studio.spec.js与Playwright配置均保持hash不变；新增tests/browser/g0-frontend.spec.js只提供审计测试。
+
+| 类别 | 每轮数量 | 轮数 | 结果与边界 |
+|---|---:|---:|---|
+| 原浏览器回归 | 123 | 3 | 共369通过；鉴权/迟到响应/录音容器/预算/库与输入/布局/键盘/工作台编辑及剪贴板 |
+| 新保护合同 | 8 | 3 | 共24通过；详见下列保护点 |
+| 新原缺陷观察 | 3 | 3 | 共9次一致复现；均未修复 |
+| 原Player边界VM | 22 | 3 | 合同与已知缺陷观察各三轮；短尾滞留仍存在 |
+| 原延迟合同VM | 16 | 3 | 指标/完成短尾/恢复阈值；注入时钟不是测得性能 |
+
+每轮浏览器总134、三轮402通过；不将VM案例另加到浏览器测试数。原始JSON报告frontend-browser-round1..3.json，退出码/原始报告hash/逐项结果/测试源hash/观察附件见frontend-audit-round1..3.json。所有轮次无失败、跳过、retry或flaky；并不等于全部用户要求通过。
+
+新增8个保护点：
+1. 字节级分片的PCM帧重组，-32768/0/32767保持正确有符号缩放，只有收到的生成PCM帧进入Player；这是fixture数据，不证明真实模型未加词。
+2. 有结束汇总但尾帧截断时显示明确错误，不静默成功。
+3. 缺结束汇总时报错。
+4. 明确停止能中止待处理语音请求signal。
+5. 旧录音data事件不能污染新会话。
+6. 旧录音stop事件不能清理新会话/设备。
+7. 录音字节溢出丢弃块与片段，不保存部分超限录音。
+8. 权限等待取消后，迟到stream被停止，不保存片段，等待期间不累积设备请求。
+
+原工作台回归在隔离临时工作区验证自命名空文件、用户粘贴/保存/恢复、剪贴板权限拒绝与逐字节复制；包括第1–17阶段完整源码包的逐字节剪贴板测试；原始kaggle文件在浏览器用sentinel验证保留，真实原始文件另外按冻结hash核对，不能把sentinel测试称完整原始文件复制。本批没有创建第18阶段包，也没有更改正式工作台。
+
+## 三处新增确认行为：均未修复
+
+### S18-G0-WEB-F04：迟到录音error回调会停止新会话
+
+recorder.js:182–184的onerror没有像ondataavailable、track-ended一样检查owns(session)。在实际Chromium内加载原完整recorder.js，用明确的MediaRecorder/设备fixture：旧会话epoch1取消后启动新会话epoch3，再调用旧onerror；新会话从recording变为stopping，新track被停止。三轮一致。对照保护证明旧data和stop不会破坏新会话。
+
+这是原回调的确定性交错复现，不证明真实设备在任何一次录音必然触发迟到error。未来最小修复需补所有权检查并保留原生自动停止、断线保存、预算丢弃与隐私清理合同；本批不改产品。
+
+### S18-G0-WEB-F05：流协议解析失败未立即取消reader/请求
+
+app.js:721–790，JSON.parse或parser异常进入catch/finally时，只标记generationDone并恢复按钮；未取消局部reader或中止当前controller。Chromium内用浏览器原生Response/ReadableStream对象构造不闭合的HTTP流fixture，发送完整type2帧但JSON为`{`：错误显示后，cancelCount=0、signalAborted=false、streamLocked=true，且报告已发送。三轮一致；之后明确停止会使signalAborted=true。
+
+证明的是协议异常路径缺少显式取消，不是对真实Go/worker连接或GPU资源泄漏的压力实测；浏览器GC/连接回收与后台工作时长没有测量。未来须在当前turn仍拥有请求时取消reader/abort，并避免旧turn误停新turn，保留正常生成后已缓冲PCM的完成策略。
+
+### S18-G0-WEB-F06：addModule失败留下未撤销Blob URL
+
+app.js:210–224只在await addModule成功后revokeObjectURL，init.catch关闭context但未撤销该URL。Chromium原生Blob URL创建/撤销调用被计数，addModule显式注入拒绝后created=1、revoked=0、speak请求=0，三轮一致。浏览器页面离开可回收相关资源；本批没有测量堆增长/真实设备失败频率，不能宣称测得内存泄漏大小。
+
+未来应保证失败/成功路径都回收临时URL，同时保留可重试init、并发共享初始化与取消后不迟发HTTP的已有合同；本批未修。
+
+## 已知问题与仅源码观察
+
+- 已有20/50ms完成短尾滞留、命令时间被标作firstPlayedMs、重采样终端flush政策仍未修；本批VM重新执行，不包装成新发现或提速。
+- app.js:784–818在生成结束时停止活跃遥测并发送报告，可能早于实际缓冲排空；本批未增加“晚发生欠载/最终报告覆盖”专用实机实验，仍是源码观察，后续需按Q26度量合同验证。
+- Candidate选择及profile异步动作的重叠顺序、Worklet状态跨turn的迟到消息预算等仍需专门故障注入；本批未实证，不签不存在。
+- SNR/一致性/校准页面字段来自后端估计和条件测试，不能由UI标签签真实音质或推断用户沙沙根因。
+
+## 环境和不能越过的证据边界
+
+本轮起初浏览器测试依赖未安装，按现有package-lock执行npm ci --ignore-scripts补齐忽略node_modules；package.json、package-lock及产品依赖未改。浏览器由现有npm内置Chromium配置运行，不下载外部CDN浏览器。版本信息见frontend-environment.txt。
+
+原套件部分用**原生Web Audio/MediaRecorder API**，但输入来自振荡器或静音MediaStream fixture；11分钟/2640块案例为虚拟时间，不是物理长录音。新11项使用明确模拟的AudioContext/MediaRecorder/权限与HTTP，完整冻结脚本和DOM在实际Chromium执行。VM探针没有浏览器设备。API返回为测试fixture，不是本批真实Go/DeepSeek/完整Qwen/GPU。物理麦克风、声卡首声、用户WAV、听感、相似度、自然连续朗读、无沙沙、同条件双T4及RTF≤0.3均未验收。
+
+## 保持与下一步
+
+新F04–F06单列g0-frontend-findings.json；原300建议初审、Q25–27各50建议、前批F01–F03与全部历史收据保持不变。当前覆盖以g0-frontend-coverage.json为准；交接提示词完整内嵌本备忘录。下一批先补Python运行/分析/启动恢复链及DSP/工具等剩19项，再完成全源第二/三遍与建议处置更新；不预填Q28、不跳过G0先实施S1。整体PARTIAL/BLOCKED。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_RUNTIME.md
+
+# G0第五批：Python启动、监督、工作进程与绑定链（未签收）
+
+## 结论与实际覆盖
+
+本批全文语义第一遍新增5份、1536行；累计39/53资产、10184行，尚有14项未完成第一遍。完整第二、第三遍仍为0；专项测试三轮不是全源三遍语义审查。G0未通过、S1未开始，产品/原始–17包/正式工作台不改。
+
+| 文件 | 本批完整范围 | 语义核对重点 |
+|---|---|---|
+| kaggle/source/py/bootstrap.py | 1–451 | 导入副作用与状态目录；有界子进程与进程组超时；平台Torch保护/发行包身份；工具与模型获取；GPU门禁；恢复；supervisor当前startup_id故障收据；只停止本次创建进程；隧道认证与失败路径 |
+| kaggle/source/py/supervisor.py | 1–219 | 子进程角色环境最小化；租约FD/nonce继承；仅自身进程组终止；退避/崩溃循环；健康/致命配置；缓存重载；周期快照；信号、PID与lease清理 |
+| kaggle/source/py/worker.py | 1–680 | 模型加载前设备/租约；T4 dtype策略；参考缓存/绑定；生成码适配器调用；锁/取消/静音停顿；逐段DSP/裁剪；统计/错误帧；重启；异步响应队列与HTTP生命周期 |
+| kaggle/source/py/clone_stream.py | 1–126 | ICL/xvector输入；生成码窗口/左上下文/可选右看；有限样本率与长度；取消/尾部/生成器关闭；参考码只作conditioning，不传codec。未运行真实Torch窗口或完整生成 |
+| kaggle/source/py/voice_binding.py | 1–60 | 文件名/类型/大小/O_NOFOLLOW；UTF-8与长度前缀跨语言hash；gen默认值、数值/布尔/非有限校验。它是内容绑定，不是身份认证/声学分数 |
+
+精确hash及逐文件范围见g0-runtime-coverage.json。当前剩14项：analyst.py、audio_rt.py、library_api.py、reference_segments.py、Rust Cargo.toml/lib.rs、6个工具、LICENSE及MEMO；外围仓库仍有独立审查范围，不由53项台账替代。
+
+## 三轮专项回归与进程协议
+
+每轮独立Python进程执行原G0的84项CPU/安全/租约/可靠性专项，再加10项新运行边界，合计94项；三轮均0失败/错误/跳过，共282通过。新10项为7保护+3原行为观察；捕捉旧缺陷通过不等于已修。
+
+运行器run_runtime_audit.py，逐项结果、源与测试hash、三份观察见runtime-audit-round1..3.json；unittest日志为runtime-regression-round1..3.txt，stdout/stderr另存runtime-round1..3-console.txt。既有测试未修改，历史G0/训练/Go/前端收据不重写。NumPy回退被明确强制，未编译或执行Rust。
+
+新增7个保护：
+1. 关闭实际synth异步响应迭代器会设置生产者cancel Event，CPU替身生产线程能退出。
+2. 错误voice_binding在任何静音/生成PCM之前失败，不启动engine.stream，并释放锁/busy。
+3. 原RealEngine.load_profile只清除同路径prompt缓存，保留其他路径；不启用参考静音增强或参考PCM拼接。
+4. 真实文件hash复核既有跨语言字面值17f55c…；采样参数变化改变绑定；bool/小数top_k/非有限值拒绝；符号链接不接受。
+5. 即使breath_bank含非零参考数组，原lead_audio仍只输出有界全零计划停顿，不拼接参考音频。
+6. 无效clone模式与缺失ICL转写拒绝，不静默回退。
+7. 工作帧5字节小端长度头与Unicode统计JSON一致。
+
+另实际执行两个现有协议脚本，各内部3轮，由run_runtime_protocols.py串行调用：
+
+- ownership_process_check.py：真实supervisor、POSIX FD继承/租约、worker/analyst角色继承、gateway不继承、离线争用409、停止后可重新预约、PID清理。**模型角色是CPU stand-in**，没有真实GPU/VRAM或训练。
+- fatal_startup_check.py：真实supervisor与本地HTTP致命健康替身，当前startup_id故障收据、bootstrap.wait_ready快速停止、仅本次Popen关闭、子进程退出及PID清理。没有实际触发真实模型MimiConfig加载错误。
+
+脚本hash、实际退出码与每轮JSON输出见runtime-protocol-receipt.json及runtime-protocol-*.txt。不是重跑全部历史6类协议，也不是完整启动Kaggle模型/隧道/下载链。
+
+## 新确认行为：均未修复
+
+### S18-G0-RUNTIME-F07：异步响应队列没有容量与生产反压
+
+worker.py:650–673：asyncio.Queue()默认maxsize=0，emit仅call_soon_threadsafe(q.put_nowait,item)，不等待消费者。直接执行原synth，使用有界CPU生产替身排入512个小PCM帧及终止哨兵；未消费时观察maxsize=0、队列513项，随后正常消费并清空。三轮一致。
+
+这是应用层容量/反压缺口，不是测得无限内存增长或外部DoS。fixture不是TCP慢客户端压力；真实模型token上限、Go单worker并发、ASGI/socket缓冲和取消共同影响实际占用，尚未测量。后续策略需在有界排队、跨线程投递、断连取消、终止哨兵和阻塞退出间建立合同，不能直接塞一个会抛QueueFull的put_nowait后声称修复。
+
+### S18-G0-RUNTIME-F08：重载失败后engine prompt缓存与已接受绑定不原子一致
+
+worker.py:257–275、396–409、452–466：RealEngine.load_profile先更新_prompts，再由Worker复核文件绑定。已缓存成功参考A；把文件改成B并重载，显式resolver替身读取B、随后把磁盘恢复A，Worker正确检测重载中变更而抛异常。但engine._prompts已是B，Worker旧profiles/voice_bindings仍是A；下一任务以当前A的正确pin进入，缓存存在判定不触发重建，原run_job调用的生成替身拿到B prompt。
+
+三轮观察：failed_reload_rejected=true，当前文件与接受pin匹配=true，缓存prompt与当前文件匹配=false；初次+失败重载resolver共2次，下一job未重建且未标failed。
+
+实际执行原Worker和RealEngine.load_profile及真实文件hash；重型resolver/prompt/stream和GPU清理明确为fixture。没有执行真实ICL提取、Qwen/codec或听到错误声音。这是确定性失败原子性控制流复现，不冒称线上并发HTTP或音色混淆已声学复现。后续应设计准备/验证/提交与失败回滚或缓存失效合同，并与Q25的候选/绑定版本一致性一起保留测试；当前不改产品。
+
+### S18-G0-RUNTIME-F09：模式规范化与报告/会话检查不一致
+
+clone_stream.py:13–22用strip().lower()接受` XVECTOR `，返回xvector=true、空ref_text；worker.py:65–70对原环境值做精确比较，反而报告icl-generated-only-codec。三轮直接调用原函数一致复现；未运行模型。
+
+这会使被接受的有效条件与报告字段不一致；不等于证明真实双GPU声音不一致。后续需统一规范化/拒绝政策并保证请求pin、加载回执、health和实际生成条件相同；不能通过更换UI标签掩盖实际条件。当前未修。
+
+## 仅源码观察或仍阻塞的验证
+
+- bootstrap的后台模型下载join没有总体期限；Go/cloudflared获取未见固定版本内容hash校验、Rust引导运行远端脚本。此批未访问/执行这些下载或安装路径，不能称验证了供应链/可用性故障。
+- 子进程启动OSError后gave_up、非worker健康失效、全部关键进程退出时的总退出政策，仍需专用故障矩阵；现有致命健康用例不涵盖所有启动失败。
+- Worker after_job在锁释放后执行、重启与忙状态交错、长生成/慢客户端真实资源峰值，仍需压力/生命周期补验，不将源码疑点写成实证缺陷。
+- 原trimmer预滚/短尾、NumPy分块依赖、指标语义等历史问题仍未修；本批不是DSP新实现。
+- GeneratedCodecWindow和fast_generate_streaming的真实Torch/完整模型路径未执行；没有靠安装假Torch把它们签为真实codec测试。源码生成码隔离意图/文件pin/fixture调用不等于真实声纹、无额外语音或同条件双卡声学证明。
+
+## 保持、归档与下一步
+
+新F07–F09另列g0-runtime-findings.json，原300建议初审映射/Q25–27各50项/F01–F06和各历史验证器保持hash不变。新台账不把本批测试当成全源第二/第三遍。Node30、JS/新测试语法、5份Python AST及只读repack/冻结一致性检查均通过；正式15文件工作台未动，没有18发布包。
+
+下一步补剩14项的分析/API/参考切分与DSP/工具/说明全文，再完成全源第二/第三遍和建议处置更新，不跳G0先实施S1，不预填Q28。用户录音、完整权重/真实训练、双T4同条件输出、自然连续朗读、首声/RTF≤0.3及无沙沙仍未验收；整体PARTIAL/BLOCKED。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_ANALYSIS_DSP.md
+
+# 第十八阶段 G0 第六批：分析/API、参考切分、Python/Rust DSP
+
+## 1. 本批结论与边界
+
+2026-10-23，活动分支 `arena/1160bd87-kagglee`。延续已完成第五批，不改冻结产品，不重开 PR2、不预填问题28、不生成第18阶段发布包。本批是**全文第一遍补审与限定范围执行验证**，不是已实施首声/声质优化，也不是完整三轮全功能/模型验收。
+
+- 本批新增全文第一遍 **6份、2152行**；累计 **45/53、12336行，剩8份**。
+- 完整第二遍、第三遍仍均为 **0**。三轮专题各100建议及问题25–27各50建议保留，不冒充全源三遍语义审查。
+- **172项×3轮=516项通过**，每轮失败/错误/跳过均0。其中旧测试160项，新12项：9保护、3 `OBSERVED_NOT_FIXED` 原行为见证。旧测试中也含已知缺陷见证，不能将总通过数解释为没有缺陷。
+- 另行 **14个分析端AST控制流案例×3轮**、**12个NumPy合成DSP案例×3轮**。与单元测试存在行为重叠，不相加冒充独立完整功能覆盖。
+- 新确认 F10–F12 三类边界，**均未修复**。历史校准/候选缺陷、NumPy分块依赖也仍复现。
+- 实际执行：原Python函数、NumPy DSP、requests/TCP本地HTTP、库进程内ASGI与本地文件操作。重型ASR/embedding/模型生成使用明确fixtures。
+- 未找到 `rustc`/`cargo`；Rust两份文件**只完成源码审查**，未编译、未跑内置Rust测试、未加载实际Rust库。不用NumPy结果替代Rust运行证明，不为完成语言数量安装来源不明编译器。
+- 无Torch/Qwen完整权重/CUDA、真实DeepSeek、用户WAV、物理声卡及双T4；没有证明相似度、无沙沙、自然连续朗读、RTF≤0.3或真实提速。
+
+冻结基线继续为53资产、94冻结hash与15正式文件；本批保存295个既有文档/收据/脚本hash，旧证据不改写。NumPy为实际2.2.6，不是需求文件中的2.4.6。Starlette/httpx的弃用警告保留在控制台，未为消除警告擅改产品依赖。
+
+## 2. 全文第一遍范围
+
+全文阅读分段进行；analyst最初只读到1050行，补完1051–1211后才计入覆盖，不把部分阅读提前记全文。其余5份也均完整读完。阅读区间不是运行覆盖率。
+
+| 资产 | 行数与完整区间 | 本次重点 |
+|---|---:|---|
+| `kaggle/source/py/analyst.py` | 1211，1–1211 | 解码/上传限额、ASR/speaker生命周期、指标、worker帧协议、候选评分/重叠选择、校准、旧API、consistency |
+| `kaggle/source/py/audio_rt.py` | 222，1–222 | ctypes符号与参数、NumPy DC/AGC/淡入/尾部、转换、极短breath |
+| `kaggle/source/py/library_api.py` | 163，1–163 | 严格JSON、multipart、修订CAS、租约、共享准入、后台任务提交/失败/清理、错误脱敏 |
+| `kaggle/source/py/reference_segments.py` | 106，1–106 | 有效时间戳、词级校验、长段窗口重转写、短尾收据、原文不可按比例切割 |
+| `kaggle/source/rust/audio_rt/Cargo.toml` | 17，1–17 | cdylib/rlib、无第三方依赖、2021 edition、release LTO/abort，未实际编译 |
+| `kaggle/source/rust/audio_rt/src/lib.rs` | 433，1–433 | Leveler跨块状态、DC/AGC/淡入/flush、noise、unsafe C入口、内置测试；只读源码 |
+
+覆盖台账：`docs/validation/step18/g0-analysis-dsp-coverage.json`。旧 `g0-runtime-coverage.json` 等保持为历史检查点。
+
+## 3. 按模块的语义结论
+
+### 3.1 分析、候选、校准与指标
+
+1. build内embedding缓存按规范化float32内容hash；命中返回copy，build之间不共享。新保护验证float64/非连续输入规范化及调用者修改不污染缓存。它是缓存，不是训练。
+2. 全参考参与分析/统计与centroid，最终至多三候选按评分和同文件重叠规则选择；实际ICL仍用选中锚点。保留“全部音频参与统计不等于全部同时进入模型prompt”的透明边界。
+3. 评分涉及长度、帧能量分位差、ASR logprob、speaker相对centroid、F0离散度及语速。分数不是人声相似度真值；低RMS截图不能定位沙沙声来源。
+4. `synth_full`用于离线校准/诊断，不能继承浏览器/Go已做的协议校验来假定安全。其HTTP状态、终结与残留校验不足独立记录F12。
+5. 本次14项AST重跑保留：ASR不可用仍CER0.05、旧评分提交期间更改后的转写、重载失败回执被忽略、全合成失败仍chosen0；均是确定性交错/依赖fixture，不是线程压力测试。
+6. 旧 `/candidate` 存在bool/小数强转及null/容器未捕获异常；本次9个输入案例重新执行。不能用该结果推断严格库JSON路由也同样接受。
+7. `consistency`同文调用seed100/101不同的旧诊断行为再次验证。正式播放同会话seed一致的功能不得被这条诊断观察反向改坏。fixture返回相同speaker值不是真实双卡等效参数或声学一致性证明。
+8. 建档两个worker加载失败后任务是否仍done、旧修改/删除接口与校准并发、实际HTTP竞争、缺CER/proxy值是否进入质量门禁，继续列为待证/待设计，不把本轮14个AST例说成覆盖全部。
+
+### 3.2 原始参考库API
+
+完整读取库路由及其依赖的既有32项测试：严格请求体、CAS/lease、选择检查、后台任务、共享准入、失败释放、提交顺序、去重、完整性与私有错误脱敏。重跑实际本地文件与进程内HTTP；后台语音处理为fixture。
+
+保护“成功状态晚于元数据提交”“失败保留原样本及上一成功profile”“请求取消不能丢租约”“executor提交失败不能稍后执行排队修改”“库样本不自动成为可播放模型”。这些是现成功能保护，不是新增了真实训练按钮/训练闭环或验证语音质量。
+
+### 3.3 参考切分
+
+- 合法短段直接用段级文本与时间戳；可选词信息不可信时短段分支清空，不能按字符比例把全文分给不同音频。
+- 长段优先使用与词全文一致且时间合法的词分区，否则对**真实对应音频窗口**重转写。新增保护验证32秒由两个16秒窗口产生自己的文本，第二窗口词时间平移16秒。
+- 小于1.5秒尾段记录 `short_tail_s`，不与上一段全文拼成伪对齐。17秒fixture实际仅对前16秒重转写，尾1秒不生成候选文本；保护的是“明确报告而非伪造对齐”，不宣称最后1秒已被ASR转写或完整训练覆盖。
+- 重转写结果词信息的清洗弱于直接短段分支，详见F11。坏词元数据是明确注入；真实Whisper在用户录音中是否产生相同数据仍未测。
+
+### 3.4 NumPy与Rust DSP
+
+NumPy原函数实际执行；Rust源码显示持有跨调用能量累计与完整淡入位置，flush重置DC状态。NumPy的分块RMS/增益插值、剩余长度重启淡入以及flush保留DC状态需独立同信号同分块对照。当前Worker每段新建leveler这一调用约束必须保留；不能把复用同一个leveler的潜在差异直接当作当前用户播放故障。
+
+本次重跑既有半秒24kHz双音实验12组合：
+
+| 设置 | 分块 | 对整块最大int16差（三轮一致） |
+|---|---:|---:|
+| target−6 / maxgain0，隔离淡入与DC | 48样本 | 1424 |
+| 同上 | 1920样本 | 0 |
+| target−18 / maxgain6，正常AGC | 48样本 | 1425 |
+| 同上 | 1920样本 | 8 |
+
+这是**工程分块依赖**，不是经过主观试听的接缝损伤、噪声根因或GPU路径对照。没有修正数值，也没有测得质量/性能改善。
+
+新保护还覆盖正常长度breath确定性/长度/有限值、非连续float转连续布局、空输入meter、PCM饱和不回绕、Leveler空/非有限值输入、热信号限幅及尾部归零、close幂等。非有限输入清洗仅验证NumPy路径，不扩展到未执行Rust。
+
+Rust的C入口空指针保护、slice长度/所有权、调用方串行化、版本门槛与符号完备、错误返回值处理仍须真实ABI验证；Python只捕获装载OSError、不检查每个DSP返回码等是**源码待测观察**，不在本轮虚报ABI故障复现。Cargo内置测试未运行，未生成或签收 `.so`。
+
+## 4. 新确认但未修的三个边界
+
+### S18-G0-ANALYSIS-F10：NumPy极短breath形状
+
+`audio_rt.py:86–102`，24kHz卷积核6，`same`输出长度为输入与卷积核长度最大值：
+- 请求1样本，实际返回6样本；
+- 请求2/3/4/5样本，分别抛ValueError（包络广播不兼容）；
+- 请求6样本，返回6；常规64/1920/24000长度保护通过。
+
+直接原函数/真实NumPy执行。只是合成helper边界，**没有播放参考PCM**，未证明当前worker正常分块会触发，更未证明用户沙沙根因。后续修复必须保证长度且不重新启用参考呼吸拼接。
+
+### S18-G0-ANALYSIS-F11：窗口重识别的可选words漏清洗
+
+`reference_segments.py:96–103`，注入合法段时间与字符串text，但可选words为四元组，重识别分支列表推导解包直接ValueError；同样metadata在短段分支被清空。三元组的text=None可被保留进输出。
+
+原helper实际执行，ASR结果显式fixture；未运行真实Whisper，也没有声称实际端到端build崩溃已执行。后续pause/prosody路径依赖word字符串，仅作为需保护的下游风险说明，不能将潜在AttributeError当作本次新跑出的证据。
+
+### S18-G0-ANALYSIS-F12：分析端不完整/失败流被当作正常返回
+
+`analyst.py:361–385`，使用真正requests + ThreadingHTTPServer本地TCP，原 `synth_full` 实际解析：
+1. HTTP503携带PCM/空stats：正常返回2样本；
+2. PCM后残留2字节header：正常返回2样本、空stats；
+3. PCM后未完整到达的stats payload：正常返回2样本、空stats；
+4. stats为 `failed:true`：正常返回音频与failed字段，未抛错；
+5. HTTP200空体：正常返回0样本、空stats。
+
+同时保护完整分片UTF-8 stats/PCM，以及显式ERR帧正确抛RuntimeError。这证明分析端协议验证缺口，**不是实际worker模型故障已发生，也不是公开网关利用验证**。没有运行HTTP慢客户端/无上限payload压力或资源泄漏测量。
+
+三条状态均 `confirmed...not_fixed`，新见证通过只意味着原失败行为稳定复现。机器台账：`g0-analysis-dsp-findings.json`。原300建议初审不改写，新观察单列。
+
+## 5. 三轮执行与证据链
+
+每轮运行：
+
+```bash
+.venv/bin/python docs/validation/step18/run_analysis_audit.py --round 1
+# --round 2 / --round 3 相同目标、独立进程执行
+```
+
+172项构成：原G0 84 + runtime 10 + RecordingTests 6 + step15 16 + step17 12 + libraries 32 + 新analysis 12。明确不选需要Torch的 `test_step14.CacheTests`；没有把跳过训练测试算成通过。本轮选中项实际skip为0。
+
+每轮另执行：
+- `reference_state_probe.py` 中4校准+9候选输入+1consistency，直接调用旧probe函数，共14。**本地旧upstream解包cache不存在**，因此未跑历史6个prompt接口案例，没有偷偷重建/重签旧wheel收据。旧20案例历史收据保持不变。
+- 原 `dsp_partition_probe.py --round N`，12个真实NumPy合成分块组合，保存原始stdout与JSON。
+
+| 轮次 | unittest | 分析AST案例 | 合成DSP案例 | 失败/错误/跳过 |
+|---|---:|---:|---:|---:|
+| 1 | 172 PASS | 14完成 | 12完成 | 0/0/0 |
+| 2 | 172 PASS | 14完成 | 12完成 | 0/0/0 |
+| 3 | 172 PASS | 14完成 | 12完成 | 0/0/0 |
+
+主要文件均位于 `docs/validation/step18/`：
+- `analysis-audit-roundN.json`：逐测试ID、结果、新观察、53源码hash、测试/runner/support hash、依赖、原log hash、真实性标记。
+- `analysis-regression-roundN.txt` / `analysis-roundN-console.txt`：原始测试及console；模拟失败异常与无GPU门禁输出属于预期测试输入，不能据console中ERROR字样误判成功收据，也不能将自检工具的内部SKIP展示当成执行了模型测试。
+- `analysis-contracts-roundN.json`：4+9+1 AST函数控制流细项、原probe/source hash。
+- `analysis-dsp-roundN.json` / `.txt`：原12组合数值、probe/source/hash与原stdout。
+- `analysis-preserved.json`：本批开始时295个既有历史文档/收据/脚本hash，旧签收不因新handoff自动变更。
+- `analysis-toolchecks.json` 与对应日志：Node30、JS检查、Python AST、repack一致性检查。
+- `analysis-environment.txt`：本机依赖、Rust/模型环境边界。
+- `verify_analysis.py` / `analysis-progress-verification.txt` / `progress-analysis.json`：本批独立一致性验证；`progress-checks.json`指向当前检查点，旧验证器和旧收据原样留存。
+
+独立验证器必须确认53源码/94冻结/正式资产、历史295份、原300建议及问题25–27、45/53/12336、三轮目标一致、观察稳定、所有log/test/probe hash、handoff逐memo原文一致。不能以“写出JSON”替代实际断言。
+
+## 6. 后续精确顺序
+
+本批不另开关键设计题；问题25–27各50建议、推荐C保持。仍按G0→S1–S8门禁执行，不跳至DSP产品修复。第一遍剩8份：6个工具 `backend_probe/e2e_check/resource_control/selftest/voice_benchmark/watermark_check` 与 `LICENSE-QWEN-DERIVED.txt`、`MEMO.md`。先读完并补各自执行边界，再补全源第二/第三遍、300建议最终处置与失败见证映射。
+
+Rust真实编译/内置测试/ctypes同信号对照、实际HTTP并发更新、完整模型/双卡/用户录音/长数据真实训练仍是显式缺口；如环境缺失继续标BLOCKED，不把source read变成runtime PASS。必要设计问题继续逐题≥50建议，不提前问用户，不要求点击Continue。
+
+所有性能和声学不变要求仍在：真实首可用DeepSeek prefix立即生成、生成PCM-only、更响且受保护、更低创建延迟、>10分钟录音与真实训练的区分、<10秒参考相似度、双GPU同等参数/声音、自然连续朗读、无沙沙及真实RTF≤0.3。当前没有真实新优化或声学验收，整体 **PARTIAL/BLOCKED**。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_TOOLS.md
+
+# 第十八阶段 G0 第七批：工具、LICENSE 与历史 MEMO
+
+## 1. 结论：53项内嵌资产第一遍完成，G0尚未完成
+
+2026-10-23，活动分支 `arena/1160bd87-kagglee`。本批新增8份全文第一遍、1332行；累计 **53/53、13668行、第一遍剩0项**。这是53项内嵌资产的覆盖口径，不是整个Git仓库全部文件或全源三遍语义审查完成。完整第二遍/第三遍仍 **0/0**，G0与发布验收仍 **PARTIAL/BLOCKED**。
+
+- **197项专项×3轮=591通过**：每轮失败/错误/跳过均0。
+- 构成：上批172 + 既有probe 13 + 本批新12。新12为 **9项保护、3项OBSERVED_NOT_FIXED见证**。既有项中也有已知缺陷见证，总通过数不意味着产品无缺陷或已修复。
+- 三轮各独立执行4个CLI：backend静态/隔离runtime、benchmark默认无`--run`均返回预期exit2/BLOCKED；resource status返回exit0。**预期阻塞合同通过不等于GPU/模型成功。**
+- 新确认工具误报通过 F13–F15，均未修复；另记录MEMO文档漂移 D01，不混成第四个运行缺陷。
+- 53源码、94冻结hash、15正式工作台文件保持不变；本批开始封存329份历史文档/脚本/收据hash，旧报告不随最新handoff重签。
+- 本批没有产品改动、没有18发布包、没有实际训练/完整模型/GPU/Rust编译/物理声卡/真实DeepSeek/用户WAV或质量/提速验收。
+
+## 2. 全文第一遍范围
+
+所有文件按行分段读完，输出截断处另行补读；只在全文读完后计入台账。
+
+| 文件（相对kaggle/source） | 全文区间 | 重点 |
+|---|---:|---|
+| `tools/backend_probe.py` | 1–200 | 元数据/精度/API surface、隔离子进程、deadline、进程组终止、报告权限/原子提交、exit语义 |
+| `tools/e2e_check.py` | 1–180 | 9字节网关帧、文本/统计/END/ERR、顺序、GPU计数、模拟播放与退出门禁 |
+| `tools/resource_control.py` | 1–41 | 只读status、1..3600秒预约、租约、信号恢复、拒绝/取消/失败exit |
+| `tools/selftest.py` | 1–177 | 各检查的PASS/SKIP/FAIL、NumPy/Rust标签、worker健康/流、e2e/quality调用、报告写入 |
+| `tools/voice_benchmark.py` | 1–168 | 显式运行门禁、双worker健康/pin、严格帧与样本数/RTF、私有WAV/ledger、不覆盖证据 |
+| `tools/watermark_check.py` | 1–145 | 消费与telemetry线程、水位/饥饿/排空、帧校验、chatter指标与退出判断 |
+| `LICENSE-QWEN-DERIVED.txt` | 1–201 | Apache2授权/专利终止/分发条件/变更与归属通知/NOTICE/商标/免责声明，末尾Alibaba Cloud版权 |
+| `MEMO.md` | 1–220 | 当前页头与历史阶段混排、数据/训练/隐私/真实验收边界、与当前17源码策略核对 |
+
+本批覆盖：`docs/validation/step18/g0-tools-coverage.json`；保留此前各批覆盖JSON原样。全源第一遍补齐不能解除第二/第三遍或300建议最终处置/失败映射门禁。
+
+## 3. 模块结论与现成功能保护
+
+### backend_probe
+
+默认只查metadata，不安装/下载模型。runtime在有界子进程内检查CUDA及实际调用形状；surface pass也明确不表示模型加载、推理、训练、性能通过。保留T4 BF16/未经批准FP32阻断、签名bind与额外必需参数检查、导入异常脱敏、子进程deadline、原子0600报告。
+
+既有13项probe测试本轮独立重跑三次，虚拟GPU和兼容smoke仅是显式fixtures。新测试及独立CLI又实际启动隔离runtime子进程：本环境缺Torch/Faster，输出blocked、devices空，model_loaded/inference_verified/training_verified/performance_verified均false，exit2，不冒充CUDA成功。真实超时后的全部后代退出与child退出码/报告一致性仍需更完整故障矩阵；现有timeout测试为受控Popen/killpg fixture，不宣称本批真实杀过挂起模型导入树。
+
+### resource_control
+
+仅本机status/预约，不接任意命令、不强制解锁、不运行GPU任务。状态与诊断记录不是显存空闲证明。新保护验证私有临时namespace下fresh status/非法时长不创建锁文件，竞争拒绝后原holder仍busy、SIGINT/SIGTERM处理器还原。既有32项ownership相关测试还包括真实子进程/OFD/flock/信号及预约生命周期；该历史套件本轮实际重跑，不能将CPU锁实验叫GPU工作。
+
+### voice_benchmark
+
+默认无`--run`直接blocked，既不合成也不把CPU/Mock当双卡证明。新CLI保护实际保存0600报告，并验证第二次相同路径拒绝覆盖；该拒绝目前会产生FileExistsError/非零而非结构化重试收据，未改产品。
+
+`measure`已有比另三个诊断工具更严格的HTTP状态、16MiB帧界限、64MiB PCM预算、终结后禁止数据、残留/失败/取消/未知引擎/pin/anomaly/样本数/RTF一致性检查。新本地HTTP测试保护15个协议/统计拒绝分支及HTTP503拒绝；只通过header声明超大帧，不分配16MiB或64MiB攻击体，未做大包内存压力。
+
+合法fixture为240 speech samples+192 tail，fake worker元数据及全零PCM，仅验证解析/分母排除padding。该fixture中的engine字符串/统计数字不是真实Faster、可听语音或RTF成绩；本批没有调用benchmark的真实`run=True`，也没有生成用于声学验收的WAV。真实双worker身份、dtype/参数同等、私有pin与听感仍须目标设备验证。
+
+### e2e_check / selftest / watermark_check
+
+三者是运维工具，不应继承浏览器或网关的协议保证来替代自身验证。既有空E2E失败保护保留；新测试同时保护显式ERR、HTTP非200失败、SKIP/FAIL/PASS区分、模拟短尾排空与已知欠载。
+
+`e2e_check.simulate_player`在所有到达后可立即排短尾；不代表实际浏览器Player的已知完成短尾问题已修复。watermark消费线程不是浏览器Worklet，也没有实体音频输出；source注释“exactly like browser”不构成等价证据。selftest的 `t_rust`即使NumPy回退也可执行，其名字不能证明Rust已编译；本批不运行完整selftest.main或quality网络链，不访问真实worker/analysis/gateway。
+
+## 4. 新确认且未修复的三个误报通过边界
+
+### S18-G0-TOOLS-F13：E2E硬门禁仍接受无效证据
+
+原 `run`/二进制parser/`main`，真实requests+有限本地HTTP fixture，4种输入各三轮：
+
+| case | 实际行为 |
+|---|---|
+| stats缺gpu字段 | `{None}`长度为1，默认min-gpus1竟通过；输出展示过滤None后仍看不到设备 |
+| END含failed/cancelled=true | 只要求END存在，不拒绝失败字段，RESULT PASS/exit0 |
+| PCM payload为3字节 | `ln//2`静默向下取整，RESULT PASS/exit0 |
+| 合法流后残留2字节下个header | EOF残留未校验，RESULT PASS/exit0 |
+
+fixture有segment/PCM/stats/END，不是历史空流例。**没有实际Go网关、模型或GPU**。这说明工具的验收可信性不足，不说明真实双卡已失败、公开网关已被利用或正常音频已受损。
+
+### S18-G0-TOOLS-F14：watermark零音频也PASS
+
+原 `main`、player/telemetry线程实际执行，本地HTTP三类：空503、显式网关ERR帧、残缺header。各自均 audio=0、first play=None、starvations=0，最后RESULT PASS/exit0；高水位分支仅提示文本太短，不使结果失败。
+
+没有验证HTTP状态/有效PCM/END/ERR/残留，因此“未播放无欠载”可变成通过。测试捕获并等待工具两个daemon线程退出，避免线程污染后续轮次；这不等于产品已新增finally/join，也不覆盖网络/JSON异常时线程清理。没有证明真实调度水位或chatter性能正常。
+
+### S18-G0-TOOLS-F15：selftest失败/取消Mock流仍报stream通过
+
+原 `stream_once`与装饰后的 `t_stream` 实际调用本地HTTP，送3帧各12000样本以及 `failed:true,cancelled:true,engine:mock` 的stats。原检查仅依据分块数、到达/总时间、audio>1秒、无anomalies字段，返回True且status passed。
+
+时间为显式确定性fixture，端口列表只有一个本地fixture worker，**不是测得首声/吞吐或双GPU结果**。不推断整个selftest.main会退出0，因为其他检查没有在这条见证中一起执行。stream_once的HTTP/终结校验弱项也列后续统一修复合同，不重复计成其他新bug。
+
+三条状态均 `confirmed_with_explicit_local_http_fixtures_not_fixed`。197 PASS中的见证是“仍可复现”而非“已修复”。机器台账 `g0-tools-findings.json`，原300建议处置文件不改写。
+
+## 5. LICENSE与MEMO结论
+
+### 许可证：保留文本，不作法律认证
+
+读完Apache2各条及附录，特别保留分发附许可证、修改文件显著说明、来源归属/版权保留以及**若上游分发含NOTICE则按条件携带**。专利授权/诉讼终止与商标权限不同，AS IS不等于无需遵守条件。文本末尾有2026 Alibaba Cloud版权；这一存在性不证明所有依赖、模型权重、音频和再分发许可已完整核验。
+
+本地source未发现NOTICE文件，不能据此推断上游原发行版必定没有NOTICE或已违规。旧upstream解包cache缺失，未在本批重下载所有依赖或重新认证其许可证。后续发布仍需来源/修改标记/NOTICE与依赖及权重许可清单；用户语音授权另行核对，许可证不自动授予他人声音权。当前不修改冻结许可证，不出具法律合规签收。
+
+### 文档漂移 D01（不是第四个运行缺陷）
+
+`MEMO.md`页头称当前step15，写vector-only、不回退ICL、maxgain12；当前冻结17源码为默认ICL、generated-only codec、默认maxgain6。旧历史段落还混有14/11/10“当前”字样、已过时录音预算/训练入口边界，以及第83行短呼吸不再广播异常的笼统说法（F10已在极短2..5样本复现）。
+
+新旧阶段曾经的推荐不等于最新策略；不能据MEMO重启参考PCM拼接、改回纯向量、认定网页训练已完成或把历史TorchCPU证据当本机现有依赖。bootstrap诊断会摘出旧“当前版本修复”段，原始console也可见历史14文字，应以manifest/最新阶段报告为准。这里只做本地源码对照，不额外执行安装器，也不篡改历史MEMO；未来新发布包应在新版本说明中消歧，保留旧包hash。
+
+## 6. 执行、证据和环境
+
+运行命令：
+
+```bash
+.venv/bin/python docs/validation/step18/run_tools_audit.py --round 1
+# --round 2、--round 3，独立进程、同一197项目标
+```
+
+| 轮次 | unittest | fail/error/skip | 独立CLI | 其中预期BLOCKED |
+|---|---:|---:|---:|---:|
+| 1 | 197 PASS | 0/0/0 | 4合同符合 | 3 |
+| 2 | 197 PASS | 0/0/0 | 4合同符合 | 3 |
+| 3 | 197 PASS | 0/0/0 | 4合同符合 | 3 |
+
+新12预检也全部通过，原始日志 `tools-preflight.txt` 保留，不另计第四轮。没有为凑数把unittest中的内部工具SKIP输出计成模型执行；选中的unittest层级skip实际0。没有重跑上批另行14AST/12DSP或历史Chromium/Go race全协议，旧收据继续有效为历史证据，不称本轮全量重跑。
+
+主要证据位于 `docs/validation/step18/`：
+- `tools-audit-roundN.json`、`tools-regression-roundN.txt`、`tools-roundN-console.txt`：197逐ID/观察、53源hash、测试/runner/support hash、原日志与依赖。
+- `tools-cli-roundN.json`及 `tools-{backend-static,backend-runtime,benchmark-default,resource-status}-roundN.{json,txt}`：实际CLI命令、预期/实际exit与原始报告/log hash；exit2按阻塞保存。
+- `tools-preserved.json`：329既有历史文件hash；旧验证器/收据保持检查点版本，不随新handoff改写。
+- `g0-tools-coverage.json` / `g0-tools-findings.json`：53项第一遍覆盖、F13–15与D01。
+- `tools-toolchecks.json`、对应Node/JS/Python AST/repack日志，`tools-environment.txt`。
+- `verify_tools.py` / `tools-progress-verification.txt` / `progress-tools.json` / `tools-run-manifest.json`：独立检查源码/冻结/正式文件、历史、300建议/QA、三轮一致性、逐log/测试hash、handoff原文；`progress-checks.json`更新指向本批。
+
+实际Python3.11、NumPy2.2.6，不冒充requirements NumPy2.4.6。没有Torch/Qwen/CUDA/rustc/cargo；HTTP为有限本地fixtures，音频为零PCM/合成信号，设备/API smoke含显式虚拟对象。没有实际训练数据/声纹外传，无GitHub凭据或访问口令写进报告，所用token仅固定本地fixture字符串。
+
+## 7. 下一步与未解除门禁
+
+第一遍已无剩余项。下一步转入**全源第二遍**，以53资产完整台账逐份做调用链、失败传播、并发/版本提交和度量语义交叉复核；第三遍再独立反证/回归映射。现有专项重复执行不能自动给某文件第二遍完整阅读计分，也不能把3×100专题建议当作这两遍已完成。
+
+保留300建议原ID与初审，后续补到最终处置/失败见证；F01–F15及D01均按真实边界处理，不将15编号直接解释成15个互不重叠根因。只有需要重大设计选择才按顺序开启新题并给≥50行动建议，本批不预填问题28，不向用户索要Continue。
+
+在G0完成前不跳到S1/Q28/18包。真实首可用DeepSeek prefix触发、更低创建延迟、更响受保护输出、generated-only PCM、自然连续朗读、<10秒参考相似度、>10分钟录音与真实长数据训练、双GPU同等参数/声音、无沙沙与真实RTF≤0.3全部仍未豁免；当前只是工程审查第一遍里程碑，非产品/模型/声学发布签收。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_TRAINING.md
+
+# 第十八阶段 G0：全源第二遍第1批——训练执行与资源所有权
+
+## 1. 进度与结论
+
+2026-10-23，活动分支 `arena/1160bd87-kagglee`。承接第一遍53/53、13668行检查点，本批**重新逐行读完8份、1056行**并交叉复核调用/失败/租约链，正式第二遍为 **8/53、1056行，剩45份**；第三遍0。不是重复跑测试就给第二遍阅读计分，也不是全源第二遍已经完成。
+
+- **219项×3轮=657通过**，各轮失败/错误/跳过0。旧197 + 另选现有artifact10 + 新12；新12为11保护、1个 `OBSERVED_NOT_FIXED` 见证。
+- 新确认 F16：原 `stop_ranks` 对忽略SIGTERM的额外后代存在清理缺口。实际CPU子进程、pidfd、继承OFD及flock执行；未修复。测试最后定向清理所有fixture后代并验证锁释放。
+- 正常生产 `run_rank` 没有DataLoader子进程，本次额外后代明确构造；**未证明正常Qwen训练发生了这条故障**，未运行真正训练rank。
+- 没有Torch，不执行任何张量/optimizer/Gloo/NCCL测试。AST只抽出纯Python采样、赋值提交回滚及dataset构造/len，不模拟Torch算子，不将其称为训练成功。
+- 53源/94冻结hash/15正式文件不变；开始时382个历史文档/脚本/收据hash封存。旧300建议初审和问题25–27各50条保留。
+- 无产品改动、无18包、无完整模型/GPU/Rust/物理声卡/真实训练/用户录音/提速或声学验收。G0仍 **PARTIAL/BLOCKED**。
+
+## 2. 本次重新完整阅读与不计分的局部阅读
+
+| 文件 | 第二遍重新阅读区间 | 复核重点 |
+|---|---:|---|
+| `py/training_job.py` | 1–227 | 内容pin、预算、两类租约、准入、子进程环境、信号屏蔽/启动登记、停止/结果、原子checkpoint |
+| `py/gpu_ownership.py` | 1–151 | 固定namespace、inode/OFD/nonce/模式、继承/duplicate关闭、诊断非权威、最后引用释放 |
+| `py/resource_limits.py` | 1–172 | multipart预预算/重放、构建记录与准入所有权、HTTP取消与执行器提交失败门闩 |
+| `py/tts_training.py` | 1–200 | JointLoss/DDP.forward、codec/text位置、采样/累积、全rank finite、更新/digest/保存与退出 |
+| `py/tts_dataset.py` | 1–125 | 文本格式/裁尾假设、16组codes、序列拒绝非截断、cache复制、mask/label/index与单batch布局 |
+| `py/lora_adapter.py` | 1–91 | q/v目标、Base冻结、FP32 A/B存储、严格restore、prepare-before-commit、BaseException回滚 |
+| `tools/train_tts.py` | 1–49 | public参数、内部受控rank路径、结构化退出、私有rank日志与公开错误 |
+| `tools/resource_control.py` | 1–41 | status/预约预算、GPU工作标记false、取消/拒绝/信号还原 |
+
+共8份1056行。第二遍计分证据为当前报告与 `g0-pass2-training-coverage.json`，各份第一遍信息原样保留。
+
+另交叉查看 `training_codes.py` 的lease_with_fd/adopt_lease、`encode_training.py` 的arm_parent_death、`supervisor.py` 的Proc生命周期，以及现有控制器/所有权/产物测试。这些是**局部调用点/测试阅读**，不把对应依赖文件记成全文第二遍。
+
+## 3. 跨文件语义复核记录
+
+### 3.1 CLI→controller→rank→训练核心
+
+1. public `train` 参数由argparse设类型；实验确认/数据审阅与schema2真实编码准入不可由fixture bypass进入正式CLI。既有Admission8项中实际CLI拒绝fixture的合同本轮继续执行。
+2. controller先持码读取OFD核验固定manifest，核验Base及speech tokenizer内容pin，再查训练依赖，最后获取offline-reservation。拒绝时不自动停推理、不下载模型、不替换默认引擎。
+3. GPU整组租约与码读取租约通过pass_fds分别传给两个受控rank；信号在Popen到登记process之间屏蔽，避免取消丢PID。父进程保存自己的引用，rank接管duplicates后关闭原继承FD，不使用LOCK_UN释放共享OFD。
+4. rank在Torch/CUDA导入前设置Linux PDEATHSIG并重核ppid；随后解除继承信号屏蔽、检查rank和请求，再接管offline及码租约。码接管再次验证目录/内容/manifest，并不绕过正式训练admit。
+5. 已有六项ControllerLifetime测试在CPU替身下运行真实Popen/lease/PDEATHSIG，覆盖无checkpoint的双exit0不能成功、timeout、单rank失败、第二次spawn失败、offline显式接管、控制器SIGTERM/SIGKILL。其内部注入admit/dependency/模型fingerprint，不是真实模型rank或优化器。
+6. controller完成后在父租约仍持有时再verify码、Base及checkpoint manifest存在。这里只是父端完成检查；完整产物语义还依赖受控rank写出合同及后续TrainedArtifacts验证，不把manifest存在当作独立优化器或质量证明。父端语义复核加固仍是待测/待设计项，本轮未用恶意假rank伪造“真实训练成功”证据。
+
+### 3.2 OFD与资源准入
+
+- fresh打开同一inode不等于持有同一个open file description；新保护用实际fresh FD验证adopt拒绝，原holder保持busy。
+- inference_guard默认只接管inference；offline FD不能作为启动推理的默认许可。新测试失败后原holder仍持有，最后close后释放。
+- child_environment只清理列出的凭据键/旧lease/PYTHONPATH，设置离线与线程限制，保留CUDA可见性；它不是任意名称凭据的全面沙箱。新保护用固定fixture值验证枚举清理和真实私有lease导出，不在证据中保存token/nonce值。
+- BodyBudgetMiddleware先spool再解析，含unknown-length独立实际字节限制，重放完才透传receive。HeavyAdmission在HTTP取消后仍等执行真正结束才释放；run_in_executor提交可能先排队后启动失败，submitted门闩阻止拒绝任务迟执行。相关既有安全/库API测试均包含在组合中；不是OS内存/CPU隔离或全部ASGI事件矩阵证明。
+- BuildAdmission.start的slot预先获取由调用方负责，start不再次acquire，线程启动失败由调用方释放；不把单个文件的finally读成整个链已完整。原调用点部分查阅不能算analyst/library_api全文第二遍。
+
+### 3.3 dataset / JointLoss / LoRA（源码结论，张量运行仍阻塞）
+
+- dataset深复制rows，缓存tokens/codes并在命中返回clone；reference_mel仍共享，不将cache当作训练/新增参考融合。新AST构造测试只验证深复制/预算/计数，不运行tokenizer或collate。
+- 文本token布局包含固定格式与末5 token裁尾假设；codes要求非空16列、0..2047；tokens+codes+8超预算拒绝而非截断。mask、speaker固定位置6、BOS/EOS和label移位重新按源码推导；仍须实际固定Qwen tokenizer/张量验证，不能把AST构造当作mask数值一致。
+- JointLoss把参数相关路径放在DDP.forward内部，包含text_projection、speaker条件、16-codebook嵌入与subtalker loss。源码布局复核不证明实际provider API/hidden_states结构在完整模型上可用。
+- epoch_indices确定性打乱、前缀padding补齐两rank等步数，不drop最后样本。原函数AST执行检查world2/3/4、count从world到32：全覆盖、等长、padding次数正确；另验证跨epoch变化、同seed复现与too-few拒绝。这是纯Python采样数学，不是DDP执行。
+- optimize_epoch按实际尾部group_size缩放、边界才同步/更新，全rank finite失败策略与GradScaler/clip顺序重新审查。没有Torch，**未重新运行反向、混合精度、nonfinite梯度、Gloo/NCCL或参数一致性**。旧CPU证据仍是历史，不据此给本轮数值验收。
+- LoRA A/B存储FP32与实际autocast算子执行精度不是同一命题；没有声称所有matmul以FP32计算、T4无溢出或快于原方案。
+- prepare先构造/检查全部替换，commit遇BaseException逆序恢复。新AST测试用普通Python对象/setter注入KeyboardInterrupt验证赋值回滚，不伪装nn.Module、CUDA、真实adapter切换或推理声音保持。
+- run_rank先逐条检查tokenized长度后建optimizer，内容pin复核、adapter digest跨rank汇聚、全部更新/一致才保存；checkpoint原子发布与产物加载仍需真实Torch/权重。F01旧provider metadata缺口仍未修，是训练链阻塞因素之一，不把依赖缺失单说成只有GPU问题。
+
+## 4. 新确认 F16：停止直接rank不等于清空整个进程组
+
+位置：`training_job.py:108–122`。原helper先SIGTERM进程组，等待直接leader，再仅在 `process.poll() is None` 时对组SIGKILL；leader退出后，额外忽略SIGTERM的后代会被跳过。
+
+实际CPU/OFD见证步骤（三轮相同）：
+1. 在独立临时root取得offline-reservation，创建本测试拥有的新session leader。
+2. leader显式派生一个忽略SIGTERM的额外CPU后代，传同一租约FD；通过ready握手确保handler已安装，用pidfd观察。
+3. 调原 `stop_ranks`：直接leader确已回收，但后代pidfd未退出。
+4. 关闭测试父进程租约引用，实际status仍busy，证实后代仍持OFD。
+5. **测试finally只向自己创建的group定向SIGKILL**，确认后代退出、close全部引用、status变非busy。没有留下fixture进程/租约，也没有按旧PID/名字杀外部进程。
+
+状态 `confirmed_with_explicit_cpu_descendant_fixture_not_fixed`。新见证PASS代表缺口仍复现，不代表产品已增加组清理。当前run_rank无DataLoader子进程，PDEATHSIG用于受控直接rank；本次额外后代并不是实际Qwen/第三方组件产生。因此这是停止helper在明确额外后代场景下的不足，**不能声称真实训练曾泄漏显存、用户进程被锁住、父死正常路径已失效或构成公开攻击**。
+
+正常单个直接CPU子进程的停止/回收保护也通过。未来修复须与supervisor已考虑leader死亡后组后代的策略交叉核对，不能破坏最后引用才释放、仅停止本次进程、取消/故障时不发布成功等保证；当前G0下不改冻结helper。
+
+## 5. 三轮执行与证据
+
+```bash
+.venv/bin/python docs/validation/step18/run_pass2_training.py --round 1
+# --round 2 / --round 3 同目标、独立进程
+```
+
+| 轮次 | unittest | fail/error/skip | 新保护/原行为见证 |
+|---|---:|---:|---:|
+| 1 | 219 PASS | 0/0/0 | 11/1 |
+| 2 | 219 PASS | 0/0/0 | 11/1 |
+| 3 | 219 PASS | 0/0/0 | 11/1 |
+
+另选现有10个artifact边界，真实NumPy/safetensors解析、本地文件、手工rank报告；**手工报告不是实际NCCL/训练**。新12项预检日志保留，不计额外完整轮。组合包含旧诊断误PASS等观察，不能将219通过解释为旧缺陷消失。原先单独CLI四项矩阵、14个分析AST、12个DSP分块及Chromium/Go race全协议没有以独立矩阵重跑，不改写旧收据。
+
+主要文件均在 `docs/validation/step18/`：
+- `pass2-training-roundN.json` / `pass2-training-regression-roundN.txt` / `pass2-training-roundN-console.txt`：逐ID、源/测试/runner/support/hash、依赖、F16和执行边界。
+- `pass2-training-preflight.txt`：新12项预检。
+- `pass2-training-preserved.json`：382既有历史文件hash。
+- `g0-pass2-training-coverage.json` / `g0-pass2-training-findings.json`：8份第二遍及F16，局部依赖阅读不冒充全文。
+- `pass2-training-toolchecks.json`及Node/JS/Python AST/repack日志、`pass2-training-environment.txt`。
+- `verify_pass2_training.py` / `pass2-training-progress-verification.txt` / `progress-pass2-training.json` / `pass2-training-run-manifest.json`：独立一致性检查；`progress-checks.json`更新当前检查点。
+
+所有产品Python源码AST解析是语法检查，不是Torch导入/执行。实际NumPy2.2.6、safetensors0.6.2，无Torch/Qwen/CUDA/rustc/cargo；没有扩大实际环境成绩至需求文件版本。
+
+## 6. 后续顺序
+
+全源第一遍53/53保持；第二遍现8/53，尚45份；第三遍仍0。下一批沿码/输入/产物/恢复链逐份重新全文读，再到分析/worker/网关/前端/工具/说明的跨层失败传播，不以局部grep或新增测试自动填满第二遍。
+
+原300建议最终处置/失败见证映射尚未签收。只有真正关键设计选择才按既定顺序另开题并给≥50行动建议，不预填Q28、不向用户索要Continue。G0未完成前不跳S1/发布；首可用DeepSeek prefix、更响受保护输出、更快真实首声/建档、generated-only PCM、自然连续、短参考相似度、双卡同等参数与声音、真实长数据训练、无沙沙及RTF≤0.3仍全部保留，当前未取得新的声学/性能证据。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_STATE.md
+
+# 第十八阶段 G0：全源第二遍第2批——数据、产物、恢复与认证
+
+日期：2026-10-23。分支：`arena/1160bd87-kagglee`。状态：**限定审计/回归完成，G0仍PARTIAL/BLOCKED；产品未改，缺陷未修，18包未发布。**
+
+## 1. 本批范围与真实覆盖
+
+沿已确定的G0计划继续，不重开问题、不新增问题28，不以测试通过代替源码三遍审查。新增第二遍全文语义阅读7份、1526行，读至各文件末尾；按分段输出核对首尾，无截断。登记脚本只依据该阅读事实、基线hash/行数更新台账，不从测试数量推导阅读覆盖。
+
+| 全文文件（`kaggle/source/py/`） | 行数 | 本次交叉复核重点 |
+|---|---:|---|
+| `voice_library.py` | 351 | 私有普通文件/no-follow、全局/库租约、revision与原始字节hash、snapshot/begin/finish、元数据原子替换及失败清理 |
+| `training_data.py` | 285 | 严格24k mono PCM16 RIFF边界、每样本文本与权利声明、不可变输入快照、manifest/audio/jsonl/rank_plan绑定、staging发布、读租约与删除 |
+| `training_codes.py` | 355 | 本地模型树fingerprint/安全JSON、CPU encoder提供包身份、schema2来源封存、逐row/code/audio验证、发布前复验、同OFD继承/adopt与失败关闭 |
+| `trained_profiles.py` | 155 | request/result/rank报告交叉核对、真实safetensors NumPy结构与hash、fixture/legacy声码拒绝发布、参考文本绑定、发布前二次pin验证、禁止Base/Mock静默回退 |
+| `persist.py` | 99 | profiles/active备份范围、上传与恢复分支、scope预检、候选切换与归档一致性、远端操作证据边界 |
+| `qtts_common.py` | 211 | JSON/日志、profile定位、tar路径预检与逐文件替换、输出增益配置边界 |
+| `access_control.py` | 70 | 默认认证目录不进入Notebook输出、token格式/权限/本地锁、仅本地同端口HTTP gateway转发 |
+| **合计** | **1526** | **7份第二遍全文** |
+
+另局部复查 `analyst.set_candidate` 原函数及既有测试fixture；**不计analyst第二遍全文**。测试文件的局部读取也不计产品源码覆盖。
+
+- 第一遍：53/53内嵌资产，13668行，保持不变；不是整个Git仓库全部文件已审。
+- 第二遍：上批8/1056 + 本批7/1526 = **15/53、2582行；剩38份**。
+- 第三遍：0/53。
+- 当前台账：`docs/validation/step18/g0-pass2-state-coverage.json`；历史台账和已发收据不重写。
+
+## 2. 依赖链、边界与保留合同
+
+1. 原始库保留原始字节与revision；训练输入按明确样本id/独立文本/显式权利确认生成新快照，不把库的建档记录当训练成绩。
+2. `canonical_wav`要求完整24kHz、单声道PCM16，至少1.5秒；训练路径每文件/累计上限还受`min(240, limits.seconds)`与`min(900, limits.total_seconds)`约束。可忽略合法非fmt/data chunk并重封装，但PCM不得被截短、重采样或悄悄换声。该严格入口**不是已经支持任意>10分钟单条录音训练**，分段、文本对齐与真实长数据训练仍未验收。
+3. 输入manifest pin、JSONL、逐WAV与rank_plan建立一致绑定；rank_plan只是数学分配计划，不是双GPU采样或优化器实际执行轨迹。
+4. 声码构建持输入租约，封存来源manifest/原始JSONL、独立复制PCM，逐条验证`ceil(frames/1920) × 16`个0..2047普通整数，完成后复验输入与整个staging，再rename发布。取消/IO失败必须清staging且释放输入租约，原库与输入不应被改写。
+5. schema2声码可脱离已删除原库/输入继续校验封存来源；这只证明本地来源/结构绑定。`test_fixture`即使完整封存、能取得读租约，也始终`test_only_codes`，tokenization/training/inference标记仍false；**租约不是训练准入许可**。
+6. `adopt_lease`要求继承同一个开放文件描述而非仅同inode；校验失败须关自己的dup，不能关调用方FD，也不能遗留额外OFD阻塞删除。本批实际flock/FD故障回路验证这一点。
+7. 训练产物检查会读取真实safetensors容器及NumPy数组、交叉检查rank报告/成员/摘要；本批使用合成权重与手工报告。**JSON里写了NCCL/optimizer已执行，不等于实际跑过NCCL/优化器**。发布还要求真实已准备声码、来源一致、显式未验收确认；无fallback合同必须保持。
+8. `_pack`只遍历profiles及active，不自动保存raw libraries/training_data/training_codes/training_runs或默认认证目录，也排除`_cal_`临时profile。因此当前Dataset备份**不是完整训练工程/权重恢复方案**；不能许诺跨Kaggle会话完整恢复训练。profiles内参考/转写本身仍属敏感数据；不能把“排除训练目录”说成备份无隐私内容。
+9. tar scope/path/type预检拒绝越界与链接；实际落盘是逐文件临时文件+replace，**不是整个状态目录事务**。第一批已记录第二成员IO失败部分提交；本批未修，不能冒称恢复原子性已验收。
+10. 默认auth目录以state路径摘要隔离、位于临时目录；重复provision保留同一token、目录0700/文件0600。只向精确本地gateway端口HTTP附加token，不传给不同端口worker、外部host或userinfo伪装host。测试只用临时生成token/固定合成token，不向远端发请求、不输出token值。
+
+F01（旧`qwen-tts`元数据查询与HF提供包不符）和F16（额外后代持OFD退出清理）仍未修。此次完整复读不改变其既有证据边界。特别是未重新运行已缺失upstream cache依赖的独立真实wheel-provider六案例，不用当前fixture替代该历史证据。
+
+## 3. 新实证 F17：备份与候选切换交错，恢复后引用缺失锚点
+
+**确认未修；不是猜测、不是修复后的绿色测试。**
+
+源位置：`persist.py:27–36`、`analyst.py:1067–1082`，以及`qtts_common.extract_tar_safely`的逐文件恢复。`_pack`递归`tarfile.add`没有与profile候选切换共享一致性屏障/不可变版本快照。
+
+确定性步骤（每轮均重建独立临时状态）：
+
+1. 准备合成PCM WAV候选0/1，当前profile指向`anchor_0.wav`，尚无`anchor_1.wav`。
+2. 原`_pack`递归归档profile，tarfile已经枚举该目录的现有文件名。
+3. 在已打入`anchor_0.wav`、尚未读取后面的`profile.json`时，由serializer hook运行**原`set_candidate`函数体**，切换index=1：真实`shutil.copy`生成新锚点，真实原子JSON替换更新anchor/ref_text。只有admission/worker reload是明确fixture；不执行模型。
+4. live profile及其新锚点完整存在，且锚点字节等于候选1。
+5. tar按先前枚举的文件名继续打包，读到新的`profile.json`，却不会追加刚创建的`anchor_1.wav`。
+6. 用原`extract_state_members`和`extract_tar_safely`实际解包不抛异常；恢复的profile指向`anchor_1.wav`，文件不存在。
+
+这证明本地并发可达的备份一致性缺口；并未调用远端Kaggle snapshot/restore、未跑完整HTTP竞争/线程压力、未证明用户现有Dataset损坏、未运行Worker模型加载，也不把它当用户沙沙/低响度根因。测试不是修改产品来制造失败，只在原函数间控制交错时机。
+
+三轮观察收据均包含F17的live-anchor-present与restored-anchor-missing真值；旧F16亦保留在本轮观察收据中。新增finding只登记F17，不重编号、覆盖历史问题或300条原始建议。
+
+后续修复方向（**尚未实施/未作新设计签收**）：需在G0完成后比较与候选变更共享profile级锁、从不可变版本打包、以及发布前自校验/重试；恢复要验证profile引用/版本，并明确整体事务与失败回滚政策。不能仅补齐这次漏掉的文件名或忽略缺失锚点。
+
+## 4. 新增12项边界：11保护 + 1原缺陷观察
+
+文件：`kaggle/tests/test_pass2_state_boundaries.py`。
+
+| # | 检查 | 结果含义 |
+|---:|---|---|
+| 1 | 封存第二文件写失败，清staging、释放输入租约、原库/输入不变且可重试 | 保护 |
+| 2 | 最终发布rename失败，回滚staging且可再次构建 | 保护 |
+| 3 | encoder返回后立即取消，只执行一条fixture编码且不发布 | 保护 |
+| 4 | adopt校验期间封存来源损坏，失败关dup而不关parent FD，parent释放后可删除 | 真实FD/flock保护 |
+| 5 | 原库和输入删除后，封存来源仍可验证；所有fixture执行/训练标记仍false | 保护，不是训练 |
+| 6 | 38400/38401帧按20/21码帧、0/2047边界，拒bool/浮点/字符串/越界及少帧 | 结构保护，不是编码精度 |
+| 7 | 合法odd-sized JUNK chunk重封装，全部36000个PCM样本逐字节不变 | 合成WAV保护 |
+| 8 | pack只收profiles/active，排除校准临时目录、raw库/数据/训练/认证目录，不运行远端命令 | 备份范围保护 |
+| 9 | 目标已有指向恢复根外的symlink，完整预检后拒绝，前面合法成员也不写入 | 安全预检保护，不是IO故障整体回滚 |
+| 10 | 默认auth按state隔离、位于state外、稳定token与0700/0600权限 | 本地临时认证保护 |
+| 11 | 仅local gateway同端口HTTP附header，异端口/外部host/https/userinfo伪装不附 | 转发保护，无网络请求 |
+| 12 | 打包与原候选切换确定性交错后，解包profile引用缺失锚点 | **F17观察通过=确认缺陷，不是已修** |
+
+预检首次1项error来自**测试提取器保留了HTTP注册装饰器**导致`app`未定义；11项已过。修正测试提取为只去装饰器、原函数体不变后12/12通过。保留`pass2-state-preflight-attempt1.txt`失败原日志及最终`pass2-state-preflight.txt`；未修改产品以绕过预检，不隐去失败。
+
+## 5. 三独立轮专项回归
+
+runner：`docs/validation/step18/run_pass2_state.py --round N`，N=1、2、3；独立Python进程，依次执行，临时状态隔离。
+
+组成：上批219项 + 本批另选既有`test_training_data`19、`test_training_codes`33、`test_code_provenance`21、`test_qwen_compat`20（共93）+ 新12 = **324项/轮**。按逐测试ID去重、保留顺序与hash。
+
+| 轮次 | tests | failures | errors | skipped | 结果 |
+|---|---:|---:|---:|---:|---|
+| 1 | 324 | 0 | 0 | 0 | PASS |
+| 2 | 324 | 0 | 0 | 0 | PASS |
+| 3 | 324 | 0 | 0 | 0 | PASS |
+| **合计** | **972** | **0** | **0** | **0** | **专项通过，非产品验收** |
+
+覆盖包含原始库、合成PCM/JSONL、来源封存、CPU真实子进程/取消/租约、显式HTTP/模型替身、实际本地HTTP、真实NumPy/safetensors解析，以及本批实际tar/文件操作。套件中已有故障注入会打印预期异常；正式结果以逐ID收据为准，不把console出现的fixture traceback当未捕获套件错误。
+
+保存每轮`pass2-state-roundN.json`、`pass2-state-regression-roundN.txt`、`pass2-state-console-roundN.txt`，含53源、测试/runner/support hash、依赖版本、逐ID结果、观察和真实性标记。
+
+**不包含**实际Torch算子/optimizer/GradScaler/Gloo/NCCL、真实Qwen声码、权重训练、GPU/双T4、用户WAV/相似度/去沙沙/自然连续朗读/物理声卡、DeepSeek真实prefix首声或提速测量。NumPy2.2.6不等于生产requirements2.4.6；Rust缺工具链，未编译或执行。此次未重跑独立旧CLI四矩阵、Go race/完整Go协议、Chromium全量、14分析AST/12 DSP独立矩阵或缺缓存的provider六案例，不挪用历史数字充本轮成绩。
+
+## 6. 工具、冻结、证据与交接
+
+- 本批`npm test`：Node30/30；`npm run check`：PASS。
+- Python AST：全部产品Python及本批test/runner/advance/verifier/refresh共38份：PASS。
+- `kaggle/repack.py --check`：PASS，确定性包内容一致。
+- 新校验器：`docs/validation/step18/verify_pass2_state.py`，检查当前覆盖、324×3逐ID/观察/hash、原300建议与Q25–27各50、冻结与完整交接内嵌；不重签旧检查点。
+- 原53源、94冻结hash、正式15文件和正式revision保持，历史handoff保持；本批开始408份历史证据hash保留；上批382清单及其后产物仍在。
+- 新run manifest冻结本批输入/报告/收据/日志/校验器/交接hash；进度输出为`progress-pass2-state.json`和当前`progress-checks.json`，自引用输出不纳入自身manifest。
+- 新完整报告加入交接，累计**73份备忘录全文**。`handoff-progress.json`记录实际字节数与SHA256；嵌入原文逐份核对，不在本报告预填循环依赖hash。
+- `git diff --check`须通过；不提交或推送也能保存当前分支工作。
+
+## 7. 下一步与未签收门禁
+
+继续剩38份第二遍，优先模型provider/voice binding/worker/分析API间的版本、失败、取消与参考贡献链；补齐全53份第三遍、300条建议的最终处置/失败见证映射，再按既定S1–S8顺序实施。当前已确认F01–F17及旧边界/专题问题按各自证据保留，不能因专项绿色而消除阻塞。
+
+不改冻结17/正式工作台/空白文件与浏览器复制行为，不发布18包，不默认融合prompt列表、添加参考PCM、切向量策略或强滤波；不提前打开Q28，不要求用户点击Continue。>15秒/极长录音、<10秒相似度、>10分钟真实训练、双GPU等效参数、generated-only播放、DeepSeek首可用prefix即生成、更响受保护输出、更低创建/首声延迟、安全/取消/隐私/冻结版本等要求均未撤销，仍需分层实证。整体保持**PARTIAL/BLOCKED**。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_INFERENCE.md
+
+# 第十八阶段 G0：全源第二遍第3批——provider、参考绑定与推理生命周期
+
+日期：2026-10-23。分支：`arena/1160bd87-kagglee`。
+
+**本批限定审计完成；产品未改、缺陷未修、G0仍PARTIAL/BLOCKED，无18发布包。** 专项通过不是完整功能、真实模型、训练或声学验收。
+
+## 1. 全文阅读和进度
+
+| 文件（`kaggle/source/py/`） | 全文行数 | 第二遍复核重点 |
+|---|---:|---|
+| `qwen_compat.py` | 97 | HF/旧发行包命名空间、现代/旧RoPE配置、registry身份与幂等、失败分类和smoke边界 |
+| `voice_binding.py` | 60 | 跨语言domain与长度前缀、生成参数规范化、参考文件类型/预算/no-follow、绑定的能力边界 |
+| `worker.py` | 680 | GPU准入、模型/提示缓存、版本检查与锁、取消/错误/终态、generated-only播放、统计和ASGI生命周期 |
+| `clone_stream.py` | 126 | 条件模式、生成码与参考码隔离、有限左上下文/右lookahead、提交位置、finish与生成器清理 |
+| `adapter_engine.py` | 108 | Base/adapter绑定、磁盘profile重读、适配器选择提交、真实句缓冲语义、取消与PCM验证 |
+| **新增合计** | **1071** | **5份重新全文语义阅读** |
+
+worker按1–170、171–340、341–510、511–680逐段完整复读；其余四份完整输出。上述源输出无截断。测试/调用点的局部查看不计其他产品文件第二遍；分析API全文留在下一批，不以测试经过API路径代替全文覆盖。
+
+- 第一遍：53/53内嵌资产、13668行，保持；不是整个Git仓库所有文件已审。
+- 第二遍：上批15/2582 + 本批5/1071 = **20/53、3653行，剩33份**。
+- 第三遍：0/53。
+- 当前覆盖：`docs/validation/step18/g0-pass2-inference-coverage.json`。既往台账/报告/收据保持历史意义，不重签。
+
+## 2. 语义链与必须保持的合同
+
+### 2.1 provider / RoPE / 实际运行边界
+
+桥先根据发行包元数据选择HF路径，拒旧`qwen-tts`与`qwen-tts-hf`同命名空间并存，以及已加载兼容模块却无HF元数据的状态。对现代default配置，从实际`rope_parameters`取theta/partial factor，复制config后委托已识别的原initializer，不猜默认theta、不修改权重、不全局覆盖其他registry项；未知schema、非法范围、registry漂移必须拒绝。
+
+桥强制比较HF/Transformers组合；Faster版本虽收集进versions，桥本身未逐项对照其PINS。**此处仅记录源码观察，尚需完整启动/安装/preflight政策链反证，不升级为已证生产故障。** 新registry保护使用明确上游函数fixture，不是实际Transformers/Mimi数值运算；旧真正wheel/config实验保留历史证据，当前未重跑。
+
+`RealEngine.load`要求单可见CUDA设备和允许的dtype；T4不能把软件BF16支持当原生能力，FP32只可显式准入。warmup/sanity是运行门禁，不是声纹、逐字正确或质量验收。新测试不执行这些模型步骤，不把`model_loaded`字段或mock health当GPU证明。
+
+### 2.2 绑定、缓存与加载
+
+reference pin由domain、参考原始字节、参考文本、语言与四个规范化生成参数组成；显示名称、quality和未选候选不纳入这个内容pin。它**不是认证、候选贡献评分，也不单独绑定trained adapter权重**。训练后端另有binding/manifest/Base交叉检查，不能拿普通参考pin代替适配器绑定。
+
+文件打开含no-follow/nonblock，先fstat确认普通文件与1..64MiB，再有界读取。空/超预算/FIFO拒绝；本批FIFO在真实短子进程中验证，超时会由subprocess.run定向清理，不依赖“当前没卡住”的猜测。
+
+Worker持同一锁读取磁盘profile、验证session模式/内容pin、提取prompt后二次检查，再提交worker profile/binding；不得在锁外先抓旧快照，不得先发静音或参考PCM掩盖错误。新测试验证初次提取期间参考变化会拒绝且不登记worker绑定，**不宣称engine内部prompt已事务回滚**：F08仍未修。
+
+### 2.3 生成、generated-only与指标
+
+Faster路径把参考码仅用于talker conditioning，GeneratedCodecWindow只接生成码；16组、24kHz、1920样本/帧、25帧左上下文与默认0右lookahead合同不变。窗口保留/提交/finish需要真Torch与实际codec进一步证明；本批全文复核不等于执行了Torch张量或预训练codec。
+
+RealEngine迭代器在消费方close或采样率错误时应调用下游close；新检查使用有限PCM重放迭代器及仅`manual_seed`的显式模块fixture，不安装Torch、不模拟Tensor/算子，不测生成性能。实际目标text与参考text分离、参考PCM不拼接的既有保护继续回归。
+
+Worker只产生规划静音，不插入参考呼吸；trimmer/leveler旧短块/短尾问题保留。`model_first_chunk_ms`是引擎首数组到达，`first_chunk_ms`是DSP后首PCM，不是浏览器或声卡首声。speech_samples、flush、规划暂停与端到端首声不得混算；EMA、rtf_target字段不证明RTF≤0.3。
+
+排队取消验证只覆盖未读取profile、未启动引擎、未释放他人持锁以及唯一stats/None收尾。**锁等待/刚取得锁时的提前返回目前缺少cancelled标志**，不以这项所有权保护签收取消终态语义；列为后续矩阵观察。
+
+### 2.4 训练后端
+
+AdapterEngine每次选择重读受预算/no-follow保护的磁盘profile，比较trained binding，检查Base/adapter/codes pin与speaker维度，准备并提交adapter。不得静默回退到Base/Mock。新测试执行真实文件访问与原`_profile_now`，拒重绑定、删除、symlink和超预算，失败不改变key/prompt；没有执行模型加载、adapter张量提交或真实推理。
+
+该后端明确**整句缓冲**：官方generate返回完整单条波形后才yield，取消只能通过StoppingCriteria/返回后检查配合，不能抢占CUDA kernel或codec。不能把它的一个yield切成假块就宣称原生声学流式、真实首声提速或双GPU一致。
+
+## 3. 新实证 F18：正文开始前断连，没有传递取消到已启动生产线程
+
+**确认未修。** 源位置`worker.py:650–674`：`synth`在返回StreamingResponse前启动生产线程；cancel只在内部async generator的finally中设置。若正文生成器尚未第一次进入，关闭这个未启动的生成器不会执行其finally。
+
+两条真实Starlette响应控制流，各独立三轮：
+
+1. **ASGI 2.4**（纳入每轮336项）：真实原`synth`启动明确CPU生产线程；真实StreamingResponse发送`http.response.start`时，send fixture抛断连OSError。原响应抛ClientDisconnect，正文未开始。再显式aclose body iterator，生产cancel仍未设置，线程仍等待。
+2. **ASGI 2.3**（独立companion probe）：真实响应在发送响应头的await期间暂停；receive fixture随即返回`http.disconnect`。真实响应task group退出/取消header发送任务，正文仍未开始；生产cancel仍未设置，线程仍等待。
+
+所有实验finally只设置自己创建的cancel并join自己创建的生产线程，验证其退出；没有留下后台等待线程。使用实际安装的Starlette1.9.0，收据包含版本和responses模块hash。ASGI send/receive时机与生产工作负载明确fixture；**没有实际TCP/浏览器断连、模型生成、显存增长或Kaggle线上故障证据**。不把它认作用户噪声根因，也不保证所有服务器版本都走相同分支。
+
+它补足旧测试“已取到首PCM再aclose”的盲区：旧测试仍通过，但不能覆盖首次迭代前断连。与F07无界队列不同，本项证据是**取消所有权缺失**，不以有限CPU实验声称测出了无限内存或GPU泄漏。
+
+F18登记在`g0-pass2-inference-findings.json`；F01–F17与其他历史边界/专题发现保留，不被绿色观察测试消除。后续方向需比较响应全生命周期清理、生产者启动时机、取消令牌和有界队列的联合所有权；**尚未实现或作新设计定案**，不能只补测试里的断连分支。
+
+## 4. 新12项边界：11保护 + 1原缺陷观察
+
+文件：`kaggle/tests/test_pass2_inference_boundaries.py`。预检12/12通过，无失败/错误/跳过。
+
+| # | 检查 | 证据边界 |
+|---:|---|---|
+| 1 | generation默认值等价、合法int/float规范化、无关元数据排除及非法边界拒绝 | 原Python pin/编码函数 |
+| 2 | 空参考与64MiB+1稀疏文件拒绝 | 真实fstat/文件，不分配大数组 |
+| 3 | FIFO无writer仍能及时拒绝 | 真实CPU子进程/系统FIFO，有超时清理 |
+| 4 | 排队取消不读profile/调用engine，不释放他人持锁，仅一次stats/None | 真实锁/线程；不验收cancelled标志 |
+| 5 | 初次提取中参考改变，拒绝并不登记worker profile/pin | 原Worker + 文件；提取回调fixture，不代表F08修复 |
+| 6 | RealEngine采样率错误仍关闭重放迭代器一次 | 原stream + 明确manual_seed/PCM重放fixture |
+| 7 | 消费方关闭时下游close一次、seed掩码保持 | 同上；不执行真实codec |
+| 8 | 无prompt时不创建生成迭代器 | 同上；无模型 |
+| 9 | RoPE桥不改其他registry/原config，原异常和参数传递保持 | 原桥 + 明确initializer fixture |
+| 10 | trained磁盘binding变化/删除拒绝，恢复原文件后可读 | 原AdapterEngine._profile_now + 文件 |
+| 11 | trained profile symlink/超预算拒绝，key/prompt未变 | 同上；无adapter加载 |
+| 12 | ASGI2.4响应头阶段断连后取消未传给生产线程 | **F18观察通过=确认缺陷，非修复** |
+
+ASGI2.3补充脚本：`docs/validation/step18/probe_pass2_inference_asgi23.py --round N`，不塞进336项、也不冒充另一轮完整回归。
+
+## 5. 三独立轮与真实性
+
+runner：`docs/validation/step18/run_pass2_inference.py --round N`，独立Python进程、独立临时状态，完整专项轮依次执行。组成：上批324 + 新12 = **336项/轮**，逐ID去重、原324顺序保持。
+
+| 轮次 | tests | failures | errors | skipped | 结果 |
+|---|---:|---:|---:|---:|---|
+| 1 | 336 | 0 | 0 | 0 | PASS |
+| 2 | 336 | 0 | 0 | 0 | PASS |
+| 3 | 336 | 0 | 0 | 0 | PASS |
+| **合计** | **1008** | **0** | **0** | **0** | **限定专项，不是全功能验收** |
+
+另ASGI2.3 companion独立三轮，各1项观察通过；不计入1008。每轮正式收据保留逐ID、53源/测试/runner/support hash、依赖版本、F16/F17/F18观察真值和真实性标记。历史F16额外后代最后定向清理/锁释放、本批F18生产线程退出均实际检查。console里的故障注入异常不是未捕获套件错误，结果以逐ID收据为准。
+
+既有真实本地HTTP/文件/flock/子进程、NumPy与合成safetensors测试本轮重跑；新ASGI断连是进程内事件，不冒充socket断连。没有真实Torch算子、optimizer、GradScaler、DDP/Gloo/NCCL、Qwen/Faster模型/编码、训练、双T4、Rust编译/执行、用户音频、声纹/沙沙/自然连续听感、DeepSeek真实prefix或物理声卡/性能测量。
+
+## 6. 环境、工具与冻结
+
+本轮开始发现`.venv`及其CPU依赖未保留。首次探测命令出现`.venv/bin/python: No such file or directory`，**不是测试失败或产品缺陷**；随后重建隔离venv，固定NumPy2.2.6、safetensors0.6.2、FastAPI0.156.4、Starlette1.9.0、httpx0.28.1、requests2.34.2、soundfile0.14.0、uvicorn0.34.0、python-multipart0.0.20。安装日志与完整pip freeze保留；未承诺全部传递依赖与旧环境完全相同，以当前environment/freeze为准。没有安装Torch/Qwen、Rust或Go；NumPy版本仍不等于生产requirements的2.4.6。
+
+- Node30项、JS check、产品Python与本批test/runner/advance/verifier/probe/refresh共39份AST、repack一致性：检查日志单列。
+- 本批开始435份历史证据hash保留，53源/94冻结/15正式文件及正式revision不变，旧handoff保持。没有18包。
+- 新校验器`verify_pass2_inference.py`核对当前20/53覆盖、336×3逐ID/观察/hash、ASGI2.3 companion三轮、旧300建议/Q25–27各50、冻结和完整内嵌交接。
+- 当前`progress-pass2-inference.json`与`progress-checks.json`保存结果；新manifest覆盖本批输入/日志/收据/报告/校验器/交接，排除自引用进度输出。
+- 交接新增此完整报告，累计**74份备忘录全文**，实际字节/SHA在`handoff-progress.json`，逐份内嵌原文核对，不在报告预填自引用hash。
+- `git diff --check`作为最终检查；本轮未重跑独立旧CLI四矩阵、完整Go/race/协议、Chromium全量、14分析AST/12DSP或需要缺失upstream cache的真实provider六案例，不挪用历史数字。
+
+## 7. 下一步与未签收门禁
+
+下一批复读分析/API及参考切分，核对provider版本政策与启动/worker/会话间失败、取消、参考贡献和校准版本链；继续剩33份第二遍、全53份第三遍和300条建议最终处置/失败见证映射，再按既定G0→S1–S8实施。新发现不等于已有纠正，当前不绕过G0修产品、不新增问题28、不要求Continue。
+
+保持冻结17、正式工作台空白文件/用户粘贴/完整浏览器复制；不盲目prompt列表融合、改向量策略、强滤波或拼入参考PCM。>15秒/极长录音、<10秒相似度、>10分钟真实训练、双GPU等效参数、generated-only、DeepSeek首可用prefix即生成、更响受保护输出、更低创建与实际首声延迟、安全/取消/隐私/版本冻结等要求均未撤销，仍须真实分层证据。整体**PARTIAL/BLOCKED**。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_ANALYSIS.md
+
+# 第十八阶段 G0：全源第二遍第4批——分析/API、参考切分与校准所有权
+
+日期：2026-10-23；分支：`arena/1160bd87-kagglee`。
+
+**本批限定审计完成，产品未改、缺陷未修；G0仍PARTIAL/BLOCKED，无18包。** 三轮专项通过不等于全功能、真实训练/模型/双GPU或声学验收。
+
+## 1. 本批全文与累计覆盖
+
+| 文件（`kaggle/source/py/`） | 全文行数 | 第二遍语义重点 |
+|---|---:|---|
+| `analyst.py` | 1211 | decode/清洗/ASR/候选/质检/建档/校准/重载/一致性/HTTP；版本和失败记录、临时资源与准入所有权 |
+| `library_api.py` | 163 | 严格JSON/上传校验、共享admission、库租约与线程handoff、最终结果提交和错误脱敏 |
+| `reference_segments.py` | 106 | 可信词级分区、实际PCM窗口重识别、时间戳偏移、低能量边界、短尾与可选词信息 |
+| **合计** | **1480** | **新增3份重新全文语义阅读** |
+
+analyst逐段1–200、201–400、401–600、601–800、801–1000、1001–1211完整复读，另两份完整输出，各源输出无截断。测试和resource_limits局部调用点复查不新增源码全文信用；不把经过函数的测试计作第三遍阅读。
+
+- 第一遍：53/53内嵌资产、13668行，保持；不是整个Git仓库所有文件已审。
+- 第二遍：上批20/3653 + 本批3/1480 = **23/53、5133行，剩30份**。
+- 第三遍：0/53。
+- 当前台账：`docs/validation/step18/g0-pass2-analysis-coverage.json`，旧台账/收据作为历史保留。
+
+## 2. 原始参考实际贡献：统计、候选、conditioning不可混为一谈
+
+复读确认的现有路径，不是新增融合算法或最终需求签收：
+
+| 阶段 | 实际使用/记录 | 不能声称 |
+|---|---|---|
+| 输入/清洗 | 按文件解码、有限时长/总量/有限数值检查，记录原始RMS/peak、估计SNR、清洗决策与低输入警告 | 截图能定噪声根因；归一化等于去噪 |
+| ASR/对齐 | 单文件不超anchor limit的手工文本可直配；长手工文本不强行配给短候选，依时间戳/实际窗口ASR | ASR文字是人工真值；长录音全部作为模型prompt |
+| 候选评分 | 从可信片段组合窗口，预排后最多24个候选做embedding/评分，再选最多3个非近重复候选落盘 | 每个可能窗口都已评估；每个输入在最终prompt中的贡献都有独立可追溯权重 |
+| centroid | 分析说话人空间中候选embedding均值用于典型性/质量评价，存centroid.npy | 这是Qwen条件嵌入融合，或ECAPA/MFCC可直接代替Qwen向量 |
+| conditioning | 实际选定一个anchor与匹配ref_text供Worker加载；其余候选可切换/校准 | prompt列表自动融合三参考；统计参与等于模型conditioning参与 |
+| 韵律/呼吸 | 全部可用clips/words参与部分韵律统计并保存候选呼吸文件；Worker参考呼吸播放仍禁用 | 可以拼入参考PCM来改善相似度或提前首声 |
+| 校准 | 遍历已保存候选，在worker0用固定目标文本/seed合成后评分，最后重载 | 已测全部输入/全部窗口；双卡声学等效；质量/RTF已达标 |
+
+`quality.reference_context`明确`all_audio_used_as_model_prompt=False`、`model_trained=False`，必须保留。默认16秒/24秒实验入口不变。上传配置允许长录音与训练数据入口每文件240秒的上限不是同一合同；本批17秒合成建档和既有20分钟时间戳规划测试**不是>10分钟真实音频转写、实际训练或全数据覆盖验收**。
+
+`estimate_snr`仍是帧能量分位差，不是真值SNR；SpeakerModel可降级MFCC代理，ASR可降级CPU small，必须保留实际方法/能力披露，不把代理分数当声纹认证。`fidelity_index`是内部加权指标而非相似度百分比。ASR失败默认CER0.05、校准旧版本覆盖/失败重载/全合成失败选择、consistency按GPU使用不同seed等既有专题问题仍保留，未修、未重编号为新发现。
+
+## 3. 新实证 F19：同一档案并发校准争用临时目录，并覆盖成功记录
+
+源：`analyst.py:886–936、1085–1096`。**确认未修。**
+
+校准临时id为`_cal_{pid}_{candidate_index}`，没有每调用独立标识或同档案互斥；共享HEAVY默认可接受两个操作。测试用两个真实进程内ASGI POST `/profiles/voice/calibrate`、原HEAVY(2)、原calibrate_profile、实际文件复制/JSON/rmtree，以及原Mock Worker.load_profile控制流，安排如下交错：
+
+1. A创建`_cal_voice_0`，真实Mock Worker完成加载，A停在明确的合成替身回调。
+2. B也为同一档案创建/写入`_cal_voice_0`，进入重载回调等待A完成。
+3. A继续完成合成替身评分，在原finally中删除共享临时目录，提交成功的校准记录并返回。
+4. B随后通过原Worker.load_profile读取该临时档案，真实文件已经不存在，返回找不到档案的错误；B得到score=-9的候选错误结果。
+5. B把自己的错误校准记录覆盖A的成功记录。两个ASGI请求都返回HTTP200；最终记录是后来的失败结果。
+
+每轮核对A的成功分数、B的缺失档案错误、仅A进入合成替身、最终记录等于B结果、临时目录清空和两个HEAVY槽位均释放。A/B按事件建立确定性交错，非概率压力测试；HTTP是ASGITransport进程内调用，worker transport、合成、ASR、说话人模型明确fixtures，仅一个Mock Worker角色，不是真双卡/真实网络/模型/音色实验。fixture分数不作为成绩。
+
+F19不是“任意陌生用户可攻击”证明；它确认已准入的同档案校准操作缺少隔离与结果版本归属。全失败候选仍返回chosen等现象已有历史专题证据，这次新增裁决的核心是**两个原校准请求共享临时资源并相互清理/覆盖结果**，不是重复报旧问题。
+
+## 4. 新实证 F20：档案在重载期间删除，最终仍报告成功/已保存
+
+源：`analyst.py:388–412`。**确认未修。**
+
+`load_on_workers`先取profile和expected pin，再收各worker回执；最终仅在`current`存在且pin变化时拒绝。如果目录在重载回调期间删除，`load_profile`返回None，最终复核条件被跳过，旧的成功回执原样返回；原reload_response据此生成HTTP200、`ok=True`、`reference_saved=True`。
+
+测试真实创建/删除临时档案、执行原helper与JSONResponse；worker成功回执明确fixture，没有合成。每轮验证目录实际不存在、回执仍全部ok、响应仍200/已保存。
+
+**没有验证删除后可继续播放旧声，也不是激活或认证绕过证明。** 非Mock Worker后续合成仍有缺失profile拒绝门禁；本项是重载最终状态与事实不符，不能拿此成功回执作为已删除档案可用/已保存的签收。
+
+F19/F20分别单列新finding，原F01–F18及原始300建议/历史专题不覆盖。后续方向需比较同档案操作串行化、不可变版本/CAS提交、临时资源单调用所有权，以及重载终检把不存在视为失效；**尚未实施或作新的设计定案**。不能只换临时目录名而忽略最终结果归属、取消、删除与版本事务。
+
+## 5. 新增12项：10保护 + 2原缺陷观察
+
+文件：`kaggle/tests/test_pass2_analysis_boundaries.py`。预检12/12通过，失败/错误/跳过0。
+
+| # | 检查 | 真实性/限制 |
+|---:|---|---|
+| 1 | 重载拒503、非布尔ok、错误pin、错误回执形状 | 原load helper；worker回执fixture |
+| 2 | 重载终检参考文本版本变化，所有回执改为失败 | 原helper、实际JSON/内容pin |
+| 3 | training-data嵌套重复JSON字段在准备前拒绝 | 真实FastAPI/TestClient；不执行训练 |
+| 4 | 库处理非法Unicode/非bool校准标记/16.0上下文在租约前拒绝 | 真实路由与校验；begin未调用 |
+| 5 | CPU ASR惰性迭代错误向上抛出，不默默变成功或重试模型 | 原ASR控制流，明确metadata iterator fixture，无Whisper |
+| 6 | 超16384字节embedding结果不进入构建缓存，不虚报hit | 原缓存、NumPy与speaker fixture |
+| 7 | 低能量边界切到15.3秒，实际PCM两窗口无重叠/遗漏、语言与时间戳正确 | 合成20秒PCM，ASR回调fixture |
+| 8 | 进度回调异常在窗口ASR前传播，源段/PCM保持不变 | 原prepare_segments；不等于有公开建档取消API |
+| 9 | 17秒长手工文本不覆盖短候选ASR文本，保留来源策略与非训练标记 | 原build函数/真实WAV/JSON；模型/信号分析明确fixtures |
+| 10 | 后台build声称done却给不安全profile id时不得提交库成功；原始样本保留、租约可再编辑 | 真实库/路由/BuildAdmission；build callback fixture |
+| 11 | 两个同档案ASGI校准共享临时目录，成功结果被错误结果覆盖 | **F19观察通过=确认缺陷，非修复** |
+| 12 | 重载期间真实删除档案，仍得到200/已保存 | **F20观察通过=确认缺陷，非修复** |
+
+library_api的begin+线程handoff同executor准入、后台结果有效profile检查、store.finish异常脱敏/租约清理仍需保持。HeavyAdmission用shield使HTTP等待取消不等于底层计算已取消；本批未把等待结束当ASR/合成停止，也未改其资源政策。既有F11窗口可选words清洗不一致、F12失败/残缺流被接受，三轮原测试仍复现未修。
+
+## 6. 三独立轮专项回归
+
+runner：`docs/validation/step18/run_pass2_analysis.py --round N`，N=1–3。组成：上批336 + 新12 = **348项/轮**；独立Python进程与临时状态，逐轮执行，按测试ID核对无重复且原336顺序保持。
+
+| 轮次 | tests | failures | errors | skipped | 结果 |
+|---|---:|---:|---:|---:|---|
+| 1 | 348 | 0 | 0 | 0 | PASS |
+| 2 | 348 | 0 | 0 | 0 | PASS |
+| 3 | 348 | 0 | 0 | 0 | PASS |
+| **合计** | **1044** | **0** | **0** | **0** | **专项通过，不是全功能验收** |
+
+每轮`pass2-analysis-roundN.json`及regression/console日志保存逐ID、53源/测试/runner/support hash、依赖版本、F16–F20观察和真实性字段。沿用测试中的F16额外后代退出/锁释放、F18自有生产线程退出，以及本批F19准入槽/临时资源清理均有断言；不是保存PID后向无关进程发信号。
+
+继承实际本地HTTP、CPU子进程/锁、NumPy/safetensors、WAV/文件/归档测试；F19新HTTP请求为进程内ASGI而非TCP。没有Torch真实算子、optimizer/GradScaler/DDP/Gloo/NCCL、真实Qwen/Whisper/ECAPA/Faster/codec、训练或双T4、Rust编译/执行、用户WAV、声纹/沙沙/自然连续听感、DeepSeek真实prefix、物理声卡或提速成绩。
+
+本轮未重跑独立ASGI2.3 companion（348中保留的是F18 ASGI2.4）；也未重跑独立旧CLI四矩阵、完整Go/race/协议、Chromium全量、14分析AST/12DSP及缺缓存的真实provider六案例。不挪用历史数字充本轮成绩。
+
+## 7. 工具、冻结、环境与完整交接
+
+- 本轮venv存在，未重新安装依赖；保存当前environment与pip freeze，核对freeze等于上批快照。不把版本列表一致泛化为全部运行环境/二进制绝对相同。NumPy仍2.2.6，与生产requirements2.4.6不同；无Torch/Qwen/Rust/Go运行证据。
+- Node30项、JS检查、全部产品Python加本批test/runner/advance/verifier/refresh共38份AST、repack一致性均检查并单列日志；最终`git diff --check`。
+- 本批开始470份历史证据hash保留；53源/94冻结hash/15正式文件、正式revision和历史handoff不变。无产品改动/18包。
+- 当前校验器`verify_pass2_analysis.py`核对23/53覆盖、348×3逐ID/hash/旧观察/两新finding、300原建议/Q25–27各50、冻结与完整内嵌交接，不重签旧检查点。
+- 当前结果`progress-pass2-analysis.json`、`progress-checks.json`；本批manifest封存输入/报告/日志/收据/校验器/交接，排除自引用进度输出。
+- 新报告加入交接，累计**75份备忘录全文**；实际字节/SHA在`handoff-progress.json`，逐份原文核对，不预填循环hash。
+
+## 8. 下一步与未签收要求
+
+继续剩30份第二遍，下一批优先完整启动/监督和backend preflight，核对provider版本、健康、启动失败/取消与进程所有权；随后其余前端、Go、DSP/工具/说明。再补齐全53份第三遍、300条建议最终处置/失败见证映射，按G0→S1–S8顺序实施，不以本批绿色越过G0。
+
+冻结17、正式工作台空白文件/用户粘贴/完整浏览器复制保持；不默认融合prompt列表、改向量策略、强滤波或拼入参考PCM。>15秒/极长录音、<10秒相似度、>10分钟真实训练、双GPU等效参数、generated-only、首个可用DeepSeek prefix即生成、更响受保护输出、更低创建/实际首声延迟、安全/取消/隐私/版本冻结等要求均未撤销，仍待真实分层验证。不新增问题28，不要求Continue。整体**PARTIAL/BLOCKED**。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_STARTUP.md
+
+# 第十八阶段 G0：全源第二遍第5批——启动、监督与 backend preflight
+
+日期：2026-10-23；活动分支：`arena/1160bd87-kagglee`。
+
+**本批限定审计完成，产品代码仍冻结，新增两项缺陷确认未修；G0仍为PARTIAL/BLOCKED。** 三轮专项通过不是全功能、真实模型/训练、双GPU、声学或性能签收，无18发布包。
+
+## 1. 全文阅读和真实进度
+
+| 文件（`kaggle/source/`） | 行数 | 第二遍语义重点 |
+|---|---:|---|
+| `py/bootstrap.py` | 451 | 所有权准入、版本安装、runtime probe先后顺序、命令超时/后代、下载与编译、监督启动与失败取消、访问控制/隧道 |
+| `py/supervisor.py` | 219 | GPU lease/FD、进程组、日志句柄、重试预算、健康/致命回执、停机、快照与标记所有权 |
+| `tools/backend_probe.py` | 200 | 静态与runtime surface区分、CUDA/API检查、隔离子进程/超时、报告预算/结构、原子写入与退出码 |
+| **合计** | **870** | **新增3份完整第二遍语义阅读** |
+
+bootstrap按1–155/156–310/311–451，supervisor按1–115/116–219，probe按1–105/106–200输出并全文复读，所有这些源文件输出无截断。之后相关函数、旧测试与provider控制流的局部核对不另增全文信用。
+
+- 第一遍保持：53/53内嵌资产、13668行；并非整个Git仓库全部文件。
+- 第二遍：23/5133 + 3/870 = **26/53、6003行，剩27份**。
+- 第三遍：**0/53**，不能把测试执行或局部复查计作第三遍。
+- 当前台账：`docs/validation/step18/g0-pass2-startup-coverage.json`；前四批台账/日志保持历史原样。
+
+## 2. 版本准入裁决：已验证的控制流与仍未签收的范围
+
+标准 `QTTS_TTS_ENGINE=faster` 启动链：
+
+1. 所有权检查在依赖安装与GPU启动前进行；默认必须看见两张GPU，显式单卡测试不等于双卡验收。
+2. 拒绝旧 `qwen-tts` 与HF同命名空间冲突。
+3. 对 `PINS` **每一项**检查metadata：Faster `0.5.4`、HF `0.1.1.post1`、Transformers `5.20.2`。已有任一漂移时调用精确pin安装，不是只检查模块能否import。
+4. `install_reviewed_faster` 要求平台Torch已存在，以临时constraints约束Torch及已存在的torchaudio/torchvision；传给pip时文件权限0600，退出后删除；安装后Torch版本改变会抛错。
+5. 运行隔离runtime preflight之后才进入后台模型下载、Go/Rust构建和监督启动。preflight失败不能当模型已加载。
+
+新增测试对“全部匹配”与“逐一漂移”分别运行原main至probe哨兵：应否调用精确安装均符合预期；下载未启动。安装测试实际创建/读取/清理constraints，核对精确命令与Torch改变后的拒绝。
+
+**限制：** metadata、pip、GPU数量、import和probe调用为明确fixtures；没有执行真实pip resolver、下载或GPU启动。因此只能确认上述控制流，不能说真实部署的所有版本已准入成功。通用/可选依赖安装后的resolver漂移、安装结果的完整再核对、独立入口和native-adapter路径仍待查。`qwen_compat`未单独拒绝Faster漂移，不能脱离标准bootstrap已有全pin预查直接定为标准启动缺陷；反过来也不能把预查测试当所有入口的终态版本证明。
+
+独立probe的成功仅为 `surface_preflight_passed`：metadata/API/CUDA形状检查，不是模型权重、prompt/codec、声学、RTF或双卡等效证明。没有因表面检查通过改变任何冻结版本。
+
+## 3. F21：leader退出而后代持有stdout时，命令超时失效
+
+源：`py/bootstrap.py:62–96`。**实际CPU进程/管道/计时器复现，确认未修。**
+
+`sh`逐行读取合并stdout，在读流结束后才wait；timer回调仅在直接子进程 `poll() is None` 时设置超时并killpg。leader已退出却有同组后代持有stdout时，回调跳过整组清理，读循环不能收到EOF，也不能抵达后面的超时判断。
+
+确定性实验，而非启动耗时或正常部署证明：
+
+1. 私有临时目录中的真实CPU leader启动一个睡眠后代，后代写出自己的pid/pgid并继承stdout。
+2. 自有wrapper用原Popen启动leader，并在返回原sh前等待leader退出；这是明确的Popen观察/调度包装，确保timer装好时leader已经退出，**不是完全未包装的自然竞态压力实验**。
+3. wrapper验证后代pgid属于该leader，并持有其pidfd；原sh使用0.1秒期限。
+4. 外部0.35秒等待仍超时，wrapper还在原sh读流中，后代pidfd尚未退出。证明该交错下请求的期限没有终止命令。
+5. 只通过自有后代pidfd发送KILL；退出可读断言通过，管道EOF后原sh返回0，未报告超时。
+6. finally定向终止/回收自有wrapper，后代pidfd退出验证并关闭。无按进程名/任意旧PID杀进程。
+
+这是独立于训练 `stop_ranks` 的F16调用点与行为：本项针对bootstrap命令的超时和管道EOF；没有声称正常run_rank、真实安装/模型下载已发生该问题，更不是显存泄漏证据。后续修复需要把进程组生命周期与leader退出状态解耦，并定义超时/取消/读流的有界清理；本批未实施。
+
+## 4. F22：致命回执写失败会跳过停机，失败计数每轮又清零
+
+源：`py/supervisor.py:147–170`。**原watch控制流复现，确认未修。**
+
+每次HTTP读取成功先把fail_count清零；worker报告fatal_error时，代码先写 `startup-failure.json`，再kill并设gave_up。如果写入抛OSError，直接进入通用except，未执行kill/gave_up，fail_count变为1；下次HTTP成功又归零。同样的致命错误与回执写失败持续存在，也达不到8次健康失败的重启门槛。
+
+测试执行原watch，使用真实STOP事件、8轮受控无睡眠wait；HTTP fatal健康、进程句柄和回执OSError均为fixtures，不制造真实磁盘故障，也不启动工作进程/GPU。started_at置于宽限期之外以排除宽限期影响。结果：
+
+- 8次回执写入尝试/异常；8轮循环。
+- kill=0、restart=0、gave_up=False、最终fail_count=1。
+- 没有成功落盘的startup-failure.json。
+
+本项不是“GPU实际无法停止”或磁盘故障概率证明，而是**持久化错误能阻断安全停机、并被错误计数策略掩盖**的原控制流证据。后续需比较独立停机与尽力写回执、不同错误计数归属等方案；尚未修改产品。
+
+## 5. 新增12项：10保护 + 2未修观察
+
+测试：`kaggle/tests/test_pass2_startup_boundaries.py`。预检12/12通过，未发生测试失败；日志 `pass2-startup-preflight.log`。
+
+| # | 合同 | 执行范围/限制 |
+|---:|---|---|
+| 1 | 每项冻结pin漂移触发精确安装；runtime probe先于模型下载 | 原main至哨兵；metadata/安装/设备/导入替身 |
+| 2 | 精确pip参数、平台Torch/audio/vision constraints、0600与清理 | 真实临时文件，pip替身 |
+| 3 | 安装后Torch改变拒绝，constraints仍清理 | metadata/pip替身；无真实Torch |
+| 4 | probe原子替换失败保留原报告并移除临时文件 | 原write_report，真实文件；replace OSError替身 |
+| 5 | 子报告超256KiB、坏JSON、checks坏形状均阻塞 | 原isolated_runtime、真实临时报告；子进程替身 |
+| 6 | 旧startup nonce失败记录不遮蔽当前活监督与健康回执 | 真实旧JSON；process/HTTP替身 |
+| 7 | 已关闭GPU lease不能启动模型角色 | 真实lease/锁；Popen未调用 |
+| 8 | Popen OSError关闭日志且不擅自释放监督拥有的lease | 原Proc.start、真实文件/锁；spawn异常替身 |
+| 9 | 丢弃过期重试，第7次近期重试give up、不再start | 原restart；kill/start替身 |
+| 10 | 流式90秒与句缓冲180秒严格越界才按停滞重启 | 原watch；health/restart与单轮wait替身，非真实等待 |
+| 11 | leader退出、后代持stdout导致超时失效 | **F21观察通过=缺陷存在**；真实CPU/pipe/pidfd，确定性交错 |
+| 12 | fatal回执I/O失败跳过kill且计数停留1 | **F22观察通过=缺陷存在**；原watch与明确fixtures |
+
+既有13项probe与监督/所有权保护继续纳入累计回归，不把已有正常killpg、旧标记或停止不重启用例重复报为新发现。F01–F20和原专题问题均保留。
+
+## 6. 三独立轮累计专项回归
+
+runner：`docs/validation/step18/run_pass2_startup.py --round N`；每轮独立Python进程/临时状态。上批348 + 新12 = **360项/轮**，逐ID不重复，原348顺序保持。
+
+| 轮次 | tests | failures | errors | skipped | 结果 |
+|---|---:|---:|---:|---:|---|
+| 1 | 360 | 0 | 0 | 0 | PASS |
+| 2 | 360 | 0 | 0 | 0 | PASS |
+| 3 | 360 | 0 | 0 | 0 | PASS |
+| **合计** | **1080** | **0** | **0** | **0** | **限定专项，不是全功能验收** |
+
+逐轮JSON/regression/console日志保留测试ID、源/测试/runner/support哈希、依赖、F16–F22观察及真实性字段。F21自有进程/pidfd、旧F16后代/锁、F18线程、F19临时资源/槽位均执行清理断言。日志中预期fatal/spawn等ERROR为故障注入，不能单凭日志级别当作测试失败。
+
+继承真实CPU进程/锁、本地HTTP、ASGI、NumPy/safetensors、WAV/文件/归档合同；没有执行完整bootstrap安装/下载/编译/启动、真实Torch算子/optimizer/Gloo/NCCL、真实Qwen/Faster/Whisper/ECAPA/codec、训练或双T4。本批未重跑独立ASGI2.3 companion、旧CLI四矩阵、全Go/race/协议、Chromium全量、旧14分析AST/12DSP或缺cache的provider六案例，不重签历史成绩。
+
+## 7. 封存、工具与交接
+
+- 沿用现存venv，无新依赖安装；environment与完整pip freeze已保存，freeze与第4批相同，不称所有二进制/运行环境绝对一致。NumPy2.2.6仍不同于生产requirements2.4.6；无Torch/Qwen/rustc/cargo/go。
+- Node30、JS检查、33份产品Python加本批测试及4个审计脚本共38份AST、repack检查通过，各有独立日志；最终diff检查不替代运行验证。
+- 497份历史文件逐SHA保留；53资产/94冻结哈希/15正式文件、原300建议初审、Q25–27各50项保持。未改原包、工作台、浏览器复制实现、安全/录音/取消或私有数据合同。
+- 封存验证器首次把两条新观察的追加顺序误认作编号顺序；unittest按测试名称执行，实际为F22再F21。仅修验证器按唯一ID核对，未改测试或产品、未重写三轮收据，原断言失败日志保存在 `pass2-startup-progress-verification-initial-failed.txt`；重验通过。
+- 当前验证器 `verify_pass2_startup.py`；当前覆盖/发现为 `g0-pass2-startup-{coverage,findings}.json`；`progress-pass2-startup.json`经验证后同步 `progress-checks.json`。本批run manifest绑定测试、审计脚本、日志、报告、PLAN/IMPLEMENTATION/交接等文件，不循环哈希进度输出。
+- `KAGGLE_STEP18_HANDOFF_PROMPT.md`更新为**76份完整备忘录**；具体字节数/SHA由 `handoff-progress.json`与当前progress收据校验，不把旧75份摘要冒充当前原文。
+
+## 8. 下一步和未签收需求
+
+继续第二遍剩27份，优先网关调度/流协议/取消/超时与前端完成排空跨语言交叉核对；随后补全全53份第三遍和300建议最终处置/失败映射。发现仍按原行为反证，不为凑数量另开问题28，不跳过G0实施S1–S8或发布18包，不要求点击Continue。
+
+相似度、无沙沙、自然连续、双卡同条件声学、真实首声/RTF≤0.3、更响且受保护输出、首个可用DeepSeek prefix立即生成、长录音真实训练/提速、全部候选贡献与generated-only PCM等要求均未撤销、未签收。没有用户WAV/真实模型/双T4/物理声卡实验，不能从截图归因或宣称已解决。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_GATEWAY.md
+
+# 第十八阶段 G0：全源第二遍第6批——网关调度、流协议、取消与激活终检
+
+日期：2026-10-23；活动分支：`arena/1160bd87-kagglee`。
+
+**本批限定审计完成，产品代码未改，新增F23/F24确认未修。G0仍PARTIAL/BLOCKED，无18包。** 专项测试通过不等于全功能、真实DeepSeek/Qwen、双GPU、训练、听感或提速签收。
+
+## 1. 全文与累计覆盖
+
+本批全文均位于 `kaggle/source/go/gateway/`：
+
+| 文件 | 行数 | 第二遍语义重点 |
+|---|---:|---|
+| main.go | 478 | speak生命周期、上下文/注册、激活回执与最终状态、代理脱敏、路由/健康/预检 |
+| scheduler.go | 490 | 队列优先级、取消清理、重试与已消费PCM、worker帧、停滞watchdog、健康与RTF估计 |
+| session.go | 692 | binding/条件、遥测与水位、逐delta生产/结束flush、顺序转发/END、失败与指标 |
+| segmenter.go | 489 | exact/live/read策略、首prefix、词/小数/引号边界、段间暂停和呼吸元数据 |
+| llm.go | 137 | 请求参数/认证、逐行SSE、完成/错误判定、上下文取消 |
+| **合计** | **2286** | **新增5份完整第二遍语义阅读** |
+
+scheduler先完整1–240、再241–490；session分1–240/241–480/481–692；main分1–155/156–320/321–478；segmenter分1–245/246–489；llm完整1–137。以上产品源输出无截断。旧测试/安全函数等调用点仅局部核对，不记额外全文信用；编译全部Go文件也不等于其余测试文件已完成第二遍。
+
+- 第一遍保持53/53内嵌资产、13668行；不是整个Git仓库所有文件。
+- 第二遍：26/6003 + 5/2286 = **31/53、8289行，剩22份**。
+- 第三遍：**0/53**，测试经过不补第三遍信用。
+- 当前台账：`docs/validation/step18/g0-pass2-gateway-coverage.json`。
+
+## 2. F23：HTTP503的健康响应被计为可用，网关回执报告两节点健康
+
+源：`scheduler.go:434–455`、`main.go:225–238`。**原Go实际编译、本地HTTP复现，确认未修。**
+
+healthLoop只看请求是否返回transport error，未检查HTTP状态码；503响应也继续decode JSON。只要其中ready为true、stalled_s小于阈值，就标记healthy=true。原网关health再按这些标记计数。
+
+实验用真实本地HTTP服务固定返回503及 `{"ready":true,"stalled_s":0}`；为scheduler配置两个fixture worker引用，运行原healthLoop，随后调用原网关health。结果：HTTP200的网关回执中 `workers_healthy=2`、`ok=true`。
+
+原healthLoop没有停止接口，因此实验放在**自有Go测试子进程**，父进程设置15秒保底期限，核对子进程成功退出和观察标记；不把永久goroutine留在外层累计套件中。子进程中的HTTP服务清理后整体退出。这里是两个协议fixture引用同一本地服务，**不是两张GPU或两个真实模型**。没有执行完整bootstrap，也不声称线上worker确实返回过这种状态组合。
+
+结论限定为健康准入未校验HTTP状态，不能用这个回执签收模型可用性。生命周期停止接口、JSON结构/预算与过期健康记录等仍需完整矩阵，本批不一并宣称已解决。
+
+## 3. F24：激活期间条件模式改变，参考binding不变，最终仍提交成功
+
+源：`main.go:281–348`、`session.go:73–82、100–136`。**原激活/文件/哈希与真实本地HTTP复现，确认未修。**
+
+初始loadProfileInfo得到ICL条件和reference binding；收到worker回执时检查初始binding/conditioning。最后重新loadProfileInfo，但只比较binding，未同时复核最终conditioning。binding包含参考字节、ref_text、language、generation参数，不包含model_output_mode；将该元数据改为sentence-buffered会使读取出的conditioning变成trained-speaker-vector，但binding相同。
+
+确定性交错：
+
+1. 创建真实私有临时profile和参考哈希输入，保留 `active.json={"id":"previous"}`。参考文件刻意只是哈希fixture，不是可解码音频。
+2. 调用原activate。原代码发送真实本地HTTP `/profile/load`。
+3. handler在回执前实际改写profile.json，把model_output_mode改为sentence-buffered；返回初始ICL条件与初始binding的成功回执。
+4. 原激活终检读取到新的trained-speaker-vector条件，但binding未变，仍提交active.json并返回HTTP200。
+5. 验证当前档案条件与回执条件不同、binding相同、活动档案已变成fixture。
+
+worker load回执明确为fixture；**没有创建/验证真实训练产物，没有运行模型、后续合成或播放，不能说已绕过worker训练产物准入或听到错误声音。** 本项是激活成功回执与最终条件版本不一致。与F20的Python重载删除假成功不同；本批另设Go最终删除拒绝保护，原Go删除终检确实会503并保留旧活动档案。
+
+后续需把有效模型/条件/绑定/档案版本纳入一致性终检或事务比较；这只是待实施方向，不在本批修改产品或另开设计问题。
+
+## 4. 新增13项：11保护 + 2未修观察
+
+`kaggle/tests/pass2_gateway_boundaries_test.go`只复制到忽略目录，与逐SHA匹配的原Go包编译，不写入冻结网关。预检13项全部通过，启用race detector。
+
+| # | 合同 | 真实性与限制 |
+|---:|---|---|
+| 1 | 首次失败丢弃未消费PCM、撤回produced计数、优先另一健康节点，重试回执attempts=2 | 原scheduler、两个本地HTTP协议fixture，无模型 |
+| 2 | 已消费PCM后出现worker错误，不重试/重放、不重复计数 | 原run/SegBuf；HTTP流与事件建立确定性交错 |
+| 3 | 已取消排队job在健康调度前移除并标记cancelled | 原队列/上下文，无实际合成请求 |
+| 4 | 后段先完成仍按段0→1转发PCM，END一次，指标记录一次 | 原serve和实际二进制帧；预填生成PCM fixture、内存ResponseRecorder |
+| 5 | PCM Write失败令serve取消上下文，不记录成功END/完整run | 原serve；明确ErrClosedPipe writer fixture，非慢TCP写阻塞实验 |
+| 6 | LLM读流取消传播到本地HTTP handler上下文，handler和调用返回 | 真HTTP/SSE头/原StreamLLM，无真实DeepSeek |
+| 7 | LLM length截断保留原prefix并上报LLM错误，END仍含错误而非静默成功 | 原produce/serve；真实本地SSE，TTS只注入失败回执 |
+| 8 | 100段中英日韩/小数/原始格式文本的read生产不访问LLM、不改写文本 | 原read生产与原分段；文本测试不等于自然连续声学 |
+| 9 | 水位高阈值/回滞/恢复及过期遥测的现有放行政策保持 | 原telemetry/allowDispatch；受控时间戳，无真实播放或内存峰值保证 |
+| 10 | stats前空EOF、残header、截断PCM负载不能计served | 原scheduler、真实本地HTTP坏流；不同于旧F03的stats后残header |
+| 11 | 激活期间档案删除，503且旧active保留、无活动临时文件 | 原activate/真实删除/原子提交；HTTP成功回执fixture |
+| 12 | HTTP503仍计入两健康worker | **F23观察通过=确认缺陷**；健康循环在自有子进程 |
+| 13 | 条件模式改变但binding不变，激活仍200 | **F24观察通过=确认缺陷**；实际文件变更/HTTP回执fixture |
+
+保留原默认首块4、2–8实验边界、相同session seed/pin、generated-only PCM，不启用参考音拼接或新融合。旧 `TestFirstTTSRequestBeforeLLMTailArrives`本批实际重跑：本地SSE首prefix在LLM尾部放行前到达worker协议端；不是实际DeepSeek/声卡首声成绩。
+
+## 5. 三轮交叉回归：Go与Python分开计数
+
+总runner：`docs/validation/step18/run_pass2_gateway.py --round N`。每轮Go `-race -count=1`，测试副本逐文件hash核对；Go模块网络下载禁用。原包40主测含子测56；旧G0专项10；新专项13。Python companion沿用全部360项，**本批无新增Python测试**。
+
+| 轮次 | Go原主测 / 含子测 | 旧专项 | 新专项 | Go通过主测 / 含子测 | Python通过 | F02独立竞争见证 |
+|---|---:|---:|---:|---:|---:|---|
+| 1 | 40 / 56 | 10 | 13 | 63 / 79 | 360 | 预期非零、DATA RACE |
+| 2 | 40 / 56 | 10 | 13 | 63 / 79 | 360 | 预期非零、DATA RACE |
+| 3 | 40 / 56 | 10 | 13 | 63 / 79 | 360 | 预期非零、DATA RACE |
+
+通过套件每轮失败/错误/跳过0，没有race warning；Go含子测试合计237通过，Python合计1080通过。主测试/子测试、不同语言不揉成一个“全功能通过”分母。
+
+旧F02 map alias竞争见证是**独立预期失败**：每轮非零并检出 `WARNING: DATA RACE`，不加入通过套件。旧F03奇数PCM、stats-only、坏error JSON与stats后残header仍复现未修。F16–F22在360项中也重新观察、验证自有资源清理。
+
+Go的实际LLM HTTP取消测试不同于F18用户合成响应断连：本批未做浏览器→Go→真实worker的TCP断连或慢TCP客户端实验。F18仍是进程内ASGI2.4观察，独立ASGI2.3 companion未重跑。也未重跑旧三类网关协议脚本/完整历史六矩阵、Chromium全量、独立旧CLI四矩阵、14分析AST/12DSP或缺cache的provider六案例。
+
+## 6. 工具、环境和封存
+
+- 原有Go不可用，审计venv新增 `go-bin==1.23.9`（历史同版），`--no-deps`安装。保存安装日志、pip安装报告（含wheel URL/SHA）、Go可执行哈希、版本、完整freeze；对比上批freeze，**只新增这一发行包**，其余依赖保持，不称freeze完全相同或全部二进制环境等同。未安装Torch/Qwen/Rust或模型。
+- Node30、JS、全部33份产品Python加本批5个审计脚本共38份AST、repack、原Go及含新增探针副本的go vet、gofmt检查通过。gofmt未提供venv顶层wrapper，最初该路径不可用，已按实际GOROOT/bin/gofmt格式化并检查；三轮正式收据在格式化之后生成。
+- 525份历史文件逐SHA保持，53资产/94冻结哈希/15正式文件及原300建议、Q25–27各50未改；旧checkpoint不重签。冻结代码、原包、正式工作台、浏览器复制实现和隐私/录音/取消功能未改。
+- 当前 `g0-pass2-gateway-{coverage,findings}.json`、`verify_pass2_gateway.py`、`progress-pass2-gateway.json`；验证后同步progress-checks。run manifest绑定本批代码、报告、日志、环境、检查和交接，排除自身及可变进度输出。
+- 完整交接更新至**77份原文备忘录**；字节数/SHA由handoff-progress和当前progress收据核对。产品未修改、问题未修复，不能把观察通过当成发布可用。
+
+## 7. 下一步与未撤销需求
+
+继续剩22份第二遍，优先前端app/recorder/index的流终止、取消、遥测与完成排空，再DSP/工具及剩余Go安全/测试文件；随后完成全部53份第三遍及300建议最终处置/失败映射。G0未完成前不跳S1–S8或问题28，不发18包，不要求点击Continue。
+
+更快真实首声、首个可用DeepSeek prefix立即生成、更响受保护输出、全部参考候选贡献可追踪、generated-only PCM、无沙沙、自然连续、短参考相似度、双卡同条件声学、RTF≤0.3、>10分钟录音与真实训练/提速等要求均未撤销或签收。无用户真实WAV/完整模型/双T4/物理声卡证据，不能从截图确定噪声根因，也不宣称已完成所有功能/语音质量验证。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_FRONTEND.md
+
+# 第十八阶段 G0：全源第二遍第7批——前端终态、取消、排空与遥测
+
+日期：2026-10-23；活动分支：`arena/1160bd87-kagglee`。
+
+**本批限定审计完成，产品代码继续冻结；新增F25/F26确认未修，G0仍PARTIAL/BLOCKED。** 浏览器/CPU/VM专项通过不是全功能、真实DeepSeek/Qwen、训练、双GPU、声学或提速验收，没有18发布包。
+
+## 1. 全文阅读与累计覆盖
+
+| 文件（`kaggle/source/web/`） | 行数 | 第二遍语义重点 |
+|---|---:|---|
+| app.js | 1715 | Parser/Player/Worklet、流终态与错误、访问/turn epoch、停止/锁定、播放排空、遥测/报告、库/参考/训练输入与诊断 |
+| recorder.js | 358 | 权限等待、session所有权、设备/上下文/计时器、字节/数量/时长预算、原生封装、停止/取消与回调 |
+| index.html | 144 | 脚本加载顺序、空白自命名/训练声明、视图/对话框、锁定与公开静态界面、限额和未验收说明 |
+| **合计** | **2217** | **新增3份完整第二遍语义阅读** |
+
+app按1–280/281–560/561–840/841–1120/1121–1400/1401–1715完整分段复读；recorder按1–185/186–358完整复读。index首次合并读取被工具截断，随后补读1–80及81–144，并再单独补齐31–80；最终全144行均已可见并复读，**不把截断输出算已读**。旧测试与VM局部核对不新增源码全文信用，运行测试也不计作第三遍。
+
+- 第一遍保持53/53内嵌资产、13668行；不是整个Git仓库所有文件。
+- 第二遍：31/8289 + 3/2217 = **34/53、10506行，剩19份**。
+- 第三遍：**0/53**。
+- 当前台账：`docs/validation/step18/g0-pass2-frontend-coverage.json`；旧台账/日志保留历史原样。
+
+## 2. F25：END不是解析终态，后续PCM/文本继续处理，第二份汇总替换第一份
+
+源：`app.js:729–776`。**完整冻结前端脚本在Chromium中复现，确认未修。**
+
+case5只把解析出的汇总赋给d，未关闭协议状态或拒绝后续帧；读取继续到网络EOF。因此一条流依次含有效END、PCM、文本、另一份END时，后续PCM仍进入Player，文本仍进入回答区域，最终采用第二份汇总，且没有协议错误。
+
+实验使用原网页及完整app/recorder脚本，不提取或改写产品函数；Chromium原生Response/ReadableStream承载明确wire fixture：
+
+1. 第一份有效END，空timeline/per_gpu。
+2. PCM16样本1的帧；Player端收到float32值1/32768。
+3. 文本 `after terminal`；回答区域确实显示。
+4. 第二份END带 `replacement_summary=7`；最终timeline确实采用它。
+5. 网络关闭；只发送一次client report，errbox为空。
+
+这是终态/顺序合同的缺口，**不是线上网关确实发送过这条坏流或外部攻击已成功的证明**。AudioContext/AudioWorkletNode为明确设备替身，只确认PCM传到播放器消息端，没有实际播放/声卡或真实生成模型。该PCM仍是生成流fixture，不拼参考音；不能从本项推断用户听到额外话语的根因。
+
+旧F03是Go worker帧接受问题，本项是浏览器client帧END之后的状态机行为，不重复编号旧奇数PCM/stats后残header。后续需定义终态、重复END、后续帧、读流取消与有效汇总校验；尚未实施产品修复。
+
+## 3. F26：网络EOF时先发报告，后续播放/欠载状态不再更新到报告
+
+源：`app.js:625–644、784–818`。**原前端与真实浏览器计时器/序列化路径复现，确认未修。**
+
+B的finally在网络读取结束后调用markGenerationDone，并把w清为false；随后立刻读取Player状态，发一次 `/api/report`。250ms循环仍刷新本地UI，但 `!x || !w` 后不再发送telemetry。声音可能还未开始或未排空，此时不能视为完整播放结果。
+
+确定性实验：原应用接收0.2秒PCM fixture及有效END，立即网络EOF；设备替身暂不提供Worklet状态。第一次report为 `first_played_ms=0、underruns=0`。收到这份report后才注入：
+
+- Worklet缓冲状态fill=4800，应用发送play命令、UI变为“播放中”。
+- 一条延迟状态含underruns=1，真实UI刷新到欠载1。
+
+核对最终仍只有一份report、内容与最初逐字段相同，期间telemetry数量也不增加。**延迟状态与设备均为fixtures，数值1不是实际物理欠载；play命令不是扬声器出声，不构成延迟/提速成绩。** 实验不主张正常Worklet在已经接收end后必然新增欠载，而是确认迟到状态和实际播放阶段不能进入当前“结束报告”。
+
+第一遍“report before drain”原先仅源观察，本批补成完整网页事件链实证，首次正式登记F26。旧 `firstPlayedMs`在play命令处赋值的问题继续保留；本项额外是报告生命周期与后续更新缺口，不能只改字段名称就认为解决。
+
+跨语言复核：Go在speak/serve返回后注销session，旧网络EOF后继续发telemetry也可能没有活动session。因此后续需区分生成结束、播放排空、取消与最终client-report合并，设计有界的状态/报告归属；不能简单把w永远保持true。Go调用点是上批已读源码的局部复核，不增本批全文信用，也没有修改任何端点。
+
+## 4. 新增12项：10保护 + 2未修观察
+
+文件：`tests/browser/pass2-frontend.spec.js`及专用fixture helper。预检12通过，失败/跳过/flaky/retry为0。HTTP/音频/设备故障明确替身，完整冻结脚本由浏览器实际执行。
+
+| # | 合同 | 执行边界 |
+|---:|---|---|
+| 1 | 网络EOF后锁定仍abort旧session、hold/reset播放并清空聊天；重新解锁下一请求history为空 | 真DOM/turn/access epoch，fetch和音频替身 |
+| 2 | pagehide在未结束body中锁定，迟到END经旧turn检查取消reader，不产生旧report/私密输出 | 原生流、真实事件与取消回调；非实际页面导航/远端Go |
+| 3 | HTTP503 JSON错误可见，按钮释放，无PCM/无成功client report | 原B错误路径；HTTP响应fixture |
+| 4 | body.read拒绝可见并释放按钮，不把等待状态永久卡住 | 原生流error；不声称旧F05取消/报告政策已修 |
+| 5 | 坏END JSON不生成成功timeline，错误可见、无PCM | 原parser/JSON路径；保留既有错误处理 |
+| 6 | 逐字节碎片化UTF8中英日韩/emoji与HTML字面文本正确合并，以textContent显示、不执行HTML | 原帧解析与浏览器DOM，无模型 |
+| 7 | 录制中另增文件耗尽数量预算，finish再次核对后丢弃当前片段 | 原recorder、受控duration=1700ms/数据Blob，非真实1.7秒录音 |
+| 8 | 重复stop回调只提交一次File，块清空、设备释放 | 原recorder、明确MediaRecorder/track替身 |
+| 9 | 旧track-ended不能停止新owned recorder | 原owns检查与事件回调，不能当F04旧onerror已修 |
+| 10 | 首次addModule失败后第二次可重新初始化并发请求，旧context关闭 | 音频替身；失败Blob仍未revoke，旧F06保留 |
+| 11 | END后PCM/文本/替换汇总仍被接受 | **F25观察通过=缺陷存在**，不是修复 |
+| 12 | EOF先发report，随后play/欠载UI变化不更新报告 | **F26观察通过=缺陷存在**，非物理音频测量 |
+
+旧F04旧录音error影响新session、F05解析失败未cancel/abort、F06失败Blob URL不回收仍在旧11项中复现，未修。取消与权限、容器封装、空库/训练输入、安全/访问、正式工作台/复制等旧浏览器合同也全部重跑；没有把“准备训练输入”改说成真正训练按钮或训练闭环。
+
+## 5. 三轮浏览器、VM与CPU回归，分别计数
+
+runner：`docs/validation/step18/run_pass2_frontend.py --round N`。每轮独立Playwright进程，`--retries=0`；既有134 + 新12 = **146项/轮**。真实Chromium中的旧原生录制用振荡器/静音输入替换getUserMedia，不是实体麦克风。新12全部是明确网络/音频设备/事件fixtures。
+
+| 轮次 | 浏览器 | 失败 / 跳过 / flaky / retry | Player VM | 延迟合同VM | Python CPU |
+|---|---:|---|---:|---:|---:|
+| 1 | 146通过 | 0 / 0 / 0 / 0 | 22通过 | 16通过 | 360通过 |
+| 2 | 146通过 | 0 / 0 / 0 / 0 | 22通过 | 16通过 | 360通过 |
+| 3 | 146通过 | 0 / 0 / 0 / 0 | 22通过 | 16通过 | 360通过 |
+
+浏览器合计**438通过**；CPU合计**1080通过**，CPU每轮失败/错误/跳过0。本批无新增Python用例。两种VM分别22×3/16×3，原Player/Worklet代码和明确时钟/端口/status替身，不能把它们合并成实体播放成绩。
+
+旧VM中已完成20/50ms短尾卡buffering/starved的观察继续通过，51ms可发play；这意味着旧缺陷仍存在，不是排空修好。重采样结束flush、首块时间/消费/声卡出声区别与Rust/DSP/trimmer分块问题也未修。默认首块4、2–8实验边界、generated-only与参考PCM禁播不变。
+
+浏览器代码复制保护重跑：原始文件使用真实hash及浏览器sentinel保护，1–17完整包复制合同仍保持；不把sentinel声称为原始整文件浏览器复制。正式空白文件/用户粘贴和不强制预填流程保持。
+
+每轮保留原始Playwright JSON/stderr、逐用例状态/单次执行、5份未修观察（F04–06/F25–26）、两种VM JSON、CPU逐ID日志/JSON、源/测试/support哈希。CPU继续F16–F22自有进程/锁/线程/临时资源清理，不重签旧收据。
+
+**本批未重跑Go79项/独立F02竞争见证、独立ASGI2.3 companion、旧独立CLI/协议矩阵、14分析AST/12DSP或缺cache的provider案例。** 这些保留上批/历史成绩，不列作本轮执行。也没有真实DeepSeek、完整模型/codec、双T4、实际训练、远程Kaggle、物理声卡、用户WAV或声学/提速成绩。
+
+## 6. 环境、检查、封存与交接
+
+- node_modules未保留，按冻结package-lock执行 `npm ci --ignore-scripts`恢复；保存日志与依赖树，未改package-lock/产品依赖。预检及三轮使用实际Chromium。审计venv沿用，完整pip freeze与上批相同，没有新增Python发行包；Go1.23.9仍可用但本批未重跑其套件，无Torch/Qwen/Rust运行。
+- Node30、JS检查、33份产品Python加本批5个审计脚本共38份AST、repack，以及前端/新探针/VM的JS语法检查通过。最终diff检查和manifest验证不替代模型验收。
+- 575份历史文件、53资产/94冻结哈希/15正式文件、原300建议初审及Q25–27各50保持；原包/工作台/安全/录音/复制产品代码未改。
+- 当前 `g0-pass2-frontend-{coverage,findings}.json`、`verify_pass2_frontend.py`、`progress-pass2-frontend.json`；验证后同步progress-checks。manifest绑定本批报告/测试/helper/runner/收据/日志/环境/交接，排除自身与可变进度输出。
+- 完整交接更新为**78份原文备忘录**，以handoff-progress及当前progress核对具体字节数/SHA。
+
+## 7. 下一步与全部未撤销要求
+
+继续第二遍剩19份：优先Python/Rust DSP、音频边界与工具自检，再补剩余Go安全/测试和LICENSE/MEMO；随后全53份第三遍及300建议最终处置/失败映射。G0未完成前不跳S1–S8/问题28、不发18包、不要求点击Continue。
+
+更快真实首声、首个可用DeepSeek prefix立即生成、更响受保护输出、全部候选贡献可追踪、generated-only、无沙沙、自然连续、短参考相似度、双GPU同条件声学、RTF≤0.3、>10分钟录音和真实长数据训练/提速等均未撤销或签收。截图不能证明噪声根因，fixture不能冒充真模型/实机/试听，整体仍PARTIAL/BLOCKED。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_DSP.md
+
+# G0 全源第二遍第8批：Python/Rust DSP 与音频工具
+
+日期：2026-10-23；分支 `arena/1160bd87-kagglee`。**专项三轮完成，G0 仍 PARTIAL/BLOCKED；产品未修改，未发布18包。**
+
+## 1. 全文阅读信用
+
+本批重新完整阅读9份1500行，不将测试执行、局部调用点检查计作全文：
+
+| 文件（均位于 kaggle/source/） | 行数 |
+|---|---:|
+| py/audio_rt.py | 222 |
+| rust/audio_rt/Cargo.toml | 17 |
+| rust/audio_rt/src/lib.rs | 433 |
+| tools/e2e_check.py | 180 |
+| tools/encode_training.py | 128 |
+| tools/selftest.py | 177 |
+| tools/trained_voice.py | 30 |
+| tools/voice_benchmark.py | 168 |
+| tools/watermark_check.py | 145 |
+
+第一遍保持53/53、13668行；第二遍由34/53、10506行推进至 **43/53、12006行，剩10份1662行**；完整第三遍仍0。Rust全文分段读完；旧测试组合输出曾截断，仅补读相关范围，不给旧测试全文信用。范围是冻结包内53资产，不是整个 Git 仓库。
+
+## 2. 新增合同：10保护＋2未修观察
+
+`kaggle/tests/test_pass2_dsp_boundaries.py`：
+
+1. 非有限输入等价于零替换、不修改调用方数组。
+2. 关闭淡入/动态增益后的单纯 DC 过滤跨调用连续；**不是一般分块不变性声明**。
+3. 门限下信号不学习语音包络、不改变增益。
+4. 禁用 Rust 时不调用动态库加载。
+5. ABI2 跳过、ABI3 ctypes 签名设置；符号与库对象为 fixture，未 dlopen Rust。
+6. 原 benchmark/measure 的18次请求同文同 seed/同 pin、warmup 独立、私有 WAV/ledger 保留。
+7. 后续请求失败仍保留先前慢行、WAV、ledger，最终报告 BLOCKED 且不泄漏异常详情。
+8. encoder 控制器移除凭据/租约变量、固定离线 CPU 环境、恢复信号处理器；Popen/回执是显式 fixture。
+9. 缺失或超过1MiB回执拒绝，不打印其内容；fixture 子进程角色，不冒称真实编码。
+10. trained_voice CLI 非预期错误脱敏、503保留 blocked 状态。
+11. F27 NumPy flush DC残留观察。
+12. F28 benchmark逐条 GPU 身份观察。
+
+### F27：flush 尾音归零，但 NumPy DC 记忆未归零
+
+实际 NumPy：480样本常量0.2→flush(192)→240样本零输入，尾音最后为0，但后续零输入240样本全部非零，峰值 **6026 int16**；fresh Leveler 同长零输入全零。NumPy仅清 `_last`，Rust源码的非空 flush 还清 `dc_x1/dc_y1`。
+
+**已核对影响范围：** worker `run_job` 每次调用 `_reset_leveler(pid)`，关闭旧对象并创建新对象；这次反证是复用同一 Leveler 的 API/后端一致性缺口，不证明正常跨请求路径复用该残留，更不证明截图里的沙沙声根因。Rust没有编译/执行，不能把源码差异说成已实测双后端等价或不等价。
+
+### F28：benchmark 接受两端点全部测量都声明 GPU0
+
+执行原 `run()`/`measure()`、两实际本地 HTTP 端点、真实 profile/pin/WAV/ledger 文件。health fixture 分别声明 GPU0/1、CUDA_VISIBLE_DEVICES=0/1；18条合成统计却全部声明 GPU0。报告仍为 `measured-speed-only`，`real_gpu_verified=true`、`speed_target_passed=true`，而行内 worker索引仍含0/1。
+
+**证据边界：** health/模型/PCM/计时均为 fixture，报告中的上述 true 是被反证的工具输出，绝不是本批真实GPU验证或RTF成绩。端点身份与逐条实际合成身份缺少一致性校验；不能由此证明部署时真的两端共享GPU，也不能用两个健康回执替代运行期硬件与等效参数证据。两个缺陷均未修复。
+
+## 3. 三轮实际执行
+
+| 范围 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| CPU合同，原360＋新12 | 372 PASS | 372 PASS | 372 PASS |
+| NumPy DSP分块合成信号案例 | 12 | 12 | 12 |
+| 原EdgeTrimmer AST合成信号案例 | 8 | 8 | 8 |
+| 独立真实CLI合同 | 4 | 4 | 4 |
+| CPU失败/错误/跳过 | 0/0/0 | 0/0/0 | 0/0/0 |
+
+CPU共1116通过；新增36包含30保护和6次未修观察，不能解释为全部功能修复。分块/裁剪器保留既有问题，不重复编号。CLI每轮backend-static、backend-runtime、benchmark-default均按预期exit2/BLOCKED；resource-status exit0但GPU未验证，**预期阻塞不计模型成功**。脚本 `run_pass2_dsp.py` 和 `run_pass2_dsp_cpu.py`；后台执行已正常exit0、无监听端口。
+
+本批没有重跑浏览器146、Player VM22/latency VM16、Go79/独立F02竞争或独立ASGI2.3 companion；这些只保留历史记录，不挪作本批新成绩。CPU合集含原ASGI/进程/文件合同，模型、ASR、声纹及特定调度角色仍为显式fixture。没有Torch tensor/optimizer/Gloo/NCCL、完整模型、GPU、物理麦克风/播放器或声学验收。
+
+## 4. 完整性与未完成项
+
+- 新测试预检12/12通过；三轮测试身份及F27/F28观测一致。
+- Node30、JS检查、产品Python AST及新审计脚本语法、repack check通过；不改冻结产品/lockfile。
+- 625份历史文件SHA保留；53源资产、94冻结哈希、正式HEAD15文件、300建议原文/处置及Q25–27各50条校验不变。
+- 依赖沿用，pip freeze与前端检查点完全相同；没有新增安装。Rust/rustc/cargo、Torch/Qwen不可用；Go可用但本批未跑Go。
+- `g0-pass2-dsp-coverage.json`、`g0-pass2-dsp-findings.json`、三轮原始收据、manifest及 `verify_pass2_dsp.py`为当前证据；交接完整内嵌增至79份。
+- F01–F26及原DSP分块、短breath、校准/裁剪/播放器短尾问题继续未修，不将合成信号当真实语音。
+- 后续仍待：encoder回执内容/退出码一致性、各工具语义终态/样本预算的完整失败矩阵、ABI空指针/长度/返回码与Rust真实工具链验证、两worker版本/参数及测量身份持续一致、真音频听测和端到端首声。
+
+下一批完整复读剩余 Go security 及测试/go.mod、LICENSE/MEMO，共10份1662行；再进行全53份第三遍与300条最终处置/测试映射。真实长录音训练、参考贡献追踪、DeepSeek首prefix、双T4等效参数、自然连续朗读、无沙沙、真实RTF≤0.3等要求均未豁免、尚未签收。**不越过G0先改DSP，不跳S1或另开Q28，不要求用户点击Continue。**
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS2_SECURITY.md
+
+# G0 全源第二遍第9批：Go安全／测试与文档收尾
+
+日期：2026-10-23；分支 `arena/1160bd87-kagglee`。
+
+**第二遍53项全文复读已完成；完整第三遍仍0，G0仍PARTIAL/BLOCKED。产品未改，未生成18发布包。**
+
+## 1. 阅读范围与进度
+
+以下均重新全文阅读，工具输出未截断；不把测试执行计作源码阅读。
+
+| 文件（相对 kaggle/source/） | 行数 |
+|---|---:|
+| LICENSE-QWEN-DERIVED.txt | 201 |
+| MEMO.md | 220 |
+| go/gateway/fidelity_test.go | 187 |
+| go/gateway/go.mod | 3 |
+| go/gateway/preflight_test.go | 67 |
+| go/gateway/reliability_test.go | 159 |
+| go/gateway/security.go | 247 |
+| go/gateway/security_test.go | 342 |
+| go/gateway/segmenter_test.go | 123 |
+| go/gateway/voice_binding_test.go | 113 |
+| **本批合计** | **1662** |
+
+第一遍53/53、13668行保持；第二遍由43/53、12006行推进至 **53/53、13668行，剩0**。此范围是冻结包内53资产，不等于整个Git仓库所有文件，更不等于三遍全文或所有功能验收。
+
+## 2. 安全与既有测试的交叉核对
+
+本批检查认证失败/owner预算隔离、令牌桶锁、并发名额与panic/取消清理、已知/未知Content-Length、JSON单值与Unicode、代理凭据剥离/请求取消、CORS、首prefix调度与原文保留测试、档案绑定和preflight只读行为。
+
+`kaggle/tests/pass2_security_boundaries_test.go`新增12主测试，**10保护＋2未修观察**，只在SHA匹配的产品副本旁编译，不把探针放进冻结源码：
+
+1. 失败认证只耗失败桶，不消耗owner通用/语音预算或占名额。
+2. 1000个真实goroutine竞争容量7令牌桶，恰好7次通过；启用race。
+3. 8项预算环境变量的上下边界、越界、非整数和整数溢出拒绝。
+4. 重操作限额独立于语音名额，取消至handler退出后释放。
+5. handler panic展开defer后不泄漏语音名额，后续合法请求仍可进入。
+6. Unicode JSON字节预算在精确边界通过、少1字节拒绝；已知和未知长度两种路径。
+7. CORS预检不等于API认证：跨host拒绝、合法预检不调用业务、未认证POST仍拒绝。
+8. 代理删除全部凭据header值，保留有界请求内容和目标路径。
+9. 原反向代理取消传到实际本地HTTP上游，错误不包含上游地址，名额释放。
+10. 混合BMP/补充平面Unicode字符预算、history/system边界和非法角色；直接非法UTF-8字符串被validator拒绝。
+11. F29：wire畸形Unicode在解码后被替换并接受。
+12. F30：供应商HTTP错误正文可把假配置密钥带入客户端帧与指标。
+
+### F29：解码先替换畸形Unicode，后续UTF-8检查失效
+
+实际本地HTTP→原Guard→原decodeJSON→原validateSpeak：孤立高代理项、孤立低代理项、原始非法UTF-8字节三类输入，均HTTP200，输入字符串变为 `a�b`。直接将非法UTF-8交给validator会拒绝，但JSON解码已完成替换，后续 `utf8.ValidString` 只能检查替换后的字符串。
+
+这是**严格输入与原文保真边界缺口**，不是认证绕过。见证使用组合校验handler，不执行完整speak、TTS或实际读音；没有声称正常浏览器JSON.stringify会产生这些畸形输入。修复阶段仍需统一非法编码、代理项、重复键等策略及兼容范围，不能直接删除或改写合法正文。
+
+### F30：未脱敏上游HTTP错误进入客户端ERROR／END与metrics
+
+实际授权网关 `/api/speak`→原Session.produce→原StreamLLM→本地HTTP401替身。请求未提供X-DeepSeek-Key，使用配置的**合成假密钥**。替身错误正文回显Authorization和私有详情；原StreamLLM把前800字节拼入错误，客户端ERROR、END和metrics记录均包含假密钥。
+
+这是第三方错误内容未脱敏的传播路径；**不是未授权访问证明，也不是某真实供应商已泄密的证明**。API仍需要有效共享Bearer；供应商、错误正文与配置密钥全部是fixture，没有读取真实凭据、调用真实DeepSeek或生成PCM。后续应采用稳定公开错误码/安全消息，保留受保护诊断，不把截800字节误当脱敏。
+
+两项均三轮复现，**尚未修复**。此前F01–F28及其他专题观察保持，不重复编号或宣称解决。
+
+## 3. 三轮验证结果
+
+| 每轮范围 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| 原Go主测试／含子测试 | 40／56 PASS | 40／56 PASS | 40／56 PASS |
+| 第一遍Go专项 | 10 PASS | 10 PASS | 10 PASS |
+| 上批Go专项 | 13 PASS | 13 PASS | 13 PASS |
+| 本批Go专项 | 12 PASS | 12 PASS | 12 PASS |
+| **Go合计主测试／含子测试** | **75／91** | **75／91** | **75／91** |
+| CPU既有合同 | 372 PASS | 372 PASS | 372 PASS |
+| 副本go vet | PASS | PASS | PASS |
+| 独立F02竞争见证 | 预期非零＋DATA RACE | 同左 | 同左 |
+
+Go通过集合含子测试共273，CPU共1116；新保护30次、新未修观察6次。通过集合失败/跳过/race warning均0，CPU失败/错误/跳过均0。**独立F02故意失败见证不混入通过数字，F02仍未修。** 各轮使用 `-race -count=1`；第三方服务仅自有loopback HTTP。旧F23无限健康循环仍隔离在自有测试子进程并核对退出；测试服务器/处理goroutine正常清理。后台验证已exit0，无监听端口。
+
+本批继承CPU372并实际重跑，包含原进程/锁/ASGI/NumPy/文件合同及F27/F28 fixture反证。没有新增Python测试；没有重跑独立CLI四项矩阵、NumPy分块/裁剪器探针、独立ASGI2.3、浏览器146和Player/latency VM，不挪用其历史成绩。原Go首prefix→本地worker请求测试重跑，不是实际DeepSeek/模型首声或速度成绩。
+
+## 4. LICENSE与MEMO裁决
+
+- LICENSE已全文读完：许可副本、修改声明、来源归属、条件性的NOTICE保留、商标限制及免责声明等条款已记录。**阅读文件不等于项目依赖、模型、训练数据或再分发法律合规签收**；实际适用范围、依赖许可/NOTICE清单与发布材料仍待核对，不出具法律结论。
+- MEMO顶层仍为历史step15、xvector-only及maxgain12等表述；冻结产品当前17 ICL/maxgain6，已有D01文档漂移继续保留，不改冻结MEMO、不重复登记为新缺陷。其部分历史“短breath已修”等说法也不能覆盖后续F10实证。
+- 测试通过证明断言成立，不证明断言覆盖全部协议/真实模型/听感；segmenter内部breath标记不等于worker会播放参考片段。generated-only、参考PCM不拼接要求保持。
+
+## 5. 封存与下一步门禁
+
+- 686份历史文件SHA、53源资产、94冻结哈希及正式HEAD15文件保持；原300建议与Q25–27每题50条不变。
+- Node30、JS、产品Python与新审计脚本AST、repack、Go探针gofmt以及三轮副本vet通过。
+- Go1.23.9沿用，无新安装；pip freeze与DSP批完全相同。Rust/rustc/cargo、Torch/Qwen仍不可用；无完整模型、真实GPU、训练、物理音频或声学/性能签收。
+- 封存校验首跑错误地要求F02在 `halt_on_error=1` 下仍发出逐测试fail事件；实际是立即退出并发出包级fail。已保留首错日志，改为同时核对非零退出、DATA RACE、指定见证run与包级fail；不修改产品/测试，不重跑或抹除三轮记录。
+- 当前检查点：`g0-pass2-security-coverage.json`、`g0-pass2-security-findings.json`、`progress-pass2-security.json`、`verify_pass2_security.py`；完整交接80份。
+
+**下一步进入第三遍全源交叉审查，不实施S1：**
+
+1. 先按API→Go→Python→文件快照追踪输入、pin、档案修订和错误脱敏；每份必须重新全文阅读，局部跟踪不计信用。
+2. 然后核对生成/网络/播放生命周期、取消所有权、GPU租约及训练产物绑定；已知问题建立修复顺序和回归映射，不只重复通过测试。
+3. 全53份第三遍和300条最终处置/失败见证映射完成前，G0保持未签收；缺真实硬件/音频的项目继续BLOCKED。
+4. 不新增伪训练按钮，不用fixture替代双T4、长录音训练、无沙沙/音色/连续朗读、DeepSeek首prefix和真实RTF≤0.3验收，不要求用户点击Continue。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_INPUT.md
+
+# G0 全源第三遍第1批：输入、档案内容绑定与认证文件
+
+日期：2026-10-23；分支 `arena/1160bd87-kagglee`。
+
+**第三遍7/53份、1930行；剩46份11738行。第一、第二遍均53/53、13668行。G0仍PARTIAL/BLOCKED，产品与冻结发布包未修改。**
+
+## 1. 本批第三遍全文信用
+
+| 文件（相对 kaggle/source/） | 行数 | 本遍交叉核对 |
+|---|---:|---|
+| go/gateway/main.go | 478 | speak验证/trim、profile加载、激活重检、错误/代理、路由与认证 |
+| go/gateway/security.go | 247 | Unicode解码边界、body预算、令牌桶、名额/取消与期限 |
+| go/gateway/session.go | 692 | profile JSON类型、pin序列化、generation默认值/范围、队列/播放遥测、错误与metrics |
+| py/qtts_common.py | 211 | 档案路径/读取、原子JSON、归档提取、配置和音量目标 |
+| py/voice_binding.py | 60 | 实际跨语言内容hash、类型/范围、NOFOLLOW/NONBLOCK、文件大小变化 |
+| py/resource_limits.py | 172 | 上传预算、暂存/replay清理、后台准入与取消所有权 |
+| py/access_control.py | 70 | 私有口令文件/锁、文件类型检查时机、转发目标 |
+| **合计** | **1930** | **7份全范围重新阅读，无截断** |
+
+浏览器app.js只局部复看660–720请求构造，library_api.py只局部查看严格JSON入口，llm等其他调用点也没有本批第三遍全文信用。没有把第二遍阅读、测试运行或AST扫描当作第三遍全文。7份的all_three_complete仅表示三遍阅读记录齐全，**不表示其缺陷已修或产品验收通过**。
+
+## 2. 新证据与原有建议映射
+
+新增6项Go合同（5保护/1观察）与6项Python合同（5保护/1观察）：
+
+- 实际Go/Python代码比较8个合法pin向量：UTF-8/NUL、缺省与显式gen、gen整体null、metadata排除、top_k负零和0、Unicode不同码点序列、边界参数与长度前缀。
+- 12个非法generation类型/范围向量两端均拒绝；不是用另一份hash实现代替产品代码。
+- 两本地worker ack fixture期间实际改变generation参数，原activate最终pin重检503，旧active保留。
+- 原完整speak对null/空/错误text类型/尾随JSON拒绝，无session/worker调用。
+- 两个不同合法profile ID、相同内容的pin相同：pin是内容标识，**不是身份、授权或声学相似度**。
+- 上传读取最多预算+1字节即拒绝，不截断冒充完整音频；精确预算保留全部字节。
+- body暂存在溢出、断连、下游异常三种路径关闭，不进入不该执行的解析/业务。
+- 原子JSON替换失败保留旧私有文件、清临时文件，后续重试可用；不是多文件事务证明。
+- 参考文件fstat后长度增长被原binding拒绝；不是同长度恶意改写/同UID隔离保证。
+- 两实际认证CPU进程取得同一私有口令，仅输出摘要供临时比较；口令不进日志，临时目录清理。
+- F31、F32未修观察，详见下节。
+
+`pass3-input-recommendation-links.json`将8条**原有**建议逐项链接到实际测试身份或未修见证：R1-013/016/020/083、R2-028/039/050/063。每条明确覆盖不足；原300条不改，specific_row_test_signoff/final_disposition_signed_off/product_fix_implemented均false。相邻generation类型保护不能冒充完整ref_text schema签收；单文件replace不能冒充候选/JSON事务；旧训练metadata fixture不能冒充真实训练或原生模型。
+
+## 3. 两项新确认的未修问题
+
+### F31：同一JSON的top_k:null跨语言含义不同
+
+实际磁盘profile包含 `gen:{"top_k":null}`：Go JSON解为map[string]float64时将null变成0，`loadProfileInfo`接受并产生非空pin；同目录/同JSON交给实际Python `reference_binding`，因None不是数值而抛ValueError。合法的gen整体null两端均按缺省处理，不能把两种null混为一谈。
+
+本批Go测试通过受控CPU子进程调用当前Python文件，校验ABI字节和内容pin，不调用模型。参考文件是明确的hash字节fixture、不是可播放WAV。**不证明正常建档会写入该非法字段，也不证明已成功激活或生成错误音色。** 这是配置schema/内容绑定接受域不一致；两端应在计算pin前统一严格类型语义。
+
+### F32：认证文件若为FIFO，无写入方时先阻塞再谈类型校验
+
+实际原 `ensure_access_token`：自有0700认证目录下，既有`.access-token`是0600 FIFO且无writer，子进程在调用前发送握手，之后不能返回，测试外部强制终止并reap；同脚本的普通文件control正常返回。`_read_file`用NOFOLLOW但没有NONBLOCK，open在fstat确认普通文件之前阻塞。
+
+**边界：** 没有真实口令、用户目录、真实bootstrap、远端请求或GPU工作。攻击者是否能写私有目录不是此测试结论，不能称远程认证绕过。0.25秒是测试收容边界，不是产品性能成绩；自有子进程已清理。后续应在安全打开且不被特殊文件阻塞的前提下检查类型/属主/大小，保留有效私有token及并发锁语义。
+
+F01–F30、D01及旧DSP/播放/训练/校准观察继续未修。本批不靠新编号掩盖既有问题。
+
+## 4. 三轮实际回归
+
+| 每轮范围 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| 原Go主测/含子测 | 40/56 PASS | 40/56 PASS | 40/56 PASS |
+| 既有Go专项10+13+12 | 35 PASS | 35 PASS | 35 PASS |
+| 新Go专项 | 6 PASS | 6 PASS | 6 PASS |
+| **Go主测/含子测合计** | **81/97** | **81/97** | **81/97** |
+| CPU旧372+新6 | 378 PASS | 378 PASS | 378 PASS |
+| 副本go vet | PASS | PASS | PASS |
+| 独立F02竞争见证 | 预期非零/DATA RACE | 同左 | 同左 |
+
+Go含子测共291通过，CPU共1134通过。新保护共30次、未修观察共6次。通过集合失败/错误/跳过/race warning均0；F02独立故意失败不混入通过数，仍未修。所有Go回归启用-race/-count=1，产品源码未插入新探针。F29/F30随原S2套件实际重跑，仍未修；F23无限health循环继续隔离于自有子进程，正常退出已核对。
+
+Go/Python预检各6通过。后台三轮正常exit0，无监听端口；CPU进程/FIFO/认证并发进程已清理。没有重跑浏览器146、Player/latency VM、独立ASGI2.3、独立CLI矩阵、分块/裁剪器探针，不挪用历史成绩。原CPU套件包含实际ASGI/进程/锁/NumPy/文件测试及明确模型角色fixture，不是全功能或模型验收。
+
+## 5. 后续实施建议与门禁（尚未修改产品）
+
+1. 为generation建立跨语言schema，区分缺省字段、gen整体null与成员null，禁止无声强制转换。
+2. 将本批8合法/12非法向量固化成修复后的公共合同，并增加成员null、额外键和大数策略。
+3. 严格检查原始JSON UTF-8和代理项，保留合法码点序列，不用替换字符假装原文保真。
+4. 统一重复键、未知字段、浮点/布尔/字符串接受策略，不能仅修改Go而让worker域更宽。
+5. 保留生成参数进入pin的属性；不要通过忽略gen来“修复”两端不一致。
+6. 激活最终核对同时包含内容pin与conditioning模式，覆盖尚未修复的F24。
+7. 准确区分单文件replace与候选/转写/profile多文件事务，保留旧成功档案与失败证据。
+8. 认证读取不得在确认文件类型前无限等FIFO；新增特殊文件/目录/链接/权限矩阵。
+9. 保留认证目录0700、文件0600、锁与两进程一致性，不把拒绝异常文件改成静默重建口令。
+10. 上游错误使用安全公开码和阶段，私有诊断不直接回显HTTP正文/密钥，覆盖未修F30。
+11. 首prefix、文本保真与播放终态分别测试；当前browser/API trim并不受producer原文拼接测试完整保护。
+12. 将这些证据作为300建议的部分映射，待第三遍全覆盖后才做最终处置，不把本批8行当全300签收。
+
+## 6. 封存与下一步
+
+739份历史证据SHA、53源资产/94冻结哈希、正式HEAD15文件及原300/Q25–27各50保持。Node30/JS/产品与新审计Python AST/repack/Go探针gofmt通过，三轮副本vet通过；pip freeze与第二遍收尾相同，无新依赖。Go沿用1.23.9；无Rust/Torch/Qwen/实际模型/双GPU/训练/物理音频/音质/提速签收。完整交接81份。
+
+当前 `g0-pass3-input-coverage.json`、`g0-pass3-input-findings.json`、`progress-pass3-input.json`、`verify_pass3_input.py`；各轮原始日志、manifest与建议映射保留。
+
+下一批继续第三遍参考分析/API/档案修改与备份事务的完整复读，优先检查候选/转写/pin/模式切换及取消所有权，再依次完成剩46份、300最终映射和真实目标环境门禁。不跳S1/Q28，不实施未获G0签收的DSP修复，不要求用户点击Continue。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_REFERENCE.md
+
+# G0 全源第三遍第2批：参考分析、库API与档案事务
+
+日期：2026-10-23；分支 `arena/1160bd87-kagglee`。
+
+**第三遍累计12/53份、3860行，剩41份9808行。前两遍各53/53、13668行保持。产品未改，G0仍PARTIAL/BLOCKED。**
+
+## 1. 本批全文复读
+
+| 文件（相对 kaggle/source/） | 行数 | 交叉核对重点 |
+|---|---:|---|
+| py/analyst.py | 1211 | 解码/清理、ASR时间与候选、缓存/centroid、档案提交、worker重载、校准及文本/候选API |
+| py/library_api.py | 163 | 严格JSON、原始库修改、准入/租约与后台线程handoff、结果提交 |
+| py/persist.py | 99 | 本地打包/恢复范围、临时档案排除、远端备份入口与失败语义 |
+| py/reference_segments.py | 106 | 16/24秒合同、词级切分、窗口重识别、可选words和短尾 |
+| py/voice_library.py | 351 | 私有文件、revision、flock、snapshot/begin/finish、失败后旧结果与租约清理 |
+| **本批合计** | **1930** | **5份均重新完整阅读，无源输出截断** |
+
+analyst按1–245、246–490、491–735、736–980、981–1211分段读完。其他四份完整读完；辅助旧测试组合输出曾截断且一次检索使用了不存在的测试文件名，已改查实际test_libraries.py与相关范围，不给这些辅助测试全文信用。all_three_complete仅表示对应文件三遍语义阅读记录齐全，不表示问题修复/质量签收。
+
+参考链仍是：最多24候选预排/嵌入评分、最多3份落盘、实际单锚点ICL；centroid是分析空间统计，不是原生Qwen多参考融合。长输入接受、分析覆盖、参考提示、真实训练是不同事项，`all_audio_used_as_model_prompt=False`和`model_trained=False`保持。breath bank被提取不等于播放参考PCM，generated-only要求不变。
+
+## 2. 新增12项合同：10保护＋2未修观察
+
+`kaggle/tests/test_pass3_reference_boundaries.py`实际执行原ASGI路由、HeavyAdmission、CPU线程、文件、flock和tar。模型、ASR、speaker评分及worker回执是显式fixture。
+
+| 合同 | 验证及边界 |
+|---|---|
+| 候选复制失败 | HTTP500、旧profile/pin不变、不reload；不是成功提交 |
+| 候选JSON提交失败 | 旧选中profile/pin保持、不reload；**新anchor副本残留，不能称完整回滚** |
+| trained档案三类变更 | text/candidate/calibrate均409，文件不改；只有metadata fixture，非真实adapter验证 |
+| snapshot遇BaseException | 自有租约FD关闭、blobs清空，后续修改不busy |
+| snapshot顺序/归属 | 明确选择顺序保留，先读合法后遇foreign样本仍释放租约 |
+| 只读snapshot | 已准备结果、revision、元数据字节不变，training/inference验证仍false |
+| 本地稳定pack/extract | 所有参考字节/pin一致，active一致；排除_cal与原始libraries，非并发/远端证明 |
+| 归档末尾非法成员 | 链接/FIFO/设备成员在写前拒绝，不覆盖已有active；不是磁盘IO失败事务保证 |
+| DELETE重复revision | 两个同值字段仍400，存储删除函数不调用 |
+| 24秒词级分段 | 完整可信词时间切成两个24秒段，原始数据不改、不调用窗口ASR；不是语音对齐模型验证 |
+| F33 | Heavy拒绝已晚于磁盘变更，详见下节 |
+| F34 | 校准旧评分提交到新转写版本，详见下节 |
+
+## 3. 两项新增未修问题
+
+### F33：接口返回429时，参考已经保存，但未报告reference_saved
+
+用两个真实执行器CPU线程占满原HeavyAdmission(2)，保持占用期间通过实际ASGI分别调用原text/candidate路由。
+
+- text先原子写入新ref_text和对应candidate.text，再尝试HEAVY.run；返回429，但磁盘pin已变。
+- candidate先复制cand1到anchor_1、更新profile anchor/index/ref_text，再尝试HEAVY.run；返回429，但磁盘选择与pin已变。
+- 两次响应都未包含`reference_saved`，worker reload函数未执行。最后自有线程结束、两个名额可重新获取。
+
+这是**拒绝语义与持久化状态不一致**：不能把429解释为未发生修改或盲目重试。与原有“保存后worker失败返回503/reference_saved=true”的合同不是同一条路径。没有执行真实模型/worker，没有证明用户已经听到旧声或错声。需在修改前完成准入并在合适的档案版本合同内提交，或明确返回已保存但未加载的事实，不能只改状态码掩盖资源所有权。
+
+### F34：文本改版后仍提交旧candidate评分，不产生版本冲突
+
+执行原校准API，用两个候选、四次合成/ASR/声纹fixture评估；四次均使用旧候选转写。通过结束释放钩子控制交错，在评分后、提交前调用实际text ASGI接口。文本编辑在第二个Heavy名额内成功，磁盘pin随新转写改变。原calibrate随后重新读取新版profile，保存旧评分并返回200/chosen0；最终新转写档案带着旧版本calibration。
+
+两个接口均200，临时_cal目录已清理；旧转写未覆盖新转写，但**旧评分被附加到未按该版本评估的新档案**。这是版本/评分溯源缺口，与F19临时目录碰撞不同，不重复编号。合成、ASR、speaker数值与worker ack全部fixture；0.9等评分不是测得的相似度，不能据此证明实际音质/错误音色或双GPU一致。
+
+F33/F34三轮复现，均未修。F01–F32、D01、F17备份交错、F19/F20校准/重载、F24模式绑定等继续保留，不因本批测试通过而关闭。
+
+## 4. 三轮验证与封存范围
+
+| 项目 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| CPU/ASGI/进程/文件合同，原378＋新12 | 390 PASS | 390 PASS | 390 PASS |
+| 其中新保护/未修观察 | 10/2 | 10/2 | 10/2 |
+| 失败/错误/跳过 | 0/0/0 | 0/0/0 | 0/0/0 |
+
+共1170通过；新保护30次、未修观察6次。预检12/12通过。后台三轮正常exit0，无监听端口；各轮测试身份与F33/F34观察一致，自有线程/准入槽/临时目录清理核对。
+
+**本批未重跑Go（含F31及独立F02）、浏览器/Player与latency VM、独立ASGI2.3、CLI四项、NumPy分块/裁剪器探针，不挪用旧成绩。** CPU合集含原ASGI、HTTP、进程、锁、NumPy和档案合同，F32认证FIFO见证等实际重跑；模型和特定调度角色仍为明确fixture，不是全功能或目标模型验收。
+
+Node30、JS检查、38份Python AST（33产品库存＋新测试＋4审计脚本）、repack通过。795份历史SHA、53源资产/94冻结哈希、正式HEAD15文件保持；pip freeze与第三遍第1批完全相同，无新增安装。Go可用但本批未执行其套件；Rust/Torch/Qwen不可用，实际训练/双T4/物理音频/声学/提速未签收。
+
+独立校验首版曾误用收据字段modules（实际targets），AST准备也曾只计source/py24而漏了tools9。首错原始日志和correction说明保留，改正校验接线/实际交接格式后exit0；没有修改产品/测试/runner、没有重跑或改写三轮收据。最终manifest28项，历史795份另行逐项核对。
+
+## 5. 原300建议的部分证据链接与待实施顺序
+
+本批为10条原建议建立`pass3-reference-recommendation-links.json`；与上一批去重共16个原建议ID有暂定链接，**不是16条完成**。原文及原处置不修改，specific_row_test_signoff/final_disposition_signed_off/product_fix_implemented全部false。涉及R1-012/013、R2-029/031/032/035/039/062/077/094。
+
+下一实施阶段应先完成以下合同，当前仅记录、不改产品：
+
+1. 明确每档案的内容版本，包含候选集合/文件hash、转写、gen和conditioning模式。
+2. text/candidate在持久化前取得准入；取消或准入失败不得偷偷提交，保持原始引用。
+3. 提交与reload分阶段给回执，区分未修改、已保存未就绪、已在所有worker核验。
+4. 校准开始捕获全输入版本，提交前CAS核对，变化则冲突/废弃结果而非静默采用旧分数。
+5. 将校准结果按内容身份关联候选，不仅存数组下标。
+6. 记录每候选预期/实际有效生成数、评估算法/模型版本与缺失指标，不把缺CER默认值当已验证发音。
+7. 覆盖校准与转写/候选/删除/训练模式变更的同档案并发矩阵，保持旧成功结果和可重试状态。
+8. 区分单文件replace、候选副本和多文件事务；对提交失败的新anchor孤立文件明确回收策略。
+9. 保持trained参考不可变和409，不用宽松转换绕过固定版本。
+10. 保留只读库快照顺序/hash/租约语义，取消后不提前释放仍在工作线程使用的资源。
+11. 稳定本地归档回环只作基础保护；继续解决F17并发快照与恢复预算/失败部分提交，不宣称远端隐私/持久化完整。
+12. 在全源第三遍与300最终映射完成前不跳S1，更不能用统计中心、参考缓存或fixture替代真实训练/多参考条件贡献/音质验证。
+
+## 6. 当前检查点与下一步
+
+`g0-pass3-reference-coverage.json`、`g0-pass3-reference-findings.json`、三轮原始收据、manifest、`verify_pass3_reference.py`、`progress-pass3-reference.json`为当前证据。交接完整内嵌82份。
+
+下一批继续第三遍训练输入/声学码/训练产物与持久化绑定，核对输入来源、租约、失败/取消提交和实际训练边界；之后完成余41份及300最终处置映射。长录音真实训练、参考贡献追踪、首prefix立即调度、自然连续朗读、无沙沙、双GPU等效参数和真实RTF≤0.3等要求均未豁免。产品保持冻结，不生成18包，不跳Q28，不要求用户点击Continue。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_TRAINING.md
+
+# G0 全源第三遍第3批：训练输入、声学码与产物提交
+
+日期：2026-10-23；分支 `arena/1160bd87-kagglee`。
+
+**第三遍累计20/53份、5365行，剩33份8303行。前两遍各53/53份、13668行保持。产品冻结，G0仍PARTIAL/BLOCKED。** 这是冻结包53源资产，不是整个Git仓库全审/全功能/目标模型验收。
+
+## 1. 本批全文复读：8份1505行
+
+| 文件（相对 kaggle/source/） | 行数 | 复核重点 |
+|---|---:|---|
+| py/training_data.py | 285 | WAV全部帧、文本/声明、选中来源/revision、预备目录/发布、只读租约 |
+| py/training_codes.py | 355 | 模型指纹/结构、schema2封存来源、逐样本完整码、取消末门、继承OFD |
+| py/training_job.py | 227 | 严格准入/参数、双rank进程、FD/密钥、checkpoint发布与最终回执 |
+| py/tts_training.py | 200 | JointLoss/DDP/累积/溢出、采样覆盖、实际优化入口、rank报告/保存；仅源码语义 |
+| py/tts_dataset.py | 125 | 完整文本/16码本序列预算、缓存克隆、collate偏移/标签/掩码；仅源码语义 |
+| py/trained_profiles.py | 155 | 完成记录/hash/实际safetensors解析、绑定、固定参考文本、发布前重核 |
+| tools/encode_training.py | 128 | 离线CPU子进程、parent-death、私有回执、超时/取消与提交提示 |
+| tools/trained_voice.py | 30 | 显式未验adapter声明、describe/publish参数与脱敏错误 |
+| **合计** | **1505** | **8份重新完整阅读** |
+
+初次三组拼接输出被截断，不计那次为全文；随后逐组完整补读，training_codes分1–180/181–355，其余完整范围均无截断。tts_training与tts_dataset的张量/优化语义是源码审查，不冒充Torch执行。adapter_engine/lora_adapter/qwen_compat及train_tts等剩余文件不因调用或旧辅助测试阅读获得本批全文信用。
+
+**计数纠正：**进度曾手算为1605行，信用生成器断言失败，未写错误覆盖文件；逐项求和为1505。已保存`pass3-training-credit-correction.json`，校正为3860+1505=5365、13668−5365=8303。没有加文件/测试或修改源代码抵消错误。
+
+## 2. 新增12项：11保护＋1未修观察
+
+`kaggle/tests/test_pass3_training_boundaries.py`实际执行文件、PCM、flock/OFD、原控制器与受控CPU子进程、原产物检查/发布事务及CLI。明确不导入Torch算子，不进行优化器/Gloo/NCCL/模型/实际训练。
+
+| 项目 | 已验证及边界 |
+|---|---|
+| raw输入准备遇KeyboardInterrupt | audio/JSONL已写后中断，清pending，保留已有snapshot/原库，释放租约后可重试 |
+| PCM极值/奇数帧数 | −32768/+32767和36001帧完整保留，带奇数长度JUNK元数据被移除；总帧预算少1明确413，不裁切 |
+| acoustic codes最终取消 | 原完整_verify已经通过后置取消，最后rename前409、清pending；原输入保持，可重新prepare |
+| 第二样本encoder遇BaseException | 第一份已编码/落盘后KeyboardInterrupt，全部本次pending清理，源租约释放，后续重试成功 |
+| Qwen finish指纹 | 只构造无tokenizer对象执行原finish，materialized字节变更409；**未执行构造器/编码，不绕过F01** |
+| code OFD最后引用 | 原adopt_lease保留dup，父上下文先关后删除仍409；最后adopt上下文关后才可删。进程内FD试验，不是此项执行双rank |
+| cancelled结果拒绝 | 即使有可解析的合成adapter，结果改cancelled仍409、不创建profile |
+| request/epoch拒绝 | request样本顺序不一致、rank loss NaN各自409；未穷尽所有rank/类型/报告矛盾 |
+| publish第二次检查 | 写完候选JSON后更改speaker tensor，原最终inspect拒绝、清临时档案、保留active；profiles正常.lock保留 |
+| 固定参考匹配 | 非首行的真实参考WAV配其自身文本、保存pin，不改active/不声称quality/reload；code lease元数据及adapter均为fixture |
+| trained_voice CLI | 错pin返回rejected/409/exit2、不创建档案、不带私有路径或Traceback；无模型加载 |
+| F35 | 原控制器空检查点仍报告优化器执行，产物检查器会拒绝，详见下节 |
+
+### 首次预检失败及修正
+
+首次收集43项，其中31项是直接导入TestCase类带来的既有重复项；新增断言有1失败：误将正常留下的`.lock`视为发布残留。原事务正确清理了`.trained-profile-*`且没有新profile。改用模块导入避免重复收集，断言明确仅`.lock`保留。产品/旧fixture未改；首次原始日志和`pass3-training-precheck-correction.json`保留。最终预检仅新增12项、12通过；三轮累计不计那31项重复。
+
+## 3. F35：子进程成功＋manifest存在，不足以声称优化器执行
+
+原`run_controller`在两个rank exit0后，核验code pin、Base指纹及`adapter/manifest.json`文件存在，即把最终结果标为`completed`/`optimizer_execution_observed=true`，未在该阶段解析检查点内容或核对完整rank报告。
+
+受控见证：
+
+1. 使用真实本地raw/code fixture快照；仅训练准入、依赖存在与tokenizer一致门禁为显式测试替换，无生产CLI开关。
+2. 两个真正自有CPU子进程执行原GpuLease/code OFD adopt与parent-death握手，随后正常exit0，不执行rank_worker/run_rank/优化器。
+3. rank0只创建`adapter/manifest.json`，内容为`{}`；没有adapter/speaker tensor。
+4. 原控制器仍生成`completed`、rank_exit_codes=[0,0]、optimizer_execution_observed=true；磁盘result与回执一致。
+5. 原`TrainedArtifacts.inspect`409拒绝该产物；信号处理恢复，code与GPU租约可再次获取，没有发布非法声音。
+
+**结论仅为控制器回执的证据不足**，不是实际训练成功、真实rank会生成坏检查点、模型错误或发布绕过的证明。正常源码run_rank/save_checkpoint还有完整报告/权重保存与rank同步；本见证有意替换它们，不能用结果否认真实优化代码存在。与F13–15工具自检、F16后代清理及F01包版本元数据不同，不重复编号。F35三轮稳定复现，未修。
+
+后续修正宜抽取**不依赖最终result.json**的检查点/来源/rank验证器，在最终completed回执前使用；不能直接把现有inspect插入控制器造成“inspect先要求completed结果、结果又等inspect”的先决条件环。应区分processes_exited_ok、checkpoint_validated、optimizer_execution_recorded和quality_verified；结构自洽仍非真实硬件/优化器独立证明。
+
+## 4. 三轮执行与独立完整性核验
+
+| 项目 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| 累计CPU/ASGI/文件/进程合同，旧390＋新12 | 402 PASS | 402 PASS | 402 PASS |
+| 新保护／未修观察 | 11／1 | 11／1 | 11／1 |
+| 失败／错误／跳过 | 0／0／0 | 0／0／0 | 0／0／0 |
+
+共1206通过；新保护33次、F35见证3次。三轮测试ID/观察一致，旧390逐项继承；原控制器CPU子进程正常回收，后台进程exit0。旧F16后代与F32认证FIFO等见证随CPU集合重跑，仍未修。
+
+本批新增独立trained_voice CLI拒绝合同；原CPU合集已有encode CLI/parent-death/真实信号等也执行。**未重跑额外四项专项CLI矩阵、Go/F31/独立F02、浏览器/Player/latency VM、独立ASGI2.3、NumPy分块/trimmer单独矩阵**，不挪用旧成绩。标准Node30/JS/38份Python AST（33产品库存＋新测试＋4审计脚本）/repack通过。
+
+825份历史文件SHA逐项保持，53源资产/94冻结哈希/正式HEAD15文件不变；原300与Q25–27每题50行动保持。pip freeze与上批相同，无安装新依赖。Go存在但本批未跑其套件；无Rust/Torch/Qwen/CUDA/真实双T4/物理音频。NumPy/safetensors/合成WAV为格式/文件证据，不是预训练模型/训练或声学质量证据。
+
+独立封存首次准备也有审计脚本错误：交接生成器的f-string标题中新增空manifest字面量`{}`未转义，AST/manifest准备未完成，首次verifier报缺manifest。已仅将生成器字面量转义为`{{}}`，保留首错与correction说明，重新生成交接/AST/manifest后再校验；原始三轮收据与产品/测试/runner未改、未重跑回归。
+
+## 5. 原建议部分证据与实施前待办
+
+本批链接原7条：R1-020、R2-093、R3-071/072/075/076/080；含本轮真实重跑的旧信号合同。与之前去重22个原ID有暂定证据，**不是22条已完成**。原建议文本和初始处置不改；specific_row_test_signoff/final_disposition_signed_off/product_fix_implemented均false。
+
+1. 训练输入格式完整、声明与内容语义审阅分列，不将declaration当版权/身份自动验证。
+2. 长录音接收、样本分段、全部选择覆盖、实际训练迭代和参考prompt使用继续区分；现有每文件240秒/总900秒门禁不等于真实长数据已训练。
+3. 保持sealed-source-v1及内容hash，训练前/提交前核验Base、tokenizer与codes来源版本。
+4. 保留fixture/legacy拒绝训练和发布；不得为模型测试便利加生产绕过开关。
+5. 统一实际provider distribution元数据；F01仍未修，finish-only保护不能掩盖constructor版本入口。
+6. 明确final-cancel相对原子rename的线性化点；提交后取消回执必须指引list/verify，不误称从未提交。
+7. 取消/失败只清理自有本次pending，保留旧成功版本；继续解决F16已退出leader的额外后代，不根据历史PID乱杀。
+8. 校验每rank逐epoch覆盖、padding、步数/溢出与实际代码报告一致；union覆盖不足以穷尽所有矛盾报告。
+9. 在真实Torch环境验证DDP forward、变长序列、累积尾组/共同溢出、FP16/FP32 adapter与两rank digest，不靠AST/tiny替代目标模型。
+10. 区分受控CPU lease互斥和真实在线推理/离线双GPU资源隔离；不得为测试盲停驻留模型。
+11. 发布前重核tensor/hash/固定参考；成功发布仍只是显式未验候选，保持trained无Base/Mock回退。
+12. 将控制器进程退出、检查点完整性、优化记录、reload、音质与加速分别出证；F35先修回执合同，不能新增一项true就声称真实训练已验证。
+
+## 6. 当前检查点与下一步
+
+当前证据：`g0-pass3-training-coverage.json`、`g0-pass3-training-findings.json`、三轮原始log/receipt、manifest、`verify_pass3_training.py`和`progress-pass3-training.json`。完整交接83份，顶层PLAN/IMPLEMENTATION已同步。
+
+下一批继续第三遍adapter/推理入口、provider兼容及训练/推理绑定，复核加载失败、取消、缓存版本与原样生成输出；继续剩33份/8303行及300最终处置。无产品修改、不发18包、不跳S1/Q28、不要求Continue。
+
+长录音真实训练、全部参考贡献追踪、<10秒相似度、首可用DeepSeek prefix立即生成、更响受保护输出、更低建档延迟、自然连续朗读/去沙沙/无接缝、generated-only PCM、双GPU等效参数与真实RTF≤0.3等均未豁免，均不由本批替身签收。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_INFERENCE.md
+
+# G0 全源第三遍第4批：adapter、推理与生成资源清理
+
+日期：2026-10-23；分支 `arena/1160bd87-kagglee`。
+
+**第三遍累计27/53份、6667行，剩26份7001行。前两遍各53/53份、13668行保持。产品未改，G0仍PARTIAL/BLOCKED。** 全文阅读齐全与问题已修/功能已验不是同一状态，53资产也不等于整个Git仓库。
+
+## 1. 新增7份完整复读：1302行
+
+| 文件（相对 kaggle/source/） | 行数 | 重点 |
+|---|---:|---|
+| py/adapter_engine.py | 108 | 本地Base固定、磁盘trained绑定、cached选择仍检查产物、原子模块切换、整句输出及取消 |
+| py/lora_adapter.py | 91 | 冻结Base/FP32 A-B、全部替换前校验、commit回滚与张量设备；仅源码语义 |
+| py/qwen_compat.py | 97 | provider分布元数据/命名空间冲突、RoPE schema/代理/注册表与失败重试 |
+| py/clone_stream.py | 126 | generated-only条件与解码分离、有限窗口、pending与close/取消 |
+| py/gpu_ownership.py | 151 | 固定同UID命名空间、FD类型/nonce/OFD、短写失败释放、观察状态非授权 |
+| py/worker.py | 680 | boot/profile事务、pin/缓存/锁、生成/DSP/指标、HTTP和断连/排空 |
+| tools/train_tts.py | 49 | CLI准入与退出码、rank私有错误日志、原控制器分支 |
+| **合计** | **1302** | **7份完整重新阅读，无源输出截断** |
+
+worker分1–170/171–340/341–510/511–680连续读完，其余完整全文。辅助旧测试组合输出一次截断，不计测试全文信用。结合上一批5365+1302=6667，13668−6667=7001；机器断言逐项核算。未复读的DSP/监督/Go/浏览器/工具/许可文件不因调用或继承测试获得本批第三遍信用。
+
+## 2. 新增12项：11保护＋1未修观察
+
+`kaggle/tests/test_pass3_inference_boundaries.py`执行原AdapterEngine/RealEngine/Worker/RoPE/租约方法与真实文件、NumPy、safetensors、flock/OFD。Torch只替换最小导入/seed记录/空inference上下文，**没有模拟tensor算子**；实际LoRA prepare/commit、native generation、predictor/codec decode均未执行。合成完成记录不是实际训练证据。
+
+| 新合同 | 结果与覆盖边界 |
+|---|---|
+| adapter Base绑定不符 | inspect/prepare/commit前409；旧key/prompt保持；不声明全部失败切换回滚 |
+| adapter缓存命中 | 仍真实重读并解析合成产物；第二次实际改变safetensors字节即409，不调prepare/commit |
+| adapter codes绑定不符 | manifest与profile声明不一致409，不调张量替换，key/prompt不提交 |
+| 生成前取消 | 不select、不seed、不调用生成；最小依赖导入仍会先发生，不宣称零成本取消 |
+| 生成后取消 | 整句native替身已返回的4800 PCM全部丢弃；不能据此声称可以抢占CUDA核/codec |
+| native PCM严格边界 | 空列表、错误采样率/容器/维度、全零、NaN、超token对应长度拒绝；合法4800帧只yield一次float32整句，不伪造声学流 |
+| RealEngine度量/关闭 | 两个回放包prepare取max、codec/decode求和、窗口峰值取max；回放iterator耗尽关闭一次，seed记录正确；不是RTF测量 |
+| worker部分失败恢复 | 先出一包后生成器异常，1 error/1 stats/1 sentinel、解锁并after_job；后续job可成功，failed/served各1；不解决F07无界队列/F18早断连 |
+| 同pin但prompt缺失 | 原worker重新resolve/cache后才生成；resolver/音频为替身，实际hash/pin/锁流程执行，不修复F08旧prompt回滚 |
+| RoPE失败重试 | 原错误cause保留且失败未改注册表；重试安装单一bridge，不改变其他registry项；不是实际MimiConfig/Torch smoke |
+| GPU记录短写 | 真pwrite少2字节触发异常，FD关闭、busy false、非法记录无诊断值，锁文件仍0600，后续owner可获得；仅同UID合作协议，非GPU测量 |
+| F36 | 上游close异常导致窗口finish跳过，详见下节 |
+
+预检12/12一次通过，未跳过。worker错误恢复测试预期记录synthetic异常日志，不能把日志中的ERROR误算为测试失败；原始日志完整保留。
+
+## 3. F36：上游close失败，窗口最终清理未受独立finally保护
+
+原`generated_only_stream`的退出顺序：
+
+```python
+finally:
+    it.close()
+    window.finish(cancelled=True)
+```
+
+本批通过原函数实际启动、yield一包后由消费者close；把上游iterator.close设为抛synthetic RuntimeError，原finally第二行即被跳过。
+
+- 上游close调用1次，异常传播；原生成器frame本身已经关闭。
+- 被测试显式捕获的真实GeneratedCodecWindow仍closed=False，pending为1920个NumPy样本、codes为合成标记。
+- 最后由测试所有者显式finish(cancelled=True)，closed=True、pending空、codes=None，全部本次资源清理。
+
+**结论仅是异常安全的清理顺序缺口，未修。** 准备/predictor/decoder/Torch上下文为明确控制替身；测试为观察状态主动保留window引用。没有证明生产上游close实际会抛异常，也没有证明正常生成器引用释放后仍有持续内存占用、真实GPU泄漏、错误声音或沙沙声根因。建议嵌套try/finally保证窗口清理不依赖上游close成功，同时明确原错误与清理错误优先级；不能仅吞掉异常再伪报成功。
+
+F36三轮稳定见证，与F08加载失败的prompt/pin不一致、F18未开始body迭代的取消丢失不同；不重复登记旧问题。F01–F35/D01及原DSP/trimmer/播放器/校准问题继续保留，未因本批通过而关闭。
+
+## 4. 三轮验证与证据完整性
+
+| 项目 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| 累计CPU/ASGI/文件/进程合同：旧402＋新12 | 414 PASS | 414 PASS | 414 PASS |
+| 新保护／新未修观察 | 11／1 | 11／1 | 11／1 |
+| 失败／错误／跳过 | 0／0／0 | 0／0／0 | 0／0／0 |
+
+共1242通过；新保护33次、F36见证3次，三轮测试ID与观察一致、旧402逐项保留。三轮后台正常exit0、无监听端口；已有实际CPU子进程/信号/OFD、原ASGI与CLI合同随合集运行，F35等旧见证仍未修。本批新增部分没有HTTP浏览器或原生tensor运行，不把方法调用冒充HTTP。
+
+Node30、JS检查、38份Python AST（33产品库存＋新测试＋4审计脚本）、repack通过。858份历史SHA、53源资产/94冻结哈希、正式HEAD15文件保持；原300与Q25–27各50行动不变。pip freeze与上一批一致，无新依赖。完整交接84份、当前manifest/独立verifier/progress均已建立。
+
+**本批未重跑Go/F31/独立F02、浏览器/Player/latency VM、独立ASGI2.3、额外四CLI、NumPy分块/trimmer单独矩阵；不挪用历史成绩。** 沿用Go工具但本批未执行该套件；无Rust/Torch/Qwen/完整权重/CUDA/真实训练/双T4/物理音频，实际音质与提速未签收。
+
+## 5. 原建议部分证据与待实施事项
+
+本批映射原7条R1-045、R2-060/079/093、R3-006/007/071；累计去重27个原ID有暂定链接，**不是27条已完成**。原文/初始处置不改，specific_row_test_signoff/final_disposition_signed_off/product_fix_implemented全部false。没有因本批另开新问题，原300及既有逐题行动保持。
+
+1. 生成器拥有的窗口finish置于独立finally，覆盖上游close本身出错、消费者close与模型异常。
+2. 明确close错误不覆盖原生成错误，独立记录阶段与清理完成事实，错误脱敏不吞真失败。
+3. bounded window/no reference decode要在真实预训练codec复测，不用本批解码替身或源码因果性签收音质。
+4. adapter冷选择与缓存命中都保持Base/manifest/codes来源检查，缓存key不能替代实际tensor文件核验。
+5. prepare全部通过再commit，commit异常需原子恢复所有模块；本批只检查不进入prepare的拒绝分支，真实CPU张量/不同rank adapter和CUDA设备路径仍待证。
+6. F08需协调engine prompt与worker已接受pin的事务提交/回滚；补一个缺prompt重载保护不能当作已修。
+7. F09需统一conditioning规范化与对外mode，同内容pin仍不能签收不同backend/mode一致性。
+8. 保留adapter整句缓冲声明和取消后丢弃返回PCM；不要将cooperative stop写成GPU立刻停或首声已提速。
+9. F07队列背压和F18早断连需要独立所有权合同；worker解锁后可再服务不代表网络/生产者已取消。
+10. 汇总prepare/codec/decode只反映定义中的阶段，不能用生成完成或虚拟播放时间替代真实首声/消费/RTF。
+11. GPU锁只约束同版本/同UID合作进程；OFD/nonce/短写保护不是容器/外部进程或真实两卡隔离保证。
+12. 继续严格provider元数据/bridge入口，真实依赖环境安装与实际configuration smoke要另证，不强降TF4或临时替换模型。
+
+## 6. 当前检查点与下一步
+
+`g0-pass3-inference-coverage.json`、`g0-pass3-inference-findings.json`、三轮原始log/receipt、manifest、`verify_pass3_inference.py`、`progress-pass3-inference.json`为当前证据；PLAN/IMPLEMENTATION与84份全文交接已同步。
+
+下一批第三遍启动/监督、backend preflight、资源/测量工具与DSP接口，继续核对超时/退出/失败回执与真实测量定义；随后剩余Go/前端/许可等，完成余26份7001行及300最终处置。产品不改、不发18包、不跳S1/Q28、不要求用户点击Continue。
+
+长录音真实训练、全部参考贡献追踪、短录音相似度、首可用DeepSeek prefix立即生成、更响且受保护输出、更低建档延迟、自然连续朗读/无沙沙/接缝、generated-only PCM、双GPU等效参数与真实RTF≤0.3仍未豁免，不由本批fixture签收。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_STARTUP.md
+
+# G0 全源第三遍第5批：启动、监督、preflight、资源测量与 DSP 接口
+
+日期：2026-10-23；活动分支 `arena/1160bd87-kagglee`。
+
+**第三遍累计38/53份、8920行，剩15份4748行；前两遍各53/53份、13668行保持。产品冻结未改，G0及整体仍PARTIAL/BLOCKED。** 本批是阅读与故障边界核验，不是完整功能、真实训练、声学或提速签收。
+
+## 1. 全文重新阅读11份2253行
+
+| 文件（相对 kaggle/source/） | 行数 | 审查重点 |
+|---|---:|---|
+| py/bootstrap.py | 451 | 自有进程组、超时/后代管道、冻结依赖、preflight/nonce、旧标记不盲杀、启动回收 |
+| py/supervisor.py | 219 | 秘密环境最小化、子进程组与OFD、重试/STOP、fatal回执、退出释放与信号恢复 |
+| py/audio_rt.py | 222 | ctypes ABI/符号、加载降级、NumPy状态/有限值、淡入/flush/限幅 |
+| rust/audio_rt/Cargo.toml | 17 | cdylib、构建与依赖、接口版本 |
+| rust/audio_rt/src/lib.rs | 433 | ABI3及全部导出、指针/长度、DC/RMS/平滑/呼吸/flush；仅源码，未运行Rust |
+| tools/backend_probe.py | 200 | 静态/运行时区分、callshape非语义、子进程限时与回执、退出码与成功状态 |
+| tools/e2e_check.py | 180 | health/生成/终端统计的成功定义、原F13及错误流边界 |
+| tools/resource_control.py | 41 | 合作OFD状态/等待/占用，不将CPU状态冒充GPU运行 |
+| tools/selftest.py | 177 | 原F15、fixture/真实服务与自检失败含义，不提升为全功能验收 |
+| tools/voice_benchmark.py | 168 | 明确--run、双卡health/实际stats绑定、terminal/计数/RTF、私有O_EXCL产物 |
+| tools/watermark_check.py | 145 | 原F14、PCM/统计及真实听感界限 |
+| **合计** | **2253** | **11份全文，无产品源输出截断** |
+
+bootstrap连续1–225/226–451，Rust lib连续1–215/216–433，其他全文。辅助旧测试组合输出曾截断，不计辅助测试完整阅读。6667+2253=8920，13668−8920=4748。余15份是LICENSE 201、MEMO 220、Go gateway10份2110行、web3份2217行；调用/继承测试不自动给予这些文件第三遍信用，LICENSE阅读也不等于法律签收。
+
+## 2. 新合同12项：10保护＋2未修观察
+
+测试：`kaggle/tests/test_pass3_startup_boundaries.py`。执行原启动/监督/探针/benchmark/DSP Python代码，真实自有CPU进程、线程、文件和OFD；C ABI 测试库仅用于符号故障注入，不重写DSP，不是Rust实测或多语言性能成果。
+
+| 新保护 | 证据与明确边界 |
+|---|---|
+| bootstrap活跃直属子进程超时 | 原sh以真实Timer终止自有会话组，直属child为SIGKILL退出且stdout关闭；不修F21“leader已退出、后代仍持管道”路径 |
+| bootstrap资源忙/旧PID标记 | 真OFD忙409；释放后旧marker仍409且不更改，去掉本测试marker后才允许通过，killpg未调用 |
+| supervisor已退出leader的后代 | 自有leader先exit0，后代忽略TERM并继承真fleet FD；原Proc.kill仍发送组KILL，pidfd确认后代退出、OFD busy恢复false；不是CUDA测量，不修训练F16 |
+| supervisor停止优先于重启 | 真线程/Event在重试流程发STOP，原restart退出且start不调用；kill/start为控制替身，不作为重启时延性能测量 |
+| supervisor认证准入失败 | 真OFD先取得，认证替身抛UploadRejected；原main返回2，未build子服务，清本次PID、还OFD并恢复SIGTERM/INT处理器；未完整启动服务 |
+| preflight超时 | 原isolated_runtime控制器终止/回收真实自有睡眠CPU child，返回blocked与runtime_timeout，模型/推理/训练/性能标志均false |
+| callshape不执行模型 | classmethod、实例方法只inspect不调用；额外必填参数阻塞；即便callshape接受也保留behavior untested，非实际provider语义签收 |
+| benchmark流及分母 | 分裂header/payload可重组；拒绝终端后数据、重复stats、残帧、超16MiB声明、缺stats、bool/错误sample数、错误pin/engine、cancel/failed/anomaly、NaN/不一致RTF；HTTP、PCM、stats、clock均fixtures，.1/.2不是实测性能 |
+| benchmark不覆盖历史报告 | 不带--run时不联网；既存0600报告导致FileExistsError且字节/权限不变，无ledger/WAV创建；只证明拒绝覆盖，不签收友好CLI错误呈现 |
+| NumPy有限值边界 | 非连续float64/NaN/±Inf/±1e6输入，经原Leveler得到同长度有界int16，空输入零长、flush192/末端0及再次flush0、close幂等；不声明分块不变/DC状态复位/真实听感 |
+
+### 首错记录（不隐藏）
+
+首次新预检12项中11通过、1 error：测试误访问不存在的`UploadRejected.status`，实际字段为`code`；产品已按预期拒绝。仅改两处测试断言字段，保留`pass3-startup-precheck-first.txt`与`pass3-startup-precheck-correction.json`，修正后12项通过。没有以产品改动消除该测试错误。
+
+## 3. F37：子进程非零退出，但原父控制器仍接受成功回执（未修）
+
+原`backend_probe.isolated_runtime`先wait，随后只按报告文件大小与部分JSON形状接受回执，没有先检查returncode。测试替换的**报告生产者**是自有真实CPU child：写相同schema1/status=surface_preflight_passed/checks=[]、全部模型验证标志false的合成报告，然后分别exit0与exit23。原父控制器均原样返回该报告，真实child均已回收。
+
+三轮新CPU见证一致。确认的是**非零child退出状态没有参与回执准入**；不是实际GPU preflight误通过，不是Torch/provider实际先成功后崩溃的证明。报告生产者明确替身，不能据此宣称有真实GPU/模型。未来修复还需组合returncode、必要checks/报告完整性和状态，不能只看宽松JSON。
+
+## 4. F38：缺必需符号的ABI3库令ctypes导入中止，而非回退（未修）
+
+使用已有`/usr/bin/cc`在自有临时目录真实编译极小C共享库，仅导出`unsigned int rt_version(void)`，以编译宏分别返回2/3；在独立真实Python child中导入原`audio_rt`，实际ctypes加载该库：
+
+1. ABI2：版本太旧，原加载器跳过，结果NumPy；
+2. ABI3：访问首个必需符号`rt_leveler_new`时抛`AttributeError`，原except只捕获`OSError`，import以非零码中止；
+3. 同ABI3但`QTTS_NO_RUST=1`：显式绕过native加载，结果NumPy。
+
+三轮均一致，回执保存C源码SHA及实际编译器版本。库/源/child临时文件不入Git。**这是实际C ABI 故障注入＋ctypes执行，不是Rust编译或Rust DSP执行；没有证明正式Rust库损坏，也没有声学、跨后端等价或性能结论。** 加载策略应先明确“明确失败关闭”还是“可观察、明确标注的NumPy回退”，不能掩盖native缺失；本阶段没有修改产品实现。
+
+## 5. 三轮重新运行的结果与未执行项
+
+| 实际执行 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| CPU继承集合＋新合同 | 426 PASS | 426 PASS | 426 PASS |
+| failure/error/skip | 0/0/0 | 0/0/0 | 0/0/0 |
+| 独立NumPy分块探针 | 12 case | 12 case | 12 case |
+| 独立trimmer探针 | 8 case | 8 case | 8 case |
+| 实际CLI期望合同 | 4 | 4 | 4 |
+
+CPU **426×3＝1278 PASS**，每轮完整保留前批414项并新增12项；新增保护30次、观察见证6次。比较逐项测试ID与结果，不以总数替代继承核验。原F01–36/D01保留，观察通过不是bug修复。独立分块探针仍观察到48样本切块差1424 int16等已知分块依赖，实验完成不是算法通过容差/去沙沙成功；裁剪探针也是合成信号，不是真实逐字听感签收。
+
+每轮真实CLI：backend静态、backend --runtime、benchmark默认均期望exit2/blocked，resource status期望exit0但gpu_verified=false；合计12次CLI，其中9次预期阻塞。benchmark未加--run、无模型加载或WAV生成。不能把“预期阻塞符合合同”写成GPU/性能成功。CPU集合本来包含的本地HTTP/ASGI/CLI/租约/信号等继续实际重跑，但模型/health/decoder/ASR等明确替身的部分不会升级证据。
+
+另单次新执行Node30、JS语法（工作台及产品web）、Python AST38、repack --check；没有本批Go/race/vet、真实浏览器/VM、独立ASGI2.3 companion。旧历史成绩不挪作本批成绩。沿用现有.venv，无新Python或系统依赖安装；freeze与前批相同（NumPy2.2.6，不冒称requirements2.4.6）。无Torch/Qwen/CUDA/rustc/cargo。C测试库由已有系统cc编译；**Rust未编译、未执行**。
+
+## 6. 完整性、原300建议与交接
+
+- 887份历史文件SHA在本批前保存，历史收据/测试/报告不得改写；53源、94冻结、15正式工作台文件及原17包保持。
+- `advance_pass3_startup.py`逐文件核对SHA/行数，新增11/2253；coverage第一/二遍保持，第三遍38/53，未把剩15份涂绿。
+- 本批7条原建议仅部分证据链接：R1-075/079/080、R3-019/020/076/079；与前批去重累计33个ID，原300逐字与Q25–27各50项保持。没有新增重大方案选择题，没有跳Q28；所有最终处置/逐条签收仍false。
+- 独立`verify_pass3_startup.py`复核历史SHA、冻结、逐项CPU继承、F37/38、探针/CLI原始日志及SHA、manifest、建议映射、环境与完整交接。
+- 完整交接85份备忘录逐份嵌入匹配；本报告、PLAN/IMPLEMENTATION及交接优先状态同步。manifest不自哈希，也不嵌入可变交接/进度，避免循环；这些由独立核验器另验。
+
+主要收据：`docs/validation/step18/pass3-startup-cpu-round1..3.json`、`pass3-startup-companions-round1..3.json`、`g0-pass3-startup-{coverage,findings}.json`、`pass3-startup-recommendation-links.json`、`pass3-startup-run-manifest.json`、`progress-pass3-startup.json`；终态以独立核验成功日志为准。
+
+## 7. 后续精确动作（待实施，不冒充修复）
+
+1. 下一批完整复读Go gateway10份2110行；保存历史SHA，新增严格输入/取消/终端协议与私密错误边界合同。
+2. 另批完整复读web3份2217行，实浏览器重验录音/复制/排空/取消，不能用Node代替浏览器。
+3. 阅读剩LICENSE/MEMO 421行并分开记录技术与法律边界；完成53资产第三遍后仍不自动签收300处置。
+4. 对F37规划child exit0必要条件，再验证合法形状但缺checks/错误mode/自相矛盾flags的拒绝政策。
+5. 对F38规划明确native加载诊断，测试缺rt_version/各必需符号/损坏ELF/错误ABI；不能静默称Rust已启动。
+6. 保留C库仅为符号故障fixture；真正Rust编译、ABI导出、数值与生命周期检查必须在具备Rust环境独立执行。
+7. 继续修前完成F21/F22/F16退出与fatal回执设计，不因本批监督器保护成功覆盖另一路缺陷。
+8. benchmark将health GPU和每次stats GPU/engine/binding关联校验，F28仍未修；fixture RTF不得签收0.3目标。
+9. 对F13–15分别闭合终端统计/错误JSON/早EOF/奇数PCM等失败语义，不把工具自检绿标当全功能证明。
+10. NumPy/Rust先统一状态/分块/flush语义再测容差，保留generated-only，禁止拼参考PCM提相似。
+11. 后续按G0→S1顺序实施，不碰冻结17与正式工作台，不提前生成18发布包。
+12. 真模型、双T4、长录音/真实训练、真实参考与生成WAV、声学/自然连贯/相似度/首声与RTF缺口继续列BLOCKED，具备条件后再真实三轮验收。
+
+**结论：阅读与故障边界证据推进，F37/F38正式登记但未修。不是全功能通过、不是真实声音改善；G0与整体仍PARTIAL/BLOCKED。直接继续下一批，无需用户点击Continue。**
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_GATEWAY.md
+
+# G0 全源第三遍第6批：网关调度、LLM 流与文本保留
+
+日期：2026-10-23；活动分支 `arena/1160bd87-kagglee`。
+
+**第三遍累计48/53份、11030行，剩5份2638行。前两遍各53/53份、13668行保持；产品未改，G0与整体仍PARTIAL/BLOCKED。** 全文语义阅读、原建议最终处置、功能修复和真模型/声学验收是不同门禁；53资产不代表整个Git仓库审计。
+
+## 1. 新增完整复读10份2110行
+
+| 文件（相对 kaggle/source/go/gateway/） | 行数 | 重点 |
+|---|---:|---|
+| fidelity_test.go | 187 | 原文/复制相关源文字合同、首块预算、即时首前缀、真实本地SSE→首worker请求先于尾部 |
+| go.mod | 3 | 无额外模块依赖；兼容版本与实际Go工具链分开记录 |
+| llm.go | 137 | 请求/认证/预算、SSE增量与结束、EOF/错误/取消、非200正文隐私F30 |
+| preflight_test.go | 67 | 已授权只读报告、大小/JSON边界、公开recorder静态白名单 |
+| reliability_test.go | 159 | profile身份、激活后确认、LLM完整性、token预算、同源 |
+| scheduler.go | 490 | FIFO/优先级、watermark、重试/已消费PCM、请求取消、帧终端/统计、health与EMA |
+| security_test.go | 342 | token/重复header、已知/分块body预算、并发槽、截止/取消、proxy去秘密 |
+| segmenter.go | 489 | exact/read/live策略、Unicode/小数/闭合引号、文本分组、暂停/seed/flush |
+| segmenter_test.go | 123 | 分段稳定、保字/长度/小数/呼吸/清理旧合同的实际边界 |
+| voice_binding_test.go | 113 | 内容pin/文本/语言/生成参数跨语言、trained模式与read/chat分离 |
+| **合计** | **2110** | **10份全文，无本批源阅读截断** |
+
+scheduler连续1–245/246–490，segmenter连续1–245/246–489，其余全文。辅助旧测试一次组合输出截断，不计辅助测试完整阅读。Go main/security/session三份已在第三遍输入批计信用，本批虽编译/调用及读取必要上下文，不重复加信用。8920+2110=11030；13668−11030=2638。余5份是web/app.js1715、index.html144、recorder.js358、LICENSE201、MEMO220。LICENSE未来阅读不代表法律签收。
+
+## 2. 新增12个Go合同：10保护＋2未修观察
+
+文件：`kaggle/tests/pass3_gateway_boundaries_test.go`。只复制到忽略缓存的SHA匹配Go源树编译；产品目录不加入测试、不改产品。使用原Go方法、真实本地HTTP和控制流；LLM/provider、worker、PCM、stats、认证材料明确是合成fixture，不调用真实DeepSeek、不生成真实人声。
+
+| 新保护 | 实际检查与边界 |
+|---|---|
+| chat请求完整性 | 原Session.produce→StreamLLM保留自定义system、两条history及当前user顺序，传model/8192/stream/合成Bearer；原前缀形成job，提交完成；不是真provider输出预算/质量证据 |
+| 缺LLM key | 原StreamLLM在任何HTTP与delta前返回错误；fixture服务调用0，不要求用户提供秘密 |
+| SSE边界 | 心跳/comment/非data行、role-only delta、CRLF、Unicode、最后无换行的DONE/stop均按预期解析；不签收所有SSE扩展/任意代理行为 |
+| SSE错误脱敏 | 合成error.message或坏JSON不进入错误文本，已收到原始前缀不改写；仅流内错误，不修非200正文F30 |
+| 多语种read原文 | 中文/组合字符/astral emoji/URL/双空格/换行/12.50，1/2/7/4096 rune切块后逐字相等，索引连续，重复Flush空；特意不含独立无词尾段，F39另列 |
+| pause/seed | profile pause超界正确钳制；同seed17的read分组/暂停/元数据在1与4096切块下相同；不是自然韵律或跨GPU音色相同证明 |
+| retry预算 | 真HTTP429正文限400字节，attempts=2时不再排队，failed1/served0、busy恢复、错误有界、healthy不盲改；不解决原frame/状态缺口 |
+| urgency/FIFO | 原Submit/pickLocked跨会话优先urgent/first，平级按seq稳定FIFO；未Start无限health/ticker，不作吞吐测量 |
+| 统计EMA | 原run对合成正数统计更新rtf2→2.6、first100→130、audio3→5，增加attempts/queue_wait并计2个PCM样本；合成audio_s与PCM长度并不对应，不称RTF一致性已验 |
+| synth参数转发 | 原run首块opt-in2、后续6，保留seed91/pin/conditioning/语言/原字/停顿/呼吸字段；只是请求转发，不能证明真实首声提速或允许拼参考PCM |
+
+### 首错与纠正均留档
+
+首次Go预检在编译阶段失败：测试误写`session.submitted`，实际字段为`allSubmitted`；未执行任何测试。仅改该测试断言字段后，12项race预检通过，无产品修改。`pass3-gateway-precheck-first.txt`、`precheck-correction.json`、`precheck-final.txt`保留。
+
+另一次内联审计元数据命令因findings字典括号混写而SyntaxError，整段解析失败、没有写文件或推进coverage，不影响后台回归。已拆成显式credit脚本和字典构造，记录在`pass3-gateway-metadata-correction.json`；不改写历史。
+
+## 3. F39：PreserveText仍丢独立标点/空白尾段（未修）
+
+原`Segmenter.finish`无论PreserveText是否true，都会以hasWord=false丢弃无词组。实际LiveSegCfg、逐rune馈入、原Flush下四个稳定见证：
+
+| 输入 | 重连全部seg.Text |
+|---|---|
+| `你好。!?` | `你好。` |
+| `你好。\n\n` | `你好。` |
+| `\t\n` | 空 |
+| `!?` | 空 |
+
+前两例即时首前缀已发后，剩余独立无词尾段被丢；普通带词内容内的标点并非全部被删除。确认的是“PreserveText/重连逐字相等”合同缺口，**不是漏读语词、沙沙、接缝或真实声音质量下降的证明**。本批没有修改分段算法。未来需明确无损展示文本与可朗读分组的关系，不能用丢标点后的重连声称原文完全保留，也不能为了保字随意增加模型朗读内容。
+
+## 4. F40：cancelled worker统计在活ctx下仍计served（未修）
+
+真实本地HTTP worker替身返回一个合法偶数字节PCM帧（2个合成样本），随后stats包含failed=false/cancelled=true。原`Scheduler.run`只拒绝failed=true，没有拒绝cancelled=true：会话ctx仍有效、buffer done=true/error为空、worker served=1/failed=0、busy恢复false。新测试直接断言这些原始状态，三轮一致。
+
+**worker、PCM和stats为fixture，不是生产worker真实取消、CUDA仍运行、漏音或成功播报取消任务的证明。** 本批继承的实际请求ctx取消→worker取消保护仍通过；该保护不覆盖worker自己报告cancelled但请求ctx仍有效的状态组合。未来应校验终端状态一致性，连同F03奇数PCM/空stats/非法错误JSON/残帧等统一考虑，不靠“served计数变绿”验收生成。
+
+## 5. 三轮完整执行矩阵
+
+| 每轮Go race集合 | 顶层通过 | 含子测试通过 |
+|---|---:|---:|
+| 原产品测试 | 40 | 56 |
+| 原G0合同 | 10 | 10 |
+| 第二遍gateway合同 | 13 | 13 |
+| 第二遍security合同 | 12 | 12 |
+| 第三遍input合同 | 6 | 6 |
+| 本批新gateway合同 | 12 | 12 |
+| **每轮合计** | **93** | **109** |
+
+三轮均 **93/109 PASS**，合计顶层279次、含子测试327次，正常集合意外失败/skip/race为0。比对前第三遍input批81/97逐项测试ID，确保原前缀先发、原文、消费后不重试、pin/同seed、认证/取消等既有合同实际继承，不只比较总数。新10保护×3＝30次，2观察×3＝6次；观察通过表示缺陷仍可见，不是修复成功。
+
+- **F02故意race见证独立执行三次，均预期非零并出现DATA RACE。** 不混进正常通过数，也不隐藏为“全无race”；map alias race仍未修。
+- Go vet三轮exit0；实际Go1.23.9，GOTOOLCHAIN=local/GOPROXY=off，不下载新工具链或模块。SHA核对13份复制原Go文件与6个外置探针；本批阅读新增仅10份。
+- CPU完整继承集合每轮426、共 **1278 PASS**，失败/错误/skip0；**本批没有新增Python合同**，原414+12来自前批。包括F31–38等CPU观察/自有进程/OFD/C ABI故障fixture，但不是模型训练或Rust实测。
+- 每轮另NumPy分块12、trimmer8、实际CLI4；三个CLI期望blocked/exit2，resource status exit0但gpu_verified=false。合成分块差异观察没有变成去沙沙或跨后端容差通过。
+- 单次新执行Node30、工作台及产品web JS语法、Python AST38、新Go测试gofmt、repack --check。没有本批真实浏览器/VM或独立ASGI2.3 companion；Node不代替浏览器复制/录音/排空验收，冻结网页字节保持不等于浏览器重新测试。
+- .venv/系统无新依赖，freeze与前批相同，NumPy2.2.6不冒称requirements2.4.6。继承CPU集确实再次编译并加载微型C ABI故障库；无cargo/rustc/Torch/Qwen/CUDA、Rust编译/运行、真训练、真实音频播放或提速测量。
+
+## 6. 完整性、建议处置和交接
+
+- 批前保存953份历史SHA；原53源/94冻结/15正式工作台、原17包及先前收据保持。产品diff为空，不生成18包。
+- coverage以逐文件SHA/行数核对新增10/2110，48/53/11030，剩5份2638；前两遍不改。未全三遍，不提前签收G0。
+- 原300本批7部分链接：R1-048/083、R2-050/053/084、R3-008/066；累计去重38个ID。链接含本批与明确重新执行的旧Go合同，不冒充7个新发现；原文、Q25–27各50项保持，逐条/最终处置均false。
+- 独立`verify_pass3_gateway.py`验证历史SHA/冻结、逐文件信用、Go JSON事件与ID继承、两新观察、F02预期race、vet、426项CPU逐项继承、探针/CLI、环境/manifest、原建议及全部交接嵌入。
+- 完整交接86份备忘录逐份匹配，PLAN/IMPLEMENTATION与最新状态同步。manifest排除自身/可变handoff与progress，后者由独立核验另验，避免循环哈希。
+
+主要收据：`docs/validation/step18/pass3-gateway-round1..3.json`、`pass3-gateway-cpu-round1..3.json`、`pass3-gateway-companions-round1..3.json`、`g0-pass3-gateway-{coverage,findings}.json`、`pass3-gateway-recommendation-links.json`、`pass3-gateway-run-manifest.json`、`progress-pass3-gateway.json`。最终封存以独立核验成功日志为准。
+
+## 7. 下一步精确行动（待实施）
+
+1. 全文复读web三资产2217行，分段读app.js不得以语法检查代替语义阅读。
+2. 在SHA匹配fixture环境重新跑真实浏览器录音/取消/复制/排空/迟到响应合同，不挪用历史成绩。
+3. 对F39明确原文展示/模型分组分层政策，构建纯标点/纯空白/尾段/即时首句组合合同；不得无依据加读字符。
+4. 对F40明确ctx取消、worker cancelled、failed和正常终端的优先级与错误语义，避免重试已消费声音。
+5. 继续保留F02/F03/F23/F24/F29/F30等旧缺口，修复时不能因本批其他保护通过而删除观察。
+6. 保留第一可用DeepSeek前缀立即发worker请求的原保护；实际首可用人声仍需模型/浏览器测量。
+7. 保留相同seed/pin与generated-only路径，不用合成stats或参考PCM证明双GPU等效音色。
+8. 全文复读LICENSE/MEMO 421行并分别记录许可/技术限制；完成53资产也不自动完成原300逐条最终映射。
+9. 原300和Q25–27建议按实际发现闭环，重大设计选择才开下一问题，不为编号制造问题。
+10. 全部G0门禁通过后才进入S1，保持原17/正式工作台冻结，不提前发布18。
+11. 真训练、长录音/完整数据覆盖、双T4、相似度、自然连续声音和无沙沙等用户要求继续列缺口。
+12. 真实首声/建档延迟/RTF0.3须在固定条件下三轮真实模型和听感验收，当前不承诺结果。
+
+**结论：第三遍阅读与Go边界核验推进；F39/F40未修，F02等旧缺陷保留。G0与整体仍PARTIAL/BLOCKED，非全功能或声学签收。直接继续下一批，无需Continue。**
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_FRONTEND.md
+
+# G0 全源第三遍第7批：web、录音生命周期与播放／界面状态
+
+日期：2026-10-23；分支 `arena/1160bd87-kagglee`。
+
+**第三遍累计51/53份、13247行，剩2份421行。前两遍各53/53份、13668行保持。产品未改；G0与整体仍PARTIAL/BLOCKED。** 本报告仅在三轮与独立核验完成后封存；全文阅读、功能修复、原300最终处置、声学与发布验收分别计算。
+
+## 1. 重新全文复读3份2217行
+
+| kaggle/source/web/文件 | 行数 | 重点 |
+|---|---:|---|
+| app.js | 1715 | 帧解析、Worklet/ring/player、重采样/缓冲/排空、access/turn/diagnostic/library epoch、录音与档案、快照非训练、UI私密内容清理 |
+| index.html | 144 | UTF-8、默认锁定、自命名/不预填、两个主视图、键盘/移动端、录音/参考/训练明确区分、隐私与未验收提示 |
+| recorder.js | 358 | 权限/AudioContext异步边界、会话归属、字节/时长/分块预算、最终File、停止/取消/设备结束/回调清理 |
+| **合计** | **2217** | **3份完整读完** |
+
+app连续1–350/351–700/701–1050/1051–1400/1401–1715，recorder连续1–180/181–358。初始HTML与recorder合并输出截断，单独HTML输出也截断，最终index连续1–40/41–90/91–144全部无截断补读后才计信用。辅助测试阅读不是源资产信用。11030+2217=13247，13668−13247=421；剩LICENSE201/MEMO220，没有自动标已读，更不将许可阅读冒法律签收。
+
+## 2. 新增12项浏览器合同：10保护＋2未修观察
+
+`tests/browser/pass3-frontend.spec.js`在实际Chromium执行完整冻结脚本，不修改产品或旧fixture。新录音／音频／fetch／Worklet状态／时钟为明确控制替身；剪贴板通过真实原生API及临时E2E工作台执行。原146项含真实Web Audio/MediaRecorder的振荡器／静音输入案例，但没有物理麦克风或扬声器验收。
+
+| 新保护 | 结果与边界 |
+|---|---|
+| cancel与AudioContext.resume交错 | 原录音器在resume等待中cancel，晚resume不安装录音；ctx关闭、track stopped、session空、clip0；音频设备为fixture |
+| 精确预算与File字节 | 5字节/2块/1500ms恰好边界接受，空块忽略，原File内容[0,255,1,2,3]逐字节一致，chunks清空；这是合成字节，不是有效原生录音容器 |
+| MediaRecorder.start异常 | 原catch清本次context/track/session，回idle、clip0；start抛错由fixture注入 |
+| 取消后的迟到权限拒绝 | 不覆盖取消提示，不建context、不留pending；新录音测试页明确UTF-8，原产品不变 |
+| 当前policy帧 | 原完整播放器实际接收policy，网络EOF前按新阈值发play；不是首声／RTF测量或策略优化 |
+| 当前HTTP401 | 原apiFetch立即锁定／abort，清text/key/err、不把私密错误JSON回填页面，无PCM/report |
+| 超32MiB帧头 | 原浏览器parser先拒绝，不向player发PCM，恢复发送按钮；不签收F05读流取消或异常report语义 |
+| 正常完成后排空 | 0.2秒合成PCM＋受控worklet状态／时钟，从playing到ended，无新增play；不代表≤50ms短尾已解决，也不修F26报告过早 |
+| 三web资产原生剪贴板 | 临时工作台导入三份完整冻结文本，切换选中文件、读代码及原生clipboard逐字一致，复制不额外保存、项目revision与files不变；不是正式HEAD写入或18包复制验收 |
+| chat历史上限 | 10个合成回合逐轮检查请求只带最近六个完整user/assistant对，无错序或过期历史；不调用真实DeepSeek |
+
+### 首错保留与修正
+
+首次新预检11通过、1失败，唯一差异是取消提示中文变成乱码：旧recorder-only测试HTML没有charset，脚本继承legacy文档编码；真实产品index已有UTF-8声明。仅在新审计spec增加UTF-8录音测试壳并重载原recorder，保留原断言／旧fixture／产品字节，随后12/12通过。`pass3-frontend-precheck-first.json`、stderr、`precheck-correction.json`与`precheck-final.json`均保存，不以产品修改掩盖测试环境错误。
+
+## 3. F41：停止后迟到Worklet统计可重新发play（未修）
+
+实际完整浏览器脚本执行显式停止：请求signal已abort，原player发hold、reset并显示idle。随后注入一个“reset前已产生、但晚到主线程”的合成st：fill240000、underruns1、starved=true。原onWorklet先切starved，tick又按旧fill满足阈值发play、UI显示playing，命令尾部为hold→reset→play；请求仍为aborted。
+
+确认的是**迟到状态缺少流世代／停止状态门禁，可以改变原UI和命令序列**。AudioWorkletNode、st与设备均为fixture，**没有证明真实原生port必然发生该竞态、旧PCM实际恢复、物理漏音或模型继续生成**。未来需把stop/reset/begin与状态消息关联，同时保留真实ring reset精确零输出保护，不能只隐藏UI状态。
+
+## 4. F42：同accessEpoch乱序档案刷新会回滚高亮（未修）
+
+原候选按钮按0→1点击，各自成功后调用原v刷新。两个受控profiles请求处于同accessEpoch：先回复较新的snapshot1，页面高亮#1；后回复旧snapshot0，原v再次重绘并高亮#0。测试直接检查mutation=[0,1]与可见高亮先1后0。
+
+确认的是**只有accessEpoch、没有当前刷新／操作顺序门禁**；不是实际后端参考回滚或错误音色证明，responses都是合成快照。声音库dialog的独立libraryEpoch与训练输入保护仍存在且重跑通过，不能混为已修。未来需统一“最新操作”与刷新结果归属，而非移除原access/turn/library隔离。
+
+## 5. 三轮执行与证据边界
+
+| 实际集合 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| Chromium全部浏览器测试 | 158 PASS | 158 PASS | 158 PASS |
+| 其中继承／本批新增 | 146／12 | 146／12 | 146／12 |
+| 浏览器失败／flaky／skip | 0／0／0 | 0／0／0 | 0／0／0 |
+| 完整继承CPU集合 | 426 PASS | 426 PASS | 426 PASS |
+| CPU failure／error／skip | 0／0／0 | 0／0／0 | 0／0／0 |
+| 原播放器VM合同 | 22 | 22 | 22 |
+| 原首声策略VM合同 | 16 | 16 | 16 |
+| 独立NumPy分块／trimmer | 12／8 | 12／8 | 12／8 |
+| 实际CLI期望合同 | 4 | 4 | 4 |
+
+浏览器 **158×3＝474 PASS**、CPU **426×3＝1278 PASS**。每轮12新合同中10保护／2观察，三轮分别30／6次；本批无新Python合同。浏览器146项按file+title逐项与旧批核对，CPU426项按测试ID／结果与前批逐项核对，不用总数冒完整继承；重试0。
+
+- 实际重跑的旧浏览器合同包含原生录音振荡器／静音、权限／设备结束、长虚拟录音与分块预算、锁定／迟到HTTP、库管理／训练快照、移动端／键盘／XSS，以及完整17包原生剪贴板、拒绝回退。冻结正式工作台15文件另以SHA核对；临时E2E workspace不是用户正式HEAD。
+- 七份浏览器观察附件包含F04/05/06/25/26及新F41/42，每轮均可见；“观察通过”不等于修复。F04旧录音错误、F05读流未取消、F06失败Blob URL、F25 END后帧、F26报告在EOF过早等均保留。
+- VM确实执行冻结播放器prefix/ring源码，仍记录≤50ms尾缓冲可能搁置、插值尾端未flush等已知观察；VM不是硬件，不能因此称声学排空、首声或去沙沙已通过。
+- 每轮三项CLI预期exit2/blocked，resource status exit0但gpu_verified=false；没有--run benchmark或WAV生成。NumPy分块差异实验完成也不等于算法容差通过。
+- Node30、工作台／产品／新spec的JS语法、Python AST38、repack单次新执行。无本批Go/race/vet或独立ASGI2.3 companion，不挪用上批93/109／F02结果。浏览器API为fixture，不是真Go后端链路。
+- 沿用既有npm／Chromium分发与.venv；无npm ci／新Python或系统依赖安装，lock与freeze保持。NumPy2.2.6不是requirements2.4.6；继承CPU集合再次运行C ABI故障fixture，不是Rust编译／执行。无Torch/Qwen/CUDA、真训练、双T4、真实声纹／听感或提速验证。
+
+## 6. 完整性、原建议与交接
+
+1051份历史SHA、53源／94冻结／15正式工作台文件保持，产品diff为空。`advance_pass3_frontend.py`逐资产SHA／行数核对，信用51/53/13247，剩2份421，不提前签收全三遍。
+
+原300本批7项仅部分链接：R1-038、R2-082/083、R3-044/046/083/085，累计去重45个ID；其中剪贴板失败回退明确链接实际重跑的旧浏览器合同，不冒称本批新增。原文／Q25–27各50项保持，逐条测试及最终处置均false。本批未开新重大方案题，不跳Q28。
+
+独立`verify_pass3_frontend.py`递归解析原始Playwright JSON、核对158逐项状态／重试／146继承、7观察、VM、426CPU继承、probe/CLI、源码／环境／manifest、原建议与交接。完整交接87份逐份内嵌匹配，PLAN／IMPLEMENTATION与最新进度同步。manifest排除自身和可变handoff／progress，由核验器另验避免循环。
+
+主要收据：`docs/validation/step18/pass3-frontend-audit-round1..3.json`、`pass3-frontend-browser-round1..3.json`、`pass3-frontend-cpu-round1..3.json`、`g0-pass3-frontend-{coverage,findings}.json`、`pass3-frontend-recommendation-links.json`、`pass3-frontend-run-manifest.json`、`progress-pass3-frontend.json`。终态以独立核验成功日志为准。
+
+## 7. 后续精准动作（待实施，不冒充修复）
+
+1. 完整复读剩LICENSE201与MEMO220，按技术／许可分别列限制，法律问题不由测试涂绿。
+2. 完成53资产第三遍后，仍逐条闭合原300建议最终映射及测试证据，而非自动签收G0。
+3. 为F41设计流世代／停机门禁及真实原生Worklet跨方向消息交错实验，区分命令、处理与物理出声。
+4. 保留ring reset精确零输出、显式取消和新流begin清相位，防修迟到状态时造成旧数据重播。
+5. 为F42设计最新操作／刷新版本，保留access/turn/library/diagnostic epoch及AbortController。
+6. 单独处理F04旧录音error与现session归属，保留晚data/stop/track-ended不能影响新session的现有保护。
+7. 单独处理F05/06异常读流与Blob资源清理，不能通过“catch不报错”遮蔽仍运行的后台请求。
+8. 统一END终端／后续帧、EOF／播放排空与最终report生命周期，F25/26及短尾政策仍待修。
+9. 继续区分自命名空库、参考处理、训练输入、真实训练、trained加载与声学验收，不增加伪训练绿标。
+10. G0通过后才进入S1，保持冻结17和正式工作台，不提前生成18发布包。
+11. 长录音／长数据真实训练、双GPU等效参数、generated-only、首可用前缀、输出音量／创建时延等未豁免要求继续保留。
+12. 真实首可用人声、无沙沙／自然连续朗读／相似度／RTF≤0.3须真实音频和双T4三轮验证，当前不承诺结果。
+
+**结论：web语义阅读与真实浏览器边界核验推进，F41/F42未修；非完整模型、全功能或声学签收。G0与整体仍PARTIAL/BLOCKED，直接继续，无需Continue。**
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_PASS3_CLOSURE.md
+
+# G0 全源第三遍第8批：许可／历史备忘录收尾与300项缺口矩阵
+
+日期：2026-10-23；活动分支 `arena/1160bd87-kagglee`。
+
+**53份内嵌资产三遍全文语义阅读已完成，每遍53/53、13668行。本批2份421行。只关闭源码阅读子项，不代表所有Git文件、原300项最终处置、功能、法律或声学验收。G0与整体仍PARTIAL/BLOCKED。**
+
+## 1. 最后2份完整复读及覆盖信用
+
+- `kaggle/source/LICENSE-QWEN-DERIVED.txt`：连续1–105、106–201，201行；无工具截断。
+- `kaggle/source/MEMO.md`：连续1–110、111–220，220行；无工具截断。
+- 13247+421=13668，51+2=53，剩0。只变更这两项pass3记录，pass1/pass2与前51项pass3不动，逐文件SHA／行数均核对。
+- 当前范围是冻结17启动包所含53资产，不是整个仓库所有源码、文档、测试、历史包的三遍逐行审查。三遍阅读也不证明零缺陷。
+- `g0-pass3-closure-coverage.json`是新台账；第7批及更早覆盖JSON保留，不回写历史“未完成”。
+
+## 2. LICENSE：文本阅读完成，法律发布未签收
+
+这是Apache License Version2.0/January2004文本，末尾Copyright2026 Alibaba Cloud。以下是工程发布检查清单，不是所有组件可商用／授权完备的法律结论：
+
+1. 第1节定义Source/Object/Derivative Works/Contribution等；接口链接分离条款不能由一次文本扫描推导整个工程的法律关系。
+2. 第2节版权授权适用于其覆盖的Work与Contributor，不自动证明所有依赖、模型权重、训练数据和声音授权。
+3. 第3节专利授权范围及相关专利诉讼终止条件单独核对。
+4. 第4(a)节分发许可副本；第4(b)节修改文件的显著变更声明；第4(c)节保留相关来源署名等通知。
+5. 第4(d)节在上游分发含NOTICE时，按许可允许的位置保留适用署名。当前53资产没有名为NOTICE的项，不证明上游无NOTICE义务，也不直接判当前侵权。
+6. 第5节贡献默认许可与独立协议；第6节不授予一般商标使用权。
+7. 第7–9节AS IS、责任限制、额外担保由自己承担，不可转写成软件正确／身份一致／无噪声保证。
+8. 附录版权行是现有文本，不是逐文件派生来源或许可一致性已鉴定的证据。
+9. 待发布时按实际上游版本、派生文件、依赖与模型逐项核对LICENSE/NOTICE/修改声明，另核授权语音与隐私，不混入声学评分。
+10. 本批不改冻结许可、不新建虚假NOTICE、不声称已完成法律或模型权重许可审查。
+
+## 3. MEMO：既有D01保留，不改历史
+
+顶部标题仍称step15优先，3–5行称当前step15、xvec_only=True且不能回退ICL；8行称最大增益12dB。冻结17实际：
+
+- `clone_stream.conditioning`默认QTTS_CLONE_MODE=icl，要求匹配转写；显式xvector返回空转写/True，非法模式拒绝。
+- `worker.output_max_gain_db`默认6dB；12是可配置上限，13或NaN回落6，不把“上限12”误判为“12已删除”。
+- 本批通过只抽取原函数体的AST测试实际调用这些默认／显式／拒绝路径，不导入整个worker、不加载NumPy/Torch/Qwen/GPU，不证明当前用户实际环境变量／音色／音量。
+- 旧文中step14允许reference呼吸、早期239秒／64MiB预算、早期未实现训练按钮、step10训练核心等均为不同历史阶段。旧文自己已说明历史分节，并反复限制真实Qwen/T4验收；不能跨节拼成当前功能承诺。
+- 第17阶段代码优先，MEMO SHA保持；D01既有文档漂移不重新编号为新产品bug。未来18文档应另写当前事实，不覆写历史制造一致。
+
+## 4. 原300项：重新逐项复核与缺口矩阵
+
+本批完整重读R1-001..100、R2-001..100、R3-001..100的原建议和初始分类／工作包。它是对原三轮各100建议的继续复核，不新增300个缺陷或重写旧建议。
+
+| 原始初审类别（保持） | 条数 |
+|---|---:|
+| 限定范围确认缺陷建议 | 23 |
+| 保留保护 | 96 |
+| 文档／测试合同 | 89 |
+| 真实硬件／模型阻塞 | 55 |
+| 待证 | 37 |
+| 合计 | 300 |
+
+23条建议有重复，不是当前缺陷总数，也没有自动改为已修。`g0-pass3-closure-recommendation-gaps.json`保存每一条原ID／原文／source／分类／工作包／test_family／计划合同／原证据，增加：
+
+- 原三遍专用链接文件及SHA、准确row_index、合同标题、覆盖边界；7文件53条链接记录，去重45个原建议ID。
+- 45条仅有部分第三遍链接；255条未进入这组专用链接，**不等于没有任何历史证据**。
+- 每行下一动作保留其原source、工作包、原建议和所需测试合同，要求精确测试ID、源码／探针SHA、执行结果与注入／硬件边界；不能用大类测试数替代逐条映射。
+- 300条specific_row_test_signoff、final_disposition_signed_off、product_fix_implemented保持false；最终签收0，未闭环300。
+- 工作包计数汇总以真实原字段计算，不靠关键词生成假缺陷／伪造已执行测试；原300 JSON与Q25–27各50建议SHA保持。
+
+## 5. D02：三份历史日志目前不可读，禁止冒充全部历史完整
+
+本批拟检查1139份历史路径／预期SHA：**1136份可读取且SHA匹配，变更0；另3份缺失**：
+
+- `docs/validation/step18/pass2-gateway-go-install.log`
+- `docs/validation/step18/pass2-gateway-preflight.log`
+- `docs/validation/step18/pass2-startup-preflight.log`
+
+三份均匹配仓库既有`*.log`忽略规则；这里只确认当前缺失与忽略规则匹配，不推断确切丢失时间或过程。预期SHA仍保存在新旧preserved JSON，不重建虚构内容，不删掉期待项来让完整性涂绿。
+
+因此full_historical_integrity_passed=false，D02是审计证据可用性缺口，不是新产品缺陷。当前工作区可读的冻结53资产／94文件／正式15文件与正式HEAD均保持。前批“当时1051全通过”的历史收据不被改写，但不能当作现在全部文件仍在的证明。新日志均使用.txt，不复用这些缺失路径。
+
+第一次环境查询发现旧.venv和猜测的LICENSE路径不存在；转用系统Python及台账给出的准确文件名。随后首次严格历史检查因缺第一份.log停止、未写错误的“全完整”声明；全面盘点才登记上述三份。两次先期错误及处理均在`pass3-closure-precheck-observations.json`留档。
+
+## 6. 本批实际执行范围
+
+三轮实际完成（每项原始日志与SHA分别留存）：
+
+| 本批新执行 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| 收尾审计合同 | 12 PASS | 12 PASS | 12 PASS |
+| Node工作台测试 | 30 PASS | 30 PASS | 30 PASS |
+| 工作台／web／原浏览器spec JS语法 | PASS | PASS | PASS |
+| 冻结17 repack --check | PASS | PASS | PASS |
+| Python AST | 38文件 | 38文件 | 38文件 |
+
+审计12×3＝36 PASS，Node30×3＝90 PASS，均无失败／错误／跳过。预检12/12首次通过。AST38为33份产品Python加5份本批测试／脚本，未导入完整运行时。
+
+新`test_pass3_closure_contracts.py`有12个审计合同：覆盖与精确增量、分支／冻结／正式工作台、原300身份、分类／去重、链接出处、下一动作与不自动签收、许可边界、原conditioning AST、原增益AST、缺失历史明确暴露、旧浏览器原始JSON可读性、既有逐题50行动完整性。
+
+第10项合同通过只表示准确报告1136匹配+3缺失，不表示1139完整；第11项只重新解析上批158×3原始Playwright收据，不是浏览器新执行。原浏览器每项只一次passed与SHA重核，不能用来签新产品。
+
+本批没有.venv/node_modules/Go/Rust工具链；不安装新依赖，不跑完整CPU426、Chromium、Go/race/vet、Torch/Qwen、真实训练／双T4／物理录音／扬声器、真实DeepSeek或声学／性能实验。未执行项不算通过。无新功能修复，无18包；新的审计／工作台检查不能代替用户要求的最终全功能／真实模型三轮验证。
+
+## 7. 门禁状态与直接后续
+
+| 子项 | 当前结论 |
+|---|---|
+| 53内嵌资产三遍全文阅读 | 完成，各13668行 |
+| 原300逐条最终处置／测试签收 | 仍未闭环，0/300最终签收 |
+| 历史证据全量可用性 | 阻塞，D02三份缺失日志 |
+| 限定缺陷修复及相同输入前后见证 | 未完成，F01–42及先前DSP／播放器等观察保留 |
+| LICENSE/NOTICE/模型与数据授权 | 未签收 |
+| 真实模型／双T4训练／听感／首声／RTF | 未验收 |
+| G0／整体 | PARTIAL/BLOCKED |
+| S1／Q28／18发布 | 未开始／未开启／未发布 |
+
+下一步先补原300逐条“最终审查处置”（与产品修复验收分开），将可由现存证据判定的保留／缺陷／待证／真实条件阻塞明确归档；对D02从原始可信来源找回日志或在有依赖环境按原命令另存新收据，不能伪称重建了旧内容。随后按原建议精确测试ID逐行闭合，不用又一轮总数回归替代映射。G0通过前不跳S1或Q28。
+
+## 8. 交接与独立核验
+
+本报告、PLAN、IMPLEMENTATION同步进入88份完整交接；旧57份与本阶段已完成文件逐份原文内嵌。独立`verify_pass3_closure.py`用系统Python标准库再核对覆盖、冻结／正式文件、1139期待项的1136匹配+3缺失、300身份／53链接记录、三轮真实日志、环境边界、manifest及交接。
+
+主要文件：`g0-pass3-closure-{coverage,recommendation-gaps,boundaries}.json`、`pass3-closure-history-availability.json`、`pass3-closure-audit-round1..3.json`、`pass3-closure-run-manifest.json`、`progress-pass3-closure.json`。审计核验通过只签本批记录准确，full_historical_integrity、G0、功能／法律／声学／发布仍false。
+
+**继续直接推进，不要求Continue。源码阅读子项完成；不把阅读、部分证据、历史成功或缺陷观察当作修复和整体验收。**
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_DISPOSITION_REVIEW.md
+
+# G0第9批：300项审查处置记录与限定失败观察映射
+
+日期2026-10-23，分支 `arena/1160bd87-kagglee`。
+
+**本批将300/300条审查处置说明归档，23条原限定缺陷建议绑定到历史三轮的69份逐行观察引用；不是23个新缺陷或69次新运行。功能验收／原final_disposition签收仍0/300；G0与整体PARTIAL/BLOCKED。** 产品、原始至17及正式工作台冻结，不启动S1/Q28或18发布。
+
+## 1. 处置说明和最终验收分开
+
+原3轮各100条逐条补写source相应的行动、限制和推荐处理，不自动用关键词生成结论。三个TSV各100条，当前JSON保存原ID／原文／source／工作包／原计划合同、单独review_note与行动。本文附录完整内嵌300条原建议及本批说明。
+
+| 推荐处置 | 数量 | 不代表 |
+|---|---:|---|
+| 限定范围修复 | 23 | 不代表23独立bug或已修 |
+| 保留不变量 | 96 | 不代表该保护已逐条功能签收 |
+| 实现文档／测试合同 | 89 | 不代表只改文案即可验收 |
+| 等真实硬件／模型证据 | 55 | 不代表豁免或删除用户要求 |
+| 先调查再设计 | 37 | 不代表猜测已证实 |
+
+review_disposition_recorded=true仅表示本批处置说明已记录。原specific_row_test_signoff／final_disposition_signed_off／product_fix_implemented及新functional_acceptance全部false，旧300与第8批矩阵不回写。不能用新的字段名把旧功能门禁涂绿。
+
+## 2. 23条限定失败观察精确绑定
+
+`disposition-failure-bindings.json`按原建议ID手工选择历史收据及JSON Pointer，存观察片段、收据SHA、产品源码SHA、当前相关probe SHA与历史记录能否证明probe身份。每条绑定三轮，共69引用；这些引用有重复，不能当作69独立实验。
+
+- R1-011、R2-021/022/024：候选bool、1.9及null/dict/list的AST观察。缺省语义与容器异常分别保存；NaN不在历史payload快照中，不冒充已覆盖真实HTTP NaN。
+- R1-016、R2-031/032/033：旧评分提交到新转写的确定性交错。R1-016仅为相关校准／文本证据，不覆盖完整set_text/set_candidate并发组合，也不是线程压力。
+- R2-041/043/051/061：ASR缺失却CER0.05、全合成失败chosen0、同文诊断seed100/101、reload失败仍正常返回的历史观察。模型与网络为fixture。
+- R1-071/072、R3-011/012：NumPy分块最大差1424与正常1920块差8等合成观察；该早期DSP JSON没有probe_sha256，当前相关probe的SHA不能补成历史身份已验证。不是Rust、真实音频、用户沙沙根因。
+- R3-021/022/024：小于120样本丢输出、跨块预滚差840、末端held含60非零样本。当前codec1920倍数的生产可达性另列，不声称真实辅音已丢。
+- R1-037、R3-041/042/043：原Player VM在完成20/50ms短尾仍buffering/starved、51ms可发play。合成PCM／时钟／端口不是实际用户语音／实体播放。
+
+本批重新读取这些已保存JSON并逐Pointer核对，不导入重型模型重跑旧实验。观察测试的通过不等于行为正确，绑定也不是整条功能验收。
+
+## 3. 部分证据覆盖：并集65，不是签收65
+
+第8批原第三遍专用链接45个建议ID，与本批23限定缺陷建议交集只有R1-016/R2-031/R2-032三项，所以45+23−3=65；剩235条没有进入这两组限定引用。235不等于无任何历史证据，也不能直接签成失败。需继续按每行计划合同核对准确test ID、输入版本和覆盖边界。
+
+当前53内嵌资产三遍各53/53、13668行的阅读结果保持。这不是整个Git仓库所有文件，也不证明代码无错。300条建议与F01–42命名发现不是一一对应关系。
+
+## 4. D02可信恢复搜索
+
+仅对当前仓库中非.git、文件大小≤2,000,000字节的可读文件比较三份缺失日志的预期SHA，并对每个原路径执行git log --all。没有同SHA副本，当前可用Git历史无提交记录；未搜索远端、仓库外备份或不可用提交，不能声称全球无副本。
+
+三份仍缺失：pass2-gateway-go-install.log、pass2-gateway-preflight.log、pass2-startup-preflight.log。新preserved共有1183个历史期待项，1180可读SHA匹配，变更0，缺失3；完整历史完整性false。保留预期SHA，不伪造内容、不把重跑输出命名成找回旧日志。
+
+后续只能从可信旧状态找回并验证SHA，或有依赖环境后按原命令另存带新身份的收据；后者解决可复现性但不冒充原文件恢复。搜索范围／命令／结果在disposition-history-recovery.json留档。
+
+## 5. 本批验证范围
+
+三轮本批新执行已完成：
+
+| 实际新执行集合 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| 审计合同（继承12＋新增12） | 24 PASS | 24 PASS | 24 PASS |
+| Node工作台测试 | 30 PASS | 30 PASS | 30 PASS |
+| 工作台／web／旧浏览器spec JS语法 | PASS | PASS | PASS |
+| 冻结17 repack --check | PASS | PASS | PASS |
+| Python AST | 39文件 | 39文件 | 39文件 |
+
+审计24×3＝72 PASS，Node30×3＝90 PASS，无失败／错误／跳过；新12预检首次通过。AST39为33份产品Python与6份当前脚本／测试；没有执行GPU／完整worker导入。历史实验仅核读，不以这些72个审计通过替代功能验收。
+
+测试包含原第8批12项收尾合同及新12项处置／Pointer合同，使用系统Python标准库；其中旧conditioning/gain AST原函数仍真实调用，但不是完整CPU426。新合同覆盖300身份与300条手写说明、分类及65并集、23/69逐行引用、payload类型、校准/seed、DSP/短尾/裁剪边界、不自动验收、D02不伪恢复。
+
+没有旧venv/node_modules，不安装依赖；未运行CPU426／Chromium／Go race/vet／Rust／Torch/Qwen／GPU／真实训练／DeepSeek／物理麦克风或扬声器／真实声学及速度实验。旧浏览器158×3和CPU426×3仍是历史。没有新增产品修复，法律/NOTICE/权重与语音授权未签收。
+
+## 6. 下一精确门禁
+
+1. 对未完整绑定的合同按行匹配实际测试ID，不再用总测试数作逐条验收。优先S1非法输入与缺省/未知/重复字段政策；R2-024另补真实HTTP NaN解析、null/容器返回码。
+2. 对R1-016补完整候选/文本并发组合，S2提交政策必须保留trained409、pin与双卡部分加载语义。
+3. 已绑定23条保留相同输入修复前失败与修复后通过，不用另一个更容易样例替换原反例。
+4. 扩大候选、DSP、短尾等真实证据前，先逐项保留现有成功保护；不以新指标绕过取消／隐私／生成码专用。
+5. D02恢复保持独立阻塞；无环境不虚构旧Go安装/预检重跑。
+6. 300处置说明归档不等于G0放行；新决策只在重大设计歧义出现时按既有逐题50行动流程开启，不为了数量开Q28。
+7. 真双T4训练、长数据覆盖、全部参考贡献透明、实际首声／输出音量／创建时延／无沙沙／自然朗读／RTF0.3继续未豁免。
+
+## 7. 封存与交接
+
+独立verify_disposition.py核对原300身份、300处置说明、69Pointer／SHA／缺失probe身份、65并集、1183历史期待项、三轮真实审计日志、冻结94及正式15、manifest和89份完整内嵌交接。核验成功只表示本批记录准确，不表示历史全完整或G0通过。
+
+当前主JSON：g0-disposition-review.json；限定引用：disposition-failure-bindings.json；进度：progress-disposition.json。原推荐及Q25–27各50建议保持，不覆盖任何历史审查报告。继续直接操作，无需Continue。
+
+## 附录：三轮各100条完整处置记录
+
+### 原审查第1轮100条
+
+| ID | 原建议 | 本批逐条处置说明 |
+|---|---|---|
+| S18-R1-001 | 将候选参与质心统计与实际ICL锚点分开显示，避免全部片段已融合的误解 | 在S7分别展示分析参与与实际conditioning；不把质心改名为融合。 |
+| S18-R1-002 | 在合成收据记录选中的anchor_candidate，而不是只显示profile ID | 新增实际anchor_candidate收据；缺失时显示未知而非默认0。 |
+| S18-R1-003 | 记录实际锚点字节指纹与对应转写指纹；日志不明文写入私有转写 | 仅记录锚点及转写hash；不把私人转写写入诊断日志。 |
+| S18-R1-004 | 用不同内容的三个候选验证只选中的音频进入提示提取 | 三段不同转写用受控调用捕获选中锚点，再另做真实模型试验。 |
+| S18-R1-005 | 审核“候选校准”文案明确逐个试验后选一个，不称多参考融合 | 候选校准文案写明逐个评估后选一个；不许以列表暗示融合。 |
+| S18-R1-006 | 查验Faster真实接口的多参考能力，未支持时不伪造列表参数 | 沿用已检查接口的批量长度拒绝；模型融合能力仍需另证。 |
+| S18-R1-007 | 禁止把三个片段PCM拼成一个提示并配不连续全文 | 保留禁止拼参考PCM与不连续全文的约束，测试中也不得绕过。 |
+| S18-R1-008 | 跨候选声纹中心仅作评分依据，不声称它已替代模型speaker embedding | 声纹中心保持分析代理身份；不可直接替换不同空间模型嵌入。 |
+| S18-R1-009 | 为单个合法候选保留最短建档链路，不强迫三候选 | 单候选仍走合法最短链路，加入不强迫三候选的回归。 |
+| S18-R1-010 | 给未来多候选策略保留显式模式与回退边界，不静默改变17默认 | 未来策略另设模式和版本，不更改冻结17默认。 |
+| S18-R1-011 | 非法index的布尔、小数、对象与缺省语义分别测试，避免int强转误选或500 | S1分别拒绝bool/float/容器并定义缺省；历史AST见证不是HTTP验收。 |
+| S18-R1-012 | 核查切换候选与校准并发时磁盘写入、工作者加载是否形成一致事务 | 候选/校准写入与worker加载需要同版本提交；部分链接不等于事务完成。 |
+| S18-R1-013 | 候选文件复制失败时保留旧profile JSON，不留下半更新锚点 | 保留旧JSON回滚保护，另检查复制成功后JSON失败的孤立文件。 |
+| S18-R1-014 | 双卡仅一张加载成功时明确部分失败，不宣称启用完成 | 一张卡失败必须暴露部分失败；不能仅数成功worker。 |
+| S18-R1-015 | 旧会话遇新指纹必须继续拒播，不能热切后拼混音色 | 保留旧会话pin不一致拒播，并覆盖热切途中后续片段。 |
+| S18-R1-016 | 转写编辑与候选选择同时发生时绑定同一版本，防止音文错配 | 校准旧转写见证只相关覆盖；须补文本与候选同时提交的独立交错。 |
+| S18-R1-017 | 校准临时profile的anchor_candidate元数据应指向实际试验候选，不能误标0 | 临时校准档案元数据随试验候选更新，不能依赖chosen默认值。 |
+| S18-R1-018 | 候选变更后清理或替换提示快照时保留锁内核验 | 保留提示快照锁内核验，增加替换/删除交错而不解锁重载。 |
+| S18-R1-019 | 为重复点击候选与取消任务增加幂等与状态测试 | 重复点击与取消分别定义操作身份及提交后状态，不称浏览器abort即撤销。 |
+| S18-R1-020 | 训练adapter的固定参考限制保持，不让候选切换绕过来源绑定 | trained固定参考三入口拒绝继续保留，不能开放普通候选路径。 |
+| S18-R1-021 | 分别记录请求、首个可用文本、排队、预填充、首PCM、首播放命令 | 指标阶段拆分并保留旧字段含义，未实测阶段使用null。 |
+| S18-R1-022 | worker t_start在加载提示之后，单独计量冷提示加载而不漏记等待 | 把冷提示提取计入独立阶段，避免t_start以后才计时漏掉准备。 |
+| S18-R1-023 | queue_ms当前覆盖锁等待等前置耗时，拆项后保留旧字段兼容 | 兼容保留queue_ms，新增锁等待与准备耗时而不偷偷改分母。 |
+| S18-R1-024 | 浏览器firstPlayedMs当前在发play命令处赋值，标明不是硬件实际出声 | 把firstPlayedMs定义为主线程命令时刻，不升级为实体首声。 |
+| S18-R1-025 | 评估AudioWorklet消费首个语音样本的确认消息，区分主线程命令延迟 | 设计消费确认时先明确首样本还是首语音；不由消息时间推声卡出声。 |
+| S18-R1-026 | 跨Python、Go与浏览器仅使用各自单调时间差，不能直接减不同纪元 | 各进程仅比较本地单调时间差，跨时钟采用可解释的映射。 |
+| S18-R1-027 | 显式静音停顿不能计为首个可用人声，保留禁止原音占位 | 显式停顿不能充首人声，参考原音也不能作占位首包。 |
+| S18-R1-028 | 首包平均之外记录p50/p95与冷暖状态，不用一次幸运值 | 冷暖分层重复采样再算p50/p95，当前无目标设备故保持阻塞。 |
+| S18-R1-029 | 将文本长度、参考长度、chunk_size和设备条件写入性能收据 | 性能收据固定文本/参考/chunk/device参数，不能复用截图数值。 |
+| S18-R1-030 | 首声提速必须同时检查缺字与最终音频完整性，不能裁掉开头 | 首声对照同时核对首尾完整和添字，不以裁掉语音换快。 |
+| S18-R1-031 | 对当前0.7秒下限和初始2秒策略建立确定性到达轨迹对照 | 0.7秒/初始策略先以VM轨迹对照，不把策略仿真当真实提速。 |
+| S18-R1-032 | 分别测试高速稳定、慢速持续、突发包与长网络抖动 | 补稳定/慢速/突发/抖动轨迹，记录欠载和等待成对结果。 |
+| S18-R1-033 | 初次启动与欠载恢复分别设计目标，不统一缩到最小 | 初播与starved恢复分开策略；先覆盖终端短尾而非全局降阈值。 |
+| S18-R1-034 | 将预测器无速率样本时的保守回退纳入首次播放测试 | 保留无估计样本的保守回退，并单测预测器初始化。 |
+| S18-R1-035 | 测量AudioWorklet统计消息的刷新间隔对主线程启动判断的影响 | 测Worklet状态刷新间隔及消息晚到；fixture不能证明真实port竞态。 |
+| S18-R1-036 | 在44.1k及48k上下文验证重采样后的fill计秒正确 | 按实际上下文率换算fill秒数，单测44.1k/48k边界。 |
+| S18-R1-037 | 短于启动阈值但已完成的真实语音应及时播放，不等待不可达缓冲 | 20/50ms完成短尾见证为VM合成输入；修播放政策后另测真实语音。 |
+| S18-R1-038 | 后台页、暂停恢复、锁定与取消后不得发送迟到play | F41仅覆盖stop后迟到统计；锁定/后台/暂停恢复仍要分别验证。 |
+| S18-R1-039 | 记录ring dropped样本；任何丢样不能只显示播放成功 | dropped进入失败/完整性状态，不能只保留底层计数。 |
+| S18-R1-040 | 低延迟策略只能在欠载预算内启用，不能把断续当自然阅读 | 低延迟与欠载预算联合门禁，真实连续朗读不合格即不能发布。 |
+| S18-R1-041 | 对2/4/8/16帧首块大小做同文本同seed对照，测TTFA及总RTF | 16帧超出当前首块2..8配置范围；不得强塞无效参数，合法对照先做2/4/8。 |
+| S18-R1-042 | 小首块与稳态大块若需不同大小，先确认真实生成器支持，禁止无效传参 | 首块/稳态分离须真实后端支持；禁止界面参数有值但生成器忽略。 |
+| S18-R1-043 | 检查decode迭代器首次next含有的预填充时间，不能只测创建生成器 | 首次next的预填充必须实测，创建生成器用时不是首chunk。 |
+| S18-R1-044 | 单独计量token生成、codec解码及CPU拷贝，避免归因全部GPU | 分离token/codec/拷贝时间，目标设备缺失不填估算GPU成绩。 |
+| S18-R1-045 | 提示快照重用必须与内容指纹一致，不退回仅按路径缓存 | 保留内容pin缓存身份，路径相同但字节变化必须失效。 |
+| S18-R1-046 | 不为首声把ICL换成向量默认，保留相似度条件 | 不为提速默认退向量模式，ICL条件和相似度门禁保持。 |
+| S18-R1-047 | 比较首段优先调度与后续并行的队头阻塞，不无证据锁死单卡 | 首段优先与后段并行以真实排队分布比较，不凭单卡直觉重排。 |
+| S18-R1-048 | 确认Live聊天第一可用前缀触发不被朗读聚合配置覆盖 | 保留聊天Live首可用前缀触发，朗读聚合不得覆盖该配置。 |
+| S18-R1-049 | 保留最大生成token与取消限制，不能为速度删掉输出 | 生成token上限及取消保护保持，不能以少生成冒速度提升。 |
+| S18-R1-050 | 不默认每卡双模型增加显存；只有目标T4实测才接受吞吐结论 | 每卡双模型只允许目标T4测量后讨论，不先改副本数。 |
+| S18-R1-051 | 原始RMS约-47.7只作为风险，不推断具体麦克风故障 | 截图RMS仅提示输入轻，不当作麦克风或噪声根因诊断。 |
+| S18-R1-052 | 分别记录归一化前后语音电平与峰值，注明增益上限14dB | 输入归一化14dB上限与输出默认6dB分开，避免两个增益概念混用。 |
+| S18-R1-053 | 候选SNR是估计量，不能把17dB阈值当真实噪声声压 | 17dB估计门限不当真实SNR，报告算法与未校准限制。 |
+| S18-R1-054 | 保留raw、strength0.85、strength0.55对照的处理收据 | 授权真WAV做raw/0.85/0.55并列对照，保留每次处理来源。 |
+| S18-R1-055 | 审查声纹相似0.94与SNR增益2dB门禁是否会误接收失真，不能只看单分数 | 声纹/SNR门限与失真共同评估，无清洁真值不直接签听感。 |
+| S18-R1-056 | 验证全零、强直流、很轻语音及背景声输入的处理决策 | 全零/DC/轻语音/背景分别测决策，不把拒绝样本都当降噪成功。 |
+| S18-R1-057 | 对齿音、气声、摩擦音单独测保真，不能以削高频冒无沙沙 | 真实齿音/气声/摩擦音须盲听，不能只用频谱高频下降。 |
+| S18-R1-058 | 不在用户未授权时保存或上传原始私有WAV作为公共证据 | 私有WAV不进公共仓库；收集需授权且默认关闭。 |
+| S18-R1-059 | 已存在非平稳降噪不等于生成输出已降噪，明确处理发生阶段 | 说明降噪发生在参考分析，不暗示生成PCM已被消噪。 |
+| S18-R1-060 | 录音时扬声器回录网页朗读的可能性仅列假设，不能由截图定论 | 扬声器回录只是待证假设，截图不足以确诊。 |
+| S18-R1-061 | 建立模型PCM、后处理PCM、浏览器录回的分层局部诊断，默认关闭私有采集 | 分层PCM诊断默认私有且关闭，输出层级不能混成同一测量。 |
+| S18-R1-062 | 将codec窗口起点与边界脉冲位置关联，区分底噪和接缝爆音 | 真实codec窗口偏移与脉冲位置对齐后才归因接缝。 |
+| S18-R1-063 | 对持续人声与停顿分别计算频谱，但无清洁真值时不称绝对SNR | 无清洁真值只报相对度量，不给绝对SNR标签。 |
+| S18-R1-064 | 继续验证codec只收到生成码，不能回到参考码前缀解码 | 保留生成码专用窗口，参考码从所有输出解码入口排除。 |
+| S18-R1-065 | 真实预训练codec与随机tiny codec的质量证据必须分列 | 随机tiny codec只作控制流证据，不能替代预训练codec听感。 |
+| S18-R1-066 | 非有限模型输出当前替换为零，应评估失败拒播而非掩盖异常的策略 | 非有限输出是待决失败策略，先保留见证而非擅自改零替换语义。 |
+| S18-R1-067 | 增益提升可能抬噪，记录处理前后噪声地板变化而不自动强门限 | 增响同时量噪声地板，不能默认强门限掩盖抬噪。 |
+| S18-R1-068 | 不能用输出全静音或静音段删除作为零噪声验收 | 全静音/删静音都不能签无沙沙或音质成功。 |
+| S18-R1-069 | 保留模型自然人声呼吸与禁止添加噪声的区别，不自动切除语音气息 | 保留自然模型气息与禁后加参考噪声的区别，避免误删辅音。 |
+| S18-R1-070 | 用户全程纯人声目标需真实WAV试听和添字检查，代码指标不替代 | 真实整段WAV对照添字/漏字与听感，当前无音频不能签纯人声。 |
+| S18-R1-071 | 实测同一信号整块与任意分块处理的样本一致性 | 分块差异1424/8来自NumPy历史合成实验，不当用户噪声根因。 |
+| S18-R1-072 | 重点验证NumPy不足96样本首块时淡入是否在下一块重新从零开始 | 不足96样本淡入重启应在S3修固定进度，保留整块及短块同输入见证。 |
+| S18-R1-073 | 核查NumPy按输入块丢弃不足240样本RMS余数与Rust跨块累积差别 | 核查不足240样本RMS余数跨包累积，不能只比较输出长度。 |
+| S18-R1-074 | 比较Rust逐样本增益平滑与NumPy逐块插值，不能宣称严格等价 | 先定Rust/NumPy算法差别与容差，不能以接口相同称等价。 |
+| S18-R1-075 | 保持输出样本数与输入相等，不能为降噪补偿无记录延迟 | 保留输入输出样本预算；新增延迟必须单独记账。 |
+| S18-R1-076 | 分别测试DC blocker状态、零输入残留与长静音后重新讲话 | DC残留、零输入与长静音后恢复分别测，flush问题不直接归声学根因。 |
+| S18-R1-077 | 测试max_gain_db=0隔离淡入和DC滤波，再开放AGC定位差异 | 用max_gain0隔离淡入/DC，再逐步开放AGC定位。 |
+| S18-R1-078 | 同卡每段重置与跨卡各自状态不同需测量，不能只凭相同目标响度称一致 | 同卡重置与跨卡独立DSP状态用真实音频测，不以同目标dB签一致。 |
+| S18-R1-079 | flush的192样本衰减不是新生成语音，不能加入RTF语音分母 | flush192样本不算新语音时长，保持RTF分母真实。 |
+| S18-R1-080 | 若修复NumPy算法须保留Rust接口版本兼容，并添加跨后端容差测试 | 修NumPy时保留Rust ABI兼容并明确降级，C fixture不是Rust执行。 |
+| S18-R1-081 | 将独立模型韵律重启、显式停顿、播放欠载三种接缝分类计数 | 独立合成重启/规划停顿/播放欠载分三类记账，不一律叫沙沙。 |
+| S18-R1-082 | 保留朗读12/24首段、20/40/80稳态配置基线再比较，不盲目扩大 | 先保留12/24及20/40/80历史配置基线，扩大段长须真声学对照。 |
+| S18-R1-083 | 逐字验证分段重新连接等于原文，保护数字、缩写、引号和标点 | F39限定字词外标点尾段丢失；保留原文重连合同，不夸大成所有词漏读。 |
+| S18-R1-084 | 审查PauseBeforeMs与tail_pause_ms是否重复加停顿，先画时序再修改 | 画PauseBefore与tail_pause时序，不能未经核对就删停顿。 |
+| S18-R1-085 | 禁止跨词PCM重叠掩盖接缝，不牺牲清晰度冒自然度 | 不以跨词PCM重叠隐藏接缝，语义与清晰度优先。 |
+| S18-R1-086 | 段尾8ms衰减及下段淡入需以有声边界实测，不只用零边界波形 | 8ms有声边界对照须真WAV，不用零边界单音替代。 |
+| S18-R1-087 | 欠载时0.94尾衰减属于播放补偿，不能误标模型本身沙沙 | Worklet欠载补偿与模型底噪分开归因，0.94尾衰减不是模型结论。 |
+| S18-R1-088 | 自然度对照必须同时保存整段朗读，不能只听裁剪后小片段 | 整段自然朗读盲听与局部片段同时保留，不能只挑好片段。 |
+| S18-R1-089 | 不同GPU同文与交替长文分别试听；同seed不等于波形完全相同 | 同文双卡及交替长文两套测试，同seed不保证位级相同。 |
+| S18-R1-090 | 只有真实模型支持的连续条件才能声称跨段联合生成，不换名称包装独立合成 | 无连续条件接口证据时保持独立段合成描述，不包装联合生成。 |
+| S18-R1-091 | 冻结原始至17包、全部manifest及正式工作台，新增18不得覆盖历史包 | 冻结原始至17包与正式HEAD不动，18另建包及清单。 |
+| S18-R1-092 | 三轮100建议均标已确认问题、待证假设或保留约束，不虚报300个bug | 保留问题/假设/约束三分法，300建议不是300已确认bug。 |
+| S18-R1-093 | 完成三轮审查后再逐题决策，每题50建议后才进入下一题 | Q25–27各50行动保持；没有新重大方案不为计数开Q28。 |
+| S18-R1-094 | 历史334测试不能算18新增验证，依赖缺失需如实记录和重建 | 当前无旧venv/node_modules，应记录缺依赖；历史334不是本批新执行。 |
+| S18-R1-095 | 对每个修复保留修复前失败、修复后通过的同输入收据 | 修复前后必须相同输入，观察测试成功不等于故障修复。 |
+| S18-R1-096 | 三轮Python、Node、Go race、协议和浏览器必须针对最终源码再执行 | 最终产品源码冻结后再完整三轮，当前审计/Node不能替代。 |
+| S18-R1-097 | CPU合成信号实验不代替真实T4语音实验，硬件不足保持BLOCKED | CPU合成信号不能替代真实T4语音，硬件缺失保持BLOCKED。 |
+| S18-R1-098 | 按实测热路径选择语言；不要新增Java/C#/SQL服务凑多语言 | 仅以热路径测量决定语言，不新增服务凑语言数量。 |
+| S18-R1-099 | 最终18复制页、下载、剪贴板拒绝回退与手机逐字节校验不可省略 | 18未生成，当前17复制证据不能签18下载/剪贴板/手机完整性。 |
+| S18-R1-100 | 将全部已完成备忘录内嵌完整提示词；未完成轮次必须明确，不编造结论 | 全部已完成memo内嵌交接；历史完成表述按当时范围解释。 |
+
+### 原审查第2轮100条
+
+| ID | 原建议 | 本批逐条处置说明 |
+|---|---|---|
+| S18-R2-001 | 保持qwen-tts-hf与旧qwen-tts发行版严格分离，源码同命名空间不等于同版本 | HF与旧发行版分离，不能因命名空间相同替换依赖。 |
+| S18-R2-002 | 下载源码必须核对PyPI wheel SHA256，收据注明实际提供模型类的发行版 | 保留wheel SHA与发行版身份；缺缓存时只能核收据而非重跑模型接口。 |
+| S18-R2-003 | 将三提示单目标被拒绝的实际接口行为加入未来多参考功能合同 | 三提示一目标拒绝作为接口边界，不构造未实现融合参数。 |
+| S18-R2-004 | 将三提示三目标定义为独立批量任务，界面不能称参考融合 | 三提示三目标标独立批量任务，与一句融合明确分开。 |
+| S18-R2-005 | 保留列表prompt每项独立ref_text，不用共享一条文字冒三候选匹配 | 保留逐prompt ref_text匹配，拒绝跨候选共享错误转写。 |
+| S18-R2-006 | 字典prompt的批量ref_text共享行为应明确，不直接用于三段不同转写 | 字典批量共享文本限制须明示，不给不同音频拼全文。 |
+| S18-R2-007 | 引用prompt item中ref_code与speaker embedding的区别，不能用声纹平均替代ICL | ref_code与speaker embedding分属不同角色，不由ECAPA均值替换。 |
+| S18-R2-008 | 保持单ICL预计算提示的真实接口回归，不能为新模式破坏现有快照 | 单ICL快照接口保护保留，新增策略不可破坏。 |
+| S18-R2-009 | 向量模式继续要求显式选择，不把它作为未实现融合的静默替代 | 向量模式只能显式选，不能作为未实现融合的静默成功回退。 |
+| S18-R2-010 | 实际生成器、权重和声学结果未执行时，接口控制流通过不标模型实验通过 | 真实生成器/权重未跑，接口控制流不算完整模型实验。 |
+| S18-R2-011 | 建立全部候选分析清单，逐项列源文件、时间、匹配转写、指纹和有效性 | 候选清单按来源/时间/转写/hash/有效性列出，不只显示编号。 |
+| S18-R2-012 | 单锚点模式明确显示被用作ICL的候选及未用作ICL的其他候选 | UI明确实际单ICL锚点，其他候选分析贡献另列。 |
+| S18-R2-013 | 若后续共享参数来自全部候选评分，记录算法与评分证据而非暗示音频融合 | 来自全部候选的评分需算法来源，不暗示全部音频进入Qwen。 |
+| S18-R2-014 | 比较每候选合成时固定同文同seed同采样参数，确保差异确由候选造成 | 每候选固定同文同seed同采样再盲听，目前真实条件缺失。 |
+| S18-R2-015 | 候选中心与实际Qwen说话人嵌入不同空间时不得直接替换 | 不同嵌入空间严禁直接平均替换，需同模型实验另证。 |
+| S18-R2-016 | 实验性的融合嵌入若提出，必须独立模式且真实盲听，不自动作为最佳方案 | 任何融合必须独立实验模式，未验证不得设默认。 |
+| S18-R2-017 | 不跨候选拼转写或参考码以绕过模型批量长度校验 | 不拼参考码或转写绕过批量长度约束。 |
+| S18-R2-018 | 候选顺序变化时用内容身份而不只用数组下标定位证据 | 候选顺序变动以内容身份重定位，数组index不是永久证据ID。 |
+| S18-R2-019 | 候选有效时长按实际WAV而非仅展示start/end计算，避免舍入差 | 用实际WAV帧数算时长，展示四舍五入不能作门禁。 |
+| S18-R2-020 | 候选策略、模型模式及参数调整必须使旧会话明确失效 | 模式/策略/参数改变须使旧会话明确失效，不能混旧pin。 |
+| S18-R2-021 | index必须严格整数且非bool，拒绝true变1与false变0 | S1 bool先于整数检查，true/false拒绝不能按1/0。 |
+| S18-R2-022 | 拒绝1.9截断成1，避免非整数JSON静默切换其他参考 | 1.9拒绝而非int截断，保留已有合法整数行为。 |
+| S18-R2-023 | 缺失index应明确拒绝还是显式兼容默认0，不让文档与行为矛盾 | 缺省index政策先显式定为受控合同，不在修bool时顺带猜兼容。 |
+| S18-R2-024 | null、数组、对象及NaN输入转换失败应返回受控4xx而非未捕获异常 | 旧AST证实null/容器未捕获；NaN真实HTTP编码行为需另测，不扩张覆盖。 |
+| S18-R2-025 | 候选入口未知字段与重复字段的策略需与严格library接口一致 | 未知/重复字段与library严格接口协调，勿只改一个入口。 |
+| S18-R2-026 | 验证candidates为非空合法列表，不能只依赖len和下标访问 | 损坏candidates类型/空列表先拒绝，不只用len和下标。 |
+| S18-R2-027 | 验证候选file为安全单文件名且普通文件，避免损坏profile路径越界 | 候选文件限定安全单文件名/普通文件，拒绝损坏路径与链接。 |
+| S18-R2-028 | 手工ref_text不接受dict/list被str化，保留严格字符串与Unicode校验 | ref_text严格字符串/Unicode，dict/list不被str化接受。 |
+| S18-R2-029 | 保留训练档案禁止改候选和转写的409边界，不绕过版本固定 | trained候选/文本409保护保持，来源绑定不能被新策略绕过。 |
+| S18-R2-030 | 增加真正HTTP参数与错误码测试；当前AST调用不冒充FastAPI测试 | AST测试不是HTTP；补原ASGI状态码和返回体脱敏。 |
+| S18-R2-031 | 校准开始捕获完整候选集合版本，提交时核对未变再采用评分 | 校准开始固定完整输入版本，提交重核后才能采用旧评分。 |
+| S18-R2-032 | 禁止用旧候选评分选择重新读取后已更改的同下标候选 | 旧快照按候选内容身份提交，不把新同下标当原对象。 |
+| S18-R2-033 | 校准期间并发编辑转写不能被结束时静默覆盖，需冲突响应 | 并发文本更新必须冲突而非旧结果覆盖；原AST见证不当线程压力。 |
+| S18-R2-034 | 候选文件内容更改但文件名不变也要改变校准输入版本 | 文件名不变字节变化也进入版本核验，不能只比JSON时间。 |
+| S18-R2-035 | 候选变更、文本变更、校准、删除应协调同一档案锁或乐观版本合同 | 候选/文本/校准/删除使用统一提交合同，不拿HEAVY当档案锁。 |
+| S18-R2-036 | 进程内线程锁与跨进程文件锁分别评估，不能把一个称全局事务 | 线程锁与文件锁保护范围分别记录，不声称单进程锁全局事务。 |
+| S18-R2-037 | HEAVY最大2只限制并发数量，不等于每profile串行，不能替代状态锁 | HEAVY2只管名额，不能证明同档案顺序和一致性。 |
+| S18-R2-038 | 对先写磁盘再等HEAVY被429拒绝的路径核对reference_saved状态 | F33满HEAVY前已写盘见证保留；429必须清楚reference_saved语义。 |
+| S18-R2-039 | 原子JSON替换只保护单文件，候选复制与JSON提交之间仍需一致性设计 | 单文件atomic replace不保证锚点+JSON跨文件事务，失败点逐个测。 |
+| S18-R2-040 | 校准提交前档案已删除或adapter状态已变化时必须停止，不能恢复旧状态 | 提交前删除/变trained都应重新核对，禁止恢复已删除旧档案。 |
+| S18-R2-041 | ASR评估全部失败不再用CER0.05冒充实测值，应记录null与失败原因 | ASR缺失不能CER0.05；修为缺失/失败与覆盖率，不填优分。 |
+| S18-R2-042 | 部分文本ASR失败时记录覆盖率，不能只对成功样本平均后隐藏缺失 | 部分ASR失败保存分子分母，不能只平均成功样本。 |
+| S18-R2-043 | 全部候选合成失败时返回明确未选出有效结果，不能chosen0看似成功 | 全合成失败不能chosen0，记录无有效选择并保留上次有效状态。 |
+| S18-R2-044 | 每候选的有效生成条数和预期条数同时保存，评分先验证完整性 | 每候选预期与成功条数都入收据，先完整性后评分。 |
+| S18-R2-045 | 未测或低可信声纹指标不填高分默认值，应明确阻塞/降级语义 | 未测声纹不填高分默认，明确阻塞或降级。 |
+| S18-R2-046 | 候选排序排除非有限得分，NaN/Inf不进入max选择 | NaN/Inf在排序前拒绝，不靠max偶然顺序选候选。 |
+| S18-R2-047 | 模型输出空音频、太短、全静音和缺字分别记失败而不只比声纹 | 空/太短/静音/缺字分别标失败，声纹高不代表有效语音。 |
+| S18-R2-048 | 校准报告应保留先前有效结果，失败新校准不覆盖为貌似新最佳 | 失败校准保留旧有效结果，不能覆盖成看似新最佳。 |
+| S18-R2-049 | ASR释放与临时目录清理放入覆盖所有异常的finally路径 | ASR/临时目录全异常finally清理，取消和生成异常都需覆盖。 |
+| S18-R2-050 | 错误信息需脱敏且保留阶段，不能把原文和本机私有路径暴露给日志 | 错误按阶段脱敏，不回显私人全文/本地路径。 |
+| S18-R2-051 | 同目标文本跨GPU诊断使用相同seed，修复100+17*ti+gi的设备偏移混杂 | 诊断跨GPU同文用同seed，100/101旧见证只说明诊断混杂。 |
+| S18-R2-052 | 将实际seed写入每张卡诊断条目，使测试条件可核验 | 每卡真实seed进诊断收据，禁止只在总配置声明。 |
+| S18-R2-053 | 会话调度当前各卡同seed的行为应保留，不把诊断偏移引入播放 | 正式会话同seed调度保持，不把诊断设备偏移带入播放。 |
+| S18-R2-054 | 两卡同一voice_binding和voice_conditioning都要进诊断收据 | 每卡同时列binding和conditioning，profile ID不够。 |
+| S18-R2-055 | 记录实际dtype、模型版本、codec政策与DSP后端，不能仅比profile ID | dtype/版本/codec/DSP在目标机实录，当前不能填测量完成。 |
+| S18-R2-056 | 相同参数不意味着位级相同；阈值评分和人工听感结论分开 | 同参数不保证波形位同，评分阈值与盲听结论分列。 |
+| S18-R2-057 | 同文对照与不同文本交替朗读各自设计，不能用同文替代自然衔接 | 同文对照不能替代不同文本交替朗读，两者分别验收。 |
+| S18-R2-058 | 所有条目失败时speech_db默认0不应参与一致性，明确缺失项 | 全失败speech_db0是缺失占位，不参与一致性统计。 |
+| S18-R2-059 | consistent布尔值应附完整性及阈值说明，不能称零噪声或100%同声 | consistent必须附覆盖与阈值，不是100%同声或零噪声承诺。 |
+| S18-R2-060 | 诊断生成在锁定或请求取消后仍进行时保留资源状态，不误报即时停止 | 取消诊断后后台资源未必停，UI停止等待与真实停止分开。 |
+| S18-R2-061 | 校准结束必须检查load_on_workers回执，不能丢弃失败后正常返回 | 校准必须检查worker回执，不能reload失败仍正常选定。 |
+| S18-R2-062 | 保留文本/候选接口已有reference_saved与503部分失败语义 | 已有reference_saved/503部分失败语义保持，避免误称磁盘没提交。 |
+| S18-R2-063 | Go激活两卡并行、同绑定同模式核验及旧active保留不得回归 | Go双卡同pin同模式激活保护保持，失败旧active不动。 |
+| S18-R2-064 | 激活最终再次读磁盘核对指纹的检查必须保留 | 激活提交前再次读盘核pin保留，不以提速删掉。 |
+| S18-R2-065 | Python reload最终current为None时应视失败，而不是跳过版本核验 | reload最终current=None必须失败；已有F20相关见证不等于修复。 |
+| S18-R2-066 | 候选校准只用GPU0的现状须说明；多卡校准需独立计划，不虚报双卡评估 | 当前校准GPU0事实需说明，多卡评估不能由双worker推断。 |
+| S18-R2-067 | 加载某卡成功某卡失败后，不允许新会话静默只用成功卡冒双卡一致 | 单卡加载成功不能称双卡就绪，新会话行为要显式失败。 |
+| S18-R2-068 | 冷首次sanity合成耗时应与提示提取耗时分开记录，避免首声归因错误 | 冷sanity合成与提示提取分别计时，当前无目标设备不归因。 |
+| S18-R2-069 | HTTP断开不等于后台模型加载已停止，未来重试需幂等/状态查询 | HTTP断开不等于加载停止，重试须先状态查询/操作身份。 |
+| S18-R2-070 | 不得为降低激活耗时跳过Worker锁内参考前后两次指纹校验 | 参考前后两次锁内指纹核验保留，不因激活加速省略。 |
+| S18-R2-071 | 审查_cal临时profile移除后Worker提示缓存仍驻留的资源生命周期 | 临时_cal删除后提示缓存生命周期需独立检查，不把删目录当释放GPU。 |
+| S18-R2-072 | 重复校准相同临时ID时确保旧提示被替换，不能复用先前参考 | 重复临时ID也须按内容pin替换旧提示，不按路径命中。 |
+| S18-R2-073 | 删除档案后清理与它关联的profiles、voice_bindings、levelers和提示快照 | 删除档案需按作用域清profile/binding/leveler/prompt，不能漏在用引用。 |
+| S18-R2-074 | 缓存释放必须获取合成同一把锁，不释放正在使用的GPU张量 | 缓存释放用同合成锁，不释放正在使用的张量。 |
+| S18-R2-075 | 缓存容量按可测内存预算管理，而不是只看磁盘profile数量 | 缓存容量须真实内存测量，磁盘profile数量不是显存预算。 |
+| S18-R2-076 | 临时校准ID与用户可启用ID区分，不能由列表选中临时声音 | _cal不在可激活列表中，临时身份与用户档案分开。 |
+| S18-R2-077 | 备份继续排除_cal档案，不把测试用临时状态持久化为模型 | 备份继续排除_cal，不把校准临时数据持久化为模型。 |
+| S18-R2-078 | 临时目录清理失败记录状态并可回收，不无声积累数据 | 临时清理失败要可见/可回收，不无声积累私有数据。 |
+| S18-R2-079 | 生成器取消仍要close并释放有界codec窗口，不能因缓存修改遗漏 | F36上游close异常会跳finish，需保留finally清窗口的原取消保护。 |
+| S18-R2-080 | 不要盲目清空CUDA所有缓存导致每段冷启动，资源回收须按作用域 | 不要全局清CUDA缓存制造每段冷启动，释放应有作用域。 |
+| S18-R2-081 | 候选点击期间禁用或序列化同档案变更按钮，避免重复并发写 | 候选/校准变更按钮串行或操作身份保护，不仅防双击样式。 |
+| S18-R2-082 | 响应乱序时按操作版本更新高亮，不让旧响应覆盖新选择 | F42已证同epoch合成响应回滚高亮；只修UI排序不声称后端回滚。 |
+| S18-R2-083 | 继续保留accessEpoch和AbortController防锁定后迟到数据回填 | accessEpoch/abort锁定清理保持，不能用新操作版本替换旧安全门禁。 |
+| S18-R2-084 | 客户端取消只能停止等待时明确提示后台任务可能继续，不伪报服务器取消 | 取消等待明确后台可能继续，不能显示已撤销服务端提交。 |
+| S18-R2-085 | 503且reference_saved时显示已保存未全卡就绪，不能笼统当未保存 | 503且reference_saved显示保存成功/加载失败两个状态。 |
+| S18-R2-086 | 校准报告区分逐候选评分、最终提交、双卡加载三个状态 | 报告分别标逐候选评估、磁盘提交、双卡加载，不能一个绿标覆盖。 |
+| S18-R2-087 | 没有有效候选或指标不全时不显示成功绿标 | 无有效候选/指标不完整时不显示成功；错误不伪造评分。 |
+| S18-R2-088 | 参考转写可审阅但日志默认脱敏，token不进URL/localStorage | 参考转写只在授权视图审阅，token不入URL/localStorage。 |
+| S18-R2-089 | 新增条件证明信息只放同源授权接口，不能自动上传外部诊断服务 | 条件来源收据走同源授权接口，不自动发外部诊断。 |
+| S18-R2-090 | 新增交互保持移动端可操作、录音失败队列保留与锁定清空 | 移动端录音失败队列/锁定清空保持，新增控件不能遮停止按钮。 |
+| S18-R2-091 | 原始库已有revision与lease设计可借鉴，但不直接修改其已成功数据格式 | 借鉴revision/lease但不改已成功库格式，迁移需单独合同。 |
+| S18-R2-092 | 候选处理与真实训练继续分开命名，不把评分或缓存称训练提升 | 参考缓存/评分不叫训练提升，真实优化器执行独立验收。 |
+| S18-R2-093 | 训练adapter来源hash与固定参考在新条件策略下仍必须核验 | trained来源hash及固定参考持续核验，条件策略不豁免。 |
+| S18-R2-094 | 私有原始样本仍排除Dataset自动备份，新增诊断WAV默认不进入归档 | 私有原始样本与新WAV诊断不自动Dataset备份。 |
+| S18-R2-095 | 代码、参数和参考版本相同的测试与实际用户WAV声学验收分开报告 | 同版本代码/参数仅是实验条件，不是用户WAV声学通过。 |
+| S18-R2-096 | 为每个确认缺陷建立独立失败样例，后续修复应让同案例先失败再通过 | 每缺陷定位独立见证，23建议可复用相关见证但不能当23独立bug。 |
+| S18-R2-097 | 受控AST交错不是线程压力测试；实现后补真实并发和HTTP回归 | AST确定性交错不等于真实并发，修复后补HTTP和线程压力。 |
+| S18-R2-098 | 下载wheel仅源码检查不安装旧qwen-tts，避免命名空间冲突 | wheel只下载检查，不安装旧qwen-tts污染HF命名空间。 |
+| S18-R2-099 | 本轮100建议与实际实验范围完整入备忘录，不宣称全源三轮完成 | 旧轮100建议不能倒写为当时全源三遍；当前53三遍另有新台账。 |
+| S18-R2-100 | 第三轮结束及逐题50建议决策完成后才改产品，继续冻结17包与工作台 | 原先顺序决策及17冻结保持，源码三遍完成不自动开工S1。 |
+
+### 原审查第3轮100条
+
+| ID | 原建议 | 本批逐条处置说明 |
+|---|---|---|
+| S18-R3-001 | 保留16码本、24kHz及1920样本每帧合同，不用未知解码器静默替代 | 保持16码本/24k/1920合同，不允许未知解码器静默回退。 |
+| S18-R3-002 | 左上下文25帧只保留有界生成码，参考码继续禁止进入输出解码 | 25帧左上下文只保留生成码，参考码不能进入输出窗口。 |
+| S18-R3-003 | 默认右前瞻0与实验1/2帧分别记录延迟与真实质量，不用随机codec推断最优 | 右前瞻0/1/2需预训练codec真实对照，不以随机模型选最佳。 |
+| S18-R3-004 | 为每次提交记录全局帧偏移与已提交区间，定位接缝是否重复或漏帧 | 提交帧偏移/区间用于追重复漏帧，先明确坐标语义。 |
+| S18-R3-005 | 区分有效生成帧、保留上下文和待提交PCM，不能把重复解码时间当新语音 | 重复解码上下文不能算有效语音，pending与已提交分开计。 |
+| S18-R3-006 | 取消和异常均close生成迭代器并清理pending，禁止取消后尾包泄漏 | 取消/异常都须close并清pending；F36说明异常路径仍缺保护。 |
+| S18-R3-007 | 实际tokenizer返回错误采样率、非有限值或长度不符继续拒绝 | 原采样率/shape/NaN/长度拒绝行为保持，不静默修成可播。 |
+| S18-R3-008 | 按首2/4/8帧对照时固定后续策略与文本，不能混入候选或seed变化 | 首2/4/8对照固定后续文本/seed/候选，真实模型缺失则阻塞。 |
+| S18-R3-009 | 真实codec有限上下文与整段解码差值须用预训练权重另测，不凭因果结构宣布无接缝 | 有限上下文与整段差须预训练权重，因果结构不是无接缝证明。 |
+| S18-R3-010 | prepare_ms不含生成器首次next里的全部预填充，拆分前先验证时钟范围 | prepare_ms与first next预填充边界明确，不能重命名即算测量。 |
+| S18-R3-011 | 将整块与不规则分块输出一致性列为DSP算法合同而非只检查有限和长度 | 整块/不规则分块建立数值合同，旧分块差异是修复前证据。 |
+| S18-R3-012 | NumPy淡入使用固定总长度及已处理位置，不让每次短块重新从零起算 | 淡入用固定总进度而非按每块重置，短块/正常块同输入回归。 |
+| S18-R3-013 | NumPy RMS统计保留不足10ms余数，避免按来包边界重新分组 | 10ms RMS余数跨块保存，不能重分组造成包依赖。 |
+| S18-R3-014 | Rust逐样本平滑与NumPy插值应先定义相同算法再设合理量化容差 | Rust/NumPy先统一所需算法和量化容差，再称跨后端等效。 |
+| S18-R3-015 | flush后Rust清DC状态而NumPy不清的差别须明确，不能称API语义完全一致 | flush DC状态差异明确记录；F27不证明用户沙沙原因。 |
+| S18-R3-016 | 当前Worker每段重建leveler，不能将跨段复用API问题直接认定为生产根因 | Worker每段重建leveler的事实保持，跨段API差异不直接算生产根因。 |
+| S18-R3-017 | 固定目标电平与最大增益仍不保证两段动态响度相同，保留完整语音测量 | 目标dB与最大增益不保证动态响度相同，需整段实际测量。 |
+| S18-R3-018 | 纯静音、阶跃和有声转静音须同时检查滤波残留、削波和增益泵动 | 静音/阶跃/有声转静音同时测DC/削波/泵动，不只检查finite。 |
+| S18-R3-019 | Rust ABI加载需区分不兼容符号和库缺失，不能失败后不告知回退路径 | ABI缺符号和库缺失分开；F38是C故障fixture，不是实际Rust库验收。 |
+| S18-R3-020 | 缺Rust编译器时记录未执行，不用C++重写参考实现冒Rust实测 | 无Rust工具链记未执行，C/C++参考不算Rust测量。 |
+| S18-R3-021 | 120样本以下语音块不能因无完整RMS帧就直接丢弃，设计跨块累积 | 不足120样本见证是泛用helper；当前codec1920倍数可达性另列。 |
+| S18-R3-022 | 跨输入块保留35ms有界预滚，而非只在检测到声音的当前块向前取 | 跨块预滚840样本差是合成边界见证，不直接称真实辅音丢失。 |
+| S18-R3-023 | 候选静音与未发声辅音不能仅凭能量绝对区分，试听门禁保留 | 轻辅音与静音不能只靠能量分开，保留真实听感门禁。 |
+| S18-R3-024 | 短末块含有非零语音时须有明确finish策略，不能永久留held后销毁 | 60非零样本留held需finish政策；未定义前不能声称末音完整。 |
+| S18-R3-025 | 尾静音裁剪应记录实际删掉时长和阈值，不把删音频冒首声或RTF提速 | 裁掉时长及阈值入收据，删除音频不能算提速收益。 |
+| S18-R3-026 | 900ms超长首静音放行应保留异常说明，不能把放行静音算实际人声 | 900ms放行首静音是异常政策，不能作为实际首人声。 |
+| S18-R3-027 | 1800ms held上限必须在长无声生成时仍有界，不引入全句缓冲 | 1800ms held上限保持，禁止修尾端引入全句无界缓存。 |
+| S18-R3-028 | 输入codec固定1920样本倍数与泛用小块测试分开，标注生产可达性 | 1920倍数生产合同与小块泛用反例分开，修复目标范围写明。 |
+| S18-R3-029 | 裁剪器发出的样本索引需可追溯至模型原始PCM，便于核对漏音 | 输出样本坐标追溯原PCM，便于审查裁剪是否漏音。 |
+| S18-R3-030 | 输入很轻时不要单纯升高裁剪阈值，应比较失真与背景噪声的权衡 | 轻语音不能盲抬阈值，真WAV比较失真/噪声权衡。 |
+| S18-R3-031 | 保持流式相位和上一个输入样本跨PCM帧连续，不能每帧独立插值 | 保留跨包相位与上一样本，不能逐帧独立重采样。 |
+| S18-R3-032 | 24k直通与44.1k/48k转换各自验证输入时长和输出样本预算 | 24k直通和44.1k/48k分别核时长与预算，不沿用名义帧数。 |
+| S18-R3-033 | 终止时缺下一个插值端点应定义末样本延拓或明确短尾策略并测试 | 末端插值缺端点须明确延拓/短尾政策，不由1样本差宣布声学损伤。 |
+| S18-R3-034 | 重采样收尾不能以补充可计入speech的静音改变RTF分母 | 不补可计speech静音扩大RTF分母，flush单独记账。 |
+| S18-R3-035 | 每段协议标记不应重置同一朗读流的重采样相位，会制造边界跳变 | 同朗读流跨段相位连续，协议分段不重置重采样器。 |
+| S18-R3-036 | 锁定、取消和新流begin应清掉上一任务的相位及延迟端点 | 锁定/cancel/new begin清旧相位端点保持，防旧数据串新轮。 |
+| S18-R3-037 | 分块与整块重采样在数值容差内一致的现有行为应保留 | 分块/整块重采样已有相同容差保护保持，尾端修复不得破坏。 |
+| S18-R3-038 | 一输入样本、空块及极短末块需测试，不只测长整秒波形 | 空块/一输入样本/极短末块单测，不只覆盖整秒。 |
+| S18-R3-039 | 扩展至降采样时需考虑抗混叠，不能将线性插值叫任意采样率高保真 | 若支持降采样需抗混叠设计，线性插值不称任意率高保真。 |
+| S18-R3-040 | 实体浏览器实际采样率与请求24k可能不同，诊断记录两者 | 实体设备实际采样率需记录，ctx请求24k不是硬件率保证。 |
+| S18-R3-041 | 生成结束且剩余20ms音频应有播放或明确失败结果，不能永久buffering | 20ms合成完成短尾仍buffering，须播放或显式失败而不是永久等。 |
+| S18-R3-042 | 精确50ms边界的严格大于判断需单独测试，不能只测51ms | 50与51ms分别断言，严格大于边界不能靠大缓冲用例覆盖。 |
+| S18-R3-043 | 欠载恢复时最后短尾同样应可排空，避免截掉最后一个音节 | starved最后短尾与初播一样有终止策略，不能截最后音节。 |
+| S18-R3-044 | 已结束数据的排空政策与持续生成时风险缓冲分开，不盲降正常启动阈值 | 完成短尾与live风险缓冲分开，不把修尾端变成全局降阈值。 |
+| S18-R3-045 | 有剩余样本但低于阈值时ended判定须有终止路径，不假装已播完 | 低于阈值但仍有样本必须可终止，不能提前ended报自然完成。 |
+| S18-R3-046 | 一任务只能产生一次最终结束，迟到统计消息不能把ended改回playing | F41证明stop后状态晚到，不等于所有ended路径；须单测一次最终结束。 |
+| S18-R3-047 | 长网络抖动和低产出速率下测试启动等待与欠载率成对取舍 | 真实抖动/低产出需联合等待与欠载统计，VM不签自然朗读。 |
+| S18-R3-048 | 暂停恢复必须在用户授权AudioContext状态下执行，不自动规避浏览器策略 | 暂停恢复受AudioContext用户授权约束，不自动绕过浏览器策略。 |
+| S18-R3-049 | 单调时钟中的0值不宜兼任未记录标记，检查极早首包的时间哨兵 | 零时钟与未记录标记分开，先补极早包哨兵测试。 |
+| S18-R3-050 | 运行原播放器VM只能证明逻辑，不可声称浏览器硬件首声变快 | VM只能签逻辑，不能签浏览器硬件首声变快。 |
+| S18-R3-051 | firstPlayedMs目前是主线程play命令时刻，名称与报表需区分实际消费 | firstPlayedMs是命令时刻，消费/出声另起指标且未测null。 |
+| S18-R3-052 | 增加首样本消费确认前先定义是否跳过显式停顿和极小淡入样本 | 首消费确认需先定义跳过停顿/微小淡入样本规则。 |
+| S18-R3-053 | Worklet currentFrame与主线程performance属于不同时间轴，使用可解释映射 | currentFrame与performance时间轴映射须可解释，不能直接相减。 |
+| S18-R3-054 | 保留ring样本计数与自然结束不额外记欠载的已通过行为 | ring样本计数与自然结束不额外欠载的现有保护保持。 |
+| S18-R3-055 | 欠载只计一次直至恢复，避免每个渲染量子重复放大统计 | 欠载只记一次直到恢复，不能渲染量子重复放大。 |
+| S18-R3-056 | 容量溢出dropped必须进入上层状态和失败提示，不能只在底层计数 | dropped从底层进上层失败提示，不能只显示正常结束。 |
+| S18-R3-057 | 固定192样本淡入在24k/48k分别8/4ms，若要求同毫秒则按实际率配置 | 192样本对应24k8ms/48k4ms；是否固定毫秒需先定义真声学目标。 |
+| S18-R3-058 | hold与reset后无旧PCM回放，保留现有重置后精确零输出测试 | 保留reset后精确零输出；F41命令状态漏洞不证明旧PCM真实重播。 |
+| S18-R3-059 | 环形缓冲溢出属于丢样，不得被统计成已自然连续读完 | 容量溢出属于丢样，完整性门禁必须失败而非自然读完。 |
+| S18-R3-060 | 声卡/系统输出延迟仍需实体设备测量，Worklet消费也不是声学听到时间 | Worklet消费仍不是声卡出声，实体延迟测量独立阻塞。 |
+| S18-R3-061 | 规划器PauseBeforeMs由上一边界生成，逐段记录而不是把所有停顿归模型 | 逐段记录PauseBefore来源，不把全部停顿归模型。 |
+| S18-R3-062 | Worker默认只加显式lead pause，核实tail默认0后再判断重复停顿 | 先核tail默认0与lead pause，再判断重复加停顿。 |
+| S18-R3-063 | 保留首段零规划停顿，不以参考呼吸或原音占位提前出包 | 首段零规划停顿保持，禁止参考呼吸/原音抢首包。 |
+| S18-R3-064 | 模型内部停顿与规划停顿叠加需实际WAV分层对照，不能只删规划停顿 | 模型内停顿与规划停顿需真实分层WAV，不能先删规划停顿。 |
+| S18-R3-065 | 有序转发必须保留，不能为了最快包先播后一GPU导致错序 | 有序转发不改为最快worker先播，保留正文顺序。 |
+| S18-R3-066 | 已消费部分PCM后禁止跨卡整段重试，保护不重复词句的现有门禁 | 已消费PCM禁止跨卡整段重试，避免词句重复。 |
+| S18-R3-067 | 未消费重试时正确扣除旧produced样本，维持背压与统计一致 | 未消费重试需扣旧produced，背压和统计不可双记。 |
+| S18-R3-068 | first_worker_audio可能是显式静音包，报表不可直接称人声首包 | first_worker_audio可能静音，不能直接报人声首包。 |
+| S18-R3-069 | 第一段4帧与后段6/8/12帧策略保留可追溯，提速不得改变音色条件 | 首4与后段6/8/12策略保留来源，不让性能实验暗改条件。 |
+| S18-R3-070 | 正文保留、引号配对、小数和缩写拆分须有实际Go回归，不靠源码注释 | 实际Go正文/数字/缩写/引号回归必需，注释和AST都不能替代。 |
+| S18-R3-071 | 在线推理与离线训练GPU租约保持互斥，不为测试盲停驻留模型 | 在线/离线整组GPU互斥保持，不为审计停真实驻留模型。 |
+| S18-R3-072 | 真实双卡训练、引用缓存与profile建档继续分开报告，避免功能混淆 | 真双卡训练与建档/缓存分开报告，CPUrank替身不算训练成功。 |
+| S18-R3-073 | 子进程继续清除API与认证秘密环境变量，不因性能诊断泄漏 | 子进程凭据清理保持，性能探针不得继承认证/模型私钥。 |
+| S18-R3-074 | 模型与adapter来源hash及安全权重格式不能为快速加载而跳过 | 模型/adapter hash与安全格式不为快加载豁免。 |
+| S18-R3-075 | 训练数据审阅/完整覆盖与声学验收是独立缺口，18音频修复不自动解决 | 长训练数据覆盖/审阅与声学是独立缺口，音频修复不会自动完成。 |
+| S18-R3-076 | 取消训练只终止本次进程组，不根据旧PID文件杀其他进程 | 仅终止本次进程组，不能用旧PID误杀其他服务。 |
+| S18-R3-077 | 保留离线代码与模型指纹核验，不自动开启远程代码或下载权重 | 离线指纹/不信任remote code保持，不自动下载权重补缺口。 |
+| S18-R3-078 | 新增诊断原始WAV默认私有且关闭，不能进入公开Git和自动备份 | 诊断WAV默认私有关闭，不进Git或自动备份。 |
+| S18-R3-079 | 资源状态的CPU成功不标CUDA或GPU优化成功，尤其是当前无Torch环境 | CPU资源status成功不算GPU优化，现环境尤其不能偷换。 |
+| S18-R3-080 | 剩余复杂训练/恢复路径只有入口边界复核，明确语义深审仍需补齐 | 原文“尚需语义深审”属历史；当前53三遍完成，但训练恢复功能签收仍缺。 |
+| S18-R3-081 | 正式工作台继续只读核对，不因音频审查改写15文件或HEAD | 正式15文件和HEAD只读核对，审计不得改用户工作台。 |
+| S18-R3-082 | 自命名空白文件、用户粘贴、并发版本冲突和磁盘持久化需保留 | 自命名空白/用户粘贴/CAS/持久化继续保留，新功能不强制预填。 |
+| S18-R3-083 | 复制预览与正式工作台分别核对，不能用旧17复制成功冒18完整包成功 | 17和三web源码复制保护不等于18复制页，发布前独立验收。 |
+| S18-R3-084 | 新发布前固定launcher字节数/hash，并校验53以上实际资产完整性 | 18未生成，未来固定launcher bytes/hash与实际资产清单再发布。 |
+| S18-R3-085 | 剪贴板失败回退应选中完整源代码，不能只复制可见窗口 | 剪贴板拒绝回退必须选完整源，不只选可见窗口。 |
+| S18-R3-086 | 文件名、路径穿越、脚本/style闭合注入等既有浏览器测试继续执行 | 文件名/穿越/闭合注入保护继续跑，不因新文案弱化。 |
+| S18-R3-087 | 锁定清理、同源token和迟到响应隔离不能被新指标消息绕过 | 锁定/同源token/迟到数据隔离不能被新指标旁路。 |
+| S18-R3-088 | 旧验证脚本固定历史分支属于历史证据，新分支另建验证器而非改旧收据 | 历史验证脚本分支固定不改，新分支另建核验器。 |
+| S18-R3-089 | 新工具依赖留忽略目录，下载源码也不与模型权重混入发布资产 | 工具/下载/依赖留忽略目录，不混进模型资产或正式包。 |
+| S18-R3-090 | 所有未执行的Go/Rust/真实浏览器/完整模型实验明确标未执行 | 未执行Go/Rust/浏览器/模型明确false，不能由历史收据推本批运行。 |
+| S18-R3-091 | 完整manifest读取/hash/AST只证明库存与语法，不声明全源逐行语义无错 | manifest/hash/AST仅签库存与语法，不签语义无错。 |
+| S18-R3-092 | 三轮专题各100完成也不等于所有代码已语义审查三遍，覆盖缺口单列 | 专题3×100与全源3遍分开；当前阅读完成仍不是300功能签收。 |
+| S18-R3-093 | 每个实验写方法、注入边界、实际源hash及探针hash，避免不同版本混算 | 每证据写方法/注入/源码与探针hash，避免版本混算。 |
+| S18-R3-094 | 将已复现缺陷、待验证假设与保留保护分别分类，不将300建议全标已修 | 缺陷/待证/保留分别处置，不能300全部标已修。 |
+| S18-R3-095 | 重建环境仅NumPy和Node时旧模型实验收据保留历史，不算新执行 | 缺环境保留旧结果为历史；新审计12和Node30不冒CPU426。 |
+| S18-R3-096 | 第25题起一次一题，具体选项/推荐/理由/50建议全部记录后再下一题 | 逐题50行动与推荐/理由全部保持，本批不新增重大方案题。 |
+| S18-R3-097 | 实施方案要将首声、条件来源、状态一致、DSP、裁剪、播放排空分成可回滚小步 | S1输入→S2版本→S3DSP→S4裁剪→S5排空→S6度量→S7透明→S8发布分小步。 |
+| S18-R3-098 | 产品最终源码冻结后完整三轮回归，当前边界探针不能代替全功能通过 | 最终产品源码需完整三轮功能回归，当前审计三轮不代替。 |
+| S18-R3-099 | 零噪声/单一音色/自然朗读及RTF0.3仍需真实WAV和双T4，不用绝对承诺替代 | 无沙沙/同一音色/自然连续/RTF0.3需真WAV双T4，不作绝对保证。 |
+| S18-R3-100 | 第三轮备忘录和缺口完整内嵌提示词，发布18之前仍使用17并保持PARTIAL | 本轮处置全文入交接，18未发仍用17并保持PARTIAL/BLOCKED。 |
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_INPUT_HTTP.md
+
+# G0第10批：S1输入边界的真实TCP/HTTP见证
+
+日期2026-10-23；活动分支 `arena/1160bd87-kagglee`。
+
+**本批完成438项CPU/HTTP合同三轮，438×3＝1314 PASS，无失败／错误／跳过。其中继承原426、新增12（7保护＋5未修观察组）。新增每轮实际61个TCP/HTTP请求，合计183个。测试通过不表示所有请求应当成功：每轮16个500是准确捕获的未修行为，不能当作功能验收。G0与整体仍PARTIAL/BLOCKED。**
+
+用户要求确保成功：本批以同输入断言、真实请求、失败留档和独立核验控制可验证结果，不预先承诺产品／完整模型／训练或声学一定成功。产品未修改，未跳S1实施、Q28或18发布。
+
+## 1. 环境恢复与范围
+
+本次工作区开始没有旧venv或node_modules。重新创建忽略目录.venv，从允许的PyPI下载并安装历史Python固定依赖，完整freeze逐行等于第7批记录去掉go-bin==1.23.9；Go不在本批范围，未安装。NumPy2.2.6保持，与产品requirements2.4.6不同，不称目标依赖门禁完成。没有安装Torch/Qwen/模型、Rust、Go或npm依赖，没有执行产品bootstrap安装器。
+
+安装首次成功，保存input-http-dependency-install-first.txt及完整freeze；不声称与历史所有系统库／二进制绝对等同，venv恢复不是语音运行环境验收。
+
+## 2. 是真实TCP，不是TestClient或AST冒充HTTP
+
+新 `input_http_fixture.py` 将完整原始analyst.app交给Uvicorn，在已绑定的127.0.0.1临时端口监听，httpx通过真实socket请求。使用启动事件而非sleep轮询，客户端关闭后设置退出标志、限时join并确认自有server线程停止；服务器退出时清理其事件循环执行器。临时目录和合成WAV／档案均由测试独占并删除，不读用户私有数据。
+
+FastAPI、JSON解析／验证、BodyBudgetMiddleware、原路由、原文件提交与HEAVY执行。生命周期事件明确off，不冒称完整服务启动；路径／profile读取位置切到自有临时目录，worker重载回执是明确fixture，仅返回两项ok。不是完整模型worker、真实训练、声音生成、Go鉴权代理、远端利用或实体音频实验。环回端口仅测试用途，不是面向用户的预览服务。
+
+## 3. 新12项：7保护、5未修观察组
+
+| 合同 | 实测与边界 |
+|---|---|
+| 合法整数候选 | 0/1正常200，锚点字节／转写／pin匹配；只证明fixture worker回执下原路由提交 |
+| 越界／缺档案 | -1/2/999返回400，缺档案404，不改盘、不reload |
+| 有限非对象／破JSON | null/list/bool/number/string及不完整JSON返回422，不改盘；不将非有限值混入该保护 |
+| trained保护 | candidate/text/calibrate均409，在IO/reload/校准前拒绝；trained元数据为fixture，不是训练产物验证 |
+| library严格JSON | NaN/Infinity/-Infinity、重复键、未知／缺少字段、非对象和破JSON均400，不调store.create |
+| 合法Unicode文本 | 中文／希腊字母／emoji完整保存并同步候选转写，空／缺省文本400；不涉及ASR正确性 |
+| 错误index与满HEAVY | 两槽占满时，越界仍400、null仍500且不进入reload；释放后两槽可复用 |
+| I01：index强转未修 | true→1、false→0、1.9→1、字符串1→1、1.0→1，均200并reload |
+| I02：非有限与容器未修 | null/list/dict/非法数字串、NaN/±Infinity/1e309及顶层非有限值返回500，不改盘、不reload |
+| I03：旧字段策略未改 | 缺省index回0，重复键最后一个生效，未知字段忽略；记录兼容现状，不擅自签未来政策 |
+| I04：文本类型／Unicode未修 | dict/list/null/bool/float经str保存并200；孤立surrogate返回500，原文件不变且临时文件清掉 |
+| I05：损坏档案边界未修 | 空candidates400；null/dict/null-entry500；预装的父路径／符号链接file可复制自有档案目录外WAV并200 |
+
+I05所有“目录外”内容仍在自有临时测试树，损坏profile预先写入，不是HTTP请求体直接控制file字段；不证明公开远程任意文件读取或实际模型接受该档案。没有访问真实私密路径。
+
+I02顶层NaN等不等于内部index的int转换：有限非对象是422，顶层非有限触发框架错误响应的实际500。保留真实原始请求字符串与响应，不用httpx的json参数拒绝NaN来假装服务端已拒绝。错误响应500为Internal Server Error，不回显源异常；未做完整错误隐私签收。
+
+这些I01–I05细化原建议的边界，不按数量宣称新增5个独立产品bug。旧F01–42与先前DSP／播放器观察没有修复。
+
+## 4. 三轮结果与继承核对
+
+| 本批实际集合 | 第1轮 | 第2轮 | 第3轮 |
+|---|---:|---:|---:|
+| CPU＋HTTP合同 | 438 PASS | 438 PASS | 438 PASS |
+| 原集合／本批新增 | 426／12 | 426／12 | 426／12 |
+| failure／error／skip | 0／0／0 | 0／0／0 | 0／0／0 |
+| 新真实TCP请求 | 61 | 61 | 61 |
+| 独立NumPy分块／trimmer | 12／8 | 12／8 | 12／8 |
+| 实际CLI期望合同 | 4 | 4 | 4 |
+
+每轮61请求的状态分布相同：200×19、500×16、400×16、422×6、404×1、409×3；183请求不是183个单元测试。7新保护三轮21次、5观察组三轮15次，不能与每组多个请求重复计算。
+
+原426逐test ID及结果与前批核对完全继承，原16份CPU观察与前批逐项一致；加新5组为21份观察，不把观察PASS当已修。新三轮原始请求／响应／观察片段一致，fixture地址与临时路径不混入稳定数据。
+
+每轮三CLI按预期exit2/BLOCKED，resource status exit0但gpu_verified=false，不把阻塞当模型成功。C ABI故障库再次由系统cc编译／ctypes加载，是C故障fixture而非Rust执行；旧CPU rank／模型角色依旧替身，没有真实优化器／GPU训练。
+
+新12预检首次12/12通过；探索原始HTTP矩阵的JSON与stdout保留。一次结果检查脚本误读ReceiptResult的id字段（实际字段test），仅检查脚本KeyError，未改测试或产品、未导致三轮失败，纠正记录在input-http-metadata-correction.json。
+
+附加新执行三轮均通过：原24项审计合同×3＝72 PASS，Node工作台30×3＝90 PASS；工作台／产品web／旧浏览器spec JS语法、repack --check、Python AST39各三轮通过。AST39包含33份产品Python及6份当前测试／脚本。无失败／错误／跳过。这些检查不算浏览器执行或完整功能验收。
+
+## 5. 逐建议映射，不涂绿原300
+
+12条原建议新增精确test ID及三轮HTTP case下标／收据SHA：R1-011/020、R2-021/022/023/024/025/026/027/028/029/030。R2-024现在有真实后端HTTP NaN/Infinity见证，补足上批“旧payload没有NaN”的缺口；不是修成4xx。
+
+input-http-recommendation-links.json每行保留原文和注入／鉴权／模型边界。原有限证据并集65加新链接后为70个ID，另230未进入这些限定集合，不等于无其他历史证据。原300、3×100处置说明、Q25–27各50行动原文保持；逐条最终／功能签收仍0，product_fix_implemented=false。
+
+## 6. 冻结与D02
+
+53内嵌资产三遍各13668行保持，不新增阅读信用，也不称整个Git仓库三遍审完。94冻结文件、正式15文件及HEAD保持，产品diff为空。
+
+历史期待1228项中1225可读SHA匹配、变更0，三份D02旧.log仍缺失：pass2-gateway-go-install.log、pass2-gateway-preflight.log、pass2-startup-preflight.log。新环境安装日志不改名冒充旧安装日志，full_historical_integrity_passed仍false。D02不是靠新的438通过自动消除。
+
+## 7. 门禁与下一步
+
+本批证明真实原分析HTTP输入边界和原CPU保护可重复；没有证明严格输入已修、完整鉴权链／浏览器／Go race/vet通过，更无模型／双T4训练／长数据／音色／去沙沙／自然朗读／首声／RTF或创建加速验收。不承诺一定无错或一定达标。
+
+下一步先补其他未绑定建议的精确测试证据，尤其候选／文本／校准版本冲突与旧评分提交组合；对S1将合法输入、缺省兼容、重复／未知字段、非有限JSON、损坏档案与trained限制整理为修复前失败／成功保护合同。G0门禁未签收前不直接修改冻结产品，不用反复总数回归替代逐条映射。需要重大方案选择才按逐题50行动开新题，不预填Q28。
+
+本报告及PLAN／IMPLEMENTATION进入90份完整交接。独立verify_input_http.py再次从原始日志／JSON核438继承426、61请求／5观察、链接／SHA／环境／冻结／manifest与交接，成功只签本批记录准确。最新progress-input-http.json。直接继续，无需Continue。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_G0_VERSION_HTTP.md
+
+# G0第11批：候选／文本／校准版本冲突的真实TCP组合
+
+## 结论和进度口径
+
+- **G0与整体仍为PARTIAL/BLOCKED；产品未改、声音优化未实施、S1–S8未实施，不跳Q28，不发布18。**
+- 全源53/53资产的三遍语义阅读已完成，每遍13668行；原3×100建议和300条处置说明保留。
+- 75/300条建议现在至少有关联的部分限定证据，即25%证据映射覆盖；这不是整体完成率、修复率或功能签收率。最终／功能签收仍为0/300。
+- 本批补充版本组合证据，不是新的3×100建议或真实模型三轮验收。没有用户原始声音可供听感判断，不能推断沙沙根因、相似度或提速成功。
+
+## 1. 测试边界
+
+`kaggle/tests/test_version_http_boundaries.py`新增12个unittest方法，8项限定保护、4组未修观察。复用冻结的`input_http_fixture.py`，每个场景只运行一个Uvicorn服务器及一个事件循环，通过httpx真实环回TCP调用原analyst.app。
+
+与上批不同，本批恢复原`analyst.load_on_workers`，原pin比较和`calibrate_profile`实际执行；仅worker传输、合成、ASR及说话人评分为可控替身。临时WAV、固定文本及人为分数不是声音模型。重叠通过HEAVY执行器中的worker/ASR Event屏障实现，事件循环仍能处理另一HTTP请求。不是在同步写盘里阻塞事件循环、不是双服务器，也不是随机线程压力。
+
+fixture传输返回的ACK不能证明模型实际重载。没有经过Go鉴权代理、浏览器、真实麦克风／扬声器、DeepSeek、Torch/Qwen、CUDA或双T4。
+
+## 2. 新增12项的实际结果
+
+首次预检12/12通过，原stdout和结构化结果保存在`version-http-precheck-first.{txt,json}`。8项保护只签下表所列范围：
+
+| 保护范围 | 结果及限制 |
+|---|---|
+| 串行先候选后文本、先文本后候选 | 两个顺序均保持当前选择对应的参考字节／转写／pin；不等于多文件事务合同完成 |
+| 两方向HTTP重叠编辑 | 旧reload的pin失配被原检查挡为503，后一个编辑成功；不能笼统说所有候选／文本并发都无保护 |
+| trained档案三入口 | candidate/text/calibrate均409，不启动校准或worker重载 |
+| worker ACK错误pin | 原reload拒绝，HTTP503并保留reference_saved语义；不是回滚或真实worker测试 |
+| 稳定fixture校准 | 固定两候选、4次合成评分，chosen1且临时目录清理；不证明真实评分质量 |
+| 全合成错误的临时清理 | 仅签临时清理；原接口可能200/chosen0，不签有效校准 |
+
+4组未修观察：
+
+| ID | 真实交错与见证 | 不能推出的结论 |
+|---|---|---|
+| S2-TCP-O01 | 同profile两变更占满HEAVY后，第三text和第四candidate均429，但分别已改变磁盘；前两reload最终503 | 不等于每profile锁、可回滚或429有reference_saved合同 |
+| S2-TCP-O02 | 原校准已用旧文本完成评分，在ASR释放屏障期间通过真实HTTP选候选、改转写；最终校准200，旧评分仍被保存 | 新转写保留，不是被覆盖；没有真实错声音证明 |
+| S2-TCP-O03 | 同名cand1.wav旧SHA被评估，屏障期间换为另一份自有候选bytes，最终200并把新SHA复制进anchor | bytes由自有文件fixture修改，不是HTTP上传或远程任意文件利用 |
+| S2-TCP-O04 | 校准提交前真实HTTP DELETE成功，校准500而非4xx；没有复活档案，临时目录清理 | 不证明adapter状态变化路径；500不是功能成功 |
+
+这些补充而不改写旧F33/F34等历史。尤其R1-016现已区分普通编辑已有pin保护和校准组合仍缺冲突响应，不将旧相关证据扩大为所有路径均失败。
+
+## 3. 三轮回归收据
+
+使用全新命名的`run_version_http_cpu.py`，不覆盖第10批runner或日志。
+
+- CPU **450×3＝1350 PASS**；每轮failure/error/skip均0。
+- 逐轮保留旧438个test ID和结果，追加本批12项。旧21组观察保持，追加4组，共25组／轮。
+- 每轮85真实TCP请求＝旧61＋新24；三轮合计255，其中新增版本组合72。不要把上批183再次加作本批请求。
+- 每轮状态计数：200×32、500×17、400×16、422×6、404×1、409×6、503×5、429×2。错误响应可能是未修观察，测试通过不是该行为满足产品合同。
+- 新24请求／轮为200×13、500×1、503×5、409×3、429×2。
+- companion每轮NumPy partition12、trimmer8、CLI4；三项CLI期望blocked，resource `gpu_verified=false`。C ABI故障fixture不是Rust编译／执行。
+- 运行期间后台等待连接曾中断，未重启CPU；随后读取原日志及当时仍在运行的第三轮，三轮收据完整生成。一次tail通配检查命令误用已单独记录，非测试失败。见`version-http-execution-notes.json`。
+
+附加审计、Node、JS、repack和AST检查及独立封存结果在本报告末尾记录；必须以实际收据核验，不挪用历史通过数。
+
+## 4. 原建议精确映射
+
+`version-http-recommendation-links.json`关联12条原建议：R1-012/016及R2-031/032/033/034/035/037/038/040/049/062。每条保留原文，列出新测试全ID、三轮收据SHA和HTTP case数组下标，并单独说明证据边界。
+
+此前并集70，本批新增进入并集的5条是R2-034/037/038/040/049，现为75。其余7条是对已有部分链接的加强，不算新增建议、修复或最终签收。R2-033仅见旧转写评分沿用，新转写没有被覆盖；R2-040仅见删除，不签adapter变化；R2-049没有覆盖所有异常路径。原300条处置及最终false字段不改。
+
+## 5. 冻结、历史与环境
+
+- 53源资产、94冻结哈希、正式HEAD及15文件保持；原始–17包不改，无18生成包。仅允许`repack --check`。
+- `version-http-preserved.json`共1317期待历史路径，1314已有文件SHA匹配、0变更、3旧.log缺失。D02仍在，`full_historical_integrity_passed=false`；不补造、不拿新日志替代旧日志。
+- 沿用现有`.venv`，本批无依赖安装，当前pip freeze与第10批逐字节相同。NumPy2.2.6仍非requirements2.4.6，不签目标部署依赖。
+- 无Go/Rust/npm安装，无Torch/Qwen或完整模型，未重跑Go/race/vet、实浏览器／clipboard、实体音频、模型训练或声学性能。历史浏览器／复制证据仍保存，不冒充本批重新验证。
+- 独立清单保存本批日志、代码及报告SHA；完整交接目标为91份。清单、独立核验及交接结果见末尾。
+
+## 6. 下一步与禁止提前宣布的结果
+
+继续按原300建议补齐仍缺的精确合同与门禁处置。后续产品修复重点应是：校准输入内容快照及提交冲突检查、每profile状态协调、HEAVY准入早于写盘、删除与失败的明确响应；已有普通编辑pin保护必须保留。仍需完成G0门禁后才能实施声音优化，不能把更多模拟测试包装成优化落地。
+
+更快真实首声、全部候选分析／conditioning可追踪、generated-only PCM、自然连续朗读、无沙沙、长录音真训练、受保护的更响输出、双T4等效参数及RTF≤0.3都未豁免。必须在真实模型／设备／音频上验证，不能承诺一定成功或给出可信整体百分比。
+
+
+## 7. 封存检查记录
+
+附加检查已实际执行三轮：每轮24项审计、Node30项、JS语法、repack检查全部通过，40份Python AST解析通过。封存前独立复核已核对CPU逐ID／结果继承、三轮TCP内容／观察、全部引用日志及SHA、建议下标与环境，首次通过，原stdout为`version-http-seal-preflight-first.txt`。
+
+本批独立清单`version-http-run-manifest.json`覆盖89文件；完整交接为91份，每份内嵌全文与原文件核对。最终封存判据为`verify_version_http.py`连续两次独立执行通过且输出逐字节一致；实际输出保存于`version-http-verification-first.txt`和`version-http-verification-second.txt`，正式结果以`progress-version-http.json`为准，并同步`progress-checks.json`。这些核验只签审计证据与冻结边界，不签整体G0、功能、模型或声学完成。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_Q28_S1_CANDIDATE.md
+
+# 问题28：怎样真正开始修复，同时不改冻结17、不把未完成G0说成通过？
+
+## 选项与决定
+
+- A：直接修改kaggle/source及17包。拒绝，破坏冻结、历史缺陷对照与正式复制。
+- B：继续只加缺陷观察直到全部声音／硬件要求通过。拒绝，缺陷不修就无法做可信后续实验，观察数不是实现进度。
+- C：新增明确隔离、可运行但未发布的18候选源码。保留全部17源码、旧探针与收据；先修已复现的S1输入及HEAVY先写后拒，执行同合同旧版失败对照和候选三轮验证。G0整体仍PARTIAL/BLOCKED，候选小步实现不等于放行默认、全S1或发布。
+- D：一次复制和重写全部53资产、所有模型／DSP／浏览器层。拒绝，差异过大、难归因，也无法补足真实模型证据。
+
+**选择C。** 这是本次明确的流程调整：先前“G0通过前不实施”的绝对实现禁令，收窄为“不让未通过的候选进入冻结包／正式工作台／发布或整体验收”。全源三遍和300处置说明已有；未覆盖合同、D02历史日志、真实模型／双T4／声学继续阻塞整体签收。修复候选可以开始，不能为此伪造G0通过。此决定落实用户要求真正推进，未豁免冻结和真实验收要求。
+
+候选文件放在`kaggle/step18`，显式依赖冻结17的其余Python模块，不复制全部项目、不改默认入口。一个分析服务进程的候选／转写短提交用有界条带锁；HEAVY准入在任何写盘前，executor实际完成前不归还槽位。校准函数在本批不改，过期评分等问题继续未修；候选输入更严格不表示整个服务JSON或状态事务已严格。
+
+## 进入下一题之前的50项行动
+
+1. 核对活动分支固定arena/1160bd87-kagglee。
+2. 对第11批及更早历史建立SHA保存清单。
+3. 保留3旧日志缺失，不降低历史完整性要求。
+4. 不修改冻结kaggle/source。
+5. 不修改原始–17包及manifest。
+6. 不改正式HEAD及工作台文件。
+7. 明确新候选入口，不将默认服务自动切换。
+8. 记录analyst候选的冻结来源SHA。
+9. 复用其余冻结模块，避免复制全部53资产。
+10. 明确候选不是独立完整18安装／发布包。
+11. 保留25–27题及各50行动原文。
+12. 将本题流程调整记录到PLAN和IMPLEMENTATION。
+13. 实现候选入口严格UTF-8 JSON解析。
+14. 非对象JSON返回受控400。
+15. 拒绝NaN和正负Infinity。
+16. 拒绝解析后溢出的非有限浮点数。
+17. 重复JSON键返回400而不是静默取最后一个。
+18. 明确未知字段拒绝策略，不让拼写错误被忽略。
+19. 输入流设置独立有界预算，超限返回413。
+20. index必须是整数，不接受bool。
+21. 小数和整值float都不作为index接受。
+22. 不接受字符串index隐式转换。
+23. 缺少index返回400，不默认选0。
+24. 对负数／越界索引返回400。
+25. ref_text必须为字符串。
+26. 去空白后长度限定1..20000字符。
+27. 拒绝无法编码成UTF-8的代理项。
+28. 保留合法Unicode、中英文和空白修剪。
+29. 维护trained参考三个入口的409限制。
+30. 缺档案维持404且不创建目录。
+31. HEAVY获准之后才执行磁盘修改。
+32. 不把准入和实际工作分开提前释放槽位。
+33. executor入队前提交失败不能执行写盘。
+34. 等待HTTP被取消时实际线程结束前不释放槽位。
+35. 工作线程内重新核验档案存在与trained状态。
+36. 候选／转写短提交使用有界锁，不持锁跨worker网络等待。
+37. 候选文件名限定为单个安全文件名。
+38. 拒绝候选符号链接、FIFO和目录。
+39. 对候选文件字节读取设限并核对读取长度。
+40. 校验候选文本类型与编码后再复制字节。
+41. 候选新anchor用唯一名字，避免覆盖旧anchor后JSON失败。
+42. JSON提交失败清理本次未提交的新anchor并保留旧状态。
+43. 不将复制候选音频作为生成输出或播放。
+44. 保留worker错误pin的503/reference_saved部分失败语义。
+45. 不在本批顺便改校准／DSP／缓冲或声学默认参数。
+46. 同一预期合同先在冻结17上执行失败对照，保留原stdout。
+47. 再在候选上执行同合同，失败不修改为宽松期望。
+48. 三轮运行旧450项和新候选测试，明确旧集合仍指向冻结17。
+49. 三轮Node／语法／repack与冻结核对，保存全部失败和修正记录。
+50. 报告精确修复范围、剩余校准缺陷、无真实模型／声学验收，更新完整交接后再进入下一题。
+
+本题50条完成后才实施下述小步，不开启问题29。数量是行动清单，不是50项已实现声明；实际结果见S1候选报告和收据。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S1_CANDIDATE.md
+
+# S1隔离候选：首次实际修复与三轮工程回归
+
+## 当前结论
+
+**本批已有实际候选产品代码修改，不再只是增加观察。** 代码在`kaggle/step18/analyst.py`和`step18_profile_inputs.py`，来源和启动边界见同目录`origin.json`及README。
+
+**候选未发布、未部署到默认服务，冻结17包和正式工作台未改。G0整体／完整S1／真实声音验收仍PARTIAL/BLOCKED。** 这不是完整18包，也不声称已改善沙沙、相似度或真实首声。
+
+本批问题28按顺序完成选项、推荐C与50条行动，见`KAGGLE_STEP18_Q28_S1_CANDIDATE.md`；原问题25–27及各50条不改，问题29未开。明确调整过去的绝对实施禁令：可做隔离候选修复，不能将其冒充G0通过或放入冻结包／默认入口／发布。这保留真实模型与声学门禁，不再因未修缺陷而无限只做观察。
+
+## 1. 实际实现了什么
+
+| 代码改动 | 已验证的限定效果 | 边界 |
+|---|---|---|
+| candidate/text严格JSON及输入类型 | 拒绝bool/float/字符串索引、缺省index、非法容器、非有限值、重复／未知键、非对象及非法UTF-8 | 仅这两个新候选入口，不是全服务JSON改造 |
+| 转写校验 | 严格字符串、有效Unicode、去空白后1..20000字符；正常中英文／emoji和边界长度可保存 | 请求另限128KiB，转义表示过大仍可413 |
+| HEAVY先准入后写盘 | 静态满槽及真实两个在途编辑后，额外候选／转写429均不再改变磁盘 | 未将HEAVY当成每profile锁；未改其实际线程结束后才释放槽位语义 |
+| 候选文件安全读取 | 拒绝父路径、符号链接、FIFO、目录和列举损坏元数据；普通文件no-follow/nonblocking有界读取 | 仅自有临时树测试，不是远程利用证明或音频可解码签收 |
+| 内容地址锚点及JSON提交 | 不覆盖旧锚点；注入JSON提交失败时旧文件／元数据保持，本次未提交锚点被清理；相同选择复用文件 | 非完整跨文件／跨进程事务，不保证所有IO故障；旧锚点GC尚未实施 |
+| 候选／转写／删除提交协调 | 新工作线程内重核档案／trained状态；有界进程内锁，worker网络等待不持锁；删除等待提交后不复活档案 | 新删除也经HEAVY，满额可429；原校准不参与本锁合同 |
+| 兼容保护 | 合法候选字节、转写对应、trained三入口409、缺档404、原worker pin及503/reference_saved保留 | worker传输和模型是fixture，未证明真实双卡加载 |
+
+只改原分析服务的`set_text`、`set_candidate`、`delete_profile`三个命名定义，新增4个提交辅助函数；其余原命名函数／类AST相同。尤其`calibrate_profile`和`load_on_workers`原实现未变。候选显式复用冻结17其余Python模块，不大规模复制53资产、不修改bootstrap、模型、DSP、训练或播放器。
+
+## 2. 先失败对照、后候选通过
+
+同一最终`test_step18_profile_inputs.py`文件的28项合同：
+
+- 冻结17对照：43条失败记录、0 error、2明确skip。失败记录包含参数化子用例，**不是43个独立缺陷或43个失败方法**。两项skip分别为可能阻塞旧事件循环的FIFO复制路径，以及仅新executor提交架构需要的删除协调合同。
+- 候选最终预检：28/28 PASS，failure/error/skip均0。FIFO和删除协调均实际执行，没有在候选上跳过。
+- 两组收据记录相同最终测试文件SHA；不以修改断言或只挑通过项制造修复结论。
+
+原始记录：`s1-candidate-frozen-red-final.{txt,json}`、`s1-candidate-precheck-final.{txt,json}`。
+
+首次26项旧版对照超时，诊断栈显示卡在unittest对大WAV bytes的差异格式化（difflib），不是服务线程死锁。定向终止自有进程后，仅把文件快照改为SHA256＋长度，仍要求全部文件集合／内容相同；合法候选还直接比较字节。首次stdout、faulthandler栈、修正后26项及最终28项记录全部保留，没有覆盖。见`execution-notes`与`red-io-debug-first`。
+
+复核先后修正两处候选设计：候选文本规范化必须同步两处元数据；写盘移到executor后，删除必须加入相同短提交协调。均在最终28合同及三轮执行前完成。
+
+## 3. 三轮完整工程回归
+
+`run_s1_candidate_cpu.py`实际执行三轮：
+
+- **478×3＝1434 PASS**，每轮failure/error/skip均0。
+- 每轮旧450项仍指向冻结17，逐ID／结果保留；新增28项指向隔离18候选。不能将合计说成478项全在新运行时验证所有功能。
+- 旧25组未修观察照常保留，不把冻结缺陷观察改成候选“成功”。
+- 每轮159次真实Uvicorn环回TCP＝旧85＋新候选74；三轮477，其中候选222次。
+- 候选每轮实际状态：200×12、503×3、429×4、500×1、400×48、413×1、409×3、404×2。500是注入JSON提交失败的保护合同；错误码不都表示产品功能成功。
+- 删除与reload的完成先后可以影响该候选请求的200/503，测试仅签两请求完成后档案不复活，不冒充删除期间所有pin路径都已修复。封存器对此场景不强制逐字节时序一致，其余候选HTTP内容三轮核对。
+- 每轮companion仍为NumPy partition12、trimmer8及CLI4。三个CLI期望blocked，resource gpu_verified=false。C ABI fixture不是Rust编译／执行。
+
+附加审计／Node／语法／冻结核对及独立封存的实际结果在末尾记录，不能借用旧批次通过数。
+
+## 4. 三遍增量复核与原建议映射
+
+原全源53资产三遍各13668行、原3×100建议与300处置说明不改。本批不是重新生成300条建议，而是在同一任务内按输入合同、生命周期／IO并发、冻结／安全／证据三条路线复核变更，结果见`s1-candidate-delta-review.json`。
+
+本批15条原建议获得候选实现或保护的直接证据：R1-011/020、R2-021–030、R2-037/038/039；均有测试全ID、三轮收据SHA和HTTP数组下标，边界逐条保留。
+
+**部分证据并集仍为75/300，没有增加。真正进展是从旧版失败见证推进到候选实现及验证，而不是提高映射数字。** 元数据脚本曾预计76，发现R2-039早已在并集中；断言失败单独留档后按真实集合纠正，不是产品／测试失败，也没有改原验收条件。
+
+原300条最终／功能签收仍0。候选限定合同已验证不等于整条建议跨部署、模型、浏览器和发布边界全部验收。
+
+## 5. 冻结、历史、环境和交接
+
+- 原53资产、94冻结哈希、17包、正式HEAD及15文件保持。只使用`repack --check`，未运行旧生成器，未产出18发布包。
+- 保存清单1402期待历史路径，其中1399已有文件SHA匹配、0变更、3旧.log依然缺失；D02未关闭，full_historical_integrity仍false。
+- 现有venv复用，无新安装，pip freeze与前批逐字节相同。NumPy仍2.2.6，非产品requirements2.4.6。
+- 未运行Go/race/vet、实际浏览器／剪贴板、DeepSeek、Torch/Qwen、完整权重、真实训练、双T4、麦克风／扬声器、声学或提速验收。旧浏览器／复制证据继续保存，不冒充本批执行。
+- 完整交接为93份，包含本题28和本报告；冻结17的原交接不覆盖。
+
+## 6. 下一步
+
+下一步继续隔离18候选的S2：把校准输入快照、内容身份和提交冲突做成实际代码修复；保留旧版失败样例及新候选回归，再三轮验证。校准过期评分、缺失CER默认值、全失败chosen0、临时profile冲突、加载失败回执、删除／adapter版本变化等不能因本批S1成果而标为已修。
+
+S3–S8、全部候选conditioning透明、真实首声、无沙沙、自然朗读、generated-only PCM、长录音真训练、双卡等效参数、RTF≤0.3依然未完成。不能承诺一定成功；本批只确保修复范围和证据能够复核，不隐瞒失败或改变冻结版本。
+
+
+## 7. 附加核验与封存记录
+
+附加检查已实际执行三轮：每轮24项审计、Node30项、JS语法、repack检查通过，43份Python AST解析通过。封存前独立核验首次通过，已核对同测试SHA的旧版失败／候选通过对照、三轮478项及旧450继承、候选TCP内容、所有引用日志／SHA、原建议映射和冻结／历史／环境；原stdout保存于`s1-candidate-seal-preflight-first.txt`。
+
+本批清单`s1-candidate-run-manifest.json`覆盖102文件，包括实际候选源码。完整交接93份逐份内嵌核对。最终封存判据为`verify_s1_candidate.py`连续两次执行通过，输出逐字节一致；实际输出分别保存在`s1-candidate-verification-first.txt`与`second.txt`，结果以`progress-s1-candidate.json`为准并同步`progress-checks.json`。这些检查不签完整产品／模型／声学验收，不把隔离候选变成已发布18。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S2_SNAPSHOT.md
+
+# S2-A：校准输入快照与提交冲突的实际修复
+
+## 当前进度：两个限定工程子批次已有代码
+
+| 范围 | 当前状态 |
+|---|---|
+| 全源53资产三遍、每遍13668行；原3×100建议与300处置说明 | 已完成并保留 |
+| S1入口／准入／锚点提交 | 已实现隔离候选；原28项合同本批在当前S2运行时重跑 |
+| S2-A快照／冲突／同档案校准互斥 | **本批实际实现，新增22项合同三轮通过** |
+| S2-B有效评分、全失败拒选、最终加载回执 | 尚未修复 |
+| S3–S8、真实声音与双T4／训练／首声／RTF验收 | 未完成 |
+| 默认服务／工作台／复制、18发布 | 仍17；18候选未发布、未部署 |
+
+**整体仍PARTIAL/BLOCKED，不能计算可信整体百分比。** 75/300＝25%仍仅部分证据覆盖，不是修复率或整体完成率；本批没有提高这个数字，而是把已有失败见证推进到候选代码修复。不能把两个限定工程批次说成2/8或25%总进度。原300条最终／功能签收仍0，不表示本批限定代码合同没有实现，而是完整建议跨发布／模型／设备边界尚未签收。
+
+## 1. 实际代码与修复范围
+
+新增`kaggle/step18/step18_calibration_state.py`；相对归档S1，分析服务仅修改`calibrate_profile`、`commit_text`、`commit_candidate`。其余命名函数／类AST相同，S1入口、删除协调及原reload逻辑保持。冻结`kaggle/source`、原始–17包、正式HEAD与15文件不改。
+
+实现合同：
+
+1. **开始时捕获输入**：在现有短档案锁内捕获完整规范化JSON、全部候选WAV、当前锚点、可选质心字节及目录身份。最多24候选，聚合文件64MiB；这是逻辑文件预算，不是总RSS，副本／重新核验另占内存。
+2. **评估只使用捕获内容**：每个临时profile的anchor由捕获字节建立，不在后续评分时重新读取可能已变化的候选路径。
+3. **提交前检查**：同一短锁内重新捕获并核对输入，再写入校准／锚点。真实HTTP候选／转写编辑、候选同名bytes变化、参数／质心变化、删除或trained状态变化后返回409，旧评分不被保存，不复活已删除档案。
+4. **ABA版本**：候选／转写实际发生变化时写修订nonce，改回相同内容仍可检测。完全相同的重复选择不改变修订，保持幂等，不制造假冲突。
+5. **校准互斥**：同档案只允许一个在途校准，第二个409；不同档案可推进。互斥范围只是本分析服务进程，不冒充跨进程锁或真实GPU／ASR线程安全。
+6. **临时资源**：每次运行独立随机ID，长度不超过40；700目录，内容地址临时anchor；只删除自己成功创建的目录，设置／评估异常也走清理，ASR释放置于finally。临时ID隔离与同档案互斥共同消除已测组合的目录复用问题。
+7. **提交失败**：沿用S1内容地址锚点，注入JSON提交失败时保留旧元数据／字节，清理本次未提交锚点，校准占用可释放并重试。
+8. **可追溯**：成功校准回执增加`input_version`内容摘要。它不是身份认证、相似度或声音质量分数；nonce也不是模型条件融合。
+
+不持档案锁跨合成、ASR或worker网络等待。当前协作入口可保证检查和提交协调，但外部／跨进程／其他不遵守本锁的写入仍可能在终检后改状态；原创建过程末尾质量合并等未全纳入本合同，不称完整全局事务。目录身份不是对恶意文件系统ABA的绝对保证。
+
+## 2. 同合同修复前后对照
+
+在改代码前，将S1实际源码、README、origin及旧活跃交接等逐字节保存至`docs/validation/step18/s2-before/`，原路径／档案／SHA见`s2-before-index.json`。不是把冻结17当成S1，也不是从修复后代码伪造旧版本。
+
+同一份最终`test_step18_calibration_state.py`：
+
+- 归档S1：22方法，21条失败记录，0 error，0 skip。失败记录含临时清理的tearDown断言，不是21个独立缺陷。
+- 当前S2候选首次预检：22/22 PASS，failure/error/skip均0。
+- 两份JSON记录相同测试文件SHA，以及各自目标源码SHA。旧stdout和结构化结果保留，不覆盖。
+
+具体合同涵盖：稳定成功；真实候选＋文本编辑；单独候选／文本编辑；两类ABA；同名候选bytes、质心与生成参数变化；真实DELETE；自有trained元数据变化；同档案第二校准拒绝；多次运行独立临时ID；评估途中改变活文件而试验仍用旧捕获字节；JSON提交失败／ASR释放失败后的状态和重试；临时设置失败清理；两项预算；不安全候选路径；幂等选择；不同档案受控并行。
+
+所有场景经单Uvicorn事件循环、httpx真实环回TCP。HEAVY执行器中的Event控制交错，事件循环继续接收编辑／删除，不是阻塞事件循环后伪造并发，也不是多server压力。worker传输、合成、ASR与说话人分数明确fixture。文件bytes／参数／质心／trained变化为自有文件测试，不是HTTP上传、真实adapter发布或远程利用证明。
+
+## 3. 三轮工程回归实际结果
+
+- **500×3＝1500 PASS**，每轮failure/error/skip均0。
+- 组成：旧450项仍指向冻结17；S1旧28项在当前S2候选上重跑；新增22项指向当前S2候选。不能把500项合计当完整新运行时／模型全功能验证。
+- 旧478逐ID／结果保留，冻结缺陷25组观察继续保留；不悄悄改旧缺陷期望为“已修”。
+- 每轮198真实TCP＝旧159＋S2新39，三轮594；其中S2新增117。
+- 新39／轮状态：200×22、409×12、500×2、400×1、413×2。两个500来自注入提交／ASR释放失败；200中包含只验证清理的全错误场景，**不表示有效校准**。
+- 比较三轮响应时，只对内容摘要`input_version`做格式验证并归一化；修订nonce导致摘要不同是预期。继承S1的删除／reload先后场景不强求固定响应顺序，其余语义／内容核对；不是忽略错误码或放宽合同。
+- companions每轮NumPy partition12、trimmer8、CLI4；三项CLI期望blocked，resource gpu_verified=false，不是模型成功。C ABI fixture不是Rust运行。
+
+附加审计／Node／语法／repack与最终独立核验的实际结果见末尾记录，不借用旧批次成绩。
+
+## 4. 明确没有修复的S2事项
+
+**不能把S2-A叫完整S2。** 本批保留原评分公式及以下已知问题，下一步S2-B处理：
+
+- ASR全失败仍可能使用默认CER0.05；部分失败覆盖率不足未显式记录。
+- 全候选失败仍可能200/chosen0；失败新校准可能覆盖先前有效报告。
+- 非有限得分、空／短／静音生成和各指标有效性尚未完整门禁。
+- 临时worker ACK与最终`load_on_workers`回执未完整签收；最终回执仍未决定校准HTTP是否就绪。
+- 所有异常／清理IO失败没有穷举；同进程不同profile下实际ASR／模型并发安全未验证。
+
+22项测试通过仅说明列出的状态合同和保护满足；不证明真实评分、同声、无沙沙、首声或T4速度。不得把fixture分数当实测声学指标。
+
+## 5. 建议、历史、环境和交接
+
+原三轮100建议及问题25–28／各50行动保留；本批执行既定S2方案，无新关键选择，不开启问题29。三遍增量复核实际范围见`s2-delta-review.json`：输入快照／提交版本、资源生命周期、回归及验收边界。
+
+11条原建议得到当前候选的直接证据：R1-012/016，R2-031/032/033/034/035/037/039/040/049。测试全ID、三轮收据SHA、HTTP数组下标和限定边界见`s2-recommendation-links.json`。均加强已有75条并集，不重复算新增，不改变原最终／功能签收false。
+
+受保护历史路径1509，1506已有文件SHA匹配、3旧.log仍缺失D02。允许改变的候选及活跃交接先归档再修改，不伪称活源码未变。旧S1封存输出及改前源码仍可核验；旧S1验证器针对当时活源码的限制不被改写。
+
+现有venv复用、无安装，pip freeze与上批逐字节相同；NumPy2.2.6仍非产品要求2.4.6。无Go/race/vet、实际浏览器／clipboard、完整模型、Torch/Qwen、真实训练、双T4、实体麦克风／扬声器、声学或提速新验收。完整交接94份，原17最终交接不覆盖。
+
+## 6. 下一步
+
+直接实现S2-B：缺失指标显式化、有效／完整试验门禁、全失败不选择且保留旧有效状态、最终worker回执的已保存／未就绪语义，然后再跑修复前后对照及三轮回归。未完成前不跳DSP或声学优化，不启用未经验证的多参考融合，不发布18。
+
+可以确保失败对照、实际代码和验证结果可追溯；不能承诺所有模型／声学效果一定成功，也不能用审计通过数计算整体完成率。
+
+
+## 7. 附加检查与封存记录
+
+附加检查已实际三轮完成：每轮24项审计、Node30项、JS语法与repack检查全部通过，45份Python AST解析通过。封存前独立核验首次通过，核对了归档S1来源、同测试SHA的修复前后对照、三轮500项／旧478继承、当前候选S1／S2的TCP语义、所有引用日志和SHA、建议下标及冻结／历史／环境；原stdout为`s2-seal-preflight-first.txt`。
+
+本批独立清单`s2-run-manifest.json`覆盖104文件（含当前源码和归档S1／交接来源）。完整交接94份逐份内嵌核对。最终封存判据是`verify_s2.py`连续两次实际执行通过且stdout逐字节一致；输出分别保存为`s2-verification-first.txt`与`second.txt`，最终结果以`progress-s2.json`为准，并同步`progress-checks.json`。这些检查只签限定工程证据，不签完整S2、整体G0、模型或声学验收，也不将未发布候选切换为正式18。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_Q29_CALIBRATION_VALIDITY.md
+
+# 问题29：怎样定义可选校准与已保存／未就绪，而不再用缺省分数制造成功？
+
+## 选项、推荐与边界
+
+A：保留CER0.05、只平均成功试验、全错chosen0。拒绝，会把缺失当实测。
+
+B：补一个武断相似度／时长阈值，或以MFCC代理默认高分选最好。拒绝，当前没有真实声音实验支持主观质量阈值，不能靠猜测验收。
+
+C：**完整性门禁与声音质量分开。** 保留已有sim−1.5×CER排序公式，但候选只有全部既定目标试验成功、指标有限且来源合格时才有可排序score。逐试验记录缺失null、阶段错误码、预期／有效数；ECAPA不可用或质心缺失时不以代理当可靠声纹。无完整候选则422、chosen=null、reference_saved=false，不写档案、不覆盖旧有效结果。可选时保存选择证据，再检查临时及最终worker同pin确认；最终失败503、reference_saved=true、ready=false，不回滚已提交的锚点。200仅表示本次工程加载确认通过，不是声学达标。
+
+D：任何失败都回滚磁盘和各卡提示。拒绝，网络加载可能部分完成，不能伪装成可原子回滚的分布式事务。
+
+**选择C。** 这是本批新的关键API／有效性决定，按顺序先完成本题50行动，再实施，不询问用户、不预填问题30。沿用原Q25–28、3×100建议和S2-A快照／冲突合同。相对排序没有质量最低线；短时长策略、漏添字／真实听感阈值仍需实验，不自行填数。仅拒绝空、非有限、非法形状／幅度及全零PCM；不把这个数值检查叫“有效人声”或“自然朗读”。
+
+成功响应继续是已保存的选择报告，兼容旧S2-A的报告结构和磁盘／HTTP一致断言。就绪是本次加载检查结果，不提前写进选择报告冒持久就绪；失败响应显式附未就绪与已保存标记。后台可选校准记录精简状态，不把创建成功称校准成功。
+
+## 进入下一题前的50项行动
+
+1. 核对固定活动分支。
+2. 改前逐字节归档S2-A源码及交接。
+3. 保留S2-A全部收据和3缺失日志期待。
+4. 不改冻结17／正式HEAD／复制页。
+5. 新测试使用同一合同对照归档S2-A和新候选。
+6. 保留原500项方法及断言。
+7. 继续在当前候选重跑S1与S2-A合同。
+8. 为每个CAL_TEXTS目标建立独立试验条目。
+9. 记录目标索引和实际seed，不公开私有转写。
+10. 保存预期试验数和实际有效数。
+11. 缺失speaker指标为null。
+12. 缺失CER为null，不填0.05。
+13. ASR失败记录固定阶段码，不输出异常原文。
+14. 空假设不能冒充一次成功ASR。
+15. 非有限CER不参与选择。
+16. 非有限声纹不参与选择。
+17. 声纹方法明确记录，不把MFCC代理当ECAPA。
+18. 质心缺失／损坏不填相似度0当实测。
+19. 部分试验缺失仍保留已测指标及覆盖率。
+20. 不完整候选score=null，排除max。
+21. 全部目标完整才计算原排序公式。
+22. 没有合格候选时chosen=null。
+23. 无候选时HTTP422并明确reference_saved=false。
+24. 无候选时不写新锚点或calibration字段。
+25. 保留以前有效的选择／校准证据。
+26. 某候选失败不阻止其他完整候选参与排序。
+27. 空PCM失败并记录synthesis阶段。
+28. NaN／Infinity PCM失败。
+29. 非一维或非实数PCM失败。
+30. 全零PCM失败，但不声称已测噪声或语音质量。
+31. 不武断加入未经声学验证的最短时长阈值。
+32. 每个临时worker加载检查HTTP状态。
+33. 临时worker必须ok严格true并确认匹配pin。
+34. 临时加载失败不执行该候选合成。
+35. 设置失败为所有预期试验记录固定错误。
+36. 继续ASR finally及仅清理自有临时目录。
+37. 评分有效性不绕过S2-A提交冲突409。
+38. 提交后不持档案锁等待worker网络。
+39. 检查最终worker数量和每项确认。
+40. 最终回执错误／空／异常时明确未就绪。
+41. 对外worker错误采用固定码，不回显供应商正文。
+42. 最终重核已提交版本仍存在且未被修改。
+43. 保存后加载失败返回503和reference_saved=true。
+44. 不虚构把各卡提示和磁盘一起回滚。
+45. 成功报告加quality_verified=false避免质量误读。
+46. 后台可选校准记录状态，不静默吞掉未选出结果。
+47. 公共校准500响应不泄露异常原文。
+48. 三条路线复核：数值完整性、状态／就绪、兼容／隐私。
+49. 三轮完整工程回归及独立两次封存，不覆盖失败日志。
+50. 更新完整交接并明确剩余真实模型／设备／声学与短时长门禁，再考虑问题30。
+
+50条是实施清单，不自动意味着全部验收。实际实现和限定验证以S2-B报告为准；未发布、未部署、真实模型与声音仍PARTIAL/BLOCKED。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S2_VALIDITY.md
+
+# S2-B：有效校准指标、无候选保旧与加载就绪的实际修复
+
+## 本批结论
+
+**隔离18候选已有实际S1、S2-A及本批S2-B代码，不只是增加观察。** 新增`step18_calibration_metrics.py`，相对归档S2-A的分析服务仅修改`build_profile`、`calibrate_profile`、`calibrate`；其余命名定义AST相同。冻结17、正式工作台与默认复制入口保持，候选未发布、未部署。
+
+**整体仍PARTIAL/BLOCKED。** 完整产品、真实模型／双T4、训练、声学、首声和RTF未验收；不能承诺一定成功。S2主要预定状态／评分合同已在限定候选中实现，但全局并发写者、任意IO故障、真实短音与质量门禁等仍在，不称完整S2或全功能通过。
+
+Q29在实施前按顺序完成四选项、推荐C及50行动，完整见`KAGGLE_STEP18_Q29_CALIBRATION_VALIDITY.md`。原Q25–28及原3×100保留，问题30未开。
+
+## 1. 实际改正的行为
+
+| 以前行为 | 当前候选合同 |
+|---|---|
+| ASR缺失仍填CER0.05 | 缺失为null，逐目标固定阶段码、预期／有效数、speaker／ASR覆盖率明确保存 |
+| 只平均成功试验、隐藏缺失 | 只有全部目标完整且指标有限才可排序；不完整候选score=null |
+| 代理或缺质心仍给相似度默认值 | ECAPA未确认、无／坏质心时不冒可靠声纹指标；质量仍未验证 |
+| 全部失败仍200/chosen0、覆盖旧报告 | 422、chosen=null、reference_saved=false，不写新锚点／档案，保留旧证据 |
+| 临时worker只看truthy ok | 检查HTTP状态、严格ok=true、匹配参考pin后才执行合成 |
+| 丢弃最终加载失败回执 | 选择先提交，再核对两worker与已保存输入版本；失败503、已保存但未就绪 |
+| 保存后再被改／删仍可能正常返回 | 503并给saved_version_current=false；reference_saved表示历史曾提交，不表示当前文件仍存在 |
+| 校准错误可能回显异常正文 | 对外固定阶段错误码、worker状态和泛化500，不回显私有异常／供应商正文 |
+| 后台可选校准返回未被区分 | 记录精简状态摘要；创建成功不等于校准有效／两卡已就绪 |
+
+保持原`sim−1.5×CER`相对排序公式，不新增未经真实实验支持的相似度最低线或最短音阈值。数值检查拒绝空、非一维、非实数、非有限、全零及幅度非法PCM，但**不能把通过这些检查叫正确人声、无漏字或自然朗读**。部分候选失败不阻止其他完整候选。
+
+成功HTTP200只在本次两卡工程回执及保存版本确认后返回；成功body仍等于磁盘选择报告，包含`quality_verified=false`。选择报告不提前持久化ready=true来冒后续永久就绪。503不伪造分布式回滚；用户后续需显式重试激活，不能混会话。
+
+后台摘要接入按源码／辅助逻辑复核，**本批没有完整执行真实建档流程**。公共校准错误脱敏不等于全产品日志／全部入口隐私已验收。
+
+## 2. 同合同修复前后对照
+
+S2-A改动前的源码、README、origin及活跃交接等已逐字节归档至`s2b-before`，路径与SHA见`s2b-before-index.json`。这是真实改前来源，不是拿冻结17冒充S2-A。
+
+最终同一份`test_step18_calibration_validity.py`的23项方法：
+
+- 归档S2-A：**36条失败记录、0 error、0 skip**。含参数化子用例，不是36个独立缺陷。
+- 当前候选预检：**23/23 PASS，failure/error/skip均0**。
+- 两份JSON记录相同测试SHA和各自目标源码SHA，最终对照为`s2b-red-final2`与`s2b-precheck-final2`。
+
+23项覆盖完整选择、全ASR失败、部分ASR覆盖率、缺失高分不能压过完整候选、空／坏ASR假设、全合成失败保旧、单候选失败、NaN/Inf指标、代理／坏质心、非法PCM、临时HTTP／错pin、最终失败／空回执／异常、最终加载中真实HTTP编辑／删除、公共异常脱敏、可恢复重试与JSON提交失败保旧。
+
+全走单Uvicorn事件循环及真实环回TCP；worker网络、合成、ASR、声纹均明确fixture，非Go鉴权代理／浏览器／真实模型。旧有效报告是自有fixture，不冒真声音证据；私有字符串也是合成sentinel，没有真实凭据。
+
+## 3. 失败记录与最终重跑，不覆盖历史
+
+1. 首红对照34失败＋1 KeyError，因为旧报告不存在新合同字段；增加`assertIn`使缺字段成为明确断言失败，不降低合同。原stdout／JSON留档；随后35失败、0 error。
+2. 初三轮523项均通过后，增量复核用受控int16最小值发现`abs(-32768)`溢出会错误通过幅度检查。该路径为自有数值fixture，不证明实际provider输出了整数PCM。
+3. 改为min/max范围比较并加入整数边界子用例，最终旧版对照36失败、候选23通过。**重新执行最终源码完整三轮**，使用`s2b-final-*`新名字；初轮不覆盖、不与最终通过数混算。
+4. 初S2-B的helper／测试源码副本按已记录SHA进行确定性逆变换重建，严格核对初轮收据，并明确不是事前快照。真正事前S2-A档案不受影响。见`s2b-initial-source`、`s2b-integer-pcm-exploration.txt`与`execution-notes`。
+5. README更新曾因预期空格边界不匹配而断言失败，代码／测试未失败；精确替换后完成，元数据记录保留。
+
+## 4. 最终三轮工程验证
+
+- **523×3＝1569 PASS**，每轮failure/error/skip均0。
+- 组成：450冻结17控制；S1旧28＋S2-A旧22在当前S2-B候选重跑；新增23当前候选合同。不能把523合计冒完整新产品验收。
+- 原500方法／结果逐ID继承，旧25组冻结缺陷观察保留，不改旧方法或断言。
+- S2-A成功校准报告新增有效性字段，临时设置全错由200改422，这是本批有意修复；不声称旧响应字节完全一致。成功磁盘／HTTP一致和其他原合同保持。
+- 最终每轮237 TCP，三轮711；其中S2-B新39/轮、合计117。新39状态为422×26、200×6、503×5、500×2；错误码多为预期拒绝／故障注入，不是39次产品功能成功。
+- 比较三轮时只归一化格式验证过的内容版本摘要，并保留继承S1删除／reload先后的已声明不确定性，其余内容核对；不忽略状态差异。
+- 每轮companion：NumPy partition12、trimmer8、CLI4，三项CLI期望blocked，resource gpu_verified=false；C ABI fixture不是Rust运行。
+
+附加审计／Node／语法／冻结与独立封存的实际结果见末尾，不借用旧批次成绩。
+
+## 5. 原建议、进度与冻结边界
+
+本批12条原建议有当前实现限定链接：R2-041–050、061/062。每条有原文、精确测试ID、三轮收据SHA、HTTP下标和边界。
+
+部分证据并集75→81，新增进入集合的是R2-042/044/045/046/047/048。**81/300＝27%仅证据覆盖，不是整体完成率。** R2-047只补数值非法PCM，不签真实极短／漏字策略；R2-050只补校准公共错误，不签全日志。原300条最终／功能签收仍0；这与本批限定候选代码已实现不矛盾。
+
+受保护历史路径1609、已有1606 SHA匹配、3旧.log仍缺，D02未关闭。允许变化的候选及活跃交接先归档，冻结53源／94文件／正式15文件／HEAD／17包不动。不运行旧生成器，只repack --check。
+
+现有venv复用，无依赖安装，freeze与前批逐字节相同，NumPy仍2.2.6非目标2.4.6。本批无Go/race/vet、实浏览器／clipboard、Torch/Qwen／权重、真实训练／双T4、实体音频、声音质量或速度实测。完整交接96份，默认仍17，18未发布。
+
+## 6. 下一步
+
+进入隔离候选S3的可复现数值修复：先修NumPy分块淡入／RMS状态一致性，保留样本数、限幅及增益预算，Rust对照需要实际编译和独立证据。不得以数值修复推断用户沙沙根因。
+
+S2跨进程／不合作创建写者、短音／质量阈值及真实模型载入门禁继续保留。自然朗读、全部候选conditioning透明、generated-only PCM、真实长训练、更快真实首声、双T4等效参数与RTF≤0.3仍未豁免；不能承诺一定成功或用工程通过数代替这些验收。
+
+
+## 7. 附加检查与封存记录
+
+最终附加检查已实际三轮完成：每轮24项审计、Node30、JS语法与repack全部通过，47份Python AST解析通过。封存前独立复核首次通过，核对真实改前来源、同测试SHA红绿对照、最终三轮523／旧500继承、新无候选和就绪响应语义、所有引用日志／SHA、原建议下标、冻结／历史／环境；stdout保存在`s2b-seal-preflight-first.txt`。
+
+独立清单`s2b-run-manifest.json`覆盖163文件，包含初轮和最终日志、当前代码、真实S2-A档案及明确标识的初S2-B重建源码。完整交接96份逐份内嵌核对。最终封存判据为`verify_s2b.py`连续两次执行通过且stdout逐字节一致；实际输出分别保存为`s2b-verification-first.txt`与`second.txt`，最终状态以`progress-s2b.json`为准并同步`progress-checks.json`。审计通过不签完整产品／模型／声学，也不把未发布候选切换为正式18。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_Q30_DSP_PARTITION.md
+
+# Q30：如何真正修复 S3 分块状态，而不改冻结 17？
+
+## 顺序专业自问自答
+本问题承接已封存 Q29。下个问题必须等待本题至少 50 项可操作建议写完；不向用户索要 Continue。
+
+- A：仅补淡入计数。改动少，但 RMS 余数丢失和非因果增益仍在，拒绝。
+- B：要求模型固定输出大块。掩盖分块依赖并可能拖慢首声，拒绝。
+- **C（采用）**：独立 18 候选采用逐样本因果状态，明确连接隔离 worker；先测实际 CPU 开销再决定是否需要额外加速语言，不引入未测 JIT 编译延迟。
+- D：只换 Rust 并宣称等效。当前没有 Rust 工具链且 f32/量化/参数语义不同，没有实测依据，拒绝。
+
+## 合同与修正理由
+保持冻结代码与正式工作台不变。新模块的 process 不缓存 PCM，输出长度严格等于输入；DC、固定网格 RMS、逐样本增益和淡入坐标跨调用保存。采用与冻结 Rust 因果设计相近的 10ms RMS／30ms attack／600ms release／-46dB 门限，但 Python float64 状态和 ties-to-even 量化不等于 Rust f32 位级一致，绝不借 ABI fixture 宣称 Rust 验收。有效配置保持既有默认值；非法/非有限配置、负长度明确拒绝。flush(0) 无副作用，正 flush 清 DC/last，保留 RMS/gain/env/fade。淡入首样本为零，最后一个淡入样本仍小于 1，随后恢复 1；重启段显式重新淡入。新增关闭生命周期保护。
+
+这是隔离候选的行为纠正，会改变旧 NumPy 整段结果；旧 NumPy 不是正确输出 oracle。不把分块一致性等同于去沙沙、自然朗读或相似度改善。完整 TTS 产品、双 T4、真实训练和发布仍 blocked。
+
+## 本题 50 项行动
+1. 核验当前 arena 分支，禁止换支。
+2. 归档会变化的 S2-B 文档和交接。
+3. 保存冻结 DSP/worker/Rust 的改前 SHA。
+4. 串联旧保护表并保留三条历史缺件，不补造。
+5. 重建已消失的 venv，保存安装日志。
+6. 比较新旧 pip freeze，记录 Python/工具可用性。
+7. 冻结 17 和正式工作台零修改。
+8. 把 18 DSP 置于独立模块名，避免 sys.modules 污染。
+9. 提供隔离 worker 文件而不改冻结 worker。
+10. 为候选 worker 加冻结公共依赖搜索路径。
+11. 把淡入总长和剩余位置分开保存。
+12. 用绝对已消耗位置计算余弦淡入。
+13. 支持跨 1 样本调用完成淡入。
+14. 定义 start_segment(0) 和重复 start_segment。
+15. 按采样率四舍五入计算 10ms 窗长。
+16. 持久化 RMS 平方和及样本计数。
+17. 只在完整固定网格窗口结束学习。
+18. 禁用基于整次调用未来数据的增益插值。
+19. 保留 DC 前样本与前输出。
+20. 采用逐样本 30ms attack/600ms release。
+21. 显式记录 -46dB 门限和与旧 NumPy 的差异。
+22. 夹限期望增益并验证当前增益预算。
+23. 使用 float64 标量状态，float32 输入，int16 输出。
+24. 定义 ties-to-even 量化，不声称 Rust 位等同。
+25. 对非有限样本等价置零。
+26. 不修改只读或步进输入。
+27. 逐块返回相同数量 PCM，无输出缓存等待窗口。
+28. 严格限定 soft limiter 的幅度预算。
+29. 定义正 flush 仅输出显式尾长。
+30. 正 flush 清 DC/last、保留学习态。
+31. 零 flush 不推进状态。
+32. 负 flush 明确拒绝。
+33. 关闭后拒绝处理，close 幂等。
+34. 构造器拒绝非有限与超界配置而不是隐式放行。
+35. 修正实现边界：冻结 ABI bridge 保持原样；新隔离 DSP 只启用明确标识的 NumPy 因果实现，不自动装载未验收的 Rust 库。
+36. 以改前 DSP 执行相同数值合同，保存红结果。
+37. 以独立参考递推验证指定波形输出。
+38. 逐样本、固定短块、不规则与随机切分严格比较。
+39. 比较整段与分块最终 gain/env/内部状态。
+40. 验证相同前缀面对不同未来输出不变。
+41. 通过实际候选 worker run_job 发出 PCM 帧。
+42. 验证 worker 关闭并替换旧 leveler。
+43. 验证取消、错误与 generated-only 控制仍保留。
+44. 用冻结 DSP 与候选同机测 CPU 成本。
+45. 记录基准仅为合成 DSP 而非模型 RTF。
+46. 保留全部 523 旧合同并跑三轮最终组合。
+47. 三轮执行审计、Node、JS、repack 与语法检查。
+48. 新增独立封存 verifier 并连续两次核验。
+49. 更新计划、报告、交接并保存最终整合提示。
+50. 按证据报告进展；真实听感、训练、T4、首声和完整发布仍未验收。
+
+## 实施前边界修正
+当前没有 Rust 工具链，因此候选不复制 ABI 自动选择代码。新 worker 明确使用 `numpy-causal-v1`，冻结 Rust bridge 原样保留但不接入本候选。避免使用新 NumPy 合同为未测 native 分支背书；与原计划“保留 bridge”相比，缩小发布面更可靠。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S3_REVIEW_R1.md
+
+# S3 R1：状态与因果复核（100 条建议）
+
+这些是实施前检查与建议，不是 100 项通过收据。合成输入与替身引擎不代表真实声音、训练、GPU 或 Rust 验收。
+
+1. **S3-R1-001｜淡入绝对位置／单次处理**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+2. **S3-R1-002｜淡入绝对位置／固定短块**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+3. **S3-R1-003｜淡入绝对位置／不规则余数**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+4. **S3-R1-004｜淡入绝对位置／空块交错**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+5. **S3-R1-005｜淡入零长度／单次处理**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+6. **S3-R1-006｜淡入零长度／固定短块**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+7. **S3-R1-007｜淡入零长度／不规则余数**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+8. **S3-R1-008｜淡入零长度／空块交错**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+9. **S3-R1-009｜淡入单样本／单次处理**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+10. **S3-R1-010｜淡入单样本／固定短块**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+11. **S3-R1-011｜淡入单样本／不规则余数**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+12. **S3-R1-012｜淡入单样本／空块交错**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+13. **S3-R1-013｜重复段开始／单次处理**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+14. **S3-R1-014｜重复段开始／固定短块**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+15. **S3-R1-015｜重复段开始／不规则余数**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+16. **S3-R1-016｜重复段开始／空块交错**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+17. **S3-R1-017｜RMS 余数／单次处理**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+18. **S3-R1-018｜RMS 余数／固定短块**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+19. **S3-R1-019｜RMS 余数／不规则余数**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+20. **S3-R1-020｜RMS 余数／空块交错**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+21. **S3-R1-021｜RMS 边界／单次处理**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+22. **S3-R1-022｜RMS 边界／固定短块**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+23. **S3-R1-023｜RMS 边界／不规则余数**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+24. **S3-R1-024｜RMS 边界／空块交错**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+25. **S3-R1-025｜因果前缀／单次处理**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+26. **S3-R1-026｜因果前缀／固定短块**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+27. **S3-R1-027｜因果前缀／不规则余数**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+28. **S3-R1-028｜因果前缀／空块交错**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+29. **S3-R1-029｜增益攻击／单次处理**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+30. **S3-R1-030｜增益攻击／固定短块**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+31. **S3-R1-031｜增益攻击／不规则余数**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+32. **S3-R1-032｜增益攻击／空块交错**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+33. **S3-R1-033｜增益释放／单次处理**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+34. **S3-R1-034｜增益释放／固定短块**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+35. **S3-R1-035｜增益释放／不规则余数**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+36. **S3-R1-036｜增益释放／空块交错**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+37. **S3-R1-037｜增益预算／单次处理**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+38. **S3-R1-038｜增益预算／固定短块**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+39. **S3-R1-039｜增益预算／不规则余数**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+40. **S3-R1-040｜增益预算／空块交错**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+41. **S3-R1-041｜静音门限／单次处理**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+42. **S3-R1-042｜静音门限／固定短块**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+43. **S3-R1-043｜静音门限／不规则余数**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+44. **S3-R1-044｜静音门限／空块交错**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+45. **S3-R1-045｜DC 连续性／单次处理**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+46. **S3-R1-046｜DC 连续性／固定短块**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+47. **S3-R1-047｜DC 连续性／不规则余数**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+48. **S3-R1-048｜DC 连续性／空块交错**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+49. **S3-R1-049｜非有限输入／单次处理**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+50. **S3-R1-050｜非有限输入／固定短块**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+51. **S3-R1-051｜非有限输入／不规则余数**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+52. **S3-R1-052｜非有限输入／空块交错**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+53. **S3-R1-053｜空块／单次处理**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+54. **S3-R1-054｜空块／固定短块**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+55. **S3-R1-055｜空块／不规则余数**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+56. **S3-R1-056｜空块／空块交错**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+57. **S3-R1-057｜非连续输入／单次处理**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+58. **S3-R1-058｜非连续输入／固定短块**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+59. **S3-R1-059｜非连续输入／不规则余数**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+60. **S3-R1-060｜非连续输入／空块交错**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+61. **S3-R1-061｜采样率／单次处理**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+62. **S3-R1-062｜采样率／固定短块**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+63. **S3-R1-063｜采样率／不规则余数**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+64. **S3-R1-064｜采样率／空块交错**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+65. **S3-R1-065｜正尾刷新／单次处理**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+66. **S3-R1-066｜正尾刷新／固定短块**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+67. **S3-R1-067｜正尾刷新／不规则余数**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+68. **S3-R1-068｜正尾刷新／空块交错**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+69. **S3-R1-069｜零尾刷新／单次处理**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+70. **S3-R1-070｜零尾刷新／固定短块**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+71. **S3-R1-071｜零尾刷新／不规则余数**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+72. **S3-R1-072｜零尾刷新／空块交错**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+73. **S3-R1-073｜负尾刷新／单次处理**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+74. **S3-R1-074｜负尾刷新／固定短块**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+75. **S3-R1-075｜负尾刷新／不规则余数**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+76. **S3-R1-076｜负尾刷新／空块交错**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+77. **S3-R1-077｜尾部限幅／单次处理**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+78. **S3-R1-078｜尾部限幅／固定短块**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+79. **S3-R1-079｜尾部限幅／不规则余数**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+80. **S3-R1-080｜尾部限幅／空块交错**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+81. **S3-R1-081｜关闭生命周期／单次处理**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+82. **S3-R1-082｜关闭生命周期／固定短块**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+83. **S3-R1-083｜关闭生命周期／不规则余数**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+84. **S3-R1-084｜关闭生命周期／空块交错**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+85. **S3-R1-085｜worker 模块绑定／单次处理**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+86. **S3-R1-086｜worker 模块绑定／固定短块**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+87. **S3-R1-087｜worker 模块绑定／不规则余数**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+88. **S3-R1-088｜worker 模块绑定／空块交错**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+89. **S3-R1-089｜worker 实际调用／单次处理**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+90. **S3-R1-090｜worker 实际调用／固定短块**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+91. **S3-R1-091｜worker 实际调用／不规则余数**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+92. **S3-R1-092｜worker 实际调用／空块交错**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+93. **S3-R1-093｜性能边界／单次处理**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+94. **S3-R1-094｜性能边界／固定短块**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+95. **S3-R1-095｜性能边界／不规则余数**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+96. **S3-R1-096｜性能边界／空块交错**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+97. **S3-R1-097｜封存边界／单次处理**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“单次处理”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+98. **S3-R1-098｜封存边界／固定短块**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“固定短块”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+99. **S3-R1-099｜封存边界／不规则余数**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“不规则余数”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+100. **S3-R1-100｜封存边界／空块交错**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“空块交错”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S3_REVIEW_R2.md
+
+# S3 R2：数值与防护复核（100 条建议）
+
+这些是实施前检查与建议，不是 100 项通过收据。合成输入与替身引擎不代表真实声音、训练、GPU 或 Rust 验收。
+
+1. **S3-R2-001｜淡入绝对位置／零和极小输入**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+2. **S3-R2-002｜淡入绝对位置／正常合成波形**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+3. **S3-R2-003｜淡入绝对位置／极值与非有限输入**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+4. **S3-R2-004｜淡入绝对位置／非连续与边界输入**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+5. **S3-R2-005｜淡入零长度／零和极小输入**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+6. **S3-R2-006｜淡入零长度／正常合成波形**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+7. **S3-R2-007｜淡入零长度／极值与非有限输入**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+8. **S3-R2-008｜淡入零长度／非连续与边界输入**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+9. **S3-R2-009｜淡入单样本／零和极小输入**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+10. **S3-R2-010｜淡入单样本／正常合成波形**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+11. **S3-R2-011｜淡入单样本／极值与非有限输入**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+12. **S3-R2-012｜淡入单样本／非连续与边界输入**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+13. **S3-R2-013｜重复段开始／零和极小输入**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+14. **S3-R2-014｜重复段开始／正常合成波形**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+15. **S3-R2-015｜重复段开始／极值与非有限输入**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+16. **S3-R2-016｜重复段开始／非连续与边界输入**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+17. **S3-R2-017｜RMS 余数／零和极小输入**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+18. **S3-R2-018｜RMS 余数／正常合成波形**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+19. **S3-R2-019｜RMS 余数／极值与非有限输入**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+20. **S3-R2-020｜RMS 余数／非连续与边界输入**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+21. **S3-R2-021｜RMS 边界／零和极小输入**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+22. **S3-R2-022｜RMS 边界／正常合成波形**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+23. **S3-R2-023｜RMS 边界／极值与非有限输入**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+24. **S3-R2-024｜RMS 边界／非连续与边界输入**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+25. **S3-R2-025｜因果前缀／零和极小输入**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+26. **S3-R2-026｜因果前缀／正常合成波形**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+27. **S3-R2-027｜因果前缀／极值与非有限输入**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+28. **S3-R2-028｜因果前缀／非连续与边界输入**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+29. **S3-R2-029｜增益攻击／零和极小输入**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+30. **S3-R2-030｜增益攻击／正常合成波形**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+31. **S3-R2-031｜增益攻击／极值与非有限输入**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+32. **S3-R2-032｜增益攻击／非连续与边界输入**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+33. **S3-R2-033｜增益释放／零和极小输入**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+34. **S3-R2-034｜增益释放／正常合成波形**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+35. **S3-R2-035｜增益释放／极值与非有限输入**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+36. **S3-R2-036｜增益释放／非连续与边界输入**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+37. **S3-R2-037｜增益预算／零和极小输入**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+38. **S3-R2-038｜增益预算／正常合成波形**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+39. **S3-R2-039｜增益预算／极值与非有限输入**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+40. **S3-R2-040｜增益预算／非连续与边界输入**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+41. **S3-R2-041｜静音门限／零和极小输入**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+42. **S3-R2-042｜静音门限／正常合成波形**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+43. **S3-R2-043｜静音门限／极值与非有限输入**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+44. **S3-R2-044｜静音门限／非连续与边界输入**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+45. **S3-R2-045｜DC 连续性／零和极小输入**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+46. **S3-R2-046｜DC 连续性／正常合成波形**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+47. **S3-R2-047｜DC 连续性／极值与非有限输入**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+48. **S3-R2-048｜DC 连续性／非连续与边界输入**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+49. **S3-R2-049｜非有限输入／零和极小输入**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+50. **S3-R2-050｜非有限输入／正常合成波形**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+51. **S3-R2-051｜非有限输入／极值与非有限输入**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+52. **S3-R2-052｜非有限输入／非连续与边界输入**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+53. **S3-R2-053｜空块／零和极小输入**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+54. **S3-R2-054｜空块／正常合成波形**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+55. **S3-R2-055｜空块／极值与非有限输入**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+56. **S3-R2-056｜空块／非连续与边界输入**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+57. **S3-R2-057｜非连续输入／零和极小输入**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+58. **S3-R2-058｜非连续输入／正常合成波形**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+59. **S3-R2-059｜非连续输入／极值与非有限输入**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+60. **S3-R2-060｜非连续输入／非连续与边界输入**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+61. **S3-R2-061｜采样率／零和极小输入**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+62. **S3-R2-062｜采样率／正常合成波形**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+63. **S3-R2-063｜采样率／极值与非有限输入**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+64. **S3-R2-064｜采样率／非连续与边界输入**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+65. **S3-R2-065｜正尾刷新／零和极小输入**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+66. **S3-R2-066｜正尾刷新／正常合成波形**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+67. **S3-R2-067｜正尾刷新／极值与非有限输入**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+68. **S3-R2-068｜正尾刷新／非连续与边界输入**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+69. **S3-R2-069｜零尾刷新／零和极小输入**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+70. **S3-R2-070｜零尾刷新／正常合成波形**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+71. **S3-R2-071｜零尾刷新／极值与非有限输入**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+72. **S3-R2-072｜零尾刷新／非连续与边界输入**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+73. **S3-R2-073｜负尾刷新／零和极小输入**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+74. **S3-R2-074｜负尾刷新／正常合成波形**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+75. **S3-R2-075｜负尾刷新／极值与非有限输入**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+76. **S3-R2-076｜负尾刷新／非连续与边界输入**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+77. **S3-R2-077｜尾部限幅／零和极小输入**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+78. **S3-R2-078｜尾部限幅／正常合成波形**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+79. **S3-R2-079｜尾部限幅／极值与非有限输入**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+80. **S3-R2-080｜尾部限幅／非连续与边界输入**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+81. **S3-R2-081｜关闭生命周期／零和极小输入**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+82. **S3-R2-082｜关闭生命周期／正常合成波形**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+83. **S3-R2-083｜关闭生命周期／极值与非有限输入**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+84. **S3-R2-084｜关闭生命周期／非连续与边界输入**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+85. **S3-R2-085｜worker 模块绑定／零和极小输入**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+86. **S3-R2-086｜worker 模块绑定／正常合成波形**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+87. **S3-R2-087｜worker 模块绑定／极值与非有限输入**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+88. **S3-R2-088｜worker 模块绑定／非连续与边界输入**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+89. **S3-R2-089｜worker 实际调用／零和极小输入**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+90. **S3-R2-090｜worker 实际调用／正常合成波形**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+91. **S3-R2-091｜worker 实际调用／极值与非有限输入**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+92. **S3-R2-092｜worker 实际调用／非连续与边界输入**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+93. **S3-R2-093｜性能边界／零和极小输入**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+94. **S3-R2-094｜性能边界／正常合成波形**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+95. **S3-R2-095｜性能边界／极值与非有限输入**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+96. **S3-R2-096｜性能边界／非连续与边界输入**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+97. **S3-R2-097｜封存边界／零和极小输入**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“零和极小输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+98. **S3-R2-098｜封存边界／正常合成波形**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“正常合成波形”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+99. **S3-R2-099｜封存边界／极值与非有限输入**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“极值与非有限输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+100. **S3-R2-100｜封存边界／非连续与边界输入**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“非连续与边界输入”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S3_REVIEW_R3.md
+
+# S3 R3：接入与证据复核（100 条建议）
+
+这些是实施前检查与建议，不是 100 项通过收据。合成输入与替身引擎不代表真实声音、训练、GPU 或 Rust 验收。
+
+1. **S3-R3-001｜淡入绝对位置／直接候选调用**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+2. **S3-R3-002｜淡入绝对位置／冻结前态对照**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+3. **S3-R3-003｜淡入绝对位置／实际 worker 替身引擎**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+4. **S3-R3-004｜淡入绝对位置／独立封存与回归**：条件：剩余不足一段淡入时继续处理；操作：保存 fade_total/left，禁止每次调用从零重启；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+5. **S3-R3-005｜淡入零长度／直接候选调用**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+6. **S3-R3-006｜淡入零长度／冻结前态对照**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+7. **S3-R3-007｜淡入零长度／实际 worker 替身引擎**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+8. **S3-R3-008｜淡入零长度／独立封存与回归**：条件：start_segment(0) 后处理非零样本；操作：不加包络、不除零；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+9. **S3-R3-009｜淡入单样本／直接候选调用**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+10. **S3-R3-010｜淡入单样本／冻结前态对照**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+11. **S3-R3-011｜淡入单样本／实际 worker 替身引擎**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+12. **S3-R3-012｜淡入单样本／独立封存与回归**：条件：淡入总长为一时；操作：按约定首样本零、随后恢复，不延长样本流；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+13. **S3-R3-013｜重复段开始／直接候选调用**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+14. **S3-R3-014｜重复段开始／冻结前态对照**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+15. **S3-R3-015｜重复段开始／实际 worker 替身引擎**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+16. **S3-R3-016｜重复段开始／独立封存与回归**：条件：未完成淡入再次 start_segment；操作：显式重新开始淡入，保留已学习增益和 RMS；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+17. **S3-R3-017｜RMS 余数／直接候选调用**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+18. **S3-R3-018｜RMS 余数／冻结前态对照**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+19. **S3-R3-019｜RMS 余数／实际 worker 替身引擎**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+20. **S3-R3-020｜RMS 余数／独立封存与回归**：条件：每次调用少于 10ms；操作：跨调用保留平方和与计数，窗口结束才学习；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+21. **S3-R3-021｜RMS 边界／直接候选调用**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+22. **S3-R3-022｜RMS 边界／冻结前态对照**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+23. **S3-R3-023｜RMS 边界／实际 worker 替身引擎**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+24. **S3-R3-024｜RMS 边界／独立封存与回归**：条件：长度等于窗口及窗口±1；操作：使用固定样本网格，不按调用重置窗口；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+25. **S3-R3-025｜因果前缀／直接候选调用**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+26. **S3-R3-026｜因果前缀／冻结前态对照**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+27. **S3-R3-027｜因果前缀／实际 worker 替身引擎**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+28. **S3-R3-028｜因果前缀／独立封存与回归**：条件：相同前缀接不同未来信号；操作：前缀 PCM 和前缀状态相同，不用 np.interp 未来信息；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+29. **S3-R3-029｜增益攻击／直接候选调用**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+30. **S3-R3-030｜增益攻击／冻结前态对照**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+31. **S3-R3-031｜增益攻击／实际 worker 替身引擎**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+32. **S3-R3-032｜增益攻击／独立封存与回归**：条件：大于所需增益的前态；操作：逐样本使用 30ms 系数；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+33. **S3-R3-033｜增益释放／直接候选调用**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+34. **S3-R3-034｜增益释放／冻结前态对照**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+35. **S3-R3-035｜增益释放／实际 worker 替身引擎**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+36. **S3-R3-036｜增益释放／独立封存与回归**：条件：小于所需增益的前态；操作：逐样本使用 600ms 系数；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+37. **S3-R3-037｜增益预算／直接候选调用**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+38. **S3-R3-038｜增益预算／冻结前态对照**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+39. **S3-R3-039｜增益预算／实际 worker 替身引擎**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+40. **S3-R3-040｜增益预算／独立封存与回归**：条件：很小且通过门限的信号；操作：期望增益与当前增益均在明确上下限内；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+41. **S3-R3-041｜静音门限／直接候选调用**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+42. **S3-R3-042｜静音门限／冻结前态对照**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+43. **S3-R3-043｜静音门限／实际 worker 替身引擎**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+44. **S3-R3-044｜静音门限／独立封存与回归**：条件：零、低于门限、超过门限；操作：低于门限不学习噪声，使用 -46dB RMS 门限；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+45. **S3-R3-045｜DC 连续性／直接候选调用**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+46. **S3-R3-046｜DC 连续性／冻结前态对照**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+47. **S3-R3-047｜DC 连续性／实际 worker 替身引擎**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+48. **S3-R3-048｜DC 连续性／独立封存与回归**：条件：常量偏置在任意点切开；操作：保存上一输入/输出，不在 process 边界重置；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+49. **S3-R3-049｜非有限输入／直接候选调用**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+50. **S3-R3-050｜非有限输入／冻结前态对照**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+51. **S3-R3-051｜非有限输入／实际 worker 替身引擎**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+52. **S3-R3-052｜非有限输入／独立封存与回归**：条件：NaN、正负无穷混入；操作：等价于对应样本置零，不传播非有限状态；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+53. **S3-R3-053｜空块／直接候选调用**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+54. **S3-R3-054｜空块／冻结前态对照**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+55. **S3-R3-055｜空块／实际 worker 替身引擎**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+56. **S3-R3-056｜空块／独立封存与回归**：条件：任意处理间插入空块；操作：返回零样本且不推进任何状态；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+57. **S3-R3-057｜非连续输入／直接候选调用**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+58. **S3-R3-058｜非连续输入／冻结前态对照**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+59. **S3-R3-059｜非连续输入／实际 worker 替身引擎**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+60. **S3-R3-060｜非连续输入／独立封存与回归**：条件：步进视图与连续副本；操作：结果一致且不修改输入；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+61. **S3-R3-061｜采样率／直接候选调用**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+62. **S3-R3-062｜采样率／冻结前态对照**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+63. **S3-R3-063｜采样率／实际 worker 替身引擎**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+64. **S3-R3-064｜采样率／独立封存与回归**：条件：8k、24k、44.1k、48k；操作：依采样率计算固定 RMS 网格与时间常数；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+65. **S3-R3-065｜正尾刷新／直接候选调用**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+66. **S3-R3-066｜正尾刷新／冻结前态对照**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+67. **S3-R3-067｜正尾刷新／实际 worker 替身引擎**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+68. **S3-R3-068｜正尾刷新／独立封存与回归**：条件：flush(192) 后再次处理；操作：输出明确尾长，清 DC/last，保留其他学习态；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+69. **S3-R3-069｜零尾刷新／直接候选调用**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+70. **S3-R3-070｜零尾刷新／冻结前态对照**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+71. **S3-R3-071｜零尾刷新／实际 worker 替身引擎**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+72. **S3-R3-072｜零尾刷新／独立封存与回归**：条件：flush(0) 在流中间；操作：无输出且不改状态；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+73. **S3-R3-073｜负尾刷新／直接候选调用**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+74. **S3-R3-074｜负尾刷新／冻结前态对照**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+75. **S3-R3-075｜负尾刷新／实际 worker 替身引擎**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+76. **S3-R3-076｜负尾刷新／独立封存与回归**：条件：flush(-1)；操作：明确 ValueError，不以空数组掩盖调用错误；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+77. **S3-R3-077｜尾部限幅／直接候选调用**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+78. **S3-R3-078｜尾部限幅／冻结前态对照**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+79. **S3-R3-079｜尾部限幅／实际 worker 替身引擎**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+80. **S3-R3-080｜尾部限幅／独立封存与回归**：条件：最后样本接近限幅；操作：尾样本也保持安全幅度，无参考 PCM 拼接；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+81. **S3-R3-081｜关闭生命周期／直接候选调用**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+82. **S3-R3-082｜关闭生命周期／冻结前态对照**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+83. **S3-R3-083｜关闭生命周期／实际 worker 替身引擎**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+84. **S3-R3-084｜关闭生命周期／独立封存与回归**：条件：重复 close 或已关闭后调用；操作：close 幂等，其他操作明确拒绝；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+85. **S3-R3-085｜worker 模块绑定／直接候选调用**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+86. **S3-R3-086｜worker 模块绑定／冻结前态对照**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+87. **S3-R3-087｜worker 模块绑定／实际 worker 替身引擎**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+88. **S3-R3-088｜worker 模块绑定／独立封存与回归**：条件：冻结 audio_rt 已在 sys.modules；操作：候选显式导入 step18_audio_rt，禁止导入缓存劫持；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+89. **S3-R3-089｜worker 实际调用／直接候选调用**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+90. **S3-R3-090｜worker 实际调用／冻结前态对照**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+91. **S3-R3-091｜worker 实际调用／实际 worker 替身引擎**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+92. **S3-R3-092｜worker 实际调用／独立封存与回归**：条件：真实 run_job 接合成 engine；操作：捕获实际 Leveler.process/flush 返回的 PCM 与帧计数；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+93. **S3-R3-093｜性能边界／直接候选调用**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+94. **S3-R3-094｜性能边界／冻结前态对照**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+95. **S3-R3-095｜性能边界／实际 worker 替身引擎**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+96. **S3-R3-096｜性能边界／独立封存与回归**：条件：1 样本、240 样本、整段调用；操作：记录 CPU 秒与样本数，禁止作为首声或模型 RTF 证据；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+97. **S3-R3-097｜封存边界／直接候选调用**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“直接候选调用”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+98. **S3-R3-098｜封存边界／冻结前态对照**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“冻结前态对照”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+99. **S3-R3-099｜封存边界／实际 worker 替身引擎**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“实际 worker 替身引擎”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+100. **S3-R3-100｜封存边界／独立封存与回归**：条件：旧收据绑定活动文档；操作：事前复制可变文档，旧源码和收据只读保留；在“独立封存与回归”路径保留输入、输出长度及状态证据；无法执行必须标未验收，不能用邻近路径代替。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S3_DSP.md
+
+# S3：因果 NumPy DSP 与隔离 worker 实际接入
+
+**结论：本步数值修复已落地并通过限定回归；完整 S3／产品／模型／声学仍 PARTIAL/BLOCKED，18 未发布、未部署。**
+
+## 实际代码进展
+
+- 新增 `kaggle/step18/step18_audio_rt.py`，不是仅加观察或测试替身。
+- RMS 平方和/计数按固定 10ms 网格跨块累计；不足窗口的 process 仍立即发出同数量 PCM，不等待未来。
+- 增益按逐样本 30ms attack／600ms release 更新，不再依赖本次调用内部未来 RMS 的插值。淡入按固定总长与已消耗位置计算，不在每个短块重新从零开始。
+- 保留 DC 连续性、门控学习、上下限和软限幅。float32 输入／float64 标量状态／ties-to-even int16 量化；-46dB gate 使用精确幅度阈值，与旧 NumPy 0.005 不完全相同。旧整段输出不是正确性 oracle，修复会改变旧整段增益曲线。
+- 定义空块、0/1样本淡入、重复段、flush、非法参数和关闭行为。正 flush 清 DC/last，保留 RMS/gain/env/fade；flush(0) 不改状态。显式合成衰减尾不算额外参考语音。
+- 新增隔离 `kaggle/step18/worker.py`，唯一模块名显式绑定候选 DSP。所有命名函数/类 AST 与冻结 worker 相同；真实 run_job、原 trimmer 和帧编码已执行，engine 与 pin 明确为替身。没有改默认启动入口、17 包或正式工作台。
+- 候选明确仅启用 `numpy-causal-v1`，不自动装载 Rust。冻结 Rust 和 ABI bridge 完全保留；没有工具链，不声称跨后端位等同或已验收完整 S3。
+
+## 三轮真实执行收据
+
+| 项目 | 每轮结果 | 范围 |
+|---|---:|---|
+| 完整 CPU 组合 | **562 PASS ×3** | 450 冻结控制＋73 旧候选＋30 新 DSP＋9 新 worker；合计1686 PASS |
+| 失败／错误／跳过 | **0／0／0** | 三轮均如此；注入错误的预期处理也是合同，不代表所有业务请求都成功 |
+| 同套 DSP 合同旧版红对照 | 30项，44失败记录，0error/skip | 含子用例，不是44独立bug；与事前封存旧源码 SHA 相同 |
+| 同套候选绿对照 | 30 PASS | 独立递推、因果前缀、状态、样本数、幅度与生命周期 |
+| 分块矩阵 | **14组×3，最大差0 int16** | fade隔离／正常AGC，各含整段、1、17、48、240、1920、不规则分块；最终gain/env也相等 |
+| 长流压力 | **601秒合成流×3** | 每轮14424000样本；固定标量状态，不保留 PCM 历史；不是实际录音或训练 |
+| 继承真实环回 TCP | 237/轮，共711 | 仍为旧 S1/S2 端点；新 S3 不新增 TCP 请求，engine/ACK 等仍替身 |
+| 审计／Node／AST | 24／30／53 ×3 | 另 JS语法与 repack --check；未重跑真实浏览器或 Go/Rust |
+
+原旧523测试逐ID和结果完整继承，HTTP状态组合保留；旧冻结 DSP/trimmer 缺陷观察仍在，未改旧探针使其看似已修。`s3-final-cpu-roundN.json`、`s3-final-checks-roundN.json`、`s3-dsp-benchmark-roundN.json` 是最终证据；初次预检/附加检查另保留不混算。
+
+## 实测性能：有改善也有代价
+
+同机顺序处理24037样本（约1.002秒）正常AGC的 CPU 时间，三轮范围：
+
+| 调用方式 | 旧版 CPU ms | 候选 CPU ms | 解释 |
+|---|---:|---:|---|
+| 整段 | 4.99–5.18 | 8.93–9.05 | 较慢；逐样本因果控制的实际开销 |
+| 单样本 | 654.89–674.72 | 70.48–105.58 | 较快；减少短调用 NumPy 临时数组成本 |
+| 17样本 | 43.68–71.41 | 13.24–14.00 | 较快；减少短调用 NumPy 临时数组成本 |
+| 240样本 | 10.72–15.83 | 9.07–12.54 | 较慢；逐样本因果控制的实际开销 |
+| 1920样本 | 6.15–6.85 | 9.00–9.05 | 较慢；逐样本因果控制的实际开销 |
+| 不规则 | 7.29–8.07 | 9.04–9.19 | 较慢；逐样本因果控制的实际开销 |
+
+601秒合成流的候选 CPU 耗时分别为 6.415 / 6.339 / 5.868 秒，合成 DSP CPU时间/音频时长约 0.00976–0.01067。这只度量 DSP，不是完整模型RTF≤0.3、首声<3秒、声卡实际出声或听感改善证明。**不声称全面加速**；当前不为几毫秒纯数值开销盲目引入 JIT 或多语言重写，真实 T4 集成后仍需完整预算。
+
+## 复核、留错与封存
+
+- 本题 Q30 先完成四选项选择 C＋50行动，再实施；新增三遍专题复核各100建议。它们是复核建议，不是300已修缺陷或完整验证。
+- S2-B可变文档/交接与冻结 DSP/worker/Rust 事前归档 `s3-before/`；后续覆盖 progress-checks 前也归档旧进度。历史保护1768路径，1765匹配，3份旧日志仍缺，不补造。完整历史完整性仍false。
+- 首次 worker 预检9项中4error，原因是测试 engine fixture 缺少原 run_job 要求的 dtype_name；只补 fixture 后9 PASS，未改产品来迁就替身。首错完整保留。
+- 红对照极端 float32 输入触发旧临时数组溢出警告；最终结构化红对照原始日志捕获 stderr。不能把此合成极值当用户沙沙根因。
+- 新环境的 .venv 原已消失，本次确实重建并安装；pip freeze 与 S2-B 字节一致，不冒同一运行环境，无 Rust/Go/Torch/Qwen 安装或实际模型执行。
+- 8条原始建议按具体测试ID和三轮收据 SHA 建立限定链接；原300建议最终/功能签收仍0，不以覆盖率宣称整体完成。
+- 独立 `verify_s3.py` 核验来源、旧523继承、对照、三轮、幅度/状态/长度、历史保护及完整交接；最终进度见 `progress-s3.json`。完整交接101份；两次独立核验的实际结果以封存stdout文件为准。
+
+## 尚未签收／下一步
+
+真实用户音频、自然朗读、无沙沙、相似度、首声、双T4和长录音真训练均未验收。分块一致性不能证明噪声消失。Rust编译/跨后端容差仍缺条件，完整S3不签收；正式18包未构建/发布。
+
+下一步按计划推进 **S4 裁剪有界状态**：原 EdgeTrimmer 的短于120样本丢弃、跨块预滚、非零held尾部与finish/取消路径。当前候选 worker 保留原 trimmer，因此 DSP 的样本数守恒只从实际送入 DSP 的输入开始，不能冒称整个生成/播放链已无丢样本。不询问 Continue，不跳过冻结保护和真实声学门禁。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_Q31_TRIMMER.md
+
+# Q31：怎样修复S4裁剪状态而不破坏S3？
+
+顺序自问自答，承接已完成Q30；不向用户提问，不预填Q32。
+
+- A：只在结束拼接held。仍丢短块和跨块预滚，拒绝。
+- B：禁用裁剪／强制大块。改变暂停政策或掩盖问题，拒绝。
+- **C（采用）**：固定网格残帧＋有界前史/尾队列＋显式finish/取消，并新增worker_s4真正接入，保留S3 worker及其旧合同。按数值合同而非听感猜测实施。
+- D：攒整句再离线裁剪。损害首声且无界缓存，拒绝。
+
+## 政策先定义
+
+120样本网格从流开始对齐，与调用边界无关。在worker固定24kHz下最多等待不足5ms残帧；35ms前史跨调用。正常结束按实际残帧长度检测，保留仍缓存的全部非零尾，只能删除精确零；领先低于门限的历史仍可按前史预算裁掉，计数并承认可能包含低电平声音，不能宣称全部语音守恒。中段静音超过尾预算要输出而非丢弃。取消/异常清空缓存，不排旧尾。输入总数=裁剪返回+领先丢弃+精确零尾丢弃+取消丢弃+当前缓存；裁剪返回不等于已播放样本。固定标量/队列预算，不加整句缓冲。保留旧worker.py，使旧结构性AST合同仍真实有效；新worker_s4.py为本步可运行候选，不切换正式入口。
+
+## 50行动（下一题前先完成）
+1. 确认活动分支不换支。
+2. 归档S3可变交接文档。
+3. 保存S3 worker/DSP和旧进度字节。
+4. 扩展旧保护表保留三缺日志。
+5. 复核环境而不冒新安装。
+6. 三遍各100建议先写明非通过收据。
+7. 独立worker_s4保留旧worker和39项合同。
+8. 唯一模块名导入新裁剪器。
+9. 固定120样本检测网格。
+10. 跨调用保存不足网格余数。
+11. 残帧只拷贝少于120样本避免大数组引用。
+12. 使用实际残帧长度检测不补零稀释。
+13. 跨块保留35ms前史。
+14. 前史淘汰按精确样本计数。
+15. 记录实际前端丢弃与扫描数的区别。
+16. 长前静音按固定网格越限启动。
+17. 独立标记lead_limit_reached。
+18. 语音帧释放中间静音不剪内部停顿。
+19. 尾部先放行keep窗口。
+20. 只保留有界尾队列。
+21. 超过尾预算按顺序输出而非删音。
+22. deque避免每帧复制全部尾缓存。
+23. 队列切片不持有整段输入。
+24. 保持输入只读与float32输出。
+25. 空push无状态推进。
+26. 正常finish检查不足120样本残帧。
+27. 正常finish保留全部缓存非零样本。
+28. 仅精确零尾可删除且计数。
+29. 无语音低电平结束保留当前非零前史。
+30. 定义keep=0的显式政策。
+31. finish幂等。
+32. finish后push明确拒绝。
+33. 取消finish不输出任何缓存。
+34. 异常路径也取消并清空裁剪状态。
+35. 在worker结束前真正调用finish。
+36. 结束残帧走同一DSP和PCM计数路径。
+37. 短音首帧可在finish时发出且时序如实。
+38. 取消后不flush192衰减尾。
+39. 取消后不追加显式尾暂停。
+40. 输出裁剪诊断不称声学验证。
+41. 区分trimmer返回样本和wire样本。
+42. 测试finish与取消交错屏障。
+43. 独立批处理oracle不拿旧版当正确值。
+44. whole/single/119/120/1920/不规则严格对照。
+45. 旧代码运行同套修复合同保存红对照。
+46. 所有旧562合同保留再加新合同三轮。
+47. 三轮Node审计JSrepack语法核验。
+48. 测CPU和长流缓存上界不冒训练或RTF。
+49. 独立两次封存与完整交接。
+50. 如实保留真实模型听感T4发布门禁。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S4_REVIEW_R1.md
+
+# S4 R1：状态复核100建议
+
+建议不是执行成绩；不代表声学、完整模型、真实训练验收。
+
+1. **S4-R1-001｜短块/一次输入**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+2. **S4-R1-002｜短块/单样本分块**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+3. **S4-R1-003｜短块/不规则分块**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+4. **S4-R1-004｜短块/结束边界**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+5. **S4-R1-005｜网格边缘/一次输入**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+6. **S4-R1-006｜网格边缘/单样本分块**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+7. **S4-R1-007｜网格边缘/不规则分块**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+8. **S4-R1-008｜网格边缘/结束边界**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+9. **S4-R1-009｜前史/一次输入**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+10. **S4-R1-010｜前史/单样本分块**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+11. **S4-R1-011｜前史/不规则分块**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+12. **S4-R1-012｜前史/结束边界**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+13. **S4-R1-013｜零前史/一次输入**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+14. **S4-R1-014｜零前史/单样本分块**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+15. **S4-R1-015｜零前史/不规则分块**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+16. **S4-R1-016｜零前史/结束边界**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+17. **S4-R1-017｜尾残帧/一次输入**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+18. **S4-R1-018｜尾残帧/单样本分块**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+19. **S4-R1-019｜尾残帧/不规则分块**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+20. **S4-R1-020｜尾残帧/结束边界**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+21. **S4-R1-021｜低电平尾/一次输入**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+22. **S4-R1-022｜低电平尾/单样本分块**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+23. **S4-R1-023｜低电平尾/不规则分块**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+24. **S4-R1-024｜低电平尾/结束边界**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+25. **S4-R1-025｜精确零尾/一次输入**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+26. **S4-R1-026｜精确零尾/单样本分块**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+27. **S4-R1-027｜精确零尾/不规则分块**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+28. **S4-R1-028｜精确零尾/结束边界**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+29. **S4-R1-029｜中间停顿/一次输入**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+30. **S4-R1-030｜中间停顿/单样本分块**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+31. **S4-R1-031｜中间停顿/不规则分块**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+32. **S4-R1-032｜中间停顿/结束边界**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+33. **S4-R1-033｜长尾队列/一次输入**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+34. **S4-R1-034｜长尾队列/单样本分块**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+35. **S4-R1-035｜长尾队列/不规则分块**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+36. **S4-R1-036｜长尾队列/结束边界**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+37. **S4-R1-037｜长前静音/一次输入**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+38. **S4-R1-038｜长前静音/单样本分块**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+39. **S4-R1-039｜长前静音/不规则分块**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+40. **S4-R1-040｜长前静音/结束边界**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+41. **S4-R1-041｜纯短语音/一次输入**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+42. **S4-R1-042｜纯短语音/单样本分块**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+43. **S4-R1-043｜纯短语音/不规则分块**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+44. **S4-R1-044｜纯短语音/结束边界**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+45. **S4-R1-045｜纯低电平/一次输入**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+46. **S4-R1-046｜纯低电平/单样本分块**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+47. **S4-R1-047｜纯低电平/不规则分块**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+48. **S4-R1-048｜纯低电平/结束边界**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+49. **S4-R1-049｜空流/一次输入**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+50. **S4-R1-050｜空流/单样本分块**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+51. **S4-R1-051｜空流/不规则分块**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+52. **S4-R1-052｜空流/结束边界**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+53. **S4-R1-053｜空块/一次输入**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+54. **S4-R1-054｜空块/单样本分块**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+55. **S4-R1-055｜空块/不规则分块**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+56. **S4-R1-056｜空块/结束边界**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+57. **S4-R1-057｜finish重复/一次输入**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+58. **S4-R1-058｜finish重复/单样本分块**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+59. **S4-R1-059｜finish重复/不规则分块**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+60. **S4-R1-060｜finish重复/结束边界**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+61. **S4-R1-061｜终止后push/一次输入**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+62. **S4-R1-062｜终止后push/单样本分块**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+63. **S4-R1-063｜终止后push/不规则分块**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+64. **S4-R1-064｜终止后push/结束边界**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+65. **S4-R1-065｜取消/一次输入**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+66. **S4-R1-066｜取消/单样本分块**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+67. **S4-R1-067｜取消/不规则分块**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+68. **S4-R1-068｜取消/结束边界**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+69. **S4-R1-069｜异常/一次输入**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+70. **S4-R1-070｜异常/单样本分块**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+71. **S4-R1-071｜异常/不规则分块**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+72. **S4-R1-072｜异常/结束边界**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+73. **S4-R1-073｜只读输入/一次输入**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+74. **S4-R1-074｜只读输入/单样本分块**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+75. **S4-R1-075｜只读输入/不规则分块**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+76. **S4-R1-076｜只读输入/结束边界**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+77. **S4-R1-077｜参数/一次输入**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+78. **S4-R1-078｜参数/单样本分块**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+79. **S4-R1-079｜参数/不规则分块**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+80. **S4-R1-080｜参数/结束边界**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+81. **S4-R1-081｜计数/一次输入**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+82. **S4-R1-082｜计数/单样本分块**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+83. **S4-R1-083｜计数/不规则分块**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+84. **S4-R1-084｜计数/结束边界**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+85. **S4-R1-085｜worker首帧/一次输入**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+86. **S4-R1-086｜worker首帧/单样本分块**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+87. **S4-R1-087｜worker首帧/不规则分块**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+88. **S4-R1-088｜worker首帧/结束边界**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+89. **S4-R1-089｜取消交错/一次输入**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+90. **S4-R1-090｜取消交错/单样本分块**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+91. **S4-R1-091｜取消交错/不规则分块**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+92. **S4-R1-092｜取消交错/结束边界**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+93. **S4-R1-093｜性能/一次输入**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+94. **S4-R1-094｜性能/单样本分块**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+95. **S4-R1-095｜性能/不规则分块**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+96. **S4-R1-096｜性能/结束边界**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+97. **S4-R1-097｜冻结封存/一次输入**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+98. **S4-R1-098｜冻结封存/单样本分块**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+99. **S4-R1-099｜冻结封存/不规则分块**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+100. **S4-R1-100｜冻结封存/结束边界**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S4_REVIEW_R2.md
+
+# S4 R2：数值复核100建议
+
+建议不是执行成绩；不代表声学、完整模型、真实训练验收。
+
+1. **S4-R2-001｜短块/零输入**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+2. **S4-R2-002｜短块/有声合成波形**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+3. **S4-R2-003｜短块/门限附近输入**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+4. **S4-R2-004｜短块/只读与极值输入**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+5. **S4-R2-005｜网格边缘/零输入**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+6. **S4-R2-006｜网格边缘/有声合成波形**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+7. **S4-R2-007｜网格边缘/门限附近输入**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+8. **S4-R2-008｜网格边缘/只读与极值输入**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+9. **S4-R2-009｜前史/零输入**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+10. **S4-R2-010｜前史/有声合成波形**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+11. **S4-R2-011｜前史/门限附近输入**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+12. **S4-R2-012｜前史/只读与极值输入**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+13. **S4-R2-013｜零前史/零输入**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+14. **S4-R2-014｜零前史/有声合成波形**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+15. **S4-R2-015｜零前史/门限附近输入**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+16. **S4-R2-016｜零前史/只读与极值输入**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+17. **S4-R2-017｜尾残帧/零输入**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+18. **S4-R2-018｜尾残帧/有声合成波形**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+19. **S4-R2-019｜尾残帧/门限附近输入**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+20. **S4-R2-020｜尾残帧/只读与极值输入**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+21. **S4-R2-021｜低电平尾/零输入**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+22. **S4-R2-022｜低电平尾/有声合成波形**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+23. **S4-R2-023｜低电平尾/门限附近输入**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+24. **S4-R2-024｜低电平尾/只读与极值输入**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+25. **S4-R2-025｜精确零尾/零输入**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+26. **S4-R2-026｜精确零尾/有声合成波形**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+27. **S4-R2-027｜精确零尾/门限附近输入**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+28. **S4-R2-028｜精确零尾/只读与极值输入**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+29. **S4-R2-029｜中间停顿/零输入**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+30. **S4-R2-030｜中间停顿/有声合成波形**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+31. **S4-R2-031｜中间停顿/门限附近输入**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+32. **S4-R2-032｜中间停顿/只读与极值输入**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+33. **S4-R2-033｜长尾队列/零输入**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+34. **S4-R2-034｜长尾队列/有声合成波形**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+35. **S4-R2-035｜长尾队列/门限附近输入**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+36. **S4-R2-036｜长尾队列/只读与极值输入**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+37. **S4-R2-037｜长前静音/零输入**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+38. **S4-R2-038｜长前静音/有声合成波形**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+39. **S4-R2-039｜长前静音/门限附近输入**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+40. **S4-R2-040｜长前静音/只读与极值输入**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+41. **S4-R2-041｜纯短语音/零输入**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+42. **S4-R2-042｜纯短语音/有声合成波形**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+43. **S4-R2-043｜纯短语音/门限附近输入**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+44. **S4-R2-044｜纯短语音/只读与极值输入**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+45. **S4-R2-045｜纯低电平/零输入**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+46. **S4-R2-046｜纯低电平/有声合成波形**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+47. **S4-R2-047｜纯低电平/门限附近输入**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+48. **S4-R2-048｜纯低电平/只读与极值输入**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+49. **S4-R2-049｜空流/零输入**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+50. **S4-R2-050｜空流/有声合成波形**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+51. **S4-R2-051｜空流/门限附近输入**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+52. **S4-R2-052｜空流/只读与极值输入**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+53. **S4-R2-053｜空块/零输入**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+54. **S4-R2-054｜空块/有声合成波形**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+55. **S4-R2-055｜空块/门限附近输入**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+56. **S4-R2-056｜空块/只读与极值输入**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+57. **S4-R2-057｜finish重复/零输入**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+58. **S4-R2-058｜finish重复/有声合成波形**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+59. **S4-R2-059｜finish重复/门限附近输入**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+60. **S4-R2-060｜finish重复/只读与极值输入**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+61. **S4-R2-061｜终止后push/零输入**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+62. **S4-R2-062｜终止后push/有声合成波形**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+63. **S4-R2-063｜终止后push/门限附近输入**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+64. **S4-R2-064｜终止后push/只读与极值输入**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+65. **S4-R2-065｜取消/零输入**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+66. **S4-R2-066｜取消/有声合成波形**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+67. **S4-R2-067｜取消/门限附近输入**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+68. **S4-R2-068｜取消/只读与极值输入**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+69. **S4-R2-069｜异常/零输入**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+70. **S4-R2-070｜异常/有声合成波形**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+71. **S4-R2-071｜异常/门限附近输入**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+72. **S4-R2-072｜异常/只读与极值输入**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+73. **S4-R2-073｜只读输入/零输入**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+74. **S4-R2-074｜只读输入/有声合成波形**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+75. **S4-R2-075｜只读输入/门限附近输入**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+76. **S4-R2-076｜只读输入/只读与极值输入**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+77. **S4-R2-077｜参数/零输入**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+78. **S4-R2-078｜参数/有声合成波形**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+79. **S4-R2-079｜参数/门限附近输入**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+80. **S4-R2-080｜参数/只读与极值输入**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+81. **S4-R2-081｜计数/零输入**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+82. **S4-R2-082｜计数/有声合成波形**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+83. **S4-R2-083｜计数/门限附近输入**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+84. **S4-R2-084｜计数/只读与极值输入**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+85. **S4-R2-085｜worker首帧/零输入**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+86. **S4-R2-086｜worker首帧/有声合成波形**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+87. **S4-R2-087｜worker首帧/门限附近输入**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+88. **S4-R2-088｜worker首帧/只读与极值输入**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+89. **S4-R2-089｜取消交错/零输入**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+90. **S4-R2-090｜取消交错/有声合成波形**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+91. **S4-R2-091｜取消交错/门限附近输入**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+92. **S4-R2-092｜取消交错/只读与极值输入**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+93. **S4-R2-093｜性能/零输入**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+94. **S4-R2-094｜性能/有声合成波形**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+95. **S4-R2-095｜性能/门限附近输入**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+96. **S4-R2-096｜性能/只读与极值输入**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+97. **S4-R2-097｜冻结封存/零输入**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+98. **S4-R2-098｜冻结封存/有声合成波形**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+99. **S4-R2-099｜冻结封存/门限附近输入**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+100. **S4-R2-100｜冻结封存/只读与极值输入**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S4_REVIEW_R3.md
+
+# S4 R3：集成复核100建议
+
+建议不是执行成绩；不代表声学、完整模型、真实训练验收。
+
+1. **S4-R3-001｜短块/直接调用**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+2. **S4-R3-002｜短块/旧版失败对照**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+3. **S4-R3-003｜短块/真实worker替身引擎**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+4. **S4-R3-004｜短块/独立回归封存**：在1..119样本调用时，保存残帧直到固定网格或finish；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+5. **S4-R3-005｜网格边缘/直接调用**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+6. **S4-R3-006｜网格边缘/旧版失败对照**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+7. **S4-R3-007｜网格边缘/真实worker替身引擎**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+8. **S4-R3-008｜网格边缘/独立回归封存**：在119/120/121样本时，不按调用重置检测网格；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+9. **S4-R3-009｜前史/直接调用**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+10. **S4-R3-010｜前史/旧版失败对照**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+11. **S4-R3-011｜前史/真实worker替身引擎**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+12. **S4-R3-012｜前史/独立回归封存**：在960低电平后2400有声时，保留跨块840前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+13. **S4-R3-013｜零前史/直接调用**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+14. **S4-R3-014｜零前史/旧版失败对照**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+15. **S4-R3-015｜零前史/真实worker替身引擎**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+16. **S4-R3-016｜零前史/独立回归封存**：在keep=0时，明确允许丢领先静音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+17. **S4-R3-017｜尾残帧/直接调用**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+18. **S4-R3-018｜尾残帧/旧版失败对照**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+19. **S4-R3-019｜尾残帧/真实worker替身引擎**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+20. **S4-R3-020｜尾残帧/独立回归封存**：在末尾60非零时，实际长度检测并输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+21. **S4-R3-021｜低电平尾/直接调用**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+22. **S4-R3-022｜低电平尾/旧版失败对照**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+23. **S4-R3-023｜低电平尾/真实worker替身引擎**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+24. **S4-R3-024｜低电平尾/独立回归封存**：在已开始后低于阈值非零时，finish不按门限删非零尾；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+25. **S4-R3-025｜精确零尾/直接调用**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+26. **S4-R3-026｜精确零尾/旧版失败对照**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+27. **S4-R3-027｜精确零尾/真实worker替身引擎**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+28. **S4-R3-028｜精确零尾/独立回归封存**：在连续全零结束时，只删可计数精确零；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+29. **S4-R3-029｜中间停顿/直接调用**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+30. **S4-R3-030｜中间停顿/旧版失败对照**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+31. **S4-R3-031｜中间停顿/真实worker替身引擎**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+32. **S4-R3-032｜中间停顿/独立回归封存**：在两有声段间静音时，按原序释放不缩句中停顿；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+33. **S4-R3-033｜长尾队列/直接调用**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+34. **S4-R3-034｜长尾队列/旧版失败对照**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+35. **S4-R3-035｜长尾队列/真实worker替身引擎**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+36. **S4-R3-036｜长尾队列/独立回归封存**：在超过max_held时，超额输出不删音；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+37. **S4-R3-037｜长前静音/直接调用**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+38. **S4-R3-038｜长前静音/旧版失败对照**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+39. **S4-R3-039｜长前静音/真实worker替身引擎**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+40. **S4-R3-040｜长前静音/独立回归封存**：在超过max_lead时，固定网格触发并记录越限；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+41. **S4-R3-041｜纯短语音/直接调用**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+42. **S4-R3-042｜纯短语音/旧版失败对照**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+43. **S4-R3-043｜纯短语音/真实worker替身引擎**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+44. **S4-R3-044｜纯短语音/独立回归封存**：在全段不足120时，finish必须可输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+45. **S4-R3-045｜纯低电平/直接调用**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+46. **S4-R3-046｜纯低电平/旧版失败对照**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+47. **S4-R3-047｜纯低电平/真实worker替身引擎**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+48. **S4-R3-048｜纯低电平/独立回归封存**：在一直未过门限时，保留结束仍缓存非零前史；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+49. **S4-R3-049｜空流/直接调用**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+50. **S4-R3-050｜空流/旧版失败对照**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+51. **S4-R3-051｜空流/真实worker替身引擎**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+52. **S4-R3-052｜空流/独立回归封存**：在无push结束时，空输出且幂等；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+53. **S4-R3-053｜空块/直接调用**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+54. **S4-R3-054｜空块/旧版失败对照**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+55. **S4-R3-055｜空块/真实worker替身引擎**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+56. **S4-R3-056｜空块/独立回归封存**：在流中插空时，状态不推进；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+57. **S4-R3-057｜finish重复/直接调用**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+58. **S4-R3-058｜finish重复/旧版失败对照**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+59. **S4-R3-059｜finish重复/真实worker替身引擎**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+60. **S4-R3-060｜finish重复/独立回归封存**：在结束调用两次时，第二次空输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+61. **S4-R3-061｜终止后push/直接调用**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+62. **S4-R3-062｜终止后push/旧版失败对照**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+63. **S4-R3-063｜终止后push/真实worker替身引擎**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+64. **S4-R3-064｜终止后push/独立回归封存**：在已结束后输入时，明确拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+65. **S4-R3-065｜取消/直接调用**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+66. **S4-R3-066｜取消/旧版失败对照**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+67. **S4-R3-067｜取消/真实worker替身引擎**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+68. **S4-R3-068｜取消/独立回归封存**：在持有残帧和尾时，清空不输出；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+69. **S4-R3-069｜异常/直接调用**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+70. **S4-R3-070｜异常/旧版失败对照**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+71. **S4-R3-071｜异常/真实worker替身引擎**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+72. **S4-R3-072｜异常/独立回归封存**：在engine抛错时，保留错误并清理；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+73. **S4-R3-073｜只读输入/直接调用**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+74. **S4-R3-074｜只读输入/旧版失败对照**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+75. **S4-R3-075｜只读输入/真实worker替身引擎**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+76. **S4-R3-076｜只读输入/独立回归封存**：在非连续数组时，不修改不保留大数组；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+77. **S4-R3-077｜参数/直接调用**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+78. **S4-R3-078｜参数/旧版失败对照**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+79. **S4-R3-079｜参数/真实worker替身引擎**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+80. **S4-R3-080｜参数/独立回归封存**：在负长度非有限配置时，显式拒绝；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+81. **S4-R3-081｜计数/直接调用**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+82. **S4-R3-082｜计数/旧版失败对照**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+83. **S4-R3-083｜计数/真实worker替身引擎**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+84. **S4-R3-084｜计数/独立回归封存**：在正常与取消结束时，逐项守恒区分wire；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+85. **S4-R3-085｜worker首帧/直接调用**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+86. **S4-R3-086｜worker首帧/旧版失败对照**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+87. **S4-R3-087｜worker首帧/真实worker替身引擎**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+88. **S4-R3-088｜worker首帧/独立回归封存**：在finish才得到短音时，走实际DSP和帧编码；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+89. **S4-R3-089｜取消交错/直接调用**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+90. **S4-R3-090｜取消交错/旧版失败对照**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+91. **S4-R3-091｜取消交错/真实worker替身引擎**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+92. **S4-R3-092｜取消交错/独立回归封存**：在drain返回后cancel时，最终emit前重查；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+93. **S4-R3-093｜性能/直接调用**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+94. **S4-R3-094｜性能/旧版失败对照**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+95. **S4-R3-095｜性能/真实worker替身引擎**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+96. **S4-R3-096｜性能/独立回归封存**：在1920及大块时，测CPU不冒首声；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+97. **S4-R3-097｜冻结封存/直接调用**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+98. **S4-R3-098｜冻结封存/旧版失败对照**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+99. **S4-R3-099｜冻结封存/真实worker替身引擎**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+100. **S4-R3-100｜冻结封存/独立回归封存**：在旧探针和562合同时，不改期望缺陷来伪造修复；记录该路径输入/返回/缓存/丢弃数与顺序；未执行必须保留未验收，不能用其他路径代替。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S4_TRIMMER.md
+
+# S4：有界裁剪与 worker 正常/取消收尾实际修复
+
+**已完成隔离候选的限定工程修复，整体仍 PARTIAL/BLOCKED；18 未发布、未部署。不能保证一定成功或声音已无沙沙。**
+
+## 代码与接入
+
+新增 `kaggle/step18/step18_trimmer.py` 和可运行的 `worker_s4.py`，不是仅加测试替身。保留S3的 `worker.py`/DSP和原合同；新worker仅替换裁剪器导入和 `Worker.run_job`，其他命名函数/方法AST保持。
+
+- 固定120样本RMS网格跨调用累计，残帧不足一格仍保留，正常finish按实际残帧长度检测。worker固定24kHz下最多增加不足5ms检测等待，不引入整句缓冲。
+- 35ms前史跨块保留；不是只在当前检测块内回看。领先历史的实际丢弃数量单独计数。
+- 有声后先保留keep窗口，尾队列最多1800ms；超出预算按顺序输出而非删除内部停顿。deque分块复制，不持有整段输入数组。
+- 正常finish保留当前仍缓存的全部非零尾（含低于阈值的弱信号），只允许裁掉可计数的精确零尾。finish幂等，关闭后拒绝push。
+- worker结束时真正调用finish，余数走相同DSP和PCM计数/帧编码；不足120样本的整个短段也可在结束时输出。取消/异常清缓存，不排旧尾、不补192样本衰减尾。
+- 输出 `stats.trim`：输入/返回/领先丢弃/精确零尾丢弃/取消丢弃/缓存和守恒。返回样本不等于已播放样本；finish返回后取消的样本另记 `cancelled_after_trim_samples`。最终发帧前重查取消，但不宣称线程事件与声卡播放原子化。
+- 输入只读、非连续、非有限样本和float32极值有明确测试；阈值平方采用float64，非有限等价置零。
+
+## 最终三轮结果
+
+| 项目 | 结果 | 证据边界 |
+|---|---:|---|
+| 完整CPU组合 | **602 PASS ×3 =1806 PASS** | 450冻结控制＋112旧候选＋30新裁剪＋10新worker |
+| 失败／错误／跳过 | **0／0／0，三轮均如此** | 包含错误注入的预期处理，不是全部业务请求都200 |
+| 同套旧版红对照 | 30项，42失败记录，0error/skip | 事前归档S3真实EdgeTrimmer AST；含新增finish/snapshot合同，非42独立bug |
+| 同套候选绿对照 | 30 PASS | 固定网格、独立批处理索引oracle、前史、非零尾、取消和计数 |
+| 实际worker集成 | 10 PASS/轮 | 原run_job派生、真实裁剪/DSP/frame，engine和pin明确替身 |
+| 分块矩阵 | **21组×3，逐样本等于独立参考** | 全有声、跨块预滚、非零尾，各含整段/1/64/119/120/1920/不规则 |
+| 长流压力 | **601秒合成流×3** | 每轮14424000样本；4秒周期有声+长静音，确实达到43200样本尾预算，且不超限 |
+| 继承真实环回TCP | 237/轮，共711 | 旧S1/S2端点，新S4不新增TCP；不冒真实模型或Go链 |
+| 附加检查 | 审计24／Node30／AST57 ×3 | 另JS/repack --check；真实浏览器、Go/Rust未重跑 |
+
+旧562合同逐ID和结果完整继承；其中S3的9项worker合同仍针对保留的S3 worker，新10项针对S4 worker。不能把旧562全称成S4端到端验收。旧DSP/trimmer探针继续保留缺陷观察，没有修改期望来伪造旧版通过。
+
+### 具体缺陷前后
+
+- 60样本完整有声段：旧版可全丢，新候选finish输出60样本，worker再输出明确192样本衰减尾；统计speech_samples仍为60。
+- 960样本低电平＋2400有声，按两块输入：新候选保留840样本前史，输出3240；不是删前史换首声。
+- 有声后长静音再60样本低电平非零尾：新候选把尾样本送入真实DSP，不永久留在held后销毁。
+- 240有声＋4000精确零：输出1080（含840保留上下文），精确零尾裁掉3160并计数；不拿缩短音频冒RTF提升。
+- 残帧取消/引擎错误不drain；finish返回后注入取消时无新PCM/衰减尾，区分trim返回60与wire发送0。
+
+## CPU成本与内存边界
+
+下面是12037样本全有声合成输入（约0.502秒）的CPU耗时三轮范围；旧版无finish，部分分块产出不同，因此**不是等价工作量的提速比较**。
+
+| 调用 | S3旧裁剪CPU ms | S4 CPU ms | 输出说明 |
+| 整段 | 0.223–0.353 | 1.102–4.901 | 均12037，但新版提供完整状态/结束合同 |
+| 单样本 | 61.105–63.582 | 66.871–111.522 | 旧版0，新版12037 |
+| 1920样本 | 0.154–0.405 | 0.724–1.349 | 均12037，但新版提供完整状态/结束合同 |
+
+601秒合成流三轮CPU耗时分别为 1.129/1.097/1.097 秒，裁剪CPU时间/音频时长约 0.001825–0.001878。**本步增加正确性开销，不声称更快**；无模型、声卡或T4数据，不能据此签完整RTF≤0.3或首声。暂不为低绝对开销盲目加多语言/JIT，真实集成预算仍需测量。
+
+压力流没有保留PCM历史；队列逻辑上限为keep前史＋max_held尾＋不足120残帧，处理中至多额外一个检测格的队列插入。push的输入/输出本身随本次调用大小占内存，因此不把逻辑缓存预算冒总进程RSS。601秒只是合成状态压力，不是实际>10分钟录音、全部音频训练或真实模型长文。
+
+## 流程与留错
+
+Q31四选项选C及50行动先完成，三遍专题复核各100建议归档；建议不是300已修bug。最初候选30/10预检均通过。初次旧版红对照41失败＋1error，旧构造器对无限keep_ms抛OverflowError；保持严格ValueError合同，只把该旧异常转成明确断言失败，最终42失败/0error/skip，未改候选迁就测试。初日志、初测试和控制runner源码保留，最终另名control-final。
+
+本步沿用现有venv、无新依赖安装，freeze与S3字节相同。历史1905路径保护，1902匹配，3旧日志缺失仍显式保留，完整历史完整性false。S3可变文档/交接改前归档；原17／53源／94冻结／15正式资产不改。
+
+5条原建议有具体测试ID和三轮收据SHA限定链接，原300最终/功能签收仍0。独立verify_s4核验源码、旧562继承、对照、三轮、缓存/计数与完整交接；最终状态见progress-s4.json，两次核验以stdout文件为准。完整交接106份。
+
+## 封存预检的限定修正（非产品或测试失败）
+
+首次独立封存把所有历史HTTP状态强制逐项相同，因旧S1删除/提交交错测试在本轮1返回200、历史503而被拦。原测试第134行本来明确允许200或503（reload与delete在解锁后谁先完成），三个602套件均通过。已保存初verifier、日志及初manifest；只对这一精确测试ID、POST候选路径将既有{200,503}合同正规化，其余状态仍严格比较，未放宽产品测试或改写CPU/HTTP收据。最终附加检查另命名 `s4-seal-final-checks-roundN.json`，最终独立两次封存以对应stdout为准；初附加检查仍保留但不混算。
+
+## 保留限制与下一步
+
+- 阈值不是真正语音检测器：低于阈值的领先历史仍可能裁掉，只保留35ms前史；不保证弱辅音/全部低电平语音都保留。
+- 保留非零尾也可能保留噪声，不能据此宣称无沙沙、相似度或自然度提高；需要用户真实音频和完整模型盲听。
+- 双T4、实际训练、首声、完整模型RTF、真实浏览器/物理播放以及Rust等效门禁均未豁免；S3完整native/声学仍未签。
+- 正式入口/包/工作台未切换，18未发布。接下来推进 **S5播放器完成后短尾排空**；当前工程修复不代表播放链已排净，也不要求点击Continue。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_Q32_PLAYBACK_DRAIN.md
+
+# Q32：怎样排净完成短尾而不破坏实时缓冲和取消？
+
+顺序自问自答，承接Q31；不向用户提问，不预填Q33。
+
+- A：把所有启动阈值降到0。破坏未完成流欠载保护，拒绝。
+- B：结束时直接标ended。只是隐藏滞留、实际删尾，拒绝。
+- **C（采用）**：完成流任何正pending可启动；按post总量/消费/dropped计账，等待当前epoch end ACK；显式重采样尾政策。只改隔离完整app候选。
+- D：等待整段再播放。损害首声和流式，拒绝。
+
+## 先定义合同
+
+24k源PCM，输出目标Nout=ceil(Nin*contextRate/24000)。线性插值使用固定全局整数坐标；精确端点可立即输出，缺右邻时只保留一输入样本，正常完成末样本保持补足时间；不凭空新增源语音，取消不flush。Worklet内部消息加入epoch，不改网络协议。完成播放需已收到当前流end标记并消费/明确计数丢弃全部post样本；陈旧fill0不能签完成。stop后忽略迟到状态/PCM，新begin不接受旧epoch状态。firstPlayedMs仍为play命令时间，不冒实际可听首声。溢出dropped不是无损排空，必须单列。浏览器测试不等于实体扬声器或真实模型声音。
+
+## 50行动
+1. 确认活动分支不换支。
+2. 归档S4文档交接和完整app基线。
+3. 保护旧源码收据及三份缺日志。
+4. 保存npm锁与配置改前SHA。
+5. 记录Python环境和npm安装事实。
+6. Q32四选项先决策。
+7. 三遍各100建议明确非已通过成绩。
+8. 新增完整app候选不改冻结17。
+9. 固定三个目标采样率合同。
+10. 结束后任何正队列可发play。
+11. 未结束仍沿用缓冲阈值。
+12. 已播放状态不重复发play。
+13. 初始短尾和starved恢复都覆盖。
+14. 结束空流等待当前Worklet确认。
+15. 记录已postPCM样本总数。
+16. 用queued减played减dropped计算未消费。
+17. 不以陈旧fill0提前结束。
+18. 完成需endACK和pending0。
+19. stop立即禁用当前流。
+20. begin与stop递增内部epoch。
+21. 每条内部消息带epoch。
+22. Worklet拒绝旧epoch控制。
+23. Player拒绝旧epoch状态。
+24. 不复用旧流resampler状态。
+25. 完成后拒绝新PCM避免越过end。
+26. markDone幂等。
+27. 重采样用整数全局输出坐标。
+28. 精确端点无需等待下一输入。
+29. 分数端点只等待一个邻样本。
+30. 结束以末样本保持补足时长。
+31. 目标输出长度为ceil(N*rate/24000)。
+32. 同一重采样政策覆盖一到多样本。
+33. 结束补点先PCM再end再play。
+34. 取消不补重采样尾。
+35. 清空流无额外全零PCM。
+36. 只接受完整int16字节不静默吞奇数尾。
+37. 保留旧firstPlayedMs含义并不冒声卡计时。
+38. VM执行实际Player和Worklet串接。
+39. 直接计数Worklet消费不只看play命令。
+40. 测超容量dropped而不冒无损。
+41. 保留正常欠载一次计数。
+42. 测试stop后迟到st不复活。
+43. 测试旧流状态不串新流。
+44. 同合同旧版红对照并留原错误。
+45. 运行602旧CPU组合三轮。
+46. Node审计JSrepack三轮。
+47. 安装锁定浏览器依赖不改lock。
+48. 真实Chromium三轮含旧复制保护。
+49. 核对独立封存两次和完整交接。
+50. 保留物理扬声器模型T4训练声学门禁。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S5_REVIEW_R1.md
+
+# S5 R1：状态复核100建议
+
+建议不是执行成绩；未执行项目不得签收，不代表真实声学。
+
+1. **S5-R1-001｜完成20ms/初始路径**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+2. **S5-R1-002｜完成20ms/短块路径**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+3. **S5-R1-003｜完成20ms/结束边界**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+4. **S5-R1-004｜完成20ms/取消边界**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+5. **S5-R1-005｜完成50ms/初始路径**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+6. **S5-R1-006｜完成50ms/短块路径**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+7. **S5-R1-007｜完成50ms/结束边界**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+8. **S5-R1-008｜完成50ms/取消边界**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+9. **S5-R1-009｜单样本尾/初始路径**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+10. **S5-R1-010｜单样本尾/短块路径**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+11. **S5-R1-011｜单样本尾/结束边界**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+12. **S5-R1-012｜单样本尾/取消边界**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+13. **S5-R1-013｜恢复短尾/初始路径**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+14. **S5-R1-014｜恢复短尾/短块路径**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+15. **S5-R1-015｜恢复短尾/结束边界**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+16. **S5-R1-016｜恢复短尾/取消边界**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+17. **S5-R1-017｜实时缓冲/初始路径**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+18. **S5-R1-018｜实时缓冲/短块路径**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+19. **S5-R1-019｜实时缓冲/结束边界**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+20. **S5-R1-020｜实时缓冲/取消边界**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+21. **S5-R1-021｜已播放/初始路径**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+22. **S5-R1-022｜已播放/短块路径**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+23. **S5-R1-023｜已播放/结束边界**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+24. **S5-R1-024｜已播放/取消边界**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+25. **S5-R1-025｜空流/初始路径**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+26. **S5-R1-026｜空流/短块路径**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+27. **S5-R1-027｜空流/结束边界**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+28. **S5-R1-028｜空流/取消边界**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+29. **S5-R1-029｜陈旧零fill/初始路径**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+30. **S5-R1-030｜陈旧零fill/短块路径**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+31. **S5-R1-031｜陈旧零fill/结束边界**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+32. **S5-R1-032｜陈旧零fill/取消边界**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+33. **S5-R1-033｜消费ACK/初始路径**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+34. **S5-R1-034｜消费ACK/短块路径**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+35. **S5-R1-035｜消费ACK/结束边界**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+36. **S5-R1-036｜消费ACK/取消边界**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+37. **S5-R1-037｜reset/初始路径**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+38. **S5-R1-038｜reset/短块路径**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+39. **S5-R1-039｜reset/结束边界**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+40. **S5-R1-040｜reset/取消边界**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+41. **S5-R1-041｜流epoch/初始路径**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+42. **S5-R1-042｜流epoch/短块路径**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+43. **S5-R1-043｜流epoch/结束边界**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+44. **S5-R1-044｜流epoch/取消边界**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+45. **S5-R1-045｜晚PCM/初始路径**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+46. **S5-R1-046｜晚PCM/短块路径**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+47. **S5-R1-047｜晚PCM/结束边界**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+48. **S5-R1-048｜晚PCM/取消边界**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+49. **S5-R1-049｜重复完成/初始路径**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+50. **S5-R1-050｜重复完成/短块路径**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+51. **S5-R1-051｜重复完成/结束边界**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+52. **S5-R1-052｜重复完成/取消边界**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+53. **S5-R1-053｜重采样长度/初始路径**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+54. **S5-R1-054｜重采样长度/短块路径**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+55. **S5-R1-055｜重采样长度/结束边界**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+56. **S5-R1-056｜重采样长度/取消边界**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+57. **S5-R1-057｜插值边界/初始路径**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+58. **S5-R1-058｜插值边界/短块路径**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+59. **S5-R1-059｜插值边界/结束边界**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+60. **S5-R1-060｜插值边界/取消边界**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+61. **S5-R1-061｜端点/初始路径**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+62. **S5-R1-062｜端点/短块路径**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+63. **S5-R1-063｜端点/结束边界**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+64. **S5-R1-064｜端点/取消边界**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+65. **S5-R1-065｜多块插值/初始路径**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+66. **S5-R1-066｜多块插值/短块路径**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+67. **S5-R1-067｜多块插值/结束边界**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+68. **S5-R1-068｜多块插值/取消边界**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+69. **S5-R1-069｜取消插值/初始路径**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+70. **S5-R1-070｜取消插值/短块路径**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+71. **S5-R1-071｜取消插值/结束边界**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+72. **S5-R1-072｜取消插值/取消边界**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+73. **S5-R1-073｜奇数字节/初始路径**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+74. **S5-R1-074｜奇数字节/短块路径**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+75. **S5-R1-075｜奇数字节/结束边界**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+76. **S5-R1-076｜奇数字节/取消边界**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+77. **S5-R1-077｜欠载/初始路径**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+78. **S5-R1-078｜欠载/短块路径**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+79. **S5-R1-079｜欠载/结束边界**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+80. **S5-R1-080｜欠载/取消边界**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+81. **S5-R1-081｜溢出/初始路径**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+82. **S5-R1-082｜溢出/短块路径**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+83. **S5-R1-083｜溢出/结束边界**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+84. **S5-R1-084｜溢出/取消边界**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+85. **S5-R1-085｜实际Worklet/初始路径**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+86. **S5-R1-086｜实际Worklet/短块路径**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+87. **S5-R1-087｜实际Worklet/结束边界**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+88. **S5-R1-088｜实际Worklet/取消边界**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+89. **S5-R1-089｜完整UI接入/初始路径**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+90. **S5-R1-090｜完整UI接入/短块路径**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+91. **S5-R1-091｜完整UI接入/结束边界**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+92. **S5-R1-092｜完整UI接入/取消边界**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+93. **S5-R1-093｜复制保护/初始路径**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+94. **S5-R1-094｜复制保护/短块路径**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+95. **S5-R1-095｜复制保护/结束边界**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+96. **S5-R1-096｜复制保护/取消边界**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+97. **S5-R1-097｜封存/初始路径**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+98. **S5-R1-098｜封存/短块路径**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+99. **S5-R1-099｜封存/结束边界**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+100. **S5-R1-100｜封存/取消边界**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S5_REVIEW_R2.md
+
+# S5 R2：数值复核100建议
+
+建议不是执行成绩；未执行项目不得签收，不代表真实声学。
+
+1. **S5-R2-001｜完成20ms/单样本**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+2. **S5-R2-002｜完成20ms/正常合成PCM**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+3. **S5-R2-003｜完成20ms/跨采样率**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+4. **S5-R2-004｜完成20ms/分块和空块**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+5. **S5-R2-005｜完成50ms/单样本**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+6. **S5-R2-006｜完成50ms/正常合成PCM**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+7. **S5-R2-007｜完成50ms/跨采样率**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+8. **S5-R2-008｜完成50ms/分块和空块**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+9. **S5-R2-009｜单样本尾/单样本**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+10. **S5-R2-010｜单样本尾/正常合成PCM**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+11. **S5-R2-011｜单样本尾/跨采样率**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+12. **S5-R2-012｜单样本尾/分块和空块**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+13. **S5-R2-013｜恢复短尾/单样本**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+14. **S5-R2-014｜恢复短尾/正常合成PCM**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+15. **S5-R2-015｜恢复短尾/跨采样率**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+16. **S5-R2-016｜恢复短尾/分块和空块**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+17. **S5-R2-017｜实时缓冲/单样本**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+18. **S5-R2-018｜实时缓冲/正常合成PCM**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+19. **S5-R2-019｜实时缓冲/跨采样率**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+20. **S5-R2-020｜实时缓冲/分块和空块**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+21. **S5-R2-021｜已播放/单样本**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+22. **S5-R2-022｜已播放/正常合成PCM**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+23. **S5-R2-023｜已播放/跨采样率**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+24. **S5-R2-024｜已播放/分块和空块**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+25. **S5-R2-025｜空流/单样本**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+26. **S5-R2-026｜空流/正常合成PCM**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+27. **S5-R2-027｜空流/跨采样率**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+28. **S5-R2-028｜空流/分块和空块**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+29. **S5-R2-029｜陈旧零fill/单样本**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+30. **S5-R2-030｜陈旧零fill/正常合成PCM**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+31. **S5-R2-031｜陈旧零fill/跨采样率**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+32. **S5-R2-032｜陈旧零fill/分块和空块**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+33. **S5-R2-033｜消费ACK/单样本**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+34. **S5-R2-034｜消费ACK/正常合成PCM**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+35. **S5-R2-035｜消费ACK/跨采样率**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+36. **S5-R2-036｜消费ACK/分块和空块**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+37. **S5-R2-037｜reset/单样本**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+38. **S5-R2-038｜reset/正常合成PCM**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+39. **S5-R2-039｜reset/跨采样率**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+40. **S5-R2-040｜reset/分块和空块**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+41. **S5-R2-041｜流epoch/单样本**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+42. **S5-R2-042｜流epoch/正常合成PCM**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+43. **S5-R2-043｜流epoch/跨采样率**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+44. **S5-R2-044｜流epoch/分块和空块**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+45. **S5-R2-045｜晚PCM/单样本**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+46. **S5-R2-046｜晚PCM/正常合成PCM**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+47. **S5-R2-047｜晚PCM/跨采样率**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+48. **S5-R2-048｜晚PCM/分块和空块**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+49. **S5-R2-049｜重复完成/单样本**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+50. **S5-R2-050｜重复完成/正常合成PCM**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+51. **S5-R2-051｜重复完成/跨采样率**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+52. **S5-R2-052｜重复完成/分块和空块**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+53. **S5-R2-053｜重采样长度/单样本**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+54. **S5-R2-054｜重采样长度/正常合成PCM**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+55. **S5-R2-055｜重采样长度/跨采样率**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+56. **S5-R2-056｜重采样长度/分块和空块**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+57. **S5-R2-057｜插值边界/单样本**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+58. **S5-R2-058｜插值边界/正常合成PCM**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+59. **S5-R2-059｜插值边界/跨采样率**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+60. **S5-R2-060｜插值边界/分块和空块**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+61. **S5-R2-061｜端点/单样本**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+62. **S5-R2-062｜端点/正常合成PCM**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+63. **S5-R2-063｜端点/跨采样率**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+64. **S5-R2-064｜端点/分块和空块**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+65. **S5-R2-065｜多块插值/单样本**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+66. **S5-R2-066｜多块插值/正常合成PCM**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+67. **S5-R2-067｜多块插值/跨采样率**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+68. **S5-R2-068｜多块插值/分块和空块**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+69. **S5-R2-069｜取消插值/单样本**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+70. **S5-R2-070｜取消插值/正常合成PCM**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+71. **S5-R2-071｜取消插值/跨采样率**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+72. **S5-R2-072｜取消插值/分块和空块**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+73. **S5-R2-073｜奇数字节/单样本**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+74. **S5-R2-074｜奇数字节/正常合成PCM**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+75. **S5-R2-075｜奇数字节/跨采样率**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+76. **S5-R2-076｜奇数字节/分块和空块**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+77. **S5-R2-077｜欠载/单样本**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+78. **S5-R2-078｜欠载/正常合成PCM**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+79. **S5-R2-079｜欠载/跨采样率**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+80. **S5-R2-080｜欠载/分块和空块**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+81. **S5-R2-081｜溢出/单样本**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+82. **S5-R2-082｜溢出/正常合成PCM**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+83. **S5-R2-083｜溢出/跨采样率**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+84. **S5-R2-084｜溢出/分块和空块**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+85. **S5-R2-085｜实际Worklet/单样本**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+86. **S5-R2-086｜实际Worklet/正常合成PCM**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+87. **S5-R2-087｜实际Worklet/跨采样率**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+88. **S5-R2-088｜实际Worklet/分块和空块**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+89. **S5-R2-089｜完整UI接入/单样本**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+90. **S5-R2-090｜完整UI接入/正常合成PCM**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+91. **S5-R2-091｜完整UI接入/跨采样率**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+92. **S5-R2-092｜完整UI接入/分块和空块**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+93. **S5-R2-093｜复制保护/单样本**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+94. **S5-R2-094｜复制保护/正常合成PCM**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+95. **S5-R2-095｜复制保护/跨采样率**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+96. **S5-R2-096｜复制保护/分块和空块**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+97. **S5-R2-097｜封存/单样本**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+98. **S5-R2-098｜封存/正常合成PCM**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+99. **S5-R2-099｜封存/跨采样率**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+100. **S5-R2-100｜封存/分块和空块**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S5_REVIEW_R3.md
+
+# S5 R3：接入复核100建议
+
+建议不是执行成绩；未执行项目不得签收，不代表真实声学。
+
+1. **S5-R3-001｜完成20ms/Node VM**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+2. **S5-R3-002｜完成20ms/真实Chromium**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+3. **S5-R3-003｜完成20ms/完整UI与旧控制**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+4. **S5-R3-004｜完成20ms/独立封存**：在初始buffering时，正pending触发play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+5. **S5-R3-005｜完成50ms/Node VM**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+6. **S5-R3-006｜完成50ms/真实Chromium**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+7. **S5-R3-007｜完成50ms/完整UI与旧控制**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+8. **S5-R3-008｜完成50ms/独立封存**：在正好旧阈值时，不能永久滞留；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+9. **S5-R3-009｜单样本尾/Node VM**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+10. **S5-R3-010｜单样本尾/真实Chromium**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+11. **S5-R3-011｜单样本尾/完整UI与旧控制**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+12. **S5-R3-012｜单样本尾/独立封存**：在1源样本时，按目标率计数消费；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+13. **S5-R3-013｜恢复短尾/Node VM**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+14. **S5-R3-014｜恢复短尾/真实Chromium**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+15. **S5-R3-015｜恢复短尾/完整UI与旧控制**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+16. **S5-R3-016｜恢复短尾/独立封存**：在starved后完成时，恢复而非等大块；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+17. **S5-R3-017｜实时缓冲/Node VM**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+18. **S5-R3-018｜实时缓冲/真实Chromium**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+19. **S5-R3-019｜实时缓冲/完整UI与旧控制**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+20. **S5-R3-020｜实时缓冲/独立封存**：在generationDone=false时，保留原need阈值；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+21. **S5-R3-021｜已播放/Node VM**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+22. **S5-R3-022｜已播放/真实Chromium**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+23. **S5-R3-023｜已播放/完整UI与旧控制**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+24. **S5-R3-024｜已播放/独立封存**：在playing时finish时，不重复play；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+25. **S5-R3-025｜空流/Node VM**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+26. **S5-R3-026｜空流/真实Chromium**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+27. **S5-R3-027｜空流/完整UI与旧控制**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+28. **S5-R3-028｜空流/独立封存**：在0个输入样本时，不合成PCM且等endACK；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+29. **S5-R3-029｜陈旧零fill/Node VM**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+30. **S5-R3-030｜陈旧零fill/真实Chromium**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+31. **S5-R3-031｜陈旧零fill/完整UI与旧控制**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+32. **S5-R3-032｜陈旧零fill/独立封存**：在PCM尚未ack时，不提前ended；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+33. **S5-R3-033｜消费ACK/Node VM**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+34. **S5-R3-034｜消费ACK/真实Chromium**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+35. **S5-R3-035｜消费ACK/完整UI与旧控制**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+36. **S5-R3-036｜消费ACK/独立封存**：在played追上queued时，只在endACK后结束；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+37. **S5-R3-037｜reset/Node VM**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+38. **S5-R3-038｜reset/真实Chromium**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+39. **S5-R3-039｜reset/完整UI与旧控制**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+40. **S5-R3-040｜reset/独立封存**：在stop后旧st时，不复活播放；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+41. **S5-R3-041｜流epoch/Node VM**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+42. **S5-R3-042｜流epoch/真实Chromium**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+43. **S5-R3-043｜流epoch/完整UI与旧控制**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+44. **S5-R3-044｜流epoch/独立封存**：在新begin收到旧流状态时，拒绝跨流污染；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+45. **S5-R3-045｜晚PCM/Node VM**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+46. **S5-R3-046｜晚PCM/真实Chromium**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+47. **S5-R3-047｜晚PCM/完整UI与旧控制**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+48. **S5-R3-048｜晚PCM/独立封存**：在已结束后再到时，明确拒绝或取消后忽略；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+49. **S5-R3-049｜重复完成/Node VM**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+50. **S5-R3-050｜重复完成/真实Chromium**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+51. **S5-R3-051｜重复完成/完整UI与旧控制**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+52. **S5-R3-052｜重复完成/独立封存**：在markDone两次时，不重复补点；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+53. **S5-R3-053｜重采样长度/Node VM**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+54. **S5-R3-054｜重采样长度/真实Chromium**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+55. **S5-R3-055｜重采样长度/完整UI与旧控制**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+56. **S5-R3-056｜重采样长度/独立封存**：在24/44.1/48k时，ceil精确时长政策；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+57. **S5-R3-057｜插值边界/Node VM**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+58. **S5-R3-058｜插值边界/真实Chromium**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+59. **S5-R3-059｜插值边界/完整UI与旧控制**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+60. **S5-R3-060｜插值边界/独立封存**：在分数位置缺右邻时，仅保留一邻样本；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+61. **S5-R3-061｜端点/Node VM**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+62. **S5-R3-062｜端点/真实Chromium**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+63. **S5-R3-063｜端点/完整UI与旧控制**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+64. **S5-R3-064｜端点/独立封存**：在恰好整数采样位置时，不等待无用未来；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+65. **S5-R3-065｜多块插值/Node VM**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+66. **S5-R3-066｜多块插值/真实Chromium**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+67. **S5-R3-067｜多块插值/完整UI与旧控制**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+68. **S5-R3-068｜多块插值/独立封存**：在任意切分时，与整段逐样本一致；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+69. **S5-R3-069｜取消插值/Node VM**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+70. **S5-R3-070｜取消插值/真实Chromium**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+71. **S5-R3-071｜取消插值/完整UI与旧控制**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+72. **S5-R3-072｜取消插值/独立封存**：在保留终端邻样本时，不补尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+73. **S5-R3-073｜奇数字节/Node VM**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+74. **S5-R3-074｜奇数字节/真实Chromium**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+75. **S5-R3-075｜奇数字节/完整UI与旧控制**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+76. **S5-R3-076｜奇数字节/独立封存**：在坏PCM帧时，不静默吞尾；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+77. **S5-R3-077｜欠载/Node VM**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+78. **S5-R3-078｜欠载/真实Chromium**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+79. **S5-R3-079｜欠载/完整UI与旧控制**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+80. **S5-R3-080｜欠载/独立封存**：在未完成时耗尽时，一次计数并可恢复；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+81. **S5-R3-081｜溢出/Node VM**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+82. **S5-R3-082｜溢出/真实Chromium**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+83. **S5-R3-083｜溢出/完整UI与旧控制**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+84. **S5-R3-084｜溢出/独立封存**：在cap缩小的合成测试时，dropped显式不是无损；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+85. **S5-R3-085｜实际Worklet/Node VM**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+86. **S5-R3-086｜实际Worklet/真实Chromium**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+87. **S5-R3-087｜实际Worklet/完整UI与旧控制**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+88. **S5-R3-088｜实际Worklet/独立封存**：在真实Chromium合成PCM时，计数消费而非声卡保证；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+89. **S5-R3-089｜完整UI接入/Node VM**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+90. **S5-R3-090｜完整UI接入/真实Chromium**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+91. **S5-R3-091｜完整UI接入/完整UI与旧控制**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+92. **S5-R3-092｜完整UI接入/独立封存**：在完整app候选时，保持正式入口和旧功能；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+93. **S5-R3-093｜复制保护/Node VM**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+94. **S5-R3-094｜复制保护/真实Chromium**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+95. **S5-R3-095｜复制保护/完整UI与旧控制**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+96. **S5-R3-096｜复制保护/独立封存**：在旧浏览器套件时，完整文本字节与录音保护；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+97. **S5-R3-097｜封存/Node VM**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+98. **S5-R3-098｜封存/真实Chromium**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+99. **S5-R3-099｜封存/完整UI与旧控制**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+100. **S5-R3-100｜封存/独立封存**：在独立SHA/双验证时，不改旧失败探针；记录队列、命令、消费、epoch或长度的该路径证据，未执行不得用邻近路径替代。
+
+---
+
+## 内嵌备忘录：KAGGLE_STEP18_S5_PLAYBACK.md
+
+# S5：播放器完成短尾排空、重采样终点与流隔离实际修复
+
+**限定工程修复已实现；整体 PARTIAL/BLOCKED，18 未发布、未部署。不能保证整个产品一定成功或声音已经无沙沙。**
+
+## 实际修改与完整接入
+
+新增完整 `kaggle/step18/web/app.js`，从冻结17 app派生，只修改Player P及嵌入Worklet V。网络帧解析器、到达预测器、整个UI后缀逐字节不变；新Player由完整页面原路径实际实例化，不是测试内helper。S3/S4候选、冻结17及正式工作台不动，默认前端/包未切换。
+
+1. **完成短尾**：生成已结束且pending>0即可play，包含初始20/50ms、一输入样本及starved恢复；未结束仍使用原风险缓冲阈值，不盲降启动预算。
+2. **不假装排空**：记录已post目标样本总数，以queued−played−dropped计算pending，不因陈旧fill0提前结束。需当前流endACK且pending=0才ended；消费与明确丢弃分列，不能把溢出叫无损。
+3. **重采样收尾**：全局整数输出坐标、精确端点立即输出、分数端点只等一个邻样本；正常结束用末样本保持，输出长度ceil(Nin*contextRate/24000)，取消不补点。测试覆盖24k/44.1k/48k，不宣称任意采样率抗混叠高保真。
+4. **取消／换流隔离**：内部epoch覆盖控制与状态，stop后迟到消息不复活，新begin拒绝旧状态；取消不排旧尾或旧插值端点。不改网络协议。
+5. **错误与指标边界**：奇数PCM字节拒绝，重复markDone不重复补点；firstPlayedMs仍为发送play命令时间，未冒Worklet或扬声器实际首声。新status列出queued/pending/dropped/epoch/endACK，未完成S6全链时序设计。
+
+末样本保持不会追加参考PCM，不添加worker speech样本或改变其RTF分母。极短1样本虽会被Worklet计数消费，也可能被既有淡入归零，**不是可听人声**；不能把单样本消费证明冒自然朗读或可用首声验收。
+
+## 最终三轮证据
+
+| 项目 | 每轮结果 | 范围 |
+|---|---:|---|
+| 完整CPU组合 | **610 PASS ×3＝1830 PASS** | 450冻结控制＋152旧候选＋8新源码/实际VM集成 |
+| CPU失败／错误／跳过 | **0／0／0** | 旧602逐ID和结果完整继承 |
+| 专项Node VM | **37 PASS ×3** | 真实Player与Worklet串接；时钟、port及processor基类明确替身 |
+| 同套冻结红对照 | **37中28失败、9保留通过** | 不是28独立bug；旧短尾/端点/取消等合同失败，未改旧probe |
+| 完整Chromium | **173 PASS ×3＝519 PASS** | 原158＋新15；0失败/flaky/skip/retry |
+| 新原生浏览器测试 | **15/轮** | 9种真实Worklet消费＋3种空/取消/换流＋3种完整UI原生链 |
+| 完整候选UI链 | **3/轮** | 合成HTTP PCM/参考状态，真实浏览器AudioContext/Worklet；不是Go/模型 |
+| 继承环回TCP | 237/轮，共711 | 旧S1/S2端点；S5没有新增实际后端TCP请求，浏览器HTTP数据明确fixture |
+| 审计／Node服务／AST | **24／30／58 ×3** | 另JS语法、候选/测试语法和repack --check |
+
+CPU的第8新合同内部也会执行37项Node VM；专项37三轮另存收据，**不把重叠运行相加当独立功能数量**。旧158浏览器保护仍针对冻结脚本/正式工作台，含完整包文本复制与录音/权限/取消保护；新15才验证S5候选，不能把173全部说成新候选全功能。
+
+### 原生消费具体检查
+
+- 24k上下文：1／480／1200源样本分别消费1／480／1200；44.1k及48k按ceil目标预算消费。
+- 每项核对queued=played、pending=0、dropped=0、当前epoch endACK和最终ended，不止断言发送了play。
+- 完整候选页面从原speak入口、帧解析、完成标记到真实Worklet消费1／480／1200源样本，并显示播放完毕。
+- 未完成20ms仍buffering；欠载恢复只计原一次underrun；已playing不重复play；旧epoch状态/PCM被拒绝。
+- 小cap合成overflow场景明确记录8消费/12丢弃，不把“队列终止”冒全部收到样本无损。
+
+真实Chromium采用原配置headless、mute-audio，原生AudioWorklet确实执行，但没有实体扬声器/耳机声压、DAC时延或盲听证据。记录消费不等于正确语音、可听首声或用户沙沙根因。
+
+## 流程、环境与封存
+
+Q32先按四选项选C并列50行动，三遍专题各100建议归档；不是300修复/验收。首轮37VM、8源码、15原生浏览器预检均通过；旧红37中28失败，同套保留9保护通过。最终源码和测试在三轮CPU/浏览器启动后未改。
+
+Python venv沿用，无新Python依赖，freeze与S4字节相同。node_modules原不存在，本步确实执行npm ci --ignore-scripts，按原lock安装；package.json/lock和既有Playwright配置不改。具体版本与安装日志见s5-environment.json/s5-npm-install.txt，不冒“无安装”。无Rust/Go/Torch/Qwen/权重/训练/T4执行。
+
+历史保护2049路径，2046匹配，3份旧日志缺失仍保留，不补造；完整历史完整性false。S4可变文档/交接及冻结app改前归档，原53资产/94冻结/15正式不动。8条原建议有具体VM测试名、三轮收据SHA限定链接；原300最终/功能签收仍0，不用覆盖率冒整体进度。
+
+独立verify_s5核验旧602继承、VM红绿、三轮原生浏览器及附件消费数据、原完整UI后缀、冻结保护和完整交接。两次核验以stdout为准，进度见progress-s5.json；完整交接111份。浏览器完整回归单轮需数分钟，按原进程顺序完成，不因等待超时重启/重跑或覆盖日志。
+
+## 仍未签收／下一步
+
+真实用户音频、自然朗读、同声/无沙沙、可听首声<3秒、双T4、长录音真实训练、模型RTF≤0.3、完整鉴权网络/候选包发布均未验收。S3 Rust等效仍阻塞；S4领先低电平可能裁掉的限制未消失。播放队列上限、设备挂起/后台调度及抗混叠等仍需真实条件验证，不承诺普遍零漏音或永久Kaggle可用。
+
+下一步按计划进入 **S6时序与诊断**：区分排队/模型首块/首PCM/play命令/Worklet消费/实体可听时间，保留旧字段含义，不把旧firstPlayedMs当实际出声。Q33未开，不预填；直接继续无需Continue。

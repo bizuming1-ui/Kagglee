@@ -1,9 +1,11 @@
 {
-  "completed_memos": 60,
-  "bytes": 604976,
-  "sha256": "8605e9086f23b47324be64f9bc3f558cbceece8d379dddea0e032a5ab056d7d7",
+  "completed_memos": 111,
+  "bytes": 1484705,
+  "sha256": "3f8f70f0001b956b876bd32c781cc8f5b8b81da40d231554498a0e14411887c5",
   "all_embedded_memos_match_source": true,
   "stage18_complete": false,
-  "product_modified": false,
+  "product_modified": true,
+  "frozen_product_modified": false,
+  "isolated_candidate_only": true,
   "real_model_executed": false
 }

@@ -1,0 +1,41 @@
+test_01_all_assets (__main__.Delivery.test_01_all_assets) ... ok
+test_02_exact_single_file (__main__.Delivery.test_02_exact_single_file) ... ok
+test_03_zip_deterministic (__main__.Delivery.test_03_zip_deterministic) ... ok
+test_04_zip_full_source (__main__.Delivery.test_04_zip_full_source) ... ok
+test_05_bad_path (__main__.Delivery.test_05_bad_path) ... ok
+test_06_bad_hash (__main__.Delivery.test_06_bad_hash) ... ok
+test_07_bad_base64 (__main__.Delivery.test_07_bad_base64) ... ok
+test_08_bool_length (__main__.Delivery.test_08_bool_length) ... ok
+test_09_big_length (__main__.Delivery.test_09_big_length) ... ok
+test_10_wrong_length (__main__.Delivery.test_10_wrong_length) ... ok
+test_11_trailing_compressed (__main__.Delivery.test_11_trailing_compressed) ... ok
+test_12_truncated_compressed (__main__.Delivery.test_12_truncated_compressed) ... ok
+test_13_bounded_expansion (__main__.Delivery.test_13_bounded_expansion) ... ok
+test_14_empty_members (__main__.Delivery.test_14_empty_members) ... ok
+test_15_member_count (__main__.Delivery.test_15_member_count) ... ok
+test_16_extra_record_key (__main__.Delivery.test_16_extra_record_key) ... ok
+test_17_new_tree_exact (__main__.Delivery.test_17_new_tree_exact) ... ok
+test_18_existing_preserved (__main__.Delivery.test_18_existing_preserved) ... ok
+test_19_symlink_target (__main__.Delivery.test_19_symlink_target) ... ok
+test_20_symlink_parent (__main__.Delivery.test_20_symlink_parent) ... ok
+test_21_missing_parent (__main__.Delivery.test_21_missing_parent) ... ok
+test_22_permissions (__main__.Delivery.test_22_permissions) ... ok
+test_23_check_no_side_effects (__main__.Delivery.test_23_check_no_side_effects) ... ok
+test_24_run_blocked_before_extract (__main__.Delivery.test_24_run_blocked_before_extract) ... ok
+test_25_missing_gpu (__main__.Delivery.test_25_missing_gpu) ... ok
+test_26_one_gpu (__main__.Delivery.test_26_one_gpu) ... ok
+test_27_duplicate_uuid (__main__.Delivery.test_27_duplicate_uuid) ... ok
+test_28_wrong_gpu (__main__.Delivery.test_28_wrong_gpu) ... ok
+test_29_simulated_inventory_not_model_proof (__main__.Delivery.test_29_simulated_inventory_not_model_proof) ... ok
+test_30_mock_real_refused (__main__.Delivery.test_30_mock_real_refused) ... ok
+test_31_entry_actual_bytes (__main__.Delivery.test_31_entry_actual_bytes) ... ok
+test_32_helpers_actual_bytes (__main__.Delivery.test_32_helpers_actual_bytes) ... ok
+test_33_only_rust_function_changed (__main__.Delivery.test_33_only_rust_function_changed) ... ok
+test_34_training_included (__main__.Delivery.test_34_training_included) ... ok
+test_35_no_private_assets (__main__.Delivery.test_35_no_private_assets) ... ok
+test_36_sources_parse (__main__.Delivery.test_36_sources_parse) ... ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 0.444s
+
+OK
