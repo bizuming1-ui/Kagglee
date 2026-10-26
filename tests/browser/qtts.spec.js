@@ -3,13 +3,13 @@ import { readFile } from 'node:fs/promises';
 
 // Browser/protocol regressions with explicitly mocked Web Audio and HTTP streams.
 // These tests cannot measure audibility, voice similarity, GPU throughput or DeepSeek.
-async function openQTTS(page, { failAudio = false, deferAudio = false, locked = false, realAudio = false, denyMedia = false, deferMedia = false, silence = false, failUpload = false, failPreflight = false, manyProfiles = false, trainedProfile = false } = {}) {
+async function openQTTS(page, { failAudio = false, deferAudio = false, locked = false, realAudio = false, denyMedia = false, deferMedia = false, silence = false, failUpload = false, failPreflight = false, manyProfiles = false, trainedProfile = false, step18UI = false } = {}) {
   await page.route('**/qtts-regression', async route => route.fulfill({ contentType: 'text/html', body: await readFile('kaggle/source/web/index.html', 'utf8') }));
   await page.route('**/recorder.js', async route => route.fulfill({ contentType: 'text/javascript', body: await readFile('kaggle/source/web/recorder.js', 'utf8') }));
-  await page.route('**/app.js', async route => route.fulfill({ contentType: 'text/javascript', body: await readFile('kaggle/source/web/app.js', 'utf8') }));
-  await page.addInitScript(({ failAudio, deferAudio, realAudio, denyMedia, deferMedia, silence, failUpload, failPreflight, manyProfiles, trainedProfile }) => {
+  await page.route('**/app.js', async route => route.fulfill({ contentType: 'text/javascript', body: await readFile(step18UI ? 'kaggle/step18/web/app.js' : 'kaggle/source/web/app.js', 'utf8') }));
+  await page.addInitScript(({ failAudio, deferAudio, realAudio, denyMedia, deferMedia, silence, failUpload, failPreflight, manyProfiles, trainedProfile, step18UI }) => {
     localStorage.setItem('qtts_dskey', 'obsolete-secret');
-    window.apiRequests=[];window.audioMessages = []; window.turns = []; window.moduleLoads = 0; window.reports = [];
+    window.apiRequests=[];window.audioMessages = []; window.turns = []; window.moduleLoads = 0; window.reports = []; window.savedTranscripts = []; window.activeVoice = step18UI ? null : 'voice';
     if(realAudio) {
       const NativeContext=window.AudioContext,NativeFile=window.File;
       window.micStreams=[];window.captureContexts=[];window.mediaRequests=0;window.madeFiles=[];
@@ -46,10 +46,18 @@ async function openQTTS(page, { failAudio = false, deferAudio = false, locked = 
       const headers=Object.fromEntries(new Headers(options.headers));
       if(name.startsWith('/api/') && headers.authorization!=='Bearer browser-test-token-01234567890123456789012345')return Response.json({error:'invalid token'},{status:401});
       if(name==='/api/prep/profiles' && failUpload)return Response.json({error:'test upload unavailable'},{status:503});
+      if(name.endsWith('/transcript') && options.method==='POST') {
+        const body=JSON.parse(options.body);window.savedTranscripts.push(body);
+        return Response.json({ok:true,transcript_saved:true,characters:Array.from(body.full_transcript).length,anchor_unchanged:true,model_prompt_unchanged:true,worker_reload:false});
+      }
       if(name==='/api/preflight'&&failPreflight)return Response.json({error:'test report unavailable'},{status:503});
       if(name==='/api/preflight')return Response.json({status:'not_run',model_loaded:false,performance_verified:false});
       if (name === '/api/health') return Response.json({ ok: true, workers:trainedProfile?[{id:0,healthy:true,worker:{engine:'qwen-adapter-buffered',model_output_mode:'sentence-buffered',dtype:'fp16'}}]:[] });
-      if (name === '/api/profiles') return Response.json({ active: 'voice', profiles: Array.from({length:manyProfiles?40:1},(_,index)=>({trained_adapter:trainedProfile?{run_id:'fixture-ui-only'}:undefined,id:index?'voice_'+index:'voice',name:manyProfiles?'档案'+index+'超长声音库名称'.repeat(45):'回归测试声音',ref_text:'你好',breath_files:[],candidates:manyProfiles?[{score:.8,snr_db:20,asr_conf:.9,start:0,end:3,text:'测试候选'}]:[]})) });
+      if (name === '/api/profiles') return Response.json({ active: window.activeVoice, profiles: Array.from({length:manyProfiles?40:1},(_,index)=>({trained_adapter:trainedProfile?{run_id:'fixture-ui-only'}:undefined,id:index?'voice_'+index:'voice',name:manyProfiles?'档案'+index+'超长声音库名称'.repeat(45):'回归测试声音',ref_text:'短锚点提示',full_transcript:'这是完整源转写，包含前后两句。',full_transcript_source:'asr_unverified',breath_files:[],candidates:manyProfiles?[{score:.8,snr_db:20,asr_conf:.9,start:0,end:3,text:'测试候选'}]:[]})) });
+      if (name === '/api/profiles/activate' && options.method === 'POST') {
+        window.activeVoice = JSON.parse(options.body).id;
+        return Response.json({ ok: true, workers: [{ ok: true }] });
+      }
       if (name === '/api/telemetry') return Response.json({ ok: true });
       if (name === '/api/report') { window.reports.push(JSON.parse(options.body)); return Response.json({ ok: true }); }
       if (name === '/api/speak') {
@@ -71,7 +79,7 @@ async function openQTTS(page, { failAudio = false, deferAudio = false, locked = 
         else { controller.enqueue(frame(5, { timeline_ms: {}, per_gpu: {} })); controller.close(); }
       } }), { headers: { 'X-Session-Id': 'test-' + index } }));
     };
-  }, { failAudio, deferAudio, realAudio, denyMedia, deferMedia, silence, failUpload, failPreflight, manyProfiles, trainedProfile });
+  }, { failAudio, deferAudio, realAudio, denyMedia, deferMedia, silence, failUpload, failPreflight, manyProfiles, trainedProfile, step18UI });
   await page.goto('/qtts-regression');
   // Chromium in this sandbox has no installed CJK fonts. Reuse the repository's
   // licensed local test font, without adding external font requests to the Kaggle bundle.
@@ -855,4 +863,26 @@ test('QTTS step17 long-reference context is explicit, submitted and reset on loc
   await page.locator('#pname').fill('长参考');await page.locator('#files').setInputFiles({name:'long.wav',mimeType:'audio/wav',buffer:Buffer.from('fixture-not-real-audio')});
   await page.locator('#btn-create').click();await expect.poll(()=>page.evaluate(()=>window.submittedContext)).toBe('24');
   await page.locator('#btn-lock').click();await expect(page.locator('#pcontext')).toHaveValue('16');
+});
+
+test('Step 18 voice card presents one complete transcript and requires save before enable', async ({ page }) => {
+  await openQTTS(page, { step18UI: true });
+  await page.locator('#nav-lab').click();
+  const card = page.locator('#profiles article.card').first();
+  const transcript = card.getByRole('textbox', { name: '完整参考文本 · 回归测试声音' });
+  await expect(transcript).toHaveValue('这是完整源转写，包含前后两句。');
+  await expect(card.locator('.cands')).toHaveCount(0);
+  await expect(card.locator('button')).toHaveCount(2);
+  const save = card.getByRole('button', { name: '保存完整参考文本' });
+  const enable = card.getByRole('button', { name: '启用此声音' });
+  await expect(enable).toBeDisabled();
+  await transcript.fill('已核对的完整参考文本。');
+  await save.click();
+  await expect.poll(() => page.evaluate(() => window.savedTranscripts.length)).toBe(1);
+  expect(await page.evaluate(() => window.savedTranscripts[0])).toEqual({ full_transcript: '已核对的完整参考文本。' });
+  await expect(enable).toBeEnabled();
+  await enable.click();
+  await expect.poll(() => page.evaluate(() => window.apiRequests.filter(row => row.path === '/api/profiles/activate').length)).toBe(1);
+  await expect(page.locator('#profiles article.card').first().locator('small')).toContainText('当前使用');
+  await expect(page.locator('#profiles article.card').first().getByRole('button', { name: '当前已启用' })).toBeDisabled();
 });

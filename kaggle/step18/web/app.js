@@ -922,187 +922,111 @@ registerProcessor('qtts-ring', QttsRing);
         ));
     for (let n of t.profiles) i.append(et(n, n.id === t.active));
   }
-  function et(t, e) {
-    let s = o("article", {
-      class: "card" + (e ? " active" : ""),
-      "aria-label": t.name,
+  function et(profile, active) {
+    const card = o("article", {
+      class: "card" + (active ? " active" : ""),
+      "aria-label": profile.name,
     });
-    (s.append(
-      o(
-        "h3",
-        {},
-        `${t.name} `,
-        o("small", {}, t.id + (e ? " \xB7 \u5F53\u524D\u4F7F\u7528" : "")),
-      ),
-    ),
-      s.append(
-        o(
-          "div",
-          { class: "muted" },
-          `${t.language ?? "未识别"} \xB7 \u8BED\u901F ${t.units_per_sec ?? "未测"} \u5B57/\u79D2 \xB7 \u505C\u987F \u9017\u53F7${t.pause_clause_ms ?? "未测"}/\u53E5${t.pause_sentence_ms ?? "未测"} ms \xB7 \u771F\u5B9E\u547C\u5438 ${t.breath_files.length} \u6BB5 \xB7 F0 ${t.f0 ? Math.round(t.f0.median) : "?"} Hz \xB7 \u8BF4\u8BDD\u4EBA\u6A21\u578B ${t.speaker_model ?? "未测"}`,
-        ),
-      ));
-    if (t.trained_adapter) s.append(o("p",{class:"muted"},"训练候选 · 官方原生后端 · 句级缓冲（非声学流式） · 音质/重载未验收；固定训练参考，节奏参数为默认值。"));
-    let i = o("textarea", {
-      rows: "3",
-      class: "reftext",
-      "aria-label": "参考文本 · " + t.name,
+    const transcriptOrigin = profile.full_transcript_source === "asr_unverified"
+      ? "自动转写 · 请核对"
+      : profile.full_transcript_source === "user_edited_unverified"
+        ? "已编辑文本 · 尚未核验"
+        : profile.full_transcript_source === "manual_aligned"
+          ? "使用已知文本"
+          : "待补全";
+    card.append(
+      o("h3", {}, profile.name, o("small", {}, active ? " · 当前使用" : "")),
+      o("p", { class: "muted" }, `${profile.language ?? "未识别"} · ${transcriptOrigin}`),
+    );
+
+    const transcriptId = `full-transcript-${profile.id}`;
+    const transcript = o("textarea", {
+      id: transcriptId,
+      rows: "8",
+      class: "full-transcript",
+      style: "display:block;width:100%;min-height:12rem;resize:vertical",
+      "aria-label": `完整参考文本 · ${profile.name}`,
+      placeholder: "旧档案没有完整转写。新建档案后会自动生成；也可以在这里粘贴完整文本。",
     });
-    if (t.trained_adapter) i.readOnly=true;
-    ((i.value = t.ref_text),
-      s.append(
-        o(
-          "label",
-          {},
-          "\u53C2\u8003\u6587\u672C(\u5FC5\u987B\u4E0E\u951A\u70B9\u97F3\u9891\u9010\u5B57\u4E00\u81F4,\u8FD9\u662F\u514B\u9686\u8D28\u91CF\u7684\u5173\u952E)",
-        ),
-        i,
-      ));
-    let n = o("pre", { class: "out" }),
-      d = (c, u) => {
-        let g = o("button", { class: "sm" }, c);
-        return (
-          g.addEventListener("click", () => {
-            ((g.disabled = !0),
-              (n.textContent = "\u5904\u7406\u4E2D\u2026"),
-              u()
-                .catch((f) => {
-                  n.textContent = "\u9519\u8BEF: " + f.message;
-                })
-                .finally(() => {
-                  g.disabled = !1;
-                }));
-          }),
-          g
-        );
-      },
-      l = o("div", { class: "row" });
-    if (
-      (l.append(
-        d("\u4FDD\u5B58\u6587\u672C\u5E76\u91CD\u8F7D", async () => {
-          let c = await m("/api/prep/profiles/" + t.id + "/text", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ ref_text: i.value }),
-          });
-          n.textContent = "\u5DF2\u91CD\u8F7D: " + JSON.stringify(c.workers);
-        }),
-        d(
-          t.trained_adapter ? "选择此训练版本（双GPU加载，句级缓冲）" : "\u542F\u7528\u6B64\u58F0\u97F3(\u4E24\u5757 GPU \u9884\u70ED\u7F13\u5B58)",
-          async () => {
-            let c = await m("/api/profiles/activate", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ id: t.id }),
-            });
-            ((n.textContent =
-              "\u5DF2\u542F\u7528: " + JSON.stringify(c.workers)),
-              v());
-          },
-        ),
-        d(
-          "\u53CC\u5361\u4E00\u81F4\u6027 + \u8D28\u91CF\u68C0\u6D4B",
-          async () => {
-            let c = await m("/api/prep/consistency", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ profile: t.id }),
-            });
-            n.textContent = st(c);
-          },
-        ),
-        d("\u5019\u9009\u6821\u51C6(GPU \u5B9E\u6D4B)", async () => {
-          let c = await m("/api/prep/profiles/" + t.id + "/calibrate", {
-            method: "POST",
-          });
-          ((n.textContent = JSON.stringify(c, null, 1)), v());
-        }),
-        d("\u5220\u9664", async () => {
-          confirm("\u5220\u9664 " + t.name + " ?") &&
-            (await m("/api/prep/profiles/" + t.id, { method: "DELETE" }), v());
-        }),
-      ),
-      t.trained_adapter && [...l.querySelectorAll("button")].forEach((button,index)=>{ if(index===0 || index===3) button.disabled=true; }),
-      s.append(l),
-      t.candidates?.length)
-    ) {
-      let c = o(
-        "div",
-        { class: "cands" },
-        o(
-          "label",
-          {},
-          "\u5019\u9009\u951A\u70B9(\u6309\u7EFC\u5408\u5206\u6392\u5E8F,\u53EF\u5207\u6362)",
-        ),
-      );
-      (t.candidates.forEach((u, g) => {
-        let f = o(
-          "button",
-          { class: "cand" + (g === (t.anchor_candidate ?? 0) ? " on" : "") },
-          `#${g} \u5206\u6570 ${u.score} \xB7 SNR ${u.snr_db} dB \xB7 ASR\u7F6E\u4FE1 ${u.asr_conf} \xB7 ${u.end - u.start > 0 ? (u.end - u.start).toFixed(1) : "?"}s \xB7 ${u.text.slice(0, 40)}`,
-        );
-        (f.addEventListener("click", () => {
-          ((n.textContent = "\u5207\u6362\u4E2D\u2026"),
-            m("/api/prep/profiles/" + t.id + "/candidate", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ index: g }),
-            })
-              .then(() => v())
-              .catch((p) => {
-                n.textContent = p.message;
-              }));
-        }),
-          c.append(f));
-      }),
-        s.append(c));
-    }
-    if (t.quality?.stage_ms) {
-      s.append(o("details", {}, o("summary", {}, `创建阶段耗时 · ${t.quality.build_s ?? "?"} s（不是训练）`),
-        o("pre", {class: "out"}, Object.entries(t.quality.stage_ms).map(([key, ms]) => `${key}: ${ms} ms`).join("\n"))));
-    }
-    let a = t.quality?.files ?? [];
-    return (
-      a.length &&
-        s.append(
-          o(
-            "details",
-            {},
-            o(
-              "summary",
-              {},
-              "\u53C2\u8003\u97F3\u9891\u5904\u7406\u51B3\u7B56(\u5B9E\u6D4B)",
-            ),
-            o(
-              "pre",
-              { class: "out" },
-              a.map(
-                (c) =>
-                  `${String(c.file)}: SNR ${String(c.snr_db)} dB, ${String(c.decision ?? c.skipped)}`,
-              ).join(`
-`),
-            ),
-          ),
-        ),
-      s.append(n),
-      s
+    transcript.value = typeof profile.full_transcript === "string" ? profile.full_transcript : "";
+    const count = o("p", { class: "muted transcript-count", role: "status" });
+    let transcriptSaved = false;
+    let activate;
+    const updateCount = () => {
+      const characters = Array.from(transcript.value).length;
+      count.textContent = `${characters.toLocaleString()} / 100,000 字`;
+    };
+    transcript.addEventListener("input", () => {
+      transcriptSaved = false;
+      updateCount();
+      if (activate && !active) activate.disabled = true;
+    });
+    updateCount();
+    card.append(
+      o("label", { for: transcriptId }, "完整参考文本 · 请核对自动转写后保存"),
+      transcript,
+      count,
+      o("p", { class: "hint" }, "保存的是完整源转写；不会替换与锚点音频配对的短模型提示文本，也不会触发模型重载。先核对并保存，再启用声音。"),
     );
-  }
-  function st(t) {
-    let e = [];
-    (e.push(
-      `\u8BF4\u8BDD\u4EBA\u6A21\u578B: ${String(t.speaker_model)}   \u4E24\u5361\u8F93\u51FA\u4E92\u76F8\u76F8\u4F3C\u5EA6: ${String(t.cross_gpu_speaker_sim)}   \u4E00\u81F4\u6027: ${String(t.consistent)}`,
-    ),
-      e.push(`\u5DEE\u5F02: ${JSON.stringify(t.delta)}`));
-    for (let s of t.gpus ?? [])
-      e.push(`GPU${s.gpu}: ${JSON.stringify(s.mean)}`);
-    return (
-      e.push(
-        "\u6CE8: \u76F8\u4F3C\u5EA6\u4E3A ECAPA \u4F59\u5F26\u76F8\u4F3C\u5EA6(\u540C\u4E00\u771F\u4EBA\u4E0D\u540C\u53E5\u5B50\u901A\u5E38 0.75-0.90),\u4E0D\u662F\u767E\u5206\u6BD4;fidelity_index \u662F\u5185\u90E8\u7EFC\u5408\u6307\u6570\u3002",
-      ),
-      e.join(`
-`)
+
+    const status = o("pre", { class: "out", role: "status" });
+    const actions = o("div", { class: "row" });
+    const save = o("button", { class: "primary", type: "button" }, "保存完整参考文本");
+    save.addEventListener("click", async () => {
+      const value = transcript.value;
+      const characters = Array.from(value).length;
+      if (!value.trim()) {
+        status.textContent = "完整参考文本不能为空。";
+        transcript.focus();
+        return;
+      }
+      if (characters > 100000) {
+        status.textContent = "文本超过100,000个Unicode字符，未保存且不会截断。";
+        transcript.focus();
+        return;
+      }
+      save.disabled = true;
+      try {
+        const result = await m(`/api/prep/profiles/${profile.id}/transcript`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ full_transcript: value }),
+        });
+        profile.full_transcript = value;
+        profile.full_transcript_source = "user_edited_unverified";
+        transcriptSaved = true;
+        if (activate && !active) activate.disabled = false;
+        status.textContent = `已保存完整参考文本（${result.characters.toLocaleString()} 字）。锚点音频和模型提示文本未更改。`;
+      } catch (error) {
+        status.textContent = `保存失败：${error.message}`;
+      } finally {
+        save.disabled = false;
+      }
+    });
+
+    activate = o(
+      "button",
+      { type: "button", disabled: active || !transcriptSaved },
+      active ? "当前已启用" : "启用此声音",
     );
+    activate.addEventListener("click", async () => {
+      activate.disabled = true;
+      try {
+        const result = await m("/api/profiles/activate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: profile.id }),
+        });
+        status.textContent = `声音已启用：${JSON.stringify(result.workers ?? [])}`;
+        await v();
+      } catch (error) {
+        status.textContent = `启用失败：${error.message}`;
+        activate.disabled = false;
+      }
+    });
+    actions.append(save, activate);
+    card.append(actions, status);
+    return card;
   }
   var _ = [],
     recordingDurations = new WeakMap();

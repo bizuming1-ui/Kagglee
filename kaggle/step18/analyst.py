@@ -29,8 +29,8 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 # Candidate-only dependency fallback: frozen17 modules remain unchanged.
 sys.path.insert(1, str(Path(__file__).resolve().parents[1] / 'source' / 'py'))
-from step18_profile_inputs import (profile_body, text_value, index_value, candidate,
-    safe_name, regular_bytes, install_anchor, profile_lock)
+from step18_profile_inputs import (profile_body, text_value, transcript_value, index_value, candidate,
+    safe_name, regular_bytes, install_anchor, profile_lock, FULL_TRANSCRIPT_BODY_BYTES)
 from step18_calibration_state import exclusive_calibration, snapshot, confirm_snapshot
 from step18_calibration_metrics import (CalibrationResult, centroid_value, evaluate_trial,
     failed_trials, summarize, safe_workers, build_summary)
@@ -609,6 +609,34 @@ class BuildEmbeddingCache:
                 "scope": "this-profile-build-only", "entry_limit": 64}
 
 
+def assemble_full_transcript(rows, maximum=100_000):
+    """Join every ASR segment in source-file/time order without truncation."""
+    pieces = []
+    char_count = 0
+    previous_file = None
+    previous_text = ""
+    for row in sorted(rows, key=lambda item: (item["f"], item["start"], item["end"])):
+        text = str(row.get("text", "")).strip()
+        if not text:
+            continue
+        if pieces:
+            if row["f"] != previous_file:
+                separator = "\n"
+            elif re.search(r"[A-Za-z0-9]$", previous_text) and re.match(r"[A-Za-z0-9]", text):
+                separator = " "
+            else:
+                separator = ""
+        else:
+            separator = ""
+        char_count += len(separator) + len(text)
+        if char_count > maximum:
+            raise ValueError(f"完整参考转写超过{maximum:,}个Unicode字符；未保存，也未截断")
+        pieces.extend((separator, text))
+        previous_file = row["f"]
+        previous_text = text
+    return "".join(pieces)
+
+
 def build_profile(job: dict, name: str, files: list[tuple[str, bytes]], language: str, manual_text: str, calibrate: bool, anchor_seconds: int = 16):
     anchor_seconds = context_seconds(anchor_seconds)
     t_start = time.time()
@@ -707,6 +735,12 @@ def build_profile(job: dict, name: str, files: list[tuple[str, bytes]], language
                 ASR.release_after_use()
         if not clips:
             raise ValueError("ASR found no speech. Provide cleaner audio or type the transcript manually.")
+        full_transcript = assemble_full_transcript(clips)
+        full_transcript_source = (
+            "manual_aligned"
+            if quality.get("asr") and all(row.get("engine") == "manual-aligned-short-clip" for row in quality["asr"])
+            else "asr_unverified"
+        )
         ref_lang = ref_lang or "zh"
 
         stage_done("asr")
@@ -847,6 +881,8 @@ def build_profile(job: dict, name: str, files: list[tuple[str, bytes]], language
             "id": pid, "name": name, "language": LANG_NAME.get(ref_lang, "Auto"), "lang_code": ref_lang,
             "created": dt.datetime.now().isoformat(timespec="seconds"),
             "anchor": anchor_name, "anchor_candidate": 0, "ref_text": cand_meta[0]["text"],
+            "full_transcript": full_transcript, "full_transcript_source": full_transcript_source,
+            "full_transcript_is_model_prompt": False,
             "candidates": cand_meta, "target_rms_dbfs": target_db, "reference_normalize_dbfs": TARGET_DBFS, "units_per_sec": round(ups, 3),
             "pause_clause_ms": pc, "pause_sentence_ms": ps, "pause_para_ms": int(ps * 1.65),
             "breath_files": breath_files, "breath_level_db": round(breath_db, 1),
@@ -1097,6 +1133,26 @@ async def job(jid: str):
 async def get_profile(pid: str):
     p = load_profile(pid)
     return p if p else _err("not found", 404)
+
+
+def commit_full_transcript(pid, transcript):
+    with profile_lock(pid):
+        p = load_profile(pid)
+        if not p:
+            raise UploadRejected("not found", 404)
+        p["full_transcript"] = transcript
+        p["full_transcript_source"] = "user_edited_unverified"
+        p["full_transcript_is_model_prompt"] = False
+        p["_s18_revision"] = uuid.uuid4().hex
+        write_json_atomic(profile_dir(pid) / "profile.json", p)
+    return {"ok": True, "transcript_saved": True, "characters": len(transcript),
+            "anchor_unchanged": True, "model_prompt_unchanged": True, "worker_reload": False}
+
+
+@app.post("/profiles/{pid}/transcript")
+async def set_full_transcript(pid: str, request: Request):
+    transcript = transcript_value(await profile_body(request, "full_transcript", FULL_TRANSCRIPT_BODY_BYTES))
+    return await HEAVY.run(commit_full_transcript, pid, transcript)
 
 
 def editable_profile(pid):

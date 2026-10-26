@@ -1,0 +1,9 @@
+{
+  "source_assets": 58,
+  "launcher_bytes": 286211,
+  "launcher_sha256": "d6e2713619c13fe20acc9eccf1e06fdb52775e6f07bda916a428eca30ef058f9",
+  "zip_bytes": 433091,
+  "zip_sha256": "94b93df49b9661bb9b21a3ddc588afc6cc452edcb5195a971afe78bbb0bb80b0",
+  "release": false,
+  "real_gpu_or_quality_verified": false
+}
