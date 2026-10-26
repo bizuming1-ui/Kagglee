@@ -11,6 +11,8 @@ from resource_limits import UploadRejected
 from voice_binding import MAX_REFERENCE_BYTES
 
 BODY_BYTES = 128 * 1024
+FULL_TRANSCRIPT_BODY_BYTES = 1_300_000  # accommodates 100k Unicode code points even JSON-escaped
+MAX_FULL_TRANSCRIPT_CHARS = 100_000
 # Bounded in-process coordination, not a cross-process profile transaction system.
 _LOCKS = tuple(threading.RLock() for _ in range(64))
 
@@ -35,10 +37,10 @@ def _float(raw):
 def _constant(raw):
     reject('non-finite JSON numbers are not allowed')
 
-async def profile_body(request, field):
+async def profile_body(request, field, maximum_bytes=BODY_BYTES):
     raw = bytearray()
     async for chunk in request.stream():
-        if len(raw) + len(chunk) > BODY_BYTES: reject('profile request exceeds byte limit', 413)
+        if len(raw) + len(chunk) > maximum_bytes: reject('profile request exceeds byte limit', 413)
         raw.extend(chunk)
     try:
         value = json.loads(raw.decode('utf-8', 'strict'), object_pairs_hook=_pairs,
@@ -55,6 +57,15 @@ def text_value(value):
     if not 0 < len(value) <= 20000: reject('ref_text must contain 1..20000 characters')
     try: value.encode('utf-8', 'strict')
     except UnicodeError: reject('ref_text must be valid Unicode')
+    return value
+
+def transcript_value(value):
+    if not isinstance(value, str): reject('full_transcript must be a string')
+    if not value.strip(): reject('full_transcript must not be empty')
+    if len(value) > MAX_FULL_TRANSCRIPT_CHARS:
+        reject('full_transcript exceeds 100,000 Unicode characters; nothing was truncated', 413)
+    try: value.encode('utf-8', 'strict')
+    except UnicodeError: reject('full_transcript must be valid Unicode')
     return value
 
 def index_value(value):

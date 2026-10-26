@@ -4,6 +4,7 @@
 
 - `kaggle-step18-candidate.py`：完整单文件，内嵌全部运行源码，不是网络下载器或零散补丁。
 - `kaggle-step18-full-source.zip`：同一入口＋全部可读 Python/Go/JS/Rust/训练源码＋MANIFEST；不含模型权重、编译器、依赖wheel、用户音频、状态、token或日志，不是离线安装包。
+- 本次“单份完整转写 → 保存 → 启用”界面修订的保留输出位于 `kaggle/delivery18/artifacts/reference-text-simple-v1/`；既有 `artifacts/` 根目录历史包不覆盖。
 
 重要：本次工作区实际只保留到 S5。会话曾述 S6–S8-C 文件及 alpha ZIP 当前缺失，原因未知。本包不冒称恢复它们，也不包含其时序/检查点/配对控制器/收据overlay。原17、现存S1–S5和旧证据保持不变。
 
@@ -39,7 +40,8 @@ Kaggle Secrets 可选 `DEEPSEEK_API_KEY`（聊天）、`HF_TOKEN`（模型下载
 
 - 原 `py/analyst.py` 替换为当前隔离18分析服务，附profile输入/校准快照/有效度量三个依赖。
 - 原 `py/worker.py` 替换为S4 worker，附因果NumPy DSP和有界trimmer两个依赖。
-- `web/app.js` 使用S5完整Player/Worklet，非只有测试helper。
+- `web/app.js` 使用S5完整Player/Worklet，非只有测试helper。声音卡片简化为单个完整源转写编辑框，以及“保存完整参考文本”“启用此声音”两个操作；候选列表、逐候选切换、校准和检测报告不再占据右侧主界面。
+- 完整转写按源文件和时间顺序拼接，最多100,000 Unicode字符；超限拒绝且不截断。保存只写完整源转写元数据，不修改与锚点WAV逐字匹配的短模型提示文本，也不触发worker重载；修改后须先保存才能启用。ASR初稿仍标记为待人工核对。
 - 新包内bootstrap只关闭Rust安装/编译分支，明确使用numpy-causal-v1；其他原安装、模型、Go、supervisor、录音、鉴权、训练功能保留。冻结源码本身不改。
 - 原MEMO历史首页改为本候选范围说明；原53资产其余部分保持，清单记录每项来源/变化。
 
