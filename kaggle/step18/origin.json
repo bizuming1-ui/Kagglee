@@ -1,0 +1,47 @@
+{
+  "base": "kaggle/source/py/analyst.py",
+  "base_sha256": "cbbf318903b40a0846be8a39789fa122cdbb09cdec19d52730fb7508bab2f015",
+  "candidate": "kaggle/step18/analyst.py",
+  "release": false,
+  "scope": "S1 strict inputs/commit; S2-A snapshots; S2-B complete finite metric eligibility, no-choice preservation and temporary/final worker acknowledgement; full product/model/quality release unaccepted; S3 isolated causal NumPy DSP and worker wiring, native/Rust and full S3 acceptance remain unverified; S4 bounded trimmer/normal finish/cancel worker candidate, no formal entry switch; S5 isolated complete frontend Player/Worklet completed-tail/resampling/epoch candidate, no formal entry or release switch",
+  "fallback_dependency_root": "kaggle/source/py",
+  "s1_before_index": "docs/validation/step18/s2-before-index.json",
+  "s2a_before_index": "docs/validation/step18/s2b-before-index.json",
+  "s3": {
+    "worker_base": "kaggle/source/py/worker.py",
+    "worker_base_sha256": "e6caa9433849b3c94001bc5b7b37a224bedbb0a567a4a6fee0fd66363d734379",
+    "worker_candidate": "kaggle/step18/worker.py",
+    "dsp_base": "kaggle/source/py/audio_rt.py",
+    "dsp_base_sha256": "be55abe211192144b96c5e89ad24b233f2e56cba193d9577b0e00e46b10b95d7",
+    "dsp_candidate": "kaggle/step18/step18_audio_rt.py",
+    "backend": "numpy-causal-v1",
+    "native_backend_enabled": false,
+    "before_index": "docs/validation/step18/s3-before-index.json",
+    "release": false
+  },
+  "s4": {
+    "worker_base": "kaggle/step18/worker.py",
+    "worker_base_sha256": "503189220b2e76ab878d09afd0c7e3590b59280d35de6ecbf4d5cb0cd2ebf8f4",
+    "worker_candidate": "kaggle/step18/worker_s4.py",
+    "trimmer_candidate": "kaggle/step18/step18_trimmer.py",
+    "before_index": "docs/validation/step18/s4-before-index.json",
+    "changed_worker_method": "Worker.run_job",
+    "s3_worker_preserved": true,
+    "default_formal_entry_switched": false,
+    "release": false
+  },
+  "s5": {
+    "frontend_base": "kaggle/source/web/app.js",
+    "frontend_base_sha256": "0ea5f42dc39b403927155d950c1e8cc1d5303ca61f79f888578dddc9d9fd97b4",
+    "frontend_candidate": "kaggle/step18/web/app.js",
+    "changed_scope": [
+      "Player P",
+      "embedded QttsRing Worklet V"
+    ],
+    "network_parser_arrival_predictor_full_ui_suffix_preserved": true,
+    "before_index": "docs/validation/step18/s5-before-index.json",
+    "s3_s4_candidates_preserved": true,
+    "formal_entry_switched": false,
+    "release": false
+  }
+}

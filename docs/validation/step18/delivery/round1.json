@@ -1,0 +1,102 @@
+{
+  "round": 1,
+  "passed": true,
+  "new_unit_tests": 36,
+  "cpu_inherited_tests": 610,
+  "node_tests": 30,
+  "vm_tests": 37,
+  "vm_not_added_to_cpu_count": true,
+  "go_top_level_passes": 40,
+  "go_all_pass_events": 56,
+  "go_race_not_run": true,
+  "ast_assets": [
+    "py/access_control.py",
+    "py/adapter_engine.py",
+    "py/analyst.py",
+    "py/audio_rt.py",
+    "py/bootstrap.py",
+    "py/clone_stream.py",
+    "py/gpu_ownership.py",
+    "py/library_api.py",
+    "py/lora_adapter.py",
+    "py/persist.py",
+    "py/qtts_common.py",
+    "py/qwen_compat.py",
+    "py/reference_segments.py",
+    "py/resource_limits.py",
+    "py/supervisor.py",
+    "py/trained_profiles.py",
+    "py/training_codes.py",
+    "py/training_data.py",
+    "py/training_job.py",
+    "py/tts_dataset.py",
+    "py/tts_training.py",
+    "py/voice_binding.py",
+    "py/voice_library.py",
+    "py/worker.py",
+    "tools/backend_probe.py",
+    "tools/e2e_check.py",
+    "tools/encode_training.py",
+    "tools/resource_control.py",
+    "tools/selftest.py",
+    "tools/train_tts.py",
+    "tools/trained_voice.py",
+    "tools/voice_benchmark.py",
+    "tools/watermark_check.py",
+    "py/step18_profile_inputs.py",
+    "py/step18_calibration_state.py",
+    "py/step18_calibration_metrics.py",
+    "py/step18_audio_rt.py",
+    "py/step18_trimmer.py"
+  ],
+  "gates": [
+    {
+      "args": [
+        "--doctor"
+      ],
+      "exit_code": 2,
+      "report": {
+        "status": "blocked",
+        "mode": "REAL_OPT_IN",
+        "release": false,
+        "real_model_executed": false,
+        "training_verified": false,
+        "quality_or_speed_verified": false,
+        "reasons": [
+          "nvidia_inventory_unavailable"
+        ],
+        "physical_gpu_count": 0
+      },
+      "no_runtime_created": true
+    },
+    {
+      "args": [
+        "--run"
+      ],
+      "exit_code": 2,
+      "report": {
+        "status": "blocked",
+        "mode": "REAL_OPT_IN",
+        "release": false,
+        "real_model_executed": false,
+        "training_verified": false,
+        "quality_or_speed_verified": false,
+        "reasons": [
+          "nvidia_inventory_unavailable"
+        ],
+        "physical_gpu_count": 0
+      },
+      "no_runtime_created": true
+    }
+  ],
+  "real_gpu_or_model_executed": false,
+  "source_hashes": {
+    "kaggle/delivery18/build.py": "125a44256aa701f112fadbbdafaa7f2c3d2e60ccb33dc6f2af19ed1f17e54412",
+    "kaggle/delivery18/launcher_template.py": "7cf3714735f2fbb32272510379a57b53f9be547507aa29bcbcd544dfc9c55188",
+    "kaggle/delivery18/smoke.py": "76ea6dc41c3693bc2fbb7bbbc85f5fec657c63ac7fcbe7052bb624aca9ef80e8",
+    "kaggle/delivery18/test_delivery.py": "6a8a5b961fb294bbd181b8ca7df29d8a830f9df9af915fa940c3474028b180d7",
+    "kaggle/delivery18/validate.py": "3e8b8b687e8f7fb05758ae3c1f9f61a8746de9f8279d0c4ba5226e4017251c61"
+  },
+  "launcher_sha256": "f54346e232b44750f77c506bc9cefd155edd809c0f7444092621fc7b0bb4fab7",
+  "zip_sha256": "1559b70d7451736fef4d288539dadf465d15e8a266864167612e0fd628970243"
+}

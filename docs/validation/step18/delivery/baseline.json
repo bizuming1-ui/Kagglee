@@ -1,0 +1,16 @@
+{
+  "protected_live_files": 3071,
+  "available_baseline": "S5",
+  "prior_s5_verifier_exit_code": 0,
+  "historical_dialogue_artifacts_currently_absent": [
+    "kaggle/step18/worker_s6.py",
+    "kaggle/step18/analyst_s7.py",
+    "kaggle/step18/step18_candidate_bundle.py",
+    "kaggle/step18/step18_candidate_launch_s8c.py",
+    "kaggle/step18/step18_runtime_receipt_s8c.py",
+    "kaggle/step18/candidate/step18-source-alpha.zip",
+    "docs/validation/step18/progress-s8c.json"
+  ],
+  "historical_dialogue_alpha_expected_sha256": "fd23785d86c7fb35c7e3eb52c8d0eebfa2a8b254ed629e70c1b3c3a6a902bc65",
+  "not_reconstructed_or_claimed_present": true
+}

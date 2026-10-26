@@ -1,0 +1,79 @@
+{
+  "step": "complete-kaggle-source-delivery-from-available-S5-not-release",
+  "audit_seal_checks_passed": true,
+  "delivery_scope_complete": true,
+  "requirement_status": "PARTIAL/BLOCKED",
+  "source_assets": 58,
+  "zip_members": 61,
+  "launcher_bytes": 286135,
+  "launcher_sha256": "f54346e232b44750f77c506bc9cefd155edd809c0f7444092621fc7b0bb4fab7",
+  "zip_bytes": 432569,
+  "zip_sha256": "1559b70d7451736fef4d288539dadf465d15e8a266864167612e0fd628970243",
+  "packaging_unit_passes": [
+    36,
+    36,
+    36
+  ],
+  "inherited_cpu_passes": [
+    610,
+    610,
+    610
+  ],
+  "player_vm_passes": [
+    37,
+    37,
+    37
+  ],
+  "vm_not_added_to_cpu_total": true,
+  "node_passes": [
+    30,
+    30,
+    30
+  ],
+  "go_top_level_passes": [
+    40,
+    40,
+    40
+  ],
+  "go_all_pass_events_per_round": 56,
+  "go_race_rerun": false,
+  "ast_assets_per_round": 38,
+  "fresh_actual_go_four_program_mock_smokes": 3,
+  "all_four_owned_programs_waited_each_round": true,
+  "actual_real_run_gate_exit_codes": [
+    2,
+    2,
+    2
+  ],
+  "real_gpu_models_training_quality_speed_verified": false,
+  "old_173_browser_rerun_this_step": false,
+  "protected_live_paths_unchanged": 3071,
+  "available_baseline": "S5",
+  "historical_later_artifacts_absent": [
+    "kaggle/step18/worker_s6.py",
+    "kaggle/step18/analyst_s7.py",
+    "kaggle/step18/step18_candidate_bundle.py",
+    "kaggle/step18/step18_candidate_launch_s8c.py",
+    "kaggle/step18/step18_runtime_receipt_s8c.py",
+    "kaggle/step18/candidate/step18-source-alpha.zip",
+    "docs/validation/step18/progress-s8c.json"
+  ],
+  "absent_later_artifacts_reconstructed": false,
+  "previous_successful_files_overwritten": false,
+  "formal17_or_workbench_changed": false,
+  "q42_actions": 50,
+  "review_recommendations": [
+    100,
+    100,
+    100
+  ],
+  "complete_handoff_memos": 116,
+  "complete_handoff_bytes": 1532744,
+  "complete_handoff_sha256": "044dd1b046e6c418bc2b13f5f2db16181bb68b7ebc2bcaba9f49ea3c22418802",
+  "stage18_production_released": false,
+  "remote_kaggle_deployed": false,
+  "original_300_final_signed_off": 0,
+  "overall_completion_percentage": null,
+  "completion_date_estimate": null,
+  "manifest_files": 54
+}

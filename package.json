@@ -9,9 +9,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
-    "test": "node --test tests/server.test.js",
+    "test": "node --test tests/server.test.js tests/kaggle-uploads.test.js",
     "test:e2e": "playwright test",
-    "check": "node --check src/server.js && node --check src/store.js && node --check public/app.js && node --check public/file-rules.js"
+    "check": "node --check src/server.js && node --check src/store.js && node --check src/kaggle-uploads.js && node --check public/app.js && node --check public/file-rules.js && node --check public/kaggle-upload.js"
   },
   "devDependencies": {
     "@playwright/test": "^1.56.0",
